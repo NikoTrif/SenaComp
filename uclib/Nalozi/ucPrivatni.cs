@@ -29,6 +29,8 @@ namespace uclib.Nalozi
 
         private void ucPrivatni_Load(object sender, EventArgs e)
         {
+            //MessageBox.Show(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments));
+            naloziPTableAdapter.Connection.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=" + Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\Visual Studio 2015\Projects\SenaComp\SenaComp\dbSenaComp.mdf;Password=Master1!";
             naloziPTableAdapter.Fill(dbSenaCompDataSet.NaloziP);
             //MessageBox.Show(Properties.Settings.Default.dbSenaCompConnectionString);
             flpDodajKontrole(); // ovo radi i treba ovako
@@ -100,12 +102,15 @@ namespace uclib.Nalozi
 
         public void flpDodajKontrole()
         {
-            foreach (string s in Properties.Settings.Default.Oprema)
+            if (Properties.Settings.Default.Oprema != null)
             {
-                CheckBox chkb = new CheckBox();
-                chkb.Name = "cb" + s;
-                chkb.Text = s;
-                flowLayoutPanel1.Controls.Add(chkb);
+                foreach (string s in Properties.Settings.Default.Oprema)
+                {
+                    CheckBox chkb = new CheckBox();
+                    chkb.Name = "cb" + s;
+                    chkb.Text = s;
+                    flowLayoutPanel1.Controls.Add(chkb);
+                } 
             }
         }
 

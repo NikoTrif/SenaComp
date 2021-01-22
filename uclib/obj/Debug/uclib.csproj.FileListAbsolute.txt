@@ -28,3 +28,20 @@ D:\Google Drive\Projekti\SenaComp\uclib\obj\Debug\uclib.Nalozi.ucPoslovni.resour
 D:\Google Drive\Projekti\SenaComp\uclib\bin\Debug\dbSenaComp.mdf
 D:\Google Drive\Projekti\SenaComp\uclib\bin\Debug\dbSenaComp_log.ldf
 D:\Google Drive\Projekti\SenaComp\uclib\obj\Debug\uclib.Ostalo.ucNapomena.resources
+C:\Users\Nikola\Documents\Visual Studio 2015\Projects\SenaComp\uclib\bin\Debug\dbSenaComp.mdf
+C:\Users\Nikola\Documents\Visual Studio 2015\Projects\SenaComp\uclib\bin\Debug\dbSenaComp_log.ldf
+C:\Users\Nikola\Documents\Visual Studio 2015\Projects\SenaComp\uclib\bin\Debug\uclib.dll.config
+C:\Users\Nikola\Documents\Visual Studio 2015\Projects\SenaComp\uclib\bin\Debug\uclib.dll
+C:\Users\Nikola\Documents\Visual Studio 2015\Projects\SenaComp\uclib\bin\Debug\uclib.pdb
+C:\Users\Nikola\Documents\Visual Studio 2015\Projects\SenaComp\uclib\obj\Debug\uclib.csprojResolveAssemblyReference.cache
+C:\Users\Nikola\Documents\Visual Studio 2015\Projects\SenaComp\uclib\obj\Debug\uclib.fRazno.resources
+C:\Users\Nikola\Documents\Visual Studio 2015\Projects\SenaComp\uclib\obj\Debug\uclib.Nalozi.ucPoslovni.resources
+C:\Users\Nikola\Documents\Visual Studio 2015\Projects\SenaComp\uclib\obj\Debug\uclib.Nalozi.ucPrivatni.resources
+C:\Users\Nikola\Documents\Visual Studio 2015\Projects\SenaComp\uclib\obj\Debug\uclib.Opcije.Osnovno.ucOprema.resources
+C:\Users\Nikola\Documents\Visual Studio 2015\Projects\SenaComp\uclib\obj\Debug\uclib.Opcije.Osnovno.ucUredjaji.resources
+C:\Users\Nikola\Documents\Visual Studio 2015\Projects\SenaComp\uclib\obj\Debug\uclib.Ostalo.ucNapomena.resources
+C:\Users\Nikola\Documents\Visual Studio 2015\Projects\SenaComp\uclib\obj\Debug\uclib.Properties.Resources.resources
+C:\Users\Nikola\Documents\Visual Studio 2015\Projects\SenaComp\uclib\obj\Debug\uclib.ucPodesavanja.resources
+C:\Users\Nikola\Documents\Visual Studio 2015\Projects\SenaComp\uclib\obj\Debug\uclib.csproj.GenerateResource.Cache
+C:\Users\Nikola\Documents\Visual Studio 2015\Projects\SenaComp\uclib\obj\Debug\uclib.dll
+C:\Users\Nikola\Documents\Visual Studio 2015\Projects\SenaComp\uclib\obj\Debug\uclib.pdb

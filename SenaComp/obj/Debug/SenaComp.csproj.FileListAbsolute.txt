@@ -29,3 +29,18 @@ C:\Users\Nikola\Google Drive\Projekti\SenaComp\SenaComp\bin\Debug\iflib.dll
 C:\Users\Nikola\Google Drive\Projekti\SenaComp\SenaComp\bin\Debug\uclib.dll
 C:\Users\Nikola\Google Drive\Projekti\SenaComp\SenaComp\bin\Debug\iflib.pdb
 C:\Users\Nikola\Google Drive\Projekti\SenaComp\SenaComp\bin\Debug\uclib.pdb
+C:\Users\Nikola\Documents\Visual Studio 2015\Projects\SenaComp\SenaComp\bin\Debug\SenaComp.exe.config
+C:\Users\Nikola\Documents\Visual Studio 2015\Projects\SenaComp\SenaComp\obj\Debug\SenaComp.exe
+C:\Users\Nikola\Documents\Visual Studio 2015\Projects\SenaComp\SenaComp\obj\Debug\SenaComp.pdb
+C:\Users\Nikola\Documents\Visual Studio 2015\Projects\SenaComp\SenaComp\bin\Debug\dbSenaComp.mdf
+C:\Users\Nikola\Documents\Visual Studio 2015\Projects\SenaComp\SenaComp\bin\Debug\dbSenaComp_log.ldf
+C:\Users\Nikola\Documents\Visual Studio 2015\Projects\SenaComp\SenaComp\bin\Debug\SenaComp.exe
+C:\Users\Nikola\Documents\Visual Studio 2015\Projects\SenaComp\SenaComp\bin\Debug\SenaComp.pdb
+C:\Users\Nikola\Documents\Visual Studio 2015\Projects\SenaComp\SenaComp\bin\Debug\iflib.dll
+C:\Users\Nikola\Documents\Visual Studio 2015\Projects\SenaComp\SenaComp\bin\Debug\uclib.dll
+C:\Users\Nikola\Documents\Visual Studio 2015\Projects\SenaComp\SenaComp\bin\Debug\iflib.pdb
+C:\Users\Nikola\Documents\Visual Studio 2015\Projects\SenaComp\SenaComp\bin\Debug\uclib.pdb
+C:\Users\Nikola\Documents\Visual Studio 2015\Projects\SenaComp\SenaComp\obj\Debug\SenaComp.csprojResolveAssemblyReference.cache
+C:\Users\Nikola\Documents\Visual Studio 2015\Projects\SenaComp\SenaComp\obj\Debug\SenaComp.fSenaComp.resources
+C:\Users\Nikola\Documents\Visual Studio 2015\Projects\SenaComp\SenaComp\obj\Debug\SenaComp.Properties.Resources.resources
+C:\Users\Nikola\Documents\Visual Studio 2015\Projects\SenaComp\SenaComp\obj\Debug\SenaComp.csproj.GenerateResource.Cache

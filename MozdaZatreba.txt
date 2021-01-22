@@ -1,0 +1,5 @@
+--Default ConnString
+  dbSenaCompConnectionString - Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename="D:\Google Drive\Projekti\SenaComp\SenaComp\dbSenaComp.mdf";Password=Master1!
+
+--Modifikovan ConnectionString
+	Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\dbSenaComp.mdf;Password=Master1!

@@ -1,0 +1,125 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using uclib;
+using iflib;
+
+namespace SenaComp
+{
+    public partial class fSenaComp : Form
+    {
+        bool menuOtvoren = false;
+
+        clPodesavanja pod = new clPodesavanja();
+
+        public fSenaComp()
+        {
+            InitializeComponent();
+        }
+
+        private void fSenaComp_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dMenu_Click(object sender, EventArgs e)
+        {
+            pMenu.BringToFront();
+            dMenu.BringToFront();
+            tMenu.Start();
+        }
+
+        private void tMenu_Tick(object sender, EventArgs e)
+        {
+            if (menuOtvoren)
+            {
+                pMenu.Width -= 20;
+                if (pMenu.Width == 0)
+                {
+                    tMenu.Stop();
+                    menuOtvoren = false;
+                }
+            }
+
+            else
+            {
+                pMenu.Width += 20;
+                if (pMenu.Width >= 160)
+                {
+                    tMenu.Stop();
+                    menuOtvoren = true;
+                    dPrivatni.Width = 160;
+                }
+            }
+        }
+
+        private void dPrivatni_Click(object sender, EventArgs e)
+        {
+            uclib.Nalozi.ucPrivatni priv = new uclib.Nalozi.ucPrivatni();
+
+            tMenu.Start();
+
+            pMain.Controls.Clear();
+            pMain.Controls.Add(priv);
+            priv.Dock = DockStyle.Fill;
+            priv.SendToBack();
+            //priv.BringToFront();
+            //dMenu.BringToFront();
+            pbLogo.BringToFront();
+        }
+
+        private void dPoslovni_Click(object sender, EventArgs e)
+        {
+            uclib.Nalozi.ucPoslovni pos = new uclib.Nalozi.ucPoslovni();
+
+            tMenu.Start();
+
+            pMain.Controls.Clear();
+            pMain.Controls.Add(pos);
+            pos.Dock = DockStyle.Fill;
+            pos.SendToBack();
+            pbLogo.BringToFront();
+        }
+
+        private void dProfakt_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dFakt_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dOtp_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dArtikli_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dFirme_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pMain_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void dPodesavanja_Click(object sender, EventArgs e)
+        {
+            pod.OtvoriProzor();
+        }
+    }
+}

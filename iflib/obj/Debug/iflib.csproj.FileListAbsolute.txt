@@ -1,0 +1,16 @@
+D:\Google Drive\Projekti\SenaComp\iflib\bin\Debug\iflib.dll
+D:\Google Drive\Projekti\SenaComp\iflib\bin\Debug\iflib.pdb
+D:\Google Drive\Projekti\SenaComp\iflib\obj\Debug\iflib.csprojResolveAssemblyReference.cache
+D:\Google Drive\Projekti\SenaComp\iflib\obj\Debug\iflib.dll
+D:\Google Drive\Projekti\SenaComp\iflib\obj\Debug\iflib.pdb
+C:\Users\Nikola\Google Drive\Projekti\SenaComp\iflib\bin\Debug\iflib.dll
+C:\Users\Nikola\Google Drive\Projekti\SenaComp\iflib\bin\Debug\iflib.pdb
+C:\Users\Nikola\Google Drive\Projekti\SenaComp\iflib\obj\Debug\iflib.dll
+C:\Users\Nikola\Google Drive\Projekti\SenaComp\iflib\obj\Debug\iflib.pdb
+D:\Google Drive\Projekti\SenaComp\iflib\bin\Debug\uclib.dll
+D:\Google Drive\Projekti\SenaComp\iflib\bin\Debug\uclib.pdb
+C:\Users\Nikola\Google Drive\Projekti\SenaComp\iflib\bin\Debug\uclib.dll
+C:\Users\Nikola\Google Drive\Projekti\SenaComp\iflib\bin\Debug\uclib.pdb
+C:\Users\Nikola\Google Drive\Projekti\SenaComp\iflib\obj\Debug\iflib.csprojResolveAssemblyReference.cache
+D:\Google Drive\Projekti\SenaComp\iflib\bin\Debug\dbSenaComp.mdf
+D:\Google Drive\Projekti\SenaComp\iflib\bin\Debug\dbSenaComp_log.ldf

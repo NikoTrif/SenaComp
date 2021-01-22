@@ -1,0 +1,108 @@
+TD - ToDo / G - Greska / RG - Release greska / |R| - reseno / |Z| - zapoceto / |?| - testirati / |X| - odustao od zadatka
+kada se trazi u kodu - npr. "RG1", "TD3.1.2", "G2"
+---------------------------------------------------------------------------------------
+***ToDo***
+---------------------------------------------------------------------------------------
+|R|1.   Napraviti bazu podataka dbSenaComp
+       |R|1.   Tabela NaloziPrivatni: broj naloga, datum, ime i prezime, kontakt, e-mail, uredjaj, proizvodjac, model, serijski broj, oprema, opis kvara, izvestaj, cena servisa, status, na cekanju, zavrseno, korisnik odustao, servis neuspesan, korisnik odbio placanje, napomena
+	   |R|2.   Tabela NaloziFirme: broj naloga, datum, firma, kontakt osoba, kontakt, e-mail, uredjaj, proizvodjac, model, serijski broj, oprema, opis kvara, izvestaj, cena servisa, status, na cekanju, zavrseno, korisnik odustao, servis neuspesan, korisnik odbio placanje, napomena
+	   |R|3.   Tabela Firme: ID, naziv, PIB, grad, ulica i broj, kontakt, e-mail, tekuci racun
+	   |R|4.   Tabela Profakture: redni broj (proveriti da li sa novom godinom mora da ide od 1), datum, valuta, kupac(povezan sa bazom firmi), roba(xml format: sifra, naziv, kolicina, cena, PDV(mat. cena + (cena/(stopa/100))), rabat(mat. isto kao za PDV samo "-")), ukupno, klauzule
+	   |R|5.   Tabela Fakture: redni broj, datum profakture, datum fakture - ostalo prepisati iz profakture
+	   |R|6.   Tabela Otpremnice: (pogledaj excel fajl Otpremnica-podaci)
+	   |R|7.   Tabela Artikli: sifra, naziv, jedinica mere, roba-usluga, PDV, prodajna cena (sa PDV-om)
+	   |R|8.   Tabela ArtikliPFO: ID(nije primary key), tabela, artikal, kolicina, cena, ukupna cena (kolicina * cena)
+2.   Napraviti UserControl library
+       1.   |Z|UC za osnovni program (oprema moze biti u padajucem meniju sa checkbox-ovima) - za privatne korisnike
+			  a) kolona sa napomenom se moze obeleziti bojama (npr. crvena za korisnike sa kojima je servis imao probleme itd.)
+		      |R|b) Kolona "Status" treba da ima vrednost texta RB
+			  c) u tbOprema trebaju da se upisuju cekovani cb opreme
+			  d) sredi TabStop
+			  e) u ucPrivatni_Load ubaciti komandu za selektovanje poslednjeg row-a u dgv ili da se pravi novi nalog
+			  |Z|f) napraviti ucNapomene
+	   2.   UC za osnovni program (-||-) - za firme
+	          a) sadrzi padajuci meni za izbor firme, koji ujedno sluzi za pretragu
+			  b) sadrzi panel sa podacima izabrane firme
+			  c) dugme za kopiranje maila iz podataka firme
+			  d) broj naloga se nastavlja na poslednji nalog iz privatnih korisnika i obrnuto
+			  e) kolona sa napomenom se moze obeleziti bojama (npr. crvena za korisnike sa kojima je servis imao probleme itd.)
+	   3.   |Z|UC za podesavanja sa TreeView-om: program (smestiti dodavanje u listu uredjaja, proizvodjaca i opreme), podaci firme (naziv, delatnost, adresa, pib, tekuci racun), klauzula, baza
+	          a) opsta podesavanja - prikaz vremena u bazi i na nalogu, prikaz cene servisa na nalogu
+			  |R|b) dodavanje u listu uredjaja, proizvodjaca i opreme - liste uredjaja i proizvodjaca sortiraj po abecednom redu
+			  c) podaci firme - naziv, delatnost, adresa, PIB, tekuci racun
+			  d) klauzula
+			  e) baza
+			  f) dodati slicice(ikonice)
+			  g) srediti font u treeView-u
+	   4.   UC za aktivaciju i registraciju (moze u jednom)
+	   5.   UC za napomene
+	   6.   UC za profakture
+	   7.   UC za fakture
+	   8.   UC za otpremnice - ?
+	   9.   UC za unos novih firmi (kao kontakata)
+	   10.  UC za sifre usluga i robe
+	   11.  UC za periodicni izvestaj sa DateTimePciker-ima
+	   12.  UC za logovanje (username i password kada se pokrce program) u podesavanjima omoguciti automatsko logovanje a u osnovnom programu zakljucavanje
+3.   Napraviti Reportove
+       1.   Radni nalog za privatne korisnike
+	   2.   Radni nalog za firme
+	   3.   Izvestaj o zaradi
+	   4.   Profaktura
+	   5.   Faktura
+	   6.   Otpremnica - ?
+---------------------------------------------------------------------------------------
+***Greske***
+---------------------------------------------------------------------------------------
+|R|1.   - Kada se cuva nalog greska "ArgumentException was unhandled; Format of the initialization string does not conform to specification starting at index 35."
+|R|2.   - Kada se prave nalozi uzastopno, datum se cuva u bazi samo za prvi nalog
+3.   - Ne ucitava bazu kada se pokrene - kada se pokrene direktno iz debug foldera baza se pamti
+4.   - Kada se primeni podesavanje za listu checkboxova, ne pojavljuju se, pojave se tek kada se u meniju ponovo klikne na izabrani UC
+|R|5.   - Ne otvara se UC privatni u debug-u
+|R|6.   - Kada se otkaze ili obrise nalog, autoincrement se ne vraca na prethodni
+7.   - uclib.ucPrivatni - Ne pamti se status u kolonama na "Na Cekanju", "Zavrseno"... kada se radio button selektuje
+---------------------------------------------------------------------------------------
+***Release Greske***
+---------------------------------------------------------------------------------------
+///v3.0.0.0\\\
+
+---------------------------------------------------------------------------------------
+***Uradjeno***
+---------------------------------------------------------------------------------------
+///v3.0.0.0\\\
+18.02.20 - TD 1.1 - - Napravljena tabela NaloziP
+           TD 1.2 - - Napravljena tabela NaloziF
+		   TD 1.3 - - Napravljena tabela Firme
+		   TD 1.4 - - Napravljena tabela Profakture
+		   TD 1.5 - - Napravljena tabela Fakture
+
+26.05.20 - TD 1.6 - - Napravljena tabela Otpremnice
+		 - TD 1.7 - - Napravljena tabela Artikli
+		 - TD 1.8 - - Napravljena tabela ArtikliPFO
+
+28.05.20 - - - - - -  Napravljen slide menu panel "pMenu"
+         - TD 2     - Napravljene biblioteke "iflib" - kodovi za interfejs i "uclib" - userControl biblioteka
+
+29.05.20 - TD 2.1   - Zapoceto pravljenje ucNaloziP za privatne korisnike
+
+06.06.20 - G  1 - - - U connection Stringu falili navodnici na pocetku mesta baze. Mesto mora da se menja svaki put jer je na kucnom kompu na C a na laptopu na D
+
+09.06.20 - TD 2.3.a - Napravljen uc za podesavanja i uc za podesavanja liste opreme koji ce se pojavljivati u formi checkbox-ova
+         - G  1 - - - connection string postavljen u |DataDirectory| tako da vise nije potrebno menjati svaki put kada se radi na drugom racunaru
+
+25.06.20 - TD 2.1.b - ucPrivatni - kada se cuva nalog, kolona status se popunjava tekstom selektovanog rb-a
+
+26.06.20 - G  2 - - - ucPrivatni.dSacuvaj_Click - dodata komanda za upisivanje datuma u cell.
+
+21.07.20 - TD 2.3.b - narpavljen ucUredjaji u koji se upisuju uredjaji i poznati proizvodjaci. povezati settings i comboboxeve uredjaji i proizvodjaci
+
+18.08.20 - - - - - - -ucPrivatni - podeseni uredjajComboBox i proizvodjaciComboBox da imaju suggestAppend i customSource
+
+19.08.20 - - - -- -  -ucPoslovni sre]djen
+
+20.08.20 - - - - - - -zapocete izmene na ucPrivatni i ucPoslovni designer-ima, uvedene kolone cenaDelovi i cenaUkupna u DB ali ne mogu da se ubace u DataSet
+
+20.12.20 - G 5 - - - -ucPrivatni - Resena greska tako sto je obrisan ceo DataSet i ponovo napravljen
+         - G 6 - - - -ucPrivatni - Resena greska (pogledaj u kodu), proveriti kako ce raditi kada baza bude puna
+
+08.01.20 - TD 2.1.f - ucNapomene - napravljen dizajn, potrebno dodati funkcije dugmicima
+		 - TD 2.1.f - ucPrivatni - funkcije dSacuvaj i dOtkazi

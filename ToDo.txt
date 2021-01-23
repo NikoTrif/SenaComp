@@ -19,7 +19,7 @@ kada se trazi u kodu - npr. "RG1", "TD3.1.2", "G2"
 			  c) u tbOprema trebaju da se upisuju cekovani cb opreme
 			  d) sredi TabStop
 			  e) u ucPrivatni_Load ubaciti komandu za selektovanje poslednjeg row-a u dgv ili da se pravi novi nalog
-			  |Z|f) napraviti ucNapomene
+			  |Z|f) napraviti ucNapomene, pitanje "Da li zelite nap. na svakom nalogu sa ovim imenom", dva skrivena dugmeta "izmeni i OK"
 	   2.   UC za osnovni program (-||-) - za firme
 	          a) sadrzi padajuci meni za izbor firme, koji ujedno sluzi za pretragu
 			  b) sadrzi panel sa podacima izabrane firme
@@ -61,6 +61,7 @@ kada se trazi u kodu - npr. "RG1", "TD3.1.2", "G2"
 |R|6.   - Kada se otkaze ili obrise nalog, autoincrement se ne vraca na prethodni
 7.   - uclib.ucPrivatni - Ne pamti se status u kolonama na "Na Cekanju", "Zavrseno"... kada se radio button selektuje
 |R|8.   - uclib.ucPrivatni - Kada se promeni mesto baze baza izbacuje gresku bez obzira na promenu connectionStringa u podesavanjima
+9.   - uclib.ucPrivatni - Dijalog za napomenu se zatvara i kada se klikne na dugme izmena
 ---------------------------------------------------------------------------------------
 ***Release Greske***
 ---------------------------------------------------------------------------------------
@@ -109,3 +110,5 @@ kada se trazi u kodu - npr. "RG1", "TD3.1.2", "G2"
 		 - TD 2.1.f - ucPrivatni - funkcije dSacuvaj i dOtkazi
 
 22.01.21 - G 8 - - - -ucPrivatni - resena greska tako sto se menja connectionString na naloziPTableAdapter
+
+23.01.21 - TD 2.1.f - napravljena dugmad OK i Izmena

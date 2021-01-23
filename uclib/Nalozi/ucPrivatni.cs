@@ -132,8 +132,14 @@ namespace uclib.Nalozi
                     fr.pRazno.Controls.Add(ucn);
                     fr.AcceptButton = ucn.dSacuvaj;
                     fr.CancelButton = ucn.dOtkazi;
+                    ucn.Izmene(true);
                     ucn.Dock = DockStyle.Fill;
                     ucn.BringToFront();
+
+                    if(naloziPDataGridView.CurrentRow.Cells[20].Value.ToString() != "")
+                    {
+                        ucn.rtbNapomena.Text = naloziPDataGridView.CurrentRow.Cells[20].Value.ToString();
+                    }
 
                     if(fr.ShowDialog() == DialogResult.OK)
                     {
@@ -156,13 +162,15 @@ namespace uclib.Nalozi
                         fr.Text = "Napomena";
                         fr.pRazno.Controls.Clear();
                         fr.pRazno.Controls.Add(ucn);
-                        fr.AcceptButton = ucn.dSacuvaj;
-                        fr.CancelButton = ucn.dOtkazi;
+                        fr.AcceptButton = ucn.dOK;
+                        fr.CancelButton = null;
+                        ucn.Izmene(false);
                         ucn.Dock = DockStyle.Fill;
                         ucn.BringToFront();
                         ucn.rtbNapomena.Text = naloziPDataGridView.CurrentRow.Cells[20].Value.ToString();
 
-                        if(fr.ShowDialog() == DialogResult.OK)
+                        //G 9
+                        if (fr.ShowDialog() == DialogResult.OK)
                         {
                             naloziPDataGridView.CurrentRow.Cells[20].Value = ucn.rtbNapomena.Text;
                         }

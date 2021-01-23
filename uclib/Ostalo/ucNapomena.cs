@@ -27,5 +27,37 @@ namespace uclib.Ostalo
             rtbNapomena.Clear();
             dSacuvaj.PerformClick();
         }
+
+        private void dIzmeni_Click(object sender, EventArgs e)
+        {
+            Izmene(true);
+        }
+
+        public void Izmene(bool dozvolaIzmene)
+        {
+            if (dozvolaIzmene == true)
+            {
+                dIzmeni.Visible = false;
+                dOK.Visible = false;
+                dSacuvaj.Visible = true;
+                dOtkazi.Visible = true;
+                dObrisi.Visible = true;
+                rtbNapomena.ReadOnly = false;
+            }
+            else
+            {
+                dIzmeni.Visible = true;
+                dOK.Visible = true;
+                dSacuvaj.Visible = false;
+                dOtkazi.Visible = false;
+                dObrisi.Visible = false;
+                rtbNapomena.ReadOnly = true;
+            }
+        }
+
+        private void dOK_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

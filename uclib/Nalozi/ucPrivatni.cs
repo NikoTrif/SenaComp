@@ -178,5 +178,14 @@ namespace uclib.Nalozi
                 }
             }
         }
+
+        private void tbPretraga_KeyDown(object sender, KeyEventArgs e)
+        {
+            //TD 2.1.h
+            if(e.KeyCode == Keys.Enter)
+            {
+                naloziPTableAdapter.qFilterKorisnik(dbSenaCompDataSet.NaloziP, tbPretraga.Text, tbPretraga.Text, tbPretraga.Text);
+            }
+        }
     }
 }

@@ -29,3 +29,6 @@ C:\Users\Nikola\Google Drive\Projekti\SenaComp\SenaComp\bin\Debug\iflib.dll
 C:\Users\Nikola\Google Drive\Projekti\SenaComp\SenaComp\bin\Debug\uclib.dll
 C:\Users\Nikola\Google Drive\Projekti\SenaComp\SenaComp\bin\Debug\iflib.pdb
 C:\Users\Nikola\Google Drive\Projekti\SenaComp\SenaComp\bin\Debug\uclib.pdb
+C:\Users\MasterPro\Documents\Visual Studio 2015\Projects\SenaComp\SenaComp\bin\Debug\SenaComp.exe.config
+C:\Users\MasterPro\Documents\Visual Studio 2015\Projects\SenaComp\SenaComp\obj\Debug\SenaComp.exe
+C:\Users\MasterPro\Documents\Visual Studio 2015\Projects\SenaComp\SenaComp\obj\Debug\SenaComp.pdb

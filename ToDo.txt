@@ -117,5 +117,7 @@ kada se trazi u kodu - npr. "RG1", "TD3.1.2", "G2"
 
 23.01.21 - TD 2.1.f - napravljena dugmad OK i Izmena
 
-24.01.21 - TD 2.1.g - dbSenaCompDataSet.NaloziPTableAdapter - napravljeni queri-ji za pretragu
+25.01.21 - TD 2.1.g - dbSenaCompDataSet.NaloziPTableAdapter - napravljeni queri-ji za pretragu
          - TD 2.1.h - ucPrivatni - dodata komanda u tbPretraga - trazi se pritiskom na enter
+
+28.01.21 - - - - - - -ucPrivatni - umesto dFilter ubacen combobox koji sluzi kao filter - treba dodati switch komandu kod pretrage

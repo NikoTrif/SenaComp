@@ -35,6 +35,7 @@ namespace uclib.Nalozi
             naloziPTableAdapter.Connection.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=" + Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\Visual Studio 2015\Projects\SenaComp\SenaComp\dbSenaComp.mdf;Password=Master1!";
             naloziPTableAdapter.Fill(dbSenaCompDataSet.NaloziP);
             flpDodajKontrole(); // ovo radi i treba ovako
+            cbFilter.SelectedIndex = 0;
         }
 
         private void dNovi_Click(object sender, EventArgs e)

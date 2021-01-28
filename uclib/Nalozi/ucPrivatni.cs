@@ -36,6 +36,7 @@ namespace uclib.Nalozi
             naloziPTableAdapter.Fill(dbSenaCompDataSet.NaloziP);
             flpDodajKontrole(); // ovo radi i treba ovako
             cbFilter.SelectedIndex = 0;
+            naloziPDataGridView.CurrentCell = naloziPDataGridView.Rows[naloziPDataGridView.RowCount - 1].Cells[0];
         }
 
         private void dNovi_Click(object sender, EventArgs e)
@@ -185,7 +186,41 @@ namespace uclib.Nalozi
             //TD 2.1.h
             if(e.KeyCode == Keys.Enter)
             {
-                naloziPTableAdapter.qFilterKorisnik(dbSenaCompDataSet.NaloziP, tbPretraga.Text, tbPretraga.Text, tbPretraga.Text);
+                if (tbPretraga.Text != "")
+                {
+                    switch (cbFilter.SelectedIndex)
+                    {
+                        case 0:
+                            naloziPTableAdapter.qFilterKorisnik(dbSenaCompDataSet.NaloziP, tbPretraga.Text, tbPretraga.Text, tbPretraga.Text);
+                            break;
+                        case 1:
+                            try
+                            {
+                                naloziPTableAdapter.qFilterBrojNaloga(dbSenaCompDataSet.NaloziP, int.Parse(tbPretraga.Text));
+                            }
+                            catch
+                            {
+                                MessageBox.Show("Vrednost pretrage mora biti broj.");
+                            }
+                            break;
+                        case 2:
+                            naloziPTableAdapter.qFilterUredjaj(dbSenaCompDataSet.NaloziP, tbPretraga.Text, tbPretraga.Text, tbPretraga.Text,
+                                tbPretraga.Text);
+                            break;
+                        case 3:
+                            naloziPTableAdapter.qFilterKvar(dbSenaCompDataSet.NaloziP, tbPretraga.Text, tbPretraga.Text);
+                            break;
+                        case 4:
+                            naloziPTableAdapter.qFilterStatus(dbSenaCompDataSet.NaloziP, tbPretraga.Text);
+                            break; 
+                    }
+                }
+                else
+                {
+                    naloziPTableAdapter.Fill(dbSenaCompDataSet.NaloziP);
+                    naloziPDataGridView.Rows[naloziPDataGridView.RowCount - 1].Selected = true;
+                }
+
             }
         }
     }

@@ -18,7 +18,7 @@ kada se trazi u kodu - npr. "RG1", "TD3.1.2", "G2"
 		      |R|b) Kolona "Status" treba da ima vrednost texta RB
 			  c) u tbOprema trebaju da se upisuju cekovani cb opreme
 			  |R|d) sredi TabStop
-			  e) u ucPrivatni_Load ubaciti komandu za selektovanje poslednjeg row-a u dgv ili da se pravi novi nalog
+			  |R|e) u ucPrivatni_Load ubaciti komandu za selektovanje poslednjeg row-a u dgv ili da se pravi novi nalog
 			  |Z|f) napraviti ucNapomene, pitanje "Da li zelite nap. na svakom nalogu sa ovim imenom", dva skrivena dugmeta "izmeni i OK"
 			  |R|g) napraviti pretragu baze
 			  |Z|h) napraviti filtriranje pretrage po: podacima korisnika, uredjaja, izvestaja, statusa
@@ -121,3 +121,5 @@ kada se trazi u kodu - npr. "RG1", "TD3.1.2", "G2"
          - TD 2.1.h - ucPrivatni - dodata komanda u tbPretraga - trazi se pritiskom na enter
 
 28.01.21 - - - - - - -ucPrivatni - umesto dFilter ubacen combobox koji sluzi kao filter - treba dodati switch komandu kod pretrage
+         - - - - - - -ucPrivatni - dodat kod za filtriranje pretrage
+		 - TD 2.1.e - ucPrivatni - dodata komanda za selektovanje poslednjeg reda (kod koji se koristi u pretrazi NE RADI kada se pokrece program)

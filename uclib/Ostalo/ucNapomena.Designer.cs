@@ -33,6 +33,8 @@
             this.dObrisi = new System.Windows.Forms.Button();
             this.dOtkazi = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.dOK = new System.Windows.Forms.Button();
+            this.dIzmeni = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // rtbNapomena
@@ -89,15 +91,41 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "Napomena:";
             // 
+            // dOK
+            // 
+            this.dOK.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.dOK.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.dOK.Location = new System.Drawing.Point(3, 284);
+            this.dOK.Name = "dOK";
+            this.dOK.Size = new System.Drawing.Size(91, 34);
+            this.dOK.TabIndex = 1;
+            this.dOK.Text = "OK";
+            this.dOK.UseVisualStyleBackColor = true;
+            this.dOK.Click += new System.EventHandler(this.dOK_Click);
+            // 
+            // dIzmeni
+            // 
+            this.dIzmeni.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.dIzmeni.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.dIzmeni.Location = new System.Drawing.Point(100, 284);
+            this.dIzmeni.Name = "dIzmeni";
+            this.dIzmeni.Size = new System.Drawing.Size(91, 34);
+            this.dIzmeni.TabIndex = 1;
+            this.dIzmeni.Text = "Izmeni";
+            this.dIzmeni.UseVisualStyleBackColor = true;
+            this.dIzmeni.Click += new System.EventHandler(this.dIzmeni_Click);
+            // 
             // ucNapomena
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.dOtkazi);
             this.Controls.Add(this.dObrisi);
-            this.Controls.Add(this.dSacuvaj);
+            this.Controls.Add(this.dIzmeni);
             this.Controls.Add(this.rtbNapomena);
+            this.Controls.Add(this.dOtkazi);
+            this.Controls.Add(this.dOK);
+            this.Controls.Add(this.dSacuvaj);
             this.Name = "ucNapomena";
             this.Size = new System.Drawing.Size(515, 321);
             this.ResumeLayout(false);
@@ -111,5 +139,7 @@
         public System.Windows.Forms.RichTextBox rtbNapomena;
         public System.Windows.Forms.Button dOtkazi;
         public System.Windows.Forms.Button dSacuvaj;
+        public System.Windows.Forms.Button dOK;
+        public System.Windows.Forms.Button dIzmeni;
     }
 }

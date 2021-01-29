@@ -19,7 +19,7 @@ kada se trazi u kodu - npr. "RG1", "TD3.1.2", "G2"
 			  c) u tbOprema trebaju da se upisuju cekovani cb opreme
 			  d) sredi TabStop
 			  e) u ucPrivatni_Load ubaciti komandu za selektovanje poslednjeg row-a u dgv ili da se pravi novi nalog
-			  |Z|f) napraviti ucNapomene
+			  |Z|f) napraviti ucNapomene, pitanje "Da li zelite nap. na svakom nalogu sa ovim imenom", dva skrivena dugmeta "izmeni i OK"
 	   2.   UC za osnovni program (-||-) - za firme
 	          a) sadrzi padajuci meni za izbor firme, koji ujedno sluzi za pretragu
 			  b) sadrzi panel sa podacima izabrane firme
@@ -60,6 +60,8 @@ kada se trazi u kodu - npr. "RG1", "TD3.1.2", "G2"
 |R|5.   - Ne otvara se UC privatni u debug-u
 |R|6.   - Kada se otkaze ili obrise nalog, autoincrement se ne vraca na prethodni
 7.   - uclib.ucPrivatni - Ne pamti se status u kolonama na "Na Cekanju", "Zavrseno"... kada se radio button selektuje
+|R|8.   - uclib.ucPrivatni - Kada se promeni mesto baze baza izbacuje gresku bez obzira na promenu connectionStringa u podesavanjima
+9.   - uclib.ucPrivatni - Dijalog za napomenu se zatvara i kada se klikne na dugme izmena
 ---------------------------------------------------------------------------------------
 ***Release Greske***
 ---------------------------------------------------------------------------------------
@@ -104,5 +106,9 @@ kada se trazi u kodu - npr. "RG1", "TD3.1.2", "G2"
 20.12.20 - G 5 - - - -ucPrivatni - Resena greska tako sto je obrisan ceo DataSet i ponovo napravljen
          - G 6 - - - -ucPrivatni - Resena greska (pogledaj u kodu), proveriti kako ce raditi kada baza bude puna
 
-08.01.20 - TD 2.1.f - ucNapomene - napravljen dizajn, potrebno dodati funkcije dugmicima
+08.01.21 - TD 2.1.f - ucNapomene - napravljen dizajn, potrebno dodati funkcije dugmicima
 		 - TD 2.1.f - ucPrivatni - funkcije dSacuvaj i dOtkazi
+
+22.01.21 - G 8 - - - -ucPrivatni - resena greska tako sto se menja connectionString na naloziPTableAdapter
+
+23.01.21 - TD 2.1.f - napravljena dugmad OK i Izmena

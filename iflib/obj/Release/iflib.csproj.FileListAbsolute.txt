@@ -10,3 +10,12 @@ D:\Google Drive\Projekti\SenaComp\iflib\obj\Release\iflib.dll
 D:\Google Drive\Projekti\SenaComp\iflib\obj\Release\iflib.pdb
 D:\Google Drive\Projekti\SenaComp\iflib\bin\Release\uclib.dll
 D:\Google Drive\Projekti\SenaComp\iflib\bin\Release\uclib.pdb
+C:\Users\Nikola\Documents\Visual Studio 2015\Projects\SenaComp\iflib\bin\Release\dbSenaComp.mdf
+C:\Users\Nikola\Documents\Visual Studio 2015\Projects\SenaComp\iflib\bin\Release\dbSenaComp_log.ldf
+C:\Users\Nikola\Documents\Visual Studio 2015\Projects\SenaComp\iflib\bin\Release\iflib.dll
+C:\Users\Nikola\Documents\Visual Studio 2015\Projects\SenaComp\iflib\bin\Release\iflib.pdb
+C:\Users\Nikola\Documents\Visual Studio 2015\Projects\SenaComp\iflib\bin\Release\uclib.dll
+C:\Users\Nikola\Documents\Visual Studio 2015\Projects\SenaComp\iflib\bin\Release\uclib.pdb
+C:\Users\Nikola\Documents\Visual Studio 2015\Projects\SenaComp\iflib\obj\Release\iflib.csprojResolveAssemblyReference.cache
+C:\Users\Nikola\Documents\Visual Studio 2015\Projects\SenaComp\iflib\obj\Release\iflib.dll
+C:\Users\Nikola\Documents\Visual Studio 2015\Projects\SenaComp\iflib\obj\Release\iflib.pdb

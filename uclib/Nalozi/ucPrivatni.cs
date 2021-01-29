@@ -29,8 +29,11 @@ namespace uclib.Nalozi
 
         private void ucPrivatni_Load(object sender, EventArgs e)
         {
+            //MessageBox.Show(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments));
+
+            //G 8
+            naloziPTableAdapter.Connection.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=" + Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\Visual Studio 2015\Projects\SenaComp\SenaComp\dbSenaComp.mdf;Password=Master1!";
             naloziPTableAdapter.Fill(dbSenaCompDataSet.NaloziP);
-            //MessageBox.Show(Properties.Settings.Default.dbSenaCompConnectionString);
             flpDodajKontrole(); // ovo radi i treba ovako
         }
 
@@ -100,12 +103,20 @@ namespace uclib.Nalozi
 
         public void flpDodajKontrole()
         {
-            foreach (string s in Properties.Settings.Default.Oprema)
+            try
             {
-                CheckBox chkb = new CheckBox();
-                chkb.Name = "cb" + s;
-                chkb.Text = s;
-                flowLayoutPanel1.Controls.Add(chkb);
+                foreach (string s in Properties.Settings.Default.Oprema)
+                {
+                    CheckBox chkb = new CheckBox();
+                    chkb.Name = "cb" + s;
+                    chkb.Text = s;
+                    flowLayoutPanel1.Controls.Add(chkb);
+                } 
+            }
+
+            catch (Exception e)
+            {
+                MessageBox.Show(e.ToString());
             }
         }
 
@@ -121,8 +132,14 @@ namespace uclib.Nalozi
                     fr.pRazno.Controls.Add(ucn);
                     fr.AcceptButton = ucn.dSacuvaj;
                     fr.CancelButton = ucn.dOtkazi;
+                    ucn.Izmene(true);
                     ucn.Dock = DockStyle.Fill;
                     ucn.BringToFront();
+
+                    if(naloziPDataGridView.CurrentRow.Cells[20].Value.ToString() != "")
+                    {
+                        ucn.rtbNapomena.Text = naloziPDataGridView.CurrentRow.Cells[20].Value.ToString();
+                    }
 
                     if(fr.ShowDialog() == DialogResult.OK)
                     {
@@ -145,13 +162,15 @@ namespace uclib.Nalozi
                         fr.Text = "Napomena";
                         fr.pRazno.Controls.Clear();
                         fr.pRazno.Controls.Add(ucn);
-                        fr.AcceptButton = ucn.dSacuvaj;
-                        fr.CancelButton = ucn.dOtkazi;
+                        fr.AcceptButton = ucn.dOK;
+                        fr.CancelButton = null;
+                        ucn.Izmene(false);
                         ucn.Dock = DockStyle.Fill;
                         ucn.BringToFront();
                         ucn.rtbNapomena.Text = naloziPDataGridView.CurrentRow.Cells[20].Value.ToString();
 
-                        if(fr.ShowDialog() == DialogResult.OK)
+                        //G 9
+                        if (fr.ShowDialog() == DialogResult.OK)
                         {
                             naloziPDataGridView.CurrentRow.Cells[20].Value = ucn.rtbNapomena.Text;
                         }

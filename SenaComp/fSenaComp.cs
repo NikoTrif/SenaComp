@@ -119,7 +119,27 @@ namespace SenaComp
 
         private void dPodesavanja_Click(object sender, EventArgs e)
         {
-            pod.OtvoriProzor();
+            //pod.OtvoriProzor();
+            using (fRazno fr = new fRazno())
+            {
+                using (ucPodesavanja pod = new ucPodesavanja())
+                {
+                    fr.Text = "Podešavanja";
+                    fr.MaximizeBox = false;
+                    fr.Size = new Size(pod.Width, pod.Height + 40);
+                    fr.Controls.Add(pod);
+                    pod.Dock = DockStyle.Fill;
+                    pod.BringToFront();
+                    //promeni kada se napravi ucOsnovna
+                    using (uclib.Opcije.Osnovno.ucOprema op = new uclib.Opcije.Osnovno.ucOprema())
+                    {
+                        pod.pOptMain.Controls.Add(op);
+                        op.Dock = DockStyle.Fill;
+                        op.BringToFront();
+                        fr.ShowDialog();
+                    }
+                }
+            }
         }
     }
 }

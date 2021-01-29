@@ -3,3 +3,6 @@
 
 --Modifikovan ConnectionString
 	Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\dbSenaComp.mdf;Password=Master1!
+
+--NaloziP ConnectionString
+	Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename="D:\Google Drive\Projekti\SenaComp\SenaComp\dbSenaComp.mdf";Integrated Security=True

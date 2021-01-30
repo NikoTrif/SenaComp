@@ -21,7 +21,8 @@ kada se trazi u kodu - npr. "RG1", "TD3.1.2", "G2"
 			  |R|e) u ucPrivatni_Load ubaciti komandu za selektovanje poslednjeg row-a u dgv ili da se pravi novi nalog
 			  |Z|f) napraviti ucNapomene, pitanje "Da li zelite nap. na svakom nalogu sa ovim imenom", dva skrivena dugmeta "izmeni i OK"
 			  |R|g) napraviti pretragu baze
-			  |Z|h) napraviti filtriranje pretrage po: podacima korisnika, uredjaja, izvestaja, statusa
+			  |R|h) napraviti filtriranje pretrage po: podacima korisnika, uredjaja, izvestaja, statusa
+			  i) postaviti pitanje "Da li ste sigurni da zelite da sacuvate" kada nalog nije nov
 	   2.   UC za osnovni program (-||-) - za firme
 	          a) sadrzi padajuci meni za izbor firme, koji ujedno sluzi za pretragu
 			  b) sadrzi panel sa podacima izabrane firme
@@ -30,6 +31,7 @@ kada se trazi u kodu - npr. "RG1", "TD3.1.2", "G2"
 			  e) kolona sa napomenom se moze obeleziti bojama (npr. crvena za korisnike sa kojima je servis imao probleme itd.)
 			  f) napraviti pretragu baze
 			  g) napraviti filtriranje
+			  h) postaviti pitanje "Da li ste sigurni da zelite da sacuvate" kada nalog nije nov 
 	   3.   |Z|UC za podesavanja sa TreeView-om: program (smestiti dodavanje u listu uredjaja, proizvodjaca i opreme), podaci firme (naziv, delatnost, adresa, pib, tekuci racun), klauzula, baza
 	          a) opsta podesavanja - prikaz vremena u bazi i na nalogu, prikaz cene servisa na nalogu
 			  |R|b) dodavanje u listu uredjaja, proizvodjaca i opreme - liste uredjaja i proizvodjaca sortiraj po abecednom redu
@@ -123,3 +125,7 @@ kada se trazi u kodu - npr. "RG1", "TD3.1.2", "G2"
 28.01.21 - - - - - - -ucPrivatni - umesto dFilter ubacen combobox koji sluzi kao filter - treba dodati switch komandu kod pretrage
          - - - - - - -ucPrivatni - dodat kod za filtriranje pretrage
 		 - TD 2.1.e - ucPrivatni - dodata komanda za selektovanje poslednjeg reda (kod koji se koristi u pretrazi NE RADI kada se pokrece program)
+
+29.01.21 - - - - - - -iflib.clFunkcijeRazno.FormatKontakt - poceo rad na formatiranju broja telefona
+
+30.01.21 - - - - - - -iflib.clFunkcijeRazno.FormatKontakt - zavrseno formatiranje broja telefona, funkcija se pokrece na kontaktTextBox_Leave

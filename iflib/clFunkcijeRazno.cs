@@ -1,0 +1,53 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace iflib
+{
+    public class clFunkcijeRazno
+    {
+        public string FormatKontakt(string kontakt)
+        {
+            string[] tel = kontakt.Split(' ');
+            string telefon = "";
+            string formTel = "";
+            int i = 0;
+
+            foreach(string s in tel)
+            {
+                telefon = "";
+                if (s.Length == 9)
+                {
+                    telefon = s.Insert(3, "/");
+                    telefon = telefon.Insert(7, "-");
+                }
+                else if(s.Length == 10)
+                {
+                    telefon = s.Insert(3, "/");
+                    telefon = telefon.Insert(6, "-");
+                    telefon = telefon.Insert(9, "-");
+                }
+                tel[i] = telefon;
+                i++;
+            }
+
+            i = 0;
+            foreach(string s in tel)
+            {
+                if (formTel.Length > 0)
+                {
+                    formTel = formTel + " | " + tel[i];
+                }
+
+                else
+                {
+                    formTel = tel[i];
+                }
+                i++;
+            }
+            return formTel;
+        }
+    }
+}

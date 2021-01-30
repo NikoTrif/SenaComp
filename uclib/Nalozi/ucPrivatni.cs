@@ -6,6 +6,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using iflib;
 
 namespace uclib.Nalozi
 {
@@ -36,7 +37,7 @@ namespace uclib.Nalozi
             naloziPTableAdapter.Fill(dbSenaCompDataSet.NaloziP);
             flpDodajKontrole(); // ovo radi i treba ovako
             cbFilter.SelectedIndex = 0;
-            naloziPDataGridView.CurrentCell = naloziPDataGridView.Rows[naloziPDataGridView.RowCount - 1].Cells[0];
+            naloziPDataGridView.CurrentCell = naloziPDataGridView.Rows[naloziPDataGridView.RowCount - 1].Cells[0]; //TD 2.1.e
         }
 
         private void dNovi_Click(object sender, EventArgs e)
@@ -56,8 +57,6 @@ namespace uclib.Nalozi
 
                 //G 2
                 naloziPDataGridView.CurrentRow.Cells[1].Value = datumDateTimePicker.Value;
-
-                
             }
             catch { }
 
@@ -222,6 +221,13 @@ namespace uclib.Nalozi
                 }
 
             }
+        }
+
+        private void kontaktTextBox_Leave(object sender, EventArgs e)
+        {
+            clFunkcijeRazno clf = new clFunkcijeRazno();
+            kontaktTextBox.Text = clf.FormatKontakt(kontaktTextBox.Text);
+            //MessageBox.Show("Leave");
         }
     }
 }

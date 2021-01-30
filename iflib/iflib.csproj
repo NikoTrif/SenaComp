@@ -44,14 +44,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="clFunkcijeRazno.cs" />
     <Compile Include="clPodesavanja.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\uclib\uclib.csproj">
-      <Project>{fa7bd8e0-c04b-4446-978a-0c3b3485cff8}</Project>
-      <Name>uclib</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

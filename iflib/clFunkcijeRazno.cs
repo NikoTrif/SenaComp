@@ -11,15 +11,43 @@ namespace iflib
         public string FormatKontakt(string kontakt)
         {
             string[] tel = kontakt.Split(' ');
+            string telefon = "";
             string formTel = "";
+            int i = 0;
+
             foreach(string s in tel)
             {
+                telefon = "";
                 if (s.Length == 9)
                 {
-                    //ovde sam stao
+                    telefon = s.Insert(3, "/");
+                    telefon = telefon.Insert(7, "-");
                 }
+                else if(s.Length == 10)
+                {
+                    telefon = s.Insert(3, "/");
+                    telefon = telefon.Insert(6, "-");
+                    telefon = telefon.Insert(9, "-");
+                }
+                tel[i] = telefon;
+                i++;
             }
-            return formTel; //promeni da bude string od arraya tel
+
+            i = 0;
+            foreach(string s in tel)
+            {
+                if (formTel.Length > 0)
+                {
+                    formTel = formTel + " | " + tel[i];
+                }
+
+                else
+                {
+                    formTel = tel[i];
+                }
+                i++;
+            }
+            return formTel;
         }
     }
 }

@@ -81,3 +81,5 @@ C:\Users\MasterPro\Documents\Visual Studio 2015\Projects\SenaComp\uclib\obj\Debu
 C:\Users\MasterPro\Documents\Visual Studio 2015\Projects\SenaComp\uclib\obj\Debug\uclib.pdb
 C:\Users\MasterPro\Documents\Visual Studio 2015\Projects\SenaComp\uclib\bin\Debug\iflib.dll
 C:\Users\MasterPro\Documents\Visual Studio 2015\Projects\SenaComp\uclib\bin\Debug\iflib.pdb
+C:\Users\Lenovo\Documents\Visual Studio 2015\Projects\SenaComp\uclib\bin\Debug\iflib.dll
+C:\Users\Lenovo\Documents\Visual Studio 2015\Projects\SenaComp\uclib\bin\Debug\iflib.pdb

@@ -50,8 +50,6 @@ namespace uclib.Nalozi
 
         private void dSacuvaj_Click(object sender, EventArgs e)
         {
-            clFunkcijeRazno fr = new clFunkcijeRazno();
-            kontaktTextBox.Text = fr.FormatKontakt(kontaktTextBox.Text);
             //TD 2.1.b
             try
             {
@@ -223,6 +221,13 @@ namespace uclib.Nalozi
                 }
 
             }
+        }
+
+        private void kontaktTextBox_Leave(object sender, EventArgs e)
+        {
+            clFunkcijeRazno clf = new clFunkcijeRazno();
+            kontaktTextBox.Text = clf.FormatKontakt(kontaktTextBox.Text);
+            //MessageBox.Show("Leave");
         }
     }
 }

@@ -591,6 +591,7 @@
             // 
             this.ostaloTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel3.SetColumnSpan(this.ostaloTextBox, 4);
+            this.ostaloTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.naloziPBindingSource, "Oprema", true));
             this.ostaloTextBox.Location = new System.Drawing.Point(77, 113);
             this.ostaloTextBox.Name = "ostaloTextBox";
             this.ostaloTextBox.Size = new System.Drawing.Size(477, 20);

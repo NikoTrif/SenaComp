@@ -16,13 +16,13 @@ kada se trazi u kodu - npr. "RG1", "TD3.1.2", "G2"
        1.   |Z|UC za osnovni program (oprema moze biti u padajucem meniju sa checkbox-ovima) - za privatne korisnike
 			  a) kolona sa napomenom se moze obeleziti bojama (npr. crvena za korisnike sa kojima je servis imao probleme itd.)
 		      |R|b) Kolona "Status" treba da ima vrednost texta RB
-			  c) u tbOprema trebaju da se upisuju cekovani cb opreme
+			  |Z|c) u tbOprema trebaju da se upisuju cekovani cb opreme
 			  |R|d) sredi TabStop
 			  |R|e) u ucPrivatni_Load ubaciti komandu za selektovanje poslednjeg row-a u dgv ili da se pravi novi nalog
 			  |Z|f) napraviti ucNapomene, pitanje "Da li zelite nap. na svakom nalogu sa ovim imenom", dva skrivena dugmeta "izmeni i OK"
 			  |R|g) napraviti pretragu baze
 			  |R|h) napraviti filtriranje pretrage po: podacima korisnika, uredjaja, izvestaja, statusa
-			  i) postaviti pitanje "Da li ste sigurni da zelite da sacuvate" kada nalog nije nov
+			  |R|i) postaviti pitanje "Da li ste sigurni da zelite da sacuvate" kada nalog nije nov
 	   2.   UC za osnovni program (-||-) - za firme
 	          a) sadrzi padajuci meni za izbor firme, koji ujedno sluzi za pretragu
 			  b) sadrzi panel sa podacima izabrane firme
@@ -132,3 +132,4 @@ kada se trazi u kodu - npr. "RG1", "TD3.1.2", "G2"
 
 02.02.21 - TD 2.1.i - ucPrivatni - postavlja pitanje kada red nije nov
 		 - TD 2.1.i - iflib.clFunkcijeRazno.ProveraNoviRed - funkcija za proveru novog reda(kada red nema u trenutku promene nema vrednost u drugoj koloni - imeiPrezime)
+		 - TD 2.1.c - ucPrivatni - Zapoceto kodiranje EventHandler-a za checkboxove iz FLP1

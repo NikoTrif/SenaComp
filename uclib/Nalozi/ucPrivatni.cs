@@ -13,6 +13,7 @@ namespace uclib.Nalozi
     public partial class ucPrivatni : UserControl
     {
         bool noviRed = false;
+
         public ucPrivatni()
         {
             InitializeComponent();
@@ -70,13 +71,16 @@ namespace uclib.Nalozi
         private void dOtkazi_Click(object sender, EventArgs e)
         {
             naloziPBindingSource.CancelEdit();
+
             // G 6 - Vraca autoincrement na odgovarajuci broj, ali se i cela baza resetuje, treba proveriti brzinu vracanja kada je baza puna
             dbSenaCompDataSet.Clear();
             dbSenaCompDataSet.NaloziP.brojNalogaColumn.AutoIncrementSeed = -1;
             dbSenaCompDataSet.NaloziP.brojNalogaColumn.AutoIncrementStep = -1;
             dbSenaCompDataSet.NaloziP.brojNalogaColumn.AutoIncrementSeed = 1;
             dbSenaCompDataSet.NaloziP.brojNalogaColumn.AutoIncrementStep = 1;
+
             naloziPTableAdapter.Fill(dbSenaCompDataSet.NaloziP);
+            naloziPDataGridView.CurrentCell = naloziPDataGridView.Rows[naloziPDataGridView.RowCount - 1].Cells[0]; //TD 2.1.e
         }
 
         private void dStampaj_Click(object sender, EventArgs e)
@@ -97,25 +101,6 @@ namespace uclib.Nalozi
                 dbSenaCompDataSet.NaloziP.brojNalogaColumn.AutoIncrementSeed = 1;
                 dbSenaCompDataSet.NaloziP.brojNalogaColumn.AutoIncrementStep = 1;
                 naloziPTableAdapter.Fill(dbSenaCompDataSet.NaloziP);
-            }
-        }
-
-        public void flpDodajKontrole()
-        {
-            try
-            {
-                foreach (string s in Properties.Settings.Default.Oprema)
-                {
-                    CheckBox chkb = new CheckBox();
-                    chkb.Name = "cb" + s;
-                    chkb.Text = s;
-                    flowLayoutPanel1.Controls.Add(chkb);
-                } 
-            }
-
-            catch (Exception e)
-            {
-                MessageBox.Show(e.ToString());
             }
         }
 
@@ -182,7 +167,11 @@ namespace uclib.Nalozi
         {
             //MessageBox.Show(naloziPDataGridView.CurrentRow.Cells[2].Value.ToString());
             clFunkcijeRazno cfr = new clFunkcijeRazno();
-            noviRed = cfr.ProveraNoviRed(naloziPDataGridView.CurrentRow.Cells[2].Value.ToString());
+            try
+            {
+                noviRed = cfr.ProveraNoviRed(naloziPDataGridView.CurrentRow.Cells[2].Value.ToString());
+            }
+            catch { }
         }
 
         private void tbPretraga_KeyDown(object sender, KeyEventArgs e)
@@ -254,6 +243,31 @@ namespace uclib.Nalozi
             //G1
             naloziPTableAdapter.Update(dbSenaCompDataSet.NaloziP.Rows[naloziPDataGridView.CurrentRow.Index]);
             //tableAdapterManager.UpdateAll(dbSenaCompDataSet);
+        }
+
+        public void flpDodajKontrole()
+        {
+            try
+            {
+                foreach (string s in Properties.Settings.Default.Oprema)
+                {
+                    CheckBox chkb = new CheckBox();
+                    chkb.Name = "cb" + s;
+                    chkb.Text = s;
+                    flowLayoutPanel1.Controls.Add(chkb);
+                    chkb.CheckedChanged += new EventHandler(FlowLayoutPanel1CheckBox_CheckedChanged);
+                }
+            }
+
+            catch (Exception e)
+            {
+                MessageBox.Show(e.ToString());
+            }
+        }
+
+        private void FlowLayoutPanel1CheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            //ovde sam stao
         }
     }
 }

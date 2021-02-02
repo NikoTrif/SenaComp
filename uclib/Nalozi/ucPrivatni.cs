@@ -12,6 +12,7 @@ namespace uclib.Nalozi
 {
     public partial class ucPrivatni : UserControl
     {
+        bool noviRed = false;
         public ucPrivatni()
         {
             InitializeComponent();
@@ -50,23 +51,20 @@ namespace uclib.Nalozi
 
         private void dSacuvaj_Click(object sender, EventArgs e)
         {
-            //TD 2.1.b
-            try
+            //TD 2.1.i
+           if(noviRed == false)
             {
-                naloziPDataGridView.CurrentRow.Cells[14].Value = tableLayoutPanel1.Controls.OfType<RadioButton>().FirstOrDefault(r => r.Checked).Text;
-
-                //G 2
-                naloziPDataGridView.CurrentRow.Cells[1].Value = datumDateTimePicker.Value;
+                if(MessageBox.Show("Da li ste sigurni da želite da izmenite ovaj nalog?", "Izmena naloga", MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    Cuvanje();
+                }
             }
-            catch { }
-
-
-            Validate();
-            naloziPBindingSource.EndEdit();
-
-            //G1
-            naloziPTableAdapter.Update(dbSenaCompDataSet.NaloziP);
-            //tableAdapterManager.UpdateAll(dbSenaCompDataSet);
+            else
+            {
+                Cuvanje();
+                noviRed = false;
+            }
         }
 
         private void dOtkazi_Click(object sender, EventArgs e)
@@ -180,6 +178,13 @@ namespace uclib.Nalozi
             }
         }
 
+        private void naloziPDataGridView_SelectionChanged(object sender, EventArgs e)
+        {
+            //MessageBox.Show(naloziPDataGridView.CurrentRow.Cells[2].Value.ToString());
+            clFunkcijeRazno cfr = new clFunkcijeRazno();
+            noviRed = cfr.ProveraNoviRed(naloziPDataGridView.CurrentRow.Cells[2].Value.ToString());
+        }
+
         private void tbPretraga_KeyDown(object sender, KeyEventArgs e)
         {
             //TD 2.1.h
@@ -228,6 +233,27 @@ namespace uclib.Nalozi
             clFunkcijeRazno clf = new clFunkcijeRazno();
             kontaktTextBox.Text = clf.FormatKontakt(kontaktTextBox.Text);
             //MessageBox.Show("Leave");
+        }
+
+        private void Cuvanje()
+        {
+            //TD 2.1.b
+            try
+            {
+                naloziPDataGridView.CurrentRow.Cells[14].Value = tableLayoutPanel1.Controls.OfType<RadioButton>().FirstOrDefault(r => r.Checked).Text;
+
+                //G 2
+                naloziPDataGridView.CurrentRow.Cells[1].Value = datumDateTimePicker.Value;
+            }
+            catch { }
+
+
+            Validate();
+            naloziPBindingSource.EndEdit();
+
+            //G1
+            naloziPTableAdapter.Update(dbSenaCompDataSet.NaloziP.Rows[naloziPDataGridView.CurrentRow.Index]);
+            //tableAdapterManager.UpdateAll(dbSenaCompDataSet);
         }
     }
 }

@@ -129,3 +129,6 @@ kada se trazi u kodu - npr. "RG1", "TD3.1.2", "G2"
 29.01.21 - - - - - - -iflib.clFunkcijeRazno.FormatKontakt - poceo rad na formatiranju broja telefona
 
 30.01.21 - - - - - - -iflib.clFunkcijeRazno.FormatKontakt - zavrseno formatiranje broja telefona, funkcija se pokrece na kontaktTextBox_Leave
+
+02.02.21 - TD 2.1.i - ucPrivatni - postavlja pitanje kada red nije nov
+		 - TD 2.1.i - iflib.clFunkcijeRazno.ProveraNoviRed - funkcija za proveru novog reda(kada red nema u trenutku promene nema vrednost u drugoj koloni - imeiPrezime)

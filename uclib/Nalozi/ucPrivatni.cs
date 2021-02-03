@@ -12,7 +12,8 @@ namespace uclib.Nalozi
 {
     public partial class ucPrivatni : UserControl
     {
-        bool noviRed = false;
+        bool noviRed = false; //TD 2.1.c
+        bool editTbOstalo = false; //TD 2.1.c
 
         public ucPrivatni()
         {
@@ -172,6 +173,19 @@ namespace uclib.Nalozi
                 noviRed = cfr.ProveraNoviRed(naloziPDataGridView.CurrentRow.Cells[2].Value.ToString());
             }
             catch { }
+
+            //TD 2.1.c
+            foreach (CheckBox chk in flowLayoutPanel1.Controls)
+            {
+                if (ostaloTextBox.Text.Contains(chk.Text))
+                {
+                    chk.Checked = true;
+                }
+                else
+                {
+                    chk.Checked = false;
+                }
+            }
         }
 
         private void tbPretraga_KeyDown(object sender, KeyEventArgs e)
@@ -255,7 +269,10 @@ namespace uclib.Nalozi
                     chkb.Name = "cb" + s;
                     chkb.Text = s;
                     flowLayoutPanel1.Controls.Add(chkb);
+
+                    //TD 2.1.c
                     chkb.CheckedChanged += new EventHandler(FlowLayoutPanel1CheckBox_CheckedChanged);
+                    chkb.MouseDown += new MouseEventHandler(FlowLayoutPanel1CheckBox_MouseDown);
                 }
             }
 
@@ -265,9 +282,21 @@ namespace uclib.Nalozi
             }
         }
 
+        // TD 2.1.c
         private void FlowLayoutPanel1CheckBox_CheckedChanged(object sender, EventArgs e)
         {
-            //ovde sam stao
+            if (editTbOstalo == true)
+            {
+                clFunkcijeRazno clf = new clFunkcijeRazno();
+                ostaloTextBox.Text = clf.DodajUkloniOpremu(ostaloTextBox.Text, sender as CheckBox); 
+            }
+
+            editTbOstalo = false;
+        }
+
+        private void FlowLayoutPanel1CheckBox_MouseDown(object sender, MouseEventArgs e)
+        {
+            editTbOstalo = true;
         }
     }
 }

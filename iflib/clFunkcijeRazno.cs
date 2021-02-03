@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace iflib
 {
@@ -49,6 +50,7 @@ namespace iflib
             }
             return formTel;
         }
+
         public bool ProveraNoviRed(string kolonaIme)
         {
             //TD 2.1.i
@@ -60,6 +62,20 @@ namespace iflib
             {
                 return false;
             }
+        }
+
+        public string DodajUkloniOpremu(string tbOprema, CheckBox chk)
+        {
+            if (chk.Checked)
+            {
+                tbOprema = tbOprema + chk.Text + ", ";
+            }
+            else
+            {
+                tbOprema = tbOprema.Replace(chk.Text + ", ", "");
+            }
+
+            return tbOprema;
         }
     }
 }

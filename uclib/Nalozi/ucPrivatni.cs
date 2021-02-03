@@ -12,6 +12,7 @@ namespace uclib.Nalozi
 {
     public partial class ucPrivatni : UserControl
     {
+        int indNovogReda = 0;
         public ucPrivatni()
         {
             InitializeComponent();
@@ -46,27 +47,34 @@ namespace uclib.Nalozi
             naCekanjuRadioButton.Select();
             datumDateTimePicker.Value = DateTime.Today;
             imePrezimeTextBox.Select();
+            MessageBox.Show(naloziPDataGridView.NewRowIndex.ToString() + Environment.NewLine + 
+                naloziPDataGridView.CurrentRow.Index.ToString());
         }
 
         private void dSacuvaj_Click(object sender, EventArgs e)
         {
-            //TD 2.1.b
-            try
+            bool noviRed = ProveraNovogReda();
+
+            MessageBox.Show(naloziPDataGridView.NewRowIndex.ToString() + Environment.NewLine + 
+                naloziPDataGridView.CurrentRow.Index.ToString());
+            
+            if(noviRed == true)
             {
-                naloziPDataGridView.CurrentRow.Cells[14].Value = tableLayoutPanel1.Controls.OfType<RadioButton>().FirstOrDefault(r => r.Checked).Text;
-
-                //G 2
-                naloziPDataGridView.CurrentRow.Cells[1].Value = datumDateTimePicker.Value;
+                Cuvanje();
             }
-            catch { }
-
-
-            Validate();
-            naloziPBindingSource.EndEdit();
-
-            //G1
-            naloziPTableAdapter.Update(dbSenaCompDataSet.NaloziP);
-            //tableAdapterManager.UpdateAll(dbSenaCompDataSet);
+            else if (noviRed == false)
+            {
+                if(MessageBox.Show("Da li ste sigurni da želite da izmenite ovaj nalog?", "Izmena?", MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
+                {
+                    Cuvanje();
+                }
+                else
+                {
+                    naloziPDataGridView.CancelEdit(); // i daje ne vraca izmenjeni red u prethodno stanje
+                    
+                }
+            }
         }
 
         private void dOtkazi_Click(object sender, EventArgs e)
@@ -228,6 +236,51 @@ namespace uclib.Nalozi
             clFunkcijeRazno clf = new clFunkcijeRazno();
             kontaktTextBox.Text = clf.FormatKontakt(kontaktTextBox.Text);
             //MessageBox.Show("Leave");
+        }
+
+        private bool ProveraNovogReda()
+        {
+            //if(naloziPDataGridView.SelectedRows[0].Index == naloziPDataGridView.NewRowIndex)
+            if(naloziPDataGridView.CurrentRow.Index == naloziPDataGridView.NewRowIndex)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        private void Cuvanje()
+        {
+            //TD 2.1.b
+            try
+            {
+                naloziPDataGridView.CurrentRow.Cells[14].Value = tableLayoutPanel1.Controls.OfType<RadioButton>().FirstOrDefault(r => r.Checked).Text;
+
+                //G 2
+                naloziPDataGridView.CurrentRow.Cells[1].Value = datumDateTimePicker.Value;
+            }
+            catch { }
+
+
+            Validate();
+            naloziPBindingSource.EndEdit();
+
+            //G1
+            naloziPTableAdapter.Update(dbSenaCompDataSet.NaloziP.Rows[naloziPDataGridView.CurrentRow.Index]);
+            //tableAdapterManager.UpdateAll(dbSenaCompDataSet);
+        }
+
+        private void naloziPDataGridView_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
+        {
+            try
+            {
+                MessageBox.Show(); //ovde sam stao
+            }
+            catch
+            {
+            }
         }
     }
 }

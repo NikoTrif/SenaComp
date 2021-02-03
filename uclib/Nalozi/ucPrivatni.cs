@@ -49,6 +49,7 @@ namespace uclib.Nalozi
             naCekanjuRadioButton.Select();
             datumDateTimePicker.Value = DateTime.Today;
             imePrezimeTextBox.Select();
+            resetBrojNalogaTextBoxReadOnly();
         }
 
         private void dSacuvaj_Click(object sender, EventArgs e)
@@ -67,6 +68,8 @@ namespace uclib.Nalozi
                 Cuvanje();
                 noviRed = false;
             }
+
+            resetBrojNalogaTextBoxReadOnly();
         }
 
         private void dOtkazi_Click(object sender, EventArgs e)
@@ -82,11 +85,13 @@ namespace uclib.Nalozi
 
             naloziPTableAdapter.Fill(dbSenaCompDataSet.NaloziP);
             naloziPDataGridView.CurrentCell = naloziPDataGridView.Rows[naloziPDataGridView.RowCount - 1].Cells[0]; //TD 2.1.e
+
+            resetBrojNalogaTextBoxReadOnly();
         }
 
         private void dStampaj_Click(object sender, EventArgs e)
         {
-
+            resetBrojNalogaTextBoxReadOnly();
         }
 
         private void dObrisi_Click(object sender, EventArgs e)
@@ -103,6 +108,8 @@ namespace uclib.Nalozi
                 dbSenaCompDataSet.NaloziP.brojNalogaColumn.AutoIncrementStep = 1;
                 naloziPTableAdapter.Fill(dbSenaCompDataSet.NaloziP);
             }
+
+            resetBrojNalogaTextBoxReadOnly();
         }
 
         private void napomenaToolStripMenuItem_Click(object sender, EventArgs e)
@@ -291,6 +298,11 @@ namespace uclib.Nalozi
             opisKvaraTextBox.Select();
         }
 
+        private void izmeniBrojNalogaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            brojNalogaTextBox.ReadOnly = !izmeniBrojNalogaToolStripMenuItem.Checked;
+        }
+
         private void Cuvanje()
         {
             //TD 2.1.b
@@ -350,6 +362,16 @@ namespace uclib.Nalozi
         private void FlowLayoutPanel1CheckBox_MouseDown(object sender, MouseEventArgs e)
         {
             editTbOstalo = true;
+        }
+
+
+        private void resetBrojNalogaTextBoxReadOnly()
+        {
+            if(brojNalogaTextBox.ReadOnly == false)
+            {
+                brojNalogaTextBox.ReadOnly = true;
+                izmeniBrojNalogaToolStripMenuItem.Checked = false;
+            }
         }
     }
 }

@@ -61,7 +61,7 @@ kada se trazi u kodu - npr. "RG1", "TD3.1.2", "G2"
 ---------------------------------------------------------------------------------------
 |R|1.   - Kada se cuva nalog greska "ArgumentException was unhandled; Format of the initialization string does not conform to specification starting at index 35."
 |R|2.   - Kada se prave nalozi uzastopno, datum se cuva u bazi samo za prvi nalog
-3.   - Ne ucitava bazu kada se pokrene - kada se pokrene direktno iz debug foldera baza se pamti
+|R|3.   - Ne ucitava bazu kada se pokrene - kada se pokrene direktno iz debug foldera baza se pamti
 4.   - Kada se primeni podesavanje za listu checkboxova, ne pojavljuju se, pojave se tek kada se u meniju ponovo klikne na izabrani UC
 |R|5.   - Ne otvara se UC privatni u debug-u
 |R|6.   - Kada se otkaze ili obrise nalog, autoincrement se ne vraca na prethodni
@@ -138,3 +138,4 @@ kada se trazi u kodu - npr. "RG1", "TD3.1.2", "G2"
 		 - TD 2.1.f - Zapocet kod - proveriti
 		 - - - - - - -ucPrivatni - dodat kod za novi broj naloga sa istim podacima korisnika i uredjaja
 		 - RS 2.1.f - ucPrivatni zavrsen kod za piranje za cuvanje napomene na svakom nalogu korisnika
+		 - - - - - - -ucPrivatni - kod za izmenu broja naloga i resetovanje ReadOnly na text box-u

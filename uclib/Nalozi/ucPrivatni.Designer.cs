@@ -1039,9 +1039,11 @@
             // 
             // izmeniBrojNalogaToolStripMenuItem
             // 
+            this.izmeniBrojNalogaToolStripMenuItem.CheckOnClick = true;
             this.izmeniBrojNalogaToolStripMenuItem.Name = "izmeniBrojNalogaToolStripMenuItem";
             this.izmeniBrojNalogaToolStripMenuItem.Size = new System.Drawing.Size(203, 24);
             this.izmeniBrojNalogaToolStripMenuItem.Text = "Izmeni broj naloga";
+            this.izmeniBrojNalogaToolStripMenuItem.Click += new System.EventHandler(this.izmeniBrojNalogaToolStripMenuItem_Click);
             // 
             // ucPrivatni
             // 

@@ -7,9 +7,12 @@
     }
 }
 
-namespace uclib.dbSenaCompDataSetTableAdapters {
-    
-    
+namespace uclib.dbSenaCompDataSetTableAdapters
+{
+    partial class NaloziPTableAdapter
+    {
+    }
+
     public partial class NaloziFTableAdapter {
     }
 }

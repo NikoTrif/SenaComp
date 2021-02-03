@@ -10288,7 +10288,7 @@ SELECT brojNaloga, Datum, imePrezime, Kontakt, eMail, Uredjaj, Proizvodjac, Mode
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[6];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[7];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = @"SELECT brojNaloga, Datum, imePrezime, Kontakt, eMail, Uredjaj, Proizvodjac, Model, serijskiBroj, Oprema, opisKvara, Izvestaj, cenaDelova, cenaServis, ukupnaCena, Status, naCekanju, Zavrseno, korisnikOdustao, servisOdustao, korisnikOdbioPlacanje, Napomena FROM dbo.NaloziP";
@@ -10345,6 +10345,15 @@ WHERE  (Uredjaj LIKE N'%' + @Uredjaj + N'%') OR
             this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Proizvodjac", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "Proizvodjac", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Model", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "Model", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@serijskiBroj", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "serijskiBroj", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[6] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[6].Connection = this.Connection;
+            this._commandCollection[6].CommandText = @"SELECT brojNaloga, Datum, imePrezime, Kontakt, eMail, Uredjaj, Proizvodjac, Model, serijskiBroj, Oprema, opisKvara, Izvestaj, cenaDelova, cenaServis, ukupnaCena, Status, naCekanju, Zavrseno, korisnikOdustao, servisOdustao, korisnikOdbioPlacanje, Napomena
+
+FROM dbo.NaloziP
+
+WHERE  (imePrezime = @imePrezime)";
+            this._commandCollection[6].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("ImePrezime", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -10489,6 +10498,25 @@ WHERE  (Uredjaj LIKE N'%' + @Uredjaj + N'%') OR
             }
             else {
                 this.Adapter.SelectCommand.Parameters[3].Value = ((string)(serijskiBroj));
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int qImeNapomena(dbSenaCompDataSet.NaloziPDataTable dataTable, string ImePrezime) {
+            this.Adapter.SelectCommand = this.CommandCollection[6];
+            if ((ImePrezime == null)) {
+                throw new global::System.ArgumentNullException("ImePrezime");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(ImePrezime));
             }
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();

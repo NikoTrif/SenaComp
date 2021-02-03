@@ -129,6 +129,18 @@ namespace uclib.Nalozi
                     if(fr.ShowDialog() == DialogResult.OK)
                     {
                         naloziPDataGridView.CurrentRow.Cells[20].Value = ucn.rtbNapomena.Text;
+
+                        //TD 2.1.f
+                        if(MessageBox.Show("Da li želite da ovu napomenu uključite u svaki nalog ovog korisnika?", "Napomena", 
+                            MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                        {
+                            naloziPTableAdapter.qImeNapomena(dbSenaCompDataSet.NaloziP, 
+                                naloziPDataGridView.CurrentRow.Cells[2].Value.ToString());
+                            foreach(DataGridViewRow r in naloziPDataGridView.Rows)
+                            {
+                                r.Cells[20].Value = ucn.rtbNapomena.Text; //ode sam stao
+                            }
+                        }
                         //ovde ubaciti promenu boje reda
                     }
                 }

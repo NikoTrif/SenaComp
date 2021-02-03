@@ -101,7 +101,6 @@
             this.dOK.TabIndex = 1;
             this.dOK.Text = "OK";
             this.dOK.UseVisualStyleBackColor = true;
-            this.dOK.Click += new System.EventHandler(this.dOK_Click);
             // 
             // dIzmeni
             // 

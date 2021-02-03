@@ -19,7 +19,7 @@ namespace uclib.Ostalo
 
         private void dSacuvaj_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void dObrisi_Click(object sender, EventArgs e)
@@ -53,11 +53,6 @@ namespace uclib.Ostalo
                 dObrisi.Visible = false;
                 rtbNapomena.ReadOnly = true;
             }
-        }
-
-        private void dOK_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

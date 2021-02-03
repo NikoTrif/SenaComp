@@ -12,7 +12,9 @@ namespace uclib.Nalozi
 {
     public partial class ucPrivatni : UserControl
     {
-        int indNovogReda = 0;
+        bool noviRed = false; //TD 2.1.c
+        bool editTbOstalo = false; //TD 2.1.c
+
         public ucPrivatni()
         {
             InitializeComponent();
@@ -47,46 +49,39 @@ namespace uclib.Nalozi
             naCekanjuRadioButton.Select();
             datumDateTimePicker.Value = DateTime.Today;
             imePrezimeTextBox.Select();
-            MessageBox.Show(naloziPDataGridView.NewRowIndex.ToString() + Environment.NewLine + 
-                naloziPDataGridView.CurrentRow.Index.ToString());
         }
 
         private void dSacuvaj_Click(object sender, EventArgs e)
         {
-            bool noviRed = ProveraNovogReda();
-
-            MessageBox.Show(naloziPDataGridView.NewRowIndex.ToString() + Environment.NewLine + 
-                naloziPDataGridView.CurrentRow.Index.ToString());
-            
-            if(noviRed == true)
+            //TD 2.1.i
+           if(noviRed == false)
             {
-                Cuvanje();
-            }
-            else if (noviRed == false)
-            {
-                if(MessageBox.Show("Da li ste sigurni da želite da izmenite ovaj nalog?", "Izmena?", MessageBoxButtons.YesNo,
-                    MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
+                if(MessageBox.Show("Da li ste sigurni da želite da izmenite ovaj nalog?", "Izmena naloga", MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     Cuvanje();
                 }
-                else
-                {
-                    naloziPDataGridView.CancelEdit(); // i daje ne vraca izmenjeni red u prethodno stanje
-                    
-                }
+            }
+            else
+            {
+                Cuvanje();
+                noviRed = false;
             }
         }
 
         private void dOtkazi_Click(object sender, EventArgs e)
         {
             naloziPBindingSource.CancelEdit();
+
             // G 6 - Vraca autoincrement na odgovarajuci broj, ali se i cela baza resetuje, treba proveriti brzinu vracanja kada je baza puna
             dbSenaCompDataSet.Clear();
             dbSenaCompDataSet.NaloziP.brojNalogaColumn.AutoIncrementSeed = -1;
             dbSenaCompDataSet.NaloziP.brojNalogaColumn.AutoIncrementStep = -1;
             dbSenaCompDataSet.NaloziP.brojNalogaColumn.AutoIncrementSeed = 1;
             dbSenaCompDataSet.NaloziP.brojNalogaColumn.AutoIncrementStep = 1;
+
             naloziPTableAdapter.Fill(dbSenaCompDataSet.NaloziP);
+            naloziPDataGridView.CurrentCell = naloziPDataGridView.Rows[naloziPDataGridView.RowCount - 1].Cells[0]; //TD 2.1.e
         }
 
         private void dStampaj_Click(object sender, EventArgs e)
@@ -107,25 +102,6 @@ namespace uclib.Nalozi
                 dbSenaCompDataSet.NaloziP.brojNalogaColumn.AutoIncrementSeed = 1;
                 dbSenaCompDataSet.NaloziP.brojNalogaColumn.AutoIncrementStep = 1;
                 naloziPTableAdapter.Fill(dbSenaCompDataSet.NaloziP);
-            }
-        }
-
-        public void flpDodajKontrole()
-        {
-            try
-            {
-                foreach (string s in Properties.Settings.Default.Oprema)
-                {
-                    CheckBox chkb = new CheckBox();
-                    chkb.Name = "cb" + s;
-                    chkb.Text = s;
-                    flowLayoutPanel1.Controls.Add(chkb);
-                } 
-            }
-
-            catch (Exception e)
-            {
-                MessageBox.Show(e.ToString());
             }
         }
 
@@ -153,6 +129,30 @@ namespace uclib.Nalozi
                     if(fr.ShowDialog() == DialogResult.OK)
                     {
                         naloziPDataGridView.CurrentRow.Cells[20].Value = ucn.rtbNapomena.Text;
+
+                        Validate();
+                        naloziPBindingSource.EndEdit();
+                        naloziPTableAdapter.Update(dbSenaCompDataSet.NaloziP.Rows[naloziPDataGridView.CurrentRow.Index]);
+
+                        //TD 2.1.f
+                        if (MessageBox.Show("Da li želite da ovu napomenu uključite u svaki nalog ovog korisnika?", "Napomena", 
+                            MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                        {
+                            naloziPTableAdapter.qImeNapomena(dbSenaCompDataSet.NaloziP, 
+                                naloziPDataGridView.CurrentRow.Cells[2].Value.ToString());
+                            foreach (DataGridViewRow r in naloziPDataGridView.Rows)
+                            {
+                                r.Cells[20].Value = ucn.rtbNapomena.Text;
+                            }
+
+                            Validate();
+                            naloziPBindingSource.EndEdit();
+                            naloziPTableAdapter.Update(dbSenaCompDataSet.NaloziP);
+
+                            naloziPTableAdapter.Fill(dbSenaCompDataSet.NaloziP);
+                            naloziPDataGridView.CurrentCell = naloziPDataGridView.Rows[naloziPDataGridView.RowCount - 1].Cells[0]; //TD 2.1.e
+
+                        }
                         //ovde ubaciti promenu boje reda
                     }
                 }
@@ -184,6 +184,30 @@ namespace uclib.Nalozi
                             naloziPDataGridView.CurrentRow.Cells[20].Value = ucn.rtbNapomena.Text;
                         }
                     }
+                }
+            }
+        }
+
+        private void naloziPDataGridView_SelectionChanged(object sender, EventArgs e)
+        {
+            //MessageBox.Show(naloziPDataGridView.CurrentRow.Cells[2].Value.ToString());
+            clFunkcijeRazno cfr = new clFunkcijeRazno();
+            try
+            {
+                noviRed = cfr.ProveraNoviRed(naloziPDataGridView.CurrentRow.Cells[2].Value.ToString());
+            }
+            catch { }
+
+            //TD 2.1.c
+            foreach (CheckBox chk in flowLayoutPanel1.Controls)
+            {
+                if (ostaloTextBox.Text.Contains(chk.Text))
+                {
+                    chk.Checked = true;
+                }
+                else
+                {
+                    chk.Checked = false;
                 }
             }
         }
@@ -238,17 +262,33 @@ namespace uclib.Nalozi
             //MessageBox.Show("Leave");
         }
 
-        private bool ProveraNovogReda()
+        private void noviBrojNalogaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //if(naloziPDataGridView.SelectedRows[0].Index == naloziPDataGridView.NewRowIndex)
-            if(naloziPDataGridView.CurrentRow.Index == naloziPDataGridView.NewRowIndex)
+            string[] nBrNaloga =
             {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+                imePrezimeTextBox.Text, //..0
+                kontaktTextBox.Text, //.....1
+                eMailTextBox.Text, //.......2
+                uredjajComboBox.Text, //....3
+                proizvodjacComboBox.Text, //4
+                modelTextBox.Text, //.......5
+                serijskiBrojTextBox.Text, //6
+                ostaloTextBox.Text //.......7
+            };
+
+            dNovi_Click(null, EventArgs.Empty);
+
+            datumDateTimePicker.Value = DateTime.Now;
+            imePrezimeTextBox.Text = nBrNaloga[0];
+            kontaktTextBox.Text = nBrNaloga[1];
+            eMailTextBox.Text = nBrNaloga[2];
+            uredjajComboBox.Text = nBrNaloga[3];
+            proizvodjacComboBox.Text = nBrNaloga[4];
+            modelTextBox.Text = nBrNaloga[5];
+            serijskiBrojTextBox.Text = nBrNaloga[6];
+            ostaloTextBox.Text = nBrNaloga[7];
+
+            opisKvaraTextBox.Select();
         }
 
         private void Cuvanje()
@@ -272,15 +312,44 @@ namespace uclib.Nalozi
             //tableAdapterManager.UpdateAll(dbSenaCompDataSet);
         }
 
-        private void naloziPDataGridView_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
+        public void flpDodajKontrole()
         {
             try
             {
-                MessageBox.Show(); //ovde sam stao
+                foreach (string s in Properties.Settings.Default.Oprema)
+                {
+                    CheckBox chkb = new CheckBox();
+                    chkb.Name = "cb" + s;
+                    chkb.Text = s;
+                    flowLayoutPanel1.Controls.Add(chkb);
+
+                    //TD 2.1.c
+                    chkb.CheckedChanged += new EventHandler(FlowLayoutPanel1CheckBox_CheckedChanged);
+                    chkb.MouseDown += new MouseEventHandler(FlowLayoutPanel1CheckBox_MouseDown);
+                }
             }
-            catch
+
+            catch (Exception e)
             {
+                MessageBox.Show(e.ToString());
             }
+        }
+
+        // TD 2.1.c
+        private void FlowLayoutPanel1CheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            if (editTbOstalo == true)
+            {
+                clFunkcijeRazno clf = new clFunkcijeRazno();
+                ostaloTextBox.Text = clf.DodajUkloniOpremu(ostaloTextBox.Text, sender as CheckBox); 
+            }
+
+            editTbOstalo = false;
+        }
+
+        private void FlowLayoutPanel1CheckBox_MouseDown(object sender, MouseEventArgs e)
+        {
+            editTbOstalo = true;
         }
     }
 }

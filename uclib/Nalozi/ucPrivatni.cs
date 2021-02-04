@@ -338,6 +338,7 @@ namespace uclib.Nalozi
                     //TD 2.1.c
                     chkb.CheckedChanged += new EventHandler(FlowLayoutPanel1CheckBox_CheckedChanged);
                     chkb.MouseDown += new MouseEventHandler(FlowLayoutPanel1CheckBox_MouseDown);
+                    chkb.KeyDown += new KeyEventHandler(flowLayoutPanel1CheckBox_KeyDown);
                 }
             }
 
@@ -364,6 +365,13 @@ namespace uclib.Nalozi
             editTbOstalo = true;
         }
 
+        private void flowLayoutPanel1CheckBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Space)
+            {
+                editTbOstalo = true;
+            }
+        }
 
         private void resetBrojNalogaTextBoxReadOnly()
         {

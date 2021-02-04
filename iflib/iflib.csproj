@@ -47,6 +47,13 @@
     <Compile Include="clFunkcijeRazno.cs" />
     <Compile Include="clPodesavanja.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReportClasses\clRadniNalogPriv.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Reportovi\rNalogP.rdlc" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\DataSources\iflib.ReportClasses.clRadniNalogPriv.datasource" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

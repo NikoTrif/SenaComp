@@ -19,3 +19,10 @@ C:\Users\Nikola\Documents\Visual Studio 2015\Projects\SenaComp\iflib\bin\Release
 C:\Users\Nikola\Documents\Visual Studio 2015\Projects\SenaComp\iflib\obj\Release\iflib.csprojResolveAssemblyReference.cache
 C:\Users\Nikola\Documents\Visual Studio 2015\Projects\SenaComp\iflib\obj\Release\iflib.dll
 C:\Users\Nikola\Documents\Visual Studio 2015\Projects\SenaComp\iflib\obj\Release\iflib.pdb
+C:\Users\MasterPro\Documents\Visual Studio 2015\Projects\SenaComp\iflib\bin\Release\iflib.dll
+C:\Users\MasterPro\Documents\Visual Studio 2015\Projects\SenaComp\iflib\bin\Release\iflib.pdb
+C:\Users\MasterPro\Documents\Visual Studio 2015\Projects\SenaComp\iflib\obj\Release\iflib.csprojResolveAssemblyReference.cache
+C:\Users\MasterPro\Documents\Visual Studio 2015\Projects\SenaComp\iflib\obj\Release\RdlCompile.cache
+C:\Users\MasterPro\Documents\Visual Studio 2015\Projects\SenaComp\iflib\obj\Release\RdlCompile.compiled
+C:\Users\MasterPro\Documents\Visual Studio 2015\Projects\SenaComp\iflib\obj\Release\iflib.dll
+C:\Users\MasterPro\Documents\Visual Studio 2015\Projects\SenaComp\iflib\obj\Release\iflib.pdb

@@ -108,6 +108,7 @@
             this.cbFilter = new System.Windows.Forms.ComboBox();
             this.naloziPTableAdapter = new uclib.dbSenaCompDataSetTableAdapters.NaloziPTableAdapter();
             this.tableAdapterManager = new uclib.dbSenaCompDataSetTableAdapters.TableAdapterManager();
+            this.bsRadniNalog = new System.Windows.Forms.BindingSource(this.components);
             brojNalogaLabel = new System.Windows.Forms.Label();
             datumLabel = new System.Windows.Forms.Label();
             imePrezimeLabel = new System.Windows.Forms.Label();
@@ -133,6 +134,7 @@
             this.tableLayoutPanel5.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
             this.groupBox4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bsRadniNalog)).BeginInit();
             this.SuspendLayout();
             // 
             // brojNalogaLabel
@@ -896,7 +898,7 @@
             this.tableLayoutPanel5.Controls.Add(this.dOtkazi, 1, 0);
             this.tableLayoutPanel5.Controls.Add(this.dNovi, 0, 0);
             this.tableLayoutPanel5.Location = new System.Drawing.Point(98, 29);
-            this.tableLayoutPanel5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tableLayoutPanel5.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
             this.tableLayoutPanel5.RowCount = 1;
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -973,7 +975,7 @@
             "Izveštaj",
             "Status"});
             this.cbFilter.Location = new System.Drawing.Point(337, 454);
-            this.cbFilter.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbFilter.Margin = new System.Windows.Forms.Padding(2);
             this.cbFilter.Name = "cbFilter";
             this.cbFilter.Size = new System.Drawing.Size(108, 21);
             this.cbFilter.TabIndex = 7;
@@ -995,6 +997,10 @@
             this.tableAdapterManager.OtpremniceTableAdapter = null;
             this.tableAdapterManager.ProfaktureTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = uclib.dbSenaCompDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            // 
+            // bsRadniNalog
+            // 
+            this.bsRadniNalog.DataSource = typeof(iflib.ReportClasses.clRadniNalogPriv);
             // 
             // ucPrivatni
             // 
@@ -1031,6 +1037,7 @@
             this.tableLayoutPanel4.ResumeLayout(false);
             this.tableLayoutPanel4.PerformLayout();
             this.groupBox4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.bsRadniNalog)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1107,5 +1114,6 @@
         private System.Windows.Forms.ContextMenuStrip cmsBrojNaloga;
         private System.Windows.Forms.ToolStripMenuItem noviBrojNalogaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem izmeniBrojNalogaToolStripMenuItem;
+        private System.Windows.Forms.BindingSource bsRadniNalog;
     }
 }

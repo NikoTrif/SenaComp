@@ -51,7 +51,7 @@ kada se trazi u kodu - npr. "RG1", "TD3.1.2", "G2"
 	   11.  UC za periodicni izvestaj sa DateTimePciker-ima
 	   12.  UC za logovanje (username i password kada se pokrce program) u podesavanjima omoguciti automatsko logovanje a u osnovnom programu zakljucavanje
 3.   Napraviti Reportove
-       |Z|1.   Radni nalog za privatne korisnike
+       |R|1.   Radni nalog za privatne korisnike
 	   2.   Radni nalog za firme
 	   3.   Izvestaj o zaradi
 	   4.   Profaktura
@@ -143,4 +143,6 @@ kada se trazi u kodu - npr. "RG1", "TD3.1.2", "G2"
 
 04.02.21 - TD 2.1.c - ucPrivatni - dodat EventHandler za space dugme
 		 - TD 3.1 - - iflib.ReportClasses - napravljenBinding za report
-		 - TD 3.1 - - zapoceto iuredjivanje reporta
+		 - TD 3.1 - - zapoceto uredjivanje reporta
+
+05,02,21 - TD 3.1 - - uredjen report NalogP

@@ -15,6 +15,8 @@ namespace iflib.ReportClasses
         public string Uredjaj { get; set; }
         public string Proizvodjac { get; set; }
         public string Model { get; set; }
+        public string SerijskiBroj { get; set; }
+        public string Pribor { get; set; }
         public string OpisKvara { get; set; }
         public string Izvestaj { get; set; }
 

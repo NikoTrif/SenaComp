@@ -35,3 +35,4 @@ C:\Users\MasterPro\Documents\Visual Studio 2015\Projects\SenaComp\iflib\obj\Debu
 C:\Users\MasterPro\Documents\Visual Studio 2015\Projects\SenaComp\iflib\obj\Debug\iflib.pdb
 C:\Users\MasterPro\Documents\Visual Studio 2015\Projects\SenaComp\iflib\obj\Debug\RdlCompile.cache
 C:\Users\MasterPro\Documents\Visual Studio 2015\Projects\SenaComp\iflib\obj\Debug\RdlCompile.compiled
+C:\Users\MasterPro\Documents\Visual Studio 2015\Projects\SenaComp\iflib\bin\Debug\Microsoft.ReportViewer.WinForms.dll

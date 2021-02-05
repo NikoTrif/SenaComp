@@ -145,4 +145,4 @@ kada se trazi u kodu - npr. "RG1", "TD3.1.2", "G2"
 		 - TD 3.1 - - iflib.ReportClasses - napravljenBinding za report
 		 - TD 3.1 - - zapoceto uredjivanje reporta
 
-05,02,21 - TD 3.1 - - uredjen report NalogP
+05.02.21 - TD 3.1 - - uredjen report NalogP

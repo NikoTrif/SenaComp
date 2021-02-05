@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using iflib;
+using Microsoft.Reporting.WinForms;
 
 namespace uclib.Nalozi
 {
@@ -92,6 +93,60 @@ namespace uclib.Nalozi
         private void dStampaj_Click(object sender, EventArgs e)
         {
             resetBrojNalogaTextBoxReadOnly();
+
+            //iflib.clFunkcijeRazno cfl = new clFunkcijeRazno();
+            //cfl.PrintReport(string.Empty, string.Empty, string.Empty, string.Empty, string.Empty, string.Empty,
+            //    datumDateTimePicker.Value.ToShortDateString(), brojNalogaTextBox.Text, imePrezimeTextBox.Text, kontaktTextBox.Text,
+            //    uredjajComboBox.Text, proizvodjacComboBox.Text, modelTextBox.Text, serijskiBrojTextBox.Text, ostaloTextBox.Text,
+            //    opisKvaraTextBox.Text, izvestajRichTextBox.Text);
+
+            ReportParameter[] para = new ReportParameter[]
+            {
+                new ReportParameter("parLogo", "1"),
+                new ReportParameter("parNazivFirme", "2"),
+                new ReportParameter("parDelatnost", "3"),
+                new ReportParameter("parKontaktFirme", "4"),
+                new ReportParameter("parMailFirme", "5"),
+                new ReportParameter("parKlauzula", "5"),
+            };
+
+            iflib.ReportClasses.clRadniNalogPriv rcls = new iflib.ReportClasses.clRadniNalogPriv
+            {
+                Datum = datumDateTimePicker.Value.ToShortDateString(),
+                BrojNaloga = brojNalogaTextBox.Text,
+                ImePrezime = imePrezimeTextBox.Text,
+                Kontakt = kontaktTextBox.Text,
+                Uredjaj = uredjajComboBox.Text,
+                Proizvodjac = proizvodjacComboBox.Text,
+                Model = modelTextBox.Text,
+                SerijskiBroj = serijskiBrojTextBox.Text,
+                Pribor = ostaloTextBox.Text,
+                OpisKvara = opisKvaraTextBox.Text,
+                Izvestaj = izvestajRichTextBox.Text
+            };
+
+            //rpv1.LocalReport.ReportPath = @"C:\Users\MasterPro\Documents\Visual Studio 2015\Projects\SenaComp\iflib\Reportovi\rNalogP.rdlc";
+            bsRadniNalog.Add(rcls);
+            reportViewer1.LocalReport.DataSources.Clear();
+            reportViewer1.LocalReport.DataSources.Add(new ReportDataSource("dsNP", bsRadniNalog));
+            reportViewer1.LocalReport.ReportEmbeddedResource = "iflib.Reportovi.rNalogP.rdlc";
+            //reportViewer1.LocalReport.LoadReportDefinition()
+            reportViewer1.RefreshReport();
+            reportViewer1.Visible = true;
+            reportViewer1.Dock = DockStyle.Fill;
+            reportViewer1.BringToFront();
+            //PrinterSettings prs = new PrinterSettings();
+
+            //try
+            //{
+            //    reportViewer1.PrintDialog();
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show(ex.ToString());
+            //}
+            reportViewer1.RefreshReport();
+            bsRadniNalog.Clear();
         }
 
         private void dObrisi_Click(object sender, EventArgs e)

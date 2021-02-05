@@ -78,6 +78,7 @@
             this.korisnikOdbioPlacanjeRadioButton1 = new System.Windows.Forms.RadioButton();
             this.servisOdustaoRadioButton = new System.Windows.Forms.RadioButton();
             this.korisnikOdustaoRadioButton = new System.Windows.Forms.RadioButton();
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.eMailTextBox = new System.Windows.Forms.TextBox();
@@ -615,6 +616,15 @@
             this.korisnikOdustaoRadioButton.Text = "Korisnik odustao od popravke";
             this.korisnikOdustaoRadioButton.UseVisualStyleBackColor = true;
             // 
+            // reportViewer1
+            // 
+            this.reportViewer1.DocumentMapWidth = 80;
+            this.reportViewer1.Location = new System.Drawing.Point(857, 20);
+            this.reportViewer1.Name = "reportViewer1";
+            this.reportViewer1.Size = new System.Drawing.Size(82, 52);
+            this.reportViewer1.TabIndex = 26;
+            this.reportViewer1.Visible = false;
+            // 
             // groupBox2
             // 
             this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -1013,6 +1023,7 @@
             this.Controls.Add(this.tbPretraga);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.groupBox3);
+            this.Controls.Add(this.reportViewer1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.naloziPDataGridView);
@@ -1115,5 +1126,6 @@
         private System.Windows.Forms.ToolStripMenuItem noviBrojNalogaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem izmeniBrojNalogaToolStripMenuItem;
         private System.Windows.Forms.BindingSource bsRadniNalog;
+        private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
     }
 }

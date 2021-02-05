@@ -99,3 +99,4 @@ C:\Users\MasterPro\Documents\Visual Studio 2015\Projects\SenaComp\uclib\bin\Debu
 C:\Users\MasterPro\Documents\Visual Studio 2015\Projects\SenaComp\uclib\bin\Debug\CrystalDecisions.ReportAppServer.ObjectFactory.dll
 C:\Users\MasterPro\Documents\Visual Studio 2015\Projects\SenaComp\uclib\bin\Debug\CrystalDecisions.ReportAppServer.CommonControls.dll
 C:\Users\MasterPro\Documents\Visual Studio 2015\Projects\SenaComp\uclib\bin\Debug\stdole.dll
+C:\Users\MasterPro\Documents\Visual Studio 2015\Projects\SenaComp\uclib\bin\Debug\Microsoft.ReportViewer.WinForms.dll

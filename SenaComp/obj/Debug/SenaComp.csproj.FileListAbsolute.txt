@@ -74,3 +74,4 @@ C:\Users\MasterPro\Documents\Visual Studio 2015\Projects\SenaComp\SenaComp\obj\D
 C:\Users\MasterPro\Documents\Visual Studio 2015\Projects\SenaComp\SenaComp\obj\Debug\SenaComp.fSenaComp.resources
 C:\Users\MasterPro\Documents\Visual Studio 2015\Projects\SenaComp\SenaComp\obj\Debug\SenaComp.Properties.Resources.resources
 C:\Users\MasterPro\Documents\Visual Studio 2015\Projects\SenaComp\SenaComp\obj\Debug\SenaComp.csproj.GenerateResource.Cache
+C:\Users\MasterPro\Documents\Visual Studio 2015\Projects\SenaComp\SenaComp\bin\Debug\Microsoft.ReportViewer.WinForms.dll

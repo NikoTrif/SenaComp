@@ -40,6 +40,7 @@
             System.Windows.Forms.Label serijskiBrojLabel;
             System.Windows.Forms.Label opisKvaraLabel;
             System.Windows.Forms.Label izvestajLabel;
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.naloziPDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -70,11 +71,15 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.datumDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.brojNalogaTextBox = new System.Windows.Forms.TextBox();
+            this.cmsBrojNaloga = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.noviBrojNalogaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.izmeniBrojNalogaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.naCekanjuRadioButton = new System.Windows.Forms.RadioButton();
             this.zavrsenoRadioButton = new System.Windows.Forms.RadioButton();
             this.korisnikOdbioPlacanjeRadioButton1 = new System.Windows.Forms.RadioButton();
             this.servisOdustaoRadioButton = new System.Windows.Forms.RadioButton();
             this.korisnikOdustaoRadioButton = new System.Windows.Forms.RadioButton();
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.eMailTextBox = new System.Windows.Forms.TextBox();
@@ -105,9 +110,8 @@
             this.cbFilter = new System.Windows.Forms.ComboBox();
             this.naloziPTableAdapter = new uclib.dbSenaCompDataSetTableAdapters.NaloziPTableAdapter();
             this.tableAdapterManager = new uclib.dbSenaCompDataSetTableAdapters.TableAdapterManager();
-            this.cmsBrojNaloga = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.noviBrojNalogaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.izmeniBrojNalogaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.bsRadniNalog = new System.Windows.Forms.BindingSource(this.components);
+            this.clRadniNalogPrivBindingSource = new System.Windows.Forms.BindingSource(this.components);
             brojNalogaLabel = new System.Windows.Forms.Label();
             datumLabel = new System.Windows.Forms.Label();
             imePrezimeLabel = new System.Windows.Forms.Label();
@@ -125,6 +129,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dbSenaCompDataSet)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
+            this.cmsBrojNaloga.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -132,7 +137,8 @@
             this.tableLayoutPanel5.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
             this.groupBox4.SuspendLayout();
-            this.cmsBrojNaloga.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bsRadniNalog)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clRadniNalogPrivBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // brojNalogaLabel
@@ -551,6 +557,30 @@
             this.brojNalogaTextBox.TabIndex = 25;
             this.brojNalogaTextBox.TabStop = false;
             // 
+            // cmsBrojNaloga
+            // 
+            this.cmsBrojNaloga.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.cmsBrojNaloga.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.noviBrojNalogaToolStripMenuItem,
+            this.izmeniBrojNalogaToolStripMenuItem});
+            this.cmsBrojNaloga.Name = "cmsBrojNaloga";
+            this.cmsBrojNaloga.Size = new System.Drawing.Size(204, 52);
+            // 
+            // noviBrojNalogaToolStripMenuItem
+            // 
+            this.noviBrojNalogaToolStripMenuItem.Name = "noviBrojNalogaToolStripMenuItem";
+            this.noviBrojNalogaToolStripMenuItem.Size = new System.Drawing.Size(203, 24);
+            this.noviBrojNalogaToolStripMenuItem.Text = "Novi broj naloga";
+            this.noviBrojNalogaToolStripMenuItem.Click += new System.EventHandler(this.noviBrojNalogaToolStripMenuItem_Click);
+            // 
+            // izmeniBrojNalogaToolStripMenuItem
+            // 
+            this.izmeniBrojNalogaToolStripMenuItem.CheckOnClick = true;
+            this.izmeniBrojNalogaToolStripMenuItem.Name = "izmeniBrojNalogaToolStripMenuItem";
+            this.izmeniBrojNalogaToolStripMenuItem.Size = new System.Drawing.Size(203, 24);
+            this.izmeniBrojNalogaToolStripMenuItem.Text = "Izmeni broj naloga";
+            this.izmeniBrojNalogaToolStripMenuItem.Click += new System.EventHandler(this.izmeniBrojNalogaToolStripMenuItem_Click);
+            // 
             // naCekanjuRadioButton
             // 
             this.naCekanjuRadioButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
@@ -610,6 +640,21 @@
             this.korisnikOdustaoRadioButton.TabIndex = 25;
             this.korisnikOdustaoRadioButton.Text = "Korisnik odustao od popravke";
             this.korisnikOdustaoRadioButton.UseVisualStyleBackColor = true;
+            // 
+            // reportViewer1
+            // 
+            this.reportViewer1.DocumentMapWidth = 80;
+            reportDataSource1.Name = "repClasses";
+            reportDataSource1.Value = this.clRadniNalogPrivBindingSource;
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
+            this.reportViewer1.LocalReport.EnableExternalImages = true;
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "uclib.Reportovi.rNalogP.rdlc";
+            this.reportViewer1.Location = new System.Drawing.Point(1143, 25);
+            this.reportViewer1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.reportViewer1.Name = "reportViewer1";
+            this.reportViewer1.Size = new System.Drawing.Size(109, 64);
+            this.reportViewer1.TabIndex = 26;
+            this.reportViewer1.Visible = false;
             // 
             // groupBox2
             // 
@@ -1021,29 +1066,13 @@
             this.tableAdapterManager.ProfaktureTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = uclib.dbSenaCompDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
-            // cmsBrojNaloga
+            // bsRadniNalog
             // 
-            this.cmsBrojNaloga.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.cmsBrojNaloga.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.noviBrojNalogaToolStripMenuItem,
-            this.izmeniBrojNalogaToolStripMenuItem});
-            this.cmsBrojNaloga.Name = "cmsBrojNaloga";
-            this.cmsBrojNaloga.Size = new System.Drawing.Size(204, 80);
+            this.bsRadniNalog.DataSource = typeof(iflib.ReportClasses.clRadniNalogPriv);
             // 
-            // noviBrojNalogaToolStripMenuItem
+            // clRadniNalogPrivBindingSource
             // 
-            this.noviBrojNalogaToolStripMenuItem.Name = "noviBrojNalogaToolStripMenuItem";
-            this.noviBrojNalogaToolStripMenuItem.Size = new System.Drawing.Size(203, 24);
-            this.noviBrojNalogaToolStripMenuItem.Text = "Novi broj naloga";
-            this.noviBrojNalogaToolStripMenuItem.Click += new System.EventHandler(this.noviBrojNalogaToolStripMenuItem_Click);
-            // 
-            // izmeniBrojNalogaToolStripMenuItem
-            // 
-            this.izmeniBrojNalogaToolStripMenuItem.CheckOnClick = true;
-            this.izmeniBrojNalogaToolStripMenuItem.Name = "izmeniBrojNalogaToolStripMenuItem";
-            this.izmeniBrojNalogaToolStripMenuItem.Size = new System.Drawing.Size(203, 24);
-            this.izmeniBrojNalogaToolStripMenuItem.Text = "Izmeni broj naloga";
-            this.izmeniBrojNalogaToolStripMenuItem.Click += new System.EventHandler(this.izmeniBrojNalogaToolStripMenuItem_Click);
+            this.clRadniNalogPrivBindingSource.DataSource = typeof(iflib.ReportClasses.clRadniNalogPriv);
             // 
             // ucPrivatni
             // 
@@ -1056,6 +1085,7 @@
             this.Controls.Add(this.tbPretraga);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.groupBox3);
+            this.Controls.Add(this.reportViewer1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.naloziPDataGridView);
@@ -1070,6 +1100,7 @@
             this.groupBox1.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
+            this.cmsBrojNaloga.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
@@ -1080,7 +1111,8 @@
             this.tableLayoutPanel4.ResumeLayout(false);
             this.tableLayoutPanel4.PerformLayout();
             this.groupBox4.ResumeLayout(false);
-            this.cmsBrojNaloga.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.bsRadniNalog)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clRadniNalogPrivBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1157,5 +1189,8 @@
         private System.Windows.Forms.ContextMenuStrip cmsBrojNaloga;
         private System.Windows.Forms.ToolStripMenuItem noviBrojNalogaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem izmeniBrojNalogaToolStripMenuItem;
+        private System.Windows.Forms.BindingSource bsRadniNalog;
+        private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
+        private System.Windows.Forms.BindingSource clRadniNalogPrivBindingSource;
     }
 }

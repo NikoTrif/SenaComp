@@ -74,3 +74,17 @@ C:\Users\MasterPro\Documents\Visual Studio 2015\Projects\SenaComp\SenaComp\obj\D
 C:\Users\MasterPro\Documents\Visual Studio 2015\Projects\SenaComp\SenaComp\obj\Debug\SenaComp.fSenaComp.resources
 C:\Users\MasterPro\Documents\Visual Studio 2015\Projects\SenaComp\SenaComp\obj\Debug\SenaComp.Properties.Resources.resources
 C:\Users\MasterPro\Documents\Visual Studio 2015\Projects\SenaComp\SenaComp\obj\Debug\SenaComp.csproj.GenerateResource.Cache
+C:\Users\MasterPro\Documents\Visual Studio 2015\Projects\SenaComp\SenaComp\bin\Debug\Microsoft.ReportViewer.WinForms.dll
+C:\Users\Lenovo\Documents\Visual Studio 2015\Projects\SenaComp\SenaComp\bin\Debug\Microsoft.ReportViewer.WinForms.dll
+C:\Users\Lenovo\Documents\Visual Studio 2015\Projects\SenaComp\SenaComp\bin\Debug\Microsoft.SqlServer.Types.dll
+C:\Users\Lenovo\Documents\Visual Studio 2015\Projects\SenaComp\SenaComp\bin\Debug\de\Microsoft.SqlServer.Types.resources.dll
+C:\Users\Lenovo\Documents\Visual Studio 2015\Projects\SenaComp\SenaComp\bin\Debug\es\Microsoft.SqlServer.Types.resources.dll
+C:\Users\Lenovo\Documents\Visual Studio 2015\Projects\SenaComp\SenaComp\bin\Debug\fr\Microsoft.SqlServer.Types.resources.dll
+C:\Users\Lenovo\Documents\Visual Studio 2015\Projects\SenaComp\SenaComp\bin\Debug\it\Microsoft.SqlServer.Types.resources.dll
+C:\Users\Lenovo\Documents\Visual Studio 2015\Projects\SenaComp\SenaComp\bin\Debug\ja\Microsoft.SqlServer.Types.resources.dll
+C:\Users\Lenovo\Documents\Visual Studio 2015\Projects\SenaComp\SenaComp\bin\Debug\ko\Microsoft.SqlServer.Types.resources.dll
+C:\Users\Lenovo\Documents\Visual Studio 2015\Projects\SenaComp\SenaComp\bin\Debug\pt\Microsoft.SqlServer.Types.resources.dll
+C:\Users\Lenovo\Documents\Visual Studio 2015\Projects\SenaComp\SenaComp\bin\Debug\ru\Microsoft.SqlServer.Types.resources.dll
+C:\Users\Lenovo\Documents\Visual Studio 2015\Projects\SenaComp\SenaComp\bin\Debug\zh-Hans\Microsoft.SqlServer.Types.resources.dll
+C:\Users\Lenovo\Documents\Visual Studio 2015\Projects\SenaComp\SenaComp\bin\Debug\zh-Hant\Microsoft.SqlServer.Types.resources.dll
+C:\Users\Lenovo\Documents\Visual Studio 2015\Projects\SenaComp\SenaComp\bin\Debug\Reportovi\rNalogP.rdlc

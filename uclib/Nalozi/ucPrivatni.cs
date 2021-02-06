@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using iflib;
+using Microsoft.Reporting.WinForms;
+using System.IO;
 
 namespace uclib.Nalozi
 {
@@ -92,6 +94,65 @@ namespace uclib.Nalozi
         private void dStampaj_Click(object sender, EventArgs e)
         {
             resetBrojNalogaTextBoxReadOnly();
+
+            //iflib.clFunkcijeRazno cfl = new clFunkcijeRazno();
+            //cfl.PrintReport(string.Empty, string.Empty, string.Empty, string.Empty, string.Empty, string.Empty,
+            //    datumDateTimePicker.Value.ToShortDateString(), brojNalogaTextBox.Text, imePrezimeTextBox.Text, kontaktTextBox.Text,
+            //    uredjajComboBox.Text, proizvodjacComboBox.Text, modelTextBox.Text, serijskiBrojTextBox.Text, ostaloTextBox.Text,
+            //    opisKvaraTextBox.Text, izvestajRichTextBox.Text);
+
+            ReportParameter[] para = new ReportParameter[]
+            {
+                new ReportParameter("parLogo", @"File:///" +  @"C:\Users\Lenovo\Desktop\KljucZlatni4.png"),
+                new ReportParameter("parNazivFirme", "2"),
+                new ReportParameter("parDelatnost", "3"),
+                new ReportParameter("parKontaktFirme", "4"),
+                new ReportParameter("parMailFirme", "5"),
+                new ReportParameter("parKlauzula", "5"),
+            };
+
+            iflib.ReportClasses.clRadniNalogPriv rcls = new iflib.ReportClasses.clRadniNalogPriv
+            {
+                Datum = datumDateTimePicker.Value.ToShortDateString(),
+                BrojNaloga = brojNalogaTextBox.Text,
+                ImePrezime = imePrezimeTextBox.Text,
+                Kontakt = kontaktTextBox.Text,
+                Uredjaj = uredjajComboBox.Text,
+                Proizvodjac = proizvodjacComboBox.Text,
+                Model = modelTextBox.Text,
+                SerijskiBroj = serijskiBrojTextBox.Text,
+                Pribor = ostaloTextBox.Text,
+                OpisKvara = opisKvaraTextBox.Text,
+                Izvestaj = izvestajRichTextBox.Text
+            };
+
+            //rpv1.LocalReport.ReportPath = @"C:\Users\MasterPro\Documents\Visual Studio 2015\Projects\SenaComp\iflib\Reportovi\rNalogP.rdlc";
+            //bsRadniNalog.Add(rcls);
+            clRadniNalogPrivBindingSource.Add(rcls);
+            //reportViewer1.LocalReport.DataSources.Clear();
+            //reportViewer1.LocalReport.DataSources.Add(new ReportDataSource("repClasses", bsRadniNalog));
+            reportViewer1.LocalReport.SetParameters(para);
+            //reportViewer1.LocalReport.LoadReportDefinition(sr);
+            //reportViewer1.LocalReport.ReportEmbeddedResource = "iflib.Reportovi.rNalogP.rdlc";
+
+
+            //reportViewer1.LocalReport.LoadReportDefinition()
+            reportViewer1.RefreshReport();
+            reportViewer1.Visible = true;
+            reportViewer1.Dock = DockStyle.Fill;
+            reportViewer1.BringToFront();
+            //PrinterSettings prs = new PrinterSettings();
+
+            //try
+            //{
+            //    reportViewer1.PrintDialog();
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show(ex.ToString());
+            //}
+            reportViewer1.RefreshReport();
+            bsRadniNalog.Clear();
         }
 
         private void dObrisi_Click(object sender, EventArgs e)
@@ -338,6 +399,7 @@ namespace uclib.Nalozi
                     //TD 2.1.c
                     chkb.CheckedChanged += new EventHandler(FlowLayoutPanel1CheckBox_CheckedChanged);
                     chkb.MouseDown += new MouseEventHandler(FlowLayoutPanel1CheckBox_MouseDown);
+                    chkb.KeyDown += new KeyEventHandler(flowLayoutPanel1CheckBox_KeyDown);
                 }
             }
 
@@ -364,6 +426,13 @@ namespace uclib.Nalozi
             editTbOstalo = true;
         }
 
+        private void flowLayoutPanel1CheckBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Space)
+            {
+                editTbOstalo = true;
+            }
+        }
 
         private void resetBrojNalogaTextBoxReadOnly()
         {

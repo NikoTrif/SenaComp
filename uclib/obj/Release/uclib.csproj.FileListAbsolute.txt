@@ -102,3 +102,7 @@ C:\Users\Lenovo\Documents\Visual Studio 2015\Projects\SenaComp\uclib\obj\Release
 C:\Users\Lenovo\Documents\Visual Studio 2015\Projects\SenaComp\uclib\obj\Release\uclib.csproj.GenerateResource.Cache
 C:\Users\Lenovo\Documents\Visual Studio 2015\Projects\SenaComp\uclib\obj\Release\uclib.dll
 C:\Users\Lenovo\Documents\Visual Studio 2015\Projects\SenaComp\uclib\obj\Release\uclib.pdb
+C:\Users\MasterPro\Documents\Visual Studio 2015\Projects\SenaComp\uclib\obj\Release\RdlCompile.cache
+C:\Users\MasterPro\Documents\Visual Studio 2015\Projects\SenaComp\uclib\obj\Release\RdlCompile.compiled
+C:\Users\MasterPro\Documents\Visual Studio 2015\Projects\SenaComp\uclib\bin\Release\Reportovi\repNalogP.rdlc
+C:\Users\MasterPro\Documents\Visual Studio 2015\Projects\SenaComp\uclib\bin\Release\Microsoft.ReportViewer.WinForms.dll

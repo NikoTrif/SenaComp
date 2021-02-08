@@ -86,3 +86,5 @@ C:\Users\Lenovo\Documents\Visual Studio 2015\Projects\SenaComp\SenaComp\obj\Rele
 C:\Users\Lenovo\Documents\Visual Studio 2015\Projects\SenaComp\SenaComp\obj\Release\SenaComp.csproj.GenerateResource.Cache
 C:\Users\Lenovo\Documents\Visual Studio 2015\Projects\SenaComp\SenaComp\obj\Release\SenaComp.exe
 C:\Users\Lenovo\Documents\Visual Studio 2015\Projects\SenaComp\SenaComp\obj\Release\SenaComp.pdb
+C:\Users\MasterPro\Documents\Visual Studio 2015\Projects\SenaComp\SenaComp\bin\Release\Reportovi\repNalogP.rdlc
+C:\Users\MasterPro\Documents\Visual Studio 2015\Projects\SenaComp\SenaComp\bin\Release\Microsoft.ReportViewer.WinForms.dll

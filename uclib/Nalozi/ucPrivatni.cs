@@ -93,6 +93,7 @@ namespace uclib.Nalozi
 
         private void dStampaj_Click(object sender, EventArgs e)
         {
+
             resetBrojNalogaTextBoxReadOnly();
 
             //iflib.clFunkcijeRazno cfl = new clFunkcijeRazno();
@@ -103,12 +104,13 @@ namespace uclib.Nalozi
 
             ReportParameter[] para = new ReportParameter[]
             {
-                new ReportParameter("parLogo", @"File:///" +  @"C:\Users\Lenovo\Desktop\KljucZlatni4.png"),
-                new ReportParameter("parNazivFirme", "2"),
-                new ReportParameter("parDelatnost", "3"),
-                new ReportParameter("parKontaktFirme", "4"),
-                new ReportParameter("parMailFirme", "5"),
-                new ReportParameter("parKlauzula", "5"),
+                new ReportParameter("pLogo", @"File:///" +  @"C:\Users\MasterPro\Desktop\Logo_prazan.png"),
+                new ReportParameter("pNazivFirme", "PC MASTER"),
+                new ReportParameter("pDelatnost", "Servis i prodaja racunara"),
+                new ReportParameter("pAdresaFirme", "Kumodraska br. 122"),
+                new ReportParameter("pKontaktFirme", "011/3980-212 060/50-30-543"),
+                new ReportParameter("pMailFirme", "pcmasterbeograd@gmail.com"),
+                new ReportParameter("pKlauzula", "Klauzulu cemo napisati kasnije")
             };
 
             iflib.ReportClasses.clRadniNalogPriv rcls = new iflib.ReportClasses.clRadniNalogPriv
@@ -134,14 +136,12 @@ namespace uclib.Nalozi
             reportViewer1.LocalReport.SetParameters(para);
             //reportViewer1.LocalReport.LoadReportDefinition(sr);
             //reportViewer1.LocalReport.ReportEmbeddedResource = "iflib.Reportovi.rNalogP.rdlc";
-
-
-            //reportViewer1.LocalReport.LoadReportDefinition()
+            
             reportViewer1.RefreshReport();
-            reportViewer1.Visible = true;
-            reportViewer1.Dock = DockStyle.Fill;
-            reportViewer1.BringToFront();
-            //PrinterSettings prs = new PrinterSettings();
+            //reportViewer1.Visible = true;
+            //reportViewer1.Dock = DockStyle.Fill;
+            //reportViewer1.BringToFront();
+
 
             //try
             //{
@@ -149,10 +149,11 @@ namespace uclib.Nalozi
             //}
             //catch (Exception ex)
             //{
+            //    //throw;
             //    MessageBox.Show(ex.ToString());
             //}
-            reportViewer1.RefreshReport();
-            bsRadniNalog.Clear();
+            //reportViewer1.RefreshReport();
+            //clRadniNalogPrivBindingSource.Clear();
         }
 
         private void dObrisi_Click(object sender, EventArgs e)
@@ -383,6 +384,22 @@ namespace uclib.Nalozi
             //G1
             naloziPTableAdapter.Update(dbSenaCompDataSet.NaloziP.Rows[naloziPDataGridView.CurrentRow.Index]);
             //tableAdapterManager.UpdateAll(dbSenaCompDataSet);
+        }
+
+        private void reportViewer1_RenderingComplete(object sender, RenderingCompleteEventArgs e)
+        {
+            //TD 2.1.j
+            try
+            {
+                reportViewer1.PrintDialog();
+            }
+            catch (Exception ex)
+            {
+                //throw;
+                MessageBox.Show(ex.ToString());
+            }
+
+            clRadniNalogPrivBindingSource.Clear();
         }
 
         public void flpDodajKontrole()

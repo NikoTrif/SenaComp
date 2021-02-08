@@ -33,8 +33,6 @@ C:\Users\MasterPro\Documents\Visual Studio 2015\Projects\SenaComp\iflib\bin\Debu
 C:\Users\MasterPro\Documents\Visual Studio 2015\Projects\SenaComp\iflib\obj\Debug\iflib.csprojResolveAssemblyReference.cache
 C:\Users\MasterPro\Documents\Visual Studio 2015\Projects\SenaComp\iflib\obj\Debug\iflib.dll
 C:\Users\MasterPro\Documents\Visual Studio 2015\Projects\SenaComp\iflib\obj\Debug\iflib.pdb
-C:\Users\MasterPro\Documents\Visual Studio 2015\Projects\SenaComp\iflib\obj\Debug\RdlCompile.cache
-C:\Users\MasterPro\Documents\Visual Studio 2015\Projects\SenaComp\iflib\obj\Debug\RdlCompile.compiled
 C:\Users\MasterPro\Documents\Visual Studio 2015\Projects\SenaComp\iflib\bin\Debug\Microsoft.ReportViewer.WinForms.dll
 C:\Users\Lenovo\Documents\Visual Studio 2015\Projects\SenaComp\iflib\bin\Debug\Microsoft.ReportViewer.WinForms.dll
 C:\Users\Lenovo\Documents\Visual Studio 2015\Projects\SenaComp\iflib\bin\Debug\Microsoft.SqlServer.Types.dll

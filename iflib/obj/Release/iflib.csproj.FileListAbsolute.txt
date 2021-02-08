@@ -22,8 +22,6 @@ C:\Users\Nikola\Documents\Visual Studio 2015\Projects\SenaComp\iflib\obj\Release
 C:\Users\MasterPro\Documents\Visual Studio 2015\Projects\SenaComp\iflib\bin\Release\iflib.dll
 C:\Users\MasterPro\Documents\Visual Studio 2015\Projects\SenaComp\iflib\bin\Release\iflib.pdb
 C:\Users\MasterPro\Documents\Visual Studio 2015\Projects\SenaComp\iflib\obj\Release\iflib.csprojResolveAssemblyReference.cache
-C:\Users\MasterPro\Documents\Visual Studio 2015\Projects\SenaComp\iflib\obj\Release\RdlCompile.cache
-C:\Users\MasterPro\Documents\Visual Studio 2015\Projects\SenaComp\iflib\obj\Release\RdlCompile.compiled
 C:\Users\MasterPro\Documents\Visual Studio 2015\Projects\SenaComp\iflib\obj\Release\iflib.dll
 C:\Users\MasterPro\Documents\Visual Studio 2015\Projects\SenaComp\iflib\obj\Release\iflib.pdb
 C:\Users\Lenovo\Documents\Visual Studio 2015\Projects\SenaComp\iflib\bin\Release\Reportovi\rNalogP.rdlc
@@ -46,3 +44,4 @@ C:\Users\Lenovo\Documents\Visual Studio 2015\Projects\SenaComp\iflib\obj\Release
 C:\Users\Lenovo\Documents\Visual Studio 2015\Projects\SenaComp\iflib\obj\Release\RdlCompile.compiled
 C:\Users\Lenovo\Documents\Visual Studio 2015\Projects\SenaComp\iflib\obj\Release\iflib.dll
 C:\Users\Lenovo\Documents\Visual Studio 2015\Projects\SenaComp\iflib\obj\Release\iflib.pdb
+C:\Users\MasterPro\Documents\Visual Studio 2015\Projects\SenaComp\iflib\bin\Release\Microsoft.ReportViewer.WinForms.dll

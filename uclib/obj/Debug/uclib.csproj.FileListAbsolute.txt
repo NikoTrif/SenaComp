@@ -112,9 +112,9 @@ C:\Users\Lenovo\Documents\Visual Studio 2015\Projects\SenaComp\uclib\bin\Debug\p
 C:\Users\Lenovo\Documents\Visual Studio 2015\Projects\SenaComp\uclib\bin\Debug\ru\Microsoft.SqlServer.Types.resources.dll
 C:\Users\Lenovo\Documents\Visual Studio 2015\Projects\SenaComp\uclib\bin\Debug\zh-Hans\Microsoft.SqlServer.Types.resources.dll
 C:\Users\Lenovo\Documents\Visual Studio 2015\Projects\SenaComp\uclib\bin\Debug\zh-Hant\Microsoft.SqlServer.Types.resources.dll
-C:\Users\Lenovo\Documents\Visual Studio 2015\Projects\SenaComp\uclib\bin\Debug\Reportovi\rNalogP.rdlc
 C:\Users\Lenovo\Documents\Visual Studio 2015\Projects\SenaComp\uclib\obj\Debug\RdlCompile.cache
 C:\Users\Lenovo\Documents\Visual Studio 2015\Projects\SenaComp\uclib\obj\Debug\RdlCompile.compiled
 C:\Users\MasterPro\Documents\Visual Studio 2015\Projects\SenaComp\uclib\obj\Debug\RdlCompile.cache
 C:\Users\MasterPro\Documents\Visual Studio 2015\Projects\SenaComp\uclib\obj\Debug\RdlCompile.compiled
 C:\Users\MasterPro\Documents\Visual Studio 2015\Projects\SenaComp\uclib\bin\Debug\Reportovi\repNalogP.rdlc
+C:\Users\Lenovo\Documents\Visual Studio 2015\Projects\SenaComp\uclib\bin\Debug\Reportovi\repNalogP.rdlc

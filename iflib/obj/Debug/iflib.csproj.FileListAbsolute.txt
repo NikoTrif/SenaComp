@@ -46,6 +46,3 @@ C:\Users\Lenovo\Documents\Visual Studio 2015\Projects\SenaComp\iflib\bin\Debug\p
 C:\Users\Lenovo\Documents\Visual Studio 2015\Projects\SenaComp\iflib\bin\Debug\ru\Microsoft.SqlServer.Types.resources.dll
 C:\Users\Lenovo\Documents\Visual Studio 2015\Projects\SenaComp\iflib\bin\Debug\zh-Hans\Microsoft.SqlServer.Types.resources.dll
 C:\Users\Lenovo\Documents\Visual Studio 2015\Projects\SenaComp\iflib\bin\Debug\zh-Hant\Microsoft.SqlServer.Types.resources.dll
-C:\Users\Lenovo\Documents\Visual Studio 2015\Projects\SenaComp\iflib\obj\Debug\RdlCompile.cache
-C:\Users\Lenovo\Documents\Visual Studio 2015\Projects\SenaComp\iflib\obj\Debug\RdlCompile.compiled
-C:\Users\Lenovo\Documents\Visual Studio 2015\Projects\SenaComp\iflib\bin\Debug\Reportovi\rNalogP.rdlc

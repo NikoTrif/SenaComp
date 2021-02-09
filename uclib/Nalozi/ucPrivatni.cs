@@ -93,15 +93,8 @@ namespace uclib.Nalozi
 
         private void dStampaj_Click(object sender, EventArgs e)
         {
-
             resetBrojNalogaTextBoxReadOnly();
-
-            //iflib.clFunkcijeRazno cfl = new clFunkcijeRazno();
-            //cfl.PrintReport(string.Empty, string.Empty, string.Empty, string.Empty, string.Empty, string.Empty,
-            //    datumDateTimePicker.Value.ToShortDateString(), brojNalogaTextBox.Text, imePrezimeTextBox.Text, kontaktTextBox.Text,
-            //    uredjajComboBox.Text, proizvodjacComboBox.Text, modelTextBox.Text, serijskiBrojTextBox.Text, ostaloTextBox.Text,
-            //    opisKvaraTextBox.Text, izvestajRichTextBox.Text);
-
+            
             ReportParameter[] para = new ReportParameter[]
             {
                 new ReportParameter("pLogo", @"File:///" +  @"C:\Users\MasterPro\Desktop\Logo_prazan.png"),
@@ -128,32 +121,10 @@ namespace uclib.Nalozi
                 Izvestaj = izvestajRichTextBox.Text
             };
 
-            //rpv1.LocalReport.ReportPath = @"C:\Users\MasterPro\Documents\Visual Studio 2015\Projects\SenaComp\iflib\Reportovi\rNalogP.rdlc";
-            //bsRadniNalog.Add(rcls);
             clRadniNalogPrivBindingSource.Add(rcls);
-            //reportViewer1.LocalReport.DataSources.Clear();
-            //reportViewer1.LocalReport.DataSources.Add(new ReportDataSource("repClasses", bsRadniNalog));
             reportViewer1.LocalReport.SetParameters(para);
-            //reportViewer1.LocalReport.LoadReportDefinition(sr);
-            //reportViewer1.LocalReport.ReportEmbeddedResource = "iflib.Reportovi.rNalogP.rdlc";
             
             reportViewer1.RefreshReport();
-            //reportViewer1.Visible = true;
-            //reportViewer1.Dock = DockStyle.Fill;
-            //reportViewer1.BringToFront();
-
-
-            //try
-            //{
-            //    reportViewer1.PrintDialog();
-            //}
-            //catch (Exception ex)
-            //{
-            //    //throw;
-            //    MessageBox.Show(ex.ToString());
-            //}
-            //reportViewer1.RefreshReport();
-            //clRadniNalogPrivBindingSource.Clear();
         }
 
         private void dObrisi_Click(object sender, EventArgs e)
@@ -395,11 +366,34 @@ namespace uclib.Nalozi
             }
             catch (Exception ex)
             {
-                //throw;
                 MessageBox.Show(ex.ToString());
             }
 
             clRadniNalogPrivBindingSource.Clear();
+        }
+
+        private void izvestajRichTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //TD 3.1.b
+            if (izvestajRichTextBox.Lines.Length <= 5)
+            {
+                try
+                {
+                    if (izvestajRichTextBox.Lines[izvestajRichTextBox.GetLineFromCharIndex(izvestajRichTextBox.SelectionStart)].Length >= 64 &&
+                                e.KeyChar != '\b')
+                    {
+                        izvestajRichTextBox.Text = izvestajRichTextBox.Text + Environment.NewLine;
+                        izvestajRichTextBox.SelectionStart = izvestajRichTextBox.Text.Length;
+                    }
+                }
+                catch { }
+            }
+            else
+            {
+                // G 10
+                e.Handled = true;
+                MessageBox.Show("Izveštaj ne može imati više od 5 redova.", "Greška!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         public void flpDodajKontrole()

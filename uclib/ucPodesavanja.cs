@@ -37,11 +37,22 @@ namespace uclib
                     Opcije.Osnovno.ucUredjaji ur = new Opcije.Osnovno.ucUredjaji();
                     if (pOptMain.Controls.Count != 0)
                     {
-                        pOptMain.Controls.Clear(); 
+                        pOptMain.Controls.Clear();
                     }
                     pOptMain.Controls.Add(ur);
                     ur.Dock = DockStyle.Fill;
                     ur.BringToFront();
+                    break;
+
+                case "Podaci Firme":
+                    ucPodaciFirme pf = new ucPodaciFirme();
+                    if (pOptMain.Controls.Count != 0)
+                    {
+                        pOptMain.Controls.Clear();
+                    }
+                    pOptMain.Controls.Add(pf);
+                    pf.Dock = DockStyle.Fill;
+                    pf.BringToFront();
                     break;
             }
         }

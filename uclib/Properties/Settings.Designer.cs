@@ -66,5 +66,89 @@ namespace uclib.Properties {
                 this["Proizvodjaci"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string Logo {
+            get {
+                return ((string)(this["Logo"]));
+            }
+            set {
+                this["Logo"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string NazivFirme {
+            get {
+                return ((string)(this["NazivFirme"]));
+            }
+            set {
+                this["NazivFirme"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string Delatnost {
+            get {
+                return ((string)(this["Delatnost"]));
+            }
+            set {
+                this["Delatnost"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string Adresa {
+            get {
+                return ((string)(this["Adresa"]));
+            }
+            set {
+                this["Adresa"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string Telefon {
+            get {
+                return ((string)(this["Telefon"]));
+            }
+            set {
+                this["Telefon"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string eMail {
+            get {
+                return ((string)(this["eMail"]));
+            }
+            set {
+                this["eMail"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string TekuciRacun {
+            get {
+                return ((string)(this["TekuciRacun"]));
+            }
+            set {
+                this["TekuciRacun"] = value;
+            }
+        }
     }
 }

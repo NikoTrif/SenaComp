@@ -16,5 +16,20 @@ namespace uclib.Opcije
         {
             InitializeComponent();
         }
+
+        private void dBrowse_Click(object sender, EventArgs e)
+        {
+            using (OpenFileDialog ofd = new OpenFileDialog()
+            {
+                InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyPictures),
+                Filter = "Slika *.jpg, *.jpeg, *.png, *.bmp | *.jpg; *.jpeg; *.png; *.bmp | Sve | *.*",
+                FilterIndex = 1
+            })
+            {
+                ofd.ShowDialog();
+                tbLogo.Text = ofd.FileName.ToString();
+                pbSetLogo.ImageLocation = tbLogo.Text;
+            }
+        }
     }
 }

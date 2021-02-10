@@ -98,13 +98,13 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>6.7249cm</Width>
+              <Width>6.87042cm</Width>
             </TablixColumn>
             <TablixColumn>
               <Width>2.12958cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>6.7249cm</Width>
+              <Width>6.57937cm</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
@@ -113,21 +113,21 @@
               <TablixCells>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox1">
+                    <Textbox Name="Uredjaj">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>AAAAAAAAAAAAAAAAAAAAAAAAAAA</Value>
+                              <Value>=Fields!Uredjaj.Value</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox1</rd:DefaultName>
+                      <rd:DefaultName>Uredjaj</rd:DefaultName>
                       <Style>
                         <Border>
                           <Style>Solid</Style>
@@ -150,9 +150,7 @@
                           <TextRuns>
                             <TextRun>
                               <Value>Proizvođač:</Value>
-                              <Style>
-                                <FontWeight>Normal</FontWeight>
-                              </Style>
+                              <Style />
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -180,7 +178,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>AAAAAAAAAAAAAAAAAAAAAAAAAAA</Value>
+                              <Value>=Fields!Proizvodjac.Value</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -207,21 +205,21 @@
               <TablixCells>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox4">
+                    <Textbox Name="Model">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>AAAAAAAAAAAAAAAAAAAAAAAAAAA</Value>
+                              <Value>=Fields!Model.Value</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox4</rd:DefaultName>
+                      <rd:DefaultName>Model</rd:DefaultName>
                       <Style>
                         <Border>
                           <Style>Solid</Style>
@@ -244,9 +242,7 @@
                           <TextRuns>
                             <TextRun>
                               <Value>Serijski broj:</Value>
-                              <Style>
-                                <FontWeight>Normal</FontWeight>
-                              </Style>
+                              <Style />
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -274,7 +270,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>AAAAAAAAAAAAAAAAAAAAAAAAAAA</Value>
+                              <Value>=Fields!SerijskiBroj.Value</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -308,7 +304,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</Value>
+                              <Value>=Fields!Pribor.Value</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -348,7 +344,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</Value>
+                              <Value>=Fields!OpisKvara.Value</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -385,7 +381,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</Value>
+                              <Value>=Fields!Izvestaj.Value</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -433,9 +429,7 @@
                         <TextRuns>
                           <TextRun>
                             <Value>Uređaj:</Value>
-                            <Style>
-                              <FontWeight>Normal</FontWeight>
-                            </Style>
+                            <Style />
                           </TextRun>
                         </TextRuns>
                         <Style />
@@ -467,9 +461,7 @@
                         <TextRuns>
                           <TextRun>
                             <Value>Model:</Value>
-                            <Style>
-                              <FontWeight>Normal</FontWeight>
-                            </Style>
+                            <Style />
                           </TextRun>
                         </TextRuns>
                         <Style />
@@ -501,9 +493,7 @@
                         <TextRuns>
                           <TextRun>
                             <Value>Pribor:</Value>
-                            <Style>
-                              <FontWeight>Normal</FontWeight>
-                            </Style>
+                            <Style />
                           </TextRun>
                         </TextRuns>
                         <Style />
@@ -538,9 +528,7 @@
                         <TextRuns>
                           <TextRun>
                             <Value>Opis kvara:</Value>
-                            <Style>
-                              <FontWeight>Normal</FontWeight>
-                            </Style>
+                            <Style />
                           </TextRun>
                         </TextRuns>
                         <Style />
@@ -572,9 +560,7 @@
                         <TextRuns>
                           <TextRun>
                             <Value>Izveštaj:</Value>
-                            <Style>
-                              <FontWeight>Normal</FontWeight>
-                            </Style>
+                            <Style />
                           </TextRun>
                         </TextRuns>
                         <Style />
@@ -600,7 +586,7 @@
         <Top>3.7721cm</Top>
         <Left>0.02645cm</Left>
         <Height>4.66688cm</Height>
-        <Width>17.70896cm</Width>
+        <Width>17.70895cm</Width>
         <ZIndex>2</ZIndex>
         <Style>
           <Border>
@@ -620,9 +606,7 @@
               </TextRun>
               <TextRun>
                 <Value>=Fields!BrojNaloga.Value</Value>
-                <Style>
-                  <FontWeight>Bold</FontWeight>
-                </Style>
+                <Style />
               </TextRun>
             </TextRuns>
             <Style />
@@ -655,10 +639,8 @@
                 <Style />
               </TextRun>
               <TextRun>
-                <Value>AAAAAAAAAAAAAAAAAAAAAAAA</Value>
-                <Style>
-                  <FontWeight>Bold</FontWeight>
-                </Style>
+                <Value>=Fields!ImePrezime.Value</Value>
+                <Style />
               </TextRun>
             </TextRuns>
             <Style />
@@ -691,10 +673,8 @@
                 <Style />
               </TextRun>
               <TextRun>
-                <Value>AAAAAAAAAAAAAAAAAAAA</Value>
-                <Style>
-                  <FontWeight>Bold</FontWeight>
-                </Style>
+                <Value>=Fields!Kontakt.Value</Value>
+                <Style />
               </TextRun>
             </TextRuns>
             <Style />
@@ -723,7 +703,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</Value>
+                <Value>=Parameters!pKlauzula.Value</Value>
                 <Style />
               </TextRun>
             </TextRuns>
@@ -733,7 +713,7 @@
         <rd:DefaultName>Textbox52</rd:DefaultName>
         <Top>8.50953cm</Top>
         <Left>0.02645cm</Left>
-        <Height>3.5523cm</Height>
+        <Height>3.3759cm</Height>
         <Width>17.70895cm</Width>
         <ZIndex>6</ZIndex>
         <Style>
@@ -943,13 +923,13 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>6.7249cm</Width>
+              <Width>6.87042cm</Width>
             </TablixColumn>
             <TablixColumn>
               <Width>2.12958cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>6.75135cm</Width>
+              <Width>6.60582cm</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
@@ -1430,7 +1410,7 @@
         <DataSetName>dsNalog</DataSetName>
         <Top>17.75913cm</Top>
         <Height>4.66688cm</Height>
-        <Width>17.73541cm</Width>
+        <Width>17.7354cm</Width>
         <ZIndex>12</ZIndex>
         <Style>
           <Border>
@@ -1693,10 +1673,10 @@
     <PageWidth>21cm</PageWidth>
     <InteractiveHeight>29.7cm</InteractiveHeight>
     <InteractiveWidth>21cm</InteractiveWidth>
-    <LeftMargin>1cm</LeftMargin>
-    <RightMargin>1cm</RightMargin>
-    <TopMargin>1cm</TopMargin>
-    <BottomMargin>1cm</BottomMargin>
+    <LeftMargin>2cm</LeftMargin>
+    <RightMargin>2cm</RightMargin>
+    <TopMargin>2cm</TopMargin>
+    <BottomMargin>2cm</BottomMargin>
     <ColumnSpacing>0.13cm</ColumnSpacing>
     <Style />
   </Page>

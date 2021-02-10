@@ -9,5 +9,8 @@
 &lt;/SerializableConnectionString&gt;</DesignTimeValue>
       <Value Profile="(Default)">Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename="|DataDirectory|\dbSenaComp.mdf";Password=Master1!</Value>
     </Setting>
+    <Setting Name="LogoPath" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
   </Settings>
 </SettingsFile>

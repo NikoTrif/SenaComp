@@ -81,7 +81,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <None Include="Properties\Settings.settings">
-      <Generator>SettingsSingleFileGenerator</Generator>
+      <Generator>PublicSettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <Compile Include="Properties\Settings.Designer.cs">
@@ -115,10 +115,6 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\iflib\iflib.csproj">
-      <Project>{55306185-34ea-4193-bf2a-9dcdd21c41c2}</Project>
-      <Name>iflib</Name>
-    </ProjectReference>
     <ProjectReference Include="..\uclib\uclib.csproj">
       <Project>{fa7bd8e0-c04b-4446-978a-0c3b3485cff8}</Project>
       <Name>uclib</Name>

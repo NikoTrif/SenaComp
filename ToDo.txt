@@ -36,7 +36,7 @@ kada se trazi u kodu - npr. "RG1", "TD3.1.2", "G2"
 	   3.   |Z|UC za podesavanja sa TreeView-om: program (smestiti dodavanje u listu uredjaja, proizvodjaca i opreme), podaci firme (naziv, delatnost, adresa, pib, tekuci racun), klauzula, baza
 	          a) opsta podesavanja - prikaz vremena u bazi i na nalogu, prikaz cene servisa na nalogu
 			  |R|b) dodavanje u listu uredjaja, proizvodjaca i opreme - liste uredjaja i proizvodjaca sortiraj po abecednom redu
-			  |Z|c) podaci firme - naziv, delatnost, adresa, PIB, tekuci racun
+			  |R|c) podaci firme - naziv, delatnost, adresa, PIB, tekuci racun
 			  d) klauzula
 			  e) baza
 			  f) dodati slicice(ikonice)
@@ -55,7 +55,7 @@ kada se trazi u kodu - npr. "RG1", "TD3.1.2", "G2"
        |Z|1.   Radni nalog za privatne korisnike
 			|R|a) prebrojati koliko je karaktera moguce da stane u svaku stavku, pa ograniciti textboxove
 			|R|b) ograniciti rtbIzvestaj na max 5 redova
-			c) uredi da se parametri vuku iz podesavanja
+			|Z|c) uredi da se parametri vuku iz podesavanja
 	   2.   Radni nalog za firme
 	   3.   Izvestaj o zaradi
 	   4.   Profaktura
@@ -163,3 +163,5 @@ kada se trazi u kodu - npr. "RG1", "TD3.1.2", "G2"
 		 - TD 2.3.c - uclib.Opcije.ucPodaciFirme - zapoceto uredjivanje
 
 10.02.21 - TD 2.3.c - dodata podesavanja u uclib.settings i povezana sa textBox-ovima
+		 - TD 2.3.c - uclib.ucPodaciFirme - zavrseno
+		 - TD 3.1.c - uclib.ucPrivatni.dStampaj_Click - sve povezano sa podesavanjima osim klauzule

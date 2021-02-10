@@ -31,5 +31,10 @@ namespace uclib.Opcije
                 pbSetLogo.ImageLocation = tbLogo.Text;
             }
         }
+
+        private void dApply_Click(object sender, EventArgs e)
+        {
+            Properties.Settings.Default.Save();
+        }
     }
 }

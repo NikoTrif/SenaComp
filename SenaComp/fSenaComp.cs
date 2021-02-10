@@ -8,15 +8,12 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using uclib;
-using iflib;
 
 namespace SenaComp
 {
     public partial class fSenaComp : Form
     {
         bool menuOtvoren = false;
-
-        clPodesavanja pod = new clPodesavanja();
 
         public fSenaComp()
         {
@@ -25,7 +22,7 @@ namespace SenaComp
 
         private void fSenaComp_Load(object sender, EventArgs e)
         {
-
+            
         }
 
         private void dMenu_Click(object sender, EventArgs e)

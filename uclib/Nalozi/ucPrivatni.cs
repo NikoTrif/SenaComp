@@ -95,14 +95,15 @@ namespace uclib.Nalozi
         {
             resetBrojNalogaTextBoxReadOnly();
             
+            //TD 3.1.c
             ReportParameter[] para = new ReportParameter[]
             {
-                new ReportParameter("pLogo", @"File:///" +  @"C:\Users\MasterPro\Desktop\Logo_prazan.png"),
-                new ReportParameter("pNazivFirme", "PC MASTER"),
-                new ReportParameter("pDelatnost", "Servis i prodaja racunara"),
-                new ReportParameter("pAdresaFirme", "Kumodraska br. 122"),
-                new ReportParameter("pKontaktFirme", "011/3980-212 060/50-30-543"),
-                new ReportParameter("pMailFirme", "pcmasterbeograd@gmail.com"),
+                new ReportParameter("pLogo", @"File:///" +  Properties.Settings.Default.Logo),
+                new ReportParameter("pNazivFirme", Properties.Settings.Default.NazivFirme),
+                new ReportParameter("pDelatnost", Properties.Settings.Default.Delatnost),
+                new ReportParameter("pAdresaFirme", Properties.Settings.Default.Adresa),
+                new ReportParameter("pKontaktFirme", Properties.Settings.Default.Telefon),
+                new ReportParameter("pMailFirme", Properties.Settings.Default.eMail),
                 new ReportParameter("pKlauzula", "Klauzulu cemo napisati kasnije")
             };
 

@@ -79,5 +79,10 @@ namespace iflib
 
             return tbOprema;
         }
+
+        public void ProslediPodesavanjaLogo(string logo)
+        {
+
+        }
     }
 }

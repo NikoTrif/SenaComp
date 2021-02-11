@@ -22,7 +22,8 @@ namespace SenaComp
 
         private void fSenaComp_Load(object sender, EventArgs e)
         {
-            
+            pbLogo.ImageLocation = uclib.Properties.SettLogo.Default.Logo;
+            pbLogo.Refresh();
         }
 
         private void dMenu_Click(object sender, EventArgs e)
@@ -105,11 +106,6 @@ namespace SenaComp
         }
 
         private void dFirme_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pMain_Paint(object sender, PaintEventArgs e)
         {
 
         }

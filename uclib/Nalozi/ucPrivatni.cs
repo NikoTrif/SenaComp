@@ -98,7 +98,7 @@ namespace uclib.Nalozi
             //TD 3.1.c
             ReportParameter[] para = new ReportParameter[]
             {
-                new ReportParameter("pLogo", @"File:///" +  Properties.Settings.Default.Logo),
+                new ReportParameter("pLogo", @"File:///" +  Properties.SettLogo.Default.Logo),
                 new ReportParameter("pNazivFirme", Properties.Settings.Default.NazivFirme),
                 new ReportParameter("pDelatnost", Properties.Settings.Default.Delatnost),
                 new ReportParameter("pAdresaFirme", Properties.Settings.Default.Adresa),

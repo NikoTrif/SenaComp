@@ -35,6 +35,8 @@ namespace uclib.Opcije
         private void dApply_Click(object sender, EventArgs e)
         {
             Properties.Settings.Default.Save();
+            Properties.SettLogo.Default.Logo = Properties.Settings.Default.Logo;
+            Properties.SettLogo.Default.Save();
         }
     }
 }

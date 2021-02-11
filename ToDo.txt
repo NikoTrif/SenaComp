@@ -165,3 +165,5 @@ kada se trazi u kodu - npr. "RG1", "TD3.1.2", "G2"
 10.02.21 - TD 2.3.c - dodata podesavanja u uclib.settings i povezana sa textBox-ovima
 		 - TD 2.3.c - uclib.ucPodaciFirme - zavrseno
 		 - TD 3.1.c - uclib.ucPrivatni.dStampaj_Click - sve povezano sa podesavanjima osim klauzule
+
+11.02.21 - - - - - - -ucLib.Properties - napravljen settings file SettLogo sa podesavanjem za logo koji je public i koji moze koristiti i SenaComp

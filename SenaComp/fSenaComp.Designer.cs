@@ -45,7 +45,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.tMenu = new System.Windows.Forms.Timer(this.components);
-            this.pMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
             this.pMenu.SuspendLayout();
             this.SuspendLayout();
@@ -53,7 +52,7 @@
             // dMenu
             // 
             this.dMenu.Location = new System.Drawing.Point(11, 11);
-            this.dMenu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dMenu.Margin = new System.Windows.Forms.Padding(2);
             this.dMenu.Name = "dMenu";
             this.dMenu.Size = new System.Drawing.Size(46, 46);
             this.dMenu.TabIndex = 0;
@@ -65,19 +64,17 @@
             // 
             this.pMain.BackColor = System.Drawing.SystemColors.Control;
             this.pMain.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pMain.Controls.Add(this.pbLogo);
             this.pMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pMain.Location = new System.Drawing.Point(0, 0);
-            this.pMain.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pMain.Margin = new System.Windows.Forms.Padding(2);
             this.pMain.Name = "pMain";
             this.pMain.Size = new System.Drawing.Size(1055, 646);
             this.pMain.TabIndex = 1;
-            this.pMain.Paint += new System.Windows.Forms.PaintEventHandler(this.pMain_Paint);
             // 
             // pbLogo
             // 
             this.pbLogo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pbLogo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pbLogo.ImageLocation = "";
             this.pbLogo.Location = new System.Drawing.Point(869, 126);
             this.pbLogo.Name = "pbLogo";
             this.pbLogo.Size = new System.Drawing.Size(175, 175);
@@ -101,7 +98,7 @@
             this.pMenu.Controls.Add(this.label1);
             this.pMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.pMenu.Location = new System.Drawing.Point(0, 0);
-            this.pMenu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pMenu.Margin = new System.Windows.Forms.Padding(2);
             this.pMenu.Name = "pMenu";
             this.pMenu.Size = new System.Drawing.Size(0, 646);
             this.pMenu.TabIndex = 2;
@@ -113,7 +110,7 @@
             this.dPodesavanja.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.dPodesavanja.ForeColor = System.Drawing.Color.White;
             this.dPodesavanja.Location = new System.Drawing.Point(-56, 590);
-            this.dPodesavanja.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dPodesavanja.Margin = new System.Windows.Forms.Padding(2);
             this.dPodesavanja.Name = "dPodesavanja";
             this.dPodesavanja.Size = new System.Drawing.Size(43, 46);
             this.dPodesavanja.TabIndex = 0;
@@ -272,13 +269,13 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1055, 646);
+            this.Controls.Add(this.pbLogo);
             this.Controls.Add(this.dMenu);
             this.Controls.Add(this.pMenu);
             this.Controls.Add(this.pMain);
             this.Name = "fSenaComp";
             this.Text = "SenaComp";
             this.Load += new System.EventHandler(this.fSenaComp_Load);
-            this.pMain.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).EndInit();
             this.pMenu.ResumeLayout(false);
             this.pMenu.PerformLayout();

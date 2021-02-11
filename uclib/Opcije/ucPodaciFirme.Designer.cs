@@ -31,21 +31,21 @@
             this.label1 = new System.Windows.Forms.Label();
             this.tbLogo = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.tbFirma = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.tbDelatnost = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.tbAdresa = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.tbTelefon = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.tbMail = new System.Windows.Forms.TextBox();
             this.pbSetLogo = new System.Windows.Forms.PictureBox();
             this.dBrowse = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
-            this.tbTekuciRacun = new System.Windows.Forms.TextBox();
             this.dApply = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.tbTekuciRacun = new System.Windows.Forms.TextBox();
+            this.tbMail = new System.Windows.Forms.TextBox();
+            this.tbTelefon = new System.Windows.Forms.TextBox();
+            this.tbAdresa = new System.Windows.Forms.TextBox();
+            this.tbDelatnost = new System.Windows.Forms.TextBox();
+            this.tbFirma = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pbSetLogo)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -83,17 +83,6 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "Naziv firme:";
             // 
-            // tbFirma
-            // 
-            this.tbFirma.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbFirma.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::uclib.Properties.Settings.Default, "NazivFirme", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.tbFirma.Location = new System.Drawing.Point(83, 25);
-            this.tbFirma.Margin = new System.Windows.Forms.Padding(2);
-            this.tbFirma.Name = "tbFirma";
-            this.tbFirma.Size = new System.Drawing.Size(173, 20);
-            this.tbFirma.TabIndex = 3;
-            this.tbFirma.Text = global::uclib.Properties.Settings.Default.NazivFirme;
-            // 
             // label3
             // 
             this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
@@ -104,17 +93,6 @@
             this.label3.Size = new System.Drawing.Size(77, 13);
             this.label3.TabIndex = 0;
             this.label3.Text = "Delatnost:";
-            // 
-            // tbDelatnost
-            // 
-            this.tbDelatnost.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbDelatnost.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::uclib.Properties.Settings.Default, "Delatnost", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.tbDelatnost.Location = new System.Drawing.Point(83, 48);
-            this.tbDelatnost.Margin = new System.Windows.Forms.Padding(2);
-            this.tbDelatnost.Name = "tbDelatnost";
-            this.tbDelatnost.Size = new System.Drawing.Size(173, 20);
-            this.tbDelatnost.TabIndex = 4;
-            this.tbDelatnost.Text = global::uclib.Properties.Settings.Default.Delatnost;
             // 
             // label4
             // 
@@ -127,17 +105,6 @@
             this.label4.TabIndex = 0;
             this.label4.Text = "Adresa:";
             // 
-            // tbAdresa
-            // 
-            this.tbAdresa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbAdresa.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::uclib.Properties.Settings.Default, "Adresa", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.tbAdresa.Location = new System.Drawing.Point(83, 71);
-            this.tbAdresa.Margin = new System.Windows.Forms.Padding(2);
-            this.tbAdresa.Name = "tbAdresa";
-            this.tbAdresa.Size = new System.Drawing.Size(173, 20);
-            this.tbAdresa.TabIndex = 5;
-            this.tbAdresa.Text = global::uclib.Properties.Settings.Default.Adresa;
-            // 
             // label5
             // 
             this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
@@ -149,17 +116,6 @@
             this.label5.TabIndex = 0;
             this.label5.Text = "Telefon:";
             // 
-            // tbTelefon
-            // 
-            this.tbTelefon.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbTelefon.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::uclib.Properties.Settings.Default, "Telefon", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.tbTelefon.Location = new System.Drawing.Point(83, 94);
-            this.tbTelefon.Margin = new System.Windows.Forms.Padding(2);
-            this.tbTelefon.Name = "tbTelefon";
-            this.tbTelefon.Size = new System.Drawing.Size(173, 20);
-            this.tbTelefon.TabIndex = 6;
-            this.tbTelefon.Text = global::uclib.Properties.Settings.Default.Telefon;
-            // 
             // label6
             // 
             this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
@@ -170,17 +126,6 @@
             this.label6.Size = new System.Drawing.Size(77, 13);
             this.label6.TabIndex = 0;
             this.label6.Text = "e-mail:";
-            // 
-            // tbMail
-            // 
-            this.tbMail.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbMail.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::uclib.Properties.Settings.Default, "eMail", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.tbMail.Location = new System.Drawing.Point(83, 117);
-            this.tbMail.Margin = new System.Windows.Forms.Padding(2);
-            this.tbMail.Name = "tbMail";
-            this.tbMail.Size = new System.Drawing.Size(173, 20);
-            this.tbMail.TabIndex = 7;
-            this.tbMail.Text = global::uclib.Properties.Settings.Default.eMail;
             // 
             // pbSetLogo
             // 
@@ -219,17 +164,6 @@
             this.label7.TabIndex = 0;
             this.label7.Text = "Tekući račun:";
             // 
-            // tbTekuciRacun
-            // 
-            this.tbTekuciRacun.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbTekuciRacun.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::uclib.Properties.Settings.Default, "TekuciRacun", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.tbTekuciRacun.Location = new System.Drawing.Point(83, 140);
-            this.tbTekuciRacun.Margin = new System.Windows.Forms.Padding(2);
-            this.tbTekuciRacun.Name = "tbTekuciRacun";
-            this.tbTekuciRacun.Size = new System.Drawing.Size(173, 20);
-            this.tbTekuciRacun.TabIndex = 8;
-            this.tbTekuciRacun.Text = global::uclib.Properties.Settings.Default.TekuciRacun;
-            // 
             // dApply
             // 
             this.dApply.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -247,7 +181,7 @@
             this.tableLayoutPanel1.ColumnCount = 3;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 31.39535F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 68.60465F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 28F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 29F));
             this.tableLayoutPanel1.Controls.Add(this.label1, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.label2, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.dBrowse, 2, 0);
@@ -275,6 +209,72 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(287, 163);
             this.tableLayoutPanel1.TabIndex = 10;
+            // 
+            // tbTekuciRacun
+            // 
+            this.tbTekuciRacun.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbTekuciRacun.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::uclib.Properties.Settings.Default, "TekuciRacun", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.tbTekuciRacun.Location = new System.Drawing.Point(83, 140);
+            this.tbTekuciRacun.Margin = new System.Windows.Forms.Padding(2);
+            this.tbTekuciRacun.Name = "tbTekuciRacun";
+            this.tbTekuciRacun.Size = new System.Drawing.Size(173, 20);
+            this.tbTekuciRacun.TabIndex = 8;
+            this.tbTekuciRacun.Text = global::uclib.Properties.Settings.Default.TekuciRacun;
+            // 
+            // tbMail
+            // 
+            this.tbMail.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbMail.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::uclib.Properties.Settings.Default, "eMail", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.tbMail.Location = new System.Drawing.Point(83, 117);
+            this.tbMail.Margin = new System.Windows.Forms.Padding(2);
+            this.tbMail.Name = "tbMail";
+            this.tbMail.Size = new System.Drawing.Size(173, 20);
+            this.tbMail.TabIndex = 7;
+            this.tbMail.Text = global::uclib.Properties.Settings.Default.eMail;
+            // 
+            // tbTelefon
+            // 
+            this.tbTelefon.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbTelefon.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::uclib.Properties.Settings.Default, "Telefon", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.tbTelefon.Location = new System.Drawing.Point(83, 94);
+            this.tbTelefon.Margin = new System.Windows.Forms.Padding(2);
+            this.tbTelefon.Name = "tbTelefon";
+            this.tbTelefon.Size = new System.Drawing.Size(173, 20);
+            this.tbTelefon.TabIndex = 6;
+            this.tbTelefon.Text = global::uclib.Properties.Settings.Default.Telefon;
+            // 
+            // tbAdresa
+            // 
+            this.tbAdresa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbAdresa.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::uclib.Properties.Settings.Default, "Adresa", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.tbAdresa.Location = new System.Drawing.Point(83, 71);
+            this.tbAdresa.Margin = new System.Windows.Forms.Padding(2);
+            this.tbAdresa.Name = "tbAdresa";
+            this.tbAdresa.Size = new System.Drawing.Size(173, 20);
+            this.tbAdresa.TabIndex = 5;
+            this.tbAdresa.Text = global::uclib.Properties.Settings.Default.Adresa;
+            // 
+            // tbDelatnost
+            // 
+            this.tbDelatnost.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbDelatnost.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::uclib.Properties.Settings.Default, "Delatnost", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.tbDelatnost.Location = new System.Drawing.Point(83, 48);
+            this.tbDelatnost.Margin = new System.Windows.Forms.Padding(2);
+            this.tbDelatnost.Name = "tbDelatnost";
+            this.tbDelatnost.Size = new System.Drawing.Size(173, 20);
+            this.tbDelatnost.TabIndex = 4;
+            this.tbDelatnost.Text = global::uclib.Properties.Settings.Default.Delatnost;
+            // 
+            // tbFirma
+            // 
+            this.tbFirma.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbFirma.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::uclib.Properties.Settings.Default, "NazivFirme", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.tbFirma.Location = new System.Drawing.Point(83, 25);
+            this.tbFirma.Margin = new System.Windows.Forms.Padding(2);
+            this.tbFirma.Name = "tbFirma";
+            this.tbFirma.Size = new System.Drawing.Size(173, 20);
+            this.tbFirma.TabIndex = 3;
+            this.tbFirma.Text = global::uclib.Properties.Settings.Default.NazivFirme;
             // 
             // ucPodaciFirme
             // 

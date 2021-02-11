@@ -150,5 +150,17 @@ namespace uclib.Properties {
                 this["Logo"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string Klauzula {
+            get {
+                return ((string)(this["Klauzula"]));
+            }
+            set {
+                this["Klauzula"] = value;
+            }
+        }
     }
 }

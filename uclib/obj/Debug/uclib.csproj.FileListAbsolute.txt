@@ -103,3 +103,4 @@ C:\Users\MasterPro\Documents\Visual Studio 2015\Projects\SenaComp\uclib\obj\Debu
 C:\Users\MasterPro\Documents\Visual Studio 2015\Projects\SenaComp\uclib\bin\Debug\Reportovi\repNalogP.rdlc
 C:\Users\Lenovo\Documents\Visual Studio 2015\Projects\SenaComp\uclib\bin\Debug\Reportovi\repNalogP.rdlc
 C:\Users\MasterPro\Documents\Visual Studio 2015\Projects\SenaComp\uclib\obj\Debug\uclib.Opcije.ucPodaciFirme.resources
+C:\Users\Lenovo\Documents\Visual Studio 2015\Projects\SenaComp\uclib\obj\Debug\uclib.Opcije.ucPodaciFirme.resources

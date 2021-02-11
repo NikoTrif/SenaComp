@@ -104,7 +104,7 @@ namespace uclib.Nalozi
                 new ReportParameter("pAdresaFirme", Properties.Settings.Default.Adresa),
                 new ReportParameter("pKontaktFirme", Properties.Settings.Default.Telefon),
                 new ReportParameter("pMailFirme", Properties.Settings.Default.eMail),
-                new ReportParameter("pKlauzula", "Klauzulu cemo napisati kasnije")
+                new ReportParameter("pKlauzula", Properties.Settings.Default.Klauzula)
             };
 
             iflib.ReportClasses.clRadniNalogPriv rcls = new iflib.ReportClasses.clRadniNalogPriv

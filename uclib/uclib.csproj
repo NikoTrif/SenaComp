@@ -120,6 +120,12 @@
     <Compile Include="Opcije\Osnovno\ucUredjaji.Designer.cs">
       <DependentUpon>ucUredjaji.cs</DependentUpon>
     </Compile>
+    <Compile Include="Opcije\ucKlauzula.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Opcije\ucKlauzula.Designer.cs">
+      <DependentUpon>ucKlauzula.cs</DependentUpon>
+    </Compile>
     <Compile Include="Opcije\ucPodaciFirme.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -190,6 +196,9 @@
     <EmbeddedResource Include="Opcije\Osnovno\ucUredjaji.resx">
       <DependentUpon>ucUredjaji.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Opcije\ucKlauzula.resx">
+      <DependentUpon>ucKlauzula.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Opcije\ucPodaciFirme.resx">
       <DependentUpon>ucPodaciFirme.cs</DependentUpon>
     </EmbeddedResource>
@@ -199,6 +208,9 @@
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportovi\repNalogP - Copy.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportovi\repNalogP.rdlc">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

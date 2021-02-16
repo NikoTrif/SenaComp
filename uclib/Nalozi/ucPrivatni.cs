@@ -454,5 +454,10 @@ namespace uclib.Nalozi
                 izmeniBrojNalogaToolStripMenuItem.Checked = false;
             }
         }
+
+        private void imePrezimeTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

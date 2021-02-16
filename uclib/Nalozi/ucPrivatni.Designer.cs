@@ -86,7 +86,6 @@
             this.eMailTextBox = new System.Windows.Forms.TextBox();
             this.kontaktTextBox = new System.Windows.Forms.TextBox();
             this.imePrezimeTextBox = new System.Windows.Forms.TextBox();
-            this.naloziPBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
@@ -133,7 +132,6 @@
             this.cmsBrojNaloga.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.naloziPBindingSource1)).BeginInit();
             this.groupBox3.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel5.SuspendLayout();
@@ -695,21 +693,12 @@
             // imePrezimeTextBox
             // 
             this.imePrezimeTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.imePrezimeTextBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.imePrezimeTextBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.imePrezimeTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.naloziPBindingSource, "imePrezime", true));
-            this.imePrezimeTextBox.DataBindings.Add(new System.Windows.Forms.Binding("AutoCompleteCustomSource", this.naloziPBindingSource1, "imePrezime", true));
             this.imePrezimeTextBox.Location = new System.Drawing.Point(81, 3);
             this.imePrezimeTextBox.MaxLength = 24;
             this.imePrezimeTextBox.Name = "imePrezimeTextBox";
             this.imePrezimeTextBox.Size = new System.Drawing.Size(195, 20);
             this.imePrezimeTextBox.TabIndex = 1;
-            this.imePrezimeTextBox.TextChanged += new System.EventHandler(this.imePrezimeTextBox_TextChanged);
-            // 
-            // naloziPBindingSource1
-            // 
-            this.naloziPBindingSource1.DataMember = "NaloziP";
-            this.naloziPBindingSource1.DataSource = this.dbSenaCompDataSet;
             // 
             // groupBox3
             // 
@@ -1068,7 +1057,6 @@
             this.groupBox2.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.naloziPBindingSource1)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel3.PerformLayout();
@@ -1154,6 +1142,5 @@
         private System.Windows.Forms.ToolStripMenuItem izmeniBrojNalogaToolStripMenuItem;
         private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
         private System.Windows.Forms.BindingSource clRadniNalogPrivBindingSource;
-        private System.Windows.Forms.BindingSource naloziPBindingSource1;
     }
 }

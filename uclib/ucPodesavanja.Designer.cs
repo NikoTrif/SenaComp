@@ -44,8 +44,9 @@
             // 
             this.treeView1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
+            this.treeView1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.treeView1.Location = new System.Drawing.Point(0, 0);
-            this.treeView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.treeView1.Margin = new System.Windows.Forms.Padding(2);
             this.treeView1.Name = "treeView1";
             treeNode1.Name = "nOprema";
             treeNode1.Text = "Oprema";
@@ -74,7 +75,7 @@
             this.pOptMain.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pOptMain.Location = new System.Drawing.Point(173, 0);
-            this.pOptMain.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pOptMain.Margin = new System.Windows.Forms.Padding(2);
             this.pOptMain.Name = "pOptMain";
             this.pOptMain.Size = new System.Drawing.Size(532, 483);
             this.pOptMain.TabIndex = 1;
@@ -85,7 +86,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.pOptMain);
             this.Controls.Add(this.treeView1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "ucPodesavanja";
             this.Size = new System.Drawing.Size(705, 483);
             this.ResumeLayout(false);

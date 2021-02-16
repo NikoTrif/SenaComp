@@ -89,3 +89,4 @@ C:\Users\Lenovo\Documents\Visual Studio 2015\Projects\SenaComp\SenaComp\bin\Debu
 C:\Users\Lenovo\Documents\Visual Studio 2015\Projects\SenaComp\SenaComp\bin\Debug\zh-Hant\Microsoft.SqlServer.Types.resources.dll
 C:\Users\MasterPro\Documents\Visual Studio 2015\Projects\SenaComp\SenaComp\bin\Debug\Reportovi\repNalogP.rdlc
 C:\Users\Lenovo\Documents\Visual Studio 2015\Projects\SenaComp\SenaComp\bin\Debug\Reportovi\repNalogP.rdlc
+C:\Users\Lenovo\Documents\Visual Studio 2015\Projects\SenaComp\SenaComp\bin\Debug\Reportovi\repNalogP - Copy.rdlc

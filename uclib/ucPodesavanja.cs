@@ -54,6 +54,17 @@ namespace uclib
                     pf.Dock = DockStyle.Fill;
                     pf.BringToFront();
                     break;
+
+                case "Klauzula":
+                    ucKlauzula kl = new ucKlauzula();
+                    if (pOptMain.Controls.Count != 0)
+                    {
+                        pOptMain.Controls.Clear();
+                    }
+                    pOptMain.Controls.Add(kl);
+                    kl.Dock = DockStyle.Fill;
+                    kl.BringToFront();
+                    break;
             }
         }
     }

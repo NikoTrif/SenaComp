@@ -82,24 +82,72 @@ namespace uclib.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string Delatnost {
-            get {
-                return ((string)(this["Delatnost"]));
-            }
-            set {
-                this["Delatnost"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
         public string Adresa {
             get {
                 return ((string)(this["Adresa"]));
             }
             set {
                 this["Adresa"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string PostanskiBr {
+            get {
+                return ((string)(this["PostanskiBr"]));
+            }
+            set {
+                this["PostanskiBr"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string Grad {
+            get {
+                return ((string)(this["Grad"]));
+            }
+            set {
+                this["Grad"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string PIB {
+            get {
+                return ((string)(this["PIB"]));
+            }
+            set {
+                this["PIB"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string MBR {
+            get {
+                return ((string)(this["MBR"]));
+            }
+            set {
+                this["MBR"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string Delatnost {
+            get {
+                return ((string)(this["Delatnost"]));
+            }
+            set {
+                this["Delatnost"] = value;
             }
         }
         
@@ -130,6 +178,30 @@ namespace uclib.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string Logo {
+            get {
+                return ((string)(this["Logo"]));
+            }
+            set {
+                this["Logo"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string Banka {
+            get {
+                return ((string)(this["Banka"]));
+            }
+            set {
+                this["Banka"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
         public string TekuciRacun {
             get {
                 return ((string)(this["TekuciRacun"]));
@@ -141,13 +213,13 @@ namespace uclib.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string Logo {
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool PDV {
             get {
-                return ((string)(this["Logo"]));
+                return ((bool)(this["PDV"]));
             }
             set {
-                this["Logo"] = value;
+                this["PDV"] = value;
             }
         }
         

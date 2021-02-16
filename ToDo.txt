@@ -36,8 +36,8 @@ kada se trazi u kodu - npr. "RG1", "TD3.1.2", "G2"
 	   3.   |Z|UC za podesavanja sa TreeView-om: program (smestiti dodavanje u listu uredjaja, proizvodjaca i opreme), podaci firme (naziv, delatnost, adresa, pib, tekuci racun), klauzula, baza
 	          a) opsta podesavanja - prikaz vremena u bazi i na nalogu, prikaz cene servisa na nalogu
 			  |R|b) dodavanje u listu uredjaja, proizvodjaca i opreme - liste uredjaja i proizvodjaca sortiraj po abecednom redu
-			  |R|c) podaci firme - naziv, delatnost, adresa, PIB, tekuci racun
-			  d) klauzula
+			  |Z|c) podaci firme - naziv, delatnost, adresa, PIB, tekuci racun
+			  |R|d) klauzula
 			  e) baza
 			  f) dodati slicice(ikonice)
 			  g) srediti font u treeView-u
@@ -52,10 +52,10 @@ kada se trazi u kodu - npr. "RG1", "TD3.1.2", "G2"
 	   11.  UC za periodicni izvestaj sa DateTimePciker-ima
 	   12.  UC za logovanje (username i password kada se pokrce program) u podesavanjima omoguciti automatsko logovanje a u osnovnom programu zakljucavanje
 3.   Napraviti Reportove
-       |Z|1.   Radni nalog za privatne korisnike
+       |R|1.   Radni nalog za privatne korisnike
 			|R|a) prebrojati koliko je karaktera moguce da stane u svaku stavku, pa ograniciti textboxove
 			|R|b) ograniciti rtbIzvestaj na max 5 redova
-			|Z|c) uredi da se parametri vuku iz podesavanja
+			|R|c) uredi da se parametri vuku iz podesavanja
 	   2.   Radni nalog za firme
 	   3.   Izvestaj o zaradi
 	   4.   Profaktura
@@ -167,3 +167,6 @@ kada se trazi u kodu - npr. "RG1", "TD3.1.2", "G2"
 		 - TD 3.1.c - uclib.ucPrivatni.dStampaj_Click - sve povezano sa podesavanjima osim klauzule
 
 11.02.21 - - - - - - -ucLib.Properties - napravljen settings file SettLogo sa podesavanjem za logo koji je public i koji moze koristiti i SenaComp
+
+13.02.21 - TD 3.1.c - zavrsen izvestaj za privatne korisnike
+		 - TD 2.3.d - zavrsen ucKlauzula

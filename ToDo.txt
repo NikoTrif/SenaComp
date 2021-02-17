@@ -36,7 +36,7 @@ kada se trazi u kodu - npr. "RG1", "TD3.1.2", "G2"
 	   3.   |Z|UC za podesavanja sa TreeView-om: program (smestiti dodavanje u listu uredjaja, proizvodjaca i opreme), podaci firme (naziv, delatnost, adresa, pib, tekuci racun), klauzula, baza
 	          a) opsta podesavanja - prikaz vremena u bazi i na nalogu, prikaz cene servisa na nalogu
 			  |R|b) dodavanje u listu uredjaja, proizvodjaca i opreme - liste uredjaja i proizvodjaca sortiraj po abecednom redu
-			  |Z|c) podaci firme - naziv, delatnost, adresa, PIB, tekuci racun
+			  |R|c) podaci firme - naziv, delatnost, adresa, PIB, tekuci racun
 			  |R|d) klauzula
 			  e) baza
 			  f) dodati slicice(ikonice)
@@ -170,3 +170,5 @@ kada se trazi u kodu - npr. "RG1", "TD3.1.2", "G2"
 
 13.02.21 - TD 3.1.c - zavrsen izvestaj za privatne korisnike
 		 - TD 2.3.d - zavrsen ucKlauzula
+
+17.02.21 - TD 2.3.c - ucPodaciFirme - dodata podesavanja za podatke firme koji su neophodni za fakture

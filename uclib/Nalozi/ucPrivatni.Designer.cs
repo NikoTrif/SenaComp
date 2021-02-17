@@ -40,7 +40,7 @@
             System.Windows.Forms.Label serijskiBrojLabel;
             System.Windows.Forms.Label opisKvaraLabel;
             System.Windows.Forms.Label izvestajLabel;
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource3 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.clRadniNalogPrivBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.naloziPDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -624,9 +624,9 @@
             // reportViewer1
             // 
             this.reportViewer1.DocumentMapWidth = 80;
-            reportDataSource1.Name = "dsNalog";
-            reportDataSource1.Value = this.clRadniNalogPrivBindingSource;
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
+            reportDataSource3.Name = "dsNalog";
+            reportDataSource3.Value = this.clRadniNalogPrivBindingSource;
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource3);
             this.reportViewer1.LocalReport.EnableExternalImages = true;
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "uclib.Reportovi.repNalogP.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(857, 20);
@@ -927,7 +927,7 @@
             this.tableLayoutPanel5.Controls.Add(this.dOtkazi, 1, 0);
             this.tableLayoutPanel5.Controls.Add(this.dNovi, 0, 0);
             this.tableLayoutPanel5.Location = new System.Drawing.Point(98, 29);
-            this.tableLayoutPanel5.Margin = new System.Windows.Forms.Padding(2);
+            this.tableLayoutPanel5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
             this.tableLayoutPanel5.RowCount = 1;
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -1004,7 +1004,7 @@
             "Izveštaj",
             "Status"});
             this.cbFilter.Location = new System.Drawing.Point(337, 454);
-            this.cbFilter.Margin = new System.Windows.Forms.Padding(2);
+            this.cbFilter.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cbFilter.Name = "cbFilter";
             this.cbFilter.Size = new System.Drawing.Size(108, 21);
             this.cbFilter.TabIndex = 7;

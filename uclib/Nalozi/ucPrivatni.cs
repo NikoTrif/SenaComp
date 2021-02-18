@@ -49,7 +49,7 @@ namespace uclib.Nalozi
         {
             naloziPBindingSource.AddNew();
             naCekanjuRadioButton.Select();
-            datumDateTimePicker.Value = DateTime.Today;
+            datumDateTimePicker.Value = DateTime.Now;
             imePrezimeTextBox.Select();
             resetBrojNalogaTextBoxReadOnly();
         }

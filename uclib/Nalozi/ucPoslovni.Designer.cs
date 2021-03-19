@@ -105,6 +105,7 @@
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.cbFilter = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.dFOdabir = new System.Windows.Forms.Button();
             brojNalogaLabel = new System.Windows.Forms.Label();
             datumLabel = new System.Windows.Forms.Label();
             modelLabel = new System.Windows.Forms.Label();
@@ -226,7 +227,7 @@
             // 
             firmaLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             firmaLabel.AutoSize = true;
-            firmaLabel.Location = new System.Drawing.Point(3, 7);
+            firmaLabel.Location = new System.Drawing.Point(3, 34);
             firmaLabel.Name = "firmaLabel";
             firmaLabel.Size = new System.Drawing.Size(83, 13);
             firmaLabel.TabIndex = 0;
@@ -236,7 +237,7 @@
             // 
             kontaktOsobaLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             kontaktOsobaLabel.AutoSize = true;
-            kontaktOsobaLabel.Location = new System.Drawing.Point(3, 34);
+            kontaktOsobaLabel.Location = new System.Drawing.Point(3, 61);
             kontaktOsobaLabel.Name = "kontaktOsobaLabel";
             kontaktOsobaLabel.Size = new System.Drawing.Size(83, 13);
             kontaktOsobaLabel.TabIndex = 2;
@@ -246,7 +247,7 @@
             // 
             kontaktLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             kontaktLabel.AutoSize = true;
-            kontaktLabel.Location = new System.Drawing.Point(3, 61);
+            kontaktLabel.Location = new System.Drawing.Point(3, 88);
             kontaktLabel.Name = "kontaktLabel";
             kontaktLabel.Size = new System.Drawing.Size(83, 13);
             kontaktLabel.TabIndex = 4;
@@ -256,7 +257,7 @@
             // 
             eMailLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             eMailLabel.AutoSize = true;
-            eMailLabel.Location = new System.Drawing.Point(3, 88);
+            eMailLabel.Location = new System.Drawing.Point(3, 115);
             eMailLabel.Name = "eMailLabel";
             eMailLabel.Size = new System.Drawing.Size(83, 13);
             eMailLabel.TabIndex = 6;
@@ -522,14 +523,15 @@
             this.tableLayoutPanel4.ColumnCount = 2;
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 31.9F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 68.1F));
-            this.tableLayoutPanel4.Controls.Add(eMailLabel, 0, 3);
-            this.tableLayoutPanel4.Controls.Add(this.eMailTextBox, 1, 3);
-            this.tableLayoutPanel4.Controls.Add(kontaktLabel, 0, 2);
-            this.tableLayoutPanel4.Controls.Add(this.kontaktTextBox, 1, 2);
-            this.tableLayoutPanel4.Controls.Add(kontaktOsobaLabel, 0, 1);
-            this.tableLayoutPanel4.Controls.Add(this.kontaktOsobaTextBox, 1, 1);
-            this.tableLayoutPanel4.Controls.Add(firmaLabel, 0, 0);
-            this.tableLayoutPanel4.Controls.Add(this.firmaTextBox, 1, 0);
+            this.tableLayoutPanel4.Controls.Add(this.eMailTextBox, 1, 4);
+            this.tableLayoutPanel4.Controls.Add(eMailLabel, 0, 4);
+            this.tableLayoutPanel4.Controls.Add(kontaktLabel, 0, 3);
+            this.tableLayoutPanel4.Controls.Add(this.kontaktTextBox, 1, 3);
+            this.tableLayoutPanel4.Controls.Add(this.kontaktOsobaTextBox, 1, 2);
+            this.tableLayoutPanel4.Controls.Add(kontaktOsobaLabel, 0, 2);
+            this.tableLayoutPanel4.Controls.Add(firmaLabel, 0, 1);
+            this.tableLayoutPanel4.Controls.Add(this.firmaTextBox, 1, 1);
+            this.tableLayoutPanel4.Controls.Add(this.dFOdabir, 0, 0);
             this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel4.Location = new System.Drawing.Point(3, 16);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
@@ -546,7 +548,7 @@
             // 
             this.eMailTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.eMailTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.naloziFBindingSource, "eMail", true));
-            this.eMailTextBox.Location = new System.Drawing.Point(92, 84);
+            this.eMailTextBox.Location = new System.Drawing.Point(92, 112);
             this.eMailTextBox.Name = "eMailTextBox";
             this.eMailTextBox.Size = new System.Drawing.Size(184, 20);
             this.eMailTextBox.TabIndex = 4;
@@ -555,7 +557,7 @@
             // 
             this.kontaktTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.kontaktTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.naloziFBindingSource, "Kontakt", true));
-            this.kontaktTextBox.Location = new System.Drawing.Point(92, 57);
+            this.kontaktTextBox.Location = new System.Drawing.Point(92, 84);
             this.kontaktTextBox.Name = "kontaktTextBox";
             this.kontaktTextBox.Size = new System.Drawing.Size(184, 20);
             this.kontaktTextBox.TabIndex = 3;
@@ -564,7 +566,7 @@
             // 
             this.kontaktOsobaTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.kontaktOsobaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.naloziFBindingSource, "kontaktOsoba", true));
-            this.kontaktOsobaTextBox.Location = new System.Drawing.Point(92, 30);
+            this.kontaktOsobaTextBox.Location = new System.Drawing.Point(92, 57);
             this.kontaktOsobaTextBox.Name = "kontaktOsobaTextBox";
             this.kontaktOsobaTextBox.Size = new System.Drawing.Size(184, 20);
             this.kontaktOsobaTextBox.TabIndex = 2;
@@ -573,7 +575,7 @@
             // 
             this.firmaTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.firmaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.naloziFBindingSource, "Firma", true));
-            this.firmaTextBox.Location = new System.Drawing.Point(92, 3);
+            this.firmaTextBox.Location = new System.Drawing.Point(92, 30);
             this.firmaTextBox.Name = "firmaTextBox";
             this.firmaTextBox.Size = new System.Drawing.Size(184, 20);
             this.firmaTextBox.TabIndex = 1;
@@ -948,6 +950,18 @@
             this.label3.TabIndex = 18;
             this.label3.Text = "Filter:";
             // 
+            // dFOdabir
+            // 
+            this.dFOdabir.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dFOdabir.Location = new System.Drawing.Point(3, 3);
+            this.dFOdabir.Name = "dFOdabir";
+            this.dFOdabir.Size = new System.Drawing.Size(83, 21);
+            this.dFOdabir.TabIndex = 7;
+            this.dFOdabir.Text = "Odaberi";
+            this.dFOdabir.UseVisualStyleBackColor = true;
+            // 
             // ucPoslovni
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1051,5 +1065,6 @@
         private System.Windows.Forms.TextBox kontaktTextBox;
         private System.Windows.Forms.TextBox kontaktOsobaTextBox;
         private System.Windows.Forms.TextBox firmaTextBox;
+        private System.Windows.Forms.Button dFOdabir;
     }
 }

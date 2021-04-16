@@ -69,6 +69,7 @@
             this.kontaktTextBox = new System.Windows.Forms.TextBox();
             this.kontaktOsobaTextBox = new System.Windows.Forms.TextBox();
             this.firmaTextBox = new System.Windows.Forms.TextBox();
+            this.dFOdabir = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.dNovi = new System.Windows.Forms.Button();
             this.dOtkazi = new System.Windows.Forms.Button();
@@ -105,7 +106,6 @@
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.cbFilter = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.dFOdabir = new System.Windows.Forms.Button();
             brojNalogaLabel = new System.Windows.Forms.Label();
             datumLabel = new System.Windows.Forms.Label();
             modelLabel = new System.Windows.Forms.Label();
@@ -580,6 +580,19 @@
             this.firmaTextBox.Size = new System.Drawing.Size(184, 20);
             this.firmaTextBox.TabIndex = 1;
             // 
+            // dFOdabir
+            // 
+            this.dFOdabir.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dFOdabir.Location = new System.Drawing.Point(3, 3);
+            this.dFOdabir.Name = "dFOdabir";
+            this.dFOdabir.Size = new System.Drawing.Size(83, 21);
+            this.dFOdabir.TabIndex = 7;
+            this.dFOdabir.Text = "Odaberi";
+            this.dFOdabir.UseVisualStyleBackColor = true;
+            this.dFOdabir.Click += new System.EventHandler(this.dFOdabir_Click);
+            // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 5;
@@ -949,18 +962,6 @@
             this.label3.Size = new System.Drawing.Size(32, 13);
             this.label3.TabIndex = 18;
             this.label3.Text = "Filter:";
-            // 
-            // dFOdabir
-            // 
-            this.dFOdabir.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dFOdabir.Location = new System.Drawing.Point(3, 3);
-            this.dFOdabir.Name = "dFOdabir";
-            this.dFOdabir.Size = new System.Drawing.Size(83, 21);
-            this.dFOdabir.TabIndex = 7;
-            this.dFOdabir.Text = "Odaberi";
-            this.dFOdabir.UseVisualStyleBackColor = true;
             // 
             // ucPoslovni
             // 

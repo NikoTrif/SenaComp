@@ -138,6 +138,12 @@
     <Compile Include="Ostalo\ucNapomena.Designer.cs">
       <DependentUpon>ucNapomena.cs</DependentUpon>
     </Compile>
+    <Compile Include="Ostalo\ucOdabirFirme.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ostalo\ucOdabirFirme.Designer.cs">
+      <DependentUpon>ucOdabirFirme.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -204,6 +210,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Ostalo\ucNapomena.resx">
       <DependentUpon>ucNapomena.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ostalo\ucOdabirFirme.resx">
+      <DependentUpon>ucOdabirFirme.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

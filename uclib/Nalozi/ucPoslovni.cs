@@ -77,5 +77,21 @@ namespace uclib.Nalozi
                 //izmeniBrojNalogaToolStripMenuItem.Checked = false;
             }
         }
+
+        private void dFOdabir_Click(object sender, EventArgs e)
+        {
+            using(Ostalo.ucOdabirFirme of = new Ostalo.ucOdabirFirme())
+            {
+                using(fRazno fr = new fRazno
+                {
+                    Size = new Size(of.Width + 4, of.Height + 40),
+                })
+                {
+                    fr.Controls.Clear();
+                    fr.Controls.Add(of);
+                    fr.ShowDialog();
+                }
+            }
+        }
     }
 }

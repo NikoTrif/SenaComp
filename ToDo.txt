@@ -173,3 +173,7 @@ kada se trazi u kodu - npr. "RG1", "TD3.1.2", "G2"
 
 17.02.21 - TD 2.3.c - ucPodaciFirme - dodata podesavanja za podatke firme koji su neophodni za fakture
 		 - TD 2.2 - - ucPoslovni - zapoceto uredjivanje
+
+15.04.21 - - - - - - -Ostalo - napravljen ucOdabirFirme sa DGV-om i pretragom firmi
+
+16.04.21 - - - - - - -Ostalo - zavrsen ucOdabirFirme - otvara se klikom na dugme - nema podataka u bazi firmi

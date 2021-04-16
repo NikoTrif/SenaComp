@@ -108,3 +108,4 @@ C:\Users\Lenovo\Documents\Visual Studio 2015\Projects\SenaComp\uclib\bin\Debug\R
 C:\Users\Lenovo\Documents\Visual Studio 2015\Projects\SenaComp\uclib\obj\Debug\uclib.Opcije.ucKlauzula.resources
 C:\Users\MasterPro\Documents\Visual Studio 2015\Projects\SenaComp\uclib\bin\Debug\Reportovi\repNalogP - Copy.rdlc
 C:\Users\MasterPro\Documents\Visual Studio 2015\Projects\SenaComp\uclib\obj\Debug\uclib.Opcije.ucKlauzula.resources
+C:\Users\MasterPro\Documents\Visual Studio 2015\Projects\SenaComp\uclib\obj\Debug\uclib.Ostalo.ucOdabirFirme.resources

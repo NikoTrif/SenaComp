@@ -82,14 +82,24 @@ namespace uclib.Nalozi
         {
             using(Ostalo.ucOdabirFirme of = new Ostalo.ucOdabirFirme())
             {
-                using(fRazno fr = new fRazno
+                using (fRazno fr = new fRazno
                 {
-                    Size = new Size(of.Width + 4, of.Height + 40),
+                    Size = new Size(of.Width + 6, of.Height + 40),
+                    FormBorderStyle = FormBorderStyle.FixedDialog
                 })
                 {
-                    fr.Controls.Clear();
-                    fr.Controls.Add(of);
-                    fr.ShowDialog();
+                    fr.pRazno.Controls.Clear();
+                    fr.pRazno.Controls.Add(of);
+                    of.Dock = DockStyle.Fill;
+                    //fr.ShowDialog();
+                    if(fr.ShowDialog() == DialogResult.OK)
+                    {
+                        string a, b, c;
+
+                        a = iflib.clTransfer.Firma;
+                        b = iflib.clTransfer.Kontakt;
+                        c = iflib.clTransfer.eMail;
+                    }
                 }
             }
         }

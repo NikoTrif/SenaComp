@@ -187,6 +187,9 @@
     <Compile Include="ucPodesavanja.Designer.cs">
       <DependentUpon>ucPodesavanja.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Baze\ucFirme.resx">
+      <DependentUpon>ucFirme.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="fRazno.resx">
       <DependentUpon>fRazno.cs</DependentUpon>
     </EmbeddedResource>

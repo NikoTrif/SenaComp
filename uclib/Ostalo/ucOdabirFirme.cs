@@ -50,10 +50,10 @@ namespace uclib.Ostalo
             {
                 if (firmeDataGridView.SelectedRows != null)
                 {
-                    clTransfer ct = new clTransfer();
-                    ct.Firma = firmeDataGridView.CurrentRow.Cells[1].Value.ToString();
-                    ct.Kontakt = firmeDataGridView.CurrentRow.Cells[5].Value.ToString();
-                    ct.eMail = firmeDataGridView.CurrentRow.Cells[6].Value.ToString();
+                    
+                    clTransfer.Firma = firmeDataGridView.CurrentRow.Cells[1].Value.ToString();
+                    clTransfer.Kontakt = firmeDataGridView.CurrentRow.Cells[5].Value.ToString();
+                    clTransfer.eMail = firmeDataGridView.CurrentRow.Cells[6].Value.ToString();
 
                     ParentForm.Close();
                 }

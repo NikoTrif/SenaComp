@@ -1684,10 +1684,10 @@ namespace uclib {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public FirmeRow AddFirmeRow(int ID, string Naziv, string PIB, string Grad, string UlicaBroj, string Kontakt, string eMail, string tekuciRacun) {
+            public FirmeRow AddFirmeRow(string Naziv, string PIB, string Grad, string UlicaBroj, string Kontakt, string eMail, string tekuciRacun) {
                 FirmeRow rowFirmeRow = ((FirmeRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        ID,
+                        null,
                         Naziv,
                         PIB,
                         Grad,
@@ -1755,6 +1755,8 @@ namespace uclib {
                 base.Columns.Add(this.columntekuciRacun);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnID}, true));
+                this.columnID.AutoIncrement = true;
+                this.columnID.AutoIncrementSeed = 1;
                 this.columnID.AllowDBNull = false;
                 this.columnID.Unique = true;
                 this.columnNaziv.MaxLength = 50;

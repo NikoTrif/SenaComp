@@ -14,15 +14,6 @@ C:\Users\Nikola\Google Drive\Projekti\SenaComp\iflib\bin\Debug\uclib.pdb
 C:\Users\Nikola\Google Drive\Projekti\SenaComp\iflib\obj\Debug\iflib.csprojResolveAssemblyReference.cache
 D:\Google Drive\Projekti\SenaComp\iflib\bin\Debug\dbSenaComp.mdf
 D:\Google Drive\Projekti\SenaComp\iflib\bin\Debug\dbSenaComp_log.ldf
-C:\Users\Nikola\Documents\Visual Studio 2015\Projects\SenaComp\iflib\bin\Debug\dbSenaComp.mdf
-C:\Users\Nikola\Documents\Visual Studio 2015\Projects\SenaComp\iflib\bin\Debug\dbSenaComp_log.ldf
-C:\Users\Nikola\Documents\Visual Studio 2015\Projects\SenaComp\iflib\bin\Debug\iflib.dll
-C:\Users\Nikola\Documents\Visual Studio 2015\Projects\SenaComp\iflib\bin\Debug\iflib.pdb
-C:\Users\Nikola\Documents\Visual Studio 2015\Projects\SenaComp\iflib\bin\Debug\uclib.dll
-C:\Users\Nikola\Documents\Visual Studio 2015\Projects\SenaComp\iflib\bin\Debug\uclib.pdb
-C:\Users\Nikola\Documents\Visual Studio 2015\Projects\SenaComp\iflib\obj\Debug\iflib.csprojResolveAssemblyReference.cache
-C:\Users\Nikola\Documents\Visual Studio 2015\Projects\SenaComp\iflib\obj\Debug\iflib.dll
-C:\Users\Nikola\Documents\Visual Studio 2015\Projects\SenaComp\iflib\obj\Debug\iflib.pdb
 C:\Users\Lenovo\Documents\Visual Studio 2015\Projects\SenaComp\iflib\bin\Debug\iflib.dll
 C:\Users\Lenovo\Documents\Visual Studio 2015\Projects\SenaComp\iflib\bin\Debug\iflib.pdb
 C:\Users\Lenovo\Documents\Visual Studio 2015\Projects\SenaComp\iflib\obj\Debug\iflib.csprojResolveAssemblyReference.cache
@@ -46,3 +37,19 @@ C:\Users\Lenovo\Documents\Visual Studio 2015\Projects\SenaComp\iflib\bin\Debug\p
 C:\Users\Lenovo\Documents\Visual Studio 2015\Projects\SenaComp\iflib\bin\Debug\ru\Microsoft.SqlServer.Types.resources.dll
 C:\Users\Lenovo\Documents\Visual Studio 2015\Projects\SenaComp\iflib\bin\Debug\zh-Hans\Microsoft.SqlServer.Types.resources.dll
 C:\Users\Lenovo\Documents\Visual Studio 2015\Projects\SenaComp\iflib\bin\Debug\zh-Hant\Microsoft.SqlServer.Types.resources.dll
+C:\Users\Nikola\Documents\Visual Studio 2015\Projects\SenaComp\iflib\bin\Debug\iflib.dll
+C:\Users\Nikola\Documents\Visual Studio 2015\Projects\SenaComp\iflib\bin\Debug\iflib.pdb
+C:\Users\Nikola\Documents\Visual Studio 2015\Projects\SenaComp\iflib\bin\Debug\Microsoft.ReportViewer.WinForms.dll
+C:\Users\Nikola\Documents\Visual Studio 2015\Projects\SenaComp\iflib\bin\Debug\Microsoft.SqlServer.Types.dll
+C:\Users\Nikola\Documents\Visual Studio 2015\Projects\SenaComp\iflib\bin\Debug\de\Microsoft.SqlServer.Types.resources.dll
+C:\Users\Nikola\Documents\Visual Studio 2015\Projects\SenaComp\iflib\bin\Debug\es\Microsoft.SqlServer.Types.resources.dll
+C:\Users\Nikola\Documents\Visual Studio 2015\Projects\SenaComp\iflib\bin\Debug\fr\Microsoft.SqlServer.Types.resources.dll
+C:\Users\Nikola\Documents\Visual Studio 2015\Projects\SenaComp\iflib\bin\Debug\it\Microsoft.SqlServer.Types.resources.dll
+C:\Users\Nikola\Documents\Visual Studio 2015\Projects\SenaComp\iflib\bin\Debug\ja\Microsoft.SqlServer.Types.resources.dll
+C:\Users\Nikola\Documents\Visual Studio 2015\Projects\SenaComp\iflib\bin\Debug\ko\Microsoft.SqlServer.Types.resources.dll
+C:\Users\Nikola\Documents\Visual Studio 2015\Projects\SenaComp\iflib\bin\Debug\pt\Microsoft.SqlServer.Types.resources.dll
+C:\Users\Nikola\Documents\Visual Studio 2015\Projects\SenaComp\iflib\bin\Debug\ru\Microsoft.SqlServer.Types.resources.dll
+C:\Users\Nikola\Documents\Visual Studio 2015\Projects\SenaComp\iflib\bin\Debug\zh-Hans\Microsoft.SqlServer.Types.resources.dll
+C:\Users\Nikola\Documents\Visual Studio 2015\Projects\SenaComp\iflib\bin\Debug\zh-Hant\Microsoft.SqlServer.Types.resources.dll
+C:\Users\Nikola\Documents\Visual Studio 2015\Projects\SenaComp\iflib\obj\Debug\iflib.dll
+C:\Users\Nikola\Documents\Visual Studio 2015\Projects\SenaComp\iflib\obj\Debug\iflib.pdb

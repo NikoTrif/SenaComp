@@ -29,21 +29,6 @@ C:\Users\Nikola\Google Drive\Projekti\SenaComp\SenaComp\bin\Debug\iflib.dll
 C:\Users\Nikola\Google Drive\Projekti\SenaComp\SenaComp\bin\Debug\uclib.dll
 C:\Users\Nikola\Google Drive\Projekti\SenaComp\SenaComp\bin\Debug\iflib.pdb
 C:\Users\Nikola\Google Drive\Projekti\SenaComp\SenaComp\bin\Debug\uclib.pdb
-C:\Users\Nikola\Documents\Visual Studio 2015\Projects\SenaComp\SenaComp\bin\Debug\SenaComp.exe.config
-C:\Users\Nikola\Documents\Visual Studio 2015\Projects\SenaComp\SenaComp\obj\Debug\SenaComp.exe
-C:\Users\Nikola\Documents\Visual Studio 2015\Projects\SenaComp\SenaComp\obj\Debug\SenaComp.pdb
-C:\Users\Nikola\Documents\Visual Studio 2015\Projects\SenaComp\SenaComp\bin\Debug\dbSenaComp.mdf
-C:\Users\Nikola\Documents\Visual Studio 2015\Projects\SenaComp\SenaComp\bin\Debug\dbSenaComp_log.ldf
-C:\Users\Nikola\Documents\Visual Studio 2015\Projects\SenaComp\SenaComp\bin\Debug\SenaComp.exe
-C:\Users\Nikola\Documents\Visual Studio 2015\Projects\SenaComp\SenaComp\bin\Debug\SenaComp.pdb
-C:\Users\Nikola\Documents\Visual Studio 2015\Projects\SenaComp\SenaComp\bin\Debug\iflib.dll
-C:\Users\Nikola\Documents\Visual Studio 2015\Projects\SenaComp\SenaComp\bin\Debug\uclib.dll
-C:\Users\Nikola\Documents\Visual Studio 2015\Projects\SenaComp\SenaComp\bin\Debug\iflib.pdb
-C:\Users\Nikola\Documents\Visual Studio 2015\Projects\SenaComp\SenaComp\bin\Debug\uclib.pdb
-C:\Users\Nikola\Documents\Visual Studio 2015\Projects\SenaComp\SenaComp\obj\Debug\SenaComp.csprojResolveAssemblyReference.cache
-C:\Users\Nikola\Documents\Visual Studio 2015\Projects\SenaComp\SenaComp\obj\Debug\SenaComp.fSenaComp.resources
-C:\Users\Nikola\Documents\Visual Studio 2015\Projects\SenaComp\SenaComp\obj\Debug\SenaComp.Properties.Resources.resources
-C:\Users\Nikola\Documents\Visual Studio 2015\Projects\SenaComp\SenaComp\obj\Debug\SenaComp.csproj.GenerateResource.Cache
 C:\Users\Lenovo\Documents\Visual Studio 2015\Projects\SenaComp\SenaComp\bin\Debug\SenaComp.exe.config
 C:\Users\Lenovo\Documents\Visual Studio 2015\Projects\SenaComp\SenaComp\obj\Debug\SenaComp.exe
 C:\Users\Lenovo\Documents\Visual Studio 2015\Projects\SenaComp\SenaComp\obj\Debug\SenaComp.pdb
@@ -91,3 +76,32 @@ C:\Users\MasterPro\Documents\Visual Studio 2015\Projects\SenaComp\SenaComp\bin\D
 C:\Users\Lenovo\Documents\Visual Studio 2015\Projects\SenaComp\SenaComp\bin\Debug\Reportovi\repNalogP.rdlc
 C:\Users\Lenovo\Documents\Visual Studio 2015\Projects\SenaComp\SenaComp\bin\Debug\Reportovi\repNalogP - Copy.rdlc
 C:\Users\MasterPro\Documents\Visual Studio 2015\Projects\SenaComp\SenaComp\bin\Debug\Reportovi\repNalogP - Copy.rdlc
+C:\Users\Nikola\Documents\Visual Studio 2015\Projects\SenaComp\SenaComp\bin\Debug\dbSenaComp.mdf
+C:\Users\Nikola\Documents\Visual Studio 2015\Projects\SenaComp\SenaComp\bin\Debug\dbSenaComp_log.ldf
+C:\Users\Nikola\Documents\Visual Studio 2015\Projects\SenaComp\SenaComp\bin\Debug\Reportovi\repNalogP - Copy.rdlc
+C:\Users\Nikola\Documents\Visual Studio 2015\Projects\SenaComp\SenaComp\bin\Debug\Reportovi\repNalogP.rdlc
+C:\Users\Nikola\Documents\Visual Studio 2015\Projects\SenaComp\SenaComp\bin\Debug\SenaComp.exe.config
+C:\Users\Nikola\Documents\Visual Studio 2015\Projects\SenaComp\SenaComp\bin\Debug\SenaComp.exe
+C:\Users\Nikola\Documents\Visual Studio 2015\Projects\SenaComp\SenaComp\bin\Debug\SenaComp.pdb
+C:\Users\Nikola\Documents\Visual Studio 2015\Projects\SenaComp\SenaComp\bin\Debug\uclib.dll
+C:\Users\Nikola\Documents\Visual Studio 2015\Projects\SenaComp\SenaComp\bin\Debug\Microsoft.ReportViewer.WinForms.dll
+C:\Users\Nikola\Documents\Visual Studio 2015\Projects\SenaComp\SenaComp\bin\Debug\iflib.dll
+C:\Users\Nikola\Documents\Visual Studio 2015\Projects\SenaComp\SenaComp\bin\Debug\Microsoft.SqlServer.Types.dll
+C:\Users\Nikola\Documents\Visual Studio 2015\Projects\SenaComp\SenaComp\bin\Debug\uclib.pdb
+C:\Users\Nikola\Documents\Visual Studio 2015\Projects\SenaComp\SenaComp\bin\Debug\iflib.pdb
+C:\Users\Nikola\Documents\Visual Studio 2015\Projects\SenaComp\SenaComp\bin\Debug\de\Microsoft.SqlServer.Types.resources.dll
+C:\Users\Nikola\Documents\Visual Studio 2015\Projects\SenaComp\SenaComp\bin\Debug\es\Microsoft.SqlServer.Types.resources.dll
+C:\Users\Nikola\Documents\Visual Studio 2015\Projects\SenaComp\SenaComp\bin\Debug\fr\Microsoft.SqlServer.Types.resources.dll
+C:\Users\Nikola\Documents\Visual Studio 2015\Projects\SenaComp\SenaComp\bin\Debug\it\Microsoft.SqlServer.Types.resources.dll
+C:\Users\Nikola\Documents\Visual Studio 2015\Projects\SenaComp\SenaComp\bin\Debug\ja\Microsoft.SqlServer.Types.resources.dll
+C:\Users\Nikola\Documents\Visual Studio 2015\Projects\SenaComp\SenaComp\bin\Debug\ko\Microsoft.SqlServer.Types.resources.dll
+C:\Users\Nikola\Documents\Visual Studio 2015\Projects\SenaComp\SenaComp\bin\Debug\pt\Microsoft.SqlServer.Types.resources.dll
+C:\Users\Nikola\Documents\Visual Studio 2015\Projects\SenaComp\SenaComp\bin\Debug\ru\Microsoft.SqlServer.Types.resources.dll
+C:\Users\Nikola\Documents\Visual Studio 2015\Projects\SenaComp\SenaComp\bin\Debug\zh-Hans\Microsoft.SqlServer.Types.resources.dll
+C:\Users\Nikola\Documents\Visual Studio 2015\Projects\SenaComp\SenaComp\bin\Debug\zh-Hant\Microsoft.SqlServer.Types.resources.dll
+C:\Users\Nikola\Documents\Visual Studio 2015\Projects\SenaComp\SenaComp\obj\Debug\SenaComp.csprojResolveAssemblyReference.cache
+C:\Users\Nikola\Documents\Visual Studio 2015\Projects\SenaComp\SenaComp\obj\Debug\SenaComp.fSenaComp.resources
+C:\Users\Nikola\Documents\Visual Studio 2015\Projects\SenaComp\SenaComp\obj\Debug\SenaComp.Properties.Resources.resources
+C:\Users\Nikola\Documents\Visual Studio 2015\Projects\SenaComp\SenaComp\obj\Debug\SenaComp.csproj.GenerateResource.Cache
+C:\Users\Nikola\Documents\Visual Studio 2015\Projects\SenaComp\SenaComp\obj\Debug\SenaComp.exe
+C:\Users\Nikola\Documents\Visual Studio 2015\Projects\SenaComp\SenaComp\obj\Debug\SenaComp.pdb

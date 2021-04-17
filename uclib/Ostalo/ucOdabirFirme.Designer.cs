@@ -36,8 +36,6 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.dPretraga = new System.Windows.Forms.Button();
             this.firmeDataGridView = new System.Windows.Forms.DataGridView();
-            this.dOK = new System.Windows.Forms.Button();
-            this.dOtkazi = new System.Windows.Forms.Button();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -48,6 +46,8 @@
             this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.firmeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dbSenaCompDataSet = new uclib.dbSenaCompDataSet();
+            this.dOK = new System.Windows.Forms.Button();
+            this.dOtkazi = new System.Windows.Forms.Button();
             this.firmeTableAdapter = new uclib.dbSenaCompDataSetTableAdapters.FirmeTableAdapter();
             this.tableAdapterManager = new uclib.dbSenaCompDataSetTableAdapters.TableAdapterManager();
             this.tableLayoutPanel1.SuspendLayout();
@@ -62,23 +62,23 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(3, 11);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(66, 13);
+            this.label1.Size = new System.Drawing.Size(65, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "Pretraga:";
             // 
             // tbPretraga
             // 
             this.tbPretraga.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbPretraga.Location = new System.Drawing.Point(75, 7);
+            this.tbPretraga.Location = new System.Drawing.Point(74, 7);
             this.tbPretraga.Name = "tbPretraga";
-            this.tbPretraga.Size = new System.Drawing.Size(177, 20);
+            this.tbPretraga.Size = new System.Drawing.Size(174, 20);
             this.tbPretraga.TabIndex = 1;
             // 
             // label2
             // 
             this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(258, 11);
+            this.label2.Location = new System.Drawing.Point(254, 11);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(33, 13);
             this.label2.TabIndex = 0;
@@ -91,7 +91,7 @@
             this.cbFilter.Items.AddRange(new object[] {
             "Sve",
             "ID"});
-            this.cbFilter.Location = new System.Drawing.Point(297, 7);
+            this.cbFilter.Location = new System.Drawing.Point(293, 7);
             this.cbFilter.Name = "cbFilter";
             this.cbFilter.Size = new System.Drawing.Size(86, 21);
             this.cbFilter.TabIndex = 2;
@@ -103,7 +103,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 71.74888F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 39F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 92F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 42F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 46F));
             this.tableLayoutPanel1.Controls.Add(this.label1, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.cbFilter, 3, 0);
             this.tableLayoutPanel1.Controls.Add(this.tbPretraga, 1, 0);
@@ -119,9 +119,9 @@
             // dPretraga
             // 
             this.dPretraga.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dPretraga.Location = new System.Drawing.Point(389, 3);
+            this.dPretraga.Location = new System.Drawing.Point(385, 3);
             this.dPretraga.Name = "dPretraga";
-            this.dPretraga.Size = new System.Drawing.Size(37, 29);
+            this.dPretraga.Size = new System.Drawing.Size(41, 29);
             this.dPretraga.TabIndex = 3;
             this.dPretraga.Text = "Pret";
             this.dPretraga.UseVisualStyleBackColor = true;
@@ -153,28 +153,6 @@
             this.firmeDataGridView.Size = new System.Drawing.Size(853, 230);
             this.firmeDataGridView.TabIndex = 4;
             this.firmeDataGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.firmeDataGridView_CellDoubleClick);
-            // 
-            // dOK
-            // 
-            this.dOK.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.dOK.Location = new System.Drawing.Point(3, 280);
-            this.dOK.Name = "dOK";
-            this.dOK.Size = new System.Drawing.Size(75, 23);
-            this.dOK.TabIndex = 5;
-            this.dOK.Text = "OK";
-            this.dOK.UseVisualStyleBackColor = true;
-            this.dOK.Click += new System.EventHandler(this.dOK_Click);
-            // 
-            // dOtkazi
-            // 
-            this.dOtkazi.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.dOtkazi.Location = new System.Drawing.Point(84, 280);
-            this.dOtkazi.Name = "dOtkazi";
-            this.dOtkazi.Size = new System.Drawing.Size(75, 23);
-            this.dOtkazi.TabIndex = 5;
-            this.dOtkazi.Text = "Otkaži";
-            this.dOtkazi.UseVisualStyleBackColor = true;
-            this.dOtkazi.Click += new System.EventHandler(this.dOtkazi_Click);
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -241,6 +219,28 @@
             // 
             this.dbSenaCompDataSet.DataSetName = "dbSenaCompDataSet";
             this.dbSenaCompDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // dOK
+            // 
+            this.dOK.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.dOK.Location = new System.Drawing.Point(3, 280);
+            this.dOK.Name = "dOK";
+            this.dOK.Size = new System.Drawing.Size(75, 23);
+            this.dOK.TabIndex = 5;
+            this.dOK.Text = "OK";
+            this.dOK.UseVisualStyleBackColor = true;
+            this.dOK.Click += new System.EventHandler(this.dOK_Click);
+            // 
+            // dOtkazi
+            // 
+            this.dOtkazi.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.dOtkazi.Location = new System.Drawing.Point(84, 280);
+            this.dOtkazi.Name = "dOtkazi";
+            this.dOtkazi.Size = new System.Drawing.Size(75, 23);
+            this.dOtkazi.TabIndex = 5;
+            this.dOtkazi.Text = "Otkaži";
+            this.dOtkazi.UseVisualStyleBackColor = true;
+            this.dOtkazi.Click += new System.EventHandler(this.dOtkazi_Click);
             // 
             // firmeTableAdapter
             // 

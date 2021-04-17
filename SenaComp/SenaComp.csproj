@@ -106,15 +106,6 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="dbSenaComp.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="dbSenaComp_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <DependentUpon>dbSenaComp.mdf</DependentUpon>
-    </Content>
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\uclib\uclib.csproj">
       <Project>{fa7bd8e0-c04b-4446-978a-0c3b3485cff8}</Project>
       <Name>uclib</Name>

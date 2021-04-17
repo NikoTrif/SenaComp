@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace iflib
 {
-    public class clTransfer
+    public static class clTransfer
     {
-        public string Firma { get; set; }
-        public string Kontakt { get; set; }
-        public string eMail { get; set; }
+        public static string Firma { get; set; }
+        public static string Kontakt { get; set; }
+        public static string eMail { get; set; }
     }
 }

@@ -15,5 +15,13 @@ namespace uclib.Baze
         {
             InitializeComponent();
         }
+
+        private void firmeBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        {
+            this.Validate();
+            this.firmeBindingSource.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.dbSenaCompDataSet);
+
+        }
     }
 }

@@ -102,12 +102,28 @@ namespace SenaComp
 
         private void dArtikli_Click(object sender, EventArgs e)
         {
+            //uclib.Baze.ucArtikli art = new uclib.Baze.ucArtikli();
 
+            //tMenu.Start();
+
+            //pMain.Controls.Clear();
+            //pMain.Controls.Add(art);
+            //art.Dock = DockStyle.Fill;
+            //art.SendToBack();
+            //pbLogo.BringToFront();
         }
 
         private void dFirme_Click(object sender, EventArgs e)
         {
+            uclib.Baze.ucFirme fir = new uclib.Baze.ucFirme();
 
+            tMenu.Start();
+
+            pMain.Controls.Clear();
+            pMain.Controls.Add(fir);
+            fir.Dock = DockStyle.Fill;
+            fir.SendToBack();
+            pbLogo.BringToFront();
         }
 
         private void dPodesavanja_Click(object sender, EventArgs e)

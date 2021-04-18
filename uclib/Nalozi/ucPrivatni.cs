@@ -38,7 +38,7 @@ namespace uclib.Nalozi
             //MessageBox.Show(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments));
 
             //G 8
-            naloziPTableAdapter.Connection.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=" + Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\Visual Studio 2015\Projects\SenaComp\SenaComp\dbSenaComp.mdf;Password=Master1!";
+            naloziPTableAdapter.Connection.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=" + Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\Visual Studio 2015\Projects\SenaComp\SenaComp\bin\debug\dbSenaComp.mdf;Password=Master1!";
             naloziPTableAdapter.Fill(dbSenaCompDataSet.NaloziP);
             flpDodajKontrole(); // ovo radi i treba ovako
             cbFilter.SelectedIndex = 0;

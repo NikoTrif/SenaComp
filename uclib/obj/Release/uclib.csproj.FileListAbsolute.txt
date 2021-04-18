@@ -112,3 +112,4 @@ C:\Users\Nikola\Documents\Visual Studio 2015\Projects\SenaComp\uclib\obj\Release
 C:\Users\Nikola\Documents\Visual Studio 2015\Projects\SenaComp\uclib\obj\Release\uclib.dll
 C:\Users\Nikola\Documents\Visual Studio 2015\Projects\SenaComp\uclib\obj\Release\uclib.pdb
 C:\Users\Nikola\Documents\Visual Studio 2015\Projects\SenaComp\uclib\obj\Release\uclib.Ostalo.ucOdabirFirme.resources
+C:\Users\Nikola\Documents\Visual Studio 2015\Projects\SenaComp\uclib\obj\Release\uclib.Baze.ucFirme.resources

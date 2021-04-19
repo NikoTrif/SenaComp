@@ -57,7 +57,9 @@ namespace uclib.Nalozi
 
         private void dSacuvaj_Click(object sender, EventArgs e)
         {
-
+            Validate();
+            naloziFBindingSource.EndEdit();
+            naloziFTableAdapter.Update(dbSenaCompDataSet.NaloziF);
         }
 
         private void dStampaj_Click(object sender, EventArgs e)
@@ -94,11 +96,15 @@ namespace uclib.Nalozi
                     //fr.ShowDialog();
                     if(fr.ShowDialog() == DialogResult.OK)
                     {
-                        string a, b, c;
+                        firmaTextBox.Text = iflib.clTransfer.Firma;
+                        kontaktTextBox.Text = iflib.clTransfer.Kontakt;
+                        eMailTextBox.Text = iflib.clTransfer.eMail;
+                        kontaktOsobaTextBox.Select();
 
-                        a = iflib.clTransfer.Firma;
-                        b = iflib.clTransfer.Kontakt;
-                        c = iflib.clTransfer.eMail;
+                        //ciscenje clTransfera
+                        iflib.clTransfer.Firma = null;
+                        iflib.clTransfer.Kontakt = null;
+                        iflib.clTransfer.eMail = null;
                     }
                 }
             }

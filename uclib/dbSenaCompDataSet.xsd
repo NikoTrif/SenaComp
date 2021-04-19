@@ -1051,7 +1051,7 @@ SELECT redniBroj, Datum, Valuta, Kupac, Roba, Ukupno, Klauzule FROM Profakture W
   <xs:element name="dbSenaCompDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="dbSenaCompDataSet" msprop:Generator_UserDSName="dbSenaCompDataSet">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="Artikli" msprop:Generator_TableClassName="ArtikliDataTable" msprop:Generator_TableVarName="tableArtikli" msprop:Generator_RowChangedName="ArtikliRowChanged" msprop:Generator_TablePropName="Artikli" msprop:Generator_RowDeletingName="ArtikliRowDeleting" msprop:Generator_RowChangingName="ArtikliRowChanging" msprop:Generator_RowEvHandlerName="ArtikliRowChangeEventHandler" msprop:Generator_RowDeletedName="ArtikliRowDeleted" msprop:Generator_RowClassName="ArtikliRow" msprop:Generator_UserTableName="Artikli" msprop:Generator_RowEvArgName="ArtikliRowChangeEvent">
+        <xs:element name="Artikli" msprop:Generator_TableClassName="ArtikliDataTable" msprop:Generator_TableVarName="tableArtikli" msprop:Generator_TablePropName="Artikli" msprop:Generator_RowDeletingName="ArtikliRowDeleting" msprop:Generator_RowChangingName="ArtikliRowChanging" msprop:Generator_RowEvHandlerName="ArtikliRowChangeEventHandler" msprop:Generator_RowDeletedName="ArtikliRowDeleted" msprop:Generator_UserTableName="Artikli" msprop:Generator_RowChangedName="ArtikliRowChanged" msprop:Generator_RowEvArgName="ArtikliRowChangeEvent" msprop:Generator_RowClassName="ArtikliRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Sifra" msprop:Generator_ColumnVarNameInTable="columnSifra" msprop:Generator_ColumnPropNameInRow="Sifra" msprop:Generator_ColumnPropNameInTable="SifraColumn" msprop:Generator_UserColumnName="Sifra" type="xs:int" />
@@ -1075,7 +1075,7 @@ SELECT redniBroj, Datum, Valuta, Kupac, Roba, Ukupno, Klauzule FROM Profakture W
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="ArtikliPFO" msprop:Generator_TableClassName="ArtikliPFODataTable" msprop:Generator_TableVarName="tableArtikliPFO" msprop:Generator_RowChangedName="ArtikliPFORowChanged" msprop:Generator_TablePropName="ArtikliPFO" msprop:Generator_RowDeletingName="ArtikliPFORowDeleting" msprop:Generator_RowChangingName="ArtikliPFORowChanging" msprop:Generator_RowEvHandlerName="ArtikliPFORowChangeEventHandler" msprop:Generator_RowDeletedName="ArtikliPFORowDeleted" msprop:Generator_RowClassName="ArtikliPFORow" msprop:Generator_UserTableName="ArtikliPFO" msprop:Generator_RowEvArgName="ArtikliPFORowChangeEvent">
+        <xs:element name="ArtikliPFO" msprop:Generator_TableClassName="ArtikliPFODataTable" msprop:Generator_TableVarName="tableArtikliPFO" msprop:Generator_TablePropName="ArtikliPFO" msprop:Generator_RowDeletingName="ArtikliPFORowDeleting" msprop:Generator_RowChangingName="ArtikliPFORowChanging" msprop:Generator_RowEvHandlerName="ArtikliPFORowChangeEventHandler" msprop:Generator_RowDeletedName="ArtikliPFORowDeleted" msprop:Generator_UserTableName="ArtikliPFO" msprop:Generator_RowChangedName="ArtikliPFORowChanged" msprop:Generator_RowEvArgName="ArtikliPFORowChangeEvent" msprop:Generator_RowClassName="ArtikliPFORow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Id" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_UserColumnName="Id" type="xs:int" />
@@ -1093,7 +1093,7 @@ SELECT redniBroj, Datum, Valuta, Kupac, Roba, Ukupno, Klauzule FROM Profakture W
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Fakture" msprop:Generator_TableClassName="FaktureDataTable" msprop:Generator_TableVarName="tableFakture" msprop:Generator_RowChangedName="FaktureRowChanged" msprop:Generator_TablePropName="Fakture" msprop:Generator_RowDeletingName="FaktureRowDeleting" msprop:Generator_RowChangingName="FaktureRowChanging" msprop:Generator_RowEvHandlerName="FaktureRowChangeEventHandler" msprop:Generator_RowDeletedName="FaktureRowDeleted" msprop:Generator_RowClassName="FaktureRow" msprop:Generator_UserTableName="Fakture" msprop:Generator_RowEvArgName="FaktureRowChangeEvent">
+        <xs:element name="Fakture" msprop:Generator_TableClassName="FaktureDataTable" msprop:Generator_TableVarName="tableFakture" msprop:Generator_TablePropName="Fakture" msprop:Generator_RowDeletingName="FaktureRowDeleting" msprop:Generator_RowChangingName="FaktureRowChanging" msprop:Generator_RowEvHandlerName="FaktureRowChangeEventHandler" msprop:Generator_RowDeletedName="FaktureRowDeleted" msprop:Generator_UserTableName="Fakture" msprop:Generator_RowChangedName="FaktureRowChanged" msprop:Generator_RowEvArgName="FaktureRowChangeEvent" msprop:Generator_RowClassName="FaktureRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="redniBroj" msprop:Generator_ColumnVarNameInTable="columnredniBroj" msprop:Generator_ColumnPropNameInRow="redniBroj" msprop:Generator_ColumnPropNameInTable="redniBrojColumn" msprop:Generator_UserColumnName="redniBroj" type="xs:int" />
@@ -1131,7 +1131,7 @@ SELECT redniBroj, Datum, Valuta, Kupac, Roba, Ukupno, Klauzule FROM Profakture W
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Firme" msprop:Generator_TableClassName="FirmeDataTable" msprop:Generator_TableVarName="tableFirme" msprop:Generator_RowChangedName="FirmeRowChanged" msprop:Generator_TablePropName="Firme" msprop:Generator_RowDeletingName="FirmeRowDeleting" msprop:Generator_RowChangingName="FirmeRowChanging" msprop:Generator_RowEvHandlerName="FirmeRowChangeEventHandler" msprop:Generator_RowDeletedName="FirmeRowDeleted" msprop:Generator_RowClassName="FirmeRow" msprop:Generator_UserTableName="Firme" msprop:Generator_RowEvArgName="FirmeRowChangeEvent">
+        <xs:element name="Firme" msprop:Generator_TableClassName="FirmeDataTable" msprop:Generator_TableVarName="tableFirme" msprop:Generator_TablePropName="Firme" msprop:Generator_RowDeletingName="FirmeRowDeleting" msprop:Generator_RowChangingName="FirmeRowChanging" msprop:Generator_RowEvHandlerName="FirmeRowChangeEventHandler" msprop:Generator_RowDeletedName="FirmeRowDeleted" msprop:Generator_UserTableName="Firme" msprop:Generator_RowChangedName="FirmeRowChanged" msprop:Generator_RowEvArgName="FirmeRowChangeEvent" msprop:Generator_RowClassName="FirmeRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ID" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="1" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" />
@@ -1187,10 +1187,10 @@ SELECT redniBroj, Datum, Valuta, Kupac, Roba, Ukupno, Klauzule FROM Profakture W
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="NaloziF" msprop:Generator_TableClassName="NaloziFDataTable" msprop:Generator_TableVarName="tableNaloziF" msprop:Generator_RowChangedName="NaloziFRowChanged" msprop:Generator_TablePropName="NaloziF" msprop:Generator_RowDeletingName="NaloziFRowDeleting" msprop:Generator_RowChangingName="NaloziFRowChanging" msprop:Generator_RowEvHandlerName="NaloziFRowChangeEventHandler" msprop:Generator_RowDeletedName="NaloziFRowDeleted" msprop:Generator_RowClassName="NaloziFRow" msprop:Generator_UserTableName="NaloziF" msprop:Generator_RowEvArgName="NaloziFRowChangeEvent">
+        <xs:element name="NaloziF" msprop:Generator_TableClassName="NaloziFDataTable" msprop:Generator_TableVarName="tableNaloziF" msprop:Generator_TablePropName="NaloziF" msprop:Generator_RowDeletingName="NaloziFRowDeleting" msprop:Generator_RowChangingName="NaloziFRowChanging" msprop:Generator_RowEvHandlerName="NaloziFRowChangeEventHandler" msprop:Generator_RowDeletedName="NaloziFRowDeleted" msprop:Generator_UserTableName="NaloziF" msprop:Generator_RowChangedName="NaloziFRowChanged" msprop:Generator_RowEvArgName="NaloziFRowChangeEvent" msprop:Generator_RowClassName="NaloziFRow">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="brojNaloga" msprop:Generator_ColumnVarNameInTable="columnbrojNaloga" msprop:Generator_ColumnPropNameInRow="brojNaloga" msprop:Generator_ColumnPropNameInTable="brojNalogaColumn" msprop:Generator_UserColumnName="brojNaloga" type="xs:int" />
+              <xs:element name="brojNaloga" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="1" msprop:Generator_ColumnVarNameInTable="columnbrojNaloga" msprop:Generator_ColumnPropNameInRow="brojNaloga" msprop:Generator_ColumnPropNameInTable="brojNalogaColumn" msprop:Generator_UserColumnName="brojNaloga" type="xs:int" />
               <xs:element name="Datum" msprop:Generator_ColumnVarNameInTable="columnDatum" msprop:Generator_ColumnPropNameInRow="Datum" msprop:Generator_ColumnPropNameInTable="DatumColumn" msprop:Generator_UserColumnName="Datum" type="xs:dateTime" minOccurs="0" />
               <xs:element name="Firma" msprop:Generator_ColumnVarNameInTable="columnFirma" msprop:Generator_ColumnPropNameInRow="Firma" msprop:Generator_ColumnPropNameInTable="FirmaColumn" msprop:Generator_UserColumnName="Firma" minOccurs="0">
                 <xs:simpleType>
@@ -1294,7 +1294,7 @@ SELECT redniBroj, Datum, Valuta, Kupac, Roba, Ukupno, Klauzule FROM Profakture W
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="NaloziP" msprop:Generator_TableClassName="NaloziPDataTable" msprop:Generator_TableVarName="tableNaloziP" msprop:Generator_RowChangedName="NaloziPRowChanged" msprop:Generator_TablePropName="NaloziP" msprop:Generator_RowDeletingName="NaloziPRowDeleting" msprop:Generator_RowChangingName="NaloziPRowChanging" msprop:Generator_RowEvHandlerName="NaloziPRowChangeEventHandler" msprop:Generator_RowDeletedName="NaloziPRowDeleted" msprop:Generator_RowClassName="NaloziPRow" msprop:Generator_UserTableName="NaloziP" msprop:Generator_RowEvArgName="NaloziPRowChangeEvent">
+        <xs:element name="NaloziP" msprop:Generator_TableClassName="NaloziPDataTable" msprop:Generator_TableVarName="tableNaloziP" msprop:Generator_TablePropName="NaloziP" msprop:Generator_RowDeletingName="NaloziPRowDeleting" msprop:Generator_RowChangingName="NaloziPRowChanging" msprop:Generator_RowEvHandlerName="NaloziPRowChangeEventHandler" msprop:Generator_RowDeletedName="NaloziPRowDeleted" msprop:Generator_UserTableName="NaloziP" msprop:Generator_RowChangedName="NaloziPRowChanged" msprop:Generator_RowEvArgName="NaloziPRowChangeEvent" msprop:Generator_RowClassName="NaloziPRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="brojNaloga" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="1" msprop:Generator_ColumnVarNameInTable="columnbrojNaloga" msprop:Generator_ColumnPropNameInRow="brojNaloga" msprop:Generator_ColumnPropNameInTable="brojNalogaColumn" msprop:Generator_UserColumnName="brojNaloga" type="xs:int" />
@@ -1394,7 +1394,7 @@ SELECT redniBroj, Datum, Valuta, Kupac, Roba, Ukupno, Klauzule FROM Profakture W
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Otpremnice" msprop:Generator_TableClassName="OtpremniceDataTable" msprop:Generator_TableVarName="tableOtpremnice" msprop:Generator_RowChangedName="OtpremniceRowChanged" msprop:Generator_TablePropName="Otpremnice" msprop:Generator_RowDeletingName="OtpremniceRowDeleting" msprop:Generator_RowChangingName="OtpremniceRowChanging" msprop:Generator_RowEvHandlerName="OtpremniceRowChangeEventHandler" msprop:Generator_RowDeletedName="OtpremniceRowDeleted" msprop:Generator_RowClassName="OtpremniceRow" msprop:Generator_UserTableName="Otpremnice" msprop:Generator_RowEvArgName="OtpremniceRowChangeEvent">
+        <xs:element name="Otpremnice" msprop:Generator_TableClassName="OtpremniceDataTable" msprop:Generator_TableVarName="tableOtpremnice" msprop:Generator_TablePropName="Otpremnice" msprop:Generator_RowDeletingName="OtpremniceRowDeleting" msprop:Generator_RowChangingName="OtpremniceRowChanging" msprop:Generator_RowEvHandlerName="OtpremniceRowChangeEventHandler" msprop:Generator_RowDeletedName="OtpremniceRowDeleted" msprop:Generator_UserTableName="Otpremnice" msprop:Generator_RowChangedName="OtpremniceRowChanged" msprop:Generator_RowEvArgName="OtpremniceRowChangeEvent" msprop:Generator_RowClassName="OtpremniceRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="redniBroj" msprop:Generator_ColumnVarNameInTable="columnredniBroj" msprop:Generator_ColumnPropNameInRow="redniBroj" msprop:Generator_ColumnPropNameInTable="redniBrojColumn" msprop:Generator_UserColumnName="redniBroj" type="xs:int" />
@@ -1483,7 +1483,7 @@ SELECT redniBroj, Datum, Valuta, Kupac, Roba, Ukupno, Klauzule FROM Profakture W
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Profakture" msprop:Generator_TableClassName="ProfaktureDataTable" msprop:Generator_TableVarName="tableProfakture" msprop:Generator_RowChangedName="ProfaktureRowChanged" msprop:Generator_TablePropName="Profakture" msprop:Generator_RowDeletingName="ProfaktureRowDeleting" msprop:Generator_RowChangingName="ProfaktureRowChanging" msprop:Generator_RowEvHandlerName="ProfaktureRowChangeEventHandler" msprop:Generator_RowDeletedName="ProfaktureRowDeleted" msprop:Generator_RowClassName="ProfaktureRow" msprop:Generator_UserTableName="Profakture" msprop:Generator_RowEvArgName="ProfaktureRowChangeEvent">
+        <xs:element name="Profakture" msprop:Generator_TableClassName="ProfaktureDataTable" msprop:Generator_TableVarName="tableProfakture" msprop:Generator_TablePropName="Profakture" msprop:Generator_RowDeletingName="ProfaktureRowDeleting" msprop:Generator_RowChangingName="ProfaktureRowChanging" msprop:Generator_RowEvHandlerName="ProfaktureRowChangeEventHandler" msprop:Generator_RowDeletedName="ProfaktureRowDeleted" msprop:Generator_UserTableName="Profakture" msprop:Generator_RowChangedName="ProfaktureRowChanged" msprop:Generator_RowEvArgName="ProfaktureRowChangeEvent" msprop:Generator_RowClassName="ProfaktureRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="redniBroj" msprop:Generator_ColumnVarNameInTable="columnredniBroj" msprop:Generator_ColumnPropNameInRow="redniBroj" msprop:Generator_ColumnPropNameInTable="redniBrojColumn" msprop:Generator_UserColumnName="redniBroj" type="xs:int" />

@@ -10,11 +10,6 @@ D:\Google Drive\Projekti\SenaComp\iflib\obj\Release\iflib.dll
 D:\Google Drive\Projekti\SenaComp\iflib\obj\Release\iflib.pdb
 D:\Google Drive\Projekti\SenaComp\iflib\bin\Release\uclib.dll
 D:\Google Drive\Projekti\SenaComp\iflib\bin\Release\uclib.pdb
-C:\Users\MasterPro\Documents\Visual Studio 2015\Projects\SenaComp\iflib\bin\Release\iflib.dll
-C:\Users\MasterPro\Documents\Visual Studio 2015\Projects\SenaComp\iflib\bin\Release\iflib.pdb
-C:\Users\MasterPro\Documents\Visual Studio 2015\Projects\SenaComp\iflib\obj\Release\iflib.csprojResolveAssemblyReference.cache
-C:\Users\MasterPro\Documents\Visual Studio 2015\Projects\SenaComp\iflib\obj\Release\iflib.dll
-C:\Users\MasterPro\Documents\Visual Studio 2015\Projects\SenaComp\iflib\obj\Release\iflib.pdb
 C:\Users\Lenovo\Documents\Visual Studio 2015\Projects\SenaComp\iflib\bin\Release\Reportovi\rNalogP.rdlc
 C:\Users\Lenovo\Documents\Visual Studio 2015\Projects\SenaComp\iflib\bin\Release\iflib.dll
 C:\Users\Lenovo\Documents\Visual Studio 2015\Projects\SenaComp\iflib\bin\Release\iflib.pdb
@@ -35,7 +30,6 @@ C:\Users\Lenovo\Documents\Visual Studio 2015\Projects\SenaComp\iflib\obj\Release
 C:\Users\Lenovo\Documents\Visual Studio 2015\Projects\SenaComp\iflib\obj\Release\RdlCompile.compiled
 C:\Users\Lenovo\Documents\Visual Studio 2015\Projects\SenaComp\iflib\obj\Release\iflib.dll
 C:\Users\Lenovo\Documents\Visual Studio 2015\Projects\SenaComp\iflib\obj\Release\iflib.pdb
-C:\Users\MasterPro\Documents\Visual Studio 2015\Projects\SenaComp\iflib\bin\Release\Microsoft.ReportViewer.WinForms.dll
 C:\Users\Nikola\Documents\Visual Studio 2015\Projects\SenaComp\iflib\bin\Release\iflib.dll
 C:\Users\Nikola\Documents\Visual Studio 2015\Projects\SenaComp\iflib\bin\Release\iflib.pdb
 C:\Users\Nikola\Documents\Visual Studio 2015\Projects\SenaComp\iflib\bin\Release\Microsoft.ReportViewer.WinForms.dll
@@ -52,3 +46,9 @@ C:\Users\Nikola\Documents\Visual Studio 2015\Projects\SenaComp\iflib\bin\Release
 C:\Users\Nikola\Documents\Visual Studio 2015\Projects\SenaComp\iflib\bin\Release\zh-Hant\Microsoft.SqlServer.Types.resources.dll
 C:\Users\Nikola\Documents\Visual Studio 2015\Projects\SenaComp\iflib\obj\Release\iflib.dll
 C:\Users\Nikola\Documents\Visual Studio 2015\Projects\SenaComp\iflib\obj\Release\iflib.pdb
+C:\Users\MasterPro\Documents\Visual Studio 2015\Projects\SenaComp\iflib\bin\Release\iflib.dll
+C:\Users\MasterPro\Documents\Visual Studio 2015\Projects\SenaComp\iflib\bin\Release\iflib.pdb
+C:\Users\MasterPro\Documents\Visual Studio 2015\Projects\SenaComp\iflib\bin\Release\Microsoft.ReportViewer.WinForms.dll
+C:\Users\MasterPro\Documents\Visual Studio 2015\Projects\SenaComp\iflib\obj\Release\iflib.csprojResolveAssemblyReference.cache
+C:\Users\MasterPro\Documents\Visual Studio 2015\Projects\SenaComp\iflib\obj\Release\iflib.dll
+C:\Users\MasterPro\Documents\Visual Studio 2015\Projects\SenaComp\iflib\obj\Release\iflib.pdb

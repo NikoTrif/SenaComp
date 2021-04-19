@@ -2200,7 +2200,6 @@ namespace uclib {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public NaloziFRow AddNaloziFRow(
-                        int brojNaloga, 
                         System.DateTime Datum, 
                         string Firma, 
                         string kontaktOsoba, 
@@ -2225,7 +2224,7 @@ namespace uclib {
                         string Napomena) {
                 NaloziFRow rowNaloziFRow = ((NaloziFRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        brojNaloga,
+                        null,
                         Datum,
                         Firma,
                         kontaktOsoba,
@@ -2353,6 +2352,8 @@ namespace uclib {
                 base.Columns.Add(this.columnNapomena);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnbrojNaloga}, true));
+                this.columnbrojNaloga.AutoIncrement = true;
+                this.columnbrojNaloga.AutoIncrementSeed = 1;
                 this.columnbrojNaloga.AllowDBNull = false;
                 this.columnbrojNaloga.Unique = true;
                 this.columnFirma.MaxLength = 50;

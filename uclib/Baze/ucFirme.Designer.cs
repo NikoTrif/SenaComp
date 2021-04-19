@@ -35,12 +35,6 @@
             this.firmeTableAdapter = new uclib.dbSenaCompDataSetTableAdapters.FirmeTableAdapter();
             this.tableAdapterManager = new uclib.dbSenaCompDataSetTableAdapters.TableAdapterManager();
             this.firmeDataGridView = new System.Windows.Forms.DataGridView();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.dNovi = new System.Windows.Forms.Button();
-            this.dOtkazi = new System.Windows.Forms.Button();
-            this.dSacuvaj = new System.Windows.Forms.Button();
-            this.dStampaj = new System.Windows.Forms.Button();
-            this.dObrisi = new System.Windows.Forms.Button();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -49,6 +43,12 @@
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.dNovi = new System.Windows.Forms.Button();
+            this.dOtkazi = new System.Windows.Forms.Button();
+            this.dSacuvaj = new System.Windows.Forms.Button();
+            this.dStampaj = new System.Windows.Forms.Button();
+            this.dObrisi = new System.Windows.Forms.Button();
             this.cbFilter = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.tbPretraga = new System.Windows.Forms.TextBox();
@@ -123,6 +123,54 @@
             this.firmeDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.firmeDataGridView.Size = new System.Drawing.Size(1049, 279);
             this.firmeDataGridView.TabIndex = 1;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "ID";
+            this.dataGridViewTextBoxColumn1.HeaderText = "ID";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "Naziv";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Naziv";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "PIB";
+            this.dataGridViewTextBoxColumn3.HeaderText = "PIB";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "Grad";
+            this.dataGridViewTextBoxColumn4.HeaderText = "Grad";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "UlicaBroj";
+            this.dataGridViewTextBoxColumn5.HeaderText = "Adresa";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.DataPropertyName = "Kontakt";
+            this.dataGridViewTextBoxColumn6.HeaderText = "Kontakt";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            this.dataGridViewTextBoxColumn7.DataPropertyName = "eMail";
+            this.dataGridViewTextBoxColumn7.HeaderText = "e-Mail";
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            // 
+            // dataGridViewTextBoxColumn8
+            // 
+            this.dataGridViewTextBoxColumn8.DataPropertyName = "tekuciRacun";
+            this.dataGridViewTextBoxColumn8.HeaderText = "Tekući Račun";
+            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
             // 
             // tableLayoutPanel1
             // 
@@ -205,54 +253,6 @@
             this.dObrisi.TabIndex = 16;
             this.dObrisi.Text = "Obriši";
             this.dObrisi.UseVisualStyleBackColor = true;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "ID";
-            this.dataGridViewTextBoxColumn1.HeaderText = "ID";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "Naziv";
-            this.dataGridViewTextBoxColumn2.HeaderText = "Naziv";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "PIB";
-            this.dataGridViewTextBoxColumn3.HeaderText = "PIB";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "Grad";
-            this.dataGridViewTextBoxColumn4.HeaderText = "Grad";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "UlicaBroj";
-            this.dataGridViewTextBoxColumn5.HeaderText = "Adresa";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            // 
-            // dataGridViewTextBoxColumn6
-            // 
-            this.dataGridViewTextBoxColumn6.DataPropertyName = "Kontakt";
-            this.dataGridViewTextBoxColumn6.HeaderText = "Kontakt";
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            // 
-            // dataGridViewTextBoxColumn7
-            // 
-            this.dataGridViewTextBoxColumn7.DataPropertyName = "eMail";
-            this.dataGridViewTextBoxColumn7.HeaderText = "e-Mail";
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            // 
-            // dataGridViewTextBoxColumn8
-            // 
-            this.dataGridViewTextBoxColumn8.DataPropertyName = "tekuciRacun";
-            this.dataGridViewTextBoxColumn8.HeaderText = "Tekući Račun";
-            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
             // 
             // cbFilter
             // 
@@ -426,6 +426,7 @@
             this.firmeBindingNavigatorSaveItem.Name = "firmeBindingNavigatorSaveItem";
             this.firmeBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 22);
             this.firmeBindingNavigatorSaveItem.Text = "Save Data";
+            this.firmeBindingNavigatorSaveItem.Click += new System.EventHandler(this.firmeBindingNavigatorSaveItem_Click);
             // 
             // ucFirme
             // 
@@ -440,6 +441,7 @@
             this.Controls.Add(this.firmeDataGridView);
             this.Name = "ucFirme";
             this.Size = new System.Drawing.Size(1055, 646);
+            this.Load += new System.EventHandler(this.ucFirme_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dbSenaCompDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.firmeBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.firmeDataGridView)).EndInit();

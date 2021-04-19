@@ -71,7 +71,7 @@ namespace uclib.Ostalo
 
         private void firmeDataGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            dOK_Click(null, EventArgs.Empty);
+            dOK.PerformClick();
         }
     }
 }

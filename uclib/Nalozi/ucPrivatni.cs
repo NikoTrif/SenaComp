@@ -42,7 +42,10 @@ namespace uclib.Nalozi
             naloziPTableAdapter.Fill(dbSenaCompDataSet.NaloziP);
             flpDodajKontrole(); // ovo radi i treba ovako
             cbFilter.SelectedIndex = 0;
-            naloziPDataGridView.CurrentCell = naloziPDataGridView.Rows[naloziPDataGridView.RowCount - 1].Cells[0]; //TD 2.1.e
+            if (naloziPDataGridView.RowCount != 0)
+            {
+                naloziPDataGridView.CurrentCell = naloziPDataGridView.Rows[naloziPDataGridView.RowCount - 1].Cells[0]; //TD 2.1.e 
+            }
         }
 
         private void dNovi_Click(object sender, EventArgs e)

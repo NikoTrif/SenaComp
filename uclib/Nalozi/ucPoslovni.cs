@@ -68,7 +68,20 @@ namespace uclib.Nalozi
         }
         private void dObrisi_Click(object sender, EventArgs e)
         {
+            if(MessageBox.Show("Da li ste sigurni da želite da obrišete ovaj nalog?", "Brisanje naloga", MessageBoxButtons.YesNo,
+                MessageBoxIcon.Warning) == DialogResult.Yes)
+            {
+                naloziFBindingSource.RemoveCurrent();
 
+                //G 6
+                dbSenaCompDataSet.Clear();
+                dbSenaCompDataSet.NaloziF.brojNalogaColumn.AutoIncrementSeed = -1;
+                dbSenaCompDataSet.NaloziF.brojNalogaColumn.AutoIncrementStep = -1;
+                dbSenaCompDataSet.NaloziF.brojNalogaColumn.AutoIncrementSeed = 1;
+                dbSenaCompDataSet.NaloziF.brojNalogaColumn.AutoIncrementStep = 1;
+                naloziFTableAdapter.Fill(dbSenaCompDataSet.NaloziF);
+            }
+            resetBrojNalogaTextBoxReadOnly();
         }
 
         private void resetBrojNalogaTextBoxReadOnly()
@@ -76,7 +89,7 @@ namespace uclib.Nalozi
             if (brojNalogaTextBox.ReadOnly == false)
             {
                 brojNalogaTextBox.ReadOnly = true;
-                //izmeniBrojNalogaToolStripMenuItem.Checked = false;
+                izmeniBrojNalogaToolStripMenuItem.Checked = false;
             }
         }
 
@@ -108,6 +121,41 @@ namespace uclib.Nalozi
                     }
                 }
             }
+        }
+
+        private void noviBrojNalogaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string[] nbn =
+            {
+                firmaTextBox.Text, //..........0
+                kontaktOsobaTextBox.Text, //...1
+                kontaktTextBox.Text, //........2
+                eMailTextBox.Text, //..........3
+                uredjajComboBox.Text, //.......4
+                proizvodjacComboBox.Text, //...5
+                modelTextBox.Text, //..........6
+                serijskiBrojTextBox.Text, //...7
+                opremaTextBox.Text //..........8
+            };
+
+            dNovi_Click(null, EventArgs.Empty);
+
+            firmaTextBox.Text = nbn[0];
+            kontaktOsobaTextBox.Text = nbn[1];
+            kontaktTextBox.Text = nbn[2];
+            eMailTextBox.Text = nbn[3];
+            uredjajComboBox.Text = nbn[4];
+            proizvodjacComboBox.Text = nbn[5];
+            modelTextBox.Text = nbn[6];
+            serijskiBrojTextBox.Text = nbn[7];
+            opisKvaraTextBox.Text = nbn[8];
+
+            opisKvaraTextBox.Select();
+        }
+
+        private void izmeniBrojNalogaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            brojNalogaTextBox.ReadOnly = !izmeniBrojNalogaToolStripMenuItem.Checked;
         }
     }
 }

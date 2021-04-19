@@ -68,7 +68,7 @@
             this.pMain.Location = new System.Drawing.Point(0, 0);
             this.pMain.Margin = new System.Windows.Forms.Padding(2);
             this.pMain.Name = "pMain";
-            this.pMain.Size = new System.Drawing.Size(1028, 609);
+            this.pMain.Size = new System.Drawing.Size(1055, 646);
             this.pMain.TabIndex = 1;
             // 
             // pbLogo
@@ -76,7 +76,7 @@
             this.pbLogo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pbLogo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pbLogo.ImageLocation = "";
-            this.pbLogo.Location = new System.Drawing.Point(830, 126);
+            this.pbLogo.Location = new System.Drawing.Point(857, 126);
             this.pbLogo.Name = "pbLogo";
             this.pbLogo.Size = new System.Drawing.Size(175, 189);
             this.pbLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -101,7 +101,7 @@
             this.pMenu.Location = new System.Drawing.Point(0, 0);
             this.pMenu.Margin = new System.Windows.Forms.Padding(2);
             this.pMenu.Name = "pMenu";
-            this.pMenu.Size = new System.Drawing.Size(0, 609);
+            this.pMenu.Size = new System.Drawing.Size(0, 646);
             this.pMenu.TabIndex = 2;
             // 
             // dPodesavanja
@@ -110,7 +110,7 @@
             this.dPodesavanja.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dPodesavanja.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.dPodesavanja.ForeColor = System.Drawing.Color.White;
-            this.dPodesavanja.Location = new System.Drawing.Point(-56, 553);
+            this.dPodesavanja.Location = new System.Drawing.Point(-56, 590);
             this.dPodesavanja.Margin = new System.Windows.Forms.Padding(2);
             this.dPodesavanja.Name = "dPodesavanja";
             this.dPodesavanja.Size = new System.Drawing.Size(43, 46);
@@ -269,7 +269,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1028, 609);
+            this.ClientSize = new System.Drawing.Size(1055, 646);
             this.Controls.Add(this.pbLogo);
             this.Controls.Add(this.dMenu);
             this.Controls.Add(this.pMenu);

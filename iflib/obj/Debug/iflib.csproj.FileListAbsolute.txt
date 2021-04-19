@@ -47,3 +47,8 @@ C:\Users\Nikola\Documents\Visual Studio 2015\Projects\SenaComp\iflib\bin\Debug\z
 C:\Users\Nikola\Documents\Visual Studio 2015\Projects\SenaComp\iflib\bin\Debug\zh-Hant\Microsoft.SqlServer.Types.resources.dll
 C:\Users\Nikola\Documents\Visual Studio 2015\Projects\SenaComp\iflib\obj\Debug\iflib.dll
 C:\Users\Nikola\Documents\Visual Studio 2015\Projects\SenaComp\iflib\obj\Debug\iflib.pdb
+C:\Users\MasterPro\Documents\Visual Studio 2015\Projects\SenaComp\iflib\bin\Debug\iflib.dll
+C:\Users\MasterPro\Documents\Visual Studio 2015\Projects\SenaComp\iflib\bin\Debug\iflib.pdb
+C:\Users\MasterPro\Documents\Visual Studio 2015\Projects\SenaComp\iflib\bin\Debug\Microsoft.ReportViewer.WinForms.dll
+C:\Users\MasterPro\Documents\Visual Studio 2015\Projects\SenaComp\iflib\obj\Debug\iflib.dll
+C:\Users\MasterPro\Documents\Visual Studio 2015\Projects\SenaComp\iflib\obj\Debug\iflib.pdb

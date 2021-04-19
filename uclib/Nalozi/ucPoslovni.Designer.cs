@@ -106,6 +106,9 @@
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.cbFilter = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.cmsBrojNaloga = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.noviBrojNalogaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.izmeniBrojNalogaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             brojNalogaLabel = new System.Windows.Forms.Label();
             datumLabel = new System.Windows.Forms.Label();
             modelLabel = new System.Windows.Forms.Label();
@@ -131,6 +134,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.naloziFDataGridView)).BeginInit();
             this.gbServis.SuspendLayout();
             this.tableLayoutPanel5.SuspendLayout();
+            this.cmsBrojNaloga.SuspendLayout();
             this.SuspendLayout();
             // 
             // brojNalogaLabel
@@ -139,7 +143,7 @@
             brojNalogaLabel.AutoSize = true;
             brojNalogaLabel.Location = new System.Drawing.Point(3, 7);
             brojNalogaLabel.Name = "brojNalogaLabel";
-            brojNalogaLabel.Size = new System.Drawing.Size(83, 13);
+            brojNalogaLabel.Size = new System.Drawing.Size(82, 13);
             brojNalogaLabel.TabIndex = 0;
             brojNalogaLabel.Text = "Broj naloga:";
             // 
@@ -149,7 +153,7 @@
             datumLabel.AutoSize = true;
             datumLabel.Location = new System.Drawing.Point(3, 34);
             datumLabel.Name = "datumLabel";
-            datumLabel.Size = new System.Drawing.Size(83, 13);
+            datumLabel.Size = new System.Drawing.Size(82, 13);
             datumLabel.TabIndex = 2;
             datumLabel.Text = "Datum:";
             // 
@@ -229,7 +233,7 @@
             firmaLabel.AutoSize = true;
             firmaLabel.Location = new System.Drawing.Point(3, 34);
             firmaLabel.Name = "firmaLabel";
-            firmaLabel.Size = new System.Drawing.Size(83, 13);
+            firmaLabel.Size = new System.Drawing.Size(82, 13);
             firmaLabel.TabIndex = 0;
             firmaLabel.Text = "Firma:";
             // 
@@ -239,7 +243,7 @@
             kontaktOsobaLabel.AutoSize = true;
             kontaktOsobaLabel.Location = new System.Drawing.Point(3, 61);
             kontaktOsobaLabel.Name = "kontaktOsobaLabel";
-            kontaktOsobaLabel.Size = new System.Drawing.Size(83, 13);
+            kontaktOsobaLabel.Size = new System.Drawing.Size(82, 13);
             kontaktOsobaLabel.TabIndex = 2;
             kontaktOsobaLabel.Text = "Kontakt osoba:";
             // 
@@ -249,7 +253,7 @@
             kontaktLabel.AutoSize = true;
             kontaktLabel.Location = new System.Drawing.Point(3, 88);
             kontaktLabel.Name = "kontaktLabel";
-            kontaktLabel.Size = new System.Drawing.Size(83, 13);
+            kontaktLabel.Size = new System.Drawing.Size(82, 13);
             kontaktLabel.TabIndex = 4;
             kontaktLabel.Text = "Kontakt:";
             // 
@@ -259,7 +263,7 @@
             eMailLabel.AutoSize = true;
             eMailLabel.Location = new System.Drawing.Point(3, 115);
             eMailLabel.Name = "eMailLabel";
-            eMailLabel.Size = new System.Drawing.Size(83, 13);
+            eMailLabel.Size = new System.Drawing.Size(82, 13);
             eMailLabel.TabIndex = 6;
             eMailLabel.Text = "e-Mail:";
             // 
@@ -278,8 +282,8 @@
             // tableLayoutPanel2
             // 
             this.tableLayoutPanel2.ColumnCount = 2;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 31.9F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 68.1F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 31.89964F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 68.10036F));
             this.tableLayoutPanel2.Controls.Add(this.korisnikOdbioPlacanjeRadioButton, 1, 4);
             this.tableLayoutPanel2.Controls.Add(this.servisOdustaoRadioButton, 1, 3);
             this.tableLayoutPanel2.Controls.Add(this.korisnikOdustaoRadioButton, 1, 2);
@@ -305,9 +309,9 @@
             // 
             this.korisnikOdbioPlacanjeRadioButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.korisnikOdbioPlacanjeRadioButton.DataBindings.Add(new System.Windows.Forms.Binding("Checked", this.naloziFBindingSource, "korisnikOdbioPlacanje", true));
-            this.korisnikOdbioPlacanjeRadioButton.Location = new System.Drawing.Point(92, 112);
+            this.korisnikOdbioPlacanjeRadioButton.Location = new System.Drawing.Point(91, 112);
             this.korisnikOdbioPlacanjeRadioButton.Name = "korisnikOdbioPlacanjeRadioButton";
-            this.korisnikOdbioPlacanjeRadioButton.Size = new System.Drawing.Size(184, 20);
+            this.korisnikOdbioPlacanjeRadioButton.Size = new System.Drawing.Size(185, 20);
             this.korisnikOdbioPlacanjeRadioButton.TabIndex = 9;
             this.korisnikOdbioPlacanjeRadioButton.Text = "Korisnik odbio da plati";
             this.korisnikOdbioPlacanjeRadioButton.UseVisualStyleBackColor = true;
@@ -326,9 +330,9 @@
             // 
             this.servisOdustaoRadioButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.servisOdustaoRadioButton.DataBindings.Add(new System.Windows.Forms.Binding("Checked", this.naloziFBindingSource, "servisOdustao", true));
-            this.servisOdustaoRadioButton.Location = new System.Drawing.Point(92, 84);
+            this.servisOdustaoRadioButton.Location = new System.Drawing.Point(91, 84);
             this.servisOdustaoRadioButton.Name = "servisOdustaoRadioButton";
-            this.servisOdustaoRadioButton.Size = new System.Drawing.Size(184, 20);
+            this.servisOdustaoRadioButton.Size = new System.Drawing.Size(185, 20);
             this.servisOdustaoRadioButton.TabIndex = 9;
             this.servisOdustaoRadioButton.Text = "Servis odustao od popravke";
             this.servisOdustaoRadioButton.UseVisualStyleBackColor = true;
@@ -337,9 +341,9 @@
             // 
             this.korisnikOdustaoRadioButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.korisnikOdustaoRadioButton.DataBindings.Add(new System.Windows.Forms.Binding("Checked", this.naloziFBindingSource, "korisnikOdustao", true));
-            this.korisnikOdustaoRadioButton.Location = new System.Drawing.Point(92, 57);
+            this.korisnikOdustaoRadioButton.Location = new System.Drawing.Point(91, 57);
             this.korisnikOdustaoRadioButton.Name = "korisnikOdustaoRadioButton";
-            this.korisnikOdustaoRadioButton.Size = new System.Drawing.Size(184, 20);
+            this.korisnikOdustaoRadioButton.Size = new System.Drawing.Size(185, 20);
             this.korisnikOdustaoRadioButton.TabIndex = 9;
             this.korisnikOdustaoRadioButton.Text = "Korisnik odustao od servisa";
             this.korisnikOdustaoRadioButton.UseVisualStyleBackColor = true;
@@ -348,20 +352,21 @@
             // 
             this.datumDateTimePicker.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.datumDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.naloziFBindingSource, "Datum", true));
-            this.datumDateTimePicker.Location = new System.Drawing.Point(92, 30);
+            this.datumDateTimePicker.Location = new System.Drawing.Point(91, 30);
             this.datumDateTimePicker.Name = "datumDateTimePicker";
-            this.datumDateTimePicker.Size = new System.Drawing.Size(184, 20);
+            this.datumDateTimePicker.Size = new System.Drawing.Size(185, 20);
             this.datumDateTimePicker.TabIndex = 3;
             this.datumDateTimePicker.TabStop = false;
             // 
             // brojNalogaTextBox
             // 
             this.brojNalogaTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.brojNalogaTextBox.ContextMenuStrip = this.cmsBrojNaloga;
             this.brojNalogaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.naloziFBindingSource, "brojNaloga", true));
-            this.brojNalogaTextBox.Location = new System.Drawing.Point(92, 3);
+            this.brojNalogaTextBox.Location = new System.Drawing.Point(91, 3);
             this.brojNalogaTextBox.Name = "brojNalogaTextBox";
             this.brojNalogaTextBox.ReadOnly = true;
-            this.brojNalogaTextBox.Size = new System.Drawing.Size(184, 20);
+            this.brojNalogaTextBox.Size = new System.Drawing.Size(185, 20);
             this.brojNalogaTextBox.TabIndex = 1;
             this.brojNalogaTextBox.TabStop = false;
             // 
@@ -371,7 +376,7 @@
             this.naCekanjuRadioButton.DataBindings.Add(new System.Windows.Forms.Binding("Checked", this.naloziFBindingSource, "naCekanju", true));
             this.naCekanjuRadioButton.Location = new System.Drawing.Point(3, 57);
             this.naCekanjuRadioButton.Name = "naCekanjuRadioButton";
-            this.naCekanjuRadioButton.Size = new System.Drawing.Size(83, 20);
+            this.naCekanjuRadioButton.Size = new System.Drawing.Size(82, 20);
             this.naCekanjuRadioButton.TabIndex = 5;
             this.naCekanjuRadioButton.Text = "Na čekanju";
             this.naCekanjuRadioButton.UseVisualStyleBackColor = true;
@@ -382,7 +387,7 @@
             this.zavrsenoRadioButton.DataBindings.Add(new System.Windows.Forms.Binding("Checked", this.naloziFBindingSource, "Zavrseno", true));
             this.zavrsenoRadioButton.Location = new System.Drawing.Point(3, 84);
             this.zavrsenoRadioButton.Name = "zavrsenoRadioButton";
-            this.zavrsenoRadioButton.Size = new System.Drawing.Size(83, 20);
+            this.zavrsenoRadioButton.Size = new System.Drawing.Size(82, 20);
             this.zavrsenoRadioButton.TabIndex = 6;
             this.zavrsenoRadioButton.Text = "Završeno";
             this.zavrsenoRadioButton.UseVisualStyleBackColor = true;
@@ -521,8 +526,8 @@
             // tableLayoutPanel4
             // 
             this.tableLayoutPanel4.ColumnCount = 2;
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 31.9F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 68.1F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 31.89964F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 68.10036F));
             this.tableLayoutPanel4.Controls.Add(this.eMailTextBox, 1, 4);
             this.tableLayoutPanel4.Controls.Add(eMailLabel, 0, 4);
             this.tableLayoutPanel4.Controls.Add(kontaktLabel, 0, 3);
@@ -548,36 +553,36 @@
             // 
             this.eMailTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.eMailTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.naloziFBindingSource, "eMail", true));
-            this.eMailTextBox.Location = new System.Drawing.Point(92, 112);
+            this.eMailTextBox.Location = new System.Drawing.Point(91, 112);
             this.eMailTextBox.Name = "eMailTextBox";
-            this.eMailTextBox.Size = new System.Drawing.Size(184, 20);
+            this.eMailTextBox.Size = new System.Drawing.Size(185, 20);
             this.eMailTextBox.TabIndex = 4;
             // 
             // kontaktTextBox
             // 
             this.kontaktTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.kontaktTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.naloziFBindingSource, "Kontakt", true));
-            this.kontaktTextBox.Location = new System.Drawing.Point(92, 84);
+            this.kontaktTextBox.Location = new System.Drawing.Point(91, 84);
             this.kontaktTextBox.Name = "kontaktTextBox";
-            this.kontaktTextBox.Size = new System.Drawing.Size(184, 20);
+            this.kontaktTextBox.Size = new System.Drawing.Size(185, 20);
             this.kontaktTextBox.TabIndex = 3;
             // 
             // kontaktOsobaTextBox
             // 
             this.kontaktOsobaTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.kontaktOsobaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.naloziFBindingSource, "kontaktOsoba", true));
-            this.kontaktOsobaTextBox.Location = new System.Drawing.Point(92, 57);
+            this.kontaktOsobaTextBox.Location = new System.Drawing.Point(91, 57);
             this.kontaktOsobaTextBox.Name = "kontaktOsobaTextBox";
-            this.kontaktOsobaTextBox.Size = new System.Drawing.Size(184, 20);
+            this.kontaktOsobaTextBox.Size = new System.Drawing.Size(185, 20);
             this.kontaktOsobaTextBox.TabIndex = 2;
             // 
             // firmaTextBox
             // 
             this.firmaTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.firmaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.naloziFBindingSource, "Firma", true));
-            this.firmaTextBox.Location = new System.Drawing.Point(92, 30);
+            this.firmaTextBox.Location = new System.Drawing.Point(91, 30);
             this.firmaTextBox.Name = "firmaTextBox";
-            this.firmaTextBox.Size = new System.Drawing.Size(184, 20);
+            this.firmaTextBox.Size = new System.Drawing.Size(185, 20);
             this.firmaTextBox.TabIndex = 1;
             // 
             // dFOdabir
@@ -587,7 +592,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dFOdabir.Location = new System.Drawing.Point(3, 3);
             this.dFOdabir.Name = "dFOdabir";
-            this.dFOdabir.Size = new System.Drawing.Size(83, 21);
+            this.dFOdabir.Size = new System.Drawing.Size(82, 21);
             this.dFOdabir.TabIndex = 7;
             this.dFOdabir.Text = "Odaberi";
             this.dFOdabir.UseVisualStyleBackColor = true;
@@ -782,6 +787,7 @@
             this.dataGridViewTextBoxColumn4.HeaderText = "kontaktOsoba";
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            this.dataGridViewTextBoxColumn4.Visible = false;
             // 
             // dataGridViewTextBoxColumn5
             // 
@@ -824,6 +830,7 @@
             this.dataGridViewTextBoxColumn10.HeaderText = "serijskiBroj";
             this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
             this.dataGridViewTextBoxColumn10.ReadOnly = true;
+            this.dataGridViewTextBoxColumn10.Visible = false;
             // 
             // dataGridViewTextBoxColumn11
             // 
@@ -831,6 +838,7 @@
             this.dataGridViewTextBoxColumn11.HeaderText = "Oprema";
             this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
             this.dataGridViewTextBoxColumn11.ReadOnly = true;
+            this.dataGridViewTextBoxColumn11.Visible = false;
             // 
             // dataGridViewTextBoxColumn12
             // 
@@ -845,6 +853,7 @@
             this.dataGridViewTextBoxColumn13.HeaderText = "Izvestaj";
             this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
             this.dataGridViewTextBoxColumn13.ReadOnly = true;
+            this.dataGridViewTextBoxColumn13.Visible = false;
             // 
             // dataGridViewTextBoxColumn14
             // 
@@ -852,6 +861,7 @@
             this.dataGridViewTextBoxColumn14.HeaderText = "cenaServisa";
             this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
             this.dataGridViewTextBoxColumn14.ReadOnly = true;
+            this.dataGridViewTextBoxColumn14.Visible = false;
             // 
             // dataGridViewTextBoxColumn15
             // 
@@ -866,6 +876,7 @@
             this.dataGridViewCheckBoxColumn1.HeaderText = "naCekanju";
             this.dataGridViewCheckBoxColumn1.Name = "dataGridViewCheckBoxColumn1";
             this.dataGridViewCheckBoxColumn1.ReadOnly = true;
+            this.dataGridViewCheckBoxColumn1.Visible = false;
             // 
             // dataGridViewCheckBoxColumn2
             // 
@@ -873,6 +884,7 @@
             this.dataGridViewCheckBoxColumn2.HeaderText = "Zavrseno";
             this.dataGridViewCheckBoxColumn2.Name = "dataGridViewCheckBoxColumn2";
             this.dataGridViewCheckBoxColumn2.ReadOnly = true;
+            this.dataGridViewCheckBoxColumn2.Visible = false;
             // 
             // dataGridViewCheckBoxColumn3
             // 
@@ -880,6 +892,7 @@
             this.dataGridViewCheckBoxColumn3.HeaderText = "korisnikOdustao";
             this.dataGridViewCheckBoxColumn3.Name = "dataGridViewCheckBoxColumn3";
             this.dataGridViewCheckBoxColumn3.ReadOnly = true;
+            this.dataGridViewCheckBoxColumn3.Visible = false;
             // 
             // dataGridViewCheckBoxColumn4
             // 
@@ -887,6 +900,7 @@
             this.dataGridViewCheckBoxColumn4.HeaderText = "servisOdustao";
             this.dataGridViewCheckBoxColumn4.Name = "dataGridViewCheckBoxColumn4";
             this.dataGridViewCheckBoxColumn4.ReadOnly = true;
+            this.dataGridViewCheckBoxColumn4.Visible = false;
             // 
             // dataGridViewCheckBoxColumn5
             // 
@@ -894,6 +908,7 @@
             this.dataGridViewCheckBoxColumn5.HeaderText = "korisnikOdbioPlacanje";
             this.dataGridViewCheckBoxColumn5.Name = "dataGridViewCheckBoxColumn5";
             this.dataGridViewCheckBoxColumn5.ReadOnly = true;
+            this.dataGridViewCheckBoxColumn5.Visible = false;
             // 
             // dataGridViewTextBoxColumn16
             // 
@@ -901,6 +916,7 @@
             this.dataGridViewTextBoxColumn16.HeaderText = "Napomena";
             this.dataGridViewTextBoxColumn16.Name = "dataGridViewTextBoxColumn16";
             this.dataGridViewTextBoxColumn16.ReadOnly = true;
+            this.dataGridViewTextBoxColumn16.Visible = false;
             // 
             // gbServis
             // 
@@ -965,6 +981,29 @@
             this.label3.TabIndex = 18;
             this.label3.Text = "Filter:";
             // 
+            // cmsBrojNaloga
+            // 
+            this.cmsBrojNaloga.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.noviBrojNalogaToolStripMenuItem,
+            this.izmeniBrojNalogaToolStripMenuItem});
+            this.cmsBrojNaloga.Name = "cmsBrojNaloga";
+            this.cmsBrojNaloga.Size = new System.Drawing.Size(173, 48);
+            // 
+            // noviBrojNalogaToolStripMenuItem
+            // 
+            this.noviBrojNalogaToolStripMenuItem.Name = "noviBrojNalogaToolStripMenuItem";
+            this.noviBrojNalogaToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
+            this.noviBrojNalogaToolStripMenuItem.Text = "Novi broj naloga";
+            this.noviBrojNalogaToolStripMenuItem.Click += new System.EventHandler(this.noviBrojNalogaToolStripMenuItem_Click);
+            // 
+            // izmeniBrojNalogaToolStripMenuItem
+            // 
+            this.izmeniBrojNalogaToolStripMenuItem.CheckOnClick = true;
+            this.izmeniBrojNalogaToolStripMenuItem.Name = "izmeniBrojNalogaToolStripMenuItem";
+            this.izmeniBrojNalogaToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
+            this.izmeniBrojNalogaToolStripMenuItem.Text = "Izmeni broj naloga";
+            this.izmeniBrojNalogaToolStripMenuItem.Click += new System.EventHandler(this.izmeniBrojNalogaToolStripMenuItem_Click);
+            // 
             // ucPoslovni
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -998,6 +1037,7 @@
             this.gbServis.ResumeLayout(false);
             this.tableLayoutPanel5.ResumeLayout(false);
             this.tableLayoutPanel5.PerformLayout();
+            this.cmsBrojNaloga.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1038,27 +1078,6 @@
         private System.Windows.Forms.TextBox modelTextBox;
         private System.Windows.Forms.DataGridView naloziFDataGridView;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn16;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn5;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn4;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn3;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn2;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn15;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn14;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.GroupBox gbServis;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
@@ -1069,5 +1088,29 @@
         private System.Windows.Forms.TextBox kontaktOsobaTextBox;
         private System.Windows.Forms.TextBox firmaTextBox;
         private System.Windows.Forms.Button dFOdabir;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn14;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn15;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn1;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn2;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn3;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn4;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn16;
+        private System.Windows.Forms.ContextMenuStrip cmsBrojNaloga;
+        private System.Windows.Forms.ToolStripMenuItem noviBrojNalogaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem izmeniBrojNalogaToolStripMenuItem;
     }
 }

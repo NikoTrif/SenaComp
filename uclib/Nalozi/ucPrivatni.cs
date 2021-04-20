@@ -9,6 +9,7 @@ using System.Windows.Forms;
 using iflib;
 using Microsoft.Reporting.WinForms;
 using System.IO;
+using System.Collections;
 
 namespace uclib.Nalozi
 {
@@ -89,7 +90,11 @@ namespace uclib.Nalozi
             dbSenaCompDataSet.NaloziP.brojNalogaColumn.AutoIncrementStep = 1;
 
             naloziPTableAdapter.Fill(dbSenaCompDataSet.NaloziP);
-            naloziPDataGridView.CurrentCell = naloziPDataGridView.Rows[naloziPDataGridView.RowCount - 1].Cells[0]; //TD 2.1.e
+            try
+            {
+                naloziPDataGridView.CurrentCell = naloziPDataGridView.Rows[naloziPDataGridView.RowCount - 1].Cells[0]; //TD 2.1.e
+            }
+            catch { }
 
             resetBrojNalogaTextBoxReadOnly();
         }
@@ -350,7 +355,10 @@ namespace uclib.Nalozi
                 //G 2
                 naloziPDataGridView.CurrentRow.Cells[1].Value = datumDateTimePicker.Value;
             }
-            catch { }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
 
 
             Validate();
@@ -402,25 +410,28 @@ namespace uclib.Nalozi
 
         public void flpDodajKontrole()
         {
-            try
+            if (Properties.Settings.Default.Oprema.Count != 0)
             {
-                foreach (string s in Properties.Settings.Default.Oprema)
+                try
                 {
-                    CheckBox chkb = new CheckBox();
-                    chkb.Name = "cb" + s;
-                    chkb.Text = s;
-                    flowLayoutPanel1.Controls.Add(chkb);
+                    foreach (string s in Properties.Settings.Default.Oprema)
+                    {
+                        CheckBox chkb = new CheckBox();
+                        chkb.Name = "cb" + s;
+                        chkb.Text = s;
+                        flowLayoutPanel1.Controls.Add(chkb);
 
-                    //TD 2.1.c
-                    chkb.CheckedChanged += new EventHandler(FlowLayoutPanel1CheckBox_CheckedChanged);
-                    chkb.MouseDown += new MouseEventHandler(FlowLayoutPanel1CheckBox_MouseDown);
-                    chkb.KeyDown += new KeyEventHandler(flowLayoutPanel1CheckBox_KeyDown);
+                        //TD 2.1.c
+                        chkb.CheckedChanged += new EventHandler(FlowLayoutPanel1CheckBox_CheckedChanged);
+                        chkb.MouseDown += new MouseEventHandler(FlowLayoutPanel1CheckBox_MouseDown);
+                        chkb.KeyDown += new KeyEventHandler(flowLayoutPanel1CheckBox_KeyDown);
+                    }
                 }
-            }
 
-            catch (Exception e)
-            {
-                MessageBox.Show(e.ToString());
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.ToString());
+                } 
             }
         }
 

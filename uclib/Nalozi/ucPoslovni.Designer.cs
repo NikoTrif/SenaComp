@@ -51,6 +51,9 @@
             this.korisnikOdustaoRadioButton = new System.Windows.Forms.RadioButton();
             this.datumDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.brojNalogaTextBox = new System.Windows.Forms.TextBox();
+            this.cmsBrojNaloga = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.noviBrojNalogaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.izmeniBrojNalogaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.naCekanjuRadioButton = new System.Windows.Forms.RadioButton();
             this.zavrsenoRadioButton = new System.Windows.Forms.RadioButton();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -106,9 +109,6 @@
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.cbFilter = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.cmsBrojNaloga = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.noviBrojNalogaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.izmeniBrojNalogaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             brojNalogaLabel = new System.Windows.Forms.Label();
             datumLabel = new System.Windows.Forms.Label();
             modelLabel = new System.Windows.Forms.Label();
@@ -126,6 +126,7 @@
             this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.naloziFBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dbSenaCompDataSet)).BeginInit();
+            this.cmsBrojNaloga.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -134,7 +135,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.naloziFDataGridView)).BeginInit();
             this.gbServis.SuspendLayout();
             this.tableLayoutPanel5.SuspendLayout();
-            this.cmsBrojNaloga.SuspendLayout();
             this.SuspendLayout();
             // 
             // brojNalogaLabel
@@ -369,6 +369,29 @@
             this.brojNalogaTextBox.Size = new System.Drawing.Size(185, 20);
             this.brojNalogaTextBox.TabIndex = 1;
             this.brojNalogaTextBox.TabStop = false;
+            // 
+            // cmsBrojNaloga
+            // 
+            this.cmsBrojNaloga.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.noviBrojNalogaToolStripMenuItem,
+            this.izmeniBrojNalogaToolStripMenuItem});
+            this.cmsBrojNaloga.Name = "cmsBrojNaloga";
+            this.cmsBrojNaloga.Size = new System.Drawing.Size(173, 48);
+            // 
+            // noviBrojNalogaToolStripMenuItem
+            // 
+            this.noviBrojNalogaToolStripMenuItem.Name = "noviBrojNalogaToolStripMenuItem";
+            this.noviBrojNalogaToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
+            this.noviBrojNalogaToolStripMenuItem.Text = "Novi broj naloga";
+            this.noviBrojNalogaToolStripMenuItem.Click += new System.EventHandler(this.noviBrojNalogaToolStripMenuItem_Click);
+            // 
+            // izmeniBrojNalogaToolStripMenuItem
+            // 
+            this.izmeniBrojNalogaToolStripMenuItem.CheckOnClick = true;
+            this.izmeniBrojNalogaToolStripMenuItem.Name = "izmeniBrojNalogaToolStripMenuItem";
+            this.izmeniBrojNalogaToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
+            this.izmeniBrojNalogaToolStripMenuItem.Text = "Izmeni broj naloga";
+            this.izmeniBrojNalogaToolStripMenuItem.Click += new System.EventHandler(this.izmeniBrojNalogaToolStripMenuItem_Click);
             // 
             // naCekanjuRadioButton
             // 
@@ -759,6 +782,7 @@
             this.naloziFDataGridView.Size = new System.Drawing.Size(1055, 166);
             this.naloziFDataGridView.TabIndex = 7;
             this.naloziFDataGridView.TabStop = false;
+            this.naloziFDataGridView.SelectionChanged += new System.EventHandler(this.naloziFDataGridView_SelectionChanged);
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -799,21 +823,21 @@
             // dataGridViewTextBoxColumn6
             // 
             this.dataGridViewTextBoxColumn6.DataPropertyName = "eMail";
-            this.dataGridViewTextBoxColumn6.HeaderText = "eMail";
+            this.dataGridViewTextBoxColumn6.HeaderText = "e-Mail";
             this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
             this.dataGridViewTextBoxColumn6.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn7
             // 
             this.dataGridViewTextBoxColumn7.DataPropertyName = "Uredjaj";
-            this.dataGridViewTextBoxColumn7.HeaderText = "Uredjaj";
+            this.dataGridViewTextBoxColumn7.HeaderText = "Uređaj";
             this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
             this.dataGridViewTextBoxColumn7.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn8
             // 
             this.dataGridViewTextBoxColumn8.DataPropertyName = "Proizvodjac";
-            this.dataGridViewTextBoxColumn8.HeaderText = "Proizvodjac";
+            this.dataGridViewTextBoxColumn8.HeaderText = "Proizvođač";
             this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
             this.dataGridViewTextBoxColumn8.ReadOnly = true;
             // 
@@ -843,7 +867,7 @@
             // dataGridViewTextBoxColumn12
             // 
             this.dataGridViewTextBoxColumn12.DataPropertyName = "opisKvara";
-            this.dataGridViewTextBoxColumn12.HeaderText = "opisKvara";
+            this.dataGridViewTextBoxColumn12.HeaderText = "Opis kvara";
             this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
             this.dataGridViewTextBoxColumn12.ReadOnly = true;
             // 
@@ -981,29 +1005,6 @@
             this.label3.TabIndex = 18;
             this.label3.Text = "Filter:";
             // 
-            // cmsBrojNaloga
-            // 
-            this.cmsBrojNaloga.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.noviBrojNalogaToolStripMenuItem,
-            this.izmeniBrojNalogaToolStripMenuItem});
-            this.cmsBrojNaloga.Name = "cmsBrojNaloga";
-            this.cmsBrojNaloga.Size = new System.Drawing.Size(173, 48);
-            // 
-            // noviBrojNalogaToolStripMenuItem
-            // 
-            this.noviBrojNalogaToolStripMenuItem.Name = "noviBrojNalogaToolStripMenuItem";
-            this.noviBrojNalogaToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
-            this.noviBrojNalogaToolStripMenuItem.Text = "Novi broj naloga";
-            this.noviBrojNalogaToolStripMenuItem.Click += new System.EventHandler(this.noviBrojNalogaToolStripMenuItem_Click);
-            // 
-            // izmeniBrojNalogaToolStripMenuItem
-            // 
-            this.izmeniBrojNalogaToolStripMenuItem.CheckOnClick = true;
-            this.izmeniBrojNalogaToolStripMenuItem.Name = "izmeniBrojNalogaToolStripMenuItem";
-            this.izmeniBrojNalogaToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
-            this.izmeniBrojNalogaToolStripMenuItem.Text = "Izmeni broj naloga";
-            this.izmeniBrojNalogaToolStripMenuItem.Click += new System.EventHandler(this.izmeniBrojNalogaToolStripMenuItem_Click);
-            // 
             // ucPoslovni
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1026,6 +1027,7 @@
             this.tableLayoutPanel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.naloziFBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dbSenaCompDataSet)).EndInit();
+            this.cmsBrojNaloga.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel3.PerformLayout();
@@ -1037,7 +1039,6 @@
             this.gbServis.ResumeLayout(false);
             this.tableLayoutPanel5.ResumeLayout(false);
             this.tableLayoutPanel5.PerformLayout();
-            this.cmsBrojNaloga.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1088,6 +1089,9 @@
         private System.Windows.Forms.TextBox kontaktOsobaTextBox;
         private System.Windows.Forms.TextBox firmaTextBox;
         private System.Windows.Forms.Button dFOdabir;
+        private System.Windows.Forms.ContextMenuStrip cmsBrojNaloga;
+        private System.Windows.Forms.ToolStripMenuItem noviBrojNalogaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem izmeniBrojNalogaToolStripMenuItem;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
@@ -1109,8 +1113,5 @@
         private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn4;
         private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn5;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn16;
-        private System.Windows.Forms.ContextMenuStrip cmsBrojNaloga;
-        private System.Windows.Forms.ToolStripMenuItem noviBrojNalogaToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem izmeniBrojNalogaToolStripMenuItem;
     }
 }

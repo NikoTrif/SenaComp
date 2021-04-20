@@ -184,3 +184,6 @@ kada se trazi u kodu - npr. "RG1", "TD3.1.2", "G2"
          - - - - - - -ucPoslovni - uredjen DGV
 		 - - - - - - -ucPoslovni - napravljen cmsBrojNaloga i sredjene funkcije za novi broj naloga i izmenu broja naloga
 		 - - - - - - -fSenaComp[Design] - popravljena greska smanjivanja - visina Forme mora da bude +38 u odnosu na UC a sirina +16
+
+20.04.21 - - - - - - -ucPoslovni - dodavanje kontrola u FLP
+		 - - - - - - -ucPoslovni - Cuvanje naloga pravilno 

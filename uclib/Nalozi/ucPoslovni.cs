@@ -6,11 +6,16 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using iflib;
+using Microsoft.Reporting.WinForms;
 
 namespace uclib.Nalozi
 {
     public partial class ucPoslovni : UserControl
     {
+        bool noviRed = false; //TD 2.1.c
+        bool editTbOprema = false; //TD 2.1.c
+
         public ucPoslovni()
         {
             InitializeComponent();
@@ -26,6 +31,7 @@ namespace uclib.Nalozi
             {
                 
             }
+            flpDodajKontrole();
         }
 
         private void dNovi_Click(object sender, EventArgs e)
@@ -35,7 +41,6 @@ namespace uclib.Nalozi
             datumDateTimePicker.Value = DateTime.Now;
             firmaTextBox.Select();
             resetBrojNalogaTextBoxReadOnly();
-
         }
 
         private void dOtkazi_Click(object sender, EventArgs e)
@@ -57,9 +62,21 @@ namespace uclib.Nalozi
 
         private void dSacuvaj_Click(object sender, EventArgs e)
         {
-            Validate();
-            naloziFBindingSource.EndEdit();
-            naloziFTableAdapter.Update(dbSenaCompDataSet.NaloziF);
+            if (noviRed == false)
+            {
+                if (MessageBox.Show("Da li ste sigurni da želite da izmenite ovaj nalog?", "Izmena naloga", MessageBoxButtons.YesNo,
+                        MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    Cuvanje();
+                } 
+            }
+            else
+            {
+                Cuvanje();
+                noviRed = false;
+            }
+
+            resetBrojNalogaTextBoxReadOnly();
         }
 
         private void dStampaj_Click(object sender, EventArgs e)
@@ -156,6 +173,87 @@ namespace uclib.Nalozi
         private void izmeniBrojNalogaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             brojNalogaTextBox.ReadOnly = !izmeniBrojNalogaToolStripMenuItem.Checked;
+        }
+
+        private void Cuvanje()
+        {
+            try
+            {
+                naloziFDataGridView.CurrentRow.Cells[14].Value = tableLayoutPanel2.Controls.OfType<RadioButton>().FirstOrDefault(r => r.Checked).Text; //Status
+
+                //G 2
+                naloziFDataGridView.CurrentRow.Cells[1].Value = datumDateTimePicker.Value;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+
+            Validate();
+            naloziFBindingSource.EndEdit();
+            naloziFTableAdapter.Update(dbSenaCompDataSet.NaloziF);
+
+        }
+
+        private void naloziFDataGridView_SelectionChanged(object sender, EventArgs e)
+        {
+            clFunkcijeRazno clf = new clFunkcijeRazno();
+            try
+            {
+                noviRed = clf.ProveraNoviRed(naloziFDataGridView.CurrentRow.Cells[2].Value.ToString());
+            }
+            catch { }
+        }
+
+        private void flpDodajKontrole()
+        {
+            if (Properties.Settings.Default.Oprema.Count != 0)
+            {
+                try
+                {
+                    foreach (string s in Properties.Settings.Default.Oprema)
+                    {
+                        CheckBox chkb = new CheckBox();
+                        chkb.Name = "cb" + s;
+                        chkb.Text = s;
+                        flowLayoutPanel1.Controls.Add(chkb);
+
+                        //TD 2.1.c
+                        chkb.CheckedChanged += new EventHandler(FlowLayoutPanel1CheckBox_CheckedChanged);
+                        chkb.MouseDown += new MouseEventHandler(FlowLayoutPanel1CheckBox_MouseDown);
+                        chkb.KeyDown += new KeyEventHandler(flowLayoutPanel1CheckBox_KeyDown);
+                    }
+                }
+
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.ToString());
+                }
+            }
+        }
+
+        private void flowLayoutPanel1CheckBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Space)
+            {
+                editTbOprema = true;
+            }
+        }
+
+        private void FlowLayoutPanel1CheckBox_MouseDown(object sender, MouseEventArgs e)
+        {
+            editTbOprema = true;
+        }
+
+        private void FlowLayoutPanel1CheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            if (editTbOprema == true)
+            {
+                clFunkcijeRazno clf = new clFunkcijeRazno();
+                opremaTextBox.Text = clf.DodajUkloniOpremu(opremaTextBox.Text, sender as CheckBox);
+            }
+
+            editTbOprema = false;
         }
     }
 }

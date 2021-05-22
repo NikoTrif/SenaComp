@@ -224,6 +224,7 @@
     <EmbeddedResource Include="Reportovi\repNalogP.rdlc">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportovi\repNalogF.rdlc" />
     <EmbeddedResource Include="ucPodesavanja.resx">
       <DependentUpon>ucPodesavanja.cs</DependentUpon>
     </EmbeddedResource>
@@ -239,6 +240,7 @@
     <None Include="dbSenaCompDataSet.xss">
       <DependentUpon>dbSenaCompDataSet.xsd</DependentUpon>
     </None>
+    <None Include="Properties\DataSources\iflib.ReportClasses.clRadniNalogPos.datasource" />
     <None Include="Properties\DataSources\iflib.ReportClasses.clRadniNalogPriv.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

@@ -49,6 +49,7 @@
     <Compile Include="clPodesavanja.cs" />
     <Compile Include="clTransfer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReportClasses\clRadniNalogPos.cs" />
     <Compile Include="ReportClasses\clRadniNalogPriv.cs" />
   </ItemGroup>
   <ItemGroup>

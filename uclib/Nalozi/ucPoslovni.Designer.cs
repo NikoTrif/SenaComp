@@ -45,8 +45,6 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.korisnikOdbioPlacanjeRadioButton = new System.Windows.Forms.RadioButton();
-            this.naloziFBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dbSenaCompDataSet = new uclib.dbSenaCompDataSet();
             this.servisOdustaoRadioButton = new System.Windows.Forms.RadioButton();
             this.korisnikOdustaoRadioButton = new System.Windows.Forms.RadioButton();
             this.datumDateTimePicker = new System.Windows.Forms.DateTimePicker();
@@ -81,9 +79,13 @@
             this.dObrisi = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.tbPretraga = new System.Windows.Forms.TextBox();
-            this.naloziFTableAdapter = new uclib.dbSenaCompDataSetTableAdapters.NaloziFTableAdapter();
-            this.tableAdapterManager = new uclib.dbSenaCompDataSetTableAdapters.TableAdapterManager();
             this.naloziFDataGridView = new System.Windows.Forms.DataGridView();
+            this.gbServis = new System.Windows.Forms.GroupBox();
+            this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
+            this.cbFilter = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.naloziFBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dbSenaCompDataSet = new uclib.dbSenaCompDataSet();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -105,10 +107,8 @@
             this.dataGridViewCheckBoxColumn4 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.dataGridViewCheckBoxColumn5 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.dataGridViewTextBoxColumn16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.gbServis = new System.Windows.Forms.GroupBox();
-            this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
-            this.cbFilter = new System.Windows.Forms.ComboBox();
-            this.label3 = new System.Windows.Forms.Label();
+            this.naloziFTableAdapter = new uclib.dbSenaCompDataSetTableAdapters.NaloziFTableAdapter();
+            this.tableAdapterManager = new uclib.dbSenaCompDataSetTableAdapters.TableAdapterManager();
             brojNalogaLabel = new System.Windows.Forms.Label();
             datumLabel = new System.Windows.Forms.Label();
             modelLabel = new System.Windows.Forms.Label();
@@ -124,8 +124,6 @@
             eMailLabel = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.naloziFBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dbSenaCompDataSet)).BeginInit();
             this.cmsBrojNaloga.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
@@ -135,6 +133,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.naloziFDataGridView)).BeginInit();
             this.gbServis.SuspendLayout();
             this.tableLayoutPanel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.naloziFBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dbSenaCompDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // brojNalogaLabel
@@ -315,16 +315,6 @@
             this.korisnikOdbioPlacanjeRadioButton.TabIndex = 9;
             this.korisnikOdbioPlacanjeRadioButton.Text = "Korisnik odbio da plati";
             this.korisnikOdbioPlacanjeRadioButton.UseVisualStyleBackColor = true;
-            // 
-            // naloziFBindingSource
-            // 
-            this.naloziFBindingSource.DataMember = "NaloziF";
-            this.naloziFBindingSource.DataSource = this.dbSenaCompDataSet;
-            // 
-            // dbSenaCompDataSet
-            // 
-            this.dbSenaCompDataSet.DataSetName = "dbSenaCompDataSet";
-            this.dbSenaCompDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // servisOdustaoRadioButton
             // 
@@ -726,23 +716,6 @@
             this.tbPretraga.Size = new System.Drawing.Size(226, 20);
             this.tbPretraga.TabIndex = 3;
             // 
-            // naloziFTableAdapter
-            // 
-            this.naloziFTableAdapter.ClearBeforeFill = true;
-            // 
-            // tableAdapterManager
-            // 
-            this.tableAdapterManager.ArtikliPFOTableAdapter = null;
-            this.tableAdapterManager.ArtikliTableAdapter = null;
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.FaktureTableAdapter = null;
-            this.tableAdapterManager.FirmeTableAdapter = null;
-            this.tableAdapterManager.NaloziFTableAdapter = this.naloziFTableAdapter;
-            this.tableAdapterManager.NaloziPTableAdapter = null;
-            this.tableAdapterManager.OtpremniceTableAdapter = null;
-            this.tableAdapterManager.ProfaktureTableAdapter = null;
-            this.tableAdapterManager.UpdateOrder = uclib.dbSenaCompDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
-            // 
             // naloziFDataGridView
             // 
             this.naloziFDataGridView.AllowUserToAddRows = false;
@@ -783,6 +756,79 @@
             this.naloziFDataGridView.TabIndex = 7;
             this.naloziFDataGridView.TabStop = false;
             this.naloziFDataGridView.SelectionChanged += new System.EventHandler(this.naloziFDataGridView_SelectionChanged);
+            // 
+            // gbServis
+            // 
+            this.gbServis.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.gbServis.Controls.Add(this.tableLayoutPanel5);
+            this.gbServis.Location = new System.Drawing.Point(294, 240);
+            this.gbServis.Name = "gbServis";
+            this.gbServis.Size = new System.Drawing.Size(563, 155);
+            this.gbServis.TabIndex = 17;
+            this.gbServis.TabStop = false;
+            this.gbServis.Text = "Servis";
+            // 
+            // tableLayoutPanel5
+            // 
+            this.tableLayoutPanel5.ColumnCount = 7;
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 74F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 74F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 87F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 74F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 87F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 74F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 87F));
+            this.tableLayoutPanel5.Controls.Add(opisKvaraLabel, 0, 0);
+            this.tableLayoutPanel5.Controls.Add(this.izvestajRichTextBox, 1, 1);
+            this.tableLayoutPanel5.Controls.Add(izvestajLabel, 0, 1);
+            this.tableLayoutPanel5.Controls.Add(this.opisKvaraTextBox, 1, 0);
+            this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel5.Location = new System.Drawing.Point(3, 16);
+            this.tableLayoutPanel5.Name = "tableLayoutPanel5";
+            this.tableLayoutPanel5.RowCount = 3;
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(557, 136);
+            this.tableLayoutPanel5.TabIndex = 0;
+            // 
+            // cbFilter
+            // 
+            this.cbFilter.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.cbFilter.FormattingEnabled = true;
+            this.cbFilter.Items.AddRange(new object[] {
+            "Korinsik",
+            "Broj Naloga",
+            "Uređaj",
+            "Izveštaj",
+            "Status"});
+            this.cbFilter.Location = new System.Drawing.Point(325, 449);
+            this.cbFilter.Margin = new System.Windows.Forms.Padding(2);
+            this.cbFilter.Name = "cbFilter";
+            this.cbFilter.Size = new System.Drawing.Size(108, 21);
+            this.cbFilter.TabIndex = 19;
+            this.cbFilter.TabStop = false;
+            // 
+            // label3
+            // 
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(289, 452);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(32, 13);
+            this.label3.TabIndex = 18;
+            this.label3.Text = "Filter:";
+            // 
+            // naloziFBindingSource
+            // 
+            this.naloziFBindingSource.DataMember = "NaloziF";
+            this.naloziFBindingSource.DataSource = this.dbSenaCompDataSet;
+            // 
+            // dbSenaCompDataSet
+            // 
+            this.dbSenaCompDataSet.DataSetName = "dbSenaCompDataSet";
+            this.dbSenaCompDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -942,68 +988,22 @@
             this.dataGridViewTextBoxColumn16.ReadOnly = true;
             this.dataGridViewTextBoxColumn16.Visible = false;
             // 
-            // gbServis
+            // naloziFTableAdapter
             // 
-            this.gbServis.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.gbServis.Controls.Add(this.tableLayoutPanel5);
-            this.gbServis.Location = new System.Drawing.Point(294, 240);
-            this.gbServis.Name = "gbServis";
-            this.gbServis.Size = new System.Drawing.Size(563, 155);
-            this.gbServis.TabIndex = 17;
-            this.gbServis.TabStop = false;
-            this.gbServis.Text = "Servis";
+            this.naloziFTableAdapter.ClearBeforeFill = true;
             // 
-            // tableLayoutPanel5
+            // tableAdapterManager
             // 
-            this.tableLayoutPanel5.ColumnCount = 7;
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 74F));
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 74F));
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 87F));
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 74F));
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 87F));
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 74F));
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 87F));
-            this.tableLayoutPanel5.Controls.Add(opisKvaraLabel, 0, 0);
-            this.tableLayoutPanel5.Controls.Add(this.izvestajRichTextBox, 1, 1);
-            this.tableLayoutPanel5.Controls.Add(izvestajLabel, 0, 1);
-            this.tableLayoutPanel5.Controls.Add(this.opisKvaraTextBox, 1, 0);
-            this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel5.Location = new System.Drawing.Point(3, 16);
-            this.tableLayoutPanel5.Name = "tableLayoutPanel5";
-            this.tableLayoutPanel5.RowCount = 3;
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(557, 136);
-            this.tableLayoutPanel5.TabIndex = 0;
-            // 
-            // cbFilter
-            // 
-            this.cbFilter.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.cbFilter.FormattingEnabled = true;
-            this.cbFilter.Items.AddRange(new object[] {
-            "Korinsik",
-            "Broj Naloga",
-            "Uređaj",
-            "Izveštaj",
-            "Status"});
-            this.cbFilter.Location = new System.Drawing.Point(325, 449);
-            this.cbFilter.Margin = new System.Windows.Forms.Padding(2);
-            this.cbFilter.Name = "cbFilter";
-            this.cbFilter.Size = new System.Drawing.Size(108, 21);
-            this.cbFilter.TabIndex = 19;
-            this.cbFilter.TabStop = false;
-            // 
-            // label3
-            // 
-            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(289, 452);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(32, 13);
-            this.label3.TabIndex = 18;
-            this.label3.Text = "Filter:";
+            this.tableAdapterManager.ArtikliPFOTableAdapter = null;
+            this.tableAdapterManager.ArtikliTableAdapter = null;
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.FaktureTableAdapter = null;
+            this.tableAdapterManager.FirmeTableAdapter = null;
+            this.tableAdapterManager.NaloziFTableAdapter = this.naloziFTableAdapter;
+            this.tableAdapterManager.NaloziPTableAdapter = null;
+            this.tableAdapterManager.OtpremniceTableAdapter = null;
+            this.tableAdapterManager.ProfaktureTableAdapter = null;
+            this.tableAdapterManager.UpdateOrder = uclib.dbSenaCompDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
             // ucPoslovni
             // 
@@ -1025,8 +1025,6 @@
             this.groupBox1.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.naloziFBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dbSenaCompDataSet)).EndInit();
             this.cmsBrojNaloga.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);
@@ -1039,6 +1037,8 @@
             this.gbServis.ResumeLayout(false);
             this.tableLayoutPanel5.ResumeLayout(false);
             this.tableLayoutPanel5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.naloziFBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dbSenaCompDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

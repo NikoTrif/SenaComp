@@ -195,3 +195,4 @@ kada se trazi u kodu - npr. "RG1", "TD3.1.2", "G2"
 22.05.21 - - - - - - -repNalogP - izmenjena velicina fonta i velicina box-ova - potrebno ponovo prebrojati karaktere
 		 - - - - - - -repNalogF - napravljen radni nalog za firme
 		 
+23.05.21 - - - - - - -popravljena greska "An attempt to attach auto-named database..." tako sto je kopiran ceo projekat na desktop, obrisan dbSenaDataSet.xsd iz Solution Explorer-a, pa napravljen novi DataSet u prozoru Data Sources, nakon cega su ponovo napravljeni Query-ji

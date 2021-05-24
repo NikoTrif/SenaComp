@@ -210,8 +210,6 @@ FakesAssemblies/
 GeneratedArtifacts/
 _Pvt_Extensions/
 ModelManifest.xml
-.vs/SenaComp/v14/.suo
-
 
 #Moji dodati
 .vs/
@@ -222,3 +220,4 @@ SenaComp/obj/
 uclib/bin/
 uclib/obj/
 
+uclib/bin/Debug/uclib.dll

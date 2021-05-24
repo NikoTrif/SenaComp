@@ -81,30 +81,36 @@ namespace uclib.Nalozi
 
         private void dStampaj_Click(object sender, EventArgs e)
         {
-            ReportParameter[] para = (new iflib.clFunkcijeRazno.PisanjeReporta()).PostavkeReportParametara(Properties.Settings.Default.Logo,
-                Properties.Settings.Default.NazivFirme, Properties.Settings.Default.Delatnost, Properties.Settings.Default.Adresa,
-                Properties.Settings.Default.Telefon, Properties.Settings.Default.eMail, Properties.Settings.Default.Klauzula);
-
-            iflib.ReportClasses.clRadniNalogPos rcls = new iflib.ReportClasses.clRadniNalogPos()
-            {
-                BrojNaloga = brojNalogaTextBox.Text,
-                IDFirme = iDFirmeTextBox.Text,
-                KontaktOsoba = kontaktOsobaTextBox.Text,
-                KontaktTelefon = kontaktTextBox.Text,
-                NazivFirme = firmaTextBox.Text,
-                eMail = eMailTextBox.Text,
-                Datum = datumDateTimePicker.Value.ToShortDateString(),
-                Uredjaj = uredjajComboBox.Text,
-                Proizvodjac = proizvodjacComboBox.Text,
-                Model = modelTextBox.Text,
-                SerijskiBroj = serijskiBrojTextBox.Text,
-                Pribor = opremaTextBox.Text,
-                OpisKvara = opisKvaraTextBox.Text,
-                Izvestaj = izvestajRichTextBox.Text
-            };
-
             try
             {
+                resetBrojNalogaTextBoxReadOnly();
+
+                ReportParameter[] para = (new iflib.clFunkcijeRazno.PisanjeReporta()).PostavkeReportParametara(
+                    Properties.Settings.Default.Logo,
+                    Properties.Settings.Default.NazivFirme,
+                    Properties.Settings.Default.Delatnost,
+                    Properties.Settings.Default.Adresa,
+                    Properties.Settings.Default.Telefon,
+                    Properties.Settings.Default.eMail,
+                    Properties.Settings.Default.Klauzula);
+
+                iflib.ReportClasses.clRadniNalogPos rcls = new iflib.ReportClasses.clRadniNalogPos()
+                {
+                    BrojNaloga = brojNalogaTextBox.Text,
+                    IDFirme = iDFirmeTextBox.Text,
+                    KontaktOsoba = kontaktOsobaTextBox.Text,
+                    KontaktTelefon = kontaktTextBox.Text,
+                    NazivFirme = firmaTextBox.Text,
+                    eMail = eMailTextBox.Text,
+                    Datum = datumDateTimePicker.Value.ToShortDateString(),
+                    Uredjaj = uredjajComboBox.Text,
+                    Proizvodjac = proizvodjacComboBox.Text,
+                    Model = modelTextBox.Text,
+                    SerijskiBroj = serijskiBrojTextBox.Text,
+                    Pribor = opremaTextBox.Text,
+                    OpisKvara = opisKvaraTextBox.Text,
+                    Izvestaj = izvestajRichTextBox.Text
+                };
                 clRadniNalogPosBindingSource.Add(rcls);
 
                 //G 11
@@ -308,6 +314,11 @@ namespace uclib.Nalozi
                 MessageBox.Show(ex.ToString());
             }
             clRadniNalogPosBindingSource.Clear();
+        }
+
+        private void kontaktTextBox_Leave(object sender, EventArgs e)
+        {
+            kontaktTextBox.Text = (new clFunkcijeRazno()).FormatKontakt(kontaktTextBox.Text);
         }
     }
 }

@@ -102,18 +102,29 @@ namespace uclib.Nalozi
         private void dStampaj_Click(object sender, EventArgs e)
         {
             resetBrojNalogaTextBoxReadOnly();
-            
-            //TD 3.1.c
-            ReportParameter[] para = new ReportParameter[]
-            {
-                new ReportParameter("pLogo", @"File:///" +  Properties.SettLogo.Default.Logo),
-                new ReportParameter("pNazivFirme", Properties.Settings.Default.NazivFirme),
-                new ReportParameter("pDelatnost", Properties.Settings.Default.Delatnost),
-                new ReportParameter("pAdresaFirme", Properties.Settings.Default.Adresa),
-                new ReportParameter("pKontaktFirme", Properties.Settings.Default.Telefon),
-                new ReportParameter("pMailFirme", Properties.Settings.Default.eMail),
-                new ReportParameter("pKlauzula", Properties.Settings.Default.Klauzula)
-            };
+
+            ////TD 3.1.c
+            //ReportParameter[] para = new ReportParameter[]
+            //{
+            //    new ReportParameter("pLogo", @"File:///" +  Properties.SettLogo.Default.Logo),
+            //    new ReportParameter("pNazivFirme", Properties.Settings.Default.NazivFirme),
+            //    new ReportParameter("pDelatnost", Properties.Settings.Default.Delatnost),
+            //    new ReportParameter("pAdresaFirme", Properties.Settings.Default.Adresa),
+            //    new ReportParameter("pKontaktFirme", Properties.Settings.Default.Telefon),
+            //    new ReportParameter("pMailFirme", Properties.Settings.Default.eMail),
+            //    new ReportParameter("pKlauzula", Properties.Settings.Default.Klauzula)
+            //};
+
+            clFunkcijeRazno.PisanjeReporta prep = new clFunkcijeRazno.PisanjeReporta();
+
+            ReportParameter[] para = prep.PostavkeReportParametara(
+                Properties.SettLogo.Default.Logo, 
+                Properties.Settings.Default.NazivFirme,
+                Properties.Settings.Default.Delatnost, 
+                Properties.Settings.Default.Adresa, 
+                Properties.Settings.Default.Telefon,
+                Properties.Settings.Default.eMail, 
+                Properties.Settings.Default.Klauzula);
 
             iflib.ReportClasses.clRadniNalogPriv rcls = new iflib.ReportClasses.clRadniNalogPriv
             {
@@ -131,6 +142,7 @@ namespace uclib.Nalozi
             };
 
             clRadniNalogPrivBindingSource.Add(rcls);
+            reportViewer1.LocalReport.EnableExternalImages = true;
             reportViewer1.LocalReport.SetParameters(para);
             
             reportViewer1.RefreshReport();

@@ -12,36 +12,36 @@ kada se trazi u kodu - npr. "RG1", "TD3.1.2", "G2"
 	   |R|6.   Tabela Otpremnice: (pogledaj excel fajl Otpremnica-podaci)
 	   |R|7.   Tabela Artikli: sifra, naziv, jedinica mere, roba-usluga, PDV, prodajna cena (sa PDV-om)
 	   |R|8.   Tabela ArtikliPFO: ID(nije primary key), tabela, artikal, kolicina, cena, ukupna cena (kolicina * cena)
-2.   Napraviti UserControl library
-       1.   |Z|UC za osnovni program (oprema moze biti u padajucem meniju sa checkbox-ovima) - za privatne korisnike
-			  a) red sa napomenom se moze obeleziti bojama (npr. crvena za korisnike sa kojima je servis imao probleme itd.)
-		      |R|b) Kolona "Status" treba da ima vrednost texta RB
-			  |R|c) u tbOprema trebaju da se upisuju cekovani cb opreme
-			  |R|d) sredi TabStop
-			  |R|e) u ucPrivatni_Load ubaciti komandu za selektovanje poslednjeg row-a u dgv ili da se pravi novi nalog
-			  |R|f) napraviti ucNapomene, pitanje "Da li zelite nap. na svakom nalogu sa ovim imenom", dva skrivena dugmeta "izmeni i OK"
-			  |R|g) napraviti pretragu baze
-			  |R|h) napraviti filtriranje pretrage po: podacima korisnika, uredjaja, izvestaja, statusa
-			  |R|i) postaviti pitanje "Da li ste sigurni da zelite da sacuvate" kada nalog nije nov
-			  |R|j) kod za stampanje reporta (naloga)
-	   2.   UC za osnovni program (-||-) - za firme
-	          a) sadrzi padajuci meni za izbor firme, koji ujedno sluzi za pretragu
-			  b) sadrzi panel sa podacima izabrane firme
-			  c) dugme za kopiranje maila iz podataka firme
-			  d) broj naloga se nastavlja na poslednji nalog iz privatnih korisnika i obrnuto
-			  e) kolona sa napomenom se moze obeleziti bojama (npr. crvena za korisnike sa kojima je servis imao probleme itd.)
-			  f) napraviti pretragu baze
-			  g) napraviti filtriranje
-			  h) postaviti pitanje "Da li ste sigurni da zelite da sacuvate" kada nalog nije nov 
-	   3.   |Z|UC za podesavanja sa TreeView-om: program (smestiti dodavanje u listu uredjaja, proizvodjaca i opreme), podaci firme (naziv, delatnost, adresa, pib, tekuci racun), klauzula, baza
-	          a) opsta podesavanja - prikaz vremena u bazi i na nalogu, prikaz cene servisa na nalogu
-			  |R|b) dodavanje u listu uredjaja, proizvodjaca i opreme - liste uredjaja i proizvodjaca sortiraj po abecednom redu
-			  |R|c) podaci firme - naziv, delatnost, adresa, PIB, tekuci racun
-			  |R|d) klauzula
-			  e) baza
-			  f) dodati slicice(ikonice)
-			  g) srediti font u treeView-u
-			  h) rtbKlauzula treba da bude ogranicena na 584 karaktera
+|Z|2.   Napraviti UserControl library
+       |Z|1.   UC za osnovni program (oprema moze biti u padajucem meniju sa checkbox-ovima) - za privatne korisnike
+				a) red sa napomenom se moze obeleziti bojama (npr. crvena za korisnike sa kojima je servis imao probleme itd.)
+				|R|b) Kolona "Status" treba da ima vrednost texta RB
+				|R|c) u tbOprema trebaju da se upisuju cekovani cb opreme
+				|R|d) sredi TabStop
+				|R|e) u ucPrivatni_Load ubaciti komandu za selektovanje poslednjeg row-a u dgv ili da se pravi novi nalog
+				|R|f) napraviti ucNapomene, pitanje "Da li zelite nap. na svakom nalogu sa ovim imenom", dva skrivena dugmeta "izmeni i OK"
+				|R|g) napraviti pretragu baze
+				|R|h) napraviti filtriranje pretrage po: podacima korisnika, uredjaja, izvestaja, statusa
+				|R|i) postaviti pitanje "Da li ste sigurni da zelite da sacuvate" kada nalog nije nov
+				|R|j) kod za stampanje reporta (naloga)
+	   |Z|2.   UC za osnovni program (-||-) - za firme
+				a) sadrzi padajuci meni za izbor firme, koji ujedno sluzi za pretragu
+				b) sadrzi panel sa podacima izabrane firme
+				c) dugme za kopiranje maila iz podataka firme
+				d) broj naloga se nastavlja na poslednji nalog iz privatnih korisnika i obrnuto
+				e) kolona sa napomenom se moze obeleziti bojama (npr. crvena za korisnike sa kojima je servis imao probleme itd.)
+				f) napraviti pretragu baze
+				g) napraviti filtriranje
+				h) postaviti pitanje "Da li ste sigurni da zelite da sacuvate" kada nalog nije nov 
+	   |Z|3.   UC za podesavanja sa TreeView-om: program (smestiti dodavanje u listu uredjaja, proizvodjaca i opreme), podaci firme (naziv, delatnost, adresa, pib, tekuci racun), klauzula, baza
+				a) opsta podesavanja - prikaz vremena u bazi i na nalogu, prikaz cene servisa na nalogu
+				|R|b) dodavanje u listu uredjaja, proizvodjaca i opreme - liste uredjaja i proizvodjaca sortiraj po abecednom redu
+				|R|c) podaci firme - naziv, delatnost, adresa, PIB, tekuci racun
+				|R|d) klauzula
+				e) baza
+				f) dodati slicice(ikonice)
+				g) srediti font u treeView-u
+				h) rtbKlauzula treba da bude ogranicena na 584 karaktera
 	   4.   UC za aktivaciju i registraciju (moze u jednom)
 	   5.   |Z|UC za napomene
 	   6.   UC za profakture
@@ -52,14 +52,14 @@ kada se trazi u kodu - npr. "RG1", "TD3.1.2", "G2"
 	   11.  UC za periodicni izvestaj sa DateTimePciker-ima
 	   12.  UC za logovanje (username i password kada se pokrce program) u podesavanjima omoguciti automatsko logovanje a u osnovnom programu zakljucavanje
 3.   Napraviti Reportove
-       |R|1.   Radni nalog za privatne korisnike
+       |Z|1.   Radni nalog za privatne korisnike
 			a) prebrojati koliko je karaktera moguce da stane u svaku stavku, pa ograniciti textboxove
 			|R|b) ograniciti rtbIzvestaj na max 5 redova
 			|R|c) uredi da se parametri vuku iz podesavanja
 	   |Z|2.   Radni nalog za firme
 			a) prebrojati koliko je karaktera moguce da stane u svaku stavku, pa ograniciti textboxove
 			b) ograniciti rtbIzvestaj na max 5 redova
-			c) uredi da se parametri vuku iz podesavanja
+			|R|c) uredi da se parametri vuku iz podesavanja
 	   3.   Izvestaj o zaradi
 	   4.   Profaktura
 	   5.   Faktura
@@ -78,6 +78,7 @@ kada se trazi u kodu - npr. "RG1", "TD3.1.2", "G2"
 |R|8.   - uclib.ucPrivatni - Kada se promeni mesto baze baza izbacuje gresku bez obzira na promenu connectionStringa u podesavanjima
 9.   - uclib.ucPrivatni - Dijalog za napomenu se zatvara i kada se klikne na dugme izmena
 10.  - uclib.ucPrivatni.izvestajRichTextBox_KeyPress - prebaci u novi red, novi red se ne brise osim na backspace, ne bi trebalo ni da se upisuje
+|R|11.  - uclib.ucPoslovni.dStampa_Click - problem u komandi reportView1.LocalReport.SetParameters - iz nekog razloga ne postavlja parametre
 ---------------------------------------------------------------------------------------
 ***Release Greske***
 ---------------------------------------------------------------------------------------
@@ -196,3 +197,7 @@ kada se trazi u kodu - npr. "RG1", "TD3.1.2", "G2"
 		 - - - - - - -repNalogF - napravljen radni nalog za firme
 		 
 23.05.21 - - - - - - -popravljena greska "An attempt to attach auto-named database..." tako sto je kopiran ceo projekat na desktop, obrisan dbSenaDataSet.xsd iz Solution Explorer-a, pa napravljen novi DataSet u prozoru Data Sources, nakon cega su ponovo napravljeni Query-ji
+
+24.05.21 - - - - - - -ucPoslovni - napisan kod za dStampa
+		 - G 11 - - - ucPoslovni[Design] - u repViewPos->properties->Misc->Local Report->EnableExternalImage postavljen na True
+		 - TD 3.2.c - ucPoslovni.repViewPos - parametri se vuku iz podesavanja

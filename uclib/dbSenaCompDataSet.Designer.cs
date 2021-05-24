@@ -1684,10 +1684,10 @@ namespace uclib {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public FirmeRow AddFirmeRow(int ID, string Naziv, string PIB, string Grad, string UlicaBroj, string Kontakt, string eMail, string tekuciRacun) {
+            public FirmeRow AddFirmeRow(string Naziv, string PIB, string Grad, string UlicaBroj, string Kontakt, string eMail, string tekuciRacun) {
                 FirmeRow rowFirmeRow = ((FirmeRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        ID,
+                        null,
                         Naziv,
                         PIB,
                         Grad,
@@ -1755,6 +1755,8 @@ namespace uclib {
                 base.Columns.Add(this.columntekuciRacun);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnID}, true));
+                this.columnID.AutoIncrement = true;
+                this.columnID.AutoIncrementSeed = 1;
                 this.columnID.AllowDBNull = false;
                 this.columnID.Unique = true;
                 this.columnNaziv.MaxLength = 50;
@@ -2208,7 +2210,6 @@ namespace uclib {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public NaloziFRow AddNaloziFRow(
-                        int brojNaloga, 
                         System.DateTime Datum, 
                         int IDFirme, 
                         string Firma, 
@@ -2234,7 +2235,7 @@ namespace uclib {
                         string Napomena) {
                 NaloziFRow rowNaloziFRow = ((NaloziFRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        brojNaloga,
+                        null,
                         Datum,
                         IDFirme,
                         Firma,
@@ -2366,6 +2367,8 @@ namespace uclib {
                 base.Columns.Add(this.columnNapomena);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnbrojNaloga}, true));
+                this.columnbrojNaloga.AutoIncrement = true;
+                this.columnbrojNaloga.AutoIncrementSeed = 1;
                 this.columnbrojNaloga.AllowDBNull = false;
                 this.columnbrojNaloga.Unique = true;
                 this.columnFirma.MaxLength = 50;
@@ -2805,7 +2808,6 @@ namespace uclib {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public NaloziPRow AddNaloziPRow(
-                        int brojNaloga, 
                         System.DateTime Datum, 
                         string imePrezime, 
                         string Kontakt, 
@@ -2829,7 +2831,7 @@ namespace uclib {
                         string Napomena) {
                 NaloziPRow rowNaloziPRow = ((NaloziPRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        brojNaloga,
+                        null,
                         Datum,
                         imePrezime,
                         Kontakt,
@@ -2953,6 +2955,8 @@ namespace uclib {
                 base.Columns.Add(this.columnNapomena);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnbrojNaloga}, true));
+                this.columnbrojNaloga.AutoIncrement = true;
+                this.columnbrojNaloga.AutoIncrementSeed = 1;
                 this.columnbrojNaloga.AllowDBNull = false;
                 this.columnbrojNaloga.Unique = true;
                 this.columnimePrezime.MaxLength = 50;

@@ -80,9 +80,24 @@ namespace iflib
             return tbOprema;
         }
 
-        public void ProslediPodesavanjaLogo(string logo)
+        public class PisanjeReporta
         {
-
+            public ReportParameter[] PostavkeReportParametara(string Logo = "", string NazivFirme = "", string Delatnost = "", string AdresaFirme = "",
+                string KontaktFirme = "", string MailFirme = "", string Klauzula = "")
+            {
+                //TD 3.1.c
+                ReportParameter[] parametri = new ReportParameter[]
+                {
+                new ReportParameter("pLogo", @"File:///" +  Logo),
+                new ReportParameter("pNazivFirme", NazivFirme),
+                new ReportParameter("pDelatnost", Delatnost),
+                new ReportParameter("pAdresaFirme", AdresaFirme),
+                new ReportParameter("pKontaktFirme", KontaktFirme),
+                new ReportParameter("pMailFirme", MailFirme),
+                new ReportParameter("pKlauzula", Klauzula)
+                };
+                return parametri;
+            }
         }
     }
 }

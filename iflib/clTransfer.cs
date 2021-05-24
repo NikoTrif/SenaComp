@@ -8,6 +8,7 @@ namespace iflib
 {
     public static class clTransfer
     {
+        public static string IDFirme { get; set; }
         public static string Firma { get; set; }
         public static string Kontakt { get; set; }
         public static string eMail { get; set; }

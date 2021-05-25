@@ -36,16 +36,21 @@ namespace uclib.Nalozi
 
         private void ucPrivatni_Load(object sender, EventArgs e)
         {
-            //MessageBox.Show(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments));
-
-            //G 8
-            naloziPTableAdapter.Connection.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=" + Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\Visual Studio 2015\Projects\SenaComp\SenaComp\bin\debug\dbSenaComp.mdf;Password=Master1!";
-            naloziPTableAdapter.Fill(dbSenaCompDataSet.NaloziP);
-            flpDodajKontrole(); // ovo radi i treba ovako
-            cbFilter.SelectedIndex = 0;
-            if (naloziPDataGridView.RowCount != 0)
+            try
             {
-                naloziPDataGridView.CurrentCell = naloziPDataGridView.Rows[naloziPDataGridView.RowCount - 1].Cells[0]; //TD 2.1.e 
+                //G 8
+                naloziPTableAdapter.Connection.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=" + Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\Visual Studio 2015\Projects\SenaComp\SenaComp\bin\debug\dbSenaComp.mdf;Password=Master1!";
+                naloziPTableAdapter.Fill(dbSenaCompDataSet.NaloziP);
+                flpDodajKontrole(); // ovo radi i treba ovako
+                cbFilter.SelectedIndex = 0;
+                if (naloziPDataGridView.RowCount != 0)
+                {
+                    naloziPDataGridView.CurrentCell = naloziPDataGridView.Rows[naloziPDataGridView.RowCount - 1].Cells[0]; //TD 2.1.e 
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
             }
         }
 

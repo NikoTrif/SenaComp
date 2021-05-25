@@ -9187,11 +9187,81 @@ SELECT brojNaloga, Datum, IDFirme, Firma, kontaktOsoba, Kontakt, eMail, Uredjaj,
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[8];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = @"SELECT brojNaloga, Datum, IDFirme, Firma, kontaktOsoba, Kontakt, eMail, Uredjaj, Proizvodjac, Model, serijskiBroj, Oprema, opisKvara, Izvestaj, cenaDelovi, cenaServisa, ukupnaCena, Status, naCekanju, Zavrseno, korisnikOdustao, servisOdustao, korisnikOdbioPlacanje, Napomena FROM dbo.NaloziF";
+            this._commandCollection[0].CommandText = @"SELECT brojNaloga, Datum, IDFirme, Firma, kontaktOsoba, Kontakt, eMail, Uredjaj, Proizvodjac, Model, serijskiBroj, Oprema, opisKvara, Izvestaj, cenaDelovi, cenaServisa, ukupnaCena, Status, naCekanju, Zavrseno, korisnikOdustao, servisOdustao, korisnikOdbioPlacanje, Napomena FROM NaloziF";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = @"SELECT brojNaloga, Datum, IDFirme, Firma, kontaktOsoba, Kontakt, eMail, Uredjaj, Proizvodjac, Model, serijskiBroj, Oprema, opisKvara, Izvestaj, cenaDelovi, cenaServisa, ukupnaCena, Status, naCekanju, Zavrseno, korisnikOdustao, servisOdustao, 
+                  korisnikOdbioPlacanje, Napomena
+FROM     NaloziF
+WHERE  (brojNaloga = @brojNaloga)";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@brojNaloga", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "brojNaloga", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[2].Connection = this.Connection;
+            this._commandCollection[2].CommandText = @"SELECT brojNaloga, Datum, IDFirme, Firma, kontaktOsoba, Kontakt, eMail, Uredjaj, Proizvodjac, Model, serijskiBroj, Oprema, opisKvara, Izvestaj, cenaDelovi, cenaServisa, ukupnaCena, Status, naCekanju, Zavrseno, korisnikOdustao, servisOdustao, 
+                  korisnikOdbioPlacanje, Napomena
+FROM     NaloziF
+WHERE  (Firma LIKE N'%' + @Firma + N'%') OR
+                  (kontaktOsoba LIKE N'%' + @kontaktOsoba + N'%') OR
+                  (eMail LIKE N'%' + @eMail + N'%')";
+            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Firma", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "Firma", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@kontaktOsoba", global::System.Data.SqlDbType.NVarChar, 100, global::System.Data.ParameterDirection.Input, 0, 0, "kontaktOsoba", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@eMail", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "eMail", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[3].Connection = this.Connection;
+            this._commandCollection[3].CommandText = @"SELECT brojNaloga, Datum, IDFirme, Firma, kontaktOsoba, Kontakt, eMail, Uredjaj, Proizvodjac, Model, serijskiBroj, Oprema, opisKvara, Izvestaj, cenaDelovi, cenaServisa, ukupnaCena, Status, naCekanju, Zavrseno, korisnikOdustao, servisOdustao, 
+                  korisnikOdbioPlacanje, Napomena
+FROM     NaloziF
+WHERE  (IDFirme = @IDFirme)";
+            this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IDFirme", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "IDFirme", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[4] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[4].Connection = this.Connection;
+            this._commandCollection[4].CommandText = @"SELECT brojNaloga, Datum, IDFirme, Firma, kontaktOsoba, Kontakt, eMail, Uredjaj, Proizvodjac, Model, serijskiBroj, Oprema, opisKvara, Izvestaj, cenaDelovi, cenaServisa, ukupnaCena, Status, naCekanju, Zavrseno, korisnikOdustao, servisOdustao, 
+                  korisnikOdbioPlacanje, Napomena
+FROM     NaloziF
+WHERE  (opisKvara LIKE N'%' + @opisKvara + N'%') OR
+                  (Izvestaj LIKE N'%' + @Izvestaj + N'%')";
+            this._commandCollection[4].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@opisKvara", global::System.Data.SqlDbType.NVarChar, 500, global::System.Data.ParameterDirection.Input, 0, 0, "opisKvara", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Izvestaj", global::System.Data.SqlDbType.NVarChar, 500, global::System.Data.ParameterDirection.Input, 0, 0, "Izvestaj", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[5] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[5].Connection = this.Connection;
+            this._commandCollection[5].CommandText = @"SELECT brojNaloga, Datum, IDFirme, Firma, kontaktOsoba, Kontakt, eMail, Uredjaj, Proizvodjac, Model, serijskiBroj, Oprema, opisKvara, Izvestaj, cenaDelovi, cenaServisa, ukupnaCena, Status, naCekanju, Zavrseno, korisnikOdustao, servisOdustao, 
+                  korisnikOdbioPlacanje, Napomena
+FROM     NaloziF
+WHERE  (Status = @Status)";
+            this._commandCollection[5].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Status", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "Status", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[6] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[6].Connection = this.Connection;
+            this._commandCollection[6].CommandText = @"SELECT brojNaloga, Datum, IDFirme, Firma, kontaktOsoba, Kontakt, eMail, Uredjaj, Proizvodjac, Model, serijskiBroj, Oprema, opisKvara, Izvestaj, cenaDelovi, cenaServisa, ukupnaCena, Status, naCekanju, Zavrseno, korisnikOdustao, servisOdustao, 
+                  korisnikOdbioPlacanje, Napomena
+FROM     NaloziF
+WHERE  (Uredjaj LIKE N'%' + @Uredjaj + N'%') OR
+                  (Proizvodjac LIKE N'%' + @Proizvodjac + N'%') OR
+                  (Model LIKE N'%' + @Model + N'%') OR
+                  (serijskiBroj LIKE N'%' + @serijskiBroj + N'%')";
+            this._commandCollection[6].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Uredjaj", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "Uredjaj", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Proizvodjac", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "Proizvodjac", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Model", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "Model", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@serijskiBroj", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "serijskiBroj", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[7] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[7].Connection = this.Connection;
+            this._commandCollection[7].CommandText = @"SELECT brojNaloga, Datum, IDFirme, Firma, kontaktOsoba, Kontakt, eMail, Uredjaj, Proizvodjac, Model, serijskiBroj, Oprema, opisKvara, Izvestaj, cenaDelovi, cenaServisa, ukupnaCena, Status, naCekanju, Zavrseno, korisnikOdustao, servisOdustao, 
+                  korisnikOdbioPlacanje, Napomena
+FROM     NaloziF
+WHERE  (IDFirme = @IDFirme) OR
+                  (Firma = @Firma)";
+            this._commandCollection[7].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[7].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IDFirme", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "IDFirme", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[7].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Firma", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "Firma", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -9216,6 +9286,176 @@ SELECT brojNaloga, Datum, IDFirme, Firma, kontaktOsoba, Kontakt, eMail, Uredjaj,
             dbSenaCompDataSet.NaloziFDataTable dataTable = new dbSenaCompDataSet.NaloziFDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int qFilterBrojNaloga(dbSenaCompDataSet.NaloziFDataTable dataTable, int brojNaloga) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(brojNaloga));
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int qFilterFirma(dbSenaCompDataSet.NaloziFDataTable dataTable, string Firma, string kontaktOsoba, string eMail) {
+            this.Adapter.SelectCommand = this.CommandCollection[2];
+            if ((Firma == null)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(Firma));
+            }
+            if ((kontaktOsoba == null)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((string)(kontaktOsoba));
+            }
+            if ((eMail == null)) {
+                this.Adapter.SelectCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[2].Value = ((string)(eMail));
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int qFilterIdFirme(dbSenaCompDataSet.NaloziFDataTable dataTable, global::System.Nullable<int> IDFirme) {
+            this.Adapter.SelectCommand = this.CommandCollection[3];
+            if ((IDFirme.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((int)(IDFirme.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int qFilterKvar(dbSenaCompDataSet.NaloziFDataTable dataTable, string opisKvara, string Izvestaj) {
+            this.Adapter.SelectCommand = this.CommandCollection[4];
+            if ((opisKvara == null)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(opisKvara));
+            }
+            if ((Izvestaj == null)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((string)(Izvestaj));
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int qFilterStatus(dbSenaCompDataSet.NaloziFDataTable dataTable, string Status) {
+            this.Adapter.SelectCommand = this.CommandCollection[5];
+            if ((Status == null)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(Status));
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int qFilterUredjaj(dbSenaCompDataSet.NaloziFDataTable dataTable, string Uredjaj, string Proizvodjac, string Model, string serijskiBroj) {
+            this.Adapter.SelectCommand = this.CommandCollection[6];
+            if ((Uredjaj == null)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(Uredjaj));
+            }
+            if ((Proizvodjac == null)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((string)(Proizvodjac));
+            }
+            if ((Model == null)) {
+                this.Adapter.SelectCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[2].Value = ((string)(Model));
+            }
+            if ((serijskiBroj == null)) {
+                this.Adapter.SelectCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[3].Value = ((string)(serijskiBroj));
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int qFirmaNapomena(dbSenaCompDataSet.NaloziFDataTable dataTable, global::System.Nullable<int> IDFirme, string Firma) {
+            this.Adapter.SelectCommand = this.CommandCollection[7];
+            if ((IDFirme.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((int)(IDFirme.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            if ((Firma == null)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((string)(Firma));
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]

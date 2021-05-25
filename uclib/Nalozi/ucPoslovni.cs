@@ -20,15 +20,22 @@ namespace uclib.Nalozi
         {
             InitializeComponent();
 
-            if (Properties.Settings.Default.Uredjaji != null)
+            try
             {
-                uredjajComboBox.Items.AddRange(Properties.Settings.Default.Uredjaji.Cast<string>().ToArray());
-                uredjajComboBox.AutoCompleteCustomSource.AddRange(Properties.Settings.Default.Uredjaji.Cast<string>().ToArray());
+                if (Properties.Settings.Default.Uredjaji != null)
+                {
+                    uredjajComboBox.Items.AddRange(Properties.Settings.Default.Uredjaji.Cast<string>().ToArray());
+                    uredjajComboBox.AutoCompleteCustomSource.AddRange(Properties.Settings.Default.Uredjaji.Cast<string>().ToArray());
+                }
+                if (Properties.Settings.Default.Proizvodjaci != null)
+                {
+                    proizvodjacComboBox.Items.AddRange(Properties.Settings.Default.Proizvodjaci.Cast<string>().ToArray());
+                    proizvodjacComboBox.AutoCompleteCustomSource.AddRange(Properties.Settings.Default.Proizvodjaci.Cast<string>().ToArray());
+                }
             }
-            if (Properties.Settings.Default.Proizvodjaci != null)
+            catch (Exception ex)
             {
-                proizvodjacComboBox.Items.AddRange(Properties.Settings.Default.Proizvodjaci.Cast<string>().ToArray());
-                proizvodjacComboBox.AutoCompleteCustomSource.AddRange(Properties.Settings.Default.Proizvodjaci.Cast<string>().ToArray());
+                MessageBox.Show(ex.ToString());
             }
         }
 
@@ -36,13 +43,24 @@ namespace uclib.Nalozi
         {
             try
             {
-                naloziFDataGridView.CurrentCell = naloziFDataGridView.Rows[naloziFDataGridView.RowCount - 1].Cells[0]; //TD 2.1.e
+                //G 8
+                naloziFTableAdapter.Connection.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=" + Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\Visual Studio 2015\Projects\SenaComp\SenaComp\bin\debug\dbSenaComp.mdf;Password=Master1!";
+                naloziFTableAdapter.Fill(dbSenaCompDataSet.NaloziF);
+                cbFilter.SelectedIndex = 0;
+                try
+                {
+                    naloziFDataGridView.CurrentCell = naloziFDataGridView.Rows[naloziFDataGridView.RowCount - 1].Cells[0]; //TD 2.1.e
+                }
+                catch /*(Exception ex)*/
+                {
+
+                }
+                flpDodajKontrole();
             }
-            catch /*(Exception ex)*/
+            catch (Exception ex)
             {
-                
+                MessageBox.Show(ex.ToString());
             }
-            flpDodajKontrole();
         }
 
         private void dNovi_Click(object sender, EventArgs e)
@@ -330,6 +348,55 @@ namespace uclib.Nalozi
         private void kontaktTextBox_Leave(object sender, EventArgs e)
         {
             kontaktTextBox.Text = (new clFunkcijeRazno()).FormatKontakt(kontaktTextBox.Text);
+        }
+
+        private void tbPretraga_KeyDown(object sender, KeyEventArgs e)
+        {
+            //TD 2.2.f
+            if (e.KeyCode == Keys.Enter)
+            {
+                if (tbPretraga.Text != "")
+                {
+                    string pretraga = tbPretraga.Text;
+
+                    //TD 2.2.g
+                    switch (cbFilter.SelectedIndex)
+                    {
+                        case 0:
+                            naloziFTableAdapter.qFilterFirma(dbSenaCompDataSet.NaloziF, pretraga, pretraga, pretraga);
+                            break;
+                        case 1:
+                            try
+                            {
+                                naloziFTableAdapter.qFilterIdFirme(dbSenaCompDataSet.NaloziF, int.Parse(pretraga));
+                            }
+                            catch (Exception ex)
+                            {
+                                MessageBox.Show(ex.ToString());
+                            }
+                            break;
+                        case 2:
+                            try
+                            {
+                                naloziFTableAdapter.qFilterBrojNaloga(dbSenaCompDataSet.NaloziF, int.Parse(pretraga));
+                            }
+                            catch (Exception ex)
+                            {
+                                MessageBox.Show(ex.ToString());
+                            }
+                            break;
+                        case 3:
+                            naloziFTableAdapter.qFilterUredjaj(dbSenaCompDataSet.NaloziF, pretraga, pretraga, pretraga, pretraga);
+                            break;
+                        case 4:
+                            naloziFTableAdapter.qFilterKvar(dbSenaCompDataSet.NaloziF, pretraga, pretraga);
+                            break;
+                        case 5:
+                            naloziFTableAdapter.qFilterStatus(dbSenaCompDataSet.NaloziF, pretraga);
+                            break;
+                    }
+                }
+            }
         }
     }
 }

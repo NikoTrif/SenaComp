@@ -33,6 +33,7 @@ kada se trazi u kodu - npr. "RG1", "TD3.1.2", "G2"
 				|R|f) napraviti pretragu baze
 				|R|g) napraviti filtriranje
 				h) postaviti pitanje "Da li ste sigurni da zelite da sacuvate" kada nalog nije nov 
+				i) napisati kod za stavke iz cmsKorisnik
 	   |Z|3.   UC za podesavanja sa TreeView-om: program (smestiti dodavanje u listu uredjaja, proizvodjaca i opreme), podaci firme (naziv, delatnost, adresa, pib, tekuci racun), klauzula, baza
 				a) opsta podesavanja - prikaz vremena u bazi i na nalogu, prikaz cene servisa na nalogu
 				|R|b) dodavanje u listu uredjaja, proizvodjaca i opreme - liste uredjaja i proizvodjaca sortiraj po abecednom redu
@@ -207,3 +208,4 @@ kada se trazi u kodu - npr. "RG1", "TD3.1.2", "G2"
 25.05.21 - - - - - - -ucPoslovni - Dodat kod za ucitavanje liste uredjaja i proizvodjaca u combobox-ove
 		 - TD 2.2.f - ucPoslovni - napisan kod za pretragu baze
 		 - TD 2.2.g - ucposlovni - napisan kod za filtriranje baze po: nazivu firme, ID firme, broju naloga, uredjajima, kvarovima i statusu
+		 - - - - - - -ucPoslovni - napravljen cmsKorisnik koji sadrzi stavke "napravi profakturu" i "napravi fakturu" za koje treba ubaciti komande kasnije

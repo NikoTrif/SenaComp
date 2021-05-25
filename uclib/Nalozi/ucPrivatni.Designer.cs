@@ -566,7 +566,7 @@
             this.noviBrojNalogaToolStripMenuItem,
             this.izmeniBrojNalogaToolStripMenuItem});
             this.cmsBrojNaloga.Name = "cmsBrojNaloga";
-            this.cmsBrojNaloga.Size = new System.Drawing.Size(204, 80);
+            this.cmsBrojNaloga.Size = new System.Drawing.Size(204, 52);
             // 
             // noviBrojNalogaToolStripMenuItem
             // 

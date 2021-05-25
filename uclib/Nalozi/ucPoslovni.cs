@@ -398,5 +398,10 @@ namespace uclib.Nalozi
                 }
             }
         }
+
+        private void dProFakt_Click(object sender, EventArgs e)
+        {
+            cmsKorisnik.Show(MousePosition);
+        }
     }
 }

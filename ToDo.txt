@@ -209,3 +209,4 @@ kada se trazi u kodu - npr. "RG1", "TD3.1.2", "G2"
 		 - TD 2.2.f - ucPoslovni - napisan kod za pretragu baze
 		 - TD 2.2.g - ucposlovni - napisan kod za filtriranje baze po: nazivu firme, ID firme, broju naloga, uredjajima, kvarovima i statusu
 		 - - - - - - -ucPoslovni - napravljen cmsKorisnik koji sadrzi stavke "napravi profakturu" i "napravi fakturu" za koje treba ubaciti komande kasnije
+		 - - - - - - -ucFirme - zapocet

@@ -63,7 +63,6 @@ C:\Users\Lenovo\Documents\Visual Studio 2015\Projects\SenaComp\uclib\obj\Debug\R
 C:\Users\Lenovo\Documents\Visual Studio 2015\Projects\SenaComp\uclib\obj\Debug\RdlCompile.compiled
 C:\Users\Lenovo\Documents\Visual Studio 2015\Projects\SenaComp\uclib\bin\Debug\Reportovi\repNalogP.rdlc
 C:\Users\Lenovo\Documents\Visual Studio 2015\Projects\SenaComp\uclib\obj\Debug\uclib.Opcije.ucPodaciFirme.resources
-C:\Users\Lenovo\Documents\Visual Studio 2015\Projects\SenaComp\uclib\bin\Debug\Reportovi\repNalogP - Copy.rdlc
 C:\Users\Lenovo\Documents\Visual Studio 2015\Projects\SenaComp\uclib\obj\Debug\uclib.Opcije.ucKlauzula.resources
 C:\Users\Nikola\Documents\Visual Studio 2015\Projects\SenaComp\uclib\bin\Debug\dbSenaComp.mdf
 C:\Users\Nikola\Documents\Visual Studio 2015\Projects\SenaComp\uclib\bin\Debug\dbSenaComp_log.ldf
@@ -130,3 +129,5 @@ C:\Users\MasterPro\Documents\Visual Studio 2015\Projects\SenaComp\uclib\obj\Debu
 C:\Users\MasterPro\Documents\Visual Studio 2015\Projects\SenaComp\uclib\obj\Debug\uclib.pdb
 C:\Users\Nikola\Documents\Visual Studio 2015\Projects\SenaComp\uclib\obj\Debug\uclib.Baze.ucFirme.resources
 C:\Users\Nikola\Documents\Visual Studio 2015\Projects\SenaComp\uclib\obj\Debug\uclib.Ostalo.ucOdabirFirme.resources
+C:\Users\Lenovo\Documents\Visual Studio 2015\Projects\SenaComp\uclib\obj\Debug\uclib.Baze.ucFirme.resources
+C:\Users\Lenovo\Documents\Visual Studio 2015\Projects\SenaComp\uclib\obj\Debug\uclib.Ostalo.ucOdabirFirme.resources

@@ -203,3 +203,5 @@ kada se trazi u kodu - npr. "RG1", "TD3.1.2", "G2"
 		 - TD 3.2.c - ucPoslovni.repViewPos - parametri se vuku iz podesavanja
 		 - - - - - - -Reportovi Popravljene duzine oba reporta sa 27.7 na 27.6. Iz nekog razloga to je razlika da li ce se stampati jedna prazna strana ili ne
 		 - - - - - - -ucPoslovni - dodat kod za formatiranje kontakta
+
+25.05.21 - - - - - - -ucPoslovni - Dodat kod za ucitavanje liste uredjaja i proizvodjaca u combobox-ove

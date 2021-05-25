@@ -19,6 +19,17 @@ namespace uclib.Nalozi
         public ucPoslovni()
         {
             InitializeComponent();
+
+            if (Properties.Settings.Default.Uredjaji != null)
+            {
+                uredjajComboBox.Items.AddRange(Properties.Settings.Default.Uredjaji.Cast<string>().ToArray());
+                uredjajComboBox.AutoCompleteCustomSource.AddRange(Properties.Settings.Default.Uredjaji.Cast<string>().ToArray());
+            }
+            if (Properties.Settings.Default.Proizvodjaci != null)
+            {
+                proizvodjacComboBox.Items.AddRange(Properties.Settings.Default.Proizvodjaci.Cast<string>().ToArray());
+                proizvodjacComboBox.AutoCompleteCustomSource.AddRange(Properties.Settings.Default.Proizvodjaci.Cast<string>().ToArray());
+            }
         }
 
         private void ucPoslovni_Load(object sender, EventArgs e)

@@ -1550,6 +1550,8 @@ namespace uclib {
             
             private global::System.Data.DataColumn columntekuciRacun;
             
+            private global::System.Data.DataColumn columnmaticniBroj;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public FirmeDataTable() {
@@ -1649,6 +1651,14 @@ namespace uclib {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn maticniBrojColumn {
+                get {
+                    return this.columnmaticniBroj;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -1684,7 +1694,7 @@ namespace uclib {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public FirmeRow AddFirmeRow(string Naziv, string PIB, string Grad, string UlicaBroj, string Kontakt, string eMail, string tekuciRacun) {
+            public FirmeRow AddFirmeRow(string Naziv, string PIB, string Grad, string UlicaBroj, string Kontakt, string eMail, string tekuciRacun, string maticniBroj) {
                 FirmeRow rowFirmeRow = ((FirmeRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -1694,7 +1704,8 @@ namespace uclib {
                         UlicaBroj,
                         Kontakt,
                         eMail,
-                        tekuciRacun};
+                        tekuciRacun,
+                        maticniBroj};
                 rowFirmeRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowFirmeRow);
                 return rowFirmeRow;
@@ -1732,6 +1743,7 @@ namespace uclib {
                 this.columnKontakt = base.Columns["Kontakt"];
                 this.columneMail = base.Columns["eMail"];
                 this.columntekuciRacun = base.Columns["tekuciRacun"];
+                this.columnmaticniBroj = base.Columns["maticniBroj"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1753,6 +1765,8 @@ namespace uclib {
                 base.Columns.Add(this.columneMail);
                 this.columntekuciRacun = new global::System.Data.DataColumn("tekuciRacun", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columntekuciRacun);
+                this.columnmaticniBroj = new global::System.Data.DataColumn("maticniBroj", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnmaticniBroj);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnID}, true));
                 this.columnID.AutoIncrement = true;
@@ -1766,6 +1780,7 @@ namespace uclib {
                 this.columnKontakt.MaxLength = 50;
                 this.columneMail.MaxLength = 50;
                 this.columntekuciRacun.MaxLength = 50;
+                this.columnmaticniBroj.MaxLength = 50;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4629,6 +4644,22 @@ namespace uclib {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string maticniBroj {
+                get {
+                    try {
+                        return ((string)(this[this.tableFirme.maticniBrojColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'maticniBroj\' in table \'Firme\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableFirme.maticniBrojColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsNazivNull() {
                 return this.IsNull(this.tableFirme.NazivColumn);
             }
@@ -4709,6 +4740,18 @@ namespace uclib {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SettekuciRacunNull() {
                 this[this.tableFirme.tekuciRacunColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsmaticniBrojNull() {
+                return this.IsNull(this.tableFirme.maticniBrojColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetmaticniBrojNull() {
+                this[this.tableFirme.maticniBrojColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -8290,10 +8333,11 @@ SELECT redniBroj, datumProfakture, datumFakture, Valuta, Kupac, Roba, Ukupno, Kl
             tableMapping.ColumnMappings.Add("Kontakt", "Kontakt");
             tableMapping.ColumnMappings.Add("eMail", "eMail");
             tableMapping.ColumnMappings.Add("tekuciRacun", "tekuciRacun");
+            tableMapping.ColumnMappings.Add("maticniBroj", "maticniBroj");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[Firme] WHERE (([ID] = @Original_ID) AND ((@IsNull_Naziv = 1 AND [Naziv] IS NULL) OR ([Naziv] = @Original_Naziv)) AND ((@IsNull_PIB = 1 AND [PIB] IS NULL) OR ([PIB] = @Original_PIB)) AND ((@IsNull_Grad = 1 AND [Grad] IS NULL) OR ([Grad] = @Original_Grad)) AND ((@IsNull_UlicaBroj = 1 AND [UlicaBroj] IS NULL) OR ([UlicaBroj] = @Original_UlicaBroj)) AND ((@IsNull_Kontakt = 1 AND [Kontakt] IS NULL) OR ([Kontakt] = @Original_Kontakt)) AND ((@IsNull_eMail = 1 AND [eMail] IS NULL) OR ([eMail] = @Original_eMail)) AND ((@IsNull_tekuciRacun = 1 AND [tekuciRacun] IS NULL) OR ([tekuciRacun] = @Original_tekuciRacun)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [Firme] WHERE (([ID] = @Original_ID) AND ((@IsNull_Naziv = 1 AND [Naziv] IS NULL) OR ([Naziv] = @Original_Naziv)) AND ((@IsNull_PIB = 1 AND [PIB] IS NULL) OR ([PIB] = @Original_PIB)) AND ((@IsNull_Grad = 1 AND [Grad] IS NULL) OR ([Grad] = @Original_Grad)) AND ((@IsNull_UlicaBroj = 1 AND [UlicaBroj] IS NULL) OR ([UlicaBroj] = @Original_UlicaBroj)) AND ((@IsNull_Kontakt = 1 AND [Kontakt] IS NULL) OR ([Kontakt] = @Original_Kontakt)) AND ((@IsNull_eMail = 1 AND [eMail] IS NULL) OR ([eMail] = @Original_eMail)) AND ((@IsNull_tekuciRacun = 1 AND [tekuciRacun] IS NULL) OR ([tekuciRacun] = @Original_tekuciRacun)) AND ((@IsNull_maticniBroj = 1 AND [maticniBroj] IS NULL) OR ([maticniBroj] = @Original_maticniBroj)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Naziv", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Naziv", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
@@ -8310,10 +8354,12 @@ SELECT redniBroj, datumProfakture, datumFakture, Valuta, Kupac, Roba, Ukupno, Kl
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_eMail", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "eMail", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_tekuciRacun", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "tekuciRacun", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_tekuciRacun", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "tekuciRacun", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_maticniBroj", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "maticniBroj", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_maticniBroj", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "maticniBroj", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[Firme] ([ID], [Naziv], [PIB], [Grad], [UlicaBroj], [Kontakt], [eMail], [tekuciRacun]) VALUES (@ID, @Naziv, @PIB, @Grad, @UlicaBroj, @Kontakt, @eMail, @tekuciRacun);
-SELECT ID, Naziv, PIB, Grad, UlicaBroj, Kontakt, eMail, tekuciRacun FROM Firme WHERE (ID = @ID)";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [Firme] ([ID], [Naziv], [PIB], [Grad], [UlicaBroj], [Kontakt], [eMail], [tekuciRacun], [maticniBroj]) VALUES (@ID, @Naziv, @PIB, @Grad, @UlicaBroj, @Kontakt, @eMail, @tekuciRacun, @maticniBroj);
+SELECT ID, Naziv, PIB, Grad, UlicaBroj, Kontakt, eMail, tekuciRacun, maticniBroj FROM Firme WHERE (ID = @ID)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Naziv", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Naziv", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -8323,10 +8369,11 @@ SELECT ID, Naziv, PIB, Grad, UlicaBroj, Kontakt, eMail, tekuciRacun FROM Firme W
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Kontakt", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Kontakt", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@eMail", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "eMail", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@tekuciRacun", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "tekuciRacun", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@maticniBroj", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "maticniBroj", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Firme] SET [ID] = @ID, [Naziv] = @Naziv, [PIB] = @PIB, [Grad] = @Grad, [UlicaBroj] = @UlicaBroj, [Kontakt] = @Kontakt, [eMail] = @eMail, [tekuciRacun] = @tekuciRacun WHERE (([ID] = @Original_ID) AND ((@IsNull_Naziv = 1 AND [Naziv] IS NULL) OR ([Naziv] = @Original_Naziv)) AND ((@IsNull_PIB = 1 AND [PIB] IS NULL) OR ([PIB] = @Original_PIB)) AND ((@IsNull_Grad = 1 AND [Grad] IS NULL) OR ([Grad] = @Original_Grad)) AND ((@IsNull_UlicaBroj = 1 AND [UlicaBroj] IS NULL) OR ([UlicaBroj] = @Original_UlicaBroj)) AND ((@IsNull_Kontakt = 1 AND [Kontakt] IS NULL) OR ([Kontakt] = @Original_Kontakt)) AND ((@IsNull_eMail = 1 AND [eMail] IS NULL) OR ([eMail] = @Original_eMail)) AND ((@IsNull_tekuciRacun = 1 AND [tekuciRacun] IS NULL) OR ([tekuciRacun] = @Original_tekuciRacun)));
-SELECT ID, Naziv, PIB, Grad, UlicaBroj, Kontakt, eMail, tekuciRacun FROM Firme WHERE (ID = @ID)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [Firme] SET [ID] = @ID, [Naziv] = @Naziv, [PIB] = @PIB, [Grad] = @Grad, [UlicaBroj] = @UlicaBroj, [Kontakt] = @Kontakt, [eMail] = @eMail, [tekuciRacun] = @tekuciRacun, [maticniBroj] = @maticniBroj WHERE (([ID] = @Original_ID) AND ((@IsNull_Naziv = 1 AND [Naziv] IS NULL) OR ([Naziv] = @Original_Naziv)) AND ((@IsNull_PIB = 1 AND [PIB] IS NULL) OR ([PIB] = @Original_PIB)) AND ((@IsNull_Grad = 1 AND [Grad] IS NULL) OR ([Grad] = @Original_Grad)) AND ((@IsNull_UlicaBroj = 1 AND [UlicaBroj] IS NULL) OR ([UlicaBroj] = @Original_UlicaBroj)) AND ((@IsNull_Kontakt = 1 AND [Kontakt] IS NULL) OR ([Kontakt] = @Original_Kontakt)) AND ((@IsNull_eMail = 1 AND [eMail] IS NULL) OR ([eMail] = @Original_eMail)) AND ((@IsNull_tekuciRacun = 1 AND [tekuciRacun] IS NULL) OR ([tekuciRacun] = @Original_tekuciRacun)) AND ((@IsNull_maticniBroj = 1 AND [maticniBroj] IS NULL) OR ([maticniBroj] = @Original_maticniBroj)));
+SELECT ID, Naziv, PIB, Grad, UlicaBroj, Kontakt, eMail, tekuciRacun, maticniBroj FROM Firme WHERE (ID = @ID)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Naziv", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Naziv", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -8336,6 +8383,7 @@ SELECT ID, Naziv, PIB, Grad, UlicaBroj, Kontakt, eMail, tekuciRacun FROM Firme W
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Kontakt", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Kontakt", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@eMail", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "eMail", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@tekuciRacun", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "tekuciRacun", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@maticniBroj", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "maticniBroj", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Naziv", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Naziv", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Naziv", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Naziv", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -8351,6 +8399,8 @@ SELECT ID, Naziv, PIB, Grad, UlicaBroj, Kontakt, eMail, tekuciRacun FROM Firme W
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_eMail", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "eMail", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_tekuciRacun", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "tekuciRacun", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_tekuciRacun", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "tekuciRacun", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_maticniBroj", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "maticniBroj", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_maticniBroj", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "maticniBroj", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -8364,37 +8414,77 @@ SELECT ID, Naziv, PIB, Grad, UlicaBroj, Kontakt, eMail, tekuciRacun FROM Firme W
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[3];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[11];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT ID, Naziv, PIB, Grad, UlicaBroj, Kontakt, eMail, tekuciRacun FROM dbo.Firm" +
-                "e";
+            this._commandCollection[0].CommandText = "SELECT ID, Naziv, PIB, Grad, UlicaBroj, Kontakt, eMail, tekuciRacun, maticniBroj " +
+                "FROM Firme";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "SELECT        ID, Naziv, PIB, Grad, UlicaBroj, Kontakt, eMail, tekuciRacun\r\nFROM " +
-                "           Firme\r\nWHERE        (ID = @ID)";
+            this._commandCollection[1].CommandText = "SELECT ID, Naziv, PIB, Grad, UlicaBroj, Kontakt, eMail, tekuciRacun, maticniBroj\r" +
+                "\nFROM     Firme\r\nWHERE  (eMail LIKE N\'%\' + @eMail + N\'%\')";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@eMail", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "eMail", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = @"SELECT        ID, Naziv, PIB, Grad, UlicaBroj, Kontakt, eMail, tekuciRacun
-FROM            Firme
-WHERE        (Naziv LIKE N'%' + @Naziv + N'%') OR
-                         (PIB LIKE N'%' + @PIB + N'%') OR
-                         (Grad LIKE N'%' + @Grad + N'%') OR
-                         (UlicaBroj LIKE N'%' + @UlicaBroj + N'%') OR
-                         (Kontakt LIKE N'%' + @Kontakt + N'%') OR
-                         (eMail LIKE N'%' + @eMail + N'%') OR
-                         (tekuciRacun LIKE N'%' + @tekuciRacun + N'%')";
+            this._commandCollection[2].CommandText = "SELECT ID, Naziv, PIB, Grad, UlicaBroj, Kontakt, eMail, tekuciRacun, maticniBroj\r" +
+                "\nFROM     Firme\r\nWHERE  (Grad LIKE N\'%\' + @Grad + N\'%\')";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Naziv", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "Naziv", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PIB", global::System.Data.SqlDbType.NVarChar, 9, global::System.Data.ParameterDirection.Input, 0, 0, "PIB", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Grad", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "Grad", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UlicaBroj", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "UlicaBroj", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Kontakt", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "Kontakt", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@eMail", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "eMail", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@tekuciRacun", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "tekuciRacun", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[3].Connection = this.Connection;
+            this._commandCollection[3].CommandText = "SELECT ID, Naziv, PIB, Grad, UlicaBroj, Kontakt, eMail, tekuciRacun, maticniBroj " +
+                "FROM Firme WHERE (ID = @ID)";
+            this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[4] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[4].Connection = this.Connection;
+            this._commandCollection[4].CommandText = "SELECT ID, Naziv, PIB, Grad, UlicaBroj, Kontakt, eMail, tekuciRacun, maticniBroj\r" +
+                "\nFROM     Firme\r\nWHERE  (Kontakt LIKE N\'%\' + @Kontakt + N\'%\')";
+            this._commandCollection[4].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Kontakt", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "Kontakt", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[5] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[5].Connection = this.Connection;
+            this._commandCollection[5].CommandText = "SELECT ID, Naziv, PIB, Grad, UlicaBroj, Kontakt, eMail, tekuciRacun, maticniBroj\r" +
+                "\nFROM     Firme\r\nWHERE  (maticniBroj LIKE N\'%\' + @maticniBroj + N\'%\')";
+            this._commandCollection[5].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@maticniBroj", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "maticniBroj", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[6] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[6].Connection = this.Connection;
+            this._commandCollection[6].CommandText = "SELECT ID, Naziv, PIB, Grad, UlicaBroj, Kontakt, eMail, tekuciRacun, maticniBroj\r" +
+                "\nFROM     Firme\r\nWHERE  (Naziv LIKE N\'%\' + @Naziv + N\'%\')";
+            this._commandCollection[6].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Naziv", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "Naziv", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[7] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[7].Connection = this.Connection;
+            this._commandCollection[7].CommandText = "SELECT ID, Naziv, PIB, Grad, UlicaBroj, Kontakt, eMail, tekuciRacun, maticniBroj\r" +
+                "\nFROM     Firme\r\nWHERE  (PIB LIKE N\'%\' + @PIB + N\'%\')";
+            this._commandCollection[7].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[7].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PIB", global::System.Data.SqlDbType.NVarChar, 9, global::System.Data.ParameterDirection.Input, 0, 0, "PIB", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[8] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[8].Connection = this.Connection;
+            this._commandCollection[8].CommandText = @"SELECT ID, Naziv, PIB, Grad, UlicaBroj, Kontakt, eMail, tekuciRacun, maticniBroj FROM Firme WHERE (Naziv LIKE N'%' + @Naziv + N'%') OR (PIB LIKE N'%' + @PIB + N'%') OR (Grad LIKE N'%' + @Grad + N'%') OR (UlicaBroj LIKE N'%' + @UlicaBroj + N'%') OR (Kontakt LIKE N'%' + @Kontakt + N'%') OR (eMail LIKE N'%' + @eMail + N'%') OR (tekuciRacun LIKE N'%' + @tekuciRacun + N'%')";
+            this._commandCollection[8].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[8].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Naziv", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "Naziv", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[8].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PIB", global::System.Data.SqlDbType.NVarChar, 9, global::System.Data.ParameterDirection.Input, 0, 0, "PIB", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[8].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Grad", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "Grad", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[8].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UlicaBroj", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "UlicaBroj", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[8].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Kontakt", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "Kontakt", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[8].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@eMail", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "eMail", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[8].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@tekuciRacun", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "tekuciRacun", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[9] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[9].Connection = this.Connection;
+            this._commandCollection[9].CommandText = "SELECT ID, Naziv, PIB, Grad, UlicaBroj, Kontakt, eMail, tekuciRacun, maticniBroj\r" +
+                "\nFROM     Firme\r\nWHERE  (tekuciRacun LIKE N\'%\' + @tekuciRacun + N\'%\')";
+            this._commandCollection[9].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[9].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@tekuciRacun", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "tekuciRacun", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[10] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[10].Connection = this.Connection;
+            this._commandCollection[10].CommandText = "SELECT ID, Naziv, PIB, Grad, UlicaBroj, Kontakt, eMail, tekuciRacun, maticniBroj\r" +
+                "\nFROM     Firme\r\nWHERE  (UlicaBroj LIKE N\'%\' + @UlicaBroj + N\'%\')";
+            this._commandCollection[10].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[10].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UlicaBroj", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "UlicaBroj", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -8425,8 +8515,46 @@ WHERE        (Naziv LIKE N'%' + @Naziv + N'%') OR
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
-        public virtual int qPretID(dbSenaCompDataSet.FirmeDataTable dataTable, int ID) {
+        public virtual int qPretEmail(dbSenaCompDataSet.FirmeDataTable dataTable, string eMail) {
             this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((eMail == null)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(eMail));
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int qPretGrad(dbSenaCompDataSet.FirmeDataTable dataTable, string Grad) {
+            this.Adapter.SelectCommand = this.CommandCollection[2];
+            if ((Grad == null)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(Grad));
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int qPretID(dbSenaCompDataSet.FirmeDataTable dataTable, int ID) {
+            this.Adapter.SelectCommand = this.CommandCollection[3];
             this.Adapter.SelectCommand.Parameters[0].Value = ((int)(ID));
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -8439,8 +8567,84 @@ WHERE        (Naziv LIKE N'%' + @Naziv + N'%') OR
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int qPretKontakt(dbSenaCompDataSet.FirmeDataTable dataTable, string Kontakt) {
+            this.Adapter.SelectCommand = this.CommandCollection[4];
+            if ((Kontakt == null)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(Kontakt));
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int qPretMB(dbSenaCompDataSet.FirmeDataTable dataTable, string maticniBroj) {
+            this.Adapter.SelectCommand = this.CommandCollection[5];
+            if ((maticniBroj == null)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(maticniBroj));
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int qPretNaziv(dbSenaCompDataSet.FirmeDataTable dataTable, string Naziv) {
+            this.Adapter.SelectCommand = this.CommandCollection[6];
+            if ((Naziv == null)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(Naziv));
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int qPretPIB(dbSenaCompDataSet.FirmeDataTable dataTable, string PIB) {
+            this.Adapter.SelectCommand = this.CommandCollection[7];
+            if ((PIB == null)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(PIB));
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
         public virtual int qPretString(dbSenaCompDataSet.FirmeDataTable dataTable, string Naziv, string PIB, string Grad, string UlicaBroj, string Kontakt, string eMail, string tekuciRacun) {
-            this.Adapter.SelectCommand = this.CommandCollection[2];
+            this.Adapter.SelectCommand = this.CommandCollection[8];
             if ((Naziv == null)) {
                 this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
@@ -8493,6 +8697,44 @@ WHERE        (Naziv LIKE N'%' + @Naziv + N'%') OR
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int qPretTekuciRacun(dbSenaCompDataSet.FirmeDataTable dataTable, string tekuciRacun) {
+            this.Adapter.SelectCommand = this.CommandCollection[9];
+            if ((tekuciRacun == null)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(tekuciRacun));
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int qPretUlicaBroj(dbSenaCompDataSet.FirmeDataTable dataTable, string UlicaBroj) {
+            this.Adapter.SelectCommand = this.CommandCollection[10];
+            if ((UlicaBroj == null)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(UlicaBroj));
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         public virtual int Update(dbSenaCompDataSet.FirmeDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
@@ -8523,7 +8765,7 @@ WHERE        (Naziv LIKE N'%' + @Naziv + N'%') OR
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_ID, string Original_Naziv, string Original_PIB, string Original_Grad, string Original_UlicaBroj, string Original_Kontakt, string Original_eMail, string Original_tekuciRacun) {
+        public virtual int Delete(int Original_ID, string Original_Naziv, string Original_PIB, string Original_Grad, string Original_UlicaBroj, string Original_Kontakt, string Original_eMail, string Original_tekuciRacun, string Original_maticniBroj) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_ID));
             if ((Original_Naziv == null)) {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
@@ -8581,6 +8823,14 @@ WHERE        (Naziv LIKE N'%' + @Naziv + N'%') OR
                 this.Adapter.DeleteCommand.Parameters[13].Value = ((object)(0));
                 this.Adapter.DeleteCommand.Parameters[14].Value = ((string)(Original_tekuciRacun));
             }
+            if ((Original_maticniBroj == null)) {
+                this.Adapter.DeleteCommand.Parameters[15].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[16].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[15].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[16].Value = ((string)(Original_maticniBroj));
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -8601,7 +8851,7 @@ WHERE        (Naziv LIKE N'%' + @Naziv + N'%') OR
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(int ID, string Naziv, string PIB, string Grad, string UlicaBroj, string Kontakt, string eMail, string tekuciRacun) {
+        public virtual int Insert(int ID, string Naziv, string PIB, string Grad, string UlicaBroj, string Kontakt, string eMail, string tekuciRacun, string maticniBroj) {
             this.Adapter.InsertCommand.Parameters[0].Value = ((int)(ID));
             if ((Naziv == null)) {
                 this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
@@ -8645,6 +8895,12 @@ WHERE        (Naziv LIKE N'%' + @Naziv + N'%') OR
             else {
                 this.Adapter.InsertCommand.Parameters[7].Value = ((string)(tekuciRacun));
             }
+            if ((maticniBroj == null)) {
+                this.Adapter.InsertCommand.Parameters[8].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[8].Value = ((string)(maticniBroj));
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -8674,6 +8930,7 @@ WHERE        (Naziv LIKE N'%' + @Naziv + N'%') OR
                     string Kontakt, 
                     string eMail, 
                     string tekuciRacun, 
+                    string maticniBroj, 
                     int Original_ID, 
                     string Original_Naziv, 
                     string Original_PIB, 
@@ -8681,7 +8938,8 @@ WHERE        (Naziv LIKE N'%' + @Naziv + N'%') OR
                     string Original_UlicaBroj, 
                     string Original_Kontakt, 
                     string Original_eMail, 
-                    string Original_tekuciRacun) {
+                    string Original_tekuciRacun, 
+                    string Original_maticniBroj) {
             this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(ID));
             if ((Naziv == null)) {
                 this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
@@ -8725,62 +8983,76 @@ WHERE        (Naziv LIKE N'%' + @Naziv + N'%') OR
             else {
                 this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(tekuciRacun));
             }
-            this.Adapter.UpdateCommand.Parameters[8].Value = ((int)(Original_ID));
-            if ((Original_Naziv == null)) {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
+            if ((maticniBroj == null)) {
+                this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(Original_Naziv));
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(maticniBroj));
+            }
+            this.Adapter.UpdateCommand.Parameters[9].Value = ((int)(Original_ID));
+            if ((Original_Naziv == null)) {
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[11].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((string)(Original_Naziv));
             }
             if ((Original_PIB == null)) {
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[12].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[13].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((string)(Original_PIB));
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((string)(Original_PIB));
             }
             if ((Original_Grad == null)) {
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[14].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[15].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((string)(Original_Grad));
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((string)(Original_Grad));
             }
             if ((Original_UlicaBroj == null)) {
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[16].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[17].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[16].Value = ((string)(Original_UlicaBroj));
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[17].Value = ((string)(Original_UlicaBroj));
             }
             if ((Original_Kontakt == null)) {
-                this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[18].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[18].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[19].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[18].Value = ((string)(Original_Kontakt));
+                this.Adapter.UpdateCommand.Parameters[18].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[19].Value = ((string)(Original_Kontakt));
             }
             if ((Original_eMail == null)) {
-                this.Adapter.UpdateCommand.Parameters[19].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[20].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[20].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[21].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[19].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[20].Value = ((string)(Original_eMail));
+                this.Adapter.UpdateCommand.Parameters[20].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[21].Value = ((string)(Original_eMail));
             }
             if ((Original_tekuciRacun == null)) {
-                this.Adapter.UpdateCommand.Parameters[21].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[22].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[22].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[23].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[21].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[22].Value = ((string)(Original_tekuciRacun));
+                this.Adapter.UpdateCommand.Parameters[22].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[23].Value = ((string)(Original_tekuciRacun));
+            }
+            if ((Original_maticniBroj == null)) {
+                this.Adapter.UpdateCommand.Parameters[24].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[25].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[24].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[25].Value = ((string)(Original_maticniBroj));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -8802,8 +9074,25 @@ WHERE        (Naziv LIKE N'%' + @Naziv + N'%') OR
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Naziv, string PIB, string Grad, string UlicaBroj, string Kontakt, string eMail, string tekuciRacun, int Original_ID, string Original_Naziv, string Original_PIB, string Original_Grad, string Original_UlicaBroj, string Original_Kontakt, string Original_eMail, string Original_tekuciRacun) {
-            return this.Update(Original_ID, Naziv, PIB, Grad, UlicaBroj, Kontakt, eMail, tekuciRacun, Original_ID, Original_Naziv, Original_PIB, Original_Grad, Original_UlicaBroj, Original_Kontakt, Original_eMail, Original_tekuciRacun);
+        public virtual int Update(
+                    string Naziv, 
+                    string PIB, 
+                    string Grad, 
+                    string UlicaBroj, 
+                    string Kontakt, 
+                    string eMail, 
+                    string tekuciRacun, 
+                    string maticniBroj, 
+                    int Original_ID, 
+                    string Original_Naziv, 
+                    string Original_PIB, 
+                    string Original_Grad, 
+                    string Original_UlicaBroj, 
+                    string Original_Kontakt, 
+                    string Original_eMail, 
+                    string Original_tekuciRacun, 
+                    string Original_maticniBroj) {
+            return this.Update(Original_ID, Naziv, PIB, Grad, UlicaBroj, Kontakt, eMail, tekuciRacun, maticniBroj, Original_ID, Original_Naziv, Original_PIB, Original_Grad, Original_UlicaBroj, Original_Kontakt, Original_eMail, Original_tekuciRacun, Original_maticniBroj);
         }
     }
     

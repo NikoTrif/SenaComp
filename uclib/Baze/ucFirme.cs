@@ -121,5 +121,10 @@ namespace uclib.Baze
                 }
             }
         }
+
+        private void kontaktTextBox_Leave(object sender, EventArgs e)
+        {
+            kontaktTextBox.Text = (new iflib.clFunkcijeRazno()).FormatKontakt(kontaktTextBox.Text);
+        }
     }
 }

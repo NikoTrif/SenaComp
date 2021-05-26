@@ -526,6 +526,7 @@
             this.kontaktTextBox.Name = "kontaktTextBox";
             this.kontaktTextBox.Size = new System.Drawing.Size(292, 22);
             this.kontaktTextBox.TabIndex = 10;
+            this.kontaktTextBox.Leave += new System.EventHandler(this.kontaktTextBox_Leave);
             // 
             // ulicaBrojTextBox
             // 

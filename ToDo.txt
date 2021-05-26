@@ -212,3 +212,4 @@ kada se trazi u kodu - npr. "RG1", "TD3.1.2", "G2"
 		 - TD 2.9 - - ucFirme - zapocet
 
 26.05.21 - TD 2.9 - - ucFirme - nastavljen, napisan kod za osnovne funkcije
+		 - - - - - - -ucFirme - formatiranje kontakta

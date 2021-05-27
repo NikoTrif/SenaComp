@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Microsoft.Reporting.WinForms;
 using System.Drawing.Printing;
+using System.IO;
 
 namespace iflib
 {
@@ -78,6 +79,17 @@ namespace iflib
             }
 
             return tbOprema;
+        }
+
+        public void NapisiLog(Exception ex)
+        {
+            MessageBox.Show(ex.Message + "\n\nZa više informacija pogledajte log.txt u folderu programa.", "Greška!", MessageBoxButtons.OK,
+                MessageBoxIcon.Error);
+
+            StringBuilder sb = new StringBuilder("log.txt");
+            sb.Append(DateTime.Now);
+            sb.Append(ex.Message);
+            sb.Append(ex.ToString());
         }
 
         public class PisanjeReporta

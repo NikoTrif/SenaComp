@@ -15,6 +15,8 @@ namespace uclib.Nalozi
     {
         bool noviRed = false; //TD 2.1.c
         bool editTbOprema = false; //TD 2.1.c
+        clFunkcijeRazno fnr = new clFunkcijeRazno();
+
 
         public ucPoslovni()
         {
@@ -35,7 +37,7 @@ namespace uclib.Nalozi
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString());
+                fnr.NapisiLog(ex);
             }
         }
 
@@ -51,15 +53,12 @@ namespace uclib.Nalozi
                 {
                     naloziFDataGridView.CurrentCell = naloziFDataGridView.Rows[naloziFDataGridView.RowCount - 1].Cells[0]; //TD 2.1.e
                 }
-                catch /*(Exception ex)*/
-                {
-
-                }
+                catch { }
                 flpDodajKontrole();
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString());
+                fnr.NapisiLog(ex);
             }
         }
 
@@ -148,7 +147,7 @@ namespace uclib.Nalozi
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString());
+                fnr.NapisiLog(ex);
             }
         }
         private void dObrisi_Click(object sender, EventArgs e)
@@ -256,7 +255,7 @@ namespace uclib.Nalozi
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString());
+                fnr.NapisiLog(ex);
             }
 
             try
@@ -267,16 +266,15 @@ namespace uclib.Nalozi
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString());
+                fnr.NapisiLog(ex);
             }
         }
 
         private void naloziFDataGridView_SelectionChanged(object sender, EventArgs e)
         {
-            clFunkcijeRazno clf = new clFunkcijeRazno();
             try
             {
-                noviRed = clf.ProveraNoviRed(naloziFDataGridView.CurrentRow.Cells[2].Value.ToString());
+                noviRed = fnr.ProveraNoviRed(naloziFDataGridView.CurrentRow.Cells[2].Value.ToString());
             }
             catch { }
         }
@@ -303,7 +301,7 @@ namespace uclib.Nalozi
 
                 catch (Exception ex)
                 {
-                    MessageBox.Show(ex.ToString());
+                    fnr.NapisiLog(ex);
                 }
             }
         }
@@ -325,8 +323,7 @@ namespace uclib.Nalozi
         {
             if (editTbOprema == true)
             {
-                clFunkcijeRazno clf = new clFunkcijeRazno();
-                opremaTextBox.Text = clf.DodajUkloniOpremu(opremaTextBox.Text, sender as CheckBox);
+                opremaTextBox.Text = fnr.DodajUkloniOpremu(opremaTextBox.Text, sender as CheckBox);
             }
 
             editTbOprema = false;
@@ -340,14 +337,14 @@ namespace uclib.Nalozi
             }
             catch(Exception ex)
             {
-                MessageBox.Show(ex.ToString());
+                fnr.NapisiLog(ex);
             }
             clRadniNalogPosBindingSource.Clear();
         }
 
         private void kontaktTextBox_Leave(object sender, EventArgs e)
         {
-            kontaktTextBox.Text = (new clFunkcijeRazno()).FormatKontakt(kontaktTextBox.Text);
+            kontaktTextBox.Text = fnr.FormatKontakt(kontaktTextBox.Text);
         }
 
         private void tbPretraga_KeyDown(object sender, KeyEventArgs e)
@@ -372,7 +369,7 @@ namespace uclib.Nalozi
                             }
                             catch (Exception ex)
                             {
-                                MessageBox.Show(ex.ToString());
+                                fnr.NapisiLog(ex);
                             }
                             break;
                         case 2:
@@ -382,7 +379,7 @@ namespace uclib.Nalozi
                             }
                             catch (Exception ex)
                             {
-                                MessageBox.Show(ex.ToString());
+                                fnr.NapisiLog(ex);
                             }
                             break;
                         case 3:

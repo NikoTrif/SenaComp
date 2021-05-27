@@ -7,11 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using iflib;
 
 namespace uclib.Baze
 {
     public partial class ucFirme : UserControl
     {
+        clFunkcijeRazno fnr = new clFunkcijeRazno();
         public ucFirme()
         {
             InitializeComponent();
@@ -19,14 +21,21 @@ namespace uclib.Baze
 
         private void ucFirme_Load(object sender, EventArgs e)
         {
-            firmeTableAdapter.Connection.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=" + Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\Visual Studio 2015\Projects\SenaComp\SenaComp\bin\debug\dbSenaComp.mdf;Password=Master1!";
-            firmeTableAdapter.Fill(dbSenaCompDataSet.Firme);
-            cbFilter.SelectedIndex = 0;
             try
             {
-                firmeDataGridView.CurrentCell = firmeDataGridView.Rows[firmeDataGridView.RowCount - 1].Cells[0];
+                firmeTableAdapter.Connection.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=" + Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\Visual Studio 2015\Projects\SenaComp\SenaComp\bin\debug\dbSenaComp.mdf;Password=Master1!";
+                firmeTableAdapter.Fill(dbSenaCompDataSet.Firme);
+                cbFilter.SelectedIndex = 0;
+                try
+                {
+                    firmeDataGridView.CurrentCell = firmeDataGridView.Rows[firmeDataGridView.RowCount - 1].Cells[0];
+                }
+                catch { }
             }
-            catch { }
+            catch (Exception ex)
+            {
+                fnr.NapisiLog(ex);
+            }
         }
 
         private void dNovi_Click(object sender, EventArgs e)
@@ -86,7 +95,7 @@ namespace uclib.Baze
                             }
                             catch (Exception ex)
                             {
-                                MessageBox.Show(ex.ToString());
+                                fnr.NapisiLog(ex);
                             }
                             break;
                         case 2:

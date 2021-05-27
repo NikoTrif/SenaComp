@@ -13,6 +13,8 @@ namespace uclib.Ostalo
 {
     public partial class ucOdabirFirme : UserControl
     {
+        clFunkcijeRazno fnr = new clFunkcijeRazno();
+
         public ucOdabirFirme()
         {
             InitializeComponent();
@@ -60,7 +62,7 @@ namespace uclib.Ostalo
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString());
+                fnr.NapisiLog(ex);
             }
         }
 

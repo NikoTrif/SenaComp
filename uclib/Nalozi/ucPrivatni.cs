@@ -17,6 +17,7 @@ namespace uclib.Nalozi
     {
         bool noviRed = false; //TD 2.1.c
         bool editTbOstalo = false; //TD 2.1.c
+        clFunkcijeRazno fnr = new clFunkcijeRazno();
 
         public ucPrivatni()
         {
@@ -50,7 +51,7 @@ namespace uclib.Nalozi
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString());
+                fnr.NapisiLog(ex);
             }
         }
 
@@ -256,11 +257,9 @@ namespace uclib.Nalozi
 
         private void naloziPDataGridView_SelectionChanged(object sender, EventArgs e)
         {
-            //MessageBox.Show(naloziPDataGridView.CurrentRow.Cells[2].Value.ToString());
-            clFunkcijeRazno cfr = new clFunkcijeRazno();
             try
             {
-                noviRed = cfr.ProveraNoviRed(naloziPDataGridView.CurrentRow.Cells[2].Value.ToString());
+                noviRed = fnr.ProveraNoviRed(naloziPDataGridView.CurrentRow.Cells[2].Value.ToString());
             }
             catch { }
 
@@ -323,9 +322,7 @@ namespace uclib.Nalozi
 
         private void kontaktTextBox_Leave(object sender, EventArgs e)
         {
-            clFunkcijeRazno clf = new clFunkcijeRazno();
-            kontaktTextBox.Text = clf.FormatKontakt(kontaktTextBox.Text);
-            //MessageBox.Show("Leave");
+            kontaktTextBox.Text = fnr.FormatKontakt(kontaktTextBox.Text);
         }
 
         private void noviBrojNalogaToolStripMenuItem_Click(object sender, EventArgs e)
@@ -374,7 +371,7 @@ namespace uclib.Nalozi
             }
             catch(Exception ex)
             {
-                MessageBox.Show(ex.ToString());
+                fnr.NapisiLog(ex);
             }
 
 
@@ -395,7 +392,7 @@ namespace uclib.Nalozi
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString());
+                fnr.NapisiLog(ex);
             }
 
             clRadniNalogPrivBindingSource.Clear();
@@ -447,7 +444,7 @@ namespace uclib.Nalozi
 
                 catch (Exception ex)
                 {
-                    MessageBox.Show(ex.ToString());
+                    fnr.NapisiLog(ex);
                 } 
             }
         }
@@ -457,8 +454,7 @@ namespace uclib.Nalozi
         {
             if (editTbOstalo == true)
             {
-                clFunkcijeRazno clf = new clFunkcijeRazno();
-                ostaloTextBox.Text = clf.DodajUkloniOpremu(ostaloTextBox.Text, sender as CheckBox); 
+                ostaloTextBox.Text = fnr.DodajUkloniOpremu(ostaloTextBox.Text, sender as CheckBox); 
             }
 
             editTbOstalo = false;

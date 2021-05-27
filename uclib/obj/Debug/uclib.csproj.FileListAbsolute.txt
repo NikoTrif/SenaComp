@@ -131,3 +131,4 @@ C:\Users\Nikola\Documents\Visual Studio 2015\Projects\SenaComp\uclib\obj\Debug\u
 C:\Users\Nikola\Documents\Visual Studio 2015\Projects\SenaComp\uclib\obj\Debug\uclib.Ostalo.ucOdabirFirme.resources
 C:\Users\Lenovo\Documents\Visual Studio 2015\Projects\SenaComp\uclib\obj\Debug\uclib.Baze.ucFirme.resources
 C:\Users\Lenovo\Documents\Visual Studio 2015\Projects\SenaComp\uclib\obj\Debug\uclib.Ostalo.ucOdabirFirme.resources
+C:\Users\Lenovo\Documents\Visual Studio 2015\Projects\SenaComp\uclib\obj\Debug\uclib.Baze.ucArtikli.resources

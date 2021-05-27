@@ -26,11 +26,6 @@ namespace uclib.Baze
                 firmeTableAdapter.Connection.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=" + Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\Visual Studio 2015\Projects\SenaComp\SenaComp\bin\debug\dbSenaComp.mdf;Password=Master1!";
                 firmeTableAdapter.Fill(dbSenaCompDataSet.Firme);
                 cbFilter.SelectedIndex = 0;
-                try
-                {
-                    firmeDataGridView.CurrentCell = firmeDataGridView.Rows[firmeDataGridView.RowCount - 1].Cells[0];
-                }
-                catch { }
             }
             catch (Exception ex)
             {
@@ -71,7 +66,10 @@ namespace uclib.Baze
 
         private void dObrisi_Click(object sender, EventArgs e)
         {
-            firmeBindingSource.RemoveCurrent();
+            if (MessageBox.Show("Da li ste sigurni da želite da obrišete ovu firmu?", "Brisanje korisnika", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+            {
+                firmeBindingSource.RemoveCurrent();
+            }
         }
 
         private void tbPretraga_KeyDown(object sender, KeyEventArgs e)

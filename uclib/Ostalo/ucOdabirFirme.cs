@@ -40,7 +40,7 @@ namespace uclib.Ostalo
                     }
                     catch (Exception ex)
                     {
-                        MessageBox.Show(ex.Message);
+                        fnr.NapisiLog(ex);
                     }
                     break;
             }

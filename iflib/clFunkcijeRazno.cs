@@ -86,10 +86,13 @@ namespace iflib
             MessageBox.Show(ex.Message + "\n\nZa više informacija pogledajte log.txt u folderu programa.", "Greška!", MessageBoxButtons.OK,
                 MessageBoxIcon.Error);
 
-            StringBuilder sb = new StringBuilder("log.txt");
-            sb.Append(DateTime.Now);
-            sb.Append(ex.Message);
-            sb.Append(ex.ToString());
+            using(StreamWriter sw = File.AppendText("Log.txt"))
+            {
+                sw.WriteLine(DateTime.Now.ToString());
+                sw.WriteLine(ex.Message);
+                sw.WriteLine(ex.ToString());
+                sw.WriteLine("\n\n");
+            }
         }
 
         public class PisanjeReporta

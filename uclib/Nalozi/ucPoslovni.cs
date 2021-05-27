@@ -17,7 +17,6 @@ namespace uclib.Nalozi
         bool editTbOprema = false; //TD 2.1.c
         clFunkcijeRazno fnr = new clFunkcijeRazno();
 
-
         public ucPoslovni()
         {
             InitializeComponent();

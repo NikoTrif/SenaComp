@@ -102,15 +102,15 @@ namespace SenaComp
 
         private void dArtikli_Click(object sender, EventArgs e)
         {
-            //uclib.Baze.ucArtikli art = new uclib.Baze.ucArtikli();
+            uclib.Baze.ucArtikli art = new uclib.Baze.ucArtikli();
 
-            //tMenu.Start();
+            tMenu.Start();
 
-            //pMain.Controls.Clear();
-            //pMain.Controls.Add(art);
-            //art.Dock = DockStyle.Fill;
-            //art.SendToBack();
-            //pbLogo.BringToFront();
+            pMain.Controls.Clear();
+            pMain.Controls.Add(art);
+            art.Dock = DockStyle.Fill;
+            art.SendToBack();
+            pbLogo.BringToFront();
         }
 
         private void dFirme_Click(object sender, EventArgs e)

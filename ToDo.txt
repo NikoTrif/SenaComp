@@ -50,6 +50,7 @@ kada se trazi u kodu - npr. "RG1", "TD3.1.2", "G2"
 	   8.   UC za otpremnice - ?
 	   |Z|9.   UC za unos novih firmi (kao kontakata)
 	   |Z|10.  UC za sifre usluga i robe
+				|Z|a) napraviti kalkulator cena: unos za nabavnu cenu, rabat, PDV, marazu i prodajnu cenu. na osnovu da li je uneta prodajna cena ili nabavna prilagoditi matematiku
 	   11.  UC za periodicni izvestaj sa DateTimePciker-ima
 	   12.  UC za logovanje (username i password kada se pokrce program) u podesavanjima omoguciti automatsko logovanje a u osnovnom programu zakljucavanje
 3.   Napraviti Reportove
@@ -65,7 +66,7 @@ kada se trazi u kodu - npr. "RG1", "TD3.1.2", "G2"
 	   4.   Profaktura
 	   5.   Faktura
 	   6.   Otpremnica - ?
-	   7.   Napravi sistem za pravljenje log fajla
+|R|4.   Napravi sistem za pravljenje log fajla
 ---------------------------------------------------------------------------------------
 ***Greske***
 ---------------------------------------------------------------------------------------
@@ -214,6 +215,9 @@ kada se trazi u kodu - npr. "RG1", "TD3.1.2", "G2"
 26.05.21 - TD 2.9 - - ucFirme - nastavljen, napisan kod za osnovne funkcije
 		 - - - - - - -ucFirme - formatiranje kontakta
 
-27.05.21 - - - - - - -iflib.FunkcijeRazno - napravljen metod za pisanje log.txt fajla
+27.05.21 - TD 4 - - - iflib.FunkcijeRazno - napravljen metod za pisanje log.txt fajla
 		 - TD 2.9 - - ucFirme - trebalo bi da je zavrsen, proveriti jos jednom
 		 - TD 2.10 - -ucArtikli - zapocet - napisan kod za osnovne funkcije, treba napraviti filtere u DataSet-u i napisati kod za pretragu
+
+28.05.21 - TD 2.10 - -ucArtikli - napisan kod za pretragu, napravljen dictionary za filter "Usluga"
+		 - TD 2.10.a -iflib.clFunkcijeRazno.KalkulatorCena - zapoceto pisanje koda za racunicu, napisan kod za racunanje cene bez PDV i sa PDV

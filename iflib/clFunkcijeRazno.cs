@@ -83,6 +83,7 @@ namespace iflib
 
         public void NapisiLog(Exception ex)
         {
+            //TD 4
             MessageBox.Show(ex.Message + "\n\nZa više informacija pogledajte log.txt u folderu programa.", "Greška!", MessageBoxButtons.OK,
                 MessageBoxIcon.Error);
 
@@ -93,6 +94,33 @@ namespace iflib
                 sw.WriteLine(ex.ToString());
                 sw.WriteLine("\n\n");
             }
+        }
+
+        public double[] KalkulatorCene()
+        {
+            double[] cena = { 0, 0 };
+            double[] Marz = { 0 };
+            try
+            {
+                if (KalkulatorCenaArt.ProdajnaCena == 0)
+                {
+                    //dodaj racunicu
+                    cena[0] = KalkulatorCenaArt.NabavnaCena * KalkulatorCenaArt.Rabat * KalkulatorCenaArt.Marza;
+                    cena[1] = cena[0] * KalkulatorCenaArt.PDV;
+                    return cena;
+                }
+
+                else
+                {
+                    //dodaj kod
+                    return null;
+                }
+            }
+            catch (Exception ex)
+            {
+                NapisiLog(ex);
+            }
+            return null; //obrisi
         }
 
         public class PisanjeReporta
@@ -113,6 +141,15 @@ namespace iflib
                 };
                 return parametri;
             }
+        }
+        public class KalkulatorCenaArt
+        {
+            public static double NabavnaCena = 0;
+            public static double Rabat;
+            public static double Marza;
+            public static double CenaBezPDV;
+            public static double PDV = 0;
+            public static double ProdajnaCena = 0;
         }
     }
 }

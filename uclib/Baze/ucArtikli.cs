@@ -13,6 +13,8 @@ namespace uclib.Baze
     public partial class ucArtikli : UserControl
     {
         clFunkcijeRazno fnr = new clFunkcijeRazno();
+        Dictionary<string, bool> unos = new Dictionary<string, bool>();
+
         public ucArtikli()
         {
             InitializeComponent();
@@ -38,6 +40,7 @@ namespace uclib.Baze
             {
                 artikliBindingSource.AddNew();
                 sifraTextBox.Select();
+                uslugaCheckBox.Checked = false;
             }
             catch(Exception ex)
             {
@@ -84,13 +87,47 @@ namespace uclib.Baze
         {
             if (e.KeyCode == Keys.Enter)
             {
-                if (tbPretraga.Text != null)
+                if (tbPretraga.Text != "")
                 {
+                    string pretraga = tbPretraga.Text;
 
+                    switch (cbFilter.SelectedIndex)
+                    {
+                        case 0:
+                            try
+                            {
+                                artikliTableAdapter.qFilterSifra(dbSenaCompDataSet.Artikli, int.Parse(pretraga));
+                            }
+                            catch (Exception ex)
+                            {
+                                fnr.NapisiLog(ex);
+                            }
+                            break;
+                        case 1:
+                            artikliTableAdapter.qFilterNaziv(dbSenaCompDataSet.Artikli, pretraga);
+                            break;
+                        case 2:
+                            try
+                            {
+                                artikliTableAdapter.qFilterUsluga(dbSenaCompDataSet.Artikli, unos[pretraga.ToLower()]);
+                            }
+                            catch (Exception ex)
+                            {
+                                fnr.NapisiLog(ex);
+                            }
+                            break;
+                    }
                 }
                 else
                 {
-
+                    try
+                    {
+                        artikliTableAdapter.Fill(dbSenaCompDataSet.Artikli);
+                    }
+                    catch(Exception ex)
+                    {
+                        fnr.NapisiLog(ex);
+                    }
                 }
             }
         }
@@ -103,6 +140,72 @@ namespace uclib.Baze
             dbSenaCompDataSet.Artikli.SifraColumn.AutoIncrementSeed = 1;
             dbSenaCompDataSet.Artikli.SifraColumn.AutoIncrementSeed = 1;
             artikliTableAdapter.Fill(dbSenaCompDataSet.Artikli);
+        }
+
+        private void cbFilter_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (cbFilter.SelectedIndex == 2)
+                {
+                    unos.Add("da", true);
+                    unos.Add("ne", false);
+                    unos.Add("usluga", true);
+                    unos.Add("roba", false);
+                    unos.Add("u", true);
+                    unos.Add("r", false);
+                    unos.Add("true", true);
+                    unos.Add("false", false);
+                }
+            }
+            catch (Exception ex)
+            {
+                fnr.NapisiLog(ex);
+            }
+        }
+
+        private void dIzracunaj_Click(object sender, EventArgs e)
+        {
+            double rabat;
+            double marza;
+            double pdv;
+
+            try
+            {
+                double.TryParse(tbKalkNabavnaCena.Text, out clFunkcijeRazno.KalkulatorCenaArt.NabavnaCena);
+                double.TryParse(tbKalkRabat.Text, out rabat);
+                clFunkcijeRazno.KalkulatorCenaArt.Rabat = rabat / 100;
+                double.TryParse(tbKalkMarza.Text, out marza);
+                clFunkcijeRazno.KalkulatorCenaArt.Marza = marza / 100 + 1;
+                double.TryParse(tbKalkCenaBezPDV.Text, out clFunkcijeRazno.KalkulatorCenaArt.CenaBezPDV);
+                double.TryParse(tbKalkPDV.Text, out pdv);
+                clFunkcijeRazno.KalkulatorCenaArt.PDV = pdv / 100 + 1;
+                double.TryParse(tbKalkProdajnaCena.Text, out clFunkcijeRazno.KalkulatorCenaArt.ProdajnaCena);
+
+                Console.WriteLine(fnr.KalkulatorCene());
+            }
+            catch (Exception ex)
+            {
+                fnr.NapisiLog(ex);
+            }
+        }
+
+        private void dCE_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                foreach (Control tb in tableLayoutPanel3.Controls)
+                {
+                    if (tb is TextBox)
+                    {
+                        (tb as TextBox).Clear();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                fnr.NapisiLog(ex);
+            }
         }
     }
 }

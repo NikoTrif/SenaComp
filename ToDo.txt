@@ -221,3 +221,5 @@ kada se trazi u kodu - npr. "RG1", "TD3.1.2", "G2"
 
 28.05.21 - TD 2.10 - -ucArtikli - napisan kod za pretragu, napravljen dictionary za filter "Usluga"
 		 - TD 2.10.a -iflib.clFunkcijeRazno.KalkulatorCena - zapoceto pisanje koda za racunicu, napisan kod za racunanje cene bez PDV i sa PDV
+
+29.05.21 - TD 2.10.a - iflib.clFunkcijeRazno.KalkulatorCena - napisan kod za izracunavanje marze ali nije dobar

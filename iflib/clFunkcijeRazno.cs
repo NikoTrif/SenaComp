@@ -96,31 +96,28 @@ namespace iflib
             }
         }
 
-        public double[] KalkulatorCene()
+        public void KalkulatorCene()
         {
-            double[] cena = { 0, 0 };
-            double[] Marz = { 0 };
             try
             {
                 if (KalkulatorCenaArt.ProdajnaCena == 0)
                 {
                     //dodaj racunicu
-                    cena[0] = KalkulatorCenaArt.NabavnaCena * KalkulatorCenaArt.Rabat * KalkulatorCenaArt.Marza;
-                    cena[1] = cena[0] * KalkulatorCenaArt.PDV;
-                    return cena;
+                    KalkulatorCenaArt.CenaBezPDV = KalkulatorCenaArt.NabavnaCena * ( 1 - KalkulatorCenaArt.Rabat) * KalkulatorCenaArt.Marza;
+                    KalkulatorCenaArt.ProdajnaCena = KalkulatorCenaArt.CenaBezPDV * KalkulatorCenaArt.PDV;
                 }
 
                 else
                 {
-                    //dodaj kod
-                    return null;
+                    //matematika nije dobra, probaj ponovo
+                    KalkulatorCenaArt.CenaBezPDV = KalkulatorCenaArt.ProdajnaCena * (1 - (KalkulatorCenaArt.PDV - 1));
+                    KalkulatorCenaArt.Marza = (1 - (KalkulatorCenaArt.CenaBezPDV / (KalkulatorCenaArt.NabavnaCena * (1 - KalkulatorCenaArt.Rabat)))) * 100;
                 }
             }
             catch (Exception ex)
             {
                 NapisiLog(ex);
             }
-            return null; //obrisi
         }
 
         public class PisanjeReporta

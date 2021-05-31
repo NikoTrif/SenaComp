@@ -182,7 +182,11 @@ namespace uclib.Baze
                 clFunkcijeRazno.KalkulatorCenaArt.PDV = pdv / 100 + 1;
                 double.TryParse(tbKalkProdajnaCena.Text, out clFunkcijeRazno.KalkulatorCenaArt.ProdajnaCena);
 
-                Console.WriteLine(fnr.KalkulatorCene());
+                //Console.WriteLine(fnr.KalkulatorCene());
+                fnr.KalkulatorCene();
+                tbKalkCenaBezPDV.Text = clFunkcijeRazno.KalkulatorCenaArt.CenaBezPDV.ToString();
+                tbKalkProdajnaCena.Text = clFunkcijeRazno.KalkulatorCenaArt.ProdajnaCena.ToString();
+                tbKalkMarza.Text = clFunkcijeRazno.KalkulatorCenaArt.Marza.ToString();
             }
             catch (Exception ex)
             {
@@ -199,6 +203,12 @@ namespace uclib.Baze
                     if (tb is TextBox)
                     {
                         (tb as TextBox).Clear();
+                        clFunkcijeRazno.KalkulatorCenaArt.CenaBezPDV = 0;
+                        clFunkcijeRazno.KalkulatorCenaArt.Marza = 0;
+                        clFunkcijeRazno.KalkulatorCenaArt.NabavnaCena = 0;
+                        clFunkcijeRazno.KalkulatorCenaArt.PDV = 0;
+                        clFunkcijeRazno.KalkulatorCenaArt.ProdajnaCena = 0;
+                        clFunkcijeRazno.KalkulatorCenaArt.Rabat = 0;
                     }
                 }
             }

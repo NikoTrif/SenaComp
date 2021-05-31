@@ -37,12 +37,21 @@
             System.Windows.Forms.Label uslugaLabel;
             System.Windows.Forms.Label cenaLabel;
             this.artikliDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.artikliBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dbSenaCompDataSet = new uclib.dbSenaCompDataSet();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.dNovi = new System.Windows.Forms.Button();
             this.dOtkazi = new System.Windows.Forms.Button();
             this.dSacuvaj = new System.Windows.Forms.Button();
             this.dObrisi = new System.Windows.Forms.Button();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.cenaTextBox = new System.Windows.Forms.TextBox();
             this.uslugaCheckBox = new System.Windows.Forms.CheckBox();
             this.prodajnaCenaTextBox = new System.Windows.Forms.TextBox();
             this.jedinicaMereTextBox = new System.Windows.Forms.TextBox();
@@ -76,17 +85,8 @@
             this.tbKalkMarza = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.tbKalkCenaBezPDV = new System.Windows.Forms.TextBox();
-            this.artikliBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dbSenaCompDataSet = new uclib.dbSenaCompDataSet();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.artikliTableAdapter = new uclib.dbSenaCompDataSetTableAdapters.ArtikliTableAdapter();
             this.tableAdapterManager = new uclib.dbSenaCompDataSetTableAdapters.TableAdapterManager();
-            this.cenaTextBox = new System.Windows.Forms.TextBox();
             sifraLabel = new System.Windows.Forms.Label();
             nazivLabel = new System.Windows.Forms.Label();
             jedinicaMereLabel = new System.Windows.Forms.Label();
@@ -95,13 +95,13 @@
             uslugaLabel = new System.Windows.Forms.Label();
             cenaLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.artikliDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.artikliBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dbSenaCompDataSet)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.artikliBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dbSenaCompDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // sifraLabel
@@ -170,6 +170,16 @@
             uslugaLabel.TabIndex = 10;
             uslugaLabel.Text = "Usluga:";
             // 
+            // cenaLabel
+            // 
+            cenaLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            cenaLabel.AutoSize = true;
+            cenaLabel.Location = new System.Drawing.Point(3, 103);
+            cenaLabel.Name = "cenaLabel";
+            cenaLabel.Size = new System.Drawing.Size(104, 17);
+            cenaLabel.TabIndex = 20;
+            cenaLabel.Text = "Cena:";
+            // 
             // artikliDataGridView
             // 
             this.artikliDataGridView.AllowUserToAddRows = false;
@@ -195,6 +205,58 @@
             this.artikliDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.artikliDataGridView.Size = new System.Drawing.Size(1399, 364);
             this.artikliDataGridView.TabIndex = 1;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "Sifra";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Šifra";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "Naziv";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Naziv";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "jedinicaMere";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Jedinica Mere";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            // 
+            // dataGridViewCheckBoxColumn1
+            // 
+            this.dataGridViewCheckBoxColumn1.DataPropertyName = "Usluga";
+            this.dataGridViewCheckBoxColumn1.HeaderText = "Usluga";
+            this.dataGridViewCheckBoxColumn1.Name = "dataGridViewCheckBoxColumn1";
+            this.dataGridViewCheckBoxColumn1.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "PDV";
+            this.dataGridViewTextBoxColumn4.HeaderText = "PDV";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "prodajnaCena";
+            this.dataGridViewTextBoxColumn5.HeaderText = "Prodajna Cena";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
+            // 
+            // artikliBindingSource
+            // 
+            this.artikliBindingSource.DataMember = "Artikli";
+            this.artikliBindingSource.DataSource = this.dbSenaCompDataSet;
+            // 
+            // dbSenaCompDataSet
+            // 
+            this.dbSenaCompDataSet.DataSetName = "dbSenaCompDataSet";
+            this.dbSenaCompDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // tableLayoutPanel1
             // 
@@ -280,12 +342,11 @@
             this.tableLayoutPanel2.ColumnCount = 3;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 28.43451F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 71.56549F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 29F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 30F));
             this.tableLayoutPanel2.Controls.Add(cenaLabel, 0, 3);
             this.tableLayoutPanel2.Controls.Add(this.cenaTextBox, 1, 3);
             this.tableLayoutPanel2.Controls.Add(uslugaLabel, 0, 6);
             this.tableLayoutPanel2.Controls.Add(this.uslugaCheckBox, 1, 6);
-            this.tableLayoutPanel2.Controls.Add(prodajnaCenaLabel, 0, 5);
             this.tableLayoutPanel2.Controls.Add(this.prodajnaCenaTextBox, 1, 5);
             this.tableLayoutPanel2.Controls.Add(jedinicaMereLabel, 0, 2);
             this.tableLayoutPanel2.Controls.Add(this.jedinicaMereTextBox, 1, 2);
@@ -296,6 +357,7 @@
             this.tableLayoutPanel2.Controls.Add(this.pDVTextBox, 1, 4);
             this.tableLayoutPanel2.Controls.Add(pDVLabel, 0, 4);
             this.tableLayoutPanel2.Controls.Add(this.label13, 2, 4);
+            this.tableLayoutPanel2.Controls.Add(prodajnaCenaLabel, 0, 5);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(4, 19);
             this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(4);
@@ -311,6 +373,15 @@
             this.tableLayoutPanel2.Size = new System.Drawing.Size(417, 229);
             this.tableLayoutPanel2.TabIndex = 4;
             // 
+            // cenaTextBox
+            // 
+            this.cenaTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.cenaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.artikliBindingSource, "Cena", true));
+            this.cenaTextBox.Location = new System.Drawing.Point(113, 101);
+            this.cenaTextBox.Name = "cenaTextBox";
+            this.cenaTextBox.Size = new System.Drawing.Size(270, 22);
+            this.cenaTextBox.TabIndex = 21;
+            // 
             // uslugaCheckBox
             // 
             this.uslugaCheckBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
@@ -318,7 +389,7 @@
             this.uslugaCheckBox.Location = new System.Drawing.Point(114, 196);
             this.uslugaCheckBox.Margin = new System.Windows.Forms.Padding(4);
             this.uslugaCheckBox.Name = "uslugaCheckBox";
-            this.uslugaCheckBox.Size = new System.Drawing.Size(269, 29);
+            this.uslugaCheckBox.Size = new System.Drawing.Size(268, 29);
             this.uslugaCheckBox.TabIndex = 6;
             this.uslugaCheckBox.UseVisualStyleBackColor = true;
             // 
@@ -329,7 +400,7 @@
             this.prodajnaCenaTextBox.Location = new System.Drawing.Point(114, 165);
             this.prodajnaCenaTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.prodajnaCenaTextBox.Name = "prodajnaCenaTextBox";
-            this.prodajnaCenaTextBox.Size = new System.Drawing.Size(269, 22);
+            this.prodajnaCenaTextBox.Size = new System.Drawing.Size(268, 22);
             this.prodajnaCenaTextBox.TabIndex = 5;
             // 
             // jedinicaMereTextBox
@@ -339,7 +410,7 @@
             this.jedinicaMereTextBox.Location = new System.Drawing.Point(114, 69);
             this.jedinicaMereTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.jedinicaMereTextBox.Name = "jedinicaMereTextBox";
-            this.jedinicaMereTextBox.Size = new System.Drawing.Size(269, 22);
+            this.jedinicaMereTextBox.Size = new System.Drawing.Size(268, 22);
             this.jedinicaMereTextBox.TabIndex = 3;
             // 
             // nazivTextBox
@@ -349,7 +420,7 @@
             this.nazivTextBox.Location = new System.Drawing.Point(114, 37);
             this.nazivTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.nazivTextBox.Name = "nazivTextBox";
-            this.nazivTextBox.Size = new System.Drawing.Size(269, 22);
+            this.nazivTextBox.Size = new System.Drawing.Size(268, 22);
             this.nazivTextBox.TabIndex = 2;
             // 
             // sifraTextBox
@@ -359,7 +430,7 @@
             this.sifraTextBox.Location = new System.Drawing.Point(114, 5);
             this.sifraTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.sifraTextBox.Name = "sifraTextBox";
-            this.sifraTextBox.Size = new System.Drawing.Size(269, 22);
+            this.sifraTextBox.Size = new System.Drawing.Size(268, 22);
             this.sifraTextBox.TabIndex = 1;
             // 
             // pDVTextBox
@@ -369,7 +440,7 @@
             this.pDVTextBox.Location = new System.Drawing.Point(114, 133);
             this.pDVTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.pDVTextBox.Name = "pDVTextBox";
-            this.pDVTextBox.Size = new System.Drawing.Size(269, 22);
+            this.pDVTextBox.Size = new System.Drawing.Size(268, 22);
             this.pDVTextBox.TabIndex = 4;
             // 
             // label13
@@ -377,9 +448,9 @@
             this.label13.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(390, 135);
+            this.label13.Location = new System.Drawing.Point(389, 135);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(24, 17);
+            this.label13.Size = new System.Drawing.Size(25, 17);
             this.label13.TabIndex = 20;
             this.label13.Text = "%";
             // 
@@ -545,11 +616,11 @@
             // dCE
             // 
             this.dCE.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dCE.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dCE.Location = new System.Drawing.Point(191, 177);
+            this.dCE.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dCE.Location = new System.Drawing.Point(186, 177);
             this.dCE.Name = "dCE";
-            this.dCE.Size = new System.Drawing.Size(58, 51);
-            this.dCE.TabIndex = 19;
+            this.dCE.Size = new System.Drawing.Size(53, 51);
+            this.dCE.TabIndex = 20;
             this.dCE.Text = "CE";
             this.dCE.UseVisualStyleBackColor = true;
             this.dCE.Click += new System.EventHandler(this.dCE_Click);
@@ -560,8 +631,8 @@
             this.dIzracunaj.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dIzracunaj.Location = new System.Drawing.Point(127, 177);
             this.dIzracunaj.Name = "dIzracunaj";
-            this.dIzracunaj.Size = new System.Drawing.Size(58, 51);
-            this.dIzracunaj.TabIndex = 18;
+            this.dIzracunaj.Size = new System.Drawing.Size(53, 51);
+            this.dIzracunaj.TabIndex = 19;
             this.dIzracunaj.Text = "=";
             this.dIzracunaj.UseVisualStyleBackColor = true;
             this.dIzracunaj.Click += new System.EventHandler(this.dIzracunaj_Click);
@@ -638,7 +709,7 @@
             this.tbKalkProdajnaCena.Location = new System.Drawing.Point(127, 148);
             this.tbKalkProdajnaCena.Name = "tbKalkProdajnaCena";
             this.tbKalkProdajnaCena.Size = new System.Drawing.Size(192, 22);
-            this.tbKalkProdajnaCena.TabIndex = 17;
+            this.tbKalkProdajnaCena.TabIndex = 18;
             // 
             // tbKalkPDV
             // 
@@ -647,7 +718,7 @@
             this.tbKalkPDV.Location = new System.Drawing.Point(127, 119);
             this.tbKalkPDV.Name = "tbKalkPDV";
             this.tbKalkPDV.Size = new System.Drawing.Size(192, 22);
-            this.tbKalkPDV.TabIndex = 15;
+            this.tbKalkPDV.TabIndex = 17;
             // 
             // label6
             // 
@@ -685,59 +756,7 @@
             this.tbKalkCenaBezPDV.Location = new System.Drawing.Point(127, 90);
             this.tbKalkCenaBezPDV.Name = "tbKalkCenaBezPDV";
             this.tbKalkCenaBezPDV.Size = new System.Drawing.Size(192, 22);
-            this.tbKalkCenaBezPDV.TabIndex = 15;
-            // 
-            // artikliBindingSource
-            // 
-            this.artikliBindingSource.DataMember = "Artikli";
-            this.artikliBindingSource.DataSource = this.dbSenaCompDataSet;
-            // 
-            // dbSenaCompDataSet
-            // 
-            this.dbSenaCompDataSet.DataSetName = "dbSenaCompDataSet";
-            this.dbSenaCompDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "Sifra";
-            this.dataGridViewTextBoxColumn1.HeaderText = "Šifra";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "Naziv";
-            this.dataGridViewTextBoxColumn2.HeaderText = "Naziv";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "jedinicaMere";
-            this.dataGridViewTextBoxColumn3.HeaderText = "Jedinica Mere";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            // 
-            // dataGridViewCheckBoxColumn1
-            // 
-            this.dataGridViewCheckBoxColumn1.DataPropertyName = "Usluga";
-            this.dataGridViewCheckBoxColumn1.HeaderText = "Usluga";
-            this.dataGridViewCheckBoxColumn1.Name = "dataGridViewCheckBoxColumn1";
-            this.dataGridViewCheckBoxColumn1.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "PDV";
-            this.dataGridViewTextBoxColumn4.HeaderText = "PDV";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "prodajnaCena";
-            this.dataGridViewTextBoxColumn5.HeaderText = "Prodajna Cena";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.ReadOnly = true;
+            this.tbKalkCenaBezPDV.TabIndex = 16;
             // 
             // artikliTableAdapter
             // 
@@ -757,25 +776,6 @@
             this.tableAdapterManager.ProfaktureTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = uclib.dbSenaCompDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
-            // cenaLabel
-            // 
-            cenaLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            cenaLabel.AutoSize = true;
-            cenaLabel.Location = new System.Drawing.Point(3, 103);
-            cenaLabel.Name = "cenaLabel";
-            cenaLabel.Size = new System.Drawing.Size(104, 17);
-            cenaLabel.TabIndex = 20;
-            cenaLabel.Text = "Cena:";
-            // 
-            // cenaTextBox
-            // 
-            this.cenaTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.cenaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.artikliBindingSource, "Cena", true));
-            this.cenaTextBox.Location = new System.Drawing.Point(113, 101);
-            this.cenaTextBox.Name = "cenaTextBox";
-            this.cenaTextBox.Size = new System.Drawing.Size(271, 22);
-            this.cenaTextBox.TabIndex = 21;
-            // 
             // ucArtikli
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -793,6 +793,8 @@
             this.Size = new System.Drawing.Size(1407, 795);
             this.Load += new System.EventHandler(this.ucArtikli_Load);
             ((System.ComponentModel.ISupportInitialize)(this.artikliDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.artikliBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dbSenaCompDataSet)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
@@ -800,8 +802,6 @@
             this.groupBox2.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.artikliBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dbSenaCompDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

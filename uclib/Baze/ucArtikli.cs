@@ -166,10 +166,6 @@ namespace uclib.Baze
 
         private void dIzracunaj_Click(object sender, EventArgs e)
         {
-            double rabat;
-            double marza;
-            double pdv;
-
             try
             {
                 double.TryParse(tbKalkNabavnaCena.Text, out clFunkcijeRazno.KalkulatorCenaArt.NabavnaCena);

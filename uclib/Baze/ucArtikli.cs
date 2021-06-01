@@ -173,13 +173,10 @@ namespace uclib.Baze
             try
             {
                 double.TryParse(tbKalkNabavnaCena.Text, out clFunkcijeRazno.KalkulatorCenaArt.NabavnaCena);
-                double.TryParse(tbKalkRabat.Text, out rabat);
-                clFunkcijeRazno.KalkulatorCenaArt.Rabat = rabat / 100;
-                double.TryParse(tbKalkMarza.Text, out marza);
-                clFunkcijeRazno.KalkulatorCenaArt.Marza = marza / 100 + 1;
+                double.TryParse(tbKalkRabat.Text, out clFunkcijeRazno.KalkulatorCenaArt.Rabat);
+                double.TryParse(tbKalkMarza.Text, out clFunkcijeRazno.KalkulatorCenaArt.Marza);
                 double.TryParse(tbKalkCenaBezPDV.Text, out clFunkcijeRazno.KalkulatorCenaArt.CenaBezPDV);
-                double.TryParse(tbKalkPDV.Text, out pdv);
-                clFunkcijeRazno.KalkulatorCenaArt.PDV = pdv / 100 + 1;
+                double.TryParse(tbKalkPDV.Text, out clFunkcijeRazno.KalkulatorCenaArt.PDV);
                 double.TryParse(tbKalkProdajnaCena.Text, out clFunkcijeRazno.KalkulatorCenaArt.ProdajnaCena);
 
                 //Console.WriteLine(fnr.KalkulatorCene());

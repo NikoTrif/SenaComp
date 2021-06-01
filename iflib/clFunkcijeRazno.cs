@@ -103,15 +103,50 @@ namespace iflib
                 if (KalkulatorCenaArt.ProdajnaCena == 0)
                 {
                     //dodaj racunicu
-                    KalkulatorCenaArt.CenaBezPDV = KalkulatorCenaArt.NabavnaCena * ( 1 - KalkulatorCenaArt.Rabat) * KalkulatorCenaArt.Marza;
-                    KalkulatorCenaArt.ProdajnaCena = KalkulatorCenaArt.CenaBezPDV * KalkulatorCenaArt.PDV;
+                    KalkulatorCenaArt.CenaBezPDV = KalkulatorCenaArt.NabavnaCena * (1 - (KalkulatorCenaArt.Rabat / 100)) * (1 + (KalkulatorCenaArt.Marza / 100));
+                    KalkulatorCenaArt.ProdajnaCena = KalkulatorCenaArt.CenaBezPDV * (1 + (KalkulatorCenaArt.PDV / 100));
                 }
 
                 else
                 {
-                    //matematika nije dobra, probaj ponovo
-                    KalkulatorCenaArt.CenaBezPDV = KalkulatorCenaArt.ProdajnaCena * (1 - (KalkulatorCenaArt.PDV - 1));
-                    KalkulatorCenaArt.Marza = (1 - (KalkulatorCenaArt.CenaBezPDV / (KalkulatorCenaArt.NabavnaCena * (1 - KalkulatorCenaArt.Rabat)))) * 100;
+                    /* 
+                    NC - Nabavna cena | R - Rabat | M - Marza | NPDV - Cena bez PDV-a | PDV - PDV | PC - Prodajna cena
+
+                    NC = 1256
+                    R = 5%
+                    M = 23%
+                    NPDV = 1467.636
+                    PDV = 20%
+                    PC = 1761.636
+
+                    NPDV * PDV = PC
+                    [(NC * R) * M] * PDV = PC
+                    { NC * [1 - (R / 100)] * [1 + (M / 100)]} * [1 + (PDV / 100)] = PC
+
+                    NPDV = PC / PDV
+                    NPDV = PC / [1 + (PDV / 100)]
+                    NPDV = 1761,163 / [1 + (20 / 100)]
+                    NPDV = 1761,163 / 1,2
+                    NPDV = 1467,636
+
+                    {NC * [1 - (R / 100)]} * [1 + (M / 100)] = NPDV
+                    [1+(M/100)] = NPDV / { NC * [1 - (R / 100)]}
+                    [1+(M/100)] = 1467,636 / {1256 * [1-(5/100)]}
+                    [1+(M/100)] = 1467,636 / {1256 * [1 - 0, 05]}
+                    [1+(M/100)] = 1467,636 / {1256 * 0,95}
+                    [1+(M/100)] = 1467,636 / {1256 * 0,95}
+                    [1+(M/100)] = 1467,636 / 1193,2
+                    [1+(M/100)] =1,23
+                    (M/100) = 1,23 - 1
+                    (M/100) = 0,23
+                    M = 0,23 * 100
+                    M = 23
+
+                    => M = (NPDV / (NC * (1 - (R / 100))) - 1) * 100
+                    */
+
+                    KalkulatorCenaArt.CenaBezPDV = KalkulatorCenaArt.ProdajnaCena / (1 + (KalkulatorCenaArt.PDV / 100));
+                    KalkulatorCenaArt.Marza = (KalkulatorCenaArt.CenaBezPDV / (KalkulatorCenaArt.NabavnaCena * (1 - (KalkulatorCenaArt.Rabat / 100))) - 1) * 100;
                 }
             }
             catch (Exception ex)

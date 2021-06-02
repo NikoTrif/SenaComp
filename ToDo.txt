@@ -225,3 +225,5 @@ kada se trazi u kodu - npr. "RG1", "TD3.1.2", "G2"
 29.05.21 - TD 2.10.a - iflib.clFunkcijeRazno.KalkulatorCena - napisan kod za izracunavanje marze ali nije dobar
 
 01.06.21 - TD 2.10.a - iflib.clFunkcijeRazno.KalkulatorCena - popravljen kod za izracunavanje marze - zavrseno
+
+02.06.21 - TD 2.6 - - -ucProfakture - zapocet

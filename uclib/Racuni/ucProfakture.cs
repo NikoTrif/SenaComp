@@ -15,5 +15,13 @@ namespace uclib.Racuni
         {
             InitializeComponent();
         }
+
+        private void profaktureBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        {
+            this.Validate();
+            this.profaktureBindingSource.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.dbSenaCompDataSet);
+
+        }
     }
 }

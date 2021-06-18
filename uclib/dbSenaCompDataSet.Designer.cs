@@ -3649,13 +3649,27 @@ namespace uclib {
             
             private global::System.Data.DataColumn columnValuta;
             
-            private global::System.Data.DataColumn columnKupac;
-            
             private global::System.Data.DataColumn columnRoba;
             
             private global::System.Data.DataColumn columnUkupno;
             
             private global::System.Data.DataColumn columnKlauzule;
+            
+            private global::System.Data.DataColumn columnIDKlijenta;
+            
+            private global::System.Data.DataColumn columnKlijent;
+            
+            private global::System.Data.DataColumn columnStatus;
+            
+            private global::System.Data.DataColumn columndatumIsplate;
+            
+            private global::System.Data.DataColumn columnPIB;
+            
+            private global::System.Data.DataColumn columnmatBroj;
+            
+            private global::System.Data.DataColumn columnAdresa;
+            
+            private global::System.Data.DataColumn columnGrad;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -3716,14 +3730,6 @@ namespace uclib {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn KupacColumn {
-                get {
-                    return this.columnKupac;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public global::System.Data.DataColumn RobaColumn {
                 get {
                     return this.columnRoba;
@@ -3743,6 +3749,70 @@ namespace uclib {
             public global::System.Data.DataColumn KlauzuleColumn {
                 get {
                     return this.columnKlauzule;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn IDKlijentaColumn {
+                get {
+                    return this.columnIDKlijenta;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn KlijentColumn {
+                get {
+                    return this.columnKlijent;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn StatusColumn {
+                get {
+                    return this.columnStatus;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn datumIsplateColumn {
+                get {
+                    return this.columndatumIsplate;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn PIBColumn {
+                get {
+                    return this.columnPIB;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn matBrojColumn {
+                get {
+                    return this.columnmatBroj;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn AdresaColumn {
+                get {
+                    return this.columnAdresa;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn GradColumn {
+                get {
+                    return this.columnGrad;
                 }
             }
             
@@ -3783,16 +3853,23 @@ namespace uclib {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public ProfaktureRow AddProfaktureRow(int redniBroj, System.DateTime Datum, string Valuta, string Kupac, string Roba, double Ukupno, string Klauzule) {
+            public ProfaktureRow AddProfaktureRow(System.DateTime Datum, string Valuta, string Roba, double Ukupno, string Klauzule, int IDKlijenta, string Klijent, string Status, System.DateTime datumIsplate, string PIB, string matBroj, string Adresa, string Grad) {
                 ProfaktureRow rowProfaktureRow = ((ProfaktureRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        redniBroj,
+                        null,
                         Datum,
                         Valuta,
-                        Kupac,
                         Roba,
                         Ukupno,
-                        Klauzule};
+                        Klauzule,
+                        IDKlijenta,
+                        Klijent,
+                        Status,
+                        datumIsplate,
+                        PIB,
+                        matBroj,
+                        Adresa,
+                        Grad};
                 rowProfaktureRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowProfaktureRow);
                 return rowProfaktureRow;
@@ -3825,10 +3902,17 @@ namespace uclib {
                 this.columnredniBroj = base.Columns["redniBroj"];
                 this.columnDatum = base.Columns["Datum"];
                 this.columnValuta = base.Columns["Valuta"];
-                this.columnKupac = base.Columns["Kupac"];
                 this.columnRoba = base.Columns["Roba"];
                 this.columnUkupno = base.Columns["Ukupno"];
                 this.columnKlauzule = base.Columns["Klauzule"];
+                this.columnIDKlijenta = base.Columns["IDKlijenta"];
+                this.columnKlijent = base.Columns["Klijent"];
+                this.columnStatus = base.Columns["Status"];
+                this.columndatumIsplate = base.Columns["datumIsplate"];
+                this.columnPIB = base.Columns["PIB"];
+                this.columnmatBroj = base.Columns["matBroj"];
+                this.columnAdresa = base.Columns["Adresa"];
+                this.columnGrad = base.Columns["Grad"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3840,22 +3924,43 @@ namespace uclib {
                 base.Columns.Add(this.columnDatum);
                 this.columnValuta = new global::System.Data.DataColumn("Valuta", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnValuta);
-                this.columnKupac = new global::System.Data.DataColumn("Kupac", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnKupac);
                 this.columnRoba = new global::System.Data.DataColumn("Roba", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnRoba);
                 this.columnUkupno = new global::System.Data.DataColumn("Ukupno", typeof(double), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnUkupno);
                 this.columnKlauzule = new global::System.Data.DataColumn("Klauzule", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnKlauzule);
+                this.columnIDKlijenta = new global::System.Data.DataColumn("IDKlijenta", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnIDKlijenta);
+                this.columnKlijent = new global::System.Data.DataColumn("Klijent", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnKlijent);
+                this.columnStatus = new global::System.Data.DataColumn("Status", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnStatus);
+                this.columndatumIsplate = new global::System.Data.DataColumn("datumIsplate", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columndatumIsplate);
+                this.columnPIB = new global::System.Data.DataColumn("PIB", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPIB);
+                this.columnmatBroj = new global::System.Data.DataColumn("matBroj", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnmatBroj);
+                this.columnAdresa = new global::System.Data.DataColumn("Adresa", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnAdresa);
+                this.columnGrad = new global::System.Data.DataColumn("Grad", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnGrad);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnredniBroj}, true));
+                this.columnredniBroj.AutoIncrement = true;
+                this.columnredniBroj.AutoIncrementSeed = 1;
                 this.columnredniBroj.AllowDBNull = false;
                 this.columnredniBroj.Unique = true;
                 this.columnValuta.MaxLength = 50;
-                this.columnKupac.MaxLength = 50;
                 this.columnRoba.MaxLength = 2147483647;
                 this.columnKlauzule.MaxLength = 2147483647;
+                this.columnKlijent.MaxLength = 50;
+                this.columnStatus.MaxLength = 50;
+                this.columnPIB.MaxLength = 50;
+                this.columnmatBroj.MaxLength = 50;
+                this.columnAdresa.MaxLength = 50;
+                this.columnGrad.MaxLength = 50;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6614,22 +6719,6 @@ namespace uclib {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Kupac {
-                get {
-                    try {
-                        return ((string)(this[this.tableProfakture.KupacColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Kupac\' in table \'Profakture\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableProfakture.KupacColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string Roba {
                 get {
                     try {
@@ -6678,6 +6767,134 @@ namespace uclib {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int IDKlijenta {
+                get {
+                    try {
+                        return ((int)(this[this.tableProfakture.IDKlijentaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'IDKlijenta\' in table \'Profakture\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableProfakture.IDKlijentaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Klijent {
+                get {
+                    try {
+                        return ((string)(this[this.tableProfakture.KlijentColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Klijent\' in table \'Profakture\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableProfakture.KlijentColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Status {
+                get {
+                    try {
+                        return ((string)(this[this.tableProfakture.StatusColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Status\' in table \'Profakture\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableProfakture.StatusColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public System.DateTime datumIsplate {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableProfakture.datumIsplateColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'datumIsplate\' in table \'Profakture\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableProfakture.datumIsplateColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string PIB {
+                get {
+                    try {
+                        return ((string)(this[this.tableProfakture.PIBColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'PIB\' in table \'Profakture\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableProfakture.PIBColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string matBroj {
+                get {
+                    try {
+                        return ((string)(this[this.tableProfakture.matBrojColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'matBroj\' in table \'Profakture\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableProfakture.matBrojColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Adresa {
+                get {
+                    try {
+                        return ((string)(this[this.tableProfakture.AdresaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Adresa\' in table \'Profakture\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableProfakture.AdresaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Grad {
+                get {
+                    try {
+                        return ((string)(this[this.tableProfakture.GradColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Grad\' in table \'Profakture\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableProfakture.GradColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsDatumNull() {
                 return this.IsNull(this.tableProfakture.DatumColumn);
             }
@@ -6698,18 +6915,6 @@ namespace uclib {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetValutaNull() {
                 this[this.tableProfakture.ValutaColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsKupacNull() {
-                return this.IsNull(this.tableProfakture.KupacColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetKupacNull() {
-                this[this.tableProfakture.KupacColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6746,6 +6951,102 @@ namespace uclib {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetKlauzuleNull() {
                 this[this.tableProfakture.KlauzuleColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsIDKlijentaNull() {
+                return this.IsNull(this.tableProfakture.IDKlijentaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetIDKlijentaNull() {
+                this[this.tableProfakture.IDKlijentaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsKlijentNull() {
+                return this.IsNull(this.tableProfakture.KlijentColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetKlijentNull() {
+                this[this.tableProfakture.KlijentColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsStatusNull() {
+                return this.IsNull(this.tableProfakture.StatusColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetStatusNull() {
+                this[this.tableProfakture.StatusColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsdatumIsplateNull() {
+                return this.IsNull(this.tableProfakture.datumIsplateColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetdatumIsplateNull() {
+                this[this.tableProfakture.datumIsplateColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsPIBNull() {
+                return this.IsNull(this.tableProfakture.PIBColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetPIBNull() {
+                this[this.tableProfakture.PIBColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsmatBrojNull() {
+                return this.IsNull(this.tableProfakture.matBrojColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetmatBrojNull() {
+                this[this.tableProfakture.matBrojColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsAdresaNull() {
+                return this.IsNull(this.tableProfakture.AdresaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetAdresaNull() {
+                this[this.tableProfakture.AdresaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsGradNull() {
+                return this.IsNull(this.tableProfakture.GradColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetGradNull() {
+                this[this.tableProfakture.GradColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -13310,57 +13611,62 @@ SELECT redniBroj, datum, datProf, datFakt, racun, adresaMagacina, imeOL, brojLKO
             tableMapping.ColumnMappings.Add("redniBroj", "redniBroj");
             tableMapping.ColumnMappings.Add("Datum", "Datum");
             tableMapping.ColumnMappings.Add("Valuta", "Valuta");
-            tableMapping.ColumnMappings.Add("Kupac", "Kupac");
             tableMapping.ColumnMappings.Add("Roba", "Roba");
             tableMapping.ColumnMappings.Add("Ukupno", "Ukupno");
             tableMapping.ColumnMappings.Add("Klauzule", "Klauzule");
+            tableMapping.ColumnMappings.Add("IDKlijenta", "IDKlijenta");
+            tableMapping.ColumnMappings.Add("Klijent", "Klijent");
+            tableMapping.ColumnMappings.Add("Status", "Status");
+            tableMapping.ColumnMappings.Add("datumIsplate", "datumIsplate");
+            tableMapping.ColumnMappings.Add("PIB", "PIB");
+            tableMapping.ColumnMappings.Add("matBroj", "matBroj");
+            tableMapping.ColumnMappings.Add("Adresa", "Adresa");
+            tableMapping.ColumnMappings.Add("Grad", "Grad");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[Profakture] WHERE (([redniBroj] = @Original_redniBroj) AND ((@IsNull_Datum = 1 AND [Datum] IS NULL) OR ([Datum] = @Original_Datum)) AND ((@IsNull_Valuta = 1 AND [Valuta] IS NULL) OR ([Valuta] = @Original_Valuta)) AND ((@IsNull_Kupac = 1 AND [Kupac] IS NULL) OR ([Kupac] = @Original_Kupac)) AND ((@IsNull_Ukupno = 1 AND [Ukupno] IS NULL) OR ([Ukupno] = @Original_Ukupno)))";
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM [Profakture] WHERE (([redniBroj] = @Original_redniBroj))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_redniBroj", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "redniBroj", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Datum", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Datum", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Datum", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Datum", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Valuta", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Valuta", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Valuta", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Valuta", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Kupac", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Kupac", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Kupac", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Kupac", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Ukupno", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Ukupno", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Ukupno", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Ukupno", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_redniBroj", global::System.Data.SqlDbType.Timestamp, 0, global::System.Data.ParameterDirection.Input, 0, 0, "redniBroj", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[Profakture] ([redniBroj], [Datum], [Valuta], [Kupac], [Roba], [Ukupno], [Klauzule]) VALUES (@redniBroj, @Datum, @Valuta, @Kupac, @Roba, @Ukupno, @Klauzule);
-SELECT redniBroj, Datum, Valuta, Kupac, Roba, Ukupno, Klauzule FROM Profakture WHERE (redniBroj = @redniBroj)";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [Profakture] ([Datum], [Valuta], [Roba], [Ukupno], [Klauzule], [IDKlijenta], [Klijent], [Adresa], [Grad], [PIB], [Status], [datumIsplate], [matBroj]) VALUES (@Datum, @Valuta, @Roba, @Ukupno, @Klauzule, @IDKlijenta, @Klijent, @Adresa, @Grad, @PIB, @Status, @datumIsplate, @matBroj);
+SELECT redniBroj, Datum, Valuta, Roba, Ukupno, Klauzule, IDKlijenta, Klijent, Adresa, Grad, PIB, Status, datumIsplate, matBroj FROM Profakture WHERE (redniBroj = @redniBroj)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@redniBroj", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "redniBroj", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Datum", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Datum", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Datum", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Datum", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Valuta", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Valuta", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Kupac", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Kupac", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Roba", global::System.Data.SqlDbType.Xml, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Roba", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Ukupno", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Ukupno", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Klauzule", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Klauzule", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IDKlijenta", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IDKlijenta", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Klijent", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Klijent", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Adresa", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Adresa", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Grad", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Grad", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PIB", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PIB", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Status", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Status", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@datumIsplate", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "datumIsplate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@matBroj", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "matBroj", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@redniBroj", global::System.Data.SqlDbType.Timestamp, 8, global::System.Data.ParameterDirection.Input, 0, 0, "redniBroj", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Profakture] SET [redniBroj] = @redniBroj, [Datum] = @Datum, [Valuta] = @Valuta, [Kupac] = @Kupac, [Roba] = @Roba, [Ukupno] = @Ukupno, [Klauzule] = @Klauzule WHERE (([redniBroj] = @Original_redniBroj) AND ((@IsNull_Datum = 1 AND [Datum] IS NULL) OR ([Datum] = @Original_Datum)) AND ((@IsNull_Valuta = 1 AND [Valuta] IS NULL) OR ([Valuta] = @Original_Valuta)) AND ((@IsNull_Kupac = 1 AND [Kupac] IS NULL) OR ([Kupac] = @Original_Kupac)) AND ((@IsNull_Ukupno = 1 AND [Ukupno] IS NULL) OR ([Ukupno] = @Original_Ukupno)));
-SELECT redniBroj, Datum, Valuta, Kupac, Roba, Ukupno, Klauzule FROM Profakture WHERE (redniBroj = @redniBroj)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [Profakture] SET [Datum] = @Datum, [Valuta] = @Valuta, [Roba] = @Roba, [Ukupno] = @Ukupno, [Klauzule] = @Klauzule, [IDKlijenta] = @IDKlijenta, [Klijent] = @Klijent, [Adresa] = @Adresa, [Grad] = @Grad, [PIB] = @PIB, [Status] = @Status, [datumIsplate] = @datumIsplate, [matBroj] = @matBroj WHERE (([redniBroj] = @Original_redniBroj));
+SELECT redniBroj, Datum, Valuta, Roba, Ukupno, Klauzule, IDKlijenta, Klijent, Adresa, Grad, PIB, Status, datumIsplate, matBroj FROM Profakture WHERE (redniBroj = @redniBroj)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@redniBroj", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "redniBroj", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Datum", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Datum", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Datum", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Datum", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Valuta", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Valuta", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Kupac", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Kupac", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Roba", global::System.Data.SqlDbType.Xml, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Roba", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Ukupno", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Ukupno", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Klauzule", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Klauzule", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_redniBroj", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "redniBroj", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Datum", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Datum", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Datum", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Datum", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Valuta", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Valuta", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Valuta", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Valuta", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Kupac", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Kupac", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Kupac", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Kupac", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Ukupno", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Ukupno", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Ukupno", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Ukupno", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IDKlijenta", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IDKlijenta", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Klijent", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Klijent", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Adresa", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Adresa", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Grad", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Grad", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PIB", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PIB", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Status", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Status", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@datumIsplate", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "datumIsplate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@matBroj", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "matBroj", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_redniBroj", global::System.Data.SqlDbType.Timestamp, 0, global::System.Data.ParameterDirection.Input, 0, 0, "redniBroj", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@redniBroj", global::System.Data.SqlDbType.Timestamp, 8, global::System.Data.ParameterDirection.Input, 0, 0, "redniBroj", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -13377,8 +13683,8 @@ SELECT redniBroj, Datum, Valuta, Kupac, Roba, Ukupno, Klauzule FROM Profakture W
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT redniBroj, Datum, Valuta, Kupac, Roba, Ukupno, Klauzule FROM dbo.Profaktur" +
-                "e";
+            this._commandCollection[0].CommandText = "SELECT redniBroj, Datum, Valuta, Roba, Ukupno, Klauzule, IDKlijenta, Klijent, Adr" +
+                "esa, Grad, PIB, Status, datumIsplate, matBroj FROM Profakture";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -13439,39 +13745,12 @@ SELECT redniBroj, Datum, Valuta, Kupac, Roba, Ukupno, Klauzule FROM Profakture W
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_redniBroj, global::System.Nullable<global::System.DateTime> Original_Datum, string Original_Valuta, string Original_Kupac, global::System.Nullable<double> Original_Ukupno) {
-            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_redniBroj));
-            if ((Original_Datum.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[2].Value = ((System.DateTime)(Original_Datum.Value));
+        public virtual int Delete(byte[] Original_redniBroj) {
+            if ((Original_redniBroj == null)) {
+                throw new global::System.ArgumentNullException("Original_redniBroj");
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[2].Value = global::System.DBNull.Value;
-            }
-            if ((Original_Valuta == null)) {
-                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[4].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[4].Value = ((string)(Original_Valuta));
-            }
-            if ((Original_Kupac == null)) {
-                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[6].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[6].Value = ((string)(Original_Kupac));
-            }
-            if ((Original_Ukupno.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[8].Value = ((double)(Original_Ukupno.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[8].Value = global::System.DBNull.Value;
+                this.Adapter.DeleteCommand.Parameters[0].Value = ((byte[])(Original_redniBroj));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -13493,43 +13772,90 @@ SELECT redniBroj, Datum, Valuta, Kupac, Roba, Ukupno, Klauzule FROM Profakture W
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(int redniBroj, global::System.Nullable<global::System.DateTime> Datum, string Valuta, string Kupac, object Roba, global::System.Nullable<double> Ukupno, string Klauzule) {
-            this.Adapter.InsertCommand.Parameters[0].Value = ((int)(redniBroj));
+        public virtual int Insert(global::System.Nullable<global::System.DateTime> Datum, string Valuta, object Roba, global::System.Nullable<double> Ukupno, string Klauzule, global::System.Nullable<int> IDKlijenta, string Klijent, string Adresa, string Grad, string PIB, string Status, global::System.Nullable<global::System.DateTime> datumIsplate, string matBroj, byte[] redniBroj) {
             if ((Datum.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((System.DateTime)(Datum.Value));
+                this.Adapter.InsertCommand.Parameters[0].Value = ((System.DateTime)(Datum.Value));
             }
             else {
-                this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
+                this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
             if ((Valuta == null)) {
+                this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(Valuta));
+            }
+            if ((Roba == null)) {
                 this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(Valuta));
+                this.Adapter.InsertCommand.Parameters[2].Value = ((object)(Roba));
             }
-            if ((Kupac == null)) {
-                this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
+            if ((Ukupno.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[3].Value = ((double)(Ukupno.Value));
             }
             else {
-                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(Kupac));
+                this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
-            if ((Roba == null)) {
+            if ((Klauzule == null)) {
                 this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[4].Value = ((object)(Roba));
+                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(Klauzule));
             }
-            if ((Ukupno.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[5].Value = ((double)(Ukupno.Value));
+            if ((IDKlijenta.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[5].Value = ((int)(IDKlijenta.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
             }
-            if ((Klauzule == null)) {
+            if ((Klijent == null)) {
                 this.Adapter.InsertCommand.Parameters[6].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[6].Value = ((string)(Klauzule));
+                this.Adapter.InsertCommand.Parameters[6].Value = ((string)(Klijent));
+            }
+            if ((Adresa == null)) {
+                this.Adapter.InsertCommand.Parameters[7].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[7].Value = ((string)(Adresa));
+            }
+            if ((Grad == null)) {
+                this.Adapter.InsertCommand.Parameters[8].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[8].Value = ((string)(Grad));
+            }
+            if ((PIB == null)) {
+                this.Adapter.InsertCommand.Parameters[9].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[9].Value = ((string)(PIB));
+            }
+            if ((Status == null)) {
+                this.Adapter.InsertCommand.Parameters[10].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[10].Value = ((string)(Status));
+            }
+            if ((datumIsplate.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[11].Value = ((System.DateTime)(datumIsplate.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[11].Value = global::System.DBNull.Value;
+            }
+            if ((matBroj == null)) {
+                this.Adapter.InsertCommand.Parameters[12].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[12].Value = ((string)(matBroj));
+            }
+            if ((redniBroj == null)) {
+                throw new global::System.ArgumentNullException("redniBroj");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[13].Value = ((byte[])(redniBroj));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -13551,76 +13877,96 @@ SELECT redniBroj, Datum, Valuta, Kupac, Roba, Ukupno, Klauzule FROM Profakture W
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(int redniBroj, global::System.Nullable<global::System.DateTime> Datum, string Valuta, string Kupac, object Roba, global::System.Nullable<double> Ukupno, string Klauzule, int Original_redniBroj, global::System.Nullable<global::System.DateTime> Original_Datum, string Original_Valuta, string Original_Kupac, global::System.Nullable<double> Original_Ukupno) {
-            this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(redniBroj));
+        public virtual int Update(global::System.Nullable<global::System.DateTime> Datum, string Valuta, object Roba, global::System.Nullable<double> Ukupno, string Klauzule, global::System.Nullable<int> IDKlijenta, string Klijent, string Adresa, string Grad, string PIB, string Status, global::System.Nullable<global::System.DateTime> datumIsplate, string matBroj, byte[] Original_redniBroj, byte[] redniBroj) {
             if ((Datum.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[1].Value = ((System.DateTime)(Datum.Value));
+                this.Adapter.UpdateCommand.Parameters[0].Value = ((System.DateTime)(Datum.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
             if ((Valuta == null)) {
+                this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(Valuta));
+            }
+            if ((Roba == null)) {
                 this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(Valuta));
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((object)(Roba));
             }
-            if ((Kupac == null)) {
-                this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
+            if ((Ukupno.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((double)(Ukupno.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(Kupac));
+                this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
-            if ((Roba == null)) {
+            if ((Klauzule == null)) {
                 this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((object)(Roba));
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(Klauzule));
             }
-            if ((Ukupno.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((double)(Ukupno.Value));
+            if ((IDKlijenta.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(IDKlijenta.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
             }
-            if ((Klauzule == null)) {
+            if ((Klijent == null)) {
                 this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(Klauzule));
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(Klijent));
             }
-            this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(Original_redniBroj));
-            if ((Original_Datum.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((System.DateTime)(Original_Datum.Value));
+            if ((Adresa == null)) {
+                this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(Adresa));
+            }
+            if ((Grad == null)) {
+                this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(Grad));
+            }
+            if ((PIB == null)) {
                 this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
             }
-            if ((Original_Valuta == null)) {
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(1));
+            else {
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(PIB));
+            }
+            if ((Status == null)) {
+                this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(Status));
+            }
+            if ((datumIsplate.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((System.DateTime)(datumIsplate.Value));
+            }
+            else {
                 this.Adapter.UpdateCommand.Parameters[11].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((string)(Original_Valuta));
-            }
-            if ((Original_Kupac == null)) {
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[13].Value = global::System.DBNull.Value;
+            if ((matBroj == null)) {
+                this.Adapter.UpdateCommand.Parameters[12].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((string)(Original_Kupac));
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((string)(matBroj));
             }
-            if ((Original_Ukupno.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((double)(Original_Ukupno.Value));
+            if ((Original_redniBroj == null)) {
+                throw new global::System.ArgumentNullException("Original_redniBroj");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[15].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((byte[])(Original_redniBroj));
+            }
+            if ((redniBroj == null)) {
+                throw new global::System.ArgumentNullException("redniBroj");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((byte[])(redniBroj));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -13642,8 +13988,8 @@ SELECT redniBroj, Datum, Valuta, Kupac, Roba, Ukupno, Klauzule FROM Profakture W
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(global::System.Nullable<global::System.DateTime> Datum, string Valuta, string Kupac, object Roba, global::System.Nullable<double> Ukupno, string Klauzule, int Original_redniBroj, global::System.Nullable<global::System.DateTime> Original_Datum, string Original_Valuta, string Original_Kupac, global::System.Nullable<double> Original_Ukupno) {
-            return this.Update(Original_redniBroj, Datum, Valuta, Kupac, Roba, Ukupno, Klauzule, Original_redniBroj, Original_Datum, Original_Valuta, Original_Kupac, Original_Ukupno);
+        public virtual int Update(global::System.Nullable<global::System.DateTime> Datum, string Valuta, object Roba, global::System.Nullable<double> Ukupno, string Klauzule, global::System.Nullable<int> IDKlijenta, string Klijent, string Adresa, string Grad, string PIB, string Status, global::System.Nullable<global::System.DateTime> datumIsplate, string matBroj, byte[] Original_redniBroj) {
+            return this.Update(Datum, Valuta, Roba, Ukupno, Klauzule, IDKlijenta, Klijent, Adresa, Grad, PIB, Status, datumIsplate, matBroj, Original_redniBroj, Original_redniBroj);
         }
     }
     

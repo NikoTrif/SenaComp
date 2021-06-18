@@ -39,7 +39,17 @@
             System.Windows.Forms.Label tekuciRacunLabel;
             System.Windows.Forms.Label maticniBrojLabel;
             this.firmeDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.maticniBroj = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.firmeBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dbSenaCompDataSet = new uclib.dbSenaCompDataSet();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.dNovi = new System.Windows.Forms.Button();
             this.dOtkazi = new System.Windows.Forms.Button();
@@ -60,16 +70,6 @@
             this.kontaktTextBox = new System.Windows.Forms.TextBox();
             this.ulicaBrojTextBox = new System.Windows.Forms.TextBox();
             this.gradTextBox = new System.Windows.Forms.TextBox();
-            this.firmeBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dbSenaCompDataSet = new uclib.dbSenaCompDataSet();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.firmeTableAdapter = new uclib.dbSenaCompDataSetTableAdapters.FirmeTableAdapter();
             this.tableAdapterManager = new uclib.dbSenaCompDataSetTableAdapters.TableAdapterManager();
             iDLabel = new System.Windows.Forms.Label();
@@ -82,11 +82,11 @@
             tekuciRacunLabel = new System.Windows.Forms.Label();
             maticniBrojLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.firmeDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.firmeBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dbSenaCompDataSet)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.firmeBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dbSenaCompDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // iDLabel
@@ -183,8 +183,6 @@
             // 
             this.firmeDataGridView.AllowUserToAddRows = false;
             this.firmeDataGridView.AllowUserToDeleteRows = false;
-            this.firmeDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.firmeDataGridView.AutoGenerateColumns = false;
             this.firmeDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.firmeDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -199,13 +197,35 @@
             this.dataGridViewTextBoxColumn7,
             this.dataGridViewTextBoxColumn8});
             this.firmeDataGridView.DataSource = this.firmeBindingSource;
-            this.firmeDataGridView.Location = new System.Drawing.Point(4, 448);
-            this.firmeDataGridView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.firmeDataGridView.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.firmeDataGridView.Location = new System.Drawing.Point(0, 452);
+            this.firmeDataGridView.Margin = new System.Windows.Forms.Padding(4);
             this.firmeDataGridView.Name = "firmeDataGridView";
             this.firmeDataGridView.ReadOnly = true;
             this.firmeDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.firmeDataGridView.Size = new System.Drawing.Size(1399, 343);
+            this.firmeDataGridView.Size = new System.Drawing.Size(1407, 343);
             this.firmeDataGridView.TabIndex = 1;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "ID";
+            this.dataGridViewTextBoxColumn1.HeaderText = "ID";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "Naziv";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Naziv";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "PIB";
+            this.dataGridViewTextBoxColumn3.HeaderText = "PIB";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
             // 
             // maticniBroj
             // 
@@ -213,6 +233,51 @@
             this.maticniBroj.HeaderText = "Matični Broj";
             this.maticniBroj.Name = "maticniBroj";
             this.maticniBroj.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "Grad";
+            this.dataGridViewTextBoxColumn4.HeaderText = "Grad";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "UlicaBroj";
+            this.dataGridViewTextBoxColumn5.HeaderText = "Adresa";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.DataPropertyName = "Kontakt";
+            this.dataGridViewTextBoxColumn6.HeaderText = "Kontakt";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            this.dataGridViewTextBoxColumn7.DataPropertyName = "eMail";
+            this.dataGridViewTextBoxColumn7.HeaderText = "e-Mail";
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn8
+            // 
+            this.dataGridViewTextBoxColumn8.DataPropertyName = "tekuciRacun";
+            this.dataGridViewTextBoxColumn8.HeaderText = "Tekući Račun";
+            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            this.dataGridViewTextBoxColumn8.ReadOnly = true;
+            // 
+            // firmeBindingSource
+            // 
+            this.firmeBindingSource.DataMember = "Firme";
+            this.firmeBindingSource.DataSource = this.dbSenaCompDataSet;
+            // 
+            // dbSenaCompDataSet
+            // 
+            this.dbSenaCompDataSet.DataSetName = "dbSenaCompDataSet";
+            this.dbSenaCompDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // tableLayoutPanel1
             // 
@@ -229,7 +294,7 @@
             this.tableLayoutPanel1.Controls.Add(this.dSacuvaj, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.dObrisi, 4, 0);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(131, 36);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -242,7 +307,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dNovi.Location = new System.Drawing.Point(4, 4);
-            this.dNovi.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dNovi.Margin = new System.Windows.Forms.Padding(4);
             this.dNovi.Name = "dNovi";
             this.dNovi.Size = new System.Drawing.Size(175, 36);
             this.dNovi.TabIndex = 1;
@@ -256,7 +321,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dOtkazi.Location = new System.Drawing.Point(187, 4);
-            this.dOtkazi.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dOtkazi.Margin = new System.Windows.Forms.Padding(4);
             this.dOtkazi.Name = "dOtkazi";
             this.dOtkazi.Size = new System.Drawing.Size(175, 36);
             this.dOtkazi.TabIndex = 2;
@@ -270,7 +335,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dSacuvaj.Location = new System.Drawing.Point(370, 4);
-            this.dSacuvaj.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dSacuvaj.Margin = new System.Windows.Forms.Padding(4);
             this.dSacuvaj.Name = "dSacuvaj";
             this.dSacuvaj.Size = new System.Drawing.Size(175, 36);
             this.dSacuvaj.TabIndex = 3;
@@ -284,7 +349,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dObrisi.Location = new System.Drawing.Point(736, 4);
-            this.dObrisi.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dObrisi.Margin = new System.Windows.Forms.Padding(4);
             this.dObrisi.Name = "dObrisi";
             this.dObrisi.Size = new System.Drawing.Size(175, 36);
             this.dObrisi.TabIndex = 4;
@@ -328,7 +393,7 @@
             // 
             this.tbPretraga.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.tbPretraga.Location = new System.Drawing.Point(79, 414);
-            this.tbPretraga.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbPretraga.Margin = new System.Windows.Forms.Padding(4);
             this.tbPretraga.Name = "tbPretraga";
             this.tbPretraga.Size = new System.Drawing.Size(300, 22);
             this.tbPretraga.TabIndex = 13;
@@ -490,72 +555,6 @@
             this.gradTextBox.Size = new System.Drawing.Size(296, 22);
             this.gradTextBox.TabIndex = 8;
             // 
-            // firmeBindingSource
-            // 
-            this.firmeBindingSource.DataMember = "Firme";
-            this.firmeBindingSource.DataSource = this.dbSenaCompDataSet;
-            // 
-            // dbSenaCompDataSet
-            // 
-            this.dbSenaCompDataSet.DataSetName = "dbSenaCompDataSet";
-            this.dbSenaCompDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "ID";
-            this.dataGridViewTextBoxColumn1.HeaderText = "ID";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "Naziv";
-            this.dataGridViewTextBoxColumn2.HeaderText = "Naziv";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "PIB";
-            this.dataGridViewTextBoxColumn3.HeaderText = "PIB";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "Grad";
-            this.dataGridViewTextBoxColumn4.HeaderText = "Grad";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "UlicaBroj";
-            this.dataGridViewTextBoxColumn5.HeaderText = "Adresa";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn6
-            // 
-            this.dataGridViewTextBoxColumn6.DataPropertyName = "Kontakt";
-            this.dataGridViewTextBoxColumn6.HeaderText = "Kontakt";
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            this.dataGridViewTextBoxColumn6.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn7
-            // 
-            this.dataGridViewTextBoxColumn7.DataPropertyName = "eMail";
-            this.dataGridViewTextBoxColumn7.HeaderText = "e-Mail";
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            this.dataGridViewTextBoxColumn7.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn8
-            // 
-            this.dataGridViewTextBoxColumn8.DataPropertyName = "tekuciRacun";
-            this.dataGridViewTextBoxColumn8.HeaderText = "Tekući Račun";
-            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
-            this.dataGridViewTextBoxColumn8.ReadOnly = true;
-            // 
             // firmeTableAdapter
             // 
             this.firmeTableAdapter.ClearBeforeFill = true;
@@ -584,17 +583,17 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.firmeDataGridView);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ucFirme";
             this.Size = new System.Drawing.Size(1407, 795);
             this.Load += new System.EventHandler(this.ucFirme_Load);
             ((System.ComponentModel.ISupportInitialize)(this.firmeDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.firmeBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dbSenaCompDataSet)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.firmeBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dbSenaCompDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -226,4 +226,8 @@ kada se trazi u kodu - npr. "RG1", "TD3.1.2", "G2"
 
 01.06.21 - TD 2.10.a - iflib.clFunkcijeRazno.KalkulatorCena - popravljen kod za izracunavanje marze - zavrseno
 
-02.06.21 - TD 2.6 - - -ucProfakture - zapocet
+04.06.21 - TD 2.6 - - -ucProfakture - zapocet
+		 - TD 2.6 - - -ucProfakture - potrebno je naraviti odnos izmedju tabela Profakture i Firme da se podaci ne bi ponavljali ili problem resiti kao u ucPoslovni
+
+18.06.21 - TD 2.6 - - -ucProfakture - umesto odnosa izmedju tabela napravljene su kolone potrebne za profakturu koje se ponavljaju
+		 - TD 2.6 - - -ucProfakture - napravljen izgled UC-a, potrebno je jos uredjivanja

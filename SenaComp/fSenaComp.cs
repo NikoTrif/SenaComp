@@ -87,7 +87,15 @@ namespace SenaComp
 
         private void dProfakt_Click(object sender, EventArgs e)
         {
+            uclib.Racuni.ucProfakture prof = new uclib.Racuni.ucProfakture();
 
+            tMenu.Start();
+
+            pMain.Controls.Clear();
+            pMain.Controls.Add(prof);
+            prof.Dock = DockStyle.Fill;
+            prof.SendToBack();
+            pbLogo.BringToFront();
         }
 
         private void dFakt_Click(object sender, EventArgs e)

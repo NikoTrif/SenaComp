@@ -33,13 +33,13 @@
             System.Windows.Forms.Label datumLabel;
             System.Windows.Forms.Label valutaLabel;
             System.Windows.Forms.Label datumIsplateLabel;
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ucProfakture));
             System.Windows.Forms.Label iDKlijentaLabel;
             System.Windows.Forms.Label klijentLabel;
             System.Windows.Forms.Label pIBLabel;
             System.Windows.Forms.Label matBrojLabel;
             System.Windows.Forms.Label adresaLabel;
             System.Windows.Forms.Label gradLabel;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ucProfakture));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.dNovi = new System.Windows.Forms.Button();
             this.dOtkazi = new System.Windows.Forms.Button();
@@ -83,26 +83,31 @@
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
-            this.iDKlijentaTextBox = new System.Windows.Forms.TextBox();
-            this.klijentTextBox = new System.Windows.Forms.TextBox();
-            this.pIBTextBox = new System.Windows.Forms.TextBox();
-            this.matBrojTextBox = new System.Windows.Forms.TextBox();
-            this.adresaTextBox = new System.Windows.Forms.TextBox();
             this.gradTextBox = new System.Windows.Forms.TextBox();
+            this.adresaTextBox = new System.Windows.Forms.TextBox();
+            this.matBrojTextBox = new System.Windows.Forms.TextBox();
+            this.pIBTextBox = new System.Windows.Forms.TextBox();
+            this.klijentTextBox = new System.Windows.Forms.TextBox();
+            this.iDKlijentaTextBox = new System.Windows.Forms.TextBox();
             this.cbFilter = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.tbPretraga = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.dArtDodaj = new System.Windows.Forms.Button();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.dArtUkloni = new System.Windows.Forms.Button();
-            this.artikliBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.artikliTableAdapter = new uclib.dbSenaCompDataSetTableAdapters.ArtikliTableAdapter();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Naziv = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cena = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PDV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Količina = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.jedinicaMere = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.UkupnaCena = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label4 = new System.Windows.Forms.Label();
+            this.lTotal = new System.Windows.Forms.Label();
+            this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.artikliDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -111,15 +116,12 @@
             this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.label4 = new System.Windows.Forms.Label();
-            this.lTotal = new System.Windows.Forms.Label();
-            this.Naziv = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Cena = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PDV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Količina = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.jedinicaMere = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.UkupnaCena = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.artikliBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.dArtDodaj = new System.Windows.Forms.Button();
+            this.artikliTableAdapter = new uclib.dbSenaCompDataSetTableAdapters.ArtikliTableAdapter();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             redniBrojLabel = new System.Windows.Forms.Label();
             datumLabel = new System.Windows.Forms.Label();
             valutaLabel = new System.Windows.Forms.Label();
@@ -142,11 +144,11 @@
             this.tableLayoutPanel3.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
-            this.tableLayoutPanel5.SuspendLayout();
             this.tableLayoutPanel6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.artikliBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.artikliDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.tableLayoutPanel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.artikliDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.artikliBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // redniBrojLabel
@@ -188,6 +190,66 @@
             datumIsplateLabel.Size = new System.Drawing.Size(118, 17);
             datumIsplateLabel.TabIndex = 8;
             datumIsplateLabel.Text = "Datum isplate:";
+            // 
+            // iDKlijentaLabel
+            // 
+            iDKlijentaLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            iDKlijentaLabel.AutoSize = true;
+            iDKlijentaLabel.Location = new System.Drawing.Point(3, 5);
+            iDKlijentaLabel.Name = "iDKlijentaLabel";
+            iDKlijentaLabel.Size = new System.Drawing.Size(118, 17);
+            iDKlijentaLabel.TabIndex = 0;
+            iDKlijentaLabel.Text = "ID kijenta:";
+            // 
+            // klijentLabel
+            // 
+            klijentLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            klijentLabel.AutoSize = true;
+            klijentLabel.Location = new System.Drawing.Point(3, 33);
+            klijentLabel.Name = "klijentLabel";
+            klijentLabel.Size = new System.Drawing.Size(118, 17);
+            klijentLabel.TabIndex = 2;
+            klijentLabel.Text = "Klijent:";
+            // 
+            // pIBLabel
+            // 
+            pIBLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            pIBLabel.AutoSize = true;
+            pIBLabel.Location = new System.Drawing.Point(3, 61);
+            pIBLabel.Name = "pIBLabel";
+            pIBLabel.Size = new System.Drawing.Size(118, 17);
+            pIBLabel.TabIndex = 4;
+            pIBLabel.Text = "PIB:";
+            // 
+            // matBrojLabel
+            // 
+            matBrojLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            matBrojLabel.AutoSize = true;
+            matBrojLabel.Location = new System.Drawing.Point(3, 89);
+            matBrojLabel.Name = "matBrojLabel";
+            matBrojLabel.Size = new System.Drawing.Size(118, 17);
+            matBrojLabel.TabIndex = 6;
+            matBrojLabel.Text = "Matični broj:";
+            // 
+            // adresaLabel
+            // 
+            adresaLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            adresaLabel.AutoSize = true;
+            adresaLabel.Location = new System.Drawing.Point(3, 117);
+            adresaLabel.Name = "adresaLabel";
+            adresaLabel.Size = new System.Drawing.Size(118, 17);
+            adresaLabel.TabIndex = 8;
+            adresaLabel.Text = "Adresa:";
+            // 
+            // gradLabel
+            // 
+            gradLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            gradLabel.AutoSize = true;
+            gradLabel.Location = new System.Drawing.Point(3, 146);
+            gradLabel.Name = "gradLabel";
+            gradLabel.Size = new System.Drawing.Size(118, 17);
+            gradLabel.TabIndex = 10;
+            gradLabel.Text = "Grad:";
             // 
             // tableLayoutPanel1
             // 
@@ -531,6 +593,7 @@
             this.tableLayoutPanel2.Controls.Add(this.radioButton2, 2, 3);
             this.tableLayoutPanel2.Controls.Add(this.radioButton1, 1, 3);
             this.tableLayoutPanel2.Controls.Add(this.label1, 0, 3);
+            this.tableLayoutPanel2.Controls.Add(this.button2, 2, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 18);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
@@ -650,6 +713,7 @@
             this.tableLayoutPanel3.Controls.Add(this.klijentTextBox, 1, 1);
             this.tableLayoutPanel3.Controls.Add(iDKlijentaLabel, 0, 0);
             this.tableLayoutPanel3.Controls.Add(this.iDKlijentaTextBox, 1, 0);
+            this.tableLayoutPanel3.Controls.Add(this.button1, 2, 0);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 18);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
@@ -663,94 +727,15 @@
             this.tableLayoutPanel3.Size = new System.Drawing.Size(374, 170);
             this.tableLayoutPanel3.TabIndex = 0;
             // 
-            // iDKlijentaLabel
+            // gradTextBox
             // 
-            iDKlijentaLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            iDKlijentaLabel.AutoSize = true;
-            iDKlijentaLabel.Location = new System.Drawing.Point(3, 5);
-            iDKlijentaLabel.Name = "iDKlijentaLabel";
-            iDKlijentaLabel.Size = new System.Drawing.Size(118, 17);
-            iDKlijentaLabel.TabIndex = 0;
-            iDKlijentaLabel.Text = "ID kijenta:";
-            // 
-            // iDKlijentaTextBox
-            // 
-            this.iDKlijentaTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.iDKlijentaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.profaktureBindingSource, "IDKlijenta", true));
-            this.iDKlijentaTextBox.Location = new System.Drawing.Point(127, 3);
-            this.iDKlijentaTextBox.Name = "iDKlijentaTextBox";
-            this.iDKlijentaTextBox.Size = new System.Drawing.Size(118, 22);
-            this.iDKlijentaTextBox.TabIndex = 1;
-            // 
-            // klijentLabel
-            // 
-            klijentLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            klijentLabel.AutoSize = true;
-            klijentLabel.Location = new System.Drawing.Point(3, 33);
-            klijentLabel.Name = "klijentLabel";
-            klijentLabel.Size = new System.Drawing.Size(118, 17);
-            klijentLabel.TabIndex = 2;
-            klijentLabel.Text = "Klijent:";
-            // 
-            // klijentTextBox
-            // 
-            this.klijentTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel3.SetColumnSpan(this.klijentTextBox, 2);
-            this.klijentTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.profaktureBindingSource, "Klijent", true));
-            this.klijentTextBox.Location = new System.Drawing.Point(127, 31);
-            this.klijentTextBox.Name = "klijentTextBox";
-            this.klijentTextBox.Size = new System.Drawing.Size(244, 22);
-            this.klijentTextBox.TabIndex = 3;
-            // 
-            // pIBLabel
-            // 
-            pIBLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            pIBLabel.AutoSize = true;
-            pIBLabel.Location = new System.Drawing.Point(3, 61);
-            pIBLabel.Name = "pIBLabel";
-            pIBLabel.Size = new System.Drawing.Size(118, 17);
-            pIBLabel.TabIndex = 4;
-            pIBLabel.Text = "PIB:";
-            // 
-            // pIBTextBox
-            // 
-            this.pIBTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel3.SetColumnSpan(this.pIBTextBox, 2);
-            this.pIBTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.profaktureBindingSource, "PIB", true));
-            this.pIBTextBox.Location = new System.Drawing.Point(127, 59);
-            this.pIBTextBox.Name = "pIBTextBox";
-            this.pIBTextBox.Size = new System.Drawing.Size(244, 22);
-            this.pIBTextBox.TabIndex = 5;
-            // 
-            // matBrojLabel
-            // 
-            matBrojLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            matBrojLabel.AutoSize = true;
-            matBrojLabel.Location = new System.Drawing.Point(3, 89);
-            matBrojLabel.Name = "matBrojLabel";
-            matBrojLabel.Size = new System.Drawing.Size(118, 17);
-            matBrojLabel.TabIndex = 6;
-            matBrojLabel.Text = "Matični broj:";
-            // 
-            // matBrojTextBox
-            // 
-            this.matBrojTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel3.SetColumnSpan(this.matBrojTextBox, 2);
-            this.matBrojTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.profaktureBindingSource, "matBroj", true));
-            this.matBrojTextBox.Location = new System.Drawing.Point(127, 87);
-            this.matBrojTextBox.Name = "matBrojTextBox";
-            this.matBrojTextBox.Size = new System.Drawing.Size(244, 22);
-            this.matBrojTextBox.TabIndex = 7;
-            // 
-            // adresaLabel
-            // 
-            adresaLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            adresaLabel.AutoSize = true;
-            adresaLabel.Location = new System.Drawing.Point(3, 117);
-            adresaLabel.Name = "adresaLabel";
-            adresaLabel.Size = new System.Drawing.Size(118, 17);
-            adresaLabel.TabIndex = 8;
-            adresaLabel.Text = "Adresa:";
+            this.gradTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel3.SetColumnSpan(this.gradTextBox, 2);
+            this.gradTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.profaktureBindingSource, "Grad", true));
+            this.gradTextBox.Location = new System.Drawing.Point(127, 144);
+            this.gradTextBox.Name = "gradTextBox";
+            this.gradTextBox.Size = new System.Drawing.Size(244, 22);
+            this.gradTextBox.TabIndex = 11;
             // 
             // adresaTextBox
             // 
@@ -762,25 +747,44 @@
             this.adresaTextBox.Size = new System.Drawing.Size(244, 22);
             this.adresaTextBox.TabIndex = 9;
             // 
-            // gradLabel
+            // matBrojTextBox
             // 
-            gradLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            gradLabel.AutoSize = true;
-            gradLabel.Location = new System.Drawing.Point(3, 146);
-            gradLabel.Name = "gradLabel";
-            gradLabel.Size = new System.Drawing.Size(118, 17);
-            gradLabel.TabIndex = 10;
-            gradLabel.Text = "Grad:";
+            this.matBrojTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel3.SetColumnSpan(this.matBrojTextBox, 2);
+            this.matBrojTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.profaktureBindingSource, "matBroj", true));
+            this.matBrojTextBox.Location = new System.Drawing.Point(127, 87);
+            this.matBrojTextBox.Name = "matBrojTextBox";
+            this.matBrojTextBox.Size = new System.Drawing.Size(244, 22);
+            this.matBrojTextBox.TabIndex = 7;
             // 
-            // gradTextBox
+            // pIBTextBox
             // 
-            this.gradTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel3.SetColumnSpan(this.gradTextBox, 2);
-            this.gradTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.profaktureBindingSource, "Grad", true));
-            this.gradTextBox.Location = new System.Drawing.Point(127, 144);
-            this.gradTextBox.Name = "gradTextBox";
-            this.gradTextBox.Size = new System.Drawing.Size(244, 22);
-            this.gradTextBox.TabIndex = 11;
+            this.pIBTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel3.SetColumnSpan(this.pIBTextBox, 2);
+            this.pIBTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.profaktureBindingSource, "PIB", true));
+            this.pIBTextBox.Location = new System.Drawing.Point(127, 59);
+            this.pIBTextBox.Name = "pIBTextBox";
+            this.pIBTextBox.Size = new System.Drawing.Size(244, 22);
+            this.pIBTextBox.TabIndex = 5;
+            // 
+            // klijentTextBox
+            // 
+            this.klijentTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel3.SetColumnSpan(this.klijentTextBox, 2);
+            this.klijentTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.profaktureBindingSource, "Klijent", true));
+            this.klijentTextBox.Location = new System.Drawing.Point(127, 31);
+            this.klijentTextBox.Name = "klijentTextBox";
+            this.klijentTextBox.Size = new System.Drawing.Size(244, 22);
+            this.klijentTextBox.TabIndex = 3;
+            // 
+            // iDKlijentaTextBox
+            // 
+            this.iDKlijentaTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.iDKlijentaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.profaktureBindingSource, "IDKlijenta", true));
+            this.iDKlijentaTextBox.Location = new System.Drawing.Point(127, 3);
+            this.iDKlijentaTextBox.Name = "iDKlijentaTextBox";
+            this.iDKlijentaTextBox.Size = new System.Drawing.Size(118, 22);
+            this.iDKlijentaTextBox.TabIndex = 1;
             // 
             // cbFilter
             // 
@@ -857,45 +861,6 @@
             this.tableLayoutPanel4.Size = new System.Drawing.Size(745, 369);
             this.tableLayoutPanel4.TabIndex = 0;
             // 
-            // tableLayoutPanel5
-            // 
-            this.tableLayoutPanel5.AutoScroll = true;
-            this.tableLayoutPanel5.ColumnCount = 3;
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 320F));
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 75F));
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel5.Controls.Add(this.artikliDataGridView, 0, 1);
-            this.tableLayoutPanel5.Controls.Add(this.textBox1, 0, 0);
-            this.tableLayoutPanel5.Controls.Add(this.dArtDodaj, 1, 0);
-            this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel5.Location = new System.Drawing.Point(3, 3);
-            this.tableLayoutPanel5.Name = "tableLayoutPanel5";
-            this.tableLayoutPanel5.RowCount = 2;
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(739, 178);
-            this.tableLayoutPanel5.TabIndex = 0;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox1.Location = new System.Drawing.Point(3, 6);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(314, 22);
-            this.textBox1.TabIndex = 0;
-            // 
-            // dArtDodaj
-            // 
-            this.dArtDodaj.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dArtDodaj.Location = new System.Drawing.Point(323, 3);
-            this.dArtDodaj.Name = "dArtDodaj";
-            this.dArtDodaj.Size = new System.Drawing.Size(69, 29);
-            this.dArtDodaj.TabIndex = 1;
-            this.dArtDodaj.Text = "Dodaj";
-            this.dArtDodaj.UseVisualStyleBackColor = true;
-            // 
             // tableLayoutPanel6
             // 
             this.tableLayoutPanel6.ColumnCount = 4;
@@ -937,14 +902,97 @@
             this.dArtUkloni.Text = "Ukoni";
             this.dArtUkloni.UseVisualStyleBackColor = true;
             // 
-            // artikliBindingSource
+            // dataGridView1
             // 
-            this.artikliBindingSource.DataMember = "Artikli";
-            this.artikliBindingSource.DataSource = this.dbSenaCompDataSet;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Window;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Naziv,
+            this.Cena,
+            this.PDV,
+            this.Količina,
+            this.jedinicaMere,
+            this.UkupnaCena});
+            this.tableLayoutPanel6.SetColumnSpan(this.dataGridView1, 4);
+            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView1.Location = new System.Drawing.Point(3, 38);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView1.Size = new System.Drawing.Size(733, 138);
+            this.dataGridView1.TabIndex = 2;
             // 
-            // artikliTableAdapter
+            // Naziv
             // 
-            this.artikliTableAdapter.ClearBeforeFill = true;
+            this.Naziv.HeaderText = "Naziv";
+            this.Naziv.Name = "Naziv";
+            // 
+            // Cena
+            // 
+            this.Cena.HeaderText = "Cena";
+            this.Cena.Name = "Cena";
+            // 
+            // PDV
+            // 
+            this.PDV.HeaderText = "PDV";
+            this.PDV.Name = "PDV";
+            // 
+            // Količina
+            // 
+            this.Količina.HeaderText = "Količina";
+            this.Količina.Name = "Količina";
+            // 
+            // jedinicaMere
+            // 
+            this.jedinicaMere.HeaderText = "Jedinica mere";
+            this.jedinicaMere.Name = "jedinicaMere";
+            // 
+            // UkupnaCena
+            // 
+            this.UkupnaCena.HeaderText = "Ukupna Cena";
+            this.UkupnaCena.Name = "UkupnaCena";
+            // 
+            // label4
+            // 
+            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(398, 5);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(166, 25);
+            this.label4.TabIndex = 3;
+            this.label4.Text = "TOTAL:";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lTotal
+            // 
+            this.lTotal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.lTotal.AutoSize = true;
+            this.lTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lTotal.Location = new System.Drawing.Point(570, 5);
+            this.lTotal.Name = "lTotal";
+            this.lTotal.Size = new System.Drawing.Size(166, 25);
+            this.lTotal.TabIndex = 3;
+            // 
+            // tableLayoutPanel5
+            // 
+            this.tableLayoutPanel5.AutoScroll = true;
+            this.tableLayoutPanel5.ColumnCount = 3;
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 320F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 75F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 344F));
+            this.tableLayoutPanel5.Controls.Add(this.artikliDataGridView, 0, 1);
+            this.tableLayoutPanel5.Controls.Add(this.textBox1, 0, 0);
+            this.tableLayoutPanel5.Controls.Add(this.dArtDodaj, 1, 0);
+            this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel5.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel5.Name = "tableLayoutPanel5";
+            this.tableLayoutPanel5.RowCount = 2;
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(739, 178);
+            this.tableLayoutPanel5.TabIndex = 0;
             // 
             // artikliDataGridView
             // 
@@ -1022,78 +1070,58 @@
             this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
             this.dataGridViewTextBoxColumn14.ReadOnly = true;
             // 
-            // dataGridView1
+            // artikliBindingSource
             // 
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Window;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Naziv,
-            this.Cena,
-            this.PDV,
-            this.Količina,
-            this.jedinicaMere,
-            this.UkupnaCena});
-            this.tableLayoutPanel6.SetColumnSpan(this.dataGridView1, 4);
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 38);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(733, 138);
-            this.dataGridView1.TabIndex = 2;
+            this.artikliBindingSource.DataMember = "Artikli";
+            this.artikliBindingSource.DataSource = this.dbSenaCompDataSet;
             // 
-            // label4
+            // textBox1
             // 
-            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(398, 5);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(166, 25);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "TOTAL:";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox1.Location = new System.Drawing.Point(3, 6);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(314, 22);
+            this.textBox1.TabIndex = 0;
             // 
-            // lTotal
+            // dArtDodaj
             // 
-            this.lTotal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.lTotal.AutoSize = true;
-            this.lTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lTotal.Location = new System.Drawing.Point(570, 5);
-            this.lTotal.Name = "lTotal";
-            this.lTotal.Size = new System.Drawing.Size(166, 25);
-            this.lTotal.TabIndex = 3;
+            this.dArtDodaj.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dArtDodaj.Location = new System.Drawing.Point(323, 3);
+            this.dArtDodaj.Name = "dArtDodaj";
+            this.dArtDodaj.Size = new System.Drawing.Size(69, 29);
+            this.dArtDodaj.TabIndex = 1;
+            this.dArtDodaj.Text = "Dodaj";
+            this.dArtDodaj.UseVisualStyleBackColor = true;
             // 
-            // Naziv
+            // artikliTableAdapter
             // 
-            this.Naziv.HeaderText = "Naziv";
-            this.Naziv.Name = "Naziv";
+            this.artikliTableAdapter.ClearBeforeFill = true;
             // 
-            // Cena
+            // button1
             // 
-            this.Cena.HeaderText = "Cena";
-            this.Cena.Name = "Cena";
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.button1.Location = new System.Drawing.Point(251, 3);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(120, 22);
+            this.button1.TabIndex = 12;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
             // 
-            // PDV
+            // button2
             // 
-            this.PDV.HeaderText = "PDV";
-            this.PDV.Name = "PDV";
-            // 
-            // Količina
-            // 
-            this.Količina.HeaderText = "Količina";
-            this.Količina.Name = "Količina";
-            // 
-            // jedinicaMere
-            // 
-            this.jedinicaMere.HeaderText = "Jedinica mere";
-            this.jedinicaMere.Name = "jedinicaMere";
-            // 
-            // UkupnaCena
-            // 
-            this.UkupnaCena.HeaderText = "Ukupna Cena";
-            this.UkupnaCena.Name = "UkupnaCena";
+            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.button2.Location = new System.Drawing.Point(251, 3);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(120, 28);
+            this.button2.TabIndex = 12;
+            this.button2.Text = "button1";
+            this.button2.UseVisualStyleBackColor = true;
             // 
             // ucProfakture
             // 
@@ -1126,13 +1154,13 @@
             this.tableLayoutPanel3.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.tableLayoutPanel4.ResumeLayout(false);
-            this.tableLayoutPanel5.ResumeLayout(false);
-            this.tableLayoutPanel5.PerformLayout();
             this.tableLayoutPanel6.ResumeLayout(false);
             this.tableLayoutPanel6.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.artikliBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.artikliDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.tableLayoutPanel5.ResumeLayout(false);
+            this.tableLayoutPanel5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.artikliDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.artikliBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1220,5 +1248,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Količina;
         private System.Windows.Forms.DataGridViewTextBoxColumn jedinicaMere;
         private System.Windows.Forms.DataGridViewTextBoxColumn UkupnaCena;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button1;
     }
 }

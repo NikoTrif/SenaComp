@@ -12,5 +12,10 @@ namespace iflib
         public static string Firma { get; set; }
         public static string Kontakt { get; set; }
         public static string eMail { get; set; }
+        public static string PIB { get; set; }
+        public static string MatBr { get; set; }
+        public static string Adresa { get; set; }
+        public static string Grad { get; set; }
+
     }
 }

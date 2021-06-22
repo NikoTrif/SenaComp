@@ -81,7 +81,7 @@ namespace iflib
             return tbOprema;
         }
 
-        public void NapisiLog(Exception ex)
+        public static void NapisiLog(Exception ex)
         {
             //TD 4
             MessageBox.Show(ex.Message + "\n\nZa više informacija pogledajte log.txt u folderu programa.", "Greška!", MessageBoxButtons.OK,
@@ -153,6 +153,18 @@ namespace iflib
             {
                 NapisiLog(ex);
             }
+        }
+
+        public static void ClearTransfer()
+        {
+            clTransfer.IDFirme = null;
+            clTransfer.Firma = null;
+            clTransfer.Kontakt = null;
+            clTransfer.eMail = null;
+            clTransfer.PIB = null;
+            clTransfer.MatBr = null;
+            clTransfer.Grad = null;
+            clTransfer.Adresa = null;
         }
 
         public class PisanjeReporta

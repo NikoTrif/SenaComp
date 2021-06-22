@@ -36,7 +36,7 @@ namespace uclib.Nalozi
             }
             catch (Exception ex)
             {
-                fnr.NapisiLog(ex);
+                clFunkcijeRazno.NapisiLog(ex);
             }
         }
 
@@ -57,7 +57,7 @@ namespace uclib.Nalozi
             }
             catch (Exception ex)
             {
-                fnr.NapisiLog(ex);
+                clFunkcijeRazno.NapisiLog(ex);
             }
         }
 
@@ -146,7 +146,7 @@ namespace uclib.Nalozi
             }
             catch (Exception ex)
             {
-                fnr.NapisiLog(ex);
+                clFunkcijeRazno.NapisiLog(ex);
             }
         }
         private void dObrisi_Click(object sender, EventArgs e)
@@ -199,10 +199,7 @@ namespace uclib.Nalozi
                         kontaktOsobaTextBox.Select();
 
                         //ciscenje clTransfera
-                        iflib.clTransfer.IDFirme = null;
-                        iflib.clTransfer.Firma = null;
-                        iflib.clTransfer.Kontakt = null;
-                        iflib.clTransfer.eMail = null;
+                        clFunkcijeRazno.ClearTransfer();
                     }
                 }
             }
@@ -254,7 +251,7 @@ namespace uclib.Nalozi
             }
             catch (Exception ex)
             {
-                fnr.NapisiLog(ex);
+                clFunkcijeRazno.NapisiLog(ex);
             }
 
             try
@@ -265,7 +262,7 @@ namespace uclib.Nalozi
             }
             catch (Exception ex)
             {
-                fnr.NapisiLog(ex);
+                clFunkcijeRazno.NapisiLog(ex);
             }
         }
 
@@ -300,7 +297,7 @@ namespace uclib.Nalozi
 
                 catch (Exception ex)
                 {
-                    fnr.NapisiLog(ex);
+                    clFunkcijeRazno.NapisiLog(ex);
                 }
             }
         }
@@ -336,7 +333,7 @@ namespace uclib.Nalozi
             }
             catch(Exception ex)
             {
-                fnr.NapisiLog(ex);
+                clFunkcijeRazno.NapisiLog(ex);
             }
             clRadniNalogPosBindingSource.Clear();
         }
@@ -368,7 +365,7 @@ namespace uclib.Nalozi
                             }
                             catch (Exception ex)
                             {
-                                fnr.NapisiLog(ex);
+                                clFunkcijeRazno.NapisiLog(ex);
                             }
                             break;
                         case 2:
@@ -378,7 +375,7 @@ namespace uclib.Nalozi
                             }
                             catch (Exception ex)
                             {
-                                fnr.NapisiLog(ex);
+                                clFunkcijeRazno.NapisiLog(ex);
                             }
                             break;
                         case 3:

@@ -36,20 +36,21 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.dPretraga = new System.Windows.Forms.Button();
             this.firmeDataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.firmeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dbSenaCompDataSet = new uclib.dbSenaCompDataSet();
             this.dOK = new System.Windows.Forms.Button();
             this.dOtkazi = new System.Windows.Forms.Button();
             this.firmeTableAdapter = new uclib.dbSenaCompDataSetTableAdapters.FirmeTableAdapter();
             this.tableAdapterManager = new uclib.dbSenaCompDataSetTableAdapters.TableAdapterManager();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.maticniBroj = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.firmeDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.firmeBindingSource)).BeginInit();
@@ -60,27 +61,30 @@
             // 
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(3, 11);
+            this.label1.Location = new System.Drawing.Point(4, 13);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(65, 13);
+            this.label1.Size = new System.Drawing.Size(86, 17);
             this.label1.TabIndex = 0;
             this.label1.Text = "Pretraga:";
             // 
             // tbPretraga
             // 
             this.tbPretraga.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbPretraga.Location = new System.Drawing.Point(74, 7);
+            this.tbPretraga.Location = new System.Drawing.Point(98, 10);
+            this.tbPretraga.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tbPretraga.Name = "tbPretraga";
-            this.tbPretraga.Size = new System.Drawing.Size(174, 20);
+            this.tbPretraga.Size = new System.Drawing.Size(231, 22);
             this.tbPretraga.TabIndex = 1;
             // 
             // label2
             // 
             this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(254, 11);
+            this.label2.Location = new System.Drawing.Point(337, 13);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(33, 13);
+            this.label2.Size = new System.Drawing.Size(44, 17);
             this.label2.TabIndex = 0;
             this.label2.Text = "Filter:";
             // 
@@ -91,9 +95,10 @@
             this.cbFilter.Items.AddRange(new object[] {
             "Sve",
             "ID"});
-            this.cbFilter.Location = new System.Drawing.Point(293, 7);
+            this.cbFilter.Location = new System.Drawing.Point(389, 9);
+            this.cbFilter.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cbFilter.Name = "cbFilter";
-            this.cbFilter.Size = new System.Drawing.Size(86, 21);
+            this.cbFilter.Size = new System.Drawing.Size(115, 24);
             this.cbFilter.TabIndex = 2;
             // 
             // tableLayoutPanel1
@@ -101,27 +106,29 @@
             this.tableLayoutPanel1.ColumnCount = 5;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 28.25112F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 71.74888F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 39F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 92F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 46F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 52F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 123F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 63F));
             this.tableLayoutPanel1.Controls.Add(this.label1, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.cbFilter, 3, 0);
             this.tableLayoutPanel1.Controls.Add(this.tbPretraga, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.label2, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.dPretraga, 4, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(4, 4);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(429, 35);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(572, 43);
             this.tableLayoutPanel1.TabIndex = 3;
             // 
             // dPretraga
             // 
             this.dPretraga.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dPretraga.Location = new System.Drawing.Point(385, 3);
+            this.dPretraga.Location = new System.Drawing.Point(512, 4);
+            this.dPretraga.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dPretraga.Name = "dPretraga";
-            this.dPretraga.Size = new System.Drawing.Size(41, 29);
+            this.dPretraga.Size = new System.Drawing.Size(56, 35);
             this.dPretraga.TabIndex = 3;
             this.dPretraga.Text = "Pret";
             this.dPretraga.UseVisualStyleBackColor = true;
@@ -140,19 +147,72 @@
             this.dataGridViewTextBoxColumn1,
             this.dataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn3,
+            this.maticniBroj,
             this.dataGridViewTextBoxColumn4,
             this.dataGridViewTextBoxColumn5,
             this.dataGridViewTextBoxColumn6,
             this.dataGridViewTextBoxColumn7,
             this.dataGridViewTextBoxColumn8});
             this.firmeDataGridView.DataSource = this.firmeBindingSource;
-            this.firmeDataGridView.Location = new System.Drawing.Point(3, 44);
+            this.firmeDataGridView.Location = new System.Drawing.Point(4, 54);
+            this.firmeDataGridView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.firmeDataGridView.Name = "firmeDataGridView";
             this.firmeDataGridView.ReadOnly = true;
             this.firmeDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.firmeDataGridView.Size = new System.Drawing.Size(853, 230);
+            this.firmeDataGridView.Size = new System.Drawing.Size(1137, 283);
             this.firmeDataGridView.TabIndex = 4;
             this.firmeDataGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.firmeDataGridView_CellDoubleClick);
+            // 
+            // firmeBindingSource
+            // 
+            this.firmeBindingSource.DataMember = "Firme";
+            this.firmeBindingSource.DataSource = this.dbSenaCompDataSet;
+            // 
+            // dbSenaCompDataSet
+            // 
+            this.dbSenaCompDataSet.DataSetName = "dbSenaCompDataSet";
+            this.dbSenaCompDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // dOK
+            // 
+            this.dOK.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.dOK.Location = new System.Drawing.Point(4, 345);
+            this.dOK.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dOK.Name = "dOK";
+            this.dOK.Size = new System.Drawing.Size(100, 28);
+            this.dOK.TabIndex = 5;
+            this.dOK.Text = "OK";
+            this.dOK.UseVisualStyleBackColor = true;
+            this.dOK.Click += new System.EventHandler(this.dOK_Click);
+            // 
+            // dOtkazi
+            // 
+            this.dOtkazi.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.dOtkazi.Location = new System.Drawing.Point(112, 345);
+            this.dOtkazi.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dOtkazi.Name = "dOtkazi";
+            this.dOtkazi.Size = new System.Drawing.Size(100, 28);
+            this.dOtkazi.TabIndex = 5;
+            this.dOtkazi.Text = "Otkaži";
+            this.dOtkazi.UseVisualStyleBackColor = true;
+            this.dOtkazi.Click += new System.EventHandler(this.dOtkazi_Click);
+            // 
+            // firmeTableAdapter
+            // 
+            this.firmeTableAdapter.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.ArtikliPFOTableAdapter = null;
+            this.tableAdapterManager.ArtikliTableAdapter = null;
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.FaktureTableAdapter = null;
+            this.tableAdapterManager.FirmeTableAdapter = this.firmeTableAdapter;
+            this.tableAdapterManager.NaloziFTableAdapter = null;
+            this.tableAdapterManager.NaloziPTableAdapter = null;
+            this.tableAdapterManager.OtpremniceTableAdapter = null;
+            this.tableAdapterManager.ProfaktureTableAdapter = null;
+            this.tableAdapterManager.UpdateOrder = uclib.dbSenaCompDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -175,6 +235,13 @@
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             this.dataGridViewTextBoxColumn3.ReadOnly = true;
             // 
+            // maticniBroj
+            // 
+            this.maticniBroj.DataPropertyName = "maticniBroj";
+            this.maticniBroj.HeaderText = "Maticni broj";
+            this.maticniBroj.Name = "maticniBroj";
+            this.maticniBroj.ReadOnly = true;
+            // 
             // dataGridViewTextBoxColumn4
             // 
             this.dataGridViewTextBoxColumn4.DataPropertyName = "Grad";
@@ -185,7 +252,7 @@
             // dataGridViewTextBoxColumn5
             // 
             this.dataGridViewTextBoxColumn5.DataPropertyName = "UlicaBroj";
-            this.dataGridViewTextBoxColumn5.HeaderText = "Ulica i broj";
+            this.dataGridViewTextBoxColumn5.HeaderText = "Adresa";
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
             this.dataGridViewTextBoxColumn5.ReadOnly = true;
             // 
@@ -210,65 +277,17 @@
             this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
             this.dataGridViewTextBoxColumn8.ReadOnly = true;
             // 
-            // firmeBindingSource
-            // 
-            this.firmeBindingSource.DataMember = "Firme";
-            this.firmeBindingSource.DataSource = this.dbSenaCompDataSet;
-            // 
-            // dbSenaCompDataSet
-            // 
-            this.dbSenaCompDataSet.DataSetName = "dbSenaCompDataSet";
-            this.dbSenaCompDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // dOK
-            // 
-            this.dOK.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.dOK.Location = new System.Drawing.Point(3, 280);
-            this.dOK.Name = "dOK";
-            this.dOK.Size = new System.Drawing.Size(75, 23);
-            this.dOK.TabIndex = 5;
-            this.dOK.Text = "OK";
-            this.dOK.UseVisualStyleBackColor = true;
-            this.dOK.Click += new System.EventHandler(this.dOK_Click);
-            // 
-            // dOtkazi
-            // 
-            this.dOtkazi.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.dOtkazi.Location = new System.Drawing.Point(84, 280);
-            this.dOtkazi.Name = "dOtkazi";
-            this.dOtkazi.Size = new System.Drawing.Size(75, 23);
-            this.dOtkazi.TabIndex = 5;
-            this.dOtkazi.Text = "Otkaži";
-            this.dOtkazi.UseVisualStyleBackColor = true;
-            this.dOtkazi.Click += new System.EventHandler(this.dOtkazi_Click);
-            // 
-            // firmeTableAdapter
-            // 
-            this.firmeTableAdapter.ClearBeforeFill = true;
-            // 
-            // tableAdapterManager
-            // 
-            this.tableAdapterManager.ArtikliPFOTableAdapter = null;
-            this.tableAdapterManager.ArtikliTableAdapter = null;
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.FaktureTableAdapter = null;
-            this.tableAdapterManager.FirmeTableAdapter = this.firmeTableAdapter;
-            this.tableAdapterManager.NaloziFTableAdapter = null;
-            this.tableAdapterManager.NaloziPTableAdapter = null;
-            this.tableAdapterManager.OtpremniceTableAdapter = null;
-            this.tableAdapterManager.ProfaktureTableAdapter = null;
-            this.tableAdapterManager.UpdateOrder = uclib.dbSenaCompDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
-            // 
             // ucOdabirFirme
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.dOtkazi);
             this.Controls.Add(this.dOK);
             this.Controls.Add(this.firmeDataGridView);
             this.Controls.Add(this.tableLayoutPanel1);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "ucOdabirFirme";
-            this.Size = new System.Drawing.Size(859, 306);
+            this.Size = new System.Drawing.Size(1145, 377);
             this.Load += new System.EventHandler(this.ucOdabirFirme_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
@@ -292,15 +311,16 @@
         private dbSenaCompDataSetTableAdapters.FirmeTableAdapter firmeTableAdapter;
         private dbSenaCompDataSetTableAdapters.TableAdapterManager tableAdapterManager;
         private System.Windows.Forms.DataGridView firmeDataGridView;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
         private System.Windows.Forms.Button dOK;
         private System.Windows.Forms.Button dOtkazi;
+        private System.Windows.Forms.DataGridViewTextBoxColumn maticniBroj;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
     }
 }

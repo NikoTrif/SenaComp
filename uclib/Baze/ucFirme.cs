@@ -29,7 +29,7 @@ namespace uclib.Baze
             }
             catch (Exception ex)
             {
-                fnr.NapisiLog(ex);
+                clFunkcijeRazno.NapisiLog(ex);
             }
         }
 
@@ -93,7 +93,7 @@ namespace uclib.Baze
                             }
                             catch (Exception ex)
                             {
-                                fnr.NapisiLog(ex);
+                                clFunkcijeRazno.NapisiLog(ex);
                             }
                             break;
                         case 2:

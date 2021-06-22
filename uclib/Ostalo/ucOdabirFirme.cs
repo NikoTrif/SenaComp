@@ -40,7 +40,7 @@ namespace uclib.Ostalo
                     }
                     catch (Exception ex)
                     {
-                        fnr.NapisiLog(ex);
+                        clFunkcijeRazno.NapisiLog(ex);
                     }
                     break;
             }
@@ -54,15 +54,19 @@ namespace uclib.Ostalo
                 {
                     clTransfer.IDFirme = firmeDataGridView.CurrentRow.Cells[0].Value.ToString();
                     clTransfer.Firma = firmeDataGridView.CurrentRow.Cells[1].Value.ToString();
-                    clTransfer.Kontakt = firmeDataGridView.CurrentRow.Cells[5].Value.ToString();
-                    clTransfer.eMail = firmeDataGridView.CurrentRow.Cells[6].Value.ToString();
+                    clTransfer.PIB = firmeDataGridView.CurrentRow.Cells[2].Value.ToString();
+                    clTransfer.MatBr = firmeDataGridView.CurrentRow.Cells[3].Value.ToString();
+                    clTransfer.Grad = firmeDataGridView.CurrentRow.Cells[4].Value.ToString();
+                    clTransfer.Adresa = firmeDataGridView.CurrentRow.Cells[5].Value.ToString();
+                    clTransfer.Kontakt = firmeDataGridView.CurrentRow.Cells[6].Value.ToString();
+                    clTransfer.eMail = firmeDataGridView.CurrentRow.Cells[7].Value.ToString();
 
                     ParentForm.Close();
                 }
             }
             catch (Exception ex)
             {
-                fnr.NapisiLog(ex);
+                clFunkcijeRazno.NapisiLog(ex);
             }
         }
 

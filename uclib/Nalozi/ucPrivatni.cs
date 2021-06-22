@@ -51,7 +51,7 @@ namespace uclib.Nalozi
             }
             catch (Exception ex)
             {
-                fnr.NapisiLog(ex);
+                clFunkcijeRazno.NapisiLog(ex);
             }
         }
 
@@ -371,7 +371,7 @@ namespace uclib.Nalozi
             }
             catch(Exception ex)
             {
-                fnr.NapisiLog(ex);
+                clFunkcijeRazno.NapisiLog(ex);
             }
 
 
@@ -392,7 +392,7 @@ namespace uclib.Nalozi
             }
             catch (Exception ex)
             {
-                fnr.NapisiLog(ex);
+                clFunkcijeRazno.NapisiLog(ex);
             }
 
             clRadniNalogPrivBindingSource.Clear();
@@ -444,7 +444,7 @@ namespace uclib.Nalozi
 
                 catch (Exception ex)
                 {
-                    fnr.NapisiLog(ex);
+                    clFunkcijeRazno.NapisiLog(ex);
                 } 
             }
         }

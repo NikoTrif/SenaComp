@@ -22,7 +22,26 @@ namespace uclib.Racuni
 
         private void ucProfakture_Load(object sender, EventArgs e)
         {
+            try
+            {
+                //G 8
+                profaktureTableAdapter.Connection.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=" + Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\Visual Studio 2015\Projects\SenaComp\SenaComp\bin\debug\dbSenaComp.mdf;Password=Master1!";
+                profaktureTableAdapter.Fill(dbSenaCompDataSet.Profakture);
 
+                artikliTableAdapter.Connection.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=" + Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\Visual Studio 2015\Projects\SenaComp\SenaComp\bin\debug\dbSenaComp.mdf;Password=Master1!";
+                artikliTableAdapter.Fill(dbSenaCompDataSet.Artikli);
+
+                cbFilter.SelectedIndex = 0;
+                try
+                {
+                    profaktureDataGridView.CurrentCell = profaktureDataGridView.Rows[profaktureDataGridView.RowCount - 1].Cells[0];
+                }
+                catch { }
+            }
+            catch(Exception ex)
+            {
+                clFunkcijeRazno.NapisiLog(ex);
+            }
         }
 
         private void profaktureBindingNavigatorSaveItem_Click(object sender, EventArgs e)
@@ -36,9 +55,11 @@ namespace uclib.Racuni
         {
             try
             {
+                //ResetAutoIncrement();
                 profaktureBindingSource.AddNew();
                 rbNaCekanju.Checked = true;
                 iDKlijentaTextBox.Select();
+                //redniBrojTextBox.Text = (int.Parse(redniBrojTextBox.Text) + 2).ToString();
             }
             catch (Exception ex)
             {
@@ -159,13 +180,16 @@ namespace uclib.Racuni
 
         private void profaktureDataGridView_SelectionChanged(object sender, EventArgs e)
         {
-            try
+            if (profaktureDataGridView.RowCount > 0)
             {
-                noviRed = fnr.ProveraNoviRed(profaktureDataGridView.CurrentRow.Cells[3].Value.ToString());
-            }
-            catch (Exception ex)
-            {
-                clFunkcijeRazno.NapisiLog(ex);
+                try
+                {
+                    noviRed = fnr.ProveraNoviRed(profaktureDataGridView.CurrentRow.Cells[3].Value.ToString());
+                }
+                catch (Exception ex)
+                {
+                    clFunkcijeRazno.NapisiLog(ex);
+                }
             }
         }
 

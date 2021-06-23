@@ -638,7 +638,7 @@
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 36.11111F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 29.93827F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 34.03703F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 70F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 72F));
             this.tableLayoutPanel4.Controls.Add(iDFirmeLabel, 0, 0);
             this.tableLayoutPanel4.Controls.Add(this.iDFirmeTextBox, 1, 0);
             this.tableLayoutPanel4.Controls.Add(this.eMailTextBox, 1, 4);
@@ -671,7 +671,7 @@
             this.iDFirmeTextBox.Location = new System.Drawing.Point(111, 5);
             this.iDFirmeTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.iDFirmeTextBox.Name = "iDFirmeTextBox";
-            this.iDFirmeTextBox.Size = new System.Drawing.Size(84, 22);
+            this.iDFirmeTextBox.Size = new System.Drawing.Size(83, 22);
             this.iDFirmeTextBox.TabIndex = 10;
             // 
             // eMailTextBox
@@ -724,7 +724,7 @@
             this.dFOdabir.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dFOdabir.Location = new System.Drawing.Point(202, 4);
+            this.dFOdabir.Location = new System.Drawing.Point(201, 4);
             this.dFOdabir.Margin = new System.Windows.Forms.Padding(4);
             this.dFOdabir.Name = "dFOdabir";
             this.dFOdabir.Size = new System.Drawing.Size(94, 25);
@@ -736,9 +736,9 @@
             // dProFakt
             // 
             this.dProFakt.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dProFakt.Location = new System.Drawing.Point(303, 3);
+            this.dProFakt.Location = new System.Drawing.Point(302, 3);
             this.dProFakt.Name = "dProFakt";
-            this.dProFakt.Size = new System.Drawing.Size(66, 27);
+            this.dProFakt.Size = new System.Drawing.Size(67, 27);
             this.dProFakt.TabIndex = 11;
             this.dProFakt.UseVisualStyleBackColor = true;
             this.dProFakt.Click += new System.EventHandler(this.dProFakt_Click);

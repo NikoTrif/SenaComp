@@ -12,8 +12,8 @@
     <Shape ID="DesignTable:Firme" ZOrder="2" X="852" Y="70" Height="388" Width="229" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="237" />
     <Shape ID="DesignTable:NaloziF" ZOrder="6" X="1099" Y="70" Height="305" Width="188" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="254" />
     <Shape ID="DesignTable:NaloziP" ZOrder="3" X="1357" Y="70" Height="381" Width="220" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="254" />
-    <Shape ID="DesignTable:Otpremnice" ZOrder="5" X="1616" Y="70" Height="305" Width="213" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="254" />
-    <Shape ID="DesignTable:Profakture" ZOrder="4" X="1899" Y="70" Height="365" Width="243" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="306" />
+    <Shape ID="DesignTable:Otpremnice" ZOrder="5" X="1615" Y="70" Height="305" Width="213" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="254" />
+    <Shape ID="DesignTable:Profakture" ZOrder="4" X="1902" Y="74" Height="365" Width="243" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="306" />
   </Shapes>
   <Connectors />
 </DiagramLayout>

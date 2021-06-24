@@ -82,7 +82,7 @@ kada se trazi u kodu - npr. "RG1", "TD3.1.2", "G2"
 9.   - uclib.ucPrivatni - Dijalog za napomenu se zatvara i kada se klikne na dugme izmena
 10.  - uclib.ucPrivatni.izvestajRichTextBox_KeyPress - prebaci u novi red, novi red se ne brise osim na backspace, ne bi trebalo ni da se upisuje
 |R|11.  - uclib.ucPoslovni.dStampa_Click - problem u komandi reportView1.LocalReport.SetParameters - iz nekog razloga ne postavlja parametre
-12.  - uclib.ucProfakture - kada se cuva nalog ne moze da konvertuje rednibroj u Byte[], a ne bi ni trebalo
+|R|12.  - uclib.ucProfakture - kada se cuva nalog ne moze da konvertuje rednibroj u Byte[], a ne bi ni trebalo
 ---------------------------------------------------------------------------------------
 ***Release Greske***
 ---------------------------------------------------------------------------------------
@@ -240,3 +240,5 @@ kada se trazi u kodu - npr. "RG1", "TD3.1.2", "G2"
 		 - - - - - - - clFunkcijeRazno.NapisiLog - pretvoren u static
 
 23.06.21 - TD 2.6 - - -ucProfakture - dodat kod za Load metod
+
+24.06.21 - G 12 - - - -dbSenaCompDataSet - popravljena greska tako sto je obrisan kompletan profaktureTableAdapter i napravljen novi

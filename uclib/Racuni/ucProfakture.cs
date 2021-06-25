@@ -73,6 +73,14 @@ namespace uclib.Racuni
             {
                 profaktureBindingSource.CancelEdit();
                 ResetAutoIncrement();
+
+                profaktureTableAdapter.Fill(dbSenaCompDataSet.Profakture);
+                try
+                {
+                    profaktureDataGridView.CurrentCell = profaktureDataGridView.Rows[profaktureDataGridView.RowCount - 1].Cells[0];
+                }
+                catch { }
+
             }
             catch (Exception ex)
             {
@@ -200,6 +208,9 @@ namespace uclib.Racuni
             dbSenaCompDataSet.Profakture.redniBrojColumn.AutoIncrementSeed = -1;
             dbSenaCompDataSet.Profakture.redniBrojColumn.AutoIncrementStep = 1;
             dbSenaCompDataSet.Profakture.redniBrojColumn.AutoIncrementSeed = 1;
+
+
+
         }
 
         private void Cuvanje()

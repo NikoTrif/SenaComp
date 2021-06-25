@@ -242,3 +242,5 @@ kada se trazi u kodu - npr. "RG1", "TD3.1.2", "G2"
 23.06.21 - TD 2.6 - - -ucProfakture - dodat kod za Load metod
 
 24.06.21 - G 12 - - - -dbSenaCompDataSet - popravljena greska tako sto je obrisan kompletan profaktureTableAdapter i napravljen novi
+
+25.06.21 - TD 2.6 - - -ucProfakture - dodato popunjavanje baze nakon resetovanja AutoIncrement-a - proveriti da li je moguce izbeci dbSenaCompDataSet.Clear() funkciju kod resetovanja

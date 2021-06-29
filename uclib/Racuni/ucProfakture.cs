@@ -59,6 +59,7 @@ namespace uclib.Racuni
                 profaktureBindingSource.AddNew();
                 rbNaCekanju.Checked = true;
                 iDKlijentaTextBox.Select();
+                datumDateTimePicker.Value = DateTime.Today;
                 //redniBrojTextBox.Text = (int.Parse(redniBrojTextBox.Text) + 2).ToString();
             }
             catch (Exception ex)
@@ -121,7 +122,6 @@ namespace uclib.Racuni
         {
             try
             {
-
                 if (MessageBox.Show("Da li ste sigurni da želite da obrišete ovu profakturu?", "Obriši profakturu?", MessageBoxButtons.YesNo,
                     MessageBoxIcon.Question) == DialogResult.Yes)
                 {
@@ -198,19 +198,37 @@ namespace uclib.Racuni
                 {
                     clFunkcijeRazno.NapisiLog(ex);
                 }
+
+                try
+                {
+                    string stat = profaktureDataGridView.CurrentRow.Cells[12].Value.ToString();
+                    if (!string.IsNullOrEmpty(stat))
+                    {
+                        switch (stat)
+                        {
+                            case "Na čekanju":
+                                rbNaCekanju.Checked = true;
+                                break;
+                            case "Plaćeno":
+                                rbPlaceno.Checked = true;
+                                break;
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    clFunkcijeRazno.NapisiLog(ex);
+                }
             }
         }
 
         private void ResetAutoIncrement()
         {
-            dbSenaCompDataSet.Clear();
+            dbSenaCompDataSet.Profakture.Clear();
             dbSenaCompDataSet.Profakture.redniBrojColumn.AutoIncrementStep = -1;
             dbSenaCompDataSet.Profakture.redniBrojColumn.AutoIncrementSeed = -1;
             dbSenaCompDataSet.Profakture.redniBrojColumn.AutoIncrementStep = 1;
             dbSenaCompDataSet.Profakture.redniBrojColumn.AutoIncrementSeed = 1;
-
-
-
         }
 
         private void Cuvanje()
@@ -239,6 +257,12 @@ namespace uclib.Racuni
             {
                 clFunkcijeRazno.NapisiLog(ex);
             }
+        }
+
+        private void rbPlaceno_CheckedChanged(object sender, EventArgs e)
+        {
+            datumIsplateDateTimePicker.Visible = rbPlaceno.Checked;
+            (tableLayoutPanel2.Controls["datumIsplateLabel"] as Label).Visible = rbPlaceno.Checked;
         }
     }
 }

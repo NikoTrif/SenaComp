@@ -246,3 +246,8 @@ kada se trazi u kodu - npr. "RG1", "TD3.1.2", "G2"
 25.06.21 - TD 2.6 - - -ucProfakture - dodato popunjavanje baze nakon resetovanja AutoIncrement-a - proveriti da li je moguce izbeci dbSenaCompDataSet.Clear() funkciju kod resetovanja
 
 29.06.21 - TD 2.6 - - -ucProfakture - datum isplate se vidi samo kada je rbPlaceno cekirano
+
+01.07.21 - TD 2.6 - - -ucProfakture - dodat tbArtKol u koji se upisuje kolicina artikla koji se dodaje na profakturu
+		 - TD 2.6 - - -ucProfakture - napisan kod za dDodaj
+		 - TD 2.6 - - -ucProfakture - dodate komande za dodavanje artikala na dugme +, posle prvog se ide na tbArtKol, a odatle dDodaj_Click
+		 - - - - - - - ucArtikli - popravljena greska, nije se unosila cena(bez PDV-a) u bazu. dodata kolona u artikliDataGridView-u

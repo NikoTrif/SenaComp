@@ -178,6 +178,31 @@ namespace uclib.Racuni
 
         private void dArtDodaj_Click(object sender, EventArgs e)
         {
+            try
+            {
+                string naziv, jedinica;
+                float cena = 0;
+                float pdv = 0;
+                float kolicina = 1;
+                float uCena = 0;
+
+                naziv = artikliDataGridView.CurrentRow.Cells[1].Value.ToString();
+                jedinica = artikliDataGridView.CurrentRow.Cells[2].Value.ToString();
+                float.TryParse(artikliDataGridView.CurrentRow.Cells[5].Value.ToString(), out cena);
+                Console.WriteLine(cena.ToString());
+                float.TryParse(artikliDataGridView.CurrentRow.Cells[4].Value.ToString(), out pdv);
+                Console.WriteLine(pdv.ToString());
+                float.TryParse(tbArtKol.Text, out kolicina);
+                Console.WriteLine(kolicina.ToString());
+                uCena = (cena * ((pdv / 100) + 1) * kolicina);
+                Console.WriteLine(uCena.ToString());
+
+                dataGridView1.Rows.Add(naziv, cena, pdv, kolicina, jedinica, uCena);
+            }
+            catch (Exception ex)
+            {
+                clFunkcijeRazno.NapisiLog(ex);
+            }
 
         }
 
@@ -222,6 +247,12 @@ namespace uclib.Racuni
             }
         }
 
+        private void rbPlaceno_CheckedChanged(object sender, EventArgs e)
+        {
+            datumIsplateDateTimePicker.Visible = rbPlaceno.Checked;
+            (tableLayoutPanel2.Controls["datumIsplateLabel"] as Label).Visible = rbPlaceno.Checked;
+        }
+
         private void ResetAutoIncrement()
         {
             dbSenaCompDataSet.Profakture.Clear();
@@ -259,10 +290,69 @@ namespace uclib.Racuni
             }
         }
 
-        private void rbPlaceno_CheckedChanged(object sender, EventArgs e)
+        private void dataGridView1_CellEnter(object sender, DataGridViewCellEventArgs e)
         {
-            datumIsplateDateTimePicker.Visible = rbPlaceno.Checked;
-            (tableLayoutPanel2.Controls["datumIsplateLabel"] as Label).Visible = rbPlaceno.Checked;
+            if (e.ColumnIndex == 3)
+            {
+                Console.WriteLine("Sada smo u kolicini");
+            }
+        }
+
+        private void tbArtKol_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if(!char.IsControl(e.KeyChar)&&!char.IsDigit(e.KeyChar)&&e.KeyChar != '.')
+            {
+                e.Handled = true;
+            }
+
+            //dozvoljava samo jednu decimalnu tacku
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void tbArtKol_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Add)
+            {
+                dArtDodaj.PerformClick();
+            }
+        }
+
+        private void tbArtPret_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Enter)
+            {
+                int sifra = 0;
+                int.TryParse(tbArtPret.Text, out sifra);
+
+                if (tbArtPret.Text == "")
+                {
+                    artikliTableAdapter.Fill(dbSenaCompDataSet.Artikli);
+                }
+                else if (sifra > 0)
+                {
+                    artikliTableAdapter.qFilterSifra(dbSenaCompDataSet.Artikli, sifra);
+                }
+                else
+                {
+                    artikliTableAdapter.qFilterNaziv(dbSenaCompDataSet.Artikli, tbArtPret.Text);
+                }
+            }
+
+            else if (e.KeyCode == Keys.Add)
+            {
+                tbArtKol.Select();
+            }
+        }
+
+        private void artikliDataGridView_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Add)
+            {
+                tbArtKol.Select();
+            }
         }
     }
 }

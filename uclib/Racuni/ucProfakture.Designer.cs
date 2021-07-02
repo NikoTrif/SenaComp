@@ -90,13 +90,14 @@
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.tbArtProfPret = new System.Windows.Forms.TextBox();
             this.dArtUkloni = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvProfArtikli = new System.Windows.Forms.DataGridView();
             this.Naziv = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cena = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PDV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Količina = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.jedinicaMere = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.UkupnaCena = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CenaPDV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label4 = new System.Windows.Forms.Label();
             this.lTotal = new System.Windows.Forms.Label();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
@@ -137,7 +138,7 @@
             this.groupBox3.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
             this.tableLayoutPanel6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProfArtikli)).BeginInit();
             this.tableLayoutPanel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.artikliDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.artikliBindingSource)).BeginInit();
@@ -824,7 +825,7 @@
             this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel6.Controls.Add(this.tbArtProfPret, 0, 0);
             this.tableLayoutPanel6.Controls.Add(this.dArtUkloni, 1, 0);
-            this.tableLayoutPanel6.Controls.Add(this.dataGridView1, 0, 1);
+            this.tableLayoutPanel6.Controls.Add(this.dgvProfArtikli, 0, 1);
             this.tableLayoutPanel6.Controls.Add(this.label4, 2, 0);
             this.tableLayoutPanel6.Controls.Add(this.lTotal, 3, 0);
             this.tableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -857,27 +858,29 @@
             this.dArtUkloni.UseVisualStyleBackColor = true;
             this.dArtUkloni.Click += new System.EventHandler(this.dArtUkloni_Click);
             // 
-            // dataGridView1
+            // dgvProfArtikli
             // 
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Window;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvProfArtikli.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvProfArtikli.BackgroundColor = System.Drawing.SystemColors.Window;
+            this.dgvProfArtikli.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvProfArtikli.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Naziv,
             this.Cena,
             this.PDV,
             this.Količina,
             this.jedinicaMere,
-            this.UkupnaCena});
-            this.tableLayoutPanel6.SetColumnSpan(this.dataGridView1, 4);
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 38);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(733, 157);
-            this.dataGridView1.TabIndex = 2;
-            this.dataGridView1.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellEnter);
+            this.UkupnaCena,
+            this.CenaPDV});
+            this.tableLayoutPanel6.SetColumnSpan(this.dgvProfArtikli, 4);
+            this.dgvProfArtikli.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvProfArtikli.Location = new System.Drawing.Point(3, 38);
+            this.dgvProfArtikli.Name = "dgvProfArtikli";
+            this.dgvProfArtikli.RowTemplate.Height = 24;
+            this.dgvProfArtikli.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvProfArtikli.Size = new System.Drawing.Size(733, 157);
+            this.dgvProfArtikli.TabIndex = 2;
+            this.dgvProfArtikli.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProfArtikli_CellEnter);
+            this.dgvProfArtikli.CellValidated += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProfArtikli_CellValidated);
             // 
             // Naziv
             // 
@@ -908,6 +911,12 @@
             // 
             this.UkupnaCena.HeaderText = "Ukupna Cena";
             this.UkupnaCena.Name = "UkupnaCena";
+            // 
+            // CenaPDV
+            // 
+            this.CenaPDV.HeaderText = "CenaPDV";
+            this.CenaPDV.Name = "CenaPDV";
+            this.CenaPDV.Visible = false;
             // 
             // label4
             // 
@@ -1042,6 +1051,7 @@
             this.tbArtPret.Size = new System.Drawing.Size(314, 22);
             this.tbArtPret.TabIndex = 0;
             this.tbArtPret.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbArtPret_KeyDown);
+            this.tbArtPret.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbArtPret_KeyPress);
             // 
             // dArtDodaj
             // 
@@ -1118,7 +1128,7 @@
             this.tableLayoutPanel4.ResumeLayout(false);
             this.tableLayoutPanel6.ResumeLayout(false);
             this.tableLayoutPanel6.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProfArtikli)).EndInit();
             this.tableLayoutPanel5.ResumeLayout(false);
             this.tableLayoutPanel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.artikliDataGridView)).EndInit();
@@ -1168,7 +1178,7 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel6;
         private System.Windows.Forms.TextBox tbArtProfPret;
         private System.Windows.Forms.Button dArtUkloni;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvProfArtikli;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label lTotal;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
@@ -1177,12 +1187,6 @@
         private System.Windows.Forms.TextBox tbArtPret;
         private System.Windows.Forms.Button dArtDodaj;
         private dbSenaCompDataSetTableAdapters.ArtikliTableAdapter artikliTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Naziv;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Cena;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PDV;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Količina;
-        private System.Windows.Forms.DataGridViewTextBoxColumn jedinicaMere;
-        private System.Windows.Forms.DataGridViewTextBoxColumn UkupnaCena;
         private System.Windows.Forms.Button dFaktura;
         private System.Windows.Forms.Button dOdaberi;
         private System.Windows.Forms.DataGridViewTextBoxColumn datumIsplate;
@@ -1208,5 +1212,12 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CenaPDV;
+        private System.Windows.Forms.DataGridViewTextBoxColumn UkupnaCena;
+        private System.Windows.Forms.DataGridViewTextBoxColumn jedinicaMere;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Količina;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PDV;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Cena;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Naziv;
     }
 }

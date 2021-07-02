@@ -13,6 +13,7 @@ namespace uclib.Racuni
     public partial class ucProfakture : UserControl
     {
         bool noviRed = false;
+        float cbpdv = 0; //cena bey pdv-a za odredjivanje da li je cena promenjena
         clFunkcijeRazno fnr = new clFunkcijeRazno();
 
         public ucProfakture()
@@ -38,7 +39,7 @@ namespace uclib.Racuni
                 }
                 catch { }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 clFunkcijeRazno.NapisiLog(ex);
             }
@@ -93,9 +94,9 @@ namespace uclib.Racuni
         {
             try
             {
-                if(noviRed == false)
+                if (noviRed == false)
                 {
-                    if(MessageBox.Show("Da li ste sigurni da želite da izmenite ovu profakturu?", "Izmena?", MessageBoxButtons.YesNo,
+                    if (MessageBox.Show("Da li ste sigurni da želite da izmenite ovu profakturu?", "Izmena?", MessageBoxButtons.YesNo,
                         MessageBoxIcon.Question) == DialogResult.Yes)
                     {
                         Cuvanje();
@@ -184,26 +185,28 @@ namespace uclib.Racuni
                 float cena = 0;
                 float pdv = 0;
                 float kolicina = 1;
+                float cenapdv = 0;
                 float uCena = 0;
 
                 naziv = artikliDataGridView.CurrentRow.Cells[1].Value.ToString();
                 jedinica = artikliDataGridView.CurrentRow.Cells[2].Value.ToString();
                 float.TryParse(artikliDataGridView.CurrentRow.Cells[5].Value.ToString(), out cena);
-                Console.WriteLine(cena.ToString());
                 float.TryParse(artikliDataGridView.CurrentRow.Cells[4].Value.ToString(), out pdv);
-                Console.WriteLine(pdv.ToString());
                 float.TryParse(tbArtKol.Text, out kolicina);
-                Console.WriteLine(kolicina.ToString());
-                uCena = (cena * ((pdv / 100) + 1) * kolicina);
-                Console.WriteLine(uCena.ToString());
+                float.TryParse(artikliDataGridView.CurrentRow.Cells[6].Value.ToString(), out cenapdv);
+                uCena = cenapdv * kolicina;
 
-                dataGridView1.Rows.Add(naziv, cena, pdv, kolicina, jedinica, uCena);
+                dgvProfArtikli.Rows.Add(naziv, cena, pdv, kolicina, jedinica, uCena, cenapdv);
+
+                RacunCenaITotal(false);
+
+                tbArtPret.Select();
+                tbArtPret.SelectAll();
             }
             catch (Exception ex)
             {
                 clFunkcijeRazno.NapisiLog(ex);
             }
-
         }
 
         private void dArtUkloni_Click(object sender, EventArgs e)
@@ -253,54 +256,9 @@ namespace uclib.Racuni
             (tableLayoutPanel2.Controls["datumIsplateLabel"] as Label).Visible = rbPlaceno.Checked;
         }
 
-        private void ResetAutoIncrement()
-        {
-            dbSenaCompDataSet.Profakture.Clear();
-            dbSenaCompDataSet.Profakture.redniBrojColumn.AutoIncrementStep = -1;
-            dbSenaCompDataSet.Profakture.redniBrojColumn.AutoIncrementSeed = -1;
-            dbSenaCompDataSet.Profakture.redniBrojColumn.AutoIncrementStep = 1;
-            dbSenaCompDataSet.Profakture.redniBrojColumn.AutoIncrementSeed = 1;
-        }
-
-        private void Cuvanje()
-        {
-            try
-            {
-                profaktureDataGridView.CurrentRow.Cells[12].Value = tableLayoutPanel2.Controls.OfType<RadioButton>().FirstOrDefault(r => r.Checked).Text;
-                profaktureDataGridView.CurrentRow.Cells[1].Value = datumDateTimePicker.Value;
-                if (rbPlaceno.Checked)
-                {
-                    profaktureDataGridView.CurrentRow.Cells[13].Value = datumIsplateDateTimePicker.Value;
-                }
-            }
-            catch(Exception ex)
-            {
-                clFunkcijeRazno.NapisiLog(ex);
-            }
-
-            try
-            {
-                Validate();
-                profaktureBindingSource.EndEdit();
-                profaktureTableAdapter.Update(dbSenaCompDataSet.Profakture);
-            }
-            catch (Exception ex)
-            {
-                clFunkcijeRazno.NapisiLog(ex);
-            }
-        }
-
-        private void dataGridView1_CellEnter(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.ColumnIndex == 3)
-            {
-                Console.WriteLine("Sada smo u kolicini");
-            }
-        }
-
         private void tbArtKol_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if(!char.IsControl(e.KeyChar)&&!char.IsDigit(e.KeyChar)&&e.KeyChar != '.')
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && e.KeyChar != '.')
             {
                 e.Handled = true;
             }
@@ -322,7 +280,7 @@ namespace uclib.Racuni
 
         private void tbArtPret_KeyDown(object sender, KeyEventArgs e)
         {
-            if(e.KeyCode == Keys.Enter)
+            if (e.KeyCode == Keys.Enter)
             {
                 int sifra = 0;
                 int.TryParse(tbArtPret.Text, out sifra);
@@ -344,6 +302,7 @@ namespace uclib.Racuni
             else if (e.KeyCode == Keys.Add)
             {
                 tbArtKol.Select();
+                tbArtKol.SelectAll();
             }
         }
 
@@ -353,6 +312,122 @@ namespace uclib.Racuni
             {
                 tbArtKol.Select();
             }
+        }
+
+        private void tbArtPret_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == '+')
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void dgvProfArtikli_CellEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            if ((sender as DataGridView).CurrentRow.Cells[1].Value != null)
+            {
+                float.TryParse((sender as DataGridView).CurrentRow.Cells[1].Value.ToString(), out cbpdv);
+            }
+        }
+
+        private void dgvProfArtikli_CellValidated(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex != 0 && e.ColumnIndex != 4)
+            {
+                if (e.ColumnIndex == 1)
+                {
+                    float cbp = 0; // cena bez PDV-a u koloni 1
+                    float.TryParse(dgvProfArtikli.CurrentRow.Cells[1].Value.ToString(), out cbp);
+                    if (cbp==cbpdv)
+                    {
+                        RacunCenaITotal(false);  
+                    }
+                    else
+                    {
+                        RacunCenaITotal(true);
+                    }
+                }
+                else
+                {
+                    RacunCenaITotal(false);
+                }
+            }
+        }
+
+        private void ResetAutoIncrement()
+        {
+            dbSenaCompDataSet.Profakture.Clear();
+            dbSenaCompDataSet.Profakture.redniBrojColumn.AutoIncrementStep = -1;
+            dbSenaCompDataSet.Profakture.redniBrojColumn.AutoIncrementSeed = -1;
+            dbSenaCompDataSet.Profakture.redniBrojColumn.AutoIncrementStep = 1;
+            dbSenaCompDataSet.Profakture.redniBrojColumn.AutoIncrementSeed = 1;
+        }
+
+        private void Cuvanje()
+        {
+            try
+            {
+                profaktureDataGridView.CurrentRow.Cells[12].Value = tableLayoutPanel2.Controls.OfType<RadioButton>().FirstOrDefault(r => r.Checked).Text;
+                profaktureDataGridView.CurrentRow.Cells[1].Value = datumDateTimePicker.Value;
+                if (rbPlaceno.Checked)
+                {
+                    profaktureDataGridView.CurrentRow.Cells[13].Value = datumIsplateDateTimePicker.Value;
+                }
+            }
+            catch (Exception ex)
+            {
+                clFunkcijeRazno.NapisiLog(ex);
+            }
+
+            try
+            {
+                Validate();
+                profaktureBindingSource.EndEdit();
+                profaktureTableAdapter.Update(dbSenaCompDataSet.Profakture);
+            }
+            catch (Exception ex)
+            {
+                clFunkcijeRazno.NapisiLog(ex);
+            }
+        }
+
+        /// <summary>
+        /// Racuna Cenu i upisuje label TOTAL
+        /// </summary>
+        /// <param name="izmenjenaCena">true - ako je cena(bez PDV-a promenjena), false - ako nije</param>
+        private void RacunCenaITotal(bool izmenjenaCena)
+        {
+            float total = 0;
+            float x = 0;
+            float cenaSaPDV = 0;
+            float cena = 0; //cena bez PDV-a iz kolone 1
+            float pdv = 0;
+            float kol = 0;
+            float uCena = 0;
+
+            if(izmenjenaCena == true)
+            {
+                float.TryParse(dgvProfArtikli.CurrentRow.Cells[2].Value.ToString(), out pdv);
+                float.TryParse(dgvProfArtikli.CurrentRow.Cells[3].Value.ToString(), out kol);
+                float.TryParse(dgvProfArtikli.CurrentRow.Cells[1].Value.ToString(), out cena);
+                cenaSaPDV = cena * ((pdv / 100) + 1);
+                uCena = cenaSaPDV * kol;
+
+                dgvProfArtikli.CurrentRow.Cells[6].Value = cenaSaPDV;
+                dgvProfArtikli.CurrentRow.Cells[5].Value = uCena;
+            }
+
+            foreach (DataGridViewRow dgvr in dgvProfArtikli.Rows)
+            {
+                if (dgvr.Cells[5].Value != null)
+                {
+                    float.TryParse(dgvr.Cells[5].Value.ToString(), out x);
+                    total = total + x;
+                    x = 0;
+                }
+            }
+
+            lTotal.Text = string.Format("{0} {1}", total.ToString(), valutaTextBox.Text);
         }
     }
 }

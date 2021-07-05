@@ -254,3 +254,6 @@ kada se trazi u kodu - npr. "RG1", "TD3.1.2", "G2"
 
 02.07.21 - TD 2.6 - - -ucProfakture - napravljen kod za direktnu izmenu u dgvProfArtikli
 		 - TD 2.6 - - -ucProfakture - Kada se na dugme + dodaje artikal, odmah se vraca na tbArtPret. ne bi bilo lose dodati isto na dvoklik u bazi
+
+05.07.21 - TD 2.6 - - -ucProfakture - dvoklik na celiju u artikliDataGridView se dodaje jedan komad selektovane robe
+		 - TD 2.6 - - -ucProfakture - popravljene neke logicke greske kod izmene artikala direkto iz dgvProfArtikli - potrebno jos raditi na tome

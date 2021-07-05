@@ -987,6 +987,7 @@
             this.artikliDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.artikliDataGridView.Size = new System.Drawing.Size(733, 156);
             this.artikliDataGridView.TabIndex = 2;
+            this.artikliDataGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.artikliDataGridView_CellDoubleClick);
             this.artikliDataGridView.KeyDown += new System.Windows.Forms.KeyEventHandler(this.artikliDataGridView_KeyDown);
             // 
             // dataGridViewTextBoxColumn9

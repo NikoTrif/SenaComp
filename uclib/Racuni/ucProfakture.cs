@@ -14,10 +14,16 @@ namespace uclib.Racuni
     {
         bool noviRed = false;
         float[] izTemp = { 0, 0, 0 };
+
         /* var za proveru izmene direktno iz dgvProfArtikli
         0 - cena(bez PDV-a)
         1 - PDV
         2- kolicina*/
+        int[] errorCellIndex = { -1, -1 };
+        /*
+        0 - Row
+        1 - Cell
+        */
         clFunkcijeRazno fnr = new clFunkcijeRazno();
 
         public ucProfakture()
@@ -338,12 +344,19 @@ namespace uclib.Racuni
         {
             try
             {
-                if ((sender as DataGridView).CurrentRow.Cells[1].Value != null && (sender as DataGridView).CurrentRow.Cells[2].Value != null
-                    && (sender as DataGridView).CurrentRow.Cells[3].Value != null)
+                if (errorCellIndex[1] > -1) // G 13
                 {
-                    float.TryParse((sender as DataGridView).CurrentRow.Cells[1].Value.ToString(), out izTemp[0]); //cena bez PDV-a
-                    float.TryParse((sender as DataGridView).CurrentRow.Cells[2].Value.ToString(), out izTemp[1]); //PDV
-                    float.TryParse((sender as DataGridView).CurrentRow.Cells[3].Value.ToString(), out izTemp[2]); //Kolicina
+                    if ((sender as DataGridView).CurrentRow.Cells[1].Value != null && (sender as DataGridView).CurrentRow.Cells[2].Value != null
+                                && (sender as DataGridView).CurrentRow.Cells[3].Value != null)
+                    {
+                        float.TryParse((sender as DataGridView).CurrentRow.Cells[1].Value.ToString(), out izTemp[0]); //cena bez PDV-a
+                        float.TryParse((sender as DataGridView).CurrentRow.Cells[2].Value.ToString(), out izTemp[1]); //PDV
+                        float.TryParse((sender as DataGridView).CurrentRow.Cells[3].Value.ToString(), out izTemp[2]); //Kolicina
+                    } 
+                }
+                else
+                {
+                    dgvProfArtikli.CurrentCell = dgvProfArtikli.Rows[errorCellIndex[0]].Cells[errorCellIndex[1]];
                 }
             }
             catch (Exception ex)
@@ -391,10 +404,19 @@ namespace uclib.Racuni
                     //        else
                     //}
 
-                    float.TryParse(dgvProfArtikli.CurrentRow.Cells[e.ColumnIndex].Value.ToString(), out IzmenaTemp);
-                    if (IzmenaTemp != 0 || IzmenaTemp != izTemp[e.ColumnIndex - 1])
+                    if (dgvProfArtikli.CurrentCell.Value != null)
                     {
-                        RacunCenaITotal(true);
+                        float.TryParse(dgvProfArtikli.CurrentRow.Cells[e.ColumnIndex].Value.ToString(), out IzmenaTemp);
+                        if (IzmenaTemp != 0 || IzmenaTemp != izTemp[e.ColumnIndex - 1])
+                        {
+                            RacunCenaITotal(true);
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Ova kolona mora imati vrednost!", "Greška", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        errorCellIndex[0] = dgvProfArtikli.CurrentCell.RowIndex;
+                        errorCellIndex[1] = dgvProfArtikli.CurrentCell.ColumnIndex;                        
                     }
                     //else
                     //{

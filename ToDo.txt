@@ -84,6 +84,7 @@ kada se trazi u kodu - npr. "RG1", "TD3.1.2", "G2"
 |R|11.  - uclib.ucPoslovni.dStampa_Click - problem u komandi reportView1.LocalReport.SetParameters - iz nekog razloga ne postavlja parametre
 |R|12.  - uclib.ucProfakture - kada se cuva nalog ne moze da konvertuje rednibroj u Byte[], a ne bi ni trebalo
 |R|13.  - uclib.ucProfakture - kada se klikne na celiju pokazuje error Cell out of range 
+14.   - uclib.ucProfakture.Cuvanje - kada se cuva xdco se ne upisuje u kolonu 9 (Roba) - pogledaj error
 ---------------------------------------------------------------------------------------
 ***Release Greske***
 ---------------------------------------------------------------------------------------
@@ -262,3 +263,4 @@ kada se trazi u kodu - npr. "RG1", "TD3.1.2", "G2"
 07.07.21 - TD 2.6 - - -ucProfakture - popravljene neke logicke greske kod izmene artikala direkto iz dgvProfArtikli - potrebno jos raditi na tome
 
 08.07.21 - G 13 - - - -ucProfakture - greska resena tako sto kada kolona ostane prazna, upisuje se prethodna vrednost i prema tome se racunica ne menja
+		 - TD 2.6 - - -ucProfakture - u kod za cuvanje dodato upisivanje kolone "Roba" - postoji greska pri cuvanju

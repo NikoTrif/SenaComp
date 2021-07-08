@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using iflib;
+using System.Xml;
 
 namespace uclib.Racuni
 {
@@ -14,16 +15,10 @@ namespace uclib.Racuni
     {
         bool noviRed = false;
         float[] izTemp = { 0, 0, 0 };
-
-        /* var za proveru izmene direktno iz dgvProfArtikli
-        0 - cena(bez PDV-a)
-        1 - PDV
-        2- kolicina*/
-        //int[] errorCellIndex = { -1, -1 };
-        /*
-        0 - Row
-        1 - Column
-        */
+            /* var za proveru izmene direktno iz dgvProfArtikli
+            0 - cena(bez PDV-a)
+            1 - PDV
+            2- kolicina*/
         clFunkcijeRazno fnr = new clFunkcijeRazno();
 
         public ucProfakture()
@@ -414,6 +409,25 @@ namespace uclib.Racuni
                 {
                     profaktureDataGridView.CurrentRow.Cells[13].Value = datumIsplateDateTimePicker.Value;
                 }
+
+                //cuvanje liste artikala iz dgvProfArtikli u XML
+                XmlDocument xdoc = new XmlDocument();
+                xdoc.LoadXml("<artikli></artikli>");
+                foreach(DataGridViewRow r in dgvProfArtikli.Rows)
+                {
+                    if (r.Cells[0].Value != null)
+                    {
+                        XmlElement xe = xdoc.CreateElement(r.Index.ToString());
+                        xdoc.ChildNodes[0].AppendChild(xe);
+                        foreach (DataGridViewCell c in r.Cells)
+                        {
+                            xe = xdoc.CreateElement(dgvProfArtikli.Columns[c.ColumnIndex].Name);
+                            xe.InnerText = c.Value.ToString();
+                            xdoc.ChildNodes[0].ChildNodes[r.Index].AppendChild(xe);
+                        } 
+                    }
+                }
+                profaktureDataGridView.CurrentRow.Cells[9/*roba*/].Value = xdoc.OuterXml.ToString();
             }
             catch (Exception ex)
             {
@@ -422,9 +436,12 @@ namespace uclib.Racuni
 
             try
             {
+                // G 14
                 Validate();
                 profaktureBindingSource.EndEdit();
                 profaktureTableAdapter.Update(dbSenaCompDataSet.Profakture);
+
+                Console.WriteLine(profaktureDataGridView.CurrentRow.Cells[9].Value.ToString());
             }
             catch (Exception ex)
             {

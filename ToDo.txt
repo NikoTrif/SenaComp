@@ -83,7 +83,7 @@ kada se trazi u kodu - npr. "RG1", "TD3.1.2", "G2"
 10.  - uclib.ucPrivatni.izvestajRichTextBox_KeyPress - prebaci u novi red, novi red se ne brise osim na backspace, ne bi trebalo ni da se upisuje
 |R|11.  - uclib.ucPoslovni.dStampa_Click - problem u komandi reportView1.LocalReport.SetParameters - iz nekog razloga ne postavlja parametre
 |R|12.  - uclib.ucProfakture - kada se cuva nalog ne moze da konvertuje rednibroj u Byte[], a ne bi ni trebalo
-13.  - uclib.ucProfakture - kada se klikne na celiju pokazuje error Cell out of range 
+|R|13.  - uclib.ucProfakture - kada se klikne na celiju pokazuje error Cell out of range 
 ---------------------------------------------------------------------------------------
 ***Release Greske***
 ---------------------------------------------------------------------------------------
@@ -260,3 +260,5 @@ kada se trazi u kodu - npr. "RG1", "TD3.1.2", "G2"
 		 - TD 2.6 - - -ucProfakture - popravljene neke logicke greske kod izmene artikala direkto iz dgvProfArtikli - potrebno jos raditi na tome
 
 07.07.21 - TD 2.6 - - -ucProfakture - popravljene neke logicke greske kod izmene artikala direkto iz dgvProfArtikli - potrebno jos raditi na tome
+
+08.07.21 - G 13 - - - -ucProfakture - greska resena tako sto kada kolona ostane prazna, upisuje se prethodna vrednost i prema tome se racunica ne menja

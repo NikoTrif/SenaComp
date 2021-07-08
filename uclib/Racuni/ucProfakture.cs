@@ -19,10 +19,10 @@ namespace uclib.Racuni
         0 - cena(bez PDV-a)
         1 - PDV
         2- kolicina*/
-        int[] errorCellIndex = { -1, -1 };
+        //int[] errorCellIndex = { -1, -1 };
         /*
         0 - Row
-        1 - Cell
+        1 - Column
         */
         clFunkcijeRazno fnr = new clFunkcijeRazno();
 
@@ -344,19 +344,12 @@ namespace uclib.Racuni
         {
             try
             {
-                if (errorCellIndex[1] > -1) // G 13
+                if ((sender as DataGridView).CurrentRow.Cells[1].Value != null && (sender as DataGridView).CurrentRow.Cells[2].Value != null
+                            && (sender as DataGridView).CurrentRow.Cells[3].Value != null)
                 {
-                    if ((sender as DataGridView).CurrentRow.Cells[1].Value != null && (sender as DataGridView).CurrentRow.Cells[2].Value != null
-                                && (sender as DataGridView).CurrentRow.Cells[3].Value != null)
-                    {
-                        float.TryParse((sender as DataGridView).CurrentRow.Cells[1].Value.ToString(), out izTemp[0]); //cena bez PDV-a
-                        float.TryParse((sender as DataGridView).CurrentRow.Cells[2].Value.ToString(), out izTemp[1]); //PDV
-                        float.TryParse((sender as DataGridView).CurrentRow.Cells[3].Value.ToString(), out izTemp[2]); //Kolicina
-                    } 
-                }
-                else
-                {
-                    dgvProfArtikli.CurrentCell = dgvProfArtikli.Rows[errorCellIndex[0]].Cells[errorCellIndex[1]];
+                    float.TryParse((sender as DataGridView).CurrentRow.Cells[1].Value.ToString(), out izTemp[0]); //cena bez PDV-a
+                    float.TryParse((sender as DataGridView).CurrentRow.Cells[2].Value.ToString(), out izTemp[1]); //PDV
+                    float.TryParse((sender as DataGridView).CurrentRow.Cells[3].Value.ToString(), out izTemp[2]); //Kolicina
                 }
             }
             catch (Exception ex)
@@ -374,36 +367,9 @@ namespace uclib.Racuni
             if (e.ColumnIndex != 0 && e.ColumnIndex != 4 && e.ColumnIndex != 5)
             {
                 float IzmenaTemp = 0;
-                /*if (e.ColumnIndex == 1)
-                {
-                    float cbp = 0; // cena bez PDV-a u koloni 1
-                    float.TryParse(dgvProfArtikli.CurrentRow.Cells[1].Value.ToString(), out cbp);
-                    if (cbp==cbpdv)
-                    {
-                        RacunCenaITotal(false);  
-                    }
-                    else
-                    {
-                        RacunCenaITotal(true);
-                    }
-                }
-                else
-                {
-                    RacunCenaITotal(false);
-                }*/
+                
                 try
                 {
-                    //switch (e.ColumnIndex)
-                    //{
-                    //    case 1: //Cena bez PDV-a
-                    //        float.TryParse(dgvProfArtikli.CurrentRow.Cells[1].Value.ToString(), out IzmenaTemp);
-                    //        if (IzmenaTemp != izTemp[1])
-                    //        {
-                    //            RacunCenaITotal(true, 1);
-                    //        }
-                    //        else
-                    //}
-
                     if (dgvProfArtikli.CurrentCell.Value != null)
                     {
                         float.TryParse(dgvProfArtikli.CurrentRow.Cells[e.ColumnIndex].Value.ToString(), out IzmenaTemp);
@@ -415,13 +381,8 @@ namespace uclib.Racuni
                     else
                     {
                         MessageBox.Show("Ova kolona mora imati vrednost!", "Greška", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        errorCellIndex[0] = dgvProfArtikli.CurrentCell.RowIndex;
-                        errorCellIndex[1] = dgvProfArtikli.CurrentCell.ColumnIndex;                        
+                        dgvProfArtikli.CurrentCell.Value = izTemp[e.ColumnIndex - 1]; //G 13                      
                     }
-                    //else
-                    //{
-                    //    RacunCenaITotal(false);
-                    //}
                 }
                 catch (Exception ex)
                 {

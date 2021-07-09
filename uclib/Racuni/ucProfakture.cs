@@ -428,6 +428,9 @@ namespace uclib.Racuni
                     }
                 }
                 profaktureDataGridView.CurrentRow.Cells[9/*roba*/].Value = xdoc.OuterXml.ToString();
+                //MessageBox.Show((profaktureDataGridView.CurrentRow.Cells[9].Value as XmlDocument).OuterXml.ToString());
+                //XmlDocument x = new XmlDocument();
+
             }
             catch (Exception ex)
             {

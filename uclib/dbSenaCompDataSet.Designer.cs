@@ -13666,7 +13666,7 @@ SELECT redniBroj, Datum, Valuta, Status, datumIsplate, IDKlijenta, Klijent, PIB,
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@matBroj", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "matBroj", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Adresa", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Adresa", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Grad", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Grad", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Roba", global::System.Data.SqlDbType.Xml, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Roba", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Roba", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Roba", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Ukupno", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Ukupno", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Klauzule", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Klauzule", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
@@ -13685,7 +13685,7 @@ SELECT redniBroj, Datum, Valuta, Status, datumIsplate, IDKlijenta, Klijent, PIB,
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@matBroj", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "matBroj", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Adresa", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Adresa", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Grad", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Grad", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Roba", global::System.Data.SqlDbType.Xml, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Roba", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Roba", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Roba", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Ukupno", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Ukupno", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Klauzule", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Klauzule", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_redniBroj", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "redniBroj", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -13899,7 +13899,7 @@ SELECT redniBroj, Datum, Valuta, Status, datumIsplate, IDKlijenta, Klijent, PIB,
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(int redniBroj, global::System.Nullable<global::System.DateTime> Datum, string Valuta, string Status, global::System.Nullable<global::System.DateTime> datumIsplate, global::System.Nullable<int> IDKlijenta, string Klijent, string PIB, string matBroj, string Adresa, string Grad, object Roba, global::System.Nullable<double> Ukupno, string Klauzule) {
+        public virtual int Insert(int redniBroj, global::System.Nullable<global::System.DateTime> Datum, string Valuta, string Status, global::System.Nullable<global::System.DateTime> datumIsplate, global::System.Nullable<int> IDKlijenta, string Klijent, string PIB, string matBroj, string Adresa, string Grad, string Roba, global::System.Nullable<double> Ukupno, string Klauzule) {
             this.Adapter.InsertCommand.Parameters[0].Value = ((int)(redniBroj));
             if ((Datum.HasValue == true)) {
                 this.Adapter.InsertCommand.Parameters[1].Value = ((System.DateTime)(Datum.Value));
@@ -13965,7 +13965,7 @@ SELECT redniBroj, Datum, Valuta, Status, datumIsplate, IDKlijenta, Klijent, PIB,
                 this.Adapter.InsertCommand.Parameters[11].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[11].Value = ((object)(Roba));
+                this.Adapter.InsertCommand.Parameters[11].Value = ((string)(Roba));
             }
             if ((Ukupno.HasValue == true)) {
                 this.Adapter.InsertCommand.Parameters[12].Value = ((double)(Ukupno.Value));
@@ -14011,7 +14011,7 @@ SELECT redniBroj, Datum, Valuta, Status, datumIsplate, IDKlijenta, Klijent, PIB,
                     string matBroj, 
                     string Adresa, 
                     string Grad, 
-                    object Roba, 
+                    string Roba, 
                     global::System.Nullable<double> Ukupno, 
                     string Klauzule, 
                     int Original_redniBroj, 
@@ -14091,7 +14091,7 @@ SELECT redniBroj, Datum, Valuta, Status, datumIsplate, IDKlijenta, Klijent, PIB,
                 this.Adapter.UpdateCommand.Parameters[11].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(Roba));
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((string)(Roba));
             }
             if ((Ukupno.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[12].Value = ((double)(Ukupno.Value));
@@ -14225,7 +14225,7 @@ SELECT redniBroj, Datum, Valuta, Status, datumIsplate, IDKlijenta, Klijent, PIB,
                     string matBroj, 
                     string Adresa, 
                     string Grad, 
-                    object Roba, 
+                    string Roba, 
                     global::System.Nullable<double> Ukupno, 
                     string Klauzule, 
                     int Original_redniBroj, 

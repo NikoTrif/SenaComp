@@ -50,13 +50,6 @@ namespace uclib.Racuni
             }
         }
 
-        private void profaktureBindingNavigatorSaveItem_Click(object sender, EventArgs e)
-        {
-            this.Validate();
-            this.profaktureBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.dbSenaCompDataSet);
-        }
-
         private void dNovi_Click(object sender, EventArgs e)
         {
             try
@@ -390,6 +383,35 @@ namespace uclib.Racuni
             }
         }
 
+        private void profaktureDataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int xnIndex = -1;
+            XmlDocument xdoc = new XmlDocument();
+
+            try
+            {
+                xdoc.LoadXml(profaktureDataGridView.CurrentRow.Cells[9].Value.ToString());
+
+                foreach (XmlNode xn in xdoc.ChildNodes[0])
+                {
+                    int.TryParse(xn.Attributes["row"].Value, out xnIndex);
+                    if (xnIndex != -1)
+                    {
+                        foreach (XmlNode xnn in xn)
+                        {
+                            dgvProfArtikli.Rows[xnIndex].Cells[xnn.Name].Value = xnn.InnerText; //ovde treba popraviti
+
+                        }
+                        xnIndex = -1;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                clFunkcijeRazno.NapisiLog(ex);
+            }
+        }
+
         private void ResetAutoIncrement()
         {
             dbSenaCompDataSet.Profakture.Clear();
@@ -417,7 +439,8 @@ namespace uclib.Racuni
                 {
                     if (r.Cells[0].Value != null)
                     {
-                        XmlElement xe = xdoc.CreateElement(r.Index.ToString());
+                        XmlElement xe = xdoc.CreateElement("roba");
+                        xe.SetAttribute("row", r.Index.ToString());
                         xdoc.ChildNodes[0].AppendChild(xe);
                         foreach (DataGridViewCell c in r.Cells)
                         {
@@ -428,9 +451,6 @@ namespace uclib.Racuni
                     }
                 }
                 profaktureDataGridView.CurrentRow.Cells[9/*roba*/].Value = xdoc.OuterXml.ToString();
-                //MessageBox.Show((profaktureDataGridView.CurrentRow.Cells[9].Value as XmlDocument).OuterXml.ToString());
-                //XmlDocument x = new XmlDocument();
-
             }
             catch (Exception ex)
             {

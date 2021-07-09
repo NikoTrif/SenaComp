@@ -91,6 +91,13 @@
             this.tbArtProfPret = new System.Windows.Forms.TextBox();
             this.dArtUkloni = new System.Windows.Forms.Button();
             this.dgvProfArtikli = new System.Windows.Forms.DataGridView();
+            this.Naziv = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cena = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PDV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Kolicina = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.jedinicaMere = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.UkupnaCena = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CenaPDV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label4 = new System.Windows.Forms.Label();
             this.lTotal = new System.Windows.Forms.Label();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
@@ -110,13 +117,6 @@
             this.profaktureTableAdapter = new uclib.dbSenaCompDataSetTableAdapters.ProfaktureTableAdapter();
             this.tableAdapterManager = new uclib.dbSenaCompDataSetTableAdapters.TableAdapterManager();
             this.artikliTableAdapter = new uclib.dbSenaCompDataSetTableAdapters.ArtikliTableAdapter();
-            this.Naziv = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Cena = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PDV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Kolicina = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.jedinicaMere = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.UkupnaCena = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CenaPDV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             redniBrojLabel = new System.Windows.Forms.Label();
             datumLabel = new System.Windows.Forms.Label();
             valutaLabel = new System.Windows.Forms.Label();
@@ -380,6 +380,7 @@
             this.profaktureDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.profaktureDataGridView.Size = new System.Drawing.Size(1407, 204);
             this.profaktureDataGridView.TabIndex = 3;
+            this.profaktureDataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.profaktureDataGridView_CellClick);
             this.profaktureDataGridView.SelectionChanged += new System.EventHandler(this.profaktureDataGridView_SelectionChanged);
             // 
             // dataGridViewTextBoxColumn1
@@ -882,6 +883,42 @@
             this.dgvProfArtikli.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProfArtikli_CellEnter);
             this.dgvProfArtikli.CellValidated += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProfArtikli_CellValidated);
             // 
+            // Naziv
+            // 
+            this.Naziv.HeaderText = "Naziv";
+            this.Naziv.Name = "Naziv";
+            // 
+            // Cena
+            // 
+            this.Cena.HeaderText = "Cena";
+            this.Cena.Name = "Cena";
+            // 
+            // PDV
+            // 
+            this.PDV.HeaderText = "PDV";
+            this.PDV.Name = "PDV";
+            // 
+            // Kolicina
+            // 
+            this.Kolicina.HeaderText = "Količina";
+            this.Kolicina.Name = "Kolicina";
+            // 
+            // jedinicaMere
+            // 
+            this.jedinicaMere.HeaderText = "Jedinica mere";
+            this.jedinicaMere.Name = "jedinicaMere";
+            // 
+            // UkupnaCena
+            // 
+            this.UkupnaCena.HeaderText = "Ukupna Cena";
+            this.UkupnaCena.Name = "UkupnaCena";
+            // 
+            // CenaPDV
+            // 
+            this.CenaPDV.HeaderText = "CenaPDV";
+            this.CenaPDV.Name = "CenaPDV";
+            this.CenaPDV.Visible = false;
+            // 
             // label4
             // 
             this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
@@ -1062,42 +1099,6 @@
             // artikliTableAdapter
             // 
             this.artikliTableAdapter.ClearBeforeFill = true;
-            // 
-            // Naziv
-            // 
-            this.Naziv.HeaderText = "Naziv";
-            this.Naziv.Name = "Naziv";
-            // 
-            // Cena
-            // 
-            this.Cena.HeaderText = "Cena";
-            this.Cena.Name = "Cena";
-            // 
-            // PDV
-            // 
-            this.PDV.HeaderText = "PDV";
-            this.PDV.Name = "PDV";
-            // 
-            // Kolicina
-            // 
-            this.Kolicina.HeaderText = "Količina";
-            this.Kolicina.Name = "Kolicina";
-            // 
-            // jedinicaMere
-            // 
-            this.jedinicaMere.HeaderText = "Jedinica mere";
-            this.jedinicaMere.Name = "jedinicaMere";
-            // 
-            // UkupnaCena
-            // 
-            this.UkupnaCena.HeaderText = "Ukupna Cena";
-            this.UkupnaCena.Name = "UkupnaCena";
-            // 
-            // CenaPDV
-            // 
-            this.CenaPDV.HeaderText = "CenaPDV";
-            this.CenaPDV.Name = "CenaPDV";
-            this.CenaPDV.Visible = false;
             // 
             // ucProfakture
             // 

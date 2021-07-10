@@ -192,7 +192,20 @@ namespace uclib.Racuni
 
         private void dArtUkloni_Click(object sender, EventArgs e)
         {
-
+            try
+            {
+                if (!dgvProfArtikli.CurrentRow.IsNewRow)
+                {
+                    foreach(DataGridViewRow r in dgvProfArtikli.SelectedRows)
+                    {
+                        dgvProfArtikli.Rows.RemoveAt(r.Index);
+                    } 
+                }
+            }
+            catch (Exception ex)
+            {
+                clFunkcijeRazno.NapisiLog(ex);
+            }
         }
 
         private void profaktureDataGridView_SelectionChanged(object sender, EventArgs e)
@@ -239,13 +252,14 @@ namespace uclib.Racuni
 
         private void tbArtKol_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && e.KeyChar != '.')
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && e.KeyChar != '.' && e.KeyChar != ',')
             {
                 e.Handled = true;
             }
 
             //dozvoljava samo jednu decimalnu tacku
-            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1) ||
+                (e.KeyChar == ',') && ((sender as TextBox).Text.IndexOf(',') > -1))
             {
                 e.Handled = true;
             }
@@ -358,18 +372,21 @@ namespace uclib.Racuni
                 
                 try
                 {
-                    if (dgvProfArtikli.CurrentCell.Value != null)
+                    if (!dgvProfArtikli.CurrentRow.IsNewRow)
                     {
-                        float.TryParse(dgvProfArtikli.CurrentRow.Cells[e.ColumnIndex].Value.ToString(), out IzmenaTemp);
-                        if (IzmenaTemp != 0 || IzmenaTemp != izTemp[e.ColumnIndex - 1])
+                        if (dgvProfArtikli.CurrentCell.Value != null)
                         {
-                            RacunCenaITotal(true);
+                            float.TryParse(dgvProfArtikli.CurrentRow.Cells[e.ColumnIndex].Value.ToString(), out IzmenaTemp);
+                            if (IzmenaTemp != 0 || IzmenaTemp != izTemp[e.ColumnIndex - 1])
+                            {
+                                RacunCenaITotal(true);
+                            }
                         }
-                    }
-                    else
-                    {
-                        MessageBox.Show("Ova kolona mora imati vrednost!", "Greška", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        dgvProfArtikli.CurrentCell.Value = izTemp[e.ColumnIndex - 1]; //G 13                      
+                        else
+                        {
+                            MessageBox.Show("Ova kolona mora imati vrednost!", "Greška", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            dgvProfArtikli.CurrentCell.Value = izTemp[e.ColumnIndex - 1]; //G 13                      
+                        } 
                     }
                 }
                 catch (Exception ex)
@@ -383,27 +400,45 @@ namespace uclib.Racuni
             }
         }
 
-        private void profaktureDataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void profaktureDataGridView_CellEnter(object sender, DataGridViewCellEventArgs e)
         {
             int xnIndex = -1;
             XmlDocument xdoc = new XmlDocument();
 
             try
             {
-                xdoc.LoadXml(profaktureDataGridView.CurrentRow.Cells[9].Value.ToString());
-
-                foreach (XmlNode xn in xdoc.ChildNodes[0])
+                if (!string.IsNullOrEmpty(profaktureDataGridView.CurrentRow.Cells[10/*ukupna cena*/].Value.ToString()))
                 {
-                    int.TryParse(xn.Attributes["row"].Value, out xnIndex);
-                    if (xnIndex != -1)
-                    {
-                        foreach (XmlNode xnn in xn)
-                        {
-                            dgvProfArtikli.Rows[xnIndex].Cells[xnn.Name].Value = xnn.InnerText; //ovde treba popraviti
+                    lTotal.Text = profaktureDataGridView.CurrentRow.Cells[10/*ukupna cena*/].Value.ToString() +
+                        " " + profaktureDataGridView.CurrentRow.Cells[8/*Valuta*/].Value.ToString();
+                }
+                else
+                {
+                    lTotal.Text = "";
+                }
 
+                if (!string.IsNullOrEmpty(profaktureDataGridView.CurrentRow.Cells[9].Value.ToString()))
+                {
+                    dgvProfArtikli.Rows.Clear();
+                    xdoc.LoadXml(profaktureDataGridView.CurrentRow.Cells[9].Value.ToString());
+
+                    foreach (XmlNode xn in xdoc.ChildNodes[0])
+                    {
+                        int.TryParse(xn.Attributes["row"].Value, out xnIndex);
+                        dgvProfArtikli.Rows.Add();
+                        if (xnIndex != -1)
+                        {
+                            foreach (XmlNode xnn in xn)
+                            {
+                                dgvProfArtikli.Rows[xnIndex].Cells[xnn.Name].Value = xnn.InnerText; //ovde treba popraviti
+                            }
+                            xnIndex = -1;
                         }
-                        xnIndex = -1;
                     }
+                }
+                else
+                {
+                    dgvProfArtikli.Rows.Clear();
                 }
             }
             catch (Exception ex)
@@ -425,11 +460,22 @@ namespace uclib.Racuni
         {
             try
             {
+                //cuvanje datuma
                 profaktureDataGridView.CurrentRow.Cells[12].Value = tableLayoutPanel2.Controls.OfType<RadioButton>().FirstOrDefault(r => r.Checked).Text;
                 profaktureDataGridView.CurrentRow.Cells[1].Value = datumDateTimePicker.Value;
                 if (rbPlaceno.Checked)
                 {
                     profaktureDataGridView.CurrentRow.Cells[13].Value = datumIsplateDateTimePicker.Value;
+                }
+
+                //cuvanje ukupne cene
+                float uCena = 0;
+                string[] uCenaText = lTotal.Text.Split(' ');
+                Console.WriteLine(uCenaText);
+                if (!string.IsNullOrEmpty(lTotal.Text))
+                {
+                    float.TryParse(uCenaText[0], out uCena);
+                    profaktureDataGridView.CurrentRow.Cells[10/*ukupna cena*/].Value = uCena;
                 }
 
                 //cuvanje liste artikala iz dgvProfArtikli u XML
@@ -451,20 +497,11 @@ namespace uclib.Racuni
                     }
                 }
                 profaktureDataGridView.CurrentRow.Cells[9/*roba*/].Value = xdoc.OuterXml.ToString();
-            }
-            catch (Exception ex)
-            {
-                clFunkcijeRazno.NapisiLog(ex);
-            }
 
-            try
-            {
                 // G 14
                 Validate();
                 profaktureBindingSource.EndEdit();
                 profaktureTableAdapter.Update(dbSenaCompDataSet.Profakture);
-
-                Console.WriteLine(profaktureDataGridView.CurrentRow.Cells[9].Value.ToString());
             }
             catch (Exception ex)
             {
@@ -476,11 +513,6 @@ namespace uclib.Racuni
         /// Racuna Cenu i upisuje label TOTAL
         /// </summary>
         /// <param name="direktnaIzmena">true - ako je napravljena izmena iz DataGridView-a; false - ako nije</param>
-        /// <param name="kolona">Kolona koja je izmenjena: 
-        /// 0 - default vrednost - ako je kolona koja je izmenjena nebitna za računicu
-        /// 1 - izmenjena cena bez PDV-a
-        /// 2 - izmenjena vrednost PDV-a
-        /// 3 - izmenjena količina</param>
         private void RacunCenaITotal(bool direktnaIzmena)
         {
             string naziv, jedinica;
@@ -541,6 +573,38 @@ namespace uclib.Racuni
                 izTemp[0] = 0;
                 izTemp[1] = 0;
                 izTemp[2] = 0;
+            }
+        }
+
+        private void tbArtProfPret_KeyDown(object sender, KeyEventArgs e)
+        {
+            try
+            {
+                if(e.KeyCode == Keys.Enter)
+                {
+                    foreach(DataGridViewRow r in dgvProfArtikli.Rows)
+                    {
+                        if (!r.IsNewRow)
+                        {
+                            foreach (DataGridViewCell c in dgvProfArtikli.Rows[r.Index].Cells)
+                            {
+                                if (c.Value.ToString().Contains(tbArtProfPret.Text))
+                                {
+                                    c.Selected = true;
+                                    break;
+                                }
+                                else
+                                {
+                                    c.Selected = false;
+                                }
+                            } 
+                        }
+                    }
+                }
+            }
+            catch(Exception ex)
+            {
+                clFunkcijeRazno.NapisiLog(ex);
             }
         }
     }

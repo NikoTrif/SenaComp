@@ -221,6 +221,9 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Racuni\ucFakture.resx">
+      <DependentUpon>ucFakture.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Racuni\ucProfakture.resx">
       <DependentUpon>ucProfakture.cs</DependentUpon>
     </EmbeddedResource>

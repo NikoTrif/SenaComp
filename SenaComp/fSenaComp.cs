@@ -100,7 +100,15 @@ namespace SenaComp
 
         private void dFakt_Click(object sender, EventArgs e)
         {
+            uclib.Racuni.ucFakture fakt = new uclib.Racuni.ucFakture();
 
+            tMenu.Start();
+
+            pMain.Controls.Clear();
+            pMain.Controls.Add(fakt);
+            fakt.Dock = DockStyle.Fill;
+            fakt.SendToBack();
+            pbLogo.BringToFront();
         }
 
         private void dOtp_Click(object sender, EventArgs e)

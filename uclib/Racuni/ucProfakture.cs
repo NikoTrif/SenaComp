@@ -447,6 +447,25 @@ namespace uclib.Racuni
             }
         }
 
+        private void tbPretraga_KeyDown(object sender, KeyEventArgs e)
+        {
+            try
+            {
+                switch (cbFilter.SelectedIndex)
+                {
+                    case 3:
+                        DateTime dt;
+                        //DateTime.TryParse(tbPretraga) //ovde sam stao
+                        //profaktureTableAdapter.qPretDatum()
+                        break;
+                }
+            }
+            catch(Exception ex)
+            {
+                clFunkcijeRazno.NapisiLog(ex);
+            }
+        }
+
         private void ResetAutoIncrement()
         {
             dbSenaCompDataSet.Profakture.Clear();

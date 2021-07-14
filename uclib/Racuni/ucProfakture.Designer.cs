@@ -46,12 +46,22 @@
             this.dStampaj = new System.Windows.Forms.Button();
             this.dObrisi = new System.Windows.Forms.Button();
             this.profaktureDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PIB = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.matBroj = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Adresa = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Grad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.datumIsplate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.profaktureBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dbSenaCompDataSet = new uclib.dbSenaCompDataSet();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.datumIsplateDateTimePicker = new System.Windows.Forms.DateTimePicker();
@@ -92,10 +102,6 @@
             this.lTotal = new System.Windows.Forms.Label();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.artikliDataGridView = new System.Windows.Forms.DataGridView();
-            this.tbArtPret = new System.Windows.Forms.TextBox();
-            this.dArtDodaj = new System.Windows.Forms.Button();
-            this.tbArtKol = new System.Windows.Forms.TextBox();
-            this.bsArtProf = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -104,20 +110,12 @@
             this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.artikliBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dbSenaCompDataSet = new uclib.dbSenaCompDataSet();
-            this.profaktureBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tbArtPret = new System.Windows.Forms.TextBox();
+            this.dArtDodaj = new System.Windows.Forms.Button();
+            this.tbArtKol = new System.Windows.Forms.TextBox();
             this.profaktureTableAdapter = new uclib.dbSenaCompDataSetTableAdapters.ProfaktureTableAdapter();
             this.tableAdapterManager = new uclib.dbSenaCompDataSetTableAdapters.TableAdapterManager();
             this.artikliTableAdapter = new uclib.dbSenaCompDataSetTableAdapters.ArtikliTableAdapter();
-            this.firmeTableAdapter = new uclib.dbSenaCompDataSetTableAdapters.FirmeTableAdapter();
             redniBrojLabel = new System.Windows.Forms.Label();
             datumLabel = new System.Windows.Forms.Label();
             valutaLabel = new System.Windows.Forms.Label();
@@ -130,6 +128,8 @@
             gradLabel = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.profaktureDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.profaktureBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dbSenaCompDataSet)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -140,10 +140,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvProfArtikli)).BeginInit();
             this.tableLayoutPanel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.artikliDataGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bsArtProf)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.artikliBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dbSenaCompDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.profaktureBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // redniBrojLabel
@@ -375,6 +372,37 @@
             this.profaktureDataGridView.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.profaktureDataGridView_CellEnter);
             this.profaktureDataGridView.SelectionChanged += new System.EventHandler(this.profaktureDataGridView_SelectionChanged);
             // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "redniBroj";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Redni broj";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Width = 102;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "Datum";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Datum";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            this.dataGridViewTextBoxColumn7.DataPropertyName = "IDKlijenta";
+            this.dataGridViewTextBoxColumn7.HeaderText = "IDKlijenta";
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.ReadOnly = true;
+            this.dataGridViewTextBoxColumn7.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn8
+            // 
+            this.dataGridViewTextBoxColumn8.DataPropertyName = "Klijent";
+            this.dataGridViewTextBoxColumn8.HeaderText = "Klijent";
+            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            this.dataGridViewTextBoxColumn8.ReadOnly = true;
+            // 
             // PIB
             // 
             this.PIB.DataPropertyName = "PIB";
@@ -407,6 +435,37 @@
             this.Grad.ReadOnly = true;
             this.Grad.Visible = false;
             // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "Valuta";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Valuta";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            this.dataGridViewTextBoxColumn3.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "Roba";
+            this.dataGridViewTextBoxColumn4.HeaderText = "Roba";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            this.dataGridViewTextBoxColumn4.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "Ukupno";
+            this.dataGridViewTextBoxColumn5.HeaderText = "Ukupna cena";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.DataPropertyName = "Klauzule";
+            this.dataGridViewTextBoxColumn6.HeaderText = "Klauzule";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.ReadOnly = true;
+            this.dataGridViewTextBoxColumn6.Visible = false;
+            // 
             // Status
             // 
             this.Status.DataPropertyName = "Status";
@@ -421,6 +480,16 @@
             this.datumIsplate.Name = "datumIsplate";
             this.datumIsplate.ReadOnly = true;
             this.datumIsplate.Visible = false;
+            // 
+            // profaktureBindingSource
+            // 
+            this.profaktureBindingSource.DataMember = "Profakture";
+            this.profaktureBindingSource.DataSource = this.dbSenaCompDataSet;
+            // 
+            // dbSenaCompDataSet
+            // 
+            this.dbSenaCompDataSet.DataSetName = "dbSenaCompDataSet";
+            this.dbSenaCompDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // groupBox1
             // 
@@ -956,43 +1025,6 @@
             this.artikliDataGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.artikliDataGridView_CellDoubleClick);
             this.artikliDataGridView.KeyDown += new System.Windows.Forms.KeyEventHandler(this.artikliDataGridView_KeyDown);
             // 
-            // tbArtPret
-            // 
-            this.tbArtPret.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbArtPret.Location = new System.Drawing.Point(3, 6);
-            this.tbArtPret.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tbArtPret.Name = "tbArtPret";
-            this.tbArtPret.Size = new System.Drawing.Size(314, 22);
-            this.tbArtPret.TabIndex = 0;
-            this.tbArtPret.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbArtPret_KeyDown);
-            this.tbArtPret.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbArtPret_KeyPress);
-            // 
-            // dArtDodaj
-            // 
-            this.dArtDodaj.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dArtDodaj.Location = new System.Drawing.Point(418, 2);
-            this.dArtDodaj.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dArtDodaj.Name = "dArtDodaj";
-            this.dArtDodaj.Size = new System.Drawing.Size(69, 30);
-            this.dArtDodaj.TabIndex = 1;
-            this.dArtDodaj.Text = "Dodaj";
-            this.dArtDodaj.UseVisualStyleBackColor = true;
-            this.dArtDodaj.Click += new System.EventHandler(this.dArtDodaj_Click);
-            // 
-            // tbArtKol
-            // 
-            this.tbArtKol.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbArtKol.Location = new System.Drawing.Point(323, 6);
-            this.tbArtKol.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tbArtKol.Name = "tbArtKol";
-            this.tbArtKol.Size = new System.Drawing.Size(89, 22);
-            this.tbArtKol.TabIndex = 3;
-            this.tbArtKol.Text = "1";
-            this.tbArtKol.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbArtKol_KeyDown);
-            this.tbArtKol.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbArtKol_KeyPress);
-            // 
             // dataGridViewTextBoxColumn9
             // 
             this.dataGridViewTextBoxColumn9.DataPropertyName = "Sifra";
@@ -1054,77 +1086,42 @@
             this.artikliBindingSource.DataMember = "Artikli";
             this.artikliBindingSource.DataSource = this.dbSenaCompDataSet;
             // 
-            // dbSenaCompDataSet
+            // tbArtPret
             // 
-            this.dbSenaCompDataSet.DataSetName = "dbSenaCompDataSet";
-            this.dbSenaCompDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.tbArtPret.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbArtPret.Location = new System.Drawing.Point(3, 6);
+            this.tbArtPret.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tbArtPret.Name = "tbArtPret";
+            this.tbArtPret.Size = new System.Drawing.Size(314, 22);
+            this.tbArtPret.TabIndex = 0;
+            this.tbArtPret.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbArtPret_KeyDown);
+            this.tbArtPret.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbArtPret_KeyPress);
             // 
-            // profaktureBindingSource
+            // dArtDodaj
             // 
-            this.profaktureBindingSource.DataMember = "Profakture";
-            this.profaktureBindingSource.DataSource = this.dbSenaCompDataSet;
+            this.dArtDodaj.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dArtDodaj.Location = new System.Drawing.Point(418, 2);
+            this.dArtDodaj.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dArtDodaj.Name = "dArtDodaj";
+            this.dArtDodaj.Size = new System.Drawing.Size(69, 30);
+            this.dArtDodaj.TabIndex = 1;
+            this.dArtDodaj.Text = "Dodaj";
+            this.dArtDodaj.UseVisualStyleBackColor = true;
+            this.dArtDodaj.Click += new System.EventHandler(this.dArtDodaj_Click);
             // 
-            // dataGridViewTextBoxColumn1
+            // tbArtKol
             // 
-            this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "redniBroj";
-            this.dataGridViewTextBoxColumn1.HeaderText = "Redni broj";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            this.dataGridViewTextBoxColumn1.Width = 102;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "Datum";
-            this.dataGridViewTextBoxColumn2.HeaderText = "Datum";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn7
-            // 
-            this.dataGridViewTextBoxColumn7.DataPropertyName = "IDKlijenta";
-            this.dataGridViewTextBoxColumn7.HeaderText = "IDKlijenta";
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            this.dataGridViewTextBoxColumn7.ReadOnly = true;
-            this.dataGridViewTextBoxColumn7.Visible = false;
-            // 
-            // dataGridViewTextBoxColumn8
-            // 
-            this.dataGridViewTextBoxColumn8.DataPropertyName = "Klijent";
-            this.dataGridViewTextBoxColumn8.HeaderText = "Klijent";
-            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
-            this.dataGridViewTextBoxColumn8.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "Valuta";
-            this.dataGridViewTextBoxColumn3.HeaderText = "Valuta";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            this.dataGridViewTextBoxColumn3.Visible = false;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "Roba";
-            this.dataGridViewTextBoxColumn4.HeaderText = "Roba";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.ReadOnly = true;
-            this.dataGridViewTextBoxColumn4.Visible = false;
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "Ukupno";
-            this.dataGridViewTextBoxColumn5.HeaderText = "Ukupna cena";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn6
-            // 
-            this.dataGridViewTextBoxColumn6.DataPropertyName = "Klauzule";
-            this.dataGridViewTextBoxColumn6.HeaderText = "Klauzule";
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            this.dataGridViewTextBoxColumn6.ReadOnly = true;
-            this.dataGridViewTextBoxColumn6.Visible = false;
+            this.tbArtKol.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbArtKol.Location = new System.Drawing.Point(323, 6);
+            this.tbArtKol.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tbArtKol.Name = "tbArtKol";
+            this.tbArtKol.Size = new System.Drawing.Size(89, 22);
+            this.tbArtKol.TabIndex = 3;
+            this.tbArtKol.Text = "1";
+            this.tbArtKol.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbArtKol_KeyDown);
+            this.tbArtKol.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbArtKol_KeyPress);
             // 
             // profaktureTableAdapter
             // 
@@ -1147,10 +1144,6 @@
             // 
             this.artikliTableAdapter.ClearBeforeFill = true;
             // 
-            // firmeTableAdapter
-            // 
-            this.firmeTableAdapter.ClearBeforeFill = true;
-            // 
             // ucProfakture
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1170,6 +1163,8 @@
             this.Load += new System.EventHandler(this.ucProfakture_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.profaktureDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.profaktureBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dbSenaCompDataSet)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
@@ -1184,10 +1179,7 @@
             this.tableLayoutPanel5.ResumeLayout(false);
             this.tableLayoutPanel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.artikliDataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bsArtProf)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.artikliBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dbSenaCompDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.profaktureBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1257,9 +1249,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.BindingSource bsArtProf;
         private System.Windows.Forms.TextBox tbArtKol;
-        private dbSenaCompDataSetTableAdapters.FirmeTableAdapter firmeTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn14;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;

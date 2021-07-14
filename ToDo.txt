@@ -281,3 +281,4 @@ kada se trazi u kodu - npr. "RG1", "TD3.1.2", "G2"
 		 - TD 2.6 - - -ucProfakture - zapoceto pisanje koda za pretragu
 
 14.07.21 - TD 2.6 - - -ucProfakture - zavrsen kod za pretragu
+		 - TD 2.7 - - -ucFakture - nastavljeno uredjivanje interfejsa

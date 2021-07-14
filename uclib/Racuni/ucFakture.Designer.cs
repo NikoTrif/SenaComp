@@ -115,6 +115,15 @@
             this.label3 = new System.Windows.Forms.Label();
             this.tbPretraga = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.artikliTableAdapter = new uclib.dbSenaCompDataSetTableAdapters.ArtikliTableAdapter();
+            this.artikliBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.sifraDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nazivDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.jedinicaMereDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.uslugaDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.pDVDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cenaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.prodajnaCenaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             gradLabel = new System.Windows.Forms.Label();
             adresaLabel = new System.Windows.Forms.Label();
             matBrojLabel = new System.Windows.Forms.Label();
@@ -141,6 +150,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.faktureBindingNavigator)).BeginInit();
             this.faktureBindingNavigator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.faktureDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.artikliBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // gradLabel
@@ -424,9 +434,19 @@
             // 
             this.artikliDataGridView.AllowUserToAddRows = false;
             this.artikliDataGridView.AllowUserToDeleteRows = false;
+            this.artikliDataGridView.AutoGenerateColumns = false;
             this.artikliDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.artikliDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.artikliDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.sifraDataGridViewTextBoxColumn,
+            this.nazivDataGridViewTextBoxColumn,
+            this.jedinicaMereDataGridViewTextBoxColumn,
+            this.uslugaDataGridViewCheckBoxColumn,
+            this.pDVDataGridViewTextBoxColumn,
+            this.cenaDataGridViewTextBoxColumn,
+            this.prodajnaCenaDataGridViewTextBoxColumn});
             this.tableLayoutPanel5.SetColumnSpan(this.artikliDataGridView, 4);
+            this.artikliDataGridView.DataSource = this.artikliBindingSource;
             this.artikliDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.artikliDataGridView.Location = new System.Drawing.Point(3, 36);
             this.artikliDataGridView.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -1097,6 +1117,64 @@
             this.label2.TabIndex = 30;
             this.label2.Text = "Pretraga:";
             // 
+            // artikliTableAdapter
+            // 
+            this.artikliTableAdapter.ClearBeforeFill = true;
+            // 
+            // artikliBindingSource
+            // 
+            this.artikliBindingSource.DataMember = "Artikli";
+            this.artikliBindingSource.DataSource = this.dbSenaCompDataSet;
+            // 
+            // sifraDataGridViewTextBoxColumn
+            // 
+            this.sifraDataGridViewTextBoxColumn.DataPropertyName = "Sifra";
+            this.sifraDataGridViewTextBoxColumn.HeaderText = "Šifra";
+            this.sifraDataGridViewTextBoxColumn.Name = "sifraDataGridViewTextBoxColumn";
+            this.sifraDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // nazivDataGridViewTextBoxColumn
+            // 
+            this.nazivDataGridViewTextBoxColumn.DataPropertyName = "Naziv";
+            this.nazivDataGridViewTextBoxColumn.HeaderText = "Naziv";
+            this.nazivDataGridViewTextBoxColumn.Name = "nazivDataGridViewTextBoxColumn";
+            this.nazivDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // jedinicaMereDataGridViewTextBoxColumn
+            // 
+            this.jedinicaMereDataGridViewTextBoxColumn.DataPropertyName = "jedinicaMere";
+            this.jedinicaMereDataGridViewTextBoxColumn.HeaderText = "Jedinica mere";
+            this.jedinicaMereDataGridViewTextBoxColumn.Name = "jedinicaMereDataGridViewTextBoxColumn";
+            this.jedinicaMereDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // uslugaDataGridViewCheckBoxColumn
+            // 
+            this.uslugaDataGridViewCheckBoxColumn.DataPropertyName = "Usluga";
+            this.uslugaDataGridViewCheckBoxColumn.HeaderText = "Usluga";
+            this.uslugaDataGridViewCheckBoxColumn.Name = "uslugaDataGridViewCheckBoxColumn";
+            this.uslugaDataGridViewCheckBoxColumn.ReadOnly = true;
+            // 
+            // pDVDataGridViewTextBoxColumn
+            // 
+            this.pDVDataGridViewTextBoxColumn.DataPropertyName = "PDV";
+            this.pDVDataGridViewTextBoxColumn.HeaderText = "PDV";
+            this.pDVDataGridViewTextBoxColumn.Name = "pDVDataGridViewTextBoxColumn";
+            this.pDVDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // cenaDataGridViewTextBoxColumn
+            // 
+            this.cenaDataGridViewTextBoxColumn.DataPropertyName = "Cena";
+            this.cenaDataGridViewTextBoxColumn.HeaderText = "Cena";
+            this.cenaDataGridViewTextBoxColumn.Name = "cenaDataGridViewTextBoxColumn";
+            this.cenaDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // prodajnaCenaDataGridViewTextBoxColumn
+            // 
+            this.prodajnaCenaDataGridViewTextBoxColumn.DataPropertyName = "prodajnaCena";
+            this.prodajnaCenaDataGridViewTextBoxColumn.HeaderText = "Cena sa PDV-om";
+            this.prodajnaCenaDataGridViewTextBoxColumn.Name = "prodajnaCenaDataGridViewTextBoxColumn";
+            this.prodajnaCenaDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
             // ucFakture
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1134,6 +1212,7 @@
             this.faktureBindingNavigator.ResumeLayout(false);
             this.faktureBindingNavigator.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.faktureDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.artikliBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1216,5 +1295,14 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox tbPretraga;
         private System.Windows.Forms.Label label2;
+        private dbSenaCompDataSetTableAdapters.ArtikliTableAdapter artikliTableAdapter;
+        private System.Windows.Forms.BindingSource artikliBindingSource;
+        private System.Windows.Forms.DataGridViewTextBoxColumn prodajnaCenaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cenaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn pDVDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn uslugaDataGridViewCheckBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn jedinicaMereDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nazivDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sifraDataGridViewTextBoxColumn;
     }
 }

@@ -400,6 +400,38 @@ namespace uclib.Racuni
             }
         }
 
+        private void tbArtProfPret_KeyDown(object sender, KeyEventArgs e)
+        {
+            try
+            {
+                if (e.KeyCode == Keys.Enter)
+                {
+                    foreach (DataGridViewRow r in dgvProfArtikli.Rows)
+                    {
+                        if (!r.IsNewRow)
+                        {
+                            foreach (DataGridViewCell c in dgvProfArtikli.Rows[r.Index].Cells)
+                            {
+                                if (c.Value.ToString().Contains(tbArtProfPret.Text))
+                                {
+                                    c.Selected = true;
+                                    break;
+                                }
+                                else
+                                {
+                                    c.Selected = false;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                clFunkcijeRazno.NapisiLog(ex);
+            }
+        }
+
         private void profaktureDataGridView_CellEnter(object sender, DataGridViewCellEventArgs e)
         {
             int xnIndex = -1;
@@ -451,13 +483,46 @@ namespace uclib.Racuni
         {
             try
             {
-                switch (cbFilter.SelectedIndex)
+                if (e.KeyCode == Keys.Enter)
                 {
-                    case 3:
-                        DateTime dt;
-                        //DateTime.TryParse(tbPretraga) //ovde sam stao
-                        //profaktureTableAdapter.qPretDatum()
-                        break;
+                    if (!string.IsNullOrEmpty(tbPretraga.Text))
+                    {
+                        switch (cbFilter.SelectedIndex)
+                        {
+                            case 0:
+                                profaktureTableAdapter.qPretKlijent(dbSenaCompDataSet.Profakture, tbPretraga.Text, tbPretraga.Text,
+                                    tbPretraga.Text, tbPretraga.Text, tbPretraga.Text);
+                                break;
+                            case 1:
+                                int rb = 0;
+                                int.TryParse(tbPretraga.Text, out rb);
+                                if (rb != 0)
+                                {
+                                    profaktureTableAdapter.qPretRedniBroj(dbSenaCompDataSet.Profakture, rb);
+                                }
+                                break;
+                            case 2:
+                                int idk = 0;
+                                int.TryParse(tbPretraga.Text, out idk);
+                                if (idk != 0)
+                                {
+                                    profaktureTableAdapter.qPretKlijentID(dbSenaCompDataSet.Profakture, idk);
+                                }
+                                break;
+                            case 3:
+                                profaktureTableAdapter.qPretDatum(dbSenaCompDataSet.Profakture, tbPretraga.Text);
+                                break; 
+                        }
+                    }
+                    else
+                    {
+                        profaktureTableAdapter.Fill(dbSenaCompDataSet.Profakture);
+                        try
+                        {
+                            profaktureDataGridView.CurrentCell = profaktureDataGridView.Rows[profaktureDataGridView.RowCount - 1].Cells[0];
+                        }
+                        catch { }
+                    }
                 }
             }
             catch(Exception ex)
@@ -592,38 +657,6 @@ namespace uclib.Racuni
                 izTemp[0] = 0;
                 izTemp[1] = 0;
                 izTemp[2] = 0;
-            }
-        }
-
-        private void tbArtProfPret_KeyDown(object sender, KeyEventArgs e)
-        {
-            try
-            {
-                if(e.KeyCode == Keys.Enter)
-                {
-                    foreach(DataGridViewRow r in dgvProfArtikli.Rows)
-                    {
-                        if (!r.IsNewRow)
-                        {
-                            foreach (DataGridViewCell c in dgvProfArtikli.Rows[r.Index].Cells)
-                            {
-                                if (c.Value.ToString().Contains(tbArtProfPret.Text))
-                                {
-                                    c.Selected = true;
-                                    break;
-                                }
-                                else
-                                {
-                                    c.Selected = false;
-                                }
-                            } 
-                        }
-                    }
-                }
-            }
-            catch(Exception ex)
-            {
-                clFunkcijeRazno.NapisiLog(ex);
             }
         }
     }

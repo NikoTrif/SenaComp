@@ -39,7 +39,6 @@
             System.Windows.Forms.Label datumLabel;
             System.Windows.Forms.Label redniBrojLabel;
             System.Windows.Forms.Label datumIsplateLabel;
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ucFakture));
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
@@ -57,6 +56,15 @@
             this.lTotal = new System.Windows.Forms.Label();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.artikliDataGridView = new System.Windows.Forms.DataGridView();
+            this.sifraDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nazivDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.jedinicaMereDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.uslugaDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.pDVDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cenaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.prodajnaCenaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.artikliBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dbSenaCompDataSet = new uclib.dbSenaCompDataSet();
             this.tbArtPret = new System.Windows.Forms.TextBox();
             this.dArtDodaj = new System.Windows.Forms.Button();
             this.tbArtKol = new System.Windows.Forms.TextBox();
@@ -71,43 +79,24 @@
             this.dOdaberi = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.datumIsplateDateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.datumProfaktureDateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.faktureBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.valutaTextBox = new System.Windows.Forms.TextBox();
             this.datumDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.redniBrojTextBox = new System.Windows.Forms.TextBox();
-            this.rbPlaceno = new System.Windows.Forms.RadioButton();
-            this.rbNaCekanju = new System.Windows.Forms.RadioButton();
-            this.label1 = new System.Windows.Forms.Label();
-            this.dFaktura = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.dNovi = new System.Windows.Forms.Button();
             this.dOtkazi = new System.Windows.Forms.Button();
             this.dSacuvaj = new System.Windows.Forms.Button();
             this.dStampaj = new System.Windows.Forms.Button();
             this.dObrisi = new System.Windows.Forms.Button();
-            this.dbSenaCompDataSet = new uclib.dbSenaCompDataSet();
-            this.faktureBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.faktureTableAdapter = new uclib.dbSenaCompDataSetTableAdapters.FaktureTableAdapter();
             this.tableAdapterManager = new uclib.dbSenaCompDataSetTableAdapters.TableAdapterManager();
-            this.faktureBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
-            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
-            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
-            this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.faktureBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.faktureDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -116,14 +105,7 @@
             this.tbPretraga = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.artikliTableAdapter = new uclib.dbSenaCompDataSetTableAdapters.ArtikliTableAdapter();
-            this.artikliBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.sifraDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nazivDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.jedinicaMereDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.uslugaDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.pDVDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cenaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.prodajnaCenaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dFaktura = new System.Windows.Forms.Button();
             gradLabel = new System.Windows.Forms.Label();
             adresaLabel = new System.Windows.Forms.Label();
             matBrojLabel = new System.Windows.Forms.Label();
@@ -140,17 +122,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvProfArtikli)).BeginInit();
             this.tableLayoutPanel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.artikliDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.artikliBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dbSenaCompDataSet)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
-            this.tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dbSenaCompDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.faktureBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.faktureBindingNavigator)).BeginInit();
-            this.faktureBindingNavigator.SuspendLayout();
+            this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.faktureDataGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.artikliBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // gradLabel
@@ -217,7 +197,7 @@
             // 
             valutaLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             valutaLabel.AutoSize = true;
-            valutaLabel.Location = new System.Drawing.Point(3, 76);
+            valutaLabel.Location = new System.Drawing.Point(3, 99);
             valutaLabel.Name = "valutaLabel";
             valutaLabel.Size = new System.Drawing.Size(118, 17);
             valutaLabel.TabIndex = 4;
@@ -227,7 +207,7 @@
             // 
             datumLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             datumLabel.AutoSize = true;
-            datumLabel.Location = new System.Drawing.Point(3, 42);
+            datumLabel.Location = new System.Drawing.Point(3, 56);
             datumLabel.Name = "datumLabel";
             datumLabel.Size = new System.Drawing.Size(118, 17);
             datumLabel.TabIndex = 2;
@@ -237,7 +217,7 @@
             // 
             redniBrojLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             redniBrojLabel.AutoSize = true;
-            redniBrojLabel.Location = new System.Drawing.Point(3, 8);
+            redniBrojLabel.Location = new System.Drawing.Point(3, 13);
             redniBrojLabel.Name = "redniBrojLabel";
             redniBrojLabel.Size = new System.Drawing.Size(118, 17);
             redniBrojLabel.TabIndex = 0;
@@ -247,7 +227,7 @@
             // 
             datumIsplateLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             datumIsplateLabel.AutoSize = true;
-            datumIsplateLabel.Location = new System.Drawing.Point(3, 137);
+            datumIsplateLabel.Location = new System.Drawing.Point(3, 134);
             datumIsplateLabel.Name = "datumIsplateLabel";
             datumIsplateLabel.Size = new System.Drawing.Size(118, 34);
             datumIsplateLabel.TabIndex = 8;
@@ -326,6 +306,7 @@
             this.dArtUkloni.TabIndex = 1;
             this.dArtUkloni.Text = "Ukoni";
             this.dArtUkloni.UseVisualStyleBackColor = true;
+            this.dArtUkloni.Click += new System.EventHandler(this.dArtUkloni_Click);
             // 
             // dgvProfArtikli
             // 
@@ -458,6 +439,65 @@
             this.artikliDataGridView.Size = new System.Drawing.Size(735, 162);
             this.artikliDataGridView.TabIndex = 2;
             // 
+            // sifraDataGridViewTextBoxColumn
+            // 
+            this.sifraDataGridViewTextBoxColumn.DataPropertyName = "Sifra";
+            this.sifraDataGridViewTextBoxColumn.HeaderText = "Šifra";
+            this.sifraDataGridViewTextBoxColumn.Name = "sifraDataGridViewTextBoxColumn";
+            this.sifraDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // nazivDataGridViewTextBoxColumn
+            // 
+            this.nazivDataGridViewTextBoxColumn.DataPropertyName = "Naziv";
+            this.nazivDataGridViewTextBoxColumn.HeaderText = "Naziv";
+            this.nazivDataGridViewTextBoxColumn.Name = "nazivDataGridViewTextBoxColumn";
+            this.nazivDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // jedinicaMereDataGridViewTextBoxColumn
+            // 
+            this.jedinicaMereDataGridViewTextBoxColumn.DataPropertyName = "jedinicaMere";
+            this.jedinicaMereDataGridViewTextBoxColumn.HeaderText = "Jedinica mere";
+            this.jedinicaMereDataGridViewTextBoxColumn.Name = "jedinicaMereDataGridViewTextBoxColumn";
+            this.jedinicaMereDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // uslugaDataGridViewCheckBoxColumn
+            // 
+            this.uslugaDataGridViewCheckBoxColumn.DataPropertyName = "Usluga";
+            this.uslugaDataGridViewCheckBoxColumn.HeaderText = "Usluga";
+            this.uslugaDataGridViewCheckBoxColumn.Name = "uslugaDataGridViewCheckBoxColumn";
+            this.uslugaDataGridViewCheckBoxColumn.ReadOnly = true;
+            // 
+            // pDVDataGridViewTextBoxColumn
+            // 
+            this.pDVDataGridViewTextBoxColumn.DataPropertyName = "PDV";
+            this.pDVDataGridViewTextBoxColumn.HeaderText = "PDV";
+            this.pDVDataGridViewTextBoxColumn.Name = "pDVDataGridViewTextBoxColumn";
+            this.pDVDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // cenaDataGridViewTextBoxColumn
+            // 
+            this.cenaDataGridViewTextBoxColumn.DataPropertyName = "Cena";
+            this.cenaDataGridViewTextBoxColumn.HeaderText = "Cena";
+            this.cenaDataGridViewTextBoxColumn.Name = "cenaDataGridViewTextBoxColumn";
+            this.cenaDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // prodajnaCenaDataGridViewTextBoxColumn
+            // 
+            this.prodajnaCenaDataGridViewTextBoxColumn.DataPropertyName = "prodajnaCena";
+            this.prodajnaCenaDataGridViewTextBoxColumn.HeaderText = "Cena sa PDV-om";
+            this.prodajnaCenaDataGridViewTextBoxColumn.Name = "prodajnaCenaDataGridViewTextBoxColumn";
+            this.prodajnaCenaDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // artikliBindingSource
+            // 
+            this.artikliBindingSource.DataMember = "Artikli";
+            this.artikliBindingSource.DataSource = this.dbSenaCompDataSet;
+            // 
+            // dbSenaCompDataSet
+            // 
+            this.dbSenaCompDataSet.DataSetName = "dbSenaCompDataSet";
+            this.dbSenaCompDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // tbArtPret
             // 
             this.tbArtPret.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
@@ -479,6 +519,7 @@
             this.dArtDodaj.TabIndex = 1;
             this.dArtDodaj.Text = "Dodaj";
             this.dArtDodaj.UseVisualStyleBackColor = true;
+            this.dArtDodaj.Click += new System.EventHandler(this.dArtDodaj_Click);
             // 
             // tbArtKol
             // 
@@ -542,6 +583,7 @@
             // 
             this.gradTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel3.SetColumnSpan(this.gradTextBox, 2);
+            this.gradTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.faktureBindingSource, "Grad", true));
             this.gradTextBox.Location = new System.Drawing.Point(127, 179);
             this.gradTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.gradTextBox.Name = "gradTextBox";
@@ -552,6 +594,7 @@
             // 
             this.adresaTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel3.SetColumnSpan(this.adresaTextBox, 2);
+            this.adresaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.faktureBindingSource, "Adresa", true));
             this.adresaTextBox.Location = new System.Drawing.Point(127, 142);
             this.adresaTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.adresaTextBox.Name = "adresaTextBox";
@@ -562,6 +605,7 @@
             // 
             this.matBrojTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel3.SetColumnSpan(this.matBrojTextBox, 2);
+            this.matBrojTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.faktureBindingSource, "matBroj", true));
             this.matBrojTextBox.Location = new System.Drawing.Point(127, 108);
             this.matBrojTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.matBrojTextBox.Name = "matBrojTextBox";
@@ -572,6 +616,7 @@
             // 
             this.pIBTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel3.SetColumnSpan(this.pIBTextBox, 2);
+            this.pIBTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.faktureBindingSource, "PIB", true));
             this.pIBTextBox.Location = new System.Drawing.Point(127, 74);
             this.pIBTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pIBTextBox.Name = "pIBTextBox";
@@ -582,6 +627,7 @@
             // 
             this.klijentTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel3.SetColumnSpan(this.klijentTextBox, 2);
+            this.klijentTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.faktureBindingSource, "Klijent", true));
             this.klijentTextBox.Location = new System.Drawing.Point(127, 40);
             this.klijentTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.klijentTextBox.Name = "klijentTextBox";
@@ -591,6 +637,7 @@
             // iDKlijentaTextBox
             // 
             this.iDKlijentaTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.iDKlijentaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.faktureBindingSource, "IDKlijenta", true));
             this.iDKlijentaTextBox.Location = new System.Drawing.Point(127, 6);
             this.iDKlijentaTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.iDKlijentaTextBox.Name = "iDKlijentaTextBox";
@@ -609,6 +656,7 @@
             this.dOdaberi.TabIndex = 12;
             this.dOdaberi.Text = "Odaberi";
             this.dOdaberi.UseVisualStyleBackColor = true;
+            this.dOdaberi.Click += new System.EventHandler(this.dOdaberi_Click);
             // 
             // groupBox1
             // 
@@ -631,24 +679,20 @@
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel2.Controls.Add(this.datumIsplateDateTimePicker, 1, 4);
             this.tableLayoutPanel2.Controls.Add(valutaLabel, 0, 2);
             this.tableLayoutPanel2.Controls.Add(this.valutaTextBox, 1, 2);
             this.tableLayoutPanel2.Controls.Add(datumLabel, 0, 1);
             this.tableLayoutPanel2.Controls.Add(this.datumDateTimePicker, 1, 1);
             this.tableLayoutPanel2.Controls.Add(redniBrojLabel, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.redniBrojTextBox, 1, 0);
-            this.tableLayoutPanel2.Controls.Add(datumIsplateLabel, 0, 4);
-            this.tableLayoutPanel2.Controls.Add(this.rbPlaceno, 2, 3);
-            this.tableLayoutPanel2.Controls.Add(this.rbNaCekanju, 1, 3);
-            this.tableLayoutPanel2.Controls.Add(this.label1, 0, 3);
             this.tableLayoutPanel2.Controls.Add(this.dFaktura, 2, 0);
+            this.tableLayoutPanel2.Controls.Add(this.datumProfaktureDateTimePicker, 1, 3);
+            this.tableLayoutPanel2.Controls.Add(datumIsplateLabel, 0, 3);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 17);
             this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 5;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel2.RowCount = 4;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
@@ -656,22 +700,29 @@
             this.tableLayoutPanel2.Size = new System.Drawing.Size(374, 173);
             this.tableLayoutPanel2.TabIndex = 0;
             // 
-            // datumIsplateDateTimePicker
+            // datumProfaktureDateTimePicker
             // 
-            this.datumIsplateDateTimePicker.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel2.SetColumnSpan(this.datumIsplateDateTimePicker, 2);
-            this.datumIsplateDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.datumIsplateDateTimePicker.Location = new System.Drawing.Point(127, 143);
-            this.datumIsplateDateTimePicker.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.datumIsplateDateTimePicker.Name = "datumIsplateDateTimePicker";
-            this.datumIsplateDateTimePicker.Size = new System.Drawing.Size(244, 22);
-            this.datumIsplateDateTimePicker.TabIndex = 9;
+            this.datumProfaktureDateTimePicker.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel2.SetColumnSpan(this.datumProfaktureDateTimePicker, 2);
+            this.datumProfaktureDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.faktureBindingSource, "datumProfakture", true));
+            this.datumProfaktureDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.datumProfaktureDateTimePicker.Location = new System.Drawing.Point(127, 140);
+            this.datumProfaktureDateTimePicker.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.datumProfaktureDateTimePicker.Name = "datumProfaktureDateTimePicker";
+            this.datumProfaktureDateTimePicker.Size = new System.Drawing.Size(244, 22);
+            this.datumProfaktureDateTimePicker.TabIndex = 9;
+            // 
+            // faktureBindingSource
+            // 
+            this.faktureBindingSource.DataMember = "Fakture";
+            this.faktureBindingSource.DataSource = this.dbSenaCompDataSet;
             // 
             // valutaTextBox
             // 
             this.valutaTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel2.SetColumnSpan(this.valutaTextBox, 2);
-            this.valutaTextBox.Location = new System.Drawing.Point(127, 74);
+            this.valutaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.faktureBindingSource, "Valuta", true));
+            this.valutaTextBox.Location = new System.Drawing.Point(127, 96);
             this.valutaTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.valutaTextBox.Name = "valutaTextBox";
             this.valutaTextBox.Size = new System.Drawing.Size(244, 22);
@@ -681,8 +732,9 @@
             // 
             this.datumDateTimePicker.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel2.SetColumnSpan(this.datumDateTimePicker, 2);
+            this.datumDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.faktureBindingSource, "datumFakture", true));
             this.datumDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.datumDateTimePicker.Location = new System.Drawing.Point(127, 40);
+            this.datumDateTimePicker.Location = new System.Drawing.Point(127, 53);
             this.datumDateTimePicker.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.datumDateTimePicker.Name = "datumDateTimePicker";
             this.datumDateTimePicker.Size = new System.Drawing.Size(244, 22);
@@ -691,61 +743,13 @@
             // redniBrojTextBox
             // 
             this.redniBrojTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.redniBrojTextBox.Location = new System.Drawing.Point(127, 6);
+            this.redniBrojTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.faktureBindingSource, "redniBroj", true));
+            this.redniBrojTextBox.Location = new System.Drawing.Point(127, 10);
             this.redniBrojTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.redniBrojTextBox.Name = "redniBrojTextBox";
             this.redniBrojTextBox.ReadOnly = true;
             this.redniBrojTextBox.Size = new System.Drawing.Size(118, 22);
             this.redniBrojTextBox.TabIndex = 1;
-            // 
-            // rbPlaceno
-            // 
-            this.rbPlaceno.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.rbPlaceno.AutoSize = true;
-            this.rbPlaceno.Location = new System.Drawing.Point(251, 108);
-            this.rbPlaceno.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.rbPlaceno.Name = "rbPlaceno";
-            this.rbPlaceno.Size = new System.Drawing.Size(120, 21);
-            this.rbPlaceno.TabIndex = 6;
-            this.rbPlaceno.TabStop = true;
-            this.rbPlaceno.Text = "Plaćeno";
-            this.rbPlaceno.UseVisualStyleBackColor = true;
-            // 
-            // rbNaCekanju
-            // 
-            this.rbNaCekanju.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.rbNaCekanju.AutoSize = true;
-            this.rbNaCekanju.Location = new System.Drawing.Point(127, 108);
-            this.rbNaCekanju.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.rbNaCekanju.Name = "rbNaCekanju";
-            this.rbNaCekanju.Size = new System.Drawing.Size(118, 21);
-            this.rbNaCekanju.TabIndex = 6;
-            this.rbNaCekanju.TabStop = true;
-            this.rbNaCekanju.Text = "Na čekanju";
-            this.rbNaCekanju.UseVisualStyleBackColor = true;
-            // 
-            // label1
-            // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(3, 110);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(118, 17);
-            this.label1.TabIndex = 10;
-            this.label1.Text = "Status:";
-            // 
-            // dFaktura
-            // 
-            this.dFaktura.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dFaktura.Location = new System.Drawing.Point(251, 2);
-            this.dFaktura.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dFaktura.Name = "dFaktura";
-            this.dFaktura.Size = new System.Drawing.Size(120, 30);
-            this.dFaktura.TabIndex = 12;
-            this.dFaktura.Text = "???";
-            this.dFaktura.UseVisualStyleBackColor = true;
             // 
             // tableLayoutPanel1
             // 
@@ -782,6 +786,7 @@
             this.dNovi.TabIndex = 15;
             this.dNovi.Text = "Novi nalog";
             this.dNovi.UseVisualStyleBackColor = true;
+            this.dNovi.Click += new System.EventHandler(this.dNovi_Click);
             // 
             // dOtkazi
             // 
@@ -795,6 +800,7 @@
             this.dOtkazi.TabIndex = 14;
             this.dOtkazi.Text = "Otkaži";
             this.dOtkazi.UseVisualStyleBackColor = true;
+            this.dOtkazi.Click += new System.EventHandler(this.dOtkazi_Click);
             // 
             // dSacuvaj
             // 
@@ -808,6 +814,7 @@
             this.dSacuvaj.TabIndex = 12;
             this.dSacuvaj.Text = "Sačuvaj";
             this.dSacuvaj.UseVisualStyleBackColor = true;
+            this.dSacuvaj.Click += new System.EventHandler(this.dSacuvaj_Click);
             // 
             // dStampaj
             // 
@@ -821,6 +828,7 @@
             this.dStampaj.TabIndex = 13;
             this.dStampaj.Text = "Štampaj";
             this.dStampaj.UseVisualStyleBackColor = true;
+            this.dStampaj.Click += new System.EventHandler(this.dStampaj_Click);
             // 
             // dObrisi
             // 
@@ -834,16 +842,7 @@
             this.dObrisi.TabIndex = 16;
             this.dObrisi.Text = "Obriši";
             this.dObrisi.UseVisualStyleBackColor = true;
-            // 
-            // dbSenaCompDataSet
-            // 
-            this.dbSenaCompDataSet.DataSetName = "dbSenaCompDataSet";
-            this.dbSenaCompDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // faktureBindingSource
-            // 
-            this.faktureBindingSource.DataMember = "Fakture";
-            this.faktureBindingSource.DataSource = this.dbSenaCompDataSet;
+            this.dObrisi.Click += new System.EventHandler(this.dObrisi_Click);
             // 
             // faktureTableAdapter
             // 
@@ -862,131 +861,6 @@
             this.tableAdapterManager.ProfaktureTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = uclib.dbSenaCompDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
-            // faktureBindingNavigator
-            // 
-            this.faktureBindingNavigator.AddNewItem = this.bindingNavigatorAddNewItem;
-            this.faktureBindingNavigator.BindingSource = this.faktureBindingSource;
-            this.faktureBindingNavigator.CountItem = this.bindingNavigatorCountItem;
-            this.faktureBindingNavigator.DeleteItem = this.bindingNavigatorDeleteItem;
-            this.faktureBindingNavigator.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.faktureBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.bindingNavigatorMoveFirstItem,
-            this.bindingNavigatorMovePreviousItem,
-            this.bindingNavigatorSeparator,
-            this.bindingNavigatorPositionItem,
-            this.bindingNavigatorCountItem,
-            this.bindingNavigatorSeparator1,
-            this.bindingNavigatorMoveNextItem,
-            this.bindingNavigatorMoveLastItem,
-            this.bindingNavigatorSeparator2,
-            this.bindingNavigatorAddNewItem,
-            this.bindingNavigatorDeleteItem,
-            this.faktureBindingNavigatorSaveItem});
-            this.faktureBindingNavigator.Location = new System.Drawing.Point(0, 0);
-            this.faktureBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
-            this.faktureBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
-            this.faktureBindingNavigator.MoveNextItem = this.bindingNavigatorMoveNextItem;
-            this.faktureBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
-            this.faktureBindingNavigator.Name = "faktureBindingNavigator";
-            this.faktureBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.faktureBindingNavigator.Size = new System.Drawing.Size(1407, 27);
-            this.faktureBindingNavigator.TabIndex = 29;
-            this.faktureBindingNavigator.Text = "bindingNavigator1";
-            // 
-            // bindingNavigatorAddNewItem
-            // 
-            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
-            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
-            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(24, 24);
-            this.bindingNavigatorAddNewItem.Text = "Add new";
-            // 
-            // bindingNavigatorCountItem
-            // 
-            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(45, 24);
-            this.bindingNavigatorCountItem.Text = "of {0}";
-            this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
-            // 
-            // bindingNavigatorDeleteItem
-            // 
-            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
-            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
-            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(24, 24);
-            this.bindingNavigatorDeleteItem.Text = "Delete";
-            // 
-            // bindingNavigatorMoveFirstItem
-            // 
-            this.bindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
-            this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
-            this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(24, 24);
-            this.bindingNavigatorMoveFirstItem.Text = "Move first";
-            // 
-            // bindingNavigatorMovePreviousItem
-            // 
-            this.bindingNavigatorMovePreviousItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
-            this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
-            this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(24, 24);
-            this.bindingNavigatorMovePreviousItem.Text = "Move previous";
-            // 
-            // bindingNavigatorSeparator
-            // 
-            this.bindingNavigatorSeparator.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 27);
-            // 
-            // bindingNavigatorPositionItem
-            // 
-            this.bindingNavigatorPositionItem.AccessibleName = "Position";
-            this.bindingNavigatorPositionItem.AutoSize = false;
-            this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
-            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 27);
-            this.bindingNavigatorPositionItem.Text = "0";
-            this.bindingNavigatorPositionItem.ToolTipText = "Current position";
-            // 
-            // bindingNavigatorSeparator1
-            // 
-            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
-            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 27);
-            // 
-            // bindingNavigatorMoveNextItem
-            // 
-            this.bindingNavigatorMoveNextItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
-            this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
-            this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(24, 24);
-            this.bindingNavigatorMoveNextItem.Text = "Move next";
-            // 
-            // bindingNavigatorMoveLastItem
-            // 
-            this.bindingNavigatorMoveLastItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
-            this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
-            this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(24, 24);
-            this.bindingNavigatorMoveLastItem.Text = "Move last";
-            // 
-            // bindingNavigatorSeparator2
-            // 
-            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
-            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 27);
-            // 
-            // faktureBindingNavigatorSaveItem
-            // 
-            this.faktureBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.faktureBindingNavigatorSaveItem.Image = ((System.Drawing.Image)(resources.GetObject("faktureBindingNavigatorSaveItem.Image")));
-            this.faktureBindingNavigatorSaveItem.Name = "faktureBindingNavigatorSaveItem";
-            this.faktureBindingNavigatorSaveItem.Size = new System.Drawing.Size(24, 24);
-            this.faktureBindingNavigatorSaveItem.Text = "Save Data";
-            this.faktureBindingNavigatorSaveItem.Click += new System.EventHandler(this.faktureBindingNavigatorSaveItem_Click);
-            // 
             // faktureDataGridView
             // 
             this.faktureDataGridView.AllowUserToAddRows = false;
@@ -999,7 +873,6 @@
             this.dataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn3,
             this.dataGridViewTextBoxColumn4,
-            this.dataGridViewTextBoxColumn5,
             this.dataGridViewTextBoxColumn6,
             this.dataGridViewTextBoxColumn7,
             this.dataGridViewTextBoxColumn8});
@@ -1040,13 +913,6 @@
             this.dataGridViewTextBoxColumn4.HeaderText = "Valuta";
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             this.dataGridViewTextBoxColumn4.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "Kupac";
-            this.dataGridViewTextBoxColumn5.HeaderText = "Kupac";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn6
             // 
@@ -1121,59 +987,18 @@
             // 
             this.artikliTableAdapter.ClearBeforeFill = true;
             // 
-            // artikliBindingSource
+            // dFaktura
             // 
-            this.artikliBindingSource.DataMember = "Artikli";
-            this.artikliBindingSource.DataSource = this.dbSenaCompDataSet;
-            // 
-            // sifraDataGridViewTextBoxColumn
-            // 
-            this.sifraDataGridViewTextBoxColumn.DataPropertyName = "Sifra";
-            this.sifraDataGridViewTextBoxColumn.HeaderText = "Šifra";
-            this.sifraDataGridViewTextBoxColumn.Name = "sifraDataGridViewTextBoxColumn";
-            this.sifraDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // nazivDataGridViewTextBoxColumn
-            // 
-            this.nazivDataGridViewTextBoxColumn.DataPropertyName = "Naziv";
-            this.nazivDataGridViewTextBoxColumn.HeaderText = "Naziv";
-            this.nazivDataGridViewTextBoxColumn.Name = "nazivDataGridViewTextBoxColumn";
-            this.nazivDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // jedinicaMereDataGridViewTextBoxColumn
-            // 
-            this.jedinicaMereDataGridViewTextBoxColumn.DataPropertyName = "jedinicaMere";
-            this.jedinicaMereDataGridViewTextBoxColumn.HeaderText = "Jedinica mere";
-            this.jedinicaMereDataGridViewTextBoxColumn.Name = "jedinicaMereDataGridViewTextBoxColumn";
-            this.jedinicaMereDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // uslugaDataGridViewCheckBoxColumn
-            // 
-            this.uslugaDataGridViewCheckBoxColumn.DataPropertyName = "Usluga";
-            this.uslugaDataGridViewCheckBoxColumn.HeaderText = "Usluga";
-            this.uslugaDataGridViewCheckBoxColumn.Name = "uslugaDataGridViewCheckBoxColumn";
-            this.uslugaDataGridViewCheckBoxColumn.ReadOnly = true;
-            // 
-            // pDVDataGridViewTextBoxColumn
-            // 
-            this.pDVDataGridViewTextBoxColumn.DataPropertyName = "PDV";
-            this.pDVDataGridViewTextBoxColumn.HeaderText = "PDV";
-            this.pDVDataGridViewTextBoxColumn.Name = "pDVDataGridViewTextBoxColumn";
-            this.pDVDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // cenaDataGridViewTextBoxColumn
-            // 
-            this.cenaDataGridViewTextBoxColumn.DataPropertyName = "Cena";
-            this.cenaDataGridViewTextBoxColumn.HeaderText = "Cena";
-            this.cenaDataGridViewTextBoxColumn.Name = "cenaDataGridViewTextBoxColumn";
-            this.cenaDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // prodajnaCenaDataGridViewTextBoxColumn
-            // 
-            this.prodajnaCenaDataGridViewTextBoxColumn.DataPropertyName = "prodajnaCena";
-            this.prodajnaCenaDataGridViewTextBoxColumn.HeaderText = "Cena sa PDV-om";
-            this.prodajnaCenaDataGridViewTextBoxColumn.Name = "prodajnaCenaDataGridViewTextBoxColumn";
-            this.prodajnaCenaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.dFaktura.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dFaktura.Location = new System.Drawing.Point(251, 2);
+            this.dFaktura.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dFaktura.Name = "dFaktura";
+            this.dFaktura.Size = new System.Drawing.Size(120, 39);
+            this.dFaktura.TabIndex = 12;
+            this.dFaktura.Text = "???";
+            this.dFaktura.UseVisualStyleBackColor = true;
             // 
             // ucFakture
             // 
@@ -1184,13 +1009,13 @@
             this.Controls.Add(this.tbPretraga);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.faktureDataGridView);
-            this.Controls.Add(this.faktureBindingNavigator);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "ucFakture";
             this.Size = new System.Drawing.Size(1407, 802);
+            this.Load += new System.EventHandler(this.ucFakture_Load);
             this.groupBox3.ResumeLayout(false);
             this.tableLayoutPanel4.ResumeLayout(false);
             this.tableLayoutPanel6.ResumeLayout(false);
@@ -1199,20 +1024,17 @@
             this.tableLayoutPanel5.ResumeLayout(false);
             this.tableLayoutPanel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.artikliDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.artikliBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dbSenaCompDataSet)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel3.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
-            this.tableLayoutPanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dbSenaCompDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.faktureBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.faktureBindingNavigator)).EndInit();
-            this.faktureBindingNavigator.ResumeLayout(false);
-            this.faktureBindingNavigator.PerformLayout();
+            this.tableLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.faktureDataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.artikliBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1251,14 +1073,10 @@
         private System.Windows.Forms.Button dOdaberi;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
-        private System.Windows.Forms.DateTimePicker datumIsplateDateTimePicker;
+        private System.Windows.Forms.DateTimePicker datumProfaktureDateTimePicker;
         private System.Windows.Forms.TextBox valutaTextBox;
         private System.Windows.Forms.DateTimePicker datumDateTimePicker;
         private System.Windows.Forms.TextBox redniBrojTextBox;
-        private System.Windows.Forms.RadioButton rbPlaceno;
-        private System.Windows.Forms.RadioButton rbNaCekanju;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button dFaktura;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Button dNovi;
         private System.Windows.Forms.Button dOtkazi;
@@ -1269,19 +1087,6 @@
         private System.Windows.Forms.BindingSource faktureBindingSource;
         private dbSenaCompDataSetTableAdapters.FaktureTableAdapter faktureTableAdapter;
         private dbSenaCompDataSetTableAdapters.TableAdapterManager tableAdapterManager;
-        private System.Windows.Forms.BindingNavigator faktureBindingNavigator;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorAddNewItem;
-        private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorDeleteItem;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveFirstItem;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorMovePreviousItem;
-        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator;
-        private System.Windows.Forms.ToolStripTextBox bindingNavigatorPositionItem;
-        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator1;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveNextItem;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
-        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
-        private System.Windows.Forms.ToolStripButton faktureBindingNavigatorSaveItem;
         private System.Windows.Forms.DataGridView faktureDataGridView;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
@@ -1304,5 +1109,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn jedinicaMereDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nazivDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn sifraDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Button dFaktura;
     }
 }

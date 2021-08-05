@@ -287,3 +287,5 @@ kada se trazi u kodu - npr. "RG1", "TD3.1.2", "G2"
 		 - TD 2.7 - - -dbSenaComp.Fakture - definicija kolone "Roba" promenjena iz XML u nVarChar(MAX)
 		 - TD 2.7 - - -ucFakture - povezani TextBox-ovi sa bazom
 		 - TD 2.7 - - -ucFakture - napisan kod za Load i dNovi funkcije
+
+05.05.21 - TD 2.7 - - -ucFakture - napisan kod za dSacuvaj, dOtkazi, dOdaberi

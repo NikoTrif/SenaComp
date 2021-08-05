@@ -54,7 +54,7 @@ namespace iflib
             return formTel;
         }
 
-        public bool ProveraNoviRed(string kolonaIme)
+        public static bool ProveraNoviRed(string kolonaIme)
         {
             //TD 2.1.i
             if(string.IsNullOrEmpty(kolonaIme) == true)

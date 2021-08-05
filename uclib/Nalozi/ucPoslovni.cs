@@ -270,7 +270,7 @@ namespace uclib.Nalozi
         {
             try
             {
-                noviRed = fnr.ProveraNoviRed(naloziFDataGridView.CurrentRow.Cells[2].Value.ToString());
+                noviRed = clFunkcijeRazno.ProveraNoviRed(naloziFDataGridView.CurrentRow.Cells[2].Value.ToString());
             }
             catch { }
         }

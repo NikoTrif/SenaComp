@@ -214,7 +214,7 @@ namespace uclib.Racuni
             {
                 try
                 {
-                    noviRed = fnr.ProveraNoviRed(profaktureDataGridView.CurrentRow.Cells[3].Value.ToString());
+                    noviRed = clFunkcijeRazno.ProveraNoviRed(profaktureDataGridView.CurrentRow.Cells[3].Value.ToString());
                 }
                 catch (Exception ex)
                 {

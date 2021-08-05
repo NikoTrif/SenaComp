@@ -259,7 +259,7 @@ namespace uclib.Nalozi
         {
             try
             {
-                noviRed = fnr.ProveraNoviRed(naloziPDataGridView.CurrentRow.Cells[2].Value.ToString());
+                noviRed = clFunkcijeRazno.ProveraNoviRed(naloziPDataGridView.CurrentRow.Cells[2].Value.ToString());
             }
             catch { }
 

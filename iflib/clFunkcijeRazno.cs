@@ -167,6 +167,92 @@ namespace iflib
             clTransfer.Adresa = null;
         }
 
+        /// <summary>
+        /// Racuna Cenu i upisuje label TOTAL
+        /// </summary>
+        /// <param name="direktnaIzmena">true - ako je napravljena izmena iz DataGridView-a; false - ako nije</param>
+        /// <param name="Brisanje">True - ako se artikal brise, False - ako se artikal unosi</param>
+        /// <param name="dgvPFOArtikli">DataGridView Artikala za upis u (pro)Fakturu / otpremnicu</param>
+        /// <param name="dgvArtikli">DataGridView sa svim artiklima iz baze artikala</param>
+        /// <param name="lTotal">Label sa ukupnom cenom - lTotal</param>
+        /// <param name="Valuta">Vrednost iz tbValuta</param>
+        /// <param name="ArtikalKolicina">vrednost iz tbArtKol - kolicina artikla</param>
+        public static void RacunCenaITotal(bool direktnaIzmena, bool Brisanje, DataGridView dgvPFOArtikli, DataGridView dgvArtikli, Label lTotal, string Valuta, string ArtikalKolicina)
+        {
+            string naziv, jedinica;
+            float total = 0;
+            float x = 0;
+            float cenaSaPDV = 0;
+            float cena = 0; //cena bez PDV-a iz kolone 1
+            float pdv = 0;
+            float kol = 0;
+            float uCena = 0;
+
+            try
+            {
+                if (!Brisanje)
+                {
+                    if (direktnaIzmena == true)
+                    {
+                        float.TryParse(dgvPFOArtikli.CurrentRow.Cells[2].Value.ToString(), out pdv);
+                        float.TryParse(dgvPFOArtikli.CurrentRow.Cells[3].Value.ToString(), out kol);
+                        float.TryParse(dgvPFOArtikli.CurrentRow.Cells[1].Value.ToString(), out cena);
+                        cenaSaPDV = cena * ((pdv / 100) + 1);
+                        uCena = cenaSaPDV * kol;
+
+                        dgvPFOArtikli.CurrentRow.Cells[6].Value = cenaSaPDV;
+                        dgvPFOArtikli.CurrentRow.Cells[5].Value = uCena;
+                    }
+
+                    else
+                    {
+                        naziv = dgvArtikli.CurrentRow.Cells[1].Value.ToString();
+                        jedinica = dgvArtikli.CurrentRow.Cells[2].Value.ToString();
+                        float.TryParse(dgvArtikli.CurrentRow.Cells[5].Value.ToString(), out cena);
+                        float.TryParse(dgvArtikli.CurrentRow.Cells[4].Value.ToString(), out pdv);
+                        float.TryParse(ArtikalKolicina, out kol);
+                        float.TryParse(dgvArtikli.CurrentRow.Cells[6].Value.ToString(), out cenaSaPDV);
+                        uCena = cenaSaPDV * kol;
+
+                        dgvPFOArtikli.Rows.Add(naziv, cena, pdv, kol, jedinica, uCena, cenaSaPDV);
+                    }
+
+                    foreach (DataGridViewRow dgvr in dgvPFOArtikli.Rows)
+                    {
+                        if (dgvr.Cells[5].Value != null)
+                        {
+                            float.TryParse(dgvr.Cells[5].Value.ToString(), out x);
+                            total = total + x;
+                            x = 0;
+                        }
+                    } 
+                }
+                else
+                {
+                    foreach (DataGridViewRow dgvr in dgvPFOArtikli.Rows)
+                    {
+                        if (!dgvr.IsNewRow)
+                        {
+                            float.TryParse(dgvr.Cells[5].Value.ToString(), out x);
+                            total = total + x;
+                            x = 0;
+                        }
+                        else if (dgvr.IsNewRow && dgvPFOArtikli.RowCount <= 1)
+                        {
+                            total = 0;
+                            x = 0;
+                        }
+                    }
+                }
+
+                lTotal.Text = string.Format("{0} {1}", total.ToString(), Valuta);
+            }
+            catch (Exception ex)
+            {
+                clFunkcijeRazno.NapisiLog(ex);
+            }
+        }
+
         public class PisanjeReporta
         {
             public ReportParameter[] PostavkeReportParametara(string Logo = "", string NazivFirme = "", string Delatnost = "", string AdresaFirme = "",

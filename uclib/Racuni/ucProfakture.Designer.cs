@@ -908,6 +908,7 @@
             this.dgvProfArtikli.TabIndex = 2;
             this.dgvProfArtikli.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProfArtikli_CellEnter);
             this.dgvProfArtikli.CellValidated += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProfArtikli_CellValidated);
+            this.dgvProfArtikli.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dgvProfArtikli_KeyDown);
             // 
             // Naziv
             // 

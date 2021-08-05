@@ -222,7 +222,11 @@ namespace uclib.Racuni
         {
             try
             {
+                clFunkcijeRazno.RacunCenaITotal(false, false, dgvFaktArtikli, artikliDataGridView, lTotal, valutaTextBox.Text,
+                    tbArtKol.Text);
 
+                tbArtPret.Select();
+                tbArtPret.SelectAll();
             }
             catch (Exception ex)
             {

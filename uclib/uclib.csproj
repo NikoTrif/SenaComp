@@ -231,6 +231,8 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportovi\repNalogF.rdlc" />
+    <EmbeddedResource Include="Reportovi\rpFaktura.rdlc" />
+    <EmbeddedResource Include="Reportovi\rpProfaktura.rdlc" />
     <EmbeddedResource Include="ucPodesavanja.resx">
       <DependentUpon>ucPodesavanja.cs</DependentUpon>
     </EmbeddedResource>

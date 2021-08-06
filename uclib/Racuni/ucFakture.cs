@@ -453,7 +453,7 @@ namespace uclib.Racuni
 
         private void tbPretraga_KeyDown(object sender, KeyEventArgs e)
         {
-            /*try
+            try
             {
                 if (e.KeyCode == Keys.Enter)
                 {
@@ -462,7 +462,7 @@ namespace uclib.Racuni
                         switch (cbFilter.SelectedIndex)
                         {
                             case 0:
-                                profaktureTableAdapter.qPretKlijent(dbSenaCompDataSet.Profakture, tbPretraga.Text, tbPretraga.Text,
+                                faktureTableAdapter.qFilterKlijent(dbSenaCompDataSet.Fakture, tbPretraga.Text, tbPretraga.Text,
                                     tbPretraga.Text, tbPretraga.Text, tbPretraga.Text);
                                 break;
                             case 1:
@@ -470,7 +470,7 @@ namespace uclib.Racuni
                                 int.TryParse(tbPretraga.Text, out rb);
                                 if (rb != 0)
                                 {
-                                    profaktureTableAdapter.qPretRedniBroj(dbSenaCompDataSet.Profakture, rb);
+                                    faktureTableAdapter.qFilterRedniBroj(dbSenaCompDataSet.Fakture, rb);
                                 }
                                 break;
                             case 2:
@@ -478,20 +478,29 @@ namespace uclib.Racuni
                                 int.TryParse(tbPretraga.Text, out idk);
                                 if (idk != 0)
                                 {
-                                    profaktureTableAdapter.qPretKlijentID(dbSenaCompDataSet.Profakture, idk);
+                                    faktureTableAdapter.qFilterIDKlijenta(dbSenaCompDataSet.Fakture, idk);
                                 }
                                 break;
                             case 3:
-                                profaktureTableAdapter.qPretDatum(dbSenaCompDataSet.Profakture, tbPretraga.Text);
+                                DateTime dtp;
+                                DateTime.TryParse(tbPretraga.Text, out dtp);
+                                if (dtp.Date!= DateTime.MinValue)
+                                {
+                                    faktureTableAdapter.qFilterDatum(dbSenaCompDataSet.Fakture, dtp); 
+                                }
+                                else
+                                {
+                                    MessageBox.Show("Format datuma nije ispravan.", "Greška formata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                }
                                 break;
                         }
                     }
                     else
                     {
-                        profaktureTableAdapter.Fill(dbSenaCompDataSet.Profakture);
+                        faktureTableAdapter.Fill(dbSenaCompDataSet.Fakture);
                         try
                         {
-                            profaktureDataGridView.CurrentCell = profaktureDataGridView.Rows[profaktureDataGridView.RowCount - 1].Cells[0];
+                            faktureDataGridView.CurrentCell = faktureDataGridView.Rows[faktureDataGridView.RowCount - 1].Cells[0];
                         }
                         catch { }
                     }
@@ -500,7 +509,7 @@ namespace uclib.Racuni
             catch (Exception ex)
             {
                 clFunkcijeRazno.NapisiLog(ex);
-            }*/
+            }
         }
 
         private void faktureDataGridView_SelectionChanged(object sender, EventArgs e)

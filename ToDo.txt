@@ -298,3 +298,4 @@ kada se trazi u kodu - npr. "RG1", "TD3.1.2", "G2"
 06.08.21 - TD 2.7 - - -ucFakture - napisan kod za pretragu artikala, kod za dodavnje na taster +, dodavanje artikla na dupli klik iz artikliDataGridView
 		 - TD 2.7 - - -ucFakture - napisani kodovi za sve potrebne TextBoxove i DataGridView-e, ostao je samo kod za pretragu
 		 - TD 2.7 - - -dbSenaCompDataSet - napravljeni Query-ji za tabelu Faktura
+		 - TD 2.7 - - -ucFakture - napisan kod za pretragu

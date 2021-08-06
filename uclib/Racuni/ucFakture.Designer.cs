@@ -895,12 +895,10 @@
             this.cbFilter.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.cbFilter.FormattingEnabled = true;
             this.cbFilter.Items.AddRange(new object[] {
-            "Firma",
-            "ID Firme",
-            "Broj Naloga",
-            "Uređaj",
-            "Kvar",
-            "Status"});
+            "Klijent",
+            "Broj fakture",
+            "ID Klijenta",
+            "Datum"});
             this.cbFilter.Location = new System.Drawing.Point(428, 568);
             this.cbFilter.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbFilter.Name = "cbFilter";

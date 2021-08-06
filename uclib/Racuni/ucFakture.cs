@@ -14,6 +14,7 @@ namespace uclib.Racuni
     public partial class ucFakture : UserControl
     {
         bool noviRed = false;
+        float[] izTemp = { 0, 0, 0 };
         public ucFakture()
         {
             InitializeComponent();
@@ -173,7 +174,11 @@ namespace uclib.Racuni
         {
             try
             {
-
+                if (MessageBox.Show("Da li ste sigurni da želite da obrišete ovu fakturu?", "Obriši fakturu?", MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    faktureBindingSource.RemoveCurrent();
+                }
             }
             catch (Exception ex)
             {
@@ -238,12 +243,264 @@ namespace uclib.Racuni
         {
             try
             {
-
+                if (!dgvFaktArtikli.CurrentRow.IsNewRow)
+                {
+                    foreach (DataGridViewRow r in dgvFaktArtikli.SelectedRows)
+                    {
+                        dgvFaktArtikli.Rows.RemoveAt(r.Index);
+                    }
+                    clFunkcijeRazno.RacunCenaITotal(false, true, dgvFaktArtikli, artikliDataGridView, lTotal, valutaTextBox.Text,
+                        tbArtKol.Text);
+                }
             }
             catch (Exception ex)
             {
                 clFunkcijeRazno.NapisiLog(ex);
             }
+        }
+
+        private void artikliDataGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            tbArtKol.Text = "1";
+            clFunkcijeRazno.RacunCenaITotal(false, false, dgvFaktArtikli, artikliDataGridView, lTotal, valutaTextBox.Text,
+                tbArtKol.Text);
+            tbArtPret.Select();
+            tbArtPret.SelectAll();
+        }
+
+        private void artikliDataGridView_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Add)
+            {
+                tbArtKol.Select();
+                tbArtKol.Text = "1";
+                tbArtKol.SelectAll();
+            }
+        }
+
+        private void tbArtPret_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if(e.KeyChar == '+')
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void tbArtPret_KeyDown(object sender, KeyEventArgs e)
+        {
+            try
+            {
+                if (e.KeyCode == Keys.Enter)
+                {
+                    int sifra = 0;
+                    int.TryParse(tbArtPret.Text, out sifra);
+
+                    if (tbArtPret.Text == "")
+                    {
+                        artikliTableAdapter.Fill(dbSenaCompDataSet.Artikli);
+                    }
+                    else if (sifra > 0)
+                    {
+                        artikliTableAdapter.qFilterSifra(dbSenaCompDataSet.Artikli, sifra);
+                    }
+                    else
+                    {
+                        artikliTableAdapter.qFilterNaziv(dbSenaCompDataSet.Artikli, tbArtPret.Text);
+                    } 
+                }
+                else if(e.KeyCode == Keys.Add)
+                {
+                    tbArtKol.Select();
+                    tbArtKol.Text = "1";
+                    tbArtKol.SelectAll();
+                }
+            }
+            catch (Exception ex)
+            {
+                clFunkcijeRazno.NapisiLog(ex);
+            }
+        }
+
+        private void tbArtKol_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && e.KeyChar != '.' && e.KeyChar != ',')
+            {
+                e.Handled = true;
+            }
+
+            //dozvoljava samo jednu decimalnu tacku
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1) ||
+                (e.KeyChar == ',') && ((sender as TextBox).Text.IndexOf(',') > -1))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void tbArtKol_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Add)
+            {
+                dArtDodaj.PerformClick();
+            }
+        }
+
+        private void tbArtFaktPret_KeyDown(object sender, KeyEventArgs e)
+        {
+            try
+            {
+                if (e.KeyCode == Keys.Enter)
+                {
+                    foreach (DataGridViewRow r in dgvFaktArtikli.Rows)
+                    {
+                        if (!r.IsNewRow)
+                        {
+                            foreach (DataGridViewCell c in dgvFaktArtikli.Rows[r.Index].Cells)
+                            {
+                                if (c.Value.ToString().Contains(dgvFaktArtikli.Text))
+                                {
+                                    c.Selected = true;
+                                    break;
+                                }
+                                else
+                                {
+                                    c.Selected = false;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                clFunkcijeRazno.NapisiLog(ex);
+            }
+        }
+
+        private void dgvFaktArtikli_CellEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                if ((sender as DataGridView).CurrentRow.Cells[1].Value != null && (sender as DataGridView).CurrentRow.Cells[2].Value != null
+                            && (sender as DataGridView).CurrentRow.Cells[3].Value != null)
+                {
+                    float.TryParse((sender as DataGridView).CurrentRow.Cells[1].Value.ToString(), out izTemp[0]); //cena bez PDV-a
+                    float.TryParse((sender as DataGridView).CurrentRow.Cells[2].Value.ToString(), out izTemp[1]); //PDV
+                    float.TryParse((sender as DataGridView).CurrentRow.Cells[3].Value.ToString(), out izTemp[2]); //Kolicina
+                }
+            }
+            catch (Exception ex)
+            {
+                clFunkcijeRazno.NapisiLog(ex);
+
+                izTemp[0] = 0;
+                izTemp[1] = 0;
+                izTemp[2] = 0;
+            }
+        }
+
+        private void dgvFaktArtikli_CellValidated(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex != 0 && e.ColumnIndex != 4 && e.ColumnIndex != 5)
+            {
+                float IzmenaTemp = 0;
+
+                try
+                {
+                    if (!dgvFaktArtikli.CurrentRow.IsNewRow)
+                    {
+                        if (dgvFaktArtikli.CurrentCell.Value != null)
+                        {
+                            float.TryParse(dgvFaktArtikli.CurrentRow.Cells[e.ColumnIndex].Value.ToString(), out IzmenaTemp);
+                            if (IzmenaTemp != 0 || IzmenaTemp != izTemp[e.ColumnIndex - 1])
+                            {
+                                clFunkcijeRazno.RacunCenaITotal(true, false, dgvFaktArtikli, artikliDataGridView, lTotal, valutaTextBox.Text,
+                    tbArtKol.Text);
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("Ova kolona mora imati vrednost!", "Greška", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            dgvFaktArtikli.CurrentCell.Value = izTemp[e.ColumnIndex - 1]; //G 13                      
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    clFunkcijeRazno.NapisiLog(ex);
+
+                    izTemp[0] = 0;
+                    izTemp[1] = 0;
+                    izTemp[2] = 0;
+                }
+            }
+        }
+
+        private void dgvFaktArtikli_KeyDown(object sender, KeyEventArgs e)
+        {
+            try
+            {
+                if (e.KeyCode == Keys.Delete)
+                {
+                    dArtUkloni.PerformClick();
+                    e.Handled = true;
+                }
+            }
+            catch (Exception ex)
+            {
+                clFunkcijeRazno.NapisiLog(ex);
+            }
+        }
+
+        private void tbPretraga_KeyDown(object sender, KeyEventArgs e)
+        {
+            /*try
+            {
+                if (e.KeyCode == Keys.Enter)
+                {
+                    if (!string.IsNullOrEmpty(tbPretraga.Text))
+                    {
+                        switch (cbFilter.SelectedIndex)
+                        {
+                            case 0:
+                                profaktureTableAdapter.qPretKlijent(dbSenaCompDataSet.Profakture, tbPretraga.Text, tbPretraga.Text,
+                                    tbPretraga.Text, tbPretraga.Text, tbPretraga.Text);
+                                break;
+                            case 1:
+                                int rb = 0;
+                                int.TryParse(tbPretraga.Text, out rb);
+                                if (rb != 0)
+                                {
+                                    profaktureTableAdapter.qPretRedniBroj(dbSenaCompDataSet.Profakture, rb);
+                                }
+                                break;
+                            case 2:
+                                int idk = 0;
+                                int.TryParse(tbPretraga.Text, out idk);
+                                if (idk != 0)
+                                {
+                                    profaktureTableAdapter.qPretKlijentID(dbSenaCompDataSet.Profakture, idk);
+                                }
+                                break;
+                            case 3:
+                                profaktureTableAdapter.qPretDatum(dbSenaCompDataSet.Profakture, tbPretraga.Text);
+                                break;
+                        }
+                    }
+                    else
+                    {
+                        profaktureTableAdapter.Fill(dbSenaCompDataSet.Profakture);
+                        try
+                        {
+                            profaktureDataGridView.CurrentCell = profaktureDataGridView.Rows[profaktureDataGridView.RowCount - 1].Cells[0];
+                        }
+                        catch { }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                clFunkcijeRazno.NapisiLog(ex);
+            }*/
         }
 
         private void faktureDataGridView_SelectionChanged(object sender, EventArgs e)
@@ -258,6 +515,53 @@ namespace uclib.Racuni
                 {
                     clFunkcijeRazno.NapisiLog(ex);
                 }
+            }
+        }
+
+        private void faktureDataGridView_CellEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            int xnIndex = -1;
+            XmlDocument xdoc = new XmlDocument();
+
+            try
+            {
+                if (!string.IsNullOrEmpty(faktureDataGridView.CurrentRow.Cells[11/*ukupna cena*/].Value.ToString()))
+                {
+                    lTotal.Text = faktureDataGridView.CurrentRow.Cells[11/*ukupna cena*/].Value.ToString() +
+                        " " + faktureDataGridView.CurrentRow.Cells[9/*Valuta*/].Value.ToString();
+                }
+                else
+                {
+                    lTotal.Text = "";
+                }
+
+                if (!string.IsNullOrEmpty(faktureDataGridView.CurrentRow.Cells[10/*roba*/].Value.ToString()))
+                {
+                    dgvFaktArtikli.Rows.Clear();
+                    xdoc.LoadXml(faktureDataGridView.CurrentRow.Cells[10/*roba*/].Value.ToString());
+
+                    foreach (XmlNode xn in xdoc.ChildNodes[0])
+                    {
+                        int.TryParse(xn.Attributes["row"].Value, out xnIndex);
+                        dgvFaktArtikli.Rows.Add();
+                        if (xnIndex != -1)
+                        {
+                            foreach (XmlNode xnn in xn)
+                            {
+                                dgvFaktArtikli.Rows[xnIndex].Cells[xnn.Name].Value = xnn.InnerText; //ovde treba popraviti
+                            }
+                            xnIndex = -1;
+                        }
+                    }
+                }
+                else
+                {
+                    dgvFaktArtikli.Rows.Clear();
+                }
+            }
+            catch(Exception ex)
+            {
+                clFunkcijeRazno.NapisiLog(ex);
             }
         }
     }

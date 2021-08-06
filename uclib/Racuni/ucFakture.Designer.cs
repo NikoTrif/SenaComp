@@ -42,7 +42,7 @@
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
-            this.tbArtProfPret = new System.Windows.Forms.TextBox();
+            this.tbArtFaktPret = new System.Windows.Forms.TextBox();
             this.dArtUkloni = new System.Windows.Forms.Button();
             this.dgvFaktArtikli = new System.Windows.Forms.DataGridView();
             this.Naziv = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -276,7 +276,7 @@
             this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 75F));
             this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel6.Controls.Add(this.tbArtProfPret, 0, 0);
+            this.tableLayoutPanel6.Controls.Add(this.tbArtFaktPret, 0, 0);
             this.tableLayoutPanel6.Controls.Add(this.dArtUkloni, 1, 0);
             this.tableLayoutPanel6.Controls.Add(this.dgvFaktArtikli, 0, 1);
             this.tableLayoutPanel6.Controls.Add(this.label4, 2, 0);
@@ -291,14 +291,15 @@
             this.tableLayoutPanel6.Size = new System.Drawing.Size(739, 201);
             this.tableLayoutPanel6.TabIndex = 1;
             // 
-            // tbArtProfPret
+            // tbArtFaktPret
             // 
-            this.tbArtProfPret.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbArtProfPret.Location = new System.Drawing.Point(3, 6);
-            this.tbArtProfPret.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tbArtProfPret.Name = "tbArtProfPret";
-            this.tbArtProfPret.Size = new System.Drawing.Size(314, 22);
-            this.tbArtProfPret.TabIndex = 0;
+            this.tbArtFaktPret.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbArtFaktPret.Location = new System.Drawing.Point(3, 6);
+            this.tbArtFaktPret.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tbArtFaktPret.Name = "tbArtFaktPret";
+            this.tbArtFaktPret.Size = new System.Drawing.Size(314, 22);
+            this.tbArtFaktPret.TabIndex = 0;
+            this.tbArtFaktPret.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbArtFaktPret_KeyDown);
             // 
             // dArtUkloni
             // 
@@ -336,6 +337,9 @@
             this.dgvFaktArtikli.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvFaktArtikli.Size = new System.Drawing.Size(733, 163);
             this.dgvFaktArtikli.TabIndex = 2;
+            this.dgvFaktArtikli.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvFaktArtikli_CellEnter);
+            this.dgvFaktArtikli.CellValidated += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvFaktArtikli_CellValidated);
+            this.dgvFaktArtikli.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dgvFaktArtikli_KeyDown);
             // 
             // Naziv
             // 
@@ -444,6 +448,8 @@
             this.artikliDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.artikliDataGridView.Size = new System.Drawing.Size(735, 162);
             this.artikliDataGridView.TabIndex = 2;
+            this.artikliDataGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.artikliDataGridView_CellDoubleClick);
+            this.artikliDataGridView.KeyDown += new System.Windows.Forms.KeyEventHandler(this.artikliDataGridView_KeyDown);
             // 
             // sifraDataGridViewTextBoxColumn
             // 
@@ -512,6 +518,8 @@
             this.tbArtPret.Name = "tbArtPret";
             this.tbArtPret.Size = new System.Drawing.Size(314, 22);
             this.tbArtPret.TabIndex = 0;
+            this.tbArtPret.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbArtPret_KeyDown);
+            this.tbArtPret.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbArtPret_KeyPress);
             // 
             // dArtDodaj
             // 
@@ -536,6 +544,8 @@
             this.tbArtKol.Size = new System.Drawing.Size(89, 22);
             this.tbArtKol.TabIndex = 3;
             this.tbArtKol.Text = "1";
+            this.tbArtKol.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbArtKol_KeyDown);
+            this.tbArtKol.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbArtKol_KeyPress);
             // 
             // groupBox2
             // 
@@ -916,6 +926,7 @@
             this.tbPretraga.Name = "tbPretraga";
             this.tbPretraga.Size = new System.Drawing.Size(300, 22);
             this.tbPretraga.TabIndex = 31;
+            this.tbPretraga.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbPretraga_KeyDown);
             // 
             // label2
             // 
@@ -962,6 +973,7 @@
             this.faktureDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.faktureDataGridView.Size = new System.Drawing.Size(1407, 204);
             this.faktureDataGridView.TabIndex = 29;
+            this.faktureDataGridView.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.faktureDataGridView_CellEnter);
             this.faktureDataGridView.SelectionChanged += new System.EventHandler(this.faktureDataGridView_SelectionChanged);
             // 
             // dataGridViewTextBoxColumn1
@@ -1108,7 +1120,7 @@
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel6;
-        private System.Windows.Forms.TextBox tbArtProfPret;
+        private System.Windows.Forms.TextBox tbArtFaktPret;
         private System.Windows.Forms.Button dArtUkloni;
         private System.Windows.Forms.DataGridView dgvFaktArtikli;
         private System.Windows.Forms.DataGridViewTextBoxColumn Naziv;

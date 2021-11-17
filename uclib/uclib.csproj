@@ -248,8 +248,10 @@
     <None Include="dbSenaCompDataSet.xss">
       <DependentUpon>dbSenaCompDataSet.xsd</DependentUpon>
     </None>
+    <None Include="Properties\DataSources\iflib.ReportClasses.clProfaktura.datasource" />
     <None Include="Properties\DataSources\iflib.ReportClasses.clRadniNalogPos.datasource" />
     <None Include="Properties\DataSources\iflib.ReportClasses.clRadniNalogPriv.datasource" />
+    <None Include="Properties\DataSources\iflib.ReportClasses.clRoba.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

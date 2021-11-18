@@ -181,6 +181,7 @@ namespace uclib.Baze
                 tbKalkCenaBezPDV.Text = clFunkcijeRazno.KalkulatorCenaArt.CenaBezPDV.ToString();
                 tbKalkProdajnaCena.Text = clFunkcijeRazno.KalkulatorCenaArt.ProdajnaCena.ToString();
                 tbKalkMarza.Text = clFunkcijeRazno.KalkulatorCenaArt.Marza.ToString();
+                tbIznPDV.Text = clFunkcijeRazno.KalkulatorCenaArt.iznosPDV.ToString();
             }
             catch (Exception ex)
             {

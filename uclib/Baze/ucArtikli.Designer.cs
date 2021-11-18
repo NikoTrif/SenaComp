@@ -38,6 +38,14 @@
             System.Windows.Forms.Label cenaLabel;
             System.Windows.Forms.Label iznosPDVLabel;
             this.artikliDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.Cena = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IznosPDV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.artikliBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dbSenaCompDataSet = new uclib.dbSenaCompDataSet();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
@@ -46,6 +54,7 @@
             this.dSacuvaj = new System.Windows.Forms.Button();
             this.dObrisi = new System.Windows.Forms.Button();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.iznosPDVTextBox = new System.Windows.Forms.TextBox();
             this.cenaTextBox = new System.Windows.Forms.TextBox();
             this.jedinicaMereTextBox = new System.Windows.Forms.TextBox();
             this.nazivTextBox = new System.Windows.Forms.TextBox();
@@ -80,19 +89,10 @@
             this.dCE = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.tbKalkProdajnaCena = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.tbIznPDV = new System.Windows.Forms.TextBox();
             this.artikliTableAdapter = new uclib.dbSenaCompDataSetTableAdapters.ArtikliTableAdapter();
             this.tableAdapterManager = new uclib.dbSenaCompDataSetTableAdapters.TableAdapterManager();
-            this.iznosPDVTextBox = new System.Windows.Forms.TextBox();
-            this.label15 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.Cena = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IznosPDV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             sifraLabel = new System.Windows.Forms.Label();
             nazivLabel = new System.Windows.Forms.Label();
             jedinicaMereLabel = new System.Windows.Forms.Label();
@@ -118,7 +118,7 @@
             sifraLabel.Location = new System.Drawing.Point(4, 7);
             sifraLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             sifraLabel.Name = "sifraLabel";
-            sifraLabel.Size = new System.Drawing.Size(106, 17);
+            sifraLabel.Size = new System.Drawing.Size(105, 17);
             sifraLabel.TabIndex = 0;
             sifraLabel.Text = "Šifra:";
             // 
@@ -129,7 +129,7 @@
             nazivLabel.Location = new System.Drawing.Point(4, 39);
             nazivLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             nazivLabel.Name = "nazivLabel";
-            nazivLabel.Size = new System.Drawing.Size(106, 17);
+            nazivLabel.Size = new System.Drawing.Size(105, 17);
             nazivLabel.TabIndex = 2;
             nazivLabel.Text = "Naziv:";
             // 
@@ -140,7 +140,7 @@
             jedinicaMereLabel.Location = new System.Drawing.Point(4, 71);
             jedinicaMereLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             jedinicaMereLabel.Name = "jedinicaMereLabel";
-            jedinicaMereLabel.Size = new System.Drawing.Size(106, 17);
+            jedinicaMereLabel.Size = new System.Drawing.Size(105, 17);
             jedinicaMereLabel.TabIndex = 4;
             jedinicaMereLabel.Text = "Jedinica Mere:";
             // 
@@ -151,7 +151,7 @@
             pDVLabel.Location = new System.Drawing.Point(4, 135);
             pDVLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             pDVLabel.Name = "pDVLabel";
-            pDVLabel.Size = new System.Drawing.Size(106, 17);
+            pDVLabel.Size = new System.Drawing.Size(105, 17);
             pDVLabel.TabIndex = 8;
             pDVLabel.Text = "PDV:";
             // 
@@ -159,10 +159,10 @@
             // 
             prodajnaCenaLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             prodajnaCenaLabel.AutoSize = true;
-            prodajnaCenaLabel.Location = new System.Drawing.Point(4, 199);
+            prodajnaCenaLabel.Location = new System.Drawing.Point(4, 192);
             prodajnaCenaLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             prodajnaCenaLabel.Name = "prodajnaCenaLabel";
-            prodajnaCenaLabel.Size = new System.Drawing.Size(106, 17);
+            prodajnaCenaLabel.Size = new System.Drawing.Size(105, 32);
             prodajnaCenaLabel.TabIndex = 9;
             prodajnaCenaLabel.Text = "Prodajna Cena:";
             // 
@@ -173,7 +173,7 @@
             uslugaLabel.Location = new System.Drawing.Point(4, 229);
             uslugaLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             uslugaLabel.Name = "uslugaLabel";
-            uslugaLabel.Size = new System.Drawing.Size(106, 17);
+            uslugaLabel.Size = new System.Drawing.Size(105, 17);
             uslugaLabel.TabIndex = 10;
             uslugaLabel.Text = "Usluga:";
             // 
@@ -183,9 +183,19 @@
             cenaLabel.AutoSize = true;
             cenaLabel.Location = new System.Drawing.Point(3, 103);
             cenaLabel.Name = "cenaLabel";
-            cenaLabel.Size = new System.Drawing.Size(108, 17);
+            cenaLabel.Size = new System.Drawing.Size(107, 17);
             cenaLabel.TabIndex = 20;
             cenaLabel.Text = "Cena:";
+            // 
+            // iznosPDVLabel
+            // 
+            iznosPDVLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            iznosPDVLabel.AutoSize = true;
+            iznosPDVLabel.Location = new System.Drawing.Point(3, 167);
+            iznosPDVLabel.Name = "iznosPDVLabel";
+            iznosPDVLabel.Size = new System.Drawing.Size(107, 17);
+            iznosPDVLabel.TabIndex = 21;
+            iznosPDVLabel.Text = "Iznos PDV:";
             // 
             // artikliDataGridView
             // 
@@ -214,6 +224,62 @@
             this.artikliDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.artikliDataGridView.Size = new System.Drawing.Size(1399, 343);
             this.artikliDataGridView.TabIndex = 1;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "Sifra";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Šifra";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "Naziv";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Naziv";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "jedinicaMere";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Jedinica Mere";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            // 
+            // dataGridViewCheckBoxColumn1
+            // 
+            this.dataGridViewCheckBoxColumn1.DataPropertyName = "Usluga";
+            this.dataGridViewCheckBoxColumn1.HeaderText = "Usluga";
+            this.dataGridViewCheckBoxColumn1.Name = "dataGridViewCheckBoxColumn1";
+            this.dataGridViewCheckBoxColumn1.ReadOnly = true;
+            // 
+            // Cena
+            // 
+            this.Cena.DataPropertyName = "Cena";
+            this.Cena.HeaderText = "Cena";
+            this.Cena.Name = "Cena";
+            this.Cena.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "PDV";
+            this.dataGridViewTextBoxColumn4.HeaderText = "PDV";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            // 
+            // IznosPDV
+            // 
+            this.IznosPDV.DataPropertyName = "IznosPDV";
+            this.IznosPDV.HeaderText = "Iznos PDV";
+            this.IznosPDV.Name = "IznosPDV";
+            this.IznosPDV.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "prodajnaCena";
+            this.dataGridViewTextBoxColumn5.HeaderText = "Prodajna Cena";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
             // 
             // artikliBindingSource
             // 
@@ -309,7 +375,7 @@
             this.tableLayoutPanel2.ColumnCount = 3;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 29.86111F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 70.13889F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 35F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 36F));
             this.tableLayoutPanel2.Controls.Add(iznosPDVLabel, 0, 5);
             this.tableLayoutPanel2.Controls.Add(this.iznosPDVTextBox, 1, 5);
             this.tableLayoutPanel2.Controls.Add(cenaLabel, 0, 3);
@@ -343,11 +409,20 @@
             this.tableLayoutPanel2.Size = new System.Drawing.Size(417, 251);
             this.tableLayoutPanel2.TabIndex = 4;
             // 
+            // iznosPDVTextBox
+            // 
+            this.iznosPDVTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.iznosPDVTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.artikliBindingSource, "IznosPDV", true));
+            this.iznosPDVTextBox.Location = new System.Drawing.Point(116, 165);
+            this.iznosPDVTextBox.Name = "iznosPDVTextBox";
+            this.iznosPDVTextBox.Size = new System.Drawing.Size(261, 22);
+            this.iznosPDVTextBox.TabIndex = 22;
+            // 
             // cenaTextBox
             // 
             this.cenaTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.cenaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.artikliBindingSource, "Cena", true));
-            this.cenaTextBox.Location = new System.Drawing.Point(117, 101);
+            this.cenaTextBox.Location = new System.Drawing.Point(116, 101);
             this.cenaTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cenaTextBox.Name = "cenaTextBox";
             this.cenaTextBox.Size = new System.Drawing.Size(261, 22);
@@ -357,7 +432,7 @@
             // 
             this.jedinicaMereTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.jedinicaMereTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.artikliBindingSource, "jedinicaMere", true));
-            this.jedinicaMereTextBox.Location = new System.Drawing.Point(118, 69);
+            this.jedinicaMereTextBox.Location = new System.Drawing.Point(117, 69);
             this.jedinicaMereTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.jedinicaMereTextBox.Name = "jedinicaMereTextBox";
             this.jedinicaMereTextBox.Size = new System.Drawing.Size(259, 22);
@@ -367,7 +442,7 @@
             // 
             this.nazivTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.nazivTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.artikliBindingSource, "Naziv", true));
-            this.nazivTextBox.Location = new System.Drawing.Point(118, 37);
+            this.nazivTextBox.Location = new System.Drawing.Point(117, 37);
             this.nazivTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.nazivTextBox.Name = "nazivTextBox";
             this.nazivTextBox.Size = new System.Drawing.Size(259, 22);
@@ -377,7 +452,7 @@
             // 
             this.sifraTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.sifraTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.artikliBindingSource, "Sifra", true));
-            this.sifraTextBox.Location = new System.Drawing.Point(118, 5);
+            this.sifraTextBox.Location = new System.Drawing.Point(117, 5);
             this.sifraTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.sifraTextBox.Name = "sifraTextBox";
             this.sifraTextBox.Size = new System.Drawing.Size(259, 22);
@@ -387,7 +462,7 @@
             // 
             this.pDVTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.pDVTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.artikliBindingSource, "PDV", true));
-            this.pDVTextBox.Location = new System.Drawing.Point(118, 133);
+            this.pDVTextBox.Location = new System.Drawing.Point(117, 133);
             this.pDVTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.pDVTextBox.Name = "pDVTextBox";
             this.pDVTextBox.Size = new System.Drawing.Size(259, 22);
@@ -398,9 +473,9 @@
             this.label13.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(384, 135);
+            this.label13.Location = new System.Drawing.Point(383, 135);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(30, 17);
+            this.label13.Size = new System.Drawing.Size(31, 17);
             this.label13.TabIndex = 20;
             this.label13.Text = "%";
             // 
@@ -408,7 +483,7 @@
             // 
             this.uslugaCheckBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.uslugaCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.artikliBindingSource, "Usluga", true));
-            this.uslugaCheckBox.Location = new System.Drawing.Point(118, 228);
+            this.uslugaCheckBox.Location = new System.Drawing.Point(117, 228);
             this.uslugaCheckBox.Margin = new System.Windows.Forms.Padding(4);
             this.uslugaCheckBox.Name = "uslugaCheckBox";
             this.uslugaCheckBox.Size = new System.Drawing.Size(259, 19);
@@ -419,7 +494,7 @@
             // 
             this.prodajnaCenaTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.prodajnaCenaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.artikliBindingSource, "prodajnaCena", true));
-            this.prodajnaCenaTextBox.Location = new System.Drawing.Point(118, 197);
+            this.prodajnaCenaTextBox.Location = new System.Drawing.Point(117, 197);
             this.prodajnaCenaTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.prodajnaCenaTextBox.Name = "prodajnaCenaTextBox";
             this.prodajnaCenaTextBox.Size = new System.Drawing.Size(259, 22);
@@ -525,7 +600,7 @@
             this.tableLayoutPanel3.Controls.Add(this.label7, 0, 6);
             this.tableLayoutPanel3.Controls.Add(this.tbKalkProdajnaCena, 1, 6);
             this.tableLayoutPanel3.Controls.Add(this.label15, 0, 5);
-            this.tableLayoutPanel3.Controls.Add(this.textBox1, 1, 5);
+            this.tableLayoutPanel3.Controls.Add(this.tbIznPDV, 1, 5);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 17);
             this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -743,6 +818,26 @@
             this.tbKalkProdajnaCena.Size = new System.Drawing.Size(194, 22);
             this.tbKalkProdajnaCena.TabIndex = 18;
             // 
+            // label15
+            // 
+            this.label15.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(3, 145);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(118, 17);
+            this.label15.TabIndex = 0;
+            this.label15.Text = "Iznos PDV:";
+            // 
+            // tbIznPDV
+            // 
+            this.tbIznPDV.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel3.SetColumnSpan(this.tbIznPDV, 3);
+            this.tbIznPDV.Location = new System.Drawing.Point(127, 143);
+            this.tbIznPDV.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tbIznPDV.Name = "tbIznPDV";
+            this.tbIznPDV.Size = new System.Drawing.Size(194, 22);
+            this.tbIznPDV.TabIndex = 17;
+            // 
             // artikliTableAdapter
             // 
             this.artikliTableAdapter.ClearBeforeFill = true;
@@ -760,101 +855,6 @@
             this.tableAdapterManager.OtpremniceTableAdapter = null;
             this.tableAdapterManager.ProfaktureTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = uclib.dbSenaCompDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
-            // 
-            // iznosPDVLabel
-            // 
-            iznosPDVLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            iznosPDVLabel.AutoSize = true;
-            iznosPDVLabel.Location = new System.Drawing.Point(3, 167);
-            iznosPDVLabel.Name = "iznosPDVLabel";
-            iznosPDVLabel.Size = new System.Drawing.Size(108, 17);
-            iznosPDVLabel.TabIndex = 21;
-            iznosPDVLabel.Text = "Iznos PDV:";
-            // 
-            // iznosPDVTextBox
-            // 
-            this.iznosPDVTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.iznosPDVTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.artikliBindingSource, "IznosPDV", true));
-            this.iznosPDVTextBox.Location = new System.Drawing.Point(117, 165);
-            this.iznosPDVTextBox.Name = "iznosPDVTextBox";
-            this.iznosPDVTextBox.Size = new System.Drawing.Size(261, 22);
-            this.iznosPDVTextBox.TabIndex = 22;
-            // 
-            // label15
-            // 
-            this.label15.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(3, 145);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(118, 17);
-            this.label15.TabIndex = 0;
-            this.label15.Text = "Iznos PDV:";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel3.SetColumnSpan(this.textBox1, 3);
-            this.textBox1.Location = new System.Drawing.Point(127, 143);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(194, 22);
-            this.textBox1.TabIndex = 17;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "Sifra";
-            this.dataGridViewTextBoxColumn1.HeaderText = "Šifra";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "Naziv";
-            this.dataGridViewTextBoxColumn2.HeaderText = "Naziv";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "jedinicaMere";
-            this.dataGridViewTextBoxColumn3.HeaderText = "Jedinica Mere";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            // 
-            // dataGridViewCheckBoxColumn1
-            // 
-            this.dataGridViewCheckBoxColumn1.DataPropertyName = "Usluga";
-            this.dataGridViewCheckBoxColumn1.HeaderText = "Usluga";
-            this.dataGridViewCheckBoxColumn1.Name = "dataGridViewCheckBoxColumn1";
-            this.dataGridViewCheckBoxColumn1.ReadOnly = true;
-            // 
-            // Cena
-            // 
-            this.Cena.DataPropertyName = "Cena";
-            this.Cena.HeaderText = "Cena";
-            this.Cena.Name = "Cena";
-            this.Cena.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "PDV";
-            this.dataGridViewTextBoxColumn4.HeaderText = "PDV";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.ReadOnly = true;
-            // 
-            // IznosPDV
-            // 
-            this.IznosPDV.DataPropertyName = "IznosPDV";
-            this.IznosPDV.HeaderText = "Iznos PDV";
-            this.IznosPDV.Name = "IznosPDV";
-            this.IznosPDV.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "prodajnaCena";
-            this.dataGridViewTextBoxColumn5.HeaderText = "Prodajna Cena";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.ReadOnly = true;
             // 
             // ucArtikli
             // 
@@ -937,7 +937,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn IznosPDV;
         private System.Windows.Forms.TextBox iznosPDVTextBox;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox tbIznPDV;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cena;

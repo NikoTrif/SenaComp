@@ -105,6 +105,7 @@ namespace iflib
                 {
                     //dodaj racunicu
                     KalkulatorCenaArt.CenaBezPDV = KalkulatorCenaArt.NabavnaCena * (1 - (KalkulatorCenaArt.Rabat / 100)) * (1 + (KalkulatorCenaArt.Marza / 100));
+                    KalkulatorCenaArt.iznosPDV = KalkulatorCenaArt.CenaBezPDV / 100 * KalkulatorCenaArt.PDV;
                     KalkulatorCenaArt.ProdajnaCena = KalkulatorCenaArt.CenaBezPDV * (1 + (KalkulatorCenaArt.PDV / 100));
                 }
 
@@ -147,6 +148,7 @@ namespace iflib
                     */
 
                     KalkulatorCenaArt.CenaBezPDV = KalkulatorCenaArt.ProdajnaCena / (1 + (KalkulatorCenaArt.PDV / 100));
+                    KalkulatorCenaArt.iznosPDV = KalkulatorCenaArt.CenaBezPDV / 100 * KalkulatorCenaArt.PDV;
                     KalkulatorCenaArt.Marza = (KalkulatorCenaArt.CenaBezPDV / (KalkulatorCenaArt.NabavnaCena * (1 - (KalkulatorCenaArt.Rabat / 100))) - 1) * 100;
                 }
             }
@@ -186,6 +188,7 @@ namespace iflib
             float cenaSaPDV = 0;
             float cena = 0; //cena bez PDV-a iz kolone 1
             float pdv = 0;
+            float izPdv = 0;
             float kol = 0;
             float uCena = 0;
 
@@ -198,11 +201,13 @@ namespace iflib
                         float.TryParse(dgvPFOArtikli.CurrentRow.Cells[2].Value.ToString(), out pdv);
                         float.TryParse(dgvPFOArtikli.CurrentRow.Cells[3].Value.ToString(), out kol);
                         float.TryParse(dgvPFOArtikli.CurrentRow.Cells[1].Value.ToString(), out cena);
+                        izPdv = (cena / 100 * pdv) * kol;
                         cenaSaPDV = cena * ((pdv / 100) + 1);
                         uCena = cenaSaPDV * kol;
 
-                        dgvPFOArtikli.CurrentRow.Cells[6].Value = cenaSaPDV;
-                        dgvPFOArtikli.CurrentRow.Cells[5].Value = uCena;
+                        dgvPFOArtikli.CurrentRow.Cells[7].Value = cenaSaPDV;
+                        dgvPFOArtikli.CurrentRow.Cells[6].Value = uCena;
+                        dgvPFOArtikli.CurrentRow.Cells[5].Value = izPdv;
                     }
 
                     else
@@ -212,17 +217,18 @@ namespace iflib
                         float.TryParse(dgvArtikli.CurrentRow.Cells[5].Value.ToString(), out cena);
                         float.TryParse(dgvArtikli.CurrentRow.Cells[4].Value.ToString(), out pdv);
                         float.TryParse(ArtikalKolicina, out kol);
-                        float.TryParse(dgvArtikli.CurrentRow.Cells[6].Value.ToString(), out cenaSaPDV);
+                        float.TryParse(dgvArtikli.CurrentRow.Cells[6].Value.ToString(), out izPdv);
+                        float.TryParse(dgvArtikli.CurrentRow.Cells[7].Value.ToString(), out cenaSaPDV);
                         uCena = cenaSaPDV * kol;
 
-                        dgvPFOArtikli.Rows.Add(naziv, cena, pdv, kol, jedinica, uCena, cenaSaPDV);
+                        dgvPFOArtikli.Rows.Add(naziv, cena, pdv, izPdv * kol, kol, jedinica, uCena, cenaSaPDV);
                     }
 
                     foreach (DataGridViewRow dgvr in dgvPFOArtikli.Rows)
                     {
-                        if (dgvr.Cells[5].Value != null)
+                        if (dgvr.Cells[6].Value != null)
                         {
-                            float.TryParse(dgvr.Cells[5].Value.ToString(), out x);
+                            float.TryParse(dgvr.Cells[6].Value.ToString(), out x);
                             total = total + x;
                             x = 0;
                         }
@@ -234,7 +240,7 @@ namespace iflib
                     {
                         if (!dgvr.IsNewRow)
                         {
-                            float.TryParse(dgvr.Cells[5].Value.ToString(), out x);
+                            float.TryParse(dgvr.Cells[6].Value.ToString(), out x);
                             total = total + x;
                             x = 0;
                         }
@@ -280,6 +286,7 @@ namespace iflib
             public static double Marza;
             public static double CenaBezPDV;
             public static double PDV = 0;
+            public static double iznosPDV = 0;
             public static double ProdajnaCena = 0;
         }
     }

@@ -46,12 +46,22 @@
             this.dStampaj = new System.Windows.Forms.Button();
             this.dObrisi = new System.Windows.Forms.Button();
             this.profaktureDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PIB = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.matBroj = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Adresa = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Grad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.datumIsplate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.profaktureBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dbSenaCompDataSet = new uclib.dbSenaCompDataSet();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.datumIsplateDateTimePicker = new System.Windows.Forms.DateTimePicker();
@@ -81,41 +91,33 @@
             this.tbArtProfPret = new System.Windows.Forms.TextBox();
             this.dArtUkloni = new System.Windows.Forms.Button();
             this.dgvProfArtikli = new System.Windows.Forms.DataGridView();
-            this.Naziv = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Cena = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PDV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Kolicina = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.jedinicaMere = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.UkupnaCena = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CenaPDV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label4 = new System.Windows.Forms.Label();
             this.lTotal = new System.Windows.Forms.Label();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.artikliDataGridView = new System.Windows.Forms.DataGridView();
+            this.artikliBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tbArtPret = new System.Windows.Forms.TextBox();
             this.dArtDodaj = new System.Windows.Forms.Button();
             this.tbArtKol = new System.Windows.Forms.TextBox();
+            this.profaktureTableAdapter = new uclib.dbSenaCompDataSetTableAdapters.ProfaktureTableAdapter();
+            this.tableAdapterManager = new uclib.dbSenaCompDataSetTableAdapters.TableAdapterManager();
+            this.artikliTableAdapter = new uclib.dbSenaCompDataSetTableAdapters.ArtikliTableAdapter();
             this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IznosPDV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.artikliBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dbSenaCompDataSet = new uclib.dbSenaCompDataSet();
-            this.profaktureBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.profaktureTableAdapter = new uclib.dbSenaCompDataSetTableAdapters.ProfaktureTableAdapter();
-            this.tableAdapterManager = new uclib.dbSenaCompDataSetTableAdapters.TableAdapterManager();
-            this.artikliTableAdapter = new uclib.dbSenaCompDataSetTableAdapters.ArtikliTableAdapter();
+            this.Naziv = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cena = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PDV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IzPDV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Kolicina = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.jedinicaMere = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.UkupnaCena = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CenaPDV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             redniBrojLabel = new System.Windows.Forms.Label();
             datumLabel = new System.Windows.Forms.Label();
             valutaLabel = new System.Windows.Forms.Label();
@@ -128,6 +130,8 @@
             gradLabel = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.profaktureDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.profaktureBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dbSenaCompDataSet)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -139,8 +143,6 @@
             this.tableLayoutPanel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.artikliDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.artikliBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dbSenaCompDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.profaktureBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // redniBrojLabel
@@ -372,6 +374,37 @@
             this.profaktureDataGridView.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.profaktureDataGridView_CellEnter);
             this.profaktureDataGridView.SelectionChanged += new System.EventHandler(this.profaktureDataGridView_SelectionChanged);
             // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "redniBroj";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Redni broj";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Width = 102;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "Datum";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Datum";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            this.dataGridViewTextBoxColumn7.DataPropertyName = "IDKlijenta";
+            this.dataGridViewTextBoxColumn7.HeaderText = "IDKlijenta";
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.ReadOnly = true;
+            this.dataGridViewTextBoxColumn7.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn8
+            // 
+            this.dataGridViewTextBoxColumn8.DataPropertyName = "Klijent";
+            this.dataGridViewTextBoxColumn8.HeaderText = "Klijent";
+            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            this.dataGridViewTextBoxColumn8.ReadOnly = true;
+            // 
             // PIB
             // 
             this.PIB.DataPropertyName = "PIB";
@@ -404,6 +437,37 @@
             this.Grad.ReadOnly = true;
             this.Grad.Visible = false;
             // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "Valuta";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Valuta";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            this.dataGridViewTextBoxColumn3.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "Roba";
+            this.dataGridViewTextBoxColumn4.HeaderText = "Roba";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            this.dataGridViewTextBoxColumn4.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "Ukupno";
+            this.dataGridViewTextBoxColumn5.HeaderText = "Ukupna cena";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.DataPropertyName = "Klauzule";
+            this.dataGridViewTextBoxColumn6.HeaderText = "Klauzule";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.ReadOnly = true;
+            this.dataGridViewTextBoxColumn6.Visible = false;
+            // 
             // Status
             // 
             this.Status.DataPropertyName = "Status";
@@ -418,6 +482,16 @@
             this.datumIsplate.Name = "datumIsplate";
             this.datumIsplate.ReadOnly = true;
             this.datumIsplate.Visible = false;
+            // 
+            // profaktureBindingSource
+            // 
+            this.profaktureBindingSource.DataMember = "Profakture";
+            this.profaktureBindingSource.DataSource = this.dbSenaCompDataSet;
+            // 
+            // dbSenaCompDataSet
+            // 
+            this.dbSenaCompDataSet.DataSetName = "dbSenaCompDataSet";
+            this.dbSenaCompDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // groupBox1
             // 
@@ -821,6 +895,7 @@
             this.Naziv,
             this.Cena,
             this.PDV,
+            this.IzPDV,
             this.Kolicina,
             this.jedinicaMere,
             this.UkupnaCena,
@@ -837,48 +912,6 @@
             this.dgvProfArtikli.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProfArtikli_CellEnter);
             this.dgvProfArtikli.CellValidated += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProfArtikli_CellValidated);
             this.dgvProfArtikli.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dgvProfArtikli_KeyDown);
-            // 
-            // Naziv
-            // 
-            this.Naziv.FillWeight = 176.6497F;
-            this.Naziv.HeaderText = "Naziv";
-            this.Naziv.Name = "Naziv";
-            // 
-            // Cena
-            // 
-            this.Cena.FillWeight = 84.67005F;
-            this.Cena.HeaderText = "Cena";
-            this.Cena.Name = "Cena";
-            // 
-            // PDV
-            // 
-            this.PDV.FillWeight = 84.67005F;
-            this.PDV.HeaderText = "PDV";
-            this.PDV.Name = "PDV";
-            // 
-            // Kolicina
-            // 
-            this.Kolicina.FillWeight = 84.67005F;
-            this.Kolicina.HeaderText = "Količina";
-            this.Kolicina.Name = "Kolicina";
-            // 
-            // jedinicaMere
-            // 
-            this.jedinicaMere.FillWeight = 84.67005F;
-            this.jedinicaMere.HeaderText = "Jedinica mere";
-            this.jedinicaMere.Name = "jedinicaMere";
-            // 
-            // UkupnaCena
-            // 
-            this.UkupnaCena.FillWeight = 84.67005F;
-            this.UkupnaCena.HeaderText = "Ukupna Cena";
-            this.UkupnaCena.Name = "UkupnaCena";
-            // 
-            // CenaPDV
-            // 
-            this.CenaPDV.HeaderText = "CenaPDV";
-            this.CenaPDV.Name = "CenaPDV";
-            this.CenaPDV.Visible = false;
             // 
             // label4
             // 
@@ -936,8 +969,9 @@
             this.dataGridViewTextBoxColumn10,
             this.dataGridViewTextBoxColumn11,
             this.dataGridViewCheckBoxColumn1,
-            this.dataGridViewTextBoxColumn12,
             this.dataGridViewTextBoxColumn14,
+            this.dataGridViewTextBoxColumn12,
+            this.IznosPDV,
             this.dataGridViewTextBoxColumn13});
             this.tableLayoutPanel5.SetColumnSpan(this.artikliDataGridView, 4);
             this.artikliDataGridView.DataSource = this.artikliBindingSource;
@@ -953,6 +987,11 @@
             this.artikliDataGridView.TabIndex = 2;
             this.artikliDataGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.artikliDataGridView_CellDoubleClick);
             this.artikliDataGridView.KeyDown += new System.Windows.Forms.KeyEventHandler(this.artikliDataGridView_KeyDown);
+            // 
+            // artikliBindingSource
+            // 
+            this.artikliBindingSource.DataMember = "Artikli";
+            this.artikliBindingSource.DataSource = this.dbSenaCompDataSet;
             // 
             // tbArtPret
             // 
@@ -991,6 +1030,27 @@
             this.tbArtKol.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbArtKol_KeyDown);
             this.tbArtKol.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbArtKol_KeyPress);
             // 
+            // profaktureTableAdapter
+            // 
+            this.profaktureTableAdapter.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.ArtikliPFOTableAdapter = null;
+            this.tableAdapterManager.ArtikliTableAdapter = null;
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.FaktureTableAdapter = null;
+            this.tableAdapterManager.FirmeTableAdapter = null;
+            this.tableAdapterManager.NaloziFTableAdapter = null;
+            this.tableAdapterManager.NaloziPTableAdapter = null;
+            this.tableAdapterManager.OtpremniceTableAdapter = null;
+            this.tableAdapterManager.ProfaktureTableAdapter = this.profaktureTableAdapter;
+            this.tableAdapterManager.UpdateOrder = uclib.dbSenaCompDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            // 
+            // artikliTableAdapter
+            // 
+            this.artikliTableAdapter.ClearBeforeFill = true;
+            // 
             // dataGridViewTextBoxColumn9
             // 
             this.dataGridViewTextBoxColumn9.DataPropertyName = "Sifra";
@@ -1023,6 +1083,14 @@
             this.dataGridViewCheckBoxColumn1.Name = "dataGridViewCheckBoxColumn1";
             this.dataGridViewCheckBoxColumn1.ReadOnly = true;
             // 
+            // dataGridViewTextBoxColumn14
+            // 
+            this.dataGridViewTextBoxColumn14.DataPropertyName = "Cena";
+            this.dataGridViewTextBoxColumn14.FillWeight = 82.31811F;
+            this.dataGridViewTextBoxColumn14.HeaderText = "Cena";
+            this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
+            this.dataGridViewTextBoxColumn14.ReadOnly = true;
+            // 
             // dataGridViewTextBoxColumn12
             // 
             this.dataGridViewTextBoxColumn12.DataPropertyName = "PDV";
@@ -1031,13 +1099,12 @@
             this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
             this.dataGridViewTextBoxColumn12.ReadOnly = true;
             // 
-            // dataGridViewTextBoxColumn14
+            // IznosPDV
             // 
-            this.dataGridViewTextBoxColumn14.DataPropertyName = "Cena";
-            this.dataGridViewTextBoxColumn14.FillWeight = 82.31811F;
-            this.dataGridViewTextBoxColumn14.HeaderText = "Cena";
-            this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
-            this.dataGridViewTextBoxColumn14.ReadOnly = true;
+            this.IznosPDV.DataPropertyName = "IznosPDV";
+            this.IznosPDV.HeaderText = "IznosPDV";
+            this.IznosPDV.Name = "IznosPDV";
+            this.IznosPDV.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn13
             // 
@@ -1047,103 +1114,52 @@
             this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
             this.dataGridViewTextBoxColumn13.ReadOnly = true;
             // 
-            // artikliBindingSource
+            // Naziv
             // 
-            this.artikliBindingSource.DataMember = "Artikli";
-            this.artikliBindingSource.DataSource = this.dbSenaCompDataSet;
+            this.Naziv.FillWeight = 176.6497F;
+            this.Naziv.HeaderText = "Naziv";
+            this.Naziv.Name = "Naziv";
             // 
-            // dbSenaCompDataSet
+            // Cena
             // 
-            this.dbSenaCompDataSet.DataSetName = "dbSenaCompDataSet";
-            this.dbSenaCompDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.Cena.FillWeight = 84.67005F;
+            this.Cena.HeaderText = "Cena";
+            this.Cena.Name = "Cena";
             // 
-            // profaktureBindingSource
+            // PDV
             // 
-            this.profaktureBindingSource.DataMember = "Profakture";
-            this.profaktureBindingSource.DataSource = this.dbSenaCompDataSet;
+            this.PDV.FillWeight = 84.67005F;
+            this.PDV.HeaderText = "PDV";
+            this.PDV.Name = "PDV";
             // 
-            // dataGridViewTextBoxColumn1
+            // IzPDV
             // 
-            this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "redniBroj";
-            this.dataGridViewTextBoxColumn1.HeaderText = "Redni broj";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            this.dataGridViewTextBoxColumn1.Width = 102;
+            this.IzPDV.HeaderText = "Iznos PDV";
+            this.IzPDV.Name = "IzPDV";
             // 
-            // dataGridViewTextBoxColumn2
+            // Kolicina
             // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "Datum";
-            this.dataGridViewTextBoxColumn2.HeaderText = "Datum";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            this.Kolicina.FillWeight = 84.67005F;
+            this.Kolicina.HeaderText = "Količina";
+            this.Kolicina.Name = "Kolicina";
             // 
-            // dataGridViewTextBoxColumn7
+            // jedinicaMere
             // 
-            this.dataGridViewTextBoxColumn7.DataPropertyName = "IDKlijenta";
-            this.dataGridViewTextBoxColumn7.HeaderText = "IDKlijenta";
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            this.dataGridViewTextBoxColumn7.ReadOnly = true;
-            this.dataGridViewTextBoxColumn7.Visible = false;
+            this.jedinicaMere.FillWeight = 84.67005F;
+            this.jedinicaMere.HeaderText = "Jedinica mere";
+            this.jedinicaMere.Name = "jedinicaMere";
             // 
-            // dataGridViewTextBoxColumn8
+            // UkupnaCena
             // 
-            this.dataGridViewTextBoxColumn8.DataPropertyName = "Klijent";
-            this.dataGridViewTextBoxColumn8.HeaderText = "Klijent";
-            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
-            this.dataGridViewTextBoxColumn8.ReadOnly = true;
+            this.UkupnaCena.FillWeight = 84.67005F;
+            this.UkupnaCena.HeaderText = "Ukupna Cena";
+            this.UkupnaCena.Name = "UkupnaCena";
             // 
-            // dataGridViewTextBoxColumn3
+            // CenaPDV
             // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "Valuta";
-            this.dataGridViewTextBoxColumn3.HeaderText = "Valuta";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            this.dataGridViewTextBoxColumn3.Visible = false;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "Roba";
-            this.dataGridViewTextBoxColumn4.HeaderText = "Roba";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.ReadOnly = true;
-            this.dataGridViewTextBoxColumn4.Visible = false;
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "Ukupno";
-            this.dataGridViewTextBoxColumn5.HeaderText = "Ukupna cena";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn6
-            // 
-            this.dataGridViewTextBoxColumn6.DataPropertyName = "Klauzule";
-            this.dataGridViewTextBoxColumn6.HeaderText = "Klauzule";
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            this.dataGridViewTextBoxColumn6.ReadOnly = true;
-            this.dataGridViewTextBoxColumn6.Visible = false;
-            // 
-            // profaktureTableAdapter
-            // 
-            this.profaktureTableAdapter.ClearBeforeFill = true;
-            // 
-            // tableAdapterManager
-            // 
-            this.tableAdapterManager.ArtikliPFOTableAdapter = null;
-            this.tableAdapterManager.ArtikliTableAdapter = null;
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.FaktureTableAdapter = null;
-            this.tableAdapterManager.FirmeTableAdapter = null;
-            this.tableAdapterManager.NaloziFTableAdapter = null;
-            this.tableAdapterManager.NaloziPTableAdapter = null;
-            this.tableAdapterManager.OtpremniceTableAdapter = null;
-            this.tableAdapterManager.ProfaktureTableAdapter = this.profaktureTableAdapter;
-            this.tableAdapterManager.UpdateOrder = uclib.dbSenaCompDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
-            // 
-            // artikliTableAdapter
-            // 
-            this.artikliTableAdapter.ClearBeforeFill = true;
+            this.CenaPDV.HeaderText = "CenaPDV";
+            this.CenaPDV.Name = "CenaPDV";
+            this.CenaPDV.Visible = false;
             // 
             // ucProfakture
             // 
@@ -1164,6 +1180,8 @@
             this.Load += new System.EventHandler(this.ucProfakture_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.profaktureDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.profaktureBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dbSenaCompDataSet)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
@@ -1179,8 +1197,6 @@
             this.tableLayoutPanel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.artikliDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.artikliBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dbSenaCompDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.profaktureBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1251,9 +1267,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.TextBox tbArtKol;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IzPDV;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IznosPDV;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn14;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn14;
         private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;

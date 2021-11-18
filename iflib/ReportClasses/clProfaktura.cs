@@ -25,8 +25,10 @@ namespace iflib.ReportClasses
         public string Opis { get; set; }
         public float Kolicina { get; set; }
         public string JedinicaMere { get; set; }
-        public float Cena { get; set; }
+        public float Cena { get; set; }        
+        public float IznosBezPDV { get; set; }
         public float PDV { get; set; }
+        public float IznosPDV { get; set; }
         public float UkupnaCena { get; set; }
     }
 }

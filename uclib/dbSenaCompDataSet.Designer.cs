@@ -538,6 +538,8 @@ namespace uclib {
             
             private global::System.Data.DataColumn columnCena;
             
+            private global::System.Data.DataColumn columnIznosPDV;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public ArtikliDataTable() {
@@ -629,6 +631,14 @@ namespace uclib {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn IznosPDVColumn {
+                get {
+                    return this.columnIznosPDV;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -664,7 +674,7 @@ namespace uclib {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public ArtikliRow AddArtikliRow(int Sifra, string Naziv, string jedinicaMere, bool Usluga, double PDV, double prodajnaCena, double Cena) {
+            public ArtikliRow AddArtikliRow(int Sifra, string Naziv, string jedinicaMere, bool Usluga, double PDV, double prodajnaCena, double Cena, double IznosPDV) {
                 ArtikliRow rowArtikliRow = ((ArtikliRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         Sifra,
@@ -673,7 +683,8 @@ namespace uclib {
                         Usluga,
                         PDV,
                         prodajnaCena,
-                        Cena};
+                        Cena,
+                        IznosPDV};
                 rowArtikliRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowArtikliRow);
                 return rowArtikliRow;
@@ -710,6 +721,7 @@ namespace uclib {
                 this.columnPDV = base.Columns["PDV"];
                 this.columnprodajnaCena = base.Columns["prodajnaCena"];
                 this.columnCena = base.Columns["Cena"];
+                this.columnIznosPDV = base.Columns["IznosPDV"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -729,6 +741,8 @@ namespace uclib {
                 base.Columns.Add(this.columnprodajnaCena);
                 this.columnCena = new global::System.Data.DataColumn("Cena", typeof(double), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnCena);
+                this.columnIznosPDV = new global::System.Data.DataColumn("IznosPDV", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnIznosPDV);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnSifra}, true));
                 this.columnSifra.AllowDBNull = false;
@@ -4286,6 +4300,22 @@ namespace uclib {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public double IznosPDV {
+                get {
+                    try {
+                        return ((double)(this[this.tableArtikli.IznosPDVColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'IznosPDV\' in table \'Artikli\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableArtikli.IznosPDVColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsNazivNull() {
                 return this.IsNull(this.tableArtikli.NazivColumn);
             }
@@ -4354,6 +4384,18 @@ namespace uclib {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetCenaNull() {
                 this[this.tableArtikli.CenaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsIznosPDVNull() {
+                return this.IsNull(this.tableArtikli.IznosPDVColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetIznosPDVNull() {
+                this[this.tableArtikli.IznosPDVColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -7670,10 +7712,11 @@ namespace uclib.dbSenaCompDataSetTableAdapters {
             tableMapping.ColumnMappings.Add("PDV", "PDV");
             tableMapping.ColumnMappings.Add("prodajnaCena", "prodajnaCena");
             tableMapping.ColumnMappings.Add("Cena", "Cena");
+            tableMapping.ColumnMappings.Add("IznosPDV", "IznosPDV");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [Artikli] WHERE (([Sifra] = @Original_Sifra) AND ((@IsNull_Naziv = 1 AND [Naziv] IS NULL) OR ([Naziv] = @Original_Naziv)) AND ((@IsNull_jedinicaMere = 1 AND [jedinicaMere] IS NULL) OR ([jedinicaMere] = @Original_jedinicaMere)) AND ((@IsNull_Usluga = 1 AND [Usluga] IS NULL) OR ([Usluga] = @Original_Usluga)) AND ((@IsNull_PDV = 1 AND [PDV] IS NULL) OR ([PDV] = @Original_PDV)) AND ((@IsNull_prodajnaCena = 1 AND [prodajnaCena] IS NULL) OR ([prodajnaCena] = @Original_prodajnaCena)) AND ((@IsNull_Cena = 1 AND [Cena] IS NULL) OR ([Cena] = @Original_Cena)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [Artikli] WHERE (([Sifra] = @Original_Sifra) AND ((@IsNull_Naziv = 1 AND [Naziv] IS NULL) OR ([Naziv] = @Original_Naziv)) AND ((@IsNull_jedinicaMere = 1 AND [jedinicaMere] IS NULL) OR ([jedinicaMere] = @Original_jedinicaMere)) AND ((@IsNull_Usluga = 1 AND [Usluga] IS NULL) OR ([Usluga] = @Original_Usluga)) AND ((@IsNull_PDV = 1 AND [PDV] IS NULL) OR ([PDV] = @Original_PDV)) AND ((@IsNull_prodajnaCena = 1 AND [prodajnaCena] IS NULL) OR ([prodajnaCena] = @Original_prodajnaCena)) AND ((@IsNull_Cena = 1 AND [Cena] IS NULL) OR ([Cena] = @Original_Cena)) AND ((@IsNull_IznosPDV = 1 AND [IznosPDV] IS NULL) OR ([IznosPDV] = @Original_IznosPDV)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Sifra", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Sifra", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Naziv", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Naziv", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
@@ -7688,10 +7731,12 @@ namespace uclib.dbSenaCompDataSetTableAdapters {
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_prodajnaCena", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "prodajnaCena", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Cena", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Cena", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Cena", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Cena", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_IznosPDV", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IznosPDV", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_IznosPDV", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IznosPDV", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [Artikli] ([Sifra], [Naziv], [jedinicaMere], [Usluga], [PDV], [prodajnaCena], [Cena]) VALUES (@Sifra, @Naziv, @jedinicaMere, @Usluga, @PDV, @prodajnaCena, @Cena);
-SELECT Sifra, Naziv, jedinicaMere, Usluga, PDV, prodajnaCena, Cena FROM Artikli WHERE (Sifra = @Sifra)";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [Artikli] ([Sifra], [Naziv], [jedinicaMere], [Usluga], [PDV], [prodajnaCena], [Cena], [IznosPDV]) VALUES (@Sifra, @Naziv, @jedinicaMere, @Usluga, @PDV, @prodajnaCena, @Cena, @IznosPDV);
+SELECT Sifra, Naziv, jedinicaMere, Usluga, PDV, prodajnaCena, Cena, IznosPDV FROM Artikli WHERE (Sifra = @Sifra)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Sifra", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Sifra", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Naziv", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Naziv", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -7700,10 +7745,11 @@ SELECT Sifra, Naziv, jedinicaMere, Usluga, PDV, prodajnaCena, Cena FROM Artikli 
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PDV", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PDV", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@prodajnaCena", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "prodajnaCena", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Cena", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Cena", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IznosPDV", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IznosPDV", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [Artikli] SET [Sifra] = @Sifra, [Naziv] = @Naziv, [jedinicaMere] = @jedinicaMere, [Usluga] = @Usluga, [PDV] = @PDV, [prodajnaCena] = @prodajnaCena, [Cena] = @Cena WHERE (([Sifra] = @Original_Sifra) AND ((@IsNull_Naziv = 1 AND [Naziv] IS NULL) OR ([Naziv] = @Original_Naziv)) AND ((@IsNull_jedinicaMere = 1 AND [jedinicaMere] IS NULL) OR ([jedinicaMere] = @Original_jedinicaMere)) AND ((@IsNull_Usluga = 1 AND [Usluga] IS NULL) OR ([Usluga] = @Original_Usluga)) AND ((@IsNull_PDV = 1 AND [PDV] IS NULL) OR ([PDV] = @Original_PDV)) AND ((@IsNull_prodajnaCena = 1 AND [prodajnaCena] IS NULL) OR ([prodajnaCena] = @Original_prodajnaCena)) AND ((@IsNull_Cena = 1 AND [Cena] IS NULL) OR ([Cena] = @Original_Cena)));
-SELECT Sifra, Naziv, jedinicaMere, Usluga, PDV, prodajnaCena, Cena FROM Artikli WHERE (Sifra = @Sifra)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [Artikli] SET [Sifra] = @Sifra, [Naziv] = @Naziv, [jedinicaMere] = @jedinicaMere, [Usluga] = @Usluga, [PDV] = @PDV, [prodajnaCena] = @prodajnaCena, [Cena] = @Cena, [IznosPDV] = @IznosPDV WHERE (([Sifra] = @Original_Sifra) AND ((@IsNull_Naziv = 1 AND [Naziv] IS NULL) OR ([Naziv] = @Original_Naziv)) AND ((@IsNull_jedinicaMere = 1 AND [jedinicaMere] IS NULL) OR ([jedinicaMere] = @Original_jedinicaMere)) AND ((@IsNull_Usluga = 1 AND [Usluga] IS NULL) OR ([Usluga] = @Original_Usluga)) AND ((@IsNull_PDV = 1 AND [PDV] IS NULL) OR ([PDV] = @Original_PDV)) AND ((@IsNull_prodajnaCena = 1 AND [prodajnaCena] IS NULL) OR ([prodajnaCena] = @Original_prodajnaCena)) AND ((@IsNull_Cena = 1 AND [Cena] IS NULL) OR ([Cena] = @Original_Cena)) AND ((@IsNull_IznosPDV = 1 AND [IznosPDV] IS NULL) OR ([IznosPDV] = @Original_IznosPDV)));
+SELECT Sifra, Naziv, jedinicaMere, Usluga, PDV, prodajnaCena, Cena, IznosPDV FROM Artikli WHERE (Sifra = @Sifra)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Sifra", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Sifra", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Naziv", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Naziv", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -7712,6 +7758,7 @@ SELECT Sifra, Naziv, jedinicaMere, Usluga, PDV, prodajnaCena, Cena FROM Artikli 
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PDV", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PDV", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@prodajnaCena", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "prodajnaCena", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Cena", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Cena", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IznosPDV", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IznosPDV", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Sifra", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Sifra", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Naziv", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Naziv", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Naziv", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Naziv", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -7725,6 +7772,8 @@ SELECT Sifra, Naziv, jedinicaMere, Usluga, PDV, prodajnaCena, Cena FROM Artikli 
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_prodajnaCena", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "prodajnaCena", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Cena", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Cena", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Cena", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Cena", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_IznosPDV", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IznosPDV", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_IznosPDV", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IznosPDV", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -7741,24 +7790,25 @@ SELECT Sifra, Naziv, jedinicaMere, Usluga, PDV, prodajnaCena, Cena FROM Artikli 
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[4];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT Sifra, Naziv, jedinicaMere, Usluga, PDV, prodajnaCena, Cena FROM Artikli";
+            this._commandCollection[0].CommandText = "SELECT Sifra, Naziv, jedinicaMere, Usluga, PDV, prodajnaCena, Cena, IznosPDV FROM" +
+                " Artikli";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "SELECT Sifra, Naziv, jedinicaMere, Usluga, PDV, prodajnaCena, Cena FROM Artikli W" +
-                "HERE (Naziv LIKE N\'%\' + @Naziv + N\'%\')";
+            this._commandCollection[1].CommandText = "SELECT Sifra, Naziv, jedinicaMere, Usluga, PDV, prodajnaCena, Cena, IznosPDV FROM" +
+                " Artikli WHERE (Naziv LIKE N\'%\' + @Naziv + N\'%\')";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Naziv", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "Naziv", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = "SELECT Sifra, Naziv, jedinicaMere, Usluga, PDV, prodajnaCena, Cena FROM Artikli W" +
-                "HERE (Sifra = @Sifra)";
+            this._commandCollection[2].CommandText = "SELECT Sifra, Naziv, jedinicaMere, Usluga, PDV, prodajnaCena, Cena, IznosPDV FROM" +
+                " Artikli WHERE (Sifra = @Sifra)";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Sifra", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Sifra", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[3].Connection = this.Connection;
-            this._commandCollection[3].CommandText = "SELECT Sifra, Naziv, jedinicaMere, Usluga, PDV, prodajnaCena, Cena FROM Artikli W" +
-                "HERE (Usluga = @Usluga)";
+            this._commandCollection[3].CommandText = "SELECT Sifra, Naziv, jedinicaMere, Usluga, PDV, prodajnaCena, Cena, IznosPDV FROM" +
+                " Artikli WHERE (Usluga = @Usluga)";
             this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Usluga", global::System.Data.SqlDbType.Bit, 1, global::System.Data.ParameterDirection.Input, 0, 0, "Usluga", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
@@ -7872,7 +7922,7 @@ SELECT Sifra, Naziv, jedinicaMere, Usluga, PDV, prodajnaCena, Cena FROM Artikli 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_Sifra, string Original_Naziv, string Original_jedinicaMere, global::System.Nullable<bool> Original_Usluga, global::System.Nullable<double> Original_PDV, global::System.Nullable<double> Original_prodajnaCena, global::System.Nullable<double> Original_Cena) {
+        public virtual int Delete(int Original_Sifra, string Original_Naziv, string Original_jedinicaMere, global::System.Nullable<bool> Original_Usluga, global::System.Nullable<double> Original_PDV, global::System.Nullable<double> Original_prodajnaCena, global::System.Nullable<double> Original_Cena, global::System.Nullable<double> Original_IznosPDV) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_Sifra));
             if ((Original_Naziv == null)) {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
@@ -7922,6 +7972,14 @@ SELECT Sifra, Naziv, jedinicaMere, Usluga, PDV, prodajnaCena, Cena FROM Artikli 
                 this.Adapter.DeleteCommand.Parameters[11].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[12].Value = global::System.DBNull.Value;
             }
+            if ((Original_IznosPDV.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[13].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[14].Value = ((double)(Original_IznosPDV.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[13].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[14].Value = global::System.DBNull.Value;
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -7942,7 +8000,7 @@ SELECT Sifra, Naziv, jedinicaMere, Usluga, PDV, prodajnaCena, Cena FROM Artikli 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(int Sifra, string Naziv, string jedinicaMere, global::System.Nullable<bool> Usluga, global::System.Nullable<double> PDV, global::System.Nullable<double> prodajnaCena, global::System.Nullable<double> Cena) {
+        public virtual int Insert(int Sifra, string Naziv, string jedinicaMere, global::System.Nullable<bool> Usluga, global::System.Nullable<double> PDV, global::System.Nullable<double> prodajnaCena, global::System.Nullable<double> Cena, global::System.Nullable<double> IznosPDV) {
             this.Adapter.InsertCommand.Parameters[0].Value = ((int)(Sifra));
             if ((Naziv == null)) {
                 this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
@@ -7980,6 +8038,12 @@ SELECT Sifra, Naziv, jedinicaMere, Usluga, PDV, prodajnaCena, Cena FROM Artikli 
             else {
                 this.Adapter.InsertCommand.Parameters[6].Value = global::System.DBNull.Value;
             }
+            if ((IznosPDV.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[7].Value = ((double)(IznosPDV.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[7].Value = global::System.DBNull.Value;
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -8000,7 +8064,23 @@ SELECT Sifra, Naziv, jedinicaMere, Usluga, PDV, prodajnaCena, Cena FROM Artikli 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(int Sifra, string Naziv, string jedinicaMere, global::System.Nullable<bool> Usluga, global::System.Nullable<double> PDV, global::System.Nullable<double> prodajnaCena, global::System.Nullable<double> Cena, int Original_Sifra, string Original_Naziv, string Original_jedinicaMere, global::System.Nullable<bool> Original_Usluga, global::System.Nullable<double> Original_PDV, global::System.Nullable<double> Original_prodajnaCena, global::System.Nullable<double> Original_Cena) {
+        public virtual int Update(
+                    int Sifra, 
+                    string Naziv, 
+                    string jedinicaMere, 
+                    global::System.Nullable<bool> Usluga, 
+                    global::System.Nullable<double> PDV, 
+                    global::System.Nullable<double> prodajnaCena, 
+                    global::System.Nullable<double> Cena, 
+                    global::System.Nullable<double> IznosPDV, 
+                    int Original_Sifra, 
+                    string Original_Naziv, 
+                    string Original_jedinicaMere, 
+                    global::System.Nullable<bool> Original_Usluga, 
+                    global::System.Nullable<double> Original_PDV, 
+                    global::System.Nullable<double> Original_prodajnaCena, 
+                    global::System.Nullable<double> Original_Cena, 
+                    global::System.Nullable<double> Original_IznosPDV) {
             this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(Sifra));
             if ((Naziv == null)) {
                 this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
@@ -8038,54 +8118,68 @@ SELECT Sifra, Naziv, jedinicaMere, Usluga, PDV, prodajnaCena, Cena FROM Artikli 
             else {
                 this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(Original_Sifra));
-            if ((Original_Naziv == null)) {
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
+            if ((IznosPDV.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((double)(IznosPDV.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(Original_Naziv));
+                this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.UpdateCommand.Parameters[8].Value = ((int)(Original_Sifra));
+            if ((Original_Naziv == null)) {
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(Original_Naziv));
             }
             if ((Original_jedinicaMere == null)) {
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[11].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[12].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((string)(Original_jedinicaMere));
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((string)(Original_jedinicaMere));
             }
             if ((Original_Usluga.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((bool)(Original_Usluga.Value));
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((bool)(Original_Usluga.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[13].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[14].Value = global::System.DBNull.Value;
             }
             if ((Original_PDV.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((double)(Original_PDV.Value));
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((double)(Original_PDV.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[15].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[16].Value = global::System.DBNull.Value;
             }
             if ((Original_prodajnaCena.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[16].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[17].Value = ((double)(Original_prodajnaCena.Value));
+                this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[18].Value = ((double)(Original_prodajnaCena.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[16].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[17].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[18].Value = global::System.DBNull.Value;
             }
             if ((Original_Cena.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[18].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[19].Value = ((double)(Original_Cena.Value));
+                this.Adapter.UpdateCommand.Parameters[19].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[20].Value = ((double)(Original_Cena.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[18].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[19].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[19].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[20].Value = global::System.DBNull.Value;
+            }
+            if ((Original_IznosPDV.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[21].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[22].Value = ((double)(Original_IznosPDV.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[21].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[22].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -8107,8 +8201,8 @@ SELECT Sifra, Naziv, jedinicaMere, Usluga, PDV, prodajnaCena, Cena FROM Artikli 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Naziv, string jedinicaMere, global::System.Nullable<bool> Usluga, global::System.Nullable<double> PDV, global::System.Nullable<double> prodajnaCena, global::System.Nullable<double> Cena, int Original_Sifra, string Original_Naziv, string Original_jedinicaMere, global::System.Nullable<bool> Original_Usluga, global::System.Nullable<double> Original_PDV, global::System.Nullable<double> Original_prodajnaCena, global::System.Nullable<double> Original_Cena) {
-            return this.Update(Original_Sifra, Naziv, jedinicaMere, Usluga, PDV, prodajnaCena, Cena, Original_Sifra, Original_Naziv, Original_jedinicaMere, Original_Usluga, Original_PDV, Original_prodajnaCena, Original_Cena);
+        public virtual int Update(string Naziv, string jedinicaMere, global::System.Nullable<bool> Usluga, global::System.Nullable<double> PDV, global::System.Nullable<double> prodajnaCena, global::System.Nullable<double> Cena, global::System.Nullable<double> IznosPDV, int Original_Sifra, string Original_Naziv, string Original_jedinicaMere, global::System.Nullable<bool> Original_Usluga, global::System.Nullable<double> Original_PDV, global::System.Nullable<double> Original_prodajnaCena, global::System.Nullable<double> Original_Cena, global::System.Nullable<double> Original_IznosPDV) {
+            return this.Update(Original_Sifra, Naziv, jedinicaMere, Usluga, PDV, prodajnaCena, Cena, IznosPDV, Original_Sifra, Original_Naziv, Original_jedinicaMere, Original_Usluga, Original_PDV, Original_prodajnaCena, Original_Cena, Original_IznosPDV);
         }
     }
     

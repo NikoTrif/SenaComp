@@ -98,6 +98,7 @@ namespace iflib
 
         public void KalkulatorCene()
         {
+            //potrebno ubaciti racunicu za iznos PDV-a
             try
             {
                 if (KalkulatorCenaArt.ProdajnaCena == 0)

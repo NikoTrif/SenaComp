@@ -166,6 +166,7 @@ namespace uclib.Baze
 
         private void dIzracunaj_Click(object sender, EventArgs e)
         {
+            //potrebno ubaciti i stavku "Iznos PDV"
             try
             {
                 double.TryParse(tbKalkNabavnaCena.Text, out clFunkcijeRazno.KalkulatorCenaArt.NabavnaCena);

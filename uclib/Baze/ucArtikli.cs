@@ -178,10 +178,10 @@ namespace uclib.Baze
 
                 //Console.WriteLine(fnr.KalkulatorCene());
                 fnr.KalkulatorCene();
-                tbKalkCenaBezPDV.Text = clFunkcijeRazno.KalkulatorCenaArt.CenaBezPDV.ToString();
-                tbKalkProdajnaCena.Text = clFunkcijeRazno.KalkulatorCenaArt.ProdajnaCena.ToString();
-                tbKalkMarza.Text = clFunkcijeRazno.KalkulatorCenaArt.Marza.ToString();
-                tbIznPDV.Text = clFunkcijeRazno.KalkulatorCenaArt.iznosPDV.ToString();
+                tbKalkCenaBezPDV.Text = Math.Round(clFunkcijeRazno.KalkulatorCenaArt.CenaBezPDV, 2).ToString();
+                tbKalkProdajnaCena.Text = Math.Round(clFunkcijeRazno.KalkulatorCenaArt.ProdajnaCena, 2).ToString();
+                tbKalkMarza.Text = Math.Round(clFunkcijeRazno.KalkulatorCenaArt.Marza, 2).ToString();
+                tbIznPDV.Text = Math.Round(clFunkcijeRazno.KalkulatorCenaArt.iznosPDV, 2).ToString();
             }
             catch (Exception ex)
             {

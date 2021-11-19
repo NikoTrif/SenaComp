@@ -310,3 +310,4 @@ kada se trazi u kodu - npr. "RG1", "TD3.1.2", "G2"
 		 - TD 3.5 - - -clProfaktura - u klasi Roba dodate stavke iznos PDV i iznos bez PDV
 		 - TD 3.5 - - -dbSenaComp.Artikli, ucArtikli[Design] - dodate stavke iznos PDV - potrebno urediti programski
 		 - TD 3.5 - - -svuda unaokolo - uglavnom implementiran iznos PDV-a - potrebno testirati program videti da li sve funkcionise
+19.11.21 - - - - - - - ucArtikli - dodato ogranicenje double vrednosti u kalkulatoru na 2 decimale

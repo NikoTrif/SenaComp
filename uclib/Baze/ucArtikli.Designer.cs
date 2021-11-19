@@ -375,7 +375,7 @@
             this.tableLayoutPanel2.ColumnCount = 3;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 29.86111F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 70.13889F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 36F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 37F));
             this.tableLayoutPanel2.Controls.Add(iznosPDVLabel, 0, 5);
             this.tableLayoutPanel2.Controls.Add(this.iznosPDVTextBox, 1, 5);
             this.tableLayoutPanel2.Controls.Add(cenaLabel, 0, 3);
@@ -415,7 +415,7 @@
             this.iznosPDVTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.artikliBindingSource, "IznosPDV", true));
             this.iznosPDVTextBox.Location = new System.Drawing.Point(116, 165);
             this.iznosPDVTextBox.Name = "iznosPDVTextBox";
-            this.iznosPDVTextBox.Size = new System.Drawing.Size(261, 22);
+            this.iznosPDVTextBox.Size = new System.Drawing.Size(260, 22);
             this.iznosPDVTextBox.TabIndex = 22;
             // 
             // cenaTextBox
@@ -425,7 +425,7 @@
             this.cenaTextBox.Location = new System.Drawing.Point(116, 101);
             this.cenaTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cenaTextBox.Name = "cenaTextBox";
-            this.cenaTextBox.Size = new System.Drawing.Size(261, 22);
+            this.cenaTextBox.Size = new System.Drawing.Size(260, 22);
             this.cenaTextBox.TabIndex = 21;
             // 
             // jedinicaMereTextBox
@@ -435,7 +435,7 @@
             this.jedinicaMereTextBox.Location = new System.Drawing.Point(117, 69);
             this.jedinicaMereTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.jedinicaMereTextBox.Name = "jedinicaMereTextBox";
-            this.jedinicaMereTextBox.Size = new System.Drawing.Size(259, 22);
+            this.jedinicaMereTextBox.Size = new System.Drawing.Size(258, 22);
             this.jedinicaMereTextBox.TabIndex = 3;
             // 
             // nazivTextBox
@@ -445,7 +445,7 @@
             this.nazivTextBox.Location = new System.Drawing.Point(117, 37);
             this.nazivTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.nazivTextBox.Name = "nazivTextBox";
-            this.nazivTextBox.Size = new System.Drawing.Size(259, 22);
+            this.nazivTextBox.Size = new System.Drawing.Size(258, 22);
             this.nazivTextBox.TabIndex = 2;
             // 
             // sifraTextBox
@@ -455,7 +455,7 @@
             this.sifraTextBox.Location = new System.Drawing.Point(117, 5);
             this.sifraTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.sifraTextBox.Name = "sifraTextBox";
-            this.sifraTextBox.Size = new System.Drawing.Size(259, 22);
+            this.sifraTextBox.Size = new System.Drawing.Size(258, 22);
             this.sifraTextBox.TabIndex = 1;
             // 
             // pDVTextBox
@@ -465,7 +465,7 @@
             this.pDVTextBox.Location = new System.Drawing.Point(117, 133);
             this.pDVTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.pDVTextBox.Name = "pDVTextBox";
-            this.pDVTextBox.Size = new System.Drawing.Size(259, 22);
+            this.pDVTextBox.Size = new System.Drawing.Size(258, 22);
             this.pDVTextBox.TabIndex = 4;
             // 
             // label13
@@ -473,9 +473,9 @@
             this.label13.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(383, 135);
+            this.label13.Location = new System.Drawing.Point(382, 135);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(31, 17);
+            this.label13.Size = new System.Drawing.Size(32, 17);
             this.label13.TabIndex = 20;
             this.label13.Text = "%";
             // 
@@ -486,7 +486,7 @@
             this.uslugaCheckBox.Location = new System.Drawing.Point(117, 228);
             this.uslugaCheckBox.Margin = new System.Windows.Forms.Padding(4);
             this.uslugaCheckBox.Name = "uslugaCheckBox";
-            this.uslugaCheckBox.Size = new System.Drawing.Size(259, 19);
+            this.uslugaCheckBox.Size = new System.Drawing.Size(258, 19);
             this.uslugaCheckBox.TabIndex = 6;
             this.uslugaCheckBox.UseVisualStyleBackColor = true;
             // 
@@ -497,7 +497,7 @@
             this.prodajnaCenaTextBox.Location = new System.Drawing.Point(117, 197);
             this.prodajnaCenaTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.prodajnaCenaTextBox.Name = "prodajnaCenaTextBox";
-            this.prodajnaCenaTextBox.Size = new System.Drawing.Size(259, 22);
+            this.prodajnaCenaTextBox.Size = new System.Drawing.Size(258, 22);
             this.prodajnaCenaTextBox.TabIndex = 5;
             // 
             // groupBox1
@@ -520,7 +520,7 @@
             "Šifra",
             "Naziv",
             "Usluga"});
-            this.cbFilter.Location = new System.Drawing.Point(435, 422);
+            this.cbFilter.Location = new System.Drawing.Point(439, 417);
             this.cbFilter.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbFilter.Name = "cbFilter";
             this.cbFilter.Size = new System.Drawing.Size(143, 24);
@@ -532,7 +532,7 @@
             // 
             this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(387, 426);
+            this.label3.Location = new System.Drawing.Point(391, 421);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(43, 17);
             this.label3.TabIndex = 26;
@@ -541,7 +541,7 @@
             // tbPretraga
             // 
             this.tbPretraga.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.tbPretraga.Location = new System.Drawing.Point(79, 423);
+            this.tbPretraga.Location = new System.Drawing.Point(83, 418);
             this.tbPretraga.Margin = new System.Windows.Forms.Padding(4);
             this.tbPretraga.Name = "tbPretraga";
             this.tbPretraga.Size = new System.Drawing.Size(300, 22);
@@ -552,7 +552,7 @@
             // 
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(4, 427);
+            this.label1.Location = new System.Drawing.Point(8, 422);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(67, 17);

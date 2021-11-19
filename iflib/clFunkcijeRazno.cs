@@ -201,9 +201,13 @@ namespace iflib
                         float.TryParse(dgvPFOArtikli.CurrentRow.Cells[2].Value.ToString(), out pdv);
                         float.TryParse(dgvPFOArtikli.CurrentRow.Cells[3].Value.ToString(), out kol);
                         float.TryParse(dgvPFOArtikli.CurrentRow.Cells[1].Value.ToString(), out cena);
+                        Math.Round(cena, 2);
                         izPdv = (cena / 100 * pdv) * kol;
+                        Math.Round(izPdv, 2);
                         cenaSaPDV = cena * ((pdv / 100) + 1);
+                        Math.Round(cenaSaPDV, 2);
                         uCena = cenaSaPDV * kol;
+                        Math.Round(uCena, 2);
 
                         dgvPFOArtikli.CurrentRow.Cells[7].Value = cenaSaPDV;
                         dgvPFOArtikli.CurrentRow.Cells[6].Value = uCena;
@@ -214,12 +218,16 @@ namespace iflib
                     {
                         naziv = dgvArtikli.CurrentRow.Cells[1].Value.ToString();
                         jedinica = dgvArtikli.CurrentRow.Cells[2].Value.ToString();
-                        float.TryParse(dgvArtikli.CurrentRow.Cells[5].Value.ToString(), out cena);
-                        float.TryParse(dgvArtikli.CurrentRow.Cells[4].Value.ToString(), out pdv);
+                        float.TryParse(dgvArtikli.CurrentRow.Cells[4].Value.ToString(), out cena);
+                        Math.Round(cena, 2);
+                        float.TryParse(dgvArtikli.CurrentRow.Cells[5].Value.ToString(), out pdv);
                         float.TryParse(ArtikalKolicina, out kol);
                         float.TryParse(dgvArtikli.CurrentRow.Cells[6].Value.ToString(), out izPdv);
+                        Math.Round(izPdv, 2);
                         float.TryParse(dgvArtikli.CurrentRow.Cells[7].Value.ToString(), out cenaSaPDV);
+                        Math.Round(cenaSaPDV, 2);
                         uCena = cenaSaPDV * kol;
+                        Math.Round(uCena, 2);
 
                         dgvPFOArtikli.Rows.Add(naziv, cena, pdv, izPdv * kol, kol, jedinica, uCena, cenaSaPDV);
                     }

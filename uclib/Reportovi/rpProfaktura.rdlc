@@ -1094,7 +1094,6 @@
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
-                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
               </TablixCells>
@@ -1372,7 +1371,7 @@
         <Top>8.62948cm</Top>
         <Left>0.02645cm</Left>
         <Height>1.47517cm</Height>
-        <Width>17.97355cm</Width>
+        <Width>17.97354cm</Width>
         <ZIndex>5</ZIndex>
         <Style>
           <Border>
@@ -1404,7 +1403,7 @@
         <Top>10.28104cm</Top>
         <Left>0.02645cm</Left>
         <Height>0.696cm</Height>
-        <Width>7.85077cm</Width>
+        <Width>7.88605cm</Width>
         <ZIndex>6</ZIndex>
         <Style>
           <Border>
@@ -1424,11 +1423,11 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value />
+                <Value>Ukupan iznos</Value>
                 <Style>
                   <FontStyle>Italic</FontStyle>
                   <FontSize>14pt</FontSize>
-                  <FontWeight>Bold</FontWeight>
+                  <FontWeight>Normal</FontWeight>
                 </Style>
               </TextRun>
             </TextRuns>
@@ -1454,18 +1453,17 @@
           <PaddingBottom>2pt</PaddingBottom>
         </Style>
       </Textbox>
-      <Textbox Name="Textbox20">
+      <Textbox Name="Textbox21">
         <CanGrow>true</CanGrow>
         <KeepTogether>true</KeepTogether>
         <Paragraphs>
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value />
+                <Value>Iznos PDV</Value>
                 <Style>
                   <FontStyle>Italic</FontStyle>
                   <FontSize>14pt</FontSize>
-                  <FontWeight>Bold</FontWeight>
                 </Style>
               </TextRun>
             </TextRuns>
@@ -1491,17 +1489,17 @@
           <PaddingBottom>2pt</PaddingBottom>
         </Style>
       </Textbox>
-      <Textbox Name="Textbox21">
+      <Textbox Name="Textbox22">
         <CanGrow>true</CanGrow>
         <KeepTogether>true</KeepTogether>
         <Paragraphs>
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value />
+                <Value>Zbir</Value>
                 <Style>
                   <FontStyle>Italic</FontStyle>
-                  <FontSize>14pt</FontSize>
+                  <FontSize>16pt</FontSize>
                   <FontWeight>Bold</FontWeight>
                 </Style>
               </TextRun>
@@ -1517,43 +1515,6 @@
         <Height>0.696cm</Height>
         <Width>5.49767cm</Width>
         <ZIndex>9</ZIndex>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
-          <BackgroundColor>Aqua</BackgroundColor>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-      </Textbox>
-      <Textbox Name="Textbox22">
-        <CanGrow>true</CanGrow>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>Zbir</Value>
-                <Style>
-                  <FontStyle>Italic</FontStyle>
-                  <FontSize>14pt</FontSize>
-                  <FontWeight>Bold</FontWeight>
-                </Style>
-              </TextRun>
-            </TextRuns>
-            <Style>
-              <TextAlign>Center</TextAlign>
-            </Style>
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>Textbox16</rd:DefaultName>
-        <Top>12.36904cm</Top>
-        <Left>7.9125cm</Left>
-        <Height>0.696cm</Height>
-        <Width>5.49767cm</Width>
-        <ZIndex>10</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -1590,44 +1551,7 @@
         <Left>13.41017cm</Left>
         <Height>0.696cm</Height>
         <Width>4.58983cm</Width>
-        <ZIndex>11</ZIndex>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
-          <BackgroundColor>Aqua</BackgroundColor>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-      </Textbox>
-      <Textbox Name="Textbox28">
-        <CanGrow>true</CanGrow>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value />
-                <Style>
-                  <FontStyle>Italic</FontStyle>
-                  <FontSize>14pt</FontSize>
-                  <FontWeight>Bold</FontWeight>
-                </Style>
-              </TextRun>
-            </TextRuns>
-            <Style>
-              <TextAlign>Center</TextAlign>
-            </Style>
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>Textbox16</rd:DefaultName>
-        <Top>10.97704cm</Top>
-        <Left>13.41017cm</Left>
-        <Height>0.696cm</Height>
-        <Width>4.58983cm</Width>
-        <ZIndex>12</ZIndex>
+        <ZIndex>10</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -1660,11 +1584,11 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox16</rd:DefaultName>
-        <Top>11.67304cm</Top>
+        <Top>10.97704cm</Top>
         <Left>13.41017cm</Left>
         <Height>0.696cm</Height>
         <Width>4.58983cm</Width>
-        <ZIndex>13</ZIndex>
+        <ZIndex>11</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -1686,7 +1610,7 @@
                 <Value />
                 <Style>
                   <FontStyle>Italic</FontStyle>
-                  <FontSize>14pt</FontSize>
+                  <FontSize>16pt</FontSize>
                   <FontWeight>Bold</FontWeight>
                 </Style>
               </TextRun>
@@ -1697,11 +1621,11 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox16</rd:DefaultName>
-        <Top>12.36904cm</Top>
+        <Top>11.67304cm</Top>
         <Left>13.41017cm</Left>
         <Height>0.696cm</Height>
         <Width>4.58983cm</Width>
-        <ZIndex>14</ZIndex>
+        <ZIndex>12</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>

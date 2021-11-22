@@ -17,6 +17,8 @@ namespace iflib.ReportClasses
         public string Grad { get; set; }
         public string PIB { get; set; }
         public string MatBr { get; set; }
+        public float uStopaPDV { get; set; }
+        public float uIznosPDV { get; set; } // ukupan iznos PDV-a
         public float Total { get; set; }
     }
 

@@ -198,20 +198,25 @@ namespace iflib
                 {
                     if (direktnaIzmena == true)
                     {
-                        float.TryParse(dgvPFOArtikli.CurrentRow.Cells[2].Value.ToString(), out pdv);
-                        float.TryParse(dgvPFOArtikli.CurrentRow.Cells[3].Value.ToString(), out kol);
-                        float.TryParse(dgvPFOArtikli.CurrentRow.Cells[1].Value.ToString(), out cena);
-                        Math.Round(cena, 2);
-                        izPdv = (cena / 100 * pdv) * kol;
-                        Math.Round(izPdv, 2);
-                        cenaSaPDV = cena * ((pdv / 100) + 1);
-                        Math.Round(cenaSaPDV, 2);
-                        uCena = cenaSaPDV * kol;
-                        Math.Round(uCena, 2);
+                        if (dgvPFOArtikli.CurrentRow.Cells[2].Value != null && dgvPFOArtikli.CurrentRow.Cells[4].Value != null && 
+                            dgvPFOArtikli.CurrentRow.Cells[1].Value != null)
+                        {
+                            float.TryParse(dgvPFOArtikli.CurrentRow.Cells[2].Value.ToString(), out pdv);
+                            float.TryParse(dgvPFOArtikli.CurrentRow.Cells[4].Value.ToString(), out kol);
+                            float.TryParse(dgvPFOArtikli.CurrentRow.Cells[1].Value.ToString(), out cena);
 
-                        dgvPFOArtikli.CurrentRow.Cells[7].Value = cenaSaPDV;
-                        dgvPFOArtikli.CurrentRow.Cells[6].Value = uCena;
-                        dgvPFOArtikli.CurrentRow.Cells[5].Value = izPdv;
+                            Math.Round(cena, 2);
+                            izPdv = (cena / 100 * pdv) * kol;
+                            Math.Round(izPdv, 2);
+                            cenaSaPDV = cena * ((pdv / 100) + 1);
+                            Math.Round(cenaSaPDV, 2);
+                            uCena = cenaSaPDV * kol;
+                            Math.Round(uCena, 2);
+
+                            dgvPFOArtikli.CurrentRow.Cells[7].Value = cenaSaPDV;
+                            dgvPFOArtikli.CurrentRow.Cells[6].Value = uCena;
+                            dgvPFOArtikli.CurrentRow.Cells[3].Value = izPdv;
+                        }
                     }
 
                     else

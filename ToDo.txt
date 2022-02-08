@@ -39,7 +39,7 @@ kada se trazi u kodu - npr. "RG1", "TD3.1.2", "G2"
 				|R|b) dodavanje u listu uredjaja, proizvodjaca i opreme - liste uredjaja i proizvodjaca sortiraj po abecednom redu
 				|R|c) podaci firme - naziv, delatnost, adresa, PIB, tekuci racun
 				|R|d) klauzula
-				e) baza
+				|Z|e) baza
 				f) dodati slicice(ikonice)
 				g) srediti font u treeView-u
 				h) rtbKlauzula treba da bude ogranicena na 584 karaktera
@@ -96,6 +96,12 @@ kada se trazi u kodu - npr. "RG1", "TD3.1.2", "G2"
 ***Release Greske***
 ---------------------------------------------------------------------------------------
 ///v3.0.0.0\\\
+1.   - kada se program prvi put pokrene izbacuje gresku. Log:
+			Object reference not set to an instance of an object.
+			System.NullReferenceException: Object reference not set to an instance of an object.
+			at uclib.Nalozi.ucPrivatni.flpDodajKontrole() in C:\Users\Lenovo\Documents\Visual Studio 2015\Projects\SenaComp\uclib\Nalozi\ucPrivatni.cs:line 427
+			at uclib.Nalozi.ucPrivatni.ucPrivatni_Load(Object sender, EventArgs e) in C:\Users\Lenovo\Documents\Visual Studio 2015\Projects\SenaComp\uclib\Nalozi\ucPrivatni.cs:line 45
+2.   - ostali su unosi u bazi koji su sluzili za testiranje - ukoniti ih
 
 ---------------------------------------------------------------------------------------
 ***Uradjeno***
@@ -317,3 +323,5 @@ kada se trazi u kodu - npr. "RG1", "TD3.1.2", "G2"
 		 - - - - - - - clFunkcijeRazno.RacunCenaITotal - dodato ogranicenje double vrednosti u kalkulatoru na 2 decimale
 
 22.11.21 - TD 3.5 - - -iflib.clProfaktura - dodate stavke "ukupan iznos pdv-a i ukupna stopa pdva" - proveriti da li je ukupna stopa neophodna i kako se racuna
+
+08.08.2022 - TD 2.3 - -ucBaza - zapoceto uredjivanje podesavanja za baze podataka

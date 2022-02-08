@@ -91,25 +91,6 @@
             this.tbArtProfPret = new System.Windows.Forms.TextBox();
             this.dArtUkloni = new System.Windows.Forms.Button();
             this.dgvProfArtikli = new System.Windows.Forms.DataGridView();
-            this.label4 = new System.Windows.Forms.Label();
-            this.lTotal = new System.Windows.Forms.Label();
-            this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
-            this.artikliDataGridView = new System.Windows.Forms.DataGridView();
-            this.artikliBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.tbArtPret = new System.Windows.Forms.TextBox();
-            this.dArtDodaj = new System.Windows.Forms.Button();
-            this.tbArtKol = new System.Windows.Forms.TextBox();
-            this.profaktureTableAdapter = new uclib.dbSenaCompDataSetTableAdapters.ProfaktureTableAdapter();
-            this.tableAdapterManager = new uclib.dbSenaCompDataSetTableAdapters.TableAdapterManager();
-            this.artikliTableAdapter = new uclib.dbSenaCompDataSetTableAdapters.ArtikliTableAdapter();
-            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IznosPDV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Naziv = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cena = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PDV = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -118,6 +99,25 @@
             this.jedinicaMere = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.UkupnaCena = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CenaPDV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label4 = new System.Windows.Forms.Label();
+            this.lTotal = new System.Windows.Forms.Label();
+            this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
+            this.artikliDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IznosPDV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.artikliBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tbArtPret = new System.Windows.Forms.TextBox();
+            this.dArtDodaj = new System.Windows.Forms.Button();
+            this.tbArtKol = new System.Windows.Forms.TextBox();
+            this.profaktureTableAdapter = new uclib.dbSenaCompDataSetTableAdapters.ProfaktureTableAdapter();
+            this.tableAdapterManager = new uclib.dbSenaCompDataSetTableAdapters.TableAdapterManager();
+            this.artikliTableAdapter = new uclib.dbSenaCompDataSetTableAdapters.ArtikliTableAdapter();
             redniBrojLabel = new System.Windows.Forms.Label();
             datumLabel = new System.Windows.Forms.Label();
             valutaLabel = new System.Windows.Forms.Label();
@@ -913,6 +913,53 @@
             this.dgvProfArtikli.CellValidated += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProfArtikli_CellValidated);
             this.dgvProfArtikli.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dgvProfArtikli_KeyDown);
             // 
+            // Naziv
+            // 
+            this.Naziv.FillWeight = 176.6497F;
+            this.Naziv.HeaderText = "Naziv";
+            this.Naziv.Name = "Naziv";
+            // 
+            // Cena
+            // 
+            this.Cena.FillWeight = 84.67005F;
+            this.Cena.HeaderText = "Cena";
+            this.Cena.Name = "Cena";
+            // 
+            // PDV
+            // 
+            this.PDV.FillWeight = 84.67005F;
+            this.PDV.HeaderText = "PDV";
+            this.PDV.Name = "PDV";
+            // 
+            // IzPDV
+            // 
+            this.IzPDV.HeaderText = "Iznos PDV";
+            this.IzPDV.Name = "IzPDV";
+            // 
+            // Kolicina
+            // 
+            this.Kolicina.FillWeight = 84.67005F;
+            this.Kolicina.HeaderText = "Količina";
+            this.Kolicina.Name = "Kolicina";
+            // 
+            // jedinicaMere
+            // 
+            this.jedinicaMere.FillWeight = 84.67005F;
+            this.jedinicaMere.HeaderText = "Jedinica mere";
+            this.jedinicaMere.Name = "jedinicaMere";
+            // 
+            // UkupnaCena
+            // 
+            this.UkupnaCena.FillWeight = 84.67005F;
+            this.UkupnaCena.HeaderText = "Ukupna Cena";
+            this.UkupnaCena.Name = "UkupnaCena";
+            // 
+            // CenaPDV
+            // 
+            this.CenaPDV.HeaderText = "CenaPDV";
+            this.CenaPDV.Name = "CenaPDV";
+            this.CenaPDV.Visible = false;
+            // 
             // label4
             // 
             this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
@@ -988,69 +1035,6 @@
             this.artikliDataGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.artikliDataGridView_CellDoubleClick);
             this.artikliDataGridView.KeyDown += new System.Windows.Forms.KeyEventHandler(this.artikliDataGridView_KeyDown);
             // 
-            // artikliBindingSource
-            // 
-            this.artikliBindingSource.DataMember = "Artikli";
-            this.artikliBindingSource.DataSource = this.dbSenaCompDataSet;
-            // 
-            // tbArtPret
-            // 
-            this.tbArtPret.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbArtPret.Location = new System.Drawing.Point(3, 6);
-            this.tbArtPret.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tbArtPret.Name = "tbArtPret";
-            this.tbArtPret.Size = new System.Drawing.Size(314, 22);
-            this.tbArtPret.TabIndex = 0;
-            this.tbArtPret.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbArtPret_KeyDown);
-            this.tbArtPret.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbArtPret_KeyPress);
-            // 
-            // dArtDodaj
-            // 
-            this.dArtDodaj.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dArtDodaj.Location = new System.Drawing.Point(418, 2);
-            this.dArtDodaj.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dArtDodaj.Name = "dArtDodaj";
-            this.dArtDodaj.Size = new System.Drawing.Size(69, 30);
-            this.dArtDodaj.TabIndex = 1;
-            this.dArtDodaj.Text = "Dodaj";
-            this.dArtDodaj.UseVisualStyleBackColor = true;
-            this.dArtDodaj.Click += new System.EventHandler(this.dArtDodaj_Click);
-            // 
-            // tbArtKol
-            // 
-            this.tbArtKol.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbArtKol.Location = new System.Drawing.Point(323, 6);
-            this.tbArtKol.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tbArtKol.Name = "tbArtKol";
-            this.tbArtKol.Size = new System.Drawing.Size(89, 22);
-            this.tbArtKol.TabIndex = 3;
-            this.tbArtKol.Text = "1";
-            this.tbArtKol.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbArtKol_KeyDown);
-            this.tbArtKol.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbArtKol_KeyPress);
-            // 
-            // profaktureTableAdapter
-            // 
-            this.profaktureTableAdapter.ClearBeforeFill = true;
-            // 
-            // tableAdapterManager
-            // 
-            this.tableAdapterManager.ArtikliPFOTableAdapter = null;
-            this.tableAdapterManager.ArtikliTableAdapter = null;
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.FaktureTableAdapter = null;
-            this.tableAdapterManager.FirmeTableAdapter = null;
-            this.tableAdapterManager.NaloziFTableAdapter = null;
-            this.tableAdapterManager.NaloziPTableAdapter = null;
-            this.tableAdapterManager.OtpremniceTableAdapter = null;
-            this.tableAdapterManager.ProfaktureTableAdapter = this.profaktureTableAdapter;
-            this.tableAdapterManager.UpdateOrder = uclib.dbSenaCompDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
-            // 
-            // artikliTableAdapter
-            // 
-            this.artikliTableAdapter.ClearBeforeFill = true;
-            // 
             // dataGridViewTextBoxColumn9
             // 
             this.dataGridViewTextBoxColumn9.DataPropertyName = "Sifra";
@@ -1114,52 +1098,68 @@
             this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
             this.dataGridViewTextBoxColumn13.ReadOnly = true;
             // 
-            // Naziv
+            // artikliBindingSource
             // 
-            this.Naziv.FillWeight = 176.6497F;
-            this.Naziv.HeaderText = "Naziv";
-            this.Naziv.Name = "Naziv";
+            this.artikliBindingSource.DataMember = "Artikli";
+            this.artikliBindingSource.DataSource = this.dbSenaCompDataSet;
             // 
-            // Cena
+            // tbArtPret
             // 
-            this.Cena.FillWeight = 84.67005F;
-            this.Cena.HeaderText = "Cena";
-            this.Cena.Name = "Cena";
+            this.tbArtPret.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbArtPret.Location = new System.Drawing.Point(3, 6);
+            this.tbArtPret.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tbArtPret.Name = "tbArtPret";
+            this.tbArtPret.Size = new System.Drawing.Size(314, 22);
+            this.tbArtPret.TabIndex = 0;
+            this.tbArtPret.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbArtPret_KeyDown);
+            this.tbArtPret.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbArtPret_KeyPress);
             // 
-            // PDV
+            // dArtDodaj
             // 
-            this.PDV.FillWeight = 84.67005F;
-            this.PDV.HeaderText = "PDV";
-            this.PDV.Name = "PDV";
+            this.dArtDodaj.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dArtDodaj.Location = new System.Drawing.Point(418, 2);
+            this.dArtDodaj.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dArtDodaj.Name = "dArtDodaj";
+            this.dArtDodaj.Size = new System.Drawing.Size(69, 30);
+            this.dArtDodaj.TabIndex = 1;
+            this.dArtDodaj.Text = "Dodaj";
+            this.dArtDodaj.UseVisualStyleBackColor = true;
+            this.dArtDodaj.Click += new System.EventHandler(this.dArtDodaj_Click);
             // 
-            // IzPDV
+            // tbArtKol
             // 
-            this.IzPDV.HeaderText = "Iznos PDV";
-            this.IzPDV.Name = "IzPDV";
+            this.tbArtKol.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbArtKol.Location = new System.Drawing.Point(323, 6);
+            this.tbArtKol.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tbArtKol.Name = "tbArtKol";
+            this.tbArtKol.Size = new System.Drawing.Size(89, 22);
+            this.tbArtKol.TabIndex = 3;
+            this.tbArtKol.Text = "1";
+            this.tbArtKol.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbArtKol_KeyDown);
+            this.tbArtKol.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbArtKol_KeyPress);
             // 
-            // Kolicina
+            // profaktureTableAdapter
             // 
-            this.Kolicina.FillWeight = 84.67005F;
-            this.Kolicina.HeaderText = "Količina";
-            this.Kolicina.Name = "Kolicina";
+            this.profaktureTableAdapter.ClearBeforeFill = true;
             // 
-            // jedinicaMere
+            // tableAdapterManager
             // 
-            this.jedinicaMere.FillWeight = 84.67005F;
-            this.jedinicaMere.HeaderText = "Jedinica mere";
-            this.jedinicaMere.Name = "jedinicaMere";
+            this.tableAdapterManager.ArtikliPFOTableAdapter = null;
+            this.tableAdapterManager.ArtikliTableAdapter = null;
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.FaktureTableAdapter = null;
+            this.tableAdapterManager.FirmeTableAdapter = null;
+            this.tableAdapterManager.NaloziFTableAdapter = null;
+            this.tableAdapterManager.NaloziPTableAdapter = null;
+            this.tableAdapterManager.OtpremniceTableAdapter = null;
+            this.tableAdapterManager.ProfaktureTableAdapter = this.profaktureTableAdapter;
+            this.tableAdapterManager.UpdateOrder = uclib.dbSenaCompDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
-            // UkupnaCena
+            // artikliTableAdapter
             // 
-            this.UkupnaCena.FillWeight = 84.67005F;
-            this.UkupnaCena.HeaderText = "Ukupna Cena";
-            this.UkupnaCena.Name = "UkupnaCena";
-            // 
-            // CenaPDV
-            // 
-            this.CenaPDV.HeaderText = "CenaPDV";
-            this.CenaPDV.Name = "CenaPDV";
-            this.CenaPDV.Visible = false;
+            this.artikliTableAdapter.ClearBeforeFill = true;
             // 
             // ucProfakture
             // 

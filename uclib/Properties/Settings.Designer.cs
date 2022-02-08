@@ -23,17 +23,6 @@ namespace uclib.Properties {
             }
         }
         
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=\"|DataDirectory|\\dbSenaComp.m" +
-            "df\";Password=Master1!")]
-        public string dbSenaCompConnectionString {
-            get {
-                return ((string)(this["dbSenaCompConnectionString"]));
-            }
-        }
-        
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         public global::System.Collections.Specialized.StringCollection Oprema {
@@ -232,6 +221,29 @@ namespace uclib.Properties {
             }
             set {
                 this["Klauzula"] = value;
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(LocalDB)\\MSSQLLocalDB;UserInstance=True;AttachDbFilename=\"|DataDirec" +
+            "tory|\\dbSenaComp.mdf\";Password=Master1!")]
+        public string dbSenaCompConnectionString {
+            get {
+                return ((string)(this["dbSenaCompConnectionString"]));
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool BazaServer {
+            get {
+                return ((bool)(this["BazaServer"]));
+            }
+            set {
+                this["BazaServer"] = value;
             }
         }
     }

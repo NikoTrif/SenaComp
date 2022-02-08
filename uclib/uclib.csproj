@@ -117,6 +117,12 @@
     <Compile Include="Opcije\Osnovno\ucUredjaji.Designer.cs">
       <DependentUpon>ucUredjaji.cs</DependentUpon>
     </Compile>
+    <Compile Include="Opcije\ucBaza.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Opcije\ucBaza.Designer.cs">
+      <DependentUpon>ucBaza.cs</DependentUpon>
+    </Compile>
     <Compile Include="Opcije\ucKlauzula.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -204,6 +210,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Opcije\Osnovno\ucUredjaji.resx">
       <DependentUpon>ucUredjaji.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Opcije\ucBaza.resx">
+      <DependentUpon>ucBaza.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Opcije\ucKlauzula.resx">
       <DependentUpon>ucKlauzula.cs</DependentUpon>

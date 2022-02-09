@@ -246,7 +246,22 @@ namespace uclib.Properties {
                 this["BazaServer"] = value;
             }
         }
-        
+
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string BazaServerPath
+        {
+            get
+            {
+                return ((string)(this["BazaServerPath"]));
+            }
+            set
+            {
+                this["BazaServerPath"] = value;
+            }
+        }
+
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("False")]

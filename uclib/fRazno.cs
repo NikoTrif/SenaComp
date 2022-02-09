@@ -21,5 +21,13 @@ namespace uclib
         {
 
         }
+
+        private void fRazno_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if(this.Text == "Podešavanja")
+            {
+                Properties.Settings.Default.Reload();
+            }
+        }
     }
 }

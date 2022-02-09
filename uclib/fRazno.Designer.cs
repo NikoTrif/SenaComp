@@ -35,20 +35,21 @@
             // 
             this.pRazno.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pRazno.Location = new System.Drawing.Point(0, 0);
-            this.pRazno.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pRazno.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pRazno.Name = "pRazno";
-            this.pRazno.Size = new System.Drawing.Size(212, 206);
+            this.pRazno.Size = new System.Drawing.Size(283, 254);
             this.pRazno.TabIndex = 0;
             // 
             // fRazno
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(212, 206);
+            this.ClientSize = new System.Drawing.Size(283, 254);
             this.Controls.Add(this.pRazno);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "fRazno";
             this.Text = "fRazno";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.fRazno_FormClosing);
             this.Load += new System.EventHandler(this.fRazno_Load);
             this.ResumeLayout(false);
 

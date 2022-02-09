@@ -329,3 +329,5 @@ kada se trazi u kodu - npr. "RG1", "TD3.1.2", "G2"
 09.02.22 - TD 2.3.e - -ucBaza - Zavrseno uredjivanje, dodata opcija u ucPodesavanja
 		 - TD 2.3.e - -uclib.Settings - dodata podesavanja za bazu
 		 - TD 2.3.e - -ucBaza - dodate funkcije disablovanja komponenti kada se ne mogu upotrebiti
+		 - TD 2.3.e - -ucBaza - podesavanja povezana sa kontrolama
+		 - TD 2.3.e - -fRazno - na FormClosing se podesavanja reloaduju

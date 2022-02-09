@@ -246,5 +246,53 @@ namespace uclib.Properties {
                 this["BazaServer"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool BazaAutoUpdate {
+            get {
+                return ((bool)(this["BazaAutoUpdate"]));
+            }
+            set {
+                this["BazaAutoUpdate"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("10")]
+        public int BazaAutoUpdateVreme {
+            get {
+                return ((int)(this["BazaAutoUpdateVreme"]));
+            }
+            set {
+                this["BazaAutoUpdateVreme"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool BazaAutoBackup {
+            get {
+                return ((bool)(this["BazaAutoBackup"]));
+            }
+            set {
+                this["BazaAutoBackup"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string BazaAutpBackupPath {
+            get {
+                return ((string)(this["BazaAutpBackupPath"]));
+            }
+            set {
+                this["BazaAutpBackupPath"] = value;
+            }
+        }
     }
 }

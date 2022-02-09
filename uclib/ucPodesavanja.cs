@@ -65,6 +65,17 @@ namespace uclib
                     kl.Dock = DockStyle.Fill;
                     kl.BringToFront();
                     break;
+
+                case "Baza":
+                    ucBaza bz = new ucBaza();
+                    if (pOptMain.Controls.Count != 0)
+                    {
+                        pOptMain.Controls.Clear();
+                    }
+                    pOptMain.Controls.Add(bz);
+                    bz.Dock = DockStyle.Fill;
+                    bz.BringToFront();
+                    break;
             }
         }
     }

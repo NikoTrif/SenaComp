@@ -333,3 +333,4 @@ kada se trazi u kodu - npr. "RG1", "TD3.1.2", "G2"
 		 - TD 2.3.e - -fRazno - na FormClosing se podesavanja reloaduju
 		 - TD 2.3.e - -ucBaza - dodato podesavanje za interval auto backupa
 		 - TD 2.3.e - -ucBaza - dodate funkcije za backup i vracanje baze - nije testirano
+		 - TD 2.3.e - -iflib - dodata klasa ExcelIE - prepravljena do odredjenog dela

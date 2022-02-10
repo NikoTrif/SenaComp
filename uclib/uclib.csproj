@@ -246,7 +246,6 @@
       <DependentUpon>ucPodesavanja.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="app.config" />
-    <None Include="ClassDiagram2.cd" />
     <None Include="dbSenaCompDataSet.xsc">
       <DependentUpon>dbSenaCompDataSet.xsd</DependentUpon>
     </None>

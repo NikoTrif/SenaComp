@@ -161,7 +161,14 @@ namespace uclib.Opcije
                 {
                     if (sfd.ShowDialog() == DialogResult.OK && lokacijaBaze != "")
                     {
-                        File.Copy(lokacijaBaze, sfd.FileName);
+                        if (sfd.FilterIndex == 1)
+                        {
+                            File.Copy(lokacijaBaze, sfd.FileName); 
+                        }
+                        else
+                        {
+                            
+                        }
                     }
                 }
             }

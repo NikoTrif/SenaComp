@@ -13,11 +13,11 @@ using System.Data.OleDb;
 
 //treba doraditi da izgleda bolje.
 
-namespace SenaComp
+namespace iflib
 {
-    class ExcelIE
+    public class ExcelIE
     {
-        public void ExportXLS(string MyConnString, string MyStoredProcedure, string sheetName, string prvaCelija, string styleName,
+        public static void ExportXLS(string MyConnString, string MyStoredProcedure, string sheetName, string prvaCelija, string styleName,
             bool vidljivo, ProgressBar pbar, string savePath)
         {
             pbar.Value = 0;
@@ -156,7 +156,7 @@ namespace SenaComp
         }
 
 
-        public void ImportXLS(string imeFajla, string naziv_tabele, ProgressBar pBar, DataGridView dgv, string dbConnectionString /*System.Windows.Forms.Label procLab,
+        public static void ImportXLS(string imeFajla, string naziv_tabele, ProgressBar pBar, DataGridView dgv, string dbConnectionString /*System.Windows.Forms.Label procLab,
             System.Windows.Forms.Label procLab2, System.Data.DataTable dataTabela*/)
         {
             string connstr = "Provider=Microsoft.Jet.Oledb.4.0;Data Source=" + imeFajla + ";Extended Properties=Excel 8.0;";

@@ -17,12 +17,13 @@ namespace iflib
 {
     public class ExcelIE
     {
-        public static void ExportXLS(string MyConnString, string MyStoredProcedure, string sheetName, string prvaCelija, string styleName,
+        public static void ExportXLS(/*DataSet dbDataSet, string MyConnString, string MyStoredProcedure,*/
+            object[] Parametri, string sheetName, string prvaCelija, string styleName,
             bool vidljivo, ProgressBar pbar, string savePath)
         {
             pbar.Value = 0;
             pbar.Minimum = 0;
-            pbar.Maximum = 8;
+            pbar.Maximum = dbDataSet.Tables.Count * 8;
             pbar.Visible = true;
             pbar.Step = 1;
 
@@ -101,7 +102,7 @@ namespace iflib
             //prvi red
             //exWorkSheet.Cells[1, 1] = prvaCelija;
             //exWorkSheet.Cells[1, 2] = "Datum: " + DateTime.Now.ToShortDateString();
-            
+
             //Granice za sve redove
             exCellRange = exWorkSheet.Range[exWorkSheet.Cells[1, 1], exWorkSheet.Cells[rowcount + 1, columncount]];
             exCellRange.EntireColumn.AutoFit();
@@ -245,7 +246,7 @@ VALUES(@brojNaloga, @Datum, @imePrezime, @Kontakt, @eMail, @Uredjaj, @Proizvodja
                 }
 
                 //catch (SqlCeException ex)
-                catch(SqlException ex)
+                catch (SqlException ex)
                 {
                     MessageBox.Show(ex.ToString());
                 }
@@ -275,5 +276,12 @@ VALUES(@brojNaloga, @Datum, @imePrezime, @Kontakt, @eMail, @Uredjaj, @Proizvodja
                  r++;
              }*/
         }
+    }
+
+    public class dtParametri
+    {
+        public string ConnectionString { get; set; }
+        public string DataTableName { get; set; }
+        public string StoredProcedure { get; set; }
     }
 }

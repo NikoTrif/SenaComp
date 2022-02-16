@@ -159,15 +159,39 @@ namespace uclib.Opcije
                     InitialDirectory = tbLokacija.Text
                 })
                 {
-                    if (sfd.ShowDialog() == DialogResult.OK && lokacijaBaze != "")
+                    if (sfd.ShowDialog() == DialogResult.OK/* && lokacijaBaze != ""*/)
                     {
                         if (sfd.FilterIndex == 1)
                         {
-                            File.Copy(lokacijaBaze, sfd.FileName); 
+                            File.Copy(lokacijaBaze, sfd.FileName);
                         }
                         else
                         {
-                            
+                            object[] dtParam = null;
+                            int i = 0;
+                            foreach(DataTable dt in dbSenaCompDataSet1.Tables)
+                            {
+                                dtParametri dtp = new dtParametri();
+                                dtp.ConnectionString = naloziPTableAdapter1.Connection.ConnectionString;
+                                dtp.DataTableName = dt.TableName;
+                                switch (dt.TableName)
+                                {
+                                    case "NaloziP":
+                                        dtp.StoredProcedure = @"SELECT brojNaloga, Datum, imePrezime, Kontakt, eMail, Uredjaj, Proizvodjac, 
+                                                                Model, serijskiBroj, Oprema, opisKvara, Izvestaj, cenaDelova, cenaServis, 
+                                                                ukupnaCena, Status, naCekanju, Zavrseno, korisnikOdustao, servisOdustao, 
+                                                                korisnikOdbioPlacanje, Napomena
+                                                                FROM     NaloziP";
+                                        break;
+                                    default:
+                                        dtp.StoredProcedure = "";
+                                        break;
+                                }
+                                dtParam[i] = dtp;
+                                i++;
+                            }
+                            ExcelIE.ExportXLS(dtParam, "Sheet", "Celija", "ServisDB", false, pbBackup, sfd.FileName);
+                            //ovako od prilike treba da izgleda samo sada treba urediti ExportXLS bazu da radi foreach za dtParam
                         }
                     }
                 }

@@ -8,13 +8,12 @@ using System.Data;
 using System.Data.OleDb;
 using System.Data.SqlClient;
 
-namespace fun
+namespace iflib
 {
-    public class ExcelIE
+    public static class ExcelIE
     {
-        //TD26
-        public void ExportToExcel(ProgressBar pb, System.Windows.Forms.Label l1, System.Windows.Forms.Label l2,
-            string styleName, bool vidljivostExcela, string savePath, DataSet ds)
+        public static void ExportToExcel(string styleName, bool vidljivostExcela, string savePath, DataSet ds, ProgressBar pb,
+             System.Windows.Forms.Label l2, System.Windows.Forms.Label l1 = null)
         {
             pb.Minimum = 0;
             pb.Maximum = 0;
@@ -25,7 +24,10 @@ namespace fun
                 pb.Maximum = pb.Maximum + dt.Rows.Count;
             }
 
-            l1.Text = "Izvoz podataka u Excel tabelu";
+            if (l1 != null)
+            {
+                l1.Text = "Izvoz podataka u Excel tabelu";
+            }
             l2.Text = string.Format("{0} / {1}", pb.Maximum, pb.Minimum);
             //l2.Visible = false;
 
@@ -140,14 +142,18 @@ namespace fun
                 //}
 
                 //G16
-                //exWorkSheet.Name = ds.Tables[iTab].TableName; //promena naziva Sheeta
-                exWorkBook.Sheets.Add(After: exWorkBook.Sheets[exWorkBook.Sheets.Count]); //dodavanje novog sheeta
-                exWorkSheet = exWorkBook.Sheets[exWorkBook.Sheets.Count]; //da sledeci bude aktivan
-                iTab++;
-                iCol = 1;
+                exWorkSheet.Name = dt.TableName;/*ds.Tables[iTab].TableName; //promena naziva Sheeta*/
+                if (iTab != ds.Tables.Count - 1)
+                {
+                    exWorkBook.Sheets.Add(After: exWorkBook.Sheets[exWorkBook.Sheets.Count]); //dodavanje novog sheeta
+                    exWorkSheet = exWorkBook.Sheets[exWorkBook.Sheets.Count]; //da sledeci bude aktivan 
+
+                    iTab++;
+                    iCol = 1;
+                }
             }
 
-            exWorkSheet.Delete(); //brisanje poslednjeg sheeta
+            //exWorkSheet.Delete(); //brisanje poslednjeg sheeta
             exWorkSheet = exWorkBook.Sheets[1];
             exWorkSheet.Activate();
 
@@ -161,7 +167,7 @@ namespace fun
 
         }
 
-        public void ImportFromExcel(DataSet dbQDS, string fileName, ProgressBar pb, System.Windows.Forms.Label lt, 
+        public static void ImportFromExcel(DataSet dbQDS, string fileName, ProgressBar pb, System.Windows.Forms.Label lt, 
             System.Windows.Forms.Label lb, string conString)
         {
             if (MessageBox.Show("OPREZ!" + "\n" + "Ukoliko vratite ovu bazu, baza podataka koju trenutno koristite će biti obrisana" +

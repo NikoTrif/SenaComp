@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using iflib;
 using System.IO;
+using System.Data.SqlClient;
 
 namespace uclib.Opcije
 {
@@ -167,69 +168,17 @@ namespace uclib.Opcije
                         }
                         else
                         {
-                            object[] dtParam = { null, null, null, null, null, null, null, null };
-                            int i = 0;
-                            foreach(DataTable dt in dbSenaCompDataSet1.Tables)
-                            {
-                                dtParametri dtp = new dtParametri();
-                                dtp.ConnectionString = naloziPTableAdapter1.Connection.ConnectionString;
-                                dtp.DataTableName = dt.TableName;
+                            dbSenaCompDataSet dsSenaComp = new dbSenaCompDataSet();
 
-                                switch (dt.TableName)
-                                {
-                                    case "Artikli":
-                                        dtp.StoredProcedure = @"SELECT Sifra, Naziv, jedinicaMere, Usluga, PDV, 
-                                                                prodajnaCena, Cena, IznosPDV 
-                                                                FROM Artikli";
-                                        break;
-                                    case "ArtikliPFO":
-                                        dtp.StoredProcedure = @"SELECT Id, Tabela, Artikal, Kolicina, Cena, ukupnaCena 
-                                                                FROM dbo.ArtikliPFO";
-                                        break;
-                                    case "Faktura":
-                                        dtp.StoredProcedure = @"SELECT Id, Tabela, Artikal, Kolicina, Cena, ukupnaCena 
-                                                                FROM dbo.ArtikliPFO";
-                                        break;
-                                    case "Firme":
-                                        dtp.StoredProcedure = @"SELECT ID, Naziv, PIB, Grad, UlicaBroj, Kontakt, eMail, 
-                                                                tekuciRacun, maticniBroj FROM Firme";
-                                        break;
-                                    case "NaloziF":
-                                        dtp.StoredProcedure = @"SELECT brojNaloga, Datum, IDFirme, Firma, kontaktOsoba, 
-                                                                Kontakt, eMail, Uredjaj, Proizvodjac, Model, serijskiBroj, 
-                                                                Oprema, opisKvara, Izvestaj, cenaDelovi, cenaServisa, 
-                                                                ukupnaCena, Status, naCekanju, Zavrseno, korisnikOdustao, 
-                                                                servisOdustao, korisnikOdbioPlacanje, Napomena 
-                                                                FROM NaloziF";
-                                        break;
-                                    case "NaloziP":
-                                        dtp.StoredProcedure = @"SELECT brojNaloga, Datum, imePrezime, Kontakt, eMail, Uredjaj, Proizvodjac, 
-                                                                Model, serijskiBroj, Oprema, opisKvara, Izvestaj, cenaDelova, cenaServis, 
-                                                                ukupnaCena, Status, naCekanju, Zavrseno, korisnikOdustao, servisOdustao, 
-                                                                korisnikOdbioPlacanje, Napomena
-                                                                FROM     NaloziP";
-                                        break;
-                                    case "Otpremnice":
-                                        dtp.StoredProcedure = @"SELECT redniBroj, datum, datProf, datFakt, racun, adresaMagacina, 
-                                                                imeOL, brojLKOL, regVozilaOL, nazivPR, adresaPR, pibPR, matBrojPR, 
-                                                                adresaIsporPR, imePR, brojLKPR, ukupnaCena 
-                                                                FROM dbo.Otpremnice";
-                                        break;
-                                    case "Profakture":
-                                        dtp.StoredProcedure = @"SELECT redniBroj, Datum, Valuta, Status, datumIsplate, 
-                                                                IDKlijenta, Klijent, PIB, matBroj, Adresa, Grad, Roba, 
-                                                                Ukupno, Klauzule
-                                                                FROM Profakture";
-                                        break;
-                                    default:
-                                        dtp.StoredProcedure = "";
-                                        break;
-                                }
-                                dtParam[i] = dtp;
-                                i++;
+                            using (var dta = new dbSenaCompDataSetTableAdapters.ArtikliPFOTableAdapter())
+                            {
+                                dta.Fill(dsSenaComp.ArtikliPFO);
                             }
-                            ExcelIE.ExportXLS(dtParam, "Celija", "ServisDB", true, pbBackup, sfd.FileName);
-                            //ovako od prilike treba da izgleda samo sada treba urediti ExportXLS bazu da radi foreach za dtParam
+                            //ako je moguce naci nacin da se ovo sprovede u jednom redu da kod bude citkiji
+
+                            tlpBackup.Visible = true;
+                            ExcelIE.ExportToExcel("SenaComp", true, sfd.FileName, dsSenaComp, pbBackup, labBackup);
+                            tlpBackup.Visible = false;
                         }
                     }
                 }

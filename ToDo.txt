@@ -337,3 +337,5 @@ kada se trazi u kodu - npr. "RG1", "TD3.1.2", "G2"
 
 16.02.22 - TD 2.3.e - -ucBaza - osmisljen bolji sistem za koriscenje ExcelIE za potrebe visestrukih tabela. Tabela koristi objekat[] i radi foreach kroz svaki
 		 - TD 2.3.e - -ExcelIE - prilagodjavanje
+
+18.02.22 - TD 2.3.e - -ucBaza - prilagodjavanje

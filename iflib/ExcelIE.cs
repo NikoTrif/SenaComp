@@ -88,61 +88,8 @@ namespace iflib
                 exRange.Borders.LineStyle = XlLineStyle.xlContinuous;
                 exRange.Borders.Weight = XlBorderWeight.xlThin;
                 exRange.EntireColumn.AutoFit();
-
-                //podesavanje prikaza datuma
-                //switch (iTab)
-                //{
-                //    case 0:
-                //        exWorkSheet.Name = "Artikli";
-                //        break;
-                //    case 1:
-                //        exRange = exWorkSheet.Range[exWorkSheet.Cells[2, 1], exWorkSheet.Cells[rwCount + 1, 1]];
-                //        exRange.NumberFormat = "dd.MM.yyyy";
-                //        exWorkSheet.Name = "Privatni prihod";
-                //        break;
-                //    case 2:
-                //        exRange = exWorkSheet.Range[exWorkSheet.Cells[2, 1], exWorkSheet.Cells[rwCount + 1, 1]];
-                //        exRange.NumberFormat = "dd.MM.yyyy";
-                //        exWorkSheet.Name = "Privatna dugovanja";
-                //        break;
-                //    case 3:
-                //        exRange = exWorkSheet.Range[exWorkSheet.Cells[2, 2], exWorkSheet.Cells[rwCount + 1, 2]];
-                //        exRange.NumberFormat = "dd.MM.yyyy";
-                //        exRange = exWorkSheet.Range[exWorkSheet.Cells[2, 11], exWorkSheet.Cells[rwCount + 1, 11]];
-                //        exRange.NumberFormat = "dd.MM.yyyy";
-                //        exWorkSheet.Name = "Poslovni izlaz";
-                //        break;
-                //    case 4:
-                //        exRange = exWorkSheet.Range[exWorkSheet.Cells[2, 1], exWorkSheet.Cells[rwCount + 1, 1]];
-                //        exRange.NumberFormat = "dd.MM.yyyy";
-                //        exWorkSheet.Name = "Privatni trošak";
-                //        break;
-                //    case 5:
-                //        exRange = exWorkSheet.Range[exWorkSheet.Cells[2, 2], exWorkSheet.Cells[rwCount + 1, 2]];
-                //        exRange.NumberFormat = "dd.MM.yyyy";
-                //        exRange = exWorkSheet.Range[exWorkSheet.Cells[2, 10], exWorkSheet.Cells[rwCount + 1, 10]];
-                //        exRange.NumberFormat = "dd.MM.yyyy";
-                //        exWorkSheet.Name = "Poslovni ulaz";
-                //        break;
-                //    case 6:
-                //        exRange = exWorkSheet.Range[exWorkSheet.Cells[2, 2], exWorkSheet.Cells[rwCount + 1, 2]];
-                //        exRange.NumberFormat = "dd.MM.yyyy";
-                //        exWorkSheet.Name = "Poslovni ulaz rate";
-                //        break;
-                //    case 7:
-                //        exRange = exWorkSheet.Range[exWorkSheet.Cells[2, 3], exWorkSheet.Cells[rwCount + 1, 3]];
-                //        exRange.NumberFormat = "dd.MM.yyyy";
-                //        exWorkSheet.Name = "Poslovni izlaz rate";
-                //        break;
-                //    case 8:
-                //        exRange = exWorkSheet.Range[exWorkSheet.Cells[2, 2], exWorkSheet.Cells[rwCount + 1, 2]];
-                //        exRange.NumberFormat = "dd.MM.yyyy";
-                //        exWorkSheet.Name = "Privatna dugovanja rate";
-                //        break;
-                //}
-
-                //G16
-                exWorkSheet.Name = dt.TableName;/*ds.Tables[iTab].TableName; //promena naziva Sheeta*/
+                
+                exWorkSheet.Name = dt.TableName; //promena naziva Sheeta*/
                 if (iTab != ds.Tables.Count - 1)
                 {
                     exWorkBook.Sheets.Add(After: exWorkBook.Sheets[exWorkBook.Sheets.Count]); //dodavanje novog sheeta
@@ -153,7 +100,6 @@ namespace iflib
                 }
             }
 
-            //exWorkSheet.Delete(); //brisanje poslednjeg sheeta
             exWorkSheet = exWorkBook.Sheets[1];
             exWorkSheet.Activate();
 
@@ -164,7 +110,6 @@ namespace iflib
             System.Runtime.InteropServices.Marshal.ReleaseComObject(exWorkSheet);
             System.Runtime.InteropServices.Marshal.ReleaseComObject(exWorkBook);
             System.Runtime.InteropServices.Marshal.ReleaseComObject(excel);
-
         }
 
         public static void ImportFromExcel(DataSet dbQDS, string fileName, ProgressBar pb, System.Windows.Forms.Label lt, 

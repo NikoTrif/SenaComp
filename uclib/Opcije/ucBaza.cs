@@ -168,17 +168,31 @@ namespace uclib.Opcije
                         }
                         else
                         {
-                            dbSenaCompDataSet dsSenaComp = new dbSenaCompDataSet();
-
-                            using (var dta = new dbSenaCompDataSetTableAdapters.ArtikliPFOTableAdapter())
+                            using (dbSenaCompDataSet dsSenaComp = new dbSenaCompDataSet())
                             {
-                                dta.Fill(dsSenaComp.ArtikliPFO);
-                            }
-                            //ako je moguce naci nacin da se ovo sprovede u jednom redu da kod bude citkiji
+                                using (var tArtikliPFO = new dbSenaCompDataSetTableAdapters.ArtikliPFOTableAdapter())
+                                using (var tArtikli = new dbSenaCompDataSetTableAdapters.ArtikliTableAdapter())
+                                using (var tFakture = new dbSenaCompDataSetTableAdapters.FaktureTableAdapter())
+                                using (var tFirme = new dbSenaCompDataSetTableAdapters.FirmeTableAdapter())
+                                using (var tNaloziF = new dbSenaCompDataSetTableAdapters.NaloziFTableAdapter())
+                                using (var tNaloziP = new dbSenaCompDataSetTableAdapters.NaloziPTableAdapter())
+                                using (var tOtpremnice = new dbSenaCompDataSetTableAdapters.OtpremniceTableAdapter())
+                                using (var tProfakture = new dbSenaCompDataSetTableAdapters.ProfaktureTableAdapter())
+                                {
+                                    tArtikliPFO.Fill(dsSenaComp.ArtikliPFO);
+                                    tArtikli.Fill(dsSenaComp.Artikli);
+                                    tFakture.Fill(dsSenaComp.Fakture);
+                                    tFirme.Fill(dsSenaComp.Firme);
+                                    tNaloziF.Fill(dsSenaComp.NaloziF);
+                                    tNaloziP.Fill(dsSenaComp.NaloziP);
+                                    tOtpremnice.Fill(dsSenaComp.Otpremnice);
+                                    tProfakture.Fill(dsSenaComp.Profakture);
+                                }
 
-                            tlpBackup.Visible = true;
-                            ExcelIE.ExportToExcel("SenaComp", true, sfd.FileName, dsSenaComp, pbBackup, labBackup);
-                            tlpBackup.Visible = false;
+                                tlpBackup.Visible = true;
+                                ExcelIE.ExportToExcel("SenaComp", true, sfd.FileName, dsSenaComp, pbBackup, labBackup);
+                                tlpBackup.Visible = false;
+                            }
                         }
                     }
                 }

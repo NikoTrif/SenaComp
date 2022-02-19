@@ -39,7 +39,7 @@ kada se trazi u kodu - npr. "RG1", "TD3.1.2", "G2"
 				|R|b) dodavanje u listu uredjaja, proizvodjaca i opreme - liste uredjaja i proizvodjaca sortiraj po abecednom redu
 				|R|c) podaci firme - naziv, delatnost, adresa, PIB, tekuci racun
 				|R|d) klauzula
-				|Z|e) baza
+				|Z|e) baza - treba da sadrzi backup i restore sa podrskom za .mdf, .xls i .accdb
 				f) dodati slicice(ikonice)
 				g) srediti font u treeView-u
 				h) rtbKlauzula treba da bude ogranicena na 584 karaktera
@@ -339,3 +339,5 @@ kada se trazi u kodu - npr. "RG1", "TD3.1.2", "G2"
 		 - TD 2.3.e - -ExcelIE - prilagodjavanje
 
 18.02.22 - TD 2.3.e - -ucBaza - prilagodjavanje
+
+19.02.22 - TD 2.3.e - -ucBaza.dBackup_Click - prilagodjen za backup u Excel XLS fajl

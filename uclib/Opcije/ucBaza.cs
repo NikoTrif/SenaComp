@@ -162,37 +162,38 @@ namespace uclib.Opcije
                 {
                     if (sfd.ShowDialog() == DialogResult.OK/* && lokacijaBaze != ""*/)
                     {
-                        if (sfd.FilterIndex == 1)
+                        switch (sfd.FilterIndex)
                         {
-                            File.Copy(lokacijaBaze, sfd.FileName);
-                        }
-                        else
-                        {
-                            using (dbSenaCompDataSet dsSenaComp = new dbSenaCompDataSet())
-                            {
-                                using (var tArtikliPFO = new dbSenaCompDataSetTableAdapters.ArtikliPFOTableAdapter())
-                                using (var tArtikli = new dbSenaCompDataSetTableAdapters.ArtikliTableAdapter())
-                                using (var tFakture = new dbSenaCompDataSetTableAdapters.FaktureTableAdapter())
-                                using (var tFirme = new dbSenaCompDataSetTableAdapters.FirmeTableAdapter())
-                                using (var tNaloziF = new dbSenaCompDataSetTableAdapters.NaloziFTableAdapter())
-                                using (var tNaloziP = new dbSenaCompDataSetTableAdapters.NaloziPTableAdapter())
-                                using (var tOtpremnice = new dbSenaCompDataSetTableAdapters.OtpremniceTableAdapter())
-                                using (var tProfakture = new dbSenaCompDataSetTableAdapters.ProfaktureTableAdapter())
+                            case 1:
+                                File.Copy(lokacijaBaze, sfd.FileName);
+                                break;
+                            case 2:
+                                using (dbSenaCompDataSet dsSenaComp = new dbSenaCompDataSet())
                                 {
-                                    tArtikliPFO.Fill(dsSenaComp.ArtikliPFO);
-                                    tArtikli.Fill(dsSenaComp.Artikli);
-                                    tFakture.Fill(dsSenaComp.Fakture);
-                                    tFirme.Fill(dsSenaComp.Firme);
-                                    tNaloziF.Fill(dsSenaComp.NaloziF);
-                                    tNaloziP.Fill(dsSenaComp.NaloziP);
-                                    tOtpremnice.Fill(dsSenaComp.Otpremnice);
-                                    tProfakture.Fill(dsSenaComp.Profakture);
-                                }
+                                    using (var tArtikliPFO = new dbSenaCompDataSetTableAdapters.ArtikliPFOTableAdapter())
+                                    using (var tArtikli = new dbSenaCompDataSetTableAdapters.ArtikliTableAdapter())
+                                    using (var tFakture = new dbSenaCompDataSetTableAdapters.FaktureTableAdapter())
+                                    using (var tFirme = new dbSenaCompDataSetTableAdapters.FirmeTableAdapter())
+                                    using (var tNaloziF = new dbSenaCompDataSetTableAdapters.NaloziFTableAdapter())
+                                    using (var tNaloziP = new dbSenaCompDataSetTableAdapters.NaloziPTableAdapter())
+                                    using (var tOtpremnice = new dbSenaCompDataSetTableAdapters.OtpremniceTableAdapter())
+                                    using (var tProfakture = new dbSenaCompDataSetTableAdapters.ProfaktureTableAdapter())
+                                    {
+                                        tArtikliPFO.Fill(dsSenaComp.ArtikliPFO);
+                                        tArtikli.Fill(dsSenaComp.Artikli);
+                                        tFakture.Fill(dsSenaComp.Fakture);
+                                        tFirme.Fill(dsSenaComp.Firme);
+                                        tNaloziF.Fill(dsSenaComp.NaloziF);
+                                        tNaloziP.Fill(dsSenaComp.NaloziP);
+                                        tOtpremnice.Fill(dsSenaComp.Otpremnice);
+                                        tProfakture.Fill(dsSenaComp.Profakture);
+                                    }
 
-                                tlpBackup.Visible = true;
-                                ExcelIE.ExportToExcel("SenaComp", true, sfd.FileName, dsSenaComp, pbBackup, labBackup);
-                                tlpBackup.Visible = false;
-                            }
+                                    tlpBackup.Visible = true;
+                                    OfficeIE.Excel.ExportToExcel("SenaComp", false, sfd.FileName, dsSenaComp, pbBackup, labBackup);
+                                    tlpBackup.Visible = false;
+                                }
+                                break;
                         }
                     }
                 }
@@ -226,7 +227,15 @@ namespace uclib.Opcije
                 {
                     if(ofd.ShowDialog() == DialogResult.OK)
                     {
-                        File.Copy(ofd.FileName, lokacijaBaze, true);
+                        switch (ofd.FilterIndex)
+                        {
+                            case 1:
+                                File.Copy(ofd.FileName, lokacijaBaze, true);
+                                break;
+                            case 2:
+                                //kod za izvoz u excel
+                                break;
+                        }                        
                     }
                 }
             }

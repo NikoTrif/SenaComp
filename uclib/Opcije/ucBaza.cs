@@ -235,7 +235,8 @@ namespace uclib.Opcije
                             case 2:
                                 using (dbSenaCompDataSet ds = new dbSenaCompDataSet())
                                 {
-                                    OfficeIE.Excel.ImportFromExcel(ds, Properties.Settings.Default.dbSenaCompConnectionString/*promeniti*/,
+                                    dbSenaCompDataSetTableAdapters.ArtikliPFOTableAdapter apfo = new dbSenaCompDataSetTableAdapters.ArtikliPFOTableAdapter();
+                                    OfficeIE.Excel.ImportFromExcel(ds, apfo.Connection.ConnectionString/*promeniti*/,
                                         ofd.FileName, pbBackup, labBackup);
                                 }
                                 break;

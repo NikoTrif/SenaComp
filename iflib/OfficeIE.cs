@@ -24,8 +24,9 @@ namespace iflib
             /// <param name="pb">Progress Bar iz Forme koja ga prikazuje</param>
             /// <param name="l1">Label koji prikazuje progres. Npr. 1 / 100</param>
             /// <param name="l2">Label koji prikazuje proces. Izvoz podataka u Excel tabelu. Ne mora se unositi ako ga nema</param>
+            /// <param name="DatumKolone">Kada je bool[Tabela][Kolona] vrednost u arraju TRUE, ta kolona dobija format "Short Date", ako se ostavi null nece se izvrsavati promena formata</param>
             public static void ExportToExcel(string styleName, bool vidljivostExcela, string savePath, DataSet ds, ProgressBar pb,
-                 System.Windows.Forms.Label l1, System.Windows.Forms.Label l2 = null)
+                 System.Windows.Forms.Label l1, System.Windows.Forms.Label l2 = null, bool[][] DatumKolona = null)
             {
                 pb.Minimum = 0;
                 pb.Maximum = 0;
@@ -132,7 +133,10 @@ namespace iflib
                     "PAŽNJA!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
                 {
                     pb.Style = ProgressBarStyle.Marquee;
-                    l2.Text = "Uvoz baze podataka iz Excel tabela";
+                    if (l2!=null)
+                    {
+                        l2.Text = "Uvoz baze podataka iz Excel tabela"; 
+                    }
                     l1.Visible = false;
 
                     string sheetName = string.Empty;
@@ -222,8 +226,7 @@ namespace iflib
                         //        oleDta.SelectCommand = oleComm;
                         //        break;
                         //}
-
-                        //G18
+                        
                         //upisivanje OleDb u DataSet
                         try
                         {
@@ -266,6 +269,7 @@ namespace iflib
 
                         sqlComm.CommandText = sb.ToString();
 
+                        //Unos u bazu
                         for (int r = 0; r < ds.Tables[sheetNum].Rows.Count; r++)
                         {
                             for (int c = 0; c < ds.Tables[sheetNum].Columns.Count; c++)

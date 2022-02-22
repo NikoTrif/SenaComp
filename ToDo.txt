@@ -342,3 +342,5 @@ kada se trazi u kodu - npr. "RG1", "TD3.1.2", "G2"
 
 19.02.22 - TD 2.3.e - -ucBaza.dBackup_Click - prilagodjen za backup u Excel XLS fajl
 		 - TD 2.3.e - -OfficeIE.Excel.ImportToExcel - zapoceto prilagodjavanje
+
+22.02.22 - TD 2.3.e - -OfficeIE.Excel.ImportFromExcel - debugging, na ExportToExcel treba dodati ispravljanje formata kod kolona sa datumom

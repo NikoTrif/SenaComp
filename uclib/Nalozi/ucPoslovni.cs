@@ -157,6 +157,8 @@ namespace uclib.Nalozi
             {
                 naloziFBindingSource.RemoveCurrent();
 
+                naloziFTableAdapter.Update(dbSenaCompDataSet.NaloziF);
+
                 //G 6
                 dbSenaCompDataSet.Clear();
                 dbSenaCompDataSet.NaloziF.brojNalogaColumn.AutoIncrementSeed = -1;

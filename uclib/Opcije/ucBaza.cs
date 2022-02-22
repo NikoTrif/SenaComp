@@ -233,7 +233,11 @@ namespace uclib.Opcije
                                 File.Copy(ofd.FileName, lokacijaBaze, true);
                                 break;
                             case 2:
-                                //kod za izvoz u excel
+                                using (dbSenaCompDataSet ds = new dbSenaCompDataSet())
+                                {
+                                    OfficeIE.Excel.ImportFromExcel(ds, Properties.Settings.Default.dbSenaCompConnectionString/*promeniti*/,
+                                        ofd.FileName, pbBackup, labBackup);
+                                }
                                 break;
                         }                        
                     }

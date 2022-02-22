@@ -40,7 +40,7 @@ namespace iflib
                 {
                     l2.Text = "Izvoz podataka u Excel tabelu";
                 }
-                l1.Text = string.Format("{0} / {1}", pb.Maximum, pb.Minimum);
+                l1.Text = string.Format("{0} / {1}", pb.Minimum, pb.Maximum);
                 //l2.Visible = false;
 
                 Microsoft.Office.Interop.Excel.Application excel = new Microsoft.Office.Interop.Excel.Application();
@@ -76,7 +76,7 @@ namespace iflib
                             data[row, col] = dt.Rows[row].ItemArray[col];
                         }
                         pb.PerformStep();
-                        l1.Text = string.Format("{0} / {1}", pb.Maximum, pb.Value);
+                        l1.Text = string.Format("{0} / {1}", pb.Value, pb.Maximum);
                         //l2.Refresh();
                     }
 

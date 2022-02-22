@@ -92,6 +92,7 @@ kada se trazi u kodu - npr. "RG1", "TD3.1.2", "G2"
 |R|13.  - uclib.ucProfakture - kada se klikne na celiju pokazuje error Cell out of range 
 |R|14.  - uclib.ucProfakture.Cuvanje - kada se cuva xdco se ne upisuje u kolonu 9 (Roba) - pogledaj 
 15.  - uclib.ucProfaktura - kod direktne izmene iz dgvProfArtikli postoji greska upisuju se bzvz vrednosti
+16.  - iflib.OfficeIE.Excel.ImportFromExcel - unos u bazu sqlComm.ExecuteNonQuery() - sqlexception table does not have identity property
 ---------------------------------------------------------------------------------------
 ***Release Greske***
 ---------------------------------------------------------------------------------------

@@ -26,7 +26,7 @@ namespace iflib
             /// <param name="l2">Label koji prikazuje proces. Izvoz podataka u Excel tabelu. Ne mora se unositi ako ga nema</param>
             /// <param name="DatumKolone">Kada je bool[Tabela][Kolona] vrednost u arraju TRUE, ta kolona dobija format "Short Date", ako se ostavi null nece se izvrsavati promena formata</param>
             public static void ExportToExcel(string styleName, bool vidljivostExcela, string savePath, DataSet ds, ProgressBar pb,
-                 System.Windows.Forms.Label l1, System.Windows.Forms.Label l2 = null, bool[][] DatumKolona = null)
+                 System.Windows.Forms.Label l1, System.Windows.Forms.Label l2 = null)
             {
                 pb.Minimum = 0;
                 pb.Maximum = 0;
@@ -62,6 +62,12 @@ namespace iflib
                     foreach (DataColumn c in ds.Tables[iTab].Columns)
                     {
                         excel.Cells[1, iCol] = c.ColumnName; //postavljanje naziva kolona
+                        if(c.DataType == typeof(DateTime))
+                        {
+                            exRange = excel.Cells[1, iCol];
+                            exRange.EntireColumn.NumberFormat = "dd.MM.yyyy hh:mm";
+                            exRange = null;
+                        }
                         iCol++;
                     }
 
@@ -237,7 +243,7 @@ namespace iflib
                         catch (ConstraintException) { }
 
                         //pravljenje sql komande
-                        sb.Append("SET IDENTITY_INSERT " + tabName + " ON; " + "INSERT INTO " + tabName + " (");
+                        sb.Append($"SET IDENTITY_INSERT {tabName} ON;INSERT INTO {tabName} (");
 
                         int br = 0;
                         foreach (DataColumn c in ds.Tables[sheetNum].Columns)

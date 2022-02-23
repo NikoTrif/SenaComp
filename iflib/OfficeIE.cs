@@ -134,13 +134,13 @@ namespace iflib
             /// <summary>
             /// Brzo importyje podatke iz Excel XLS tabele u Bazu podataka
             /// </summary>
-            /// <param name="ds"></param>
-            /// <param name="conString"></param>
-            /// <param name="fileName"></param>
-            /// <param name="pb"></param>
-            /// <param name="l1"></param>
-            /// <param name="l2"></param>
-            /// <param name="identityColumnsInTables"></param>
+            /// <param name="ds">DataSet</param>
+            /// <param name="conString">ConnectionString baze podataka</param>
+            /// <param name="fileName">Naziv dokumenta iz OpenFileDialog-a</param>
+            /// <param name="pb">Progress bar</param>
+            /// <param name="l1">Label brojač</param>
+            /// <param name="l2">Label koji pokazuje proces - Uvoz baze podataka iz Excel tabela. Ne mora se unositi ako ga nema</param>
+            /// <param name="identityColumnsInTables">Ukoliko u nekoj od tabela postoji kolona postavljena kao Identity postaviti vrednost TRUE. Proveravaju se kolone koje imaju autoIncement. Javljaju se problemi ako tabela ima autoInceremnt podešavanje a nema Identity</param>
             public static void ImportFromExcel(DataSet ds, string conString, string fileName, ProgressBar pb,
                  System.Windows.Forms.Label l1, System.Windows.Forms.Label l2 = null, bool identityColumnsInTables = false)
             {

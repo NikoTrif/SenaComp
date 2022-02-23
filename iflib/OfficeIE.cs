@@ -131,8 +131,18 @@ namespace iflib
                 System.Runtime.InteropServices.Marshal.ReleaseComObject(excel);
             }
 
+            /// <summary>
+            /// Brzo importyje podatke iz Excel XLS tabele u Bazu podataka
+            /// </summary>
+            /// <param name="ds"></param>
+            /// <param name="conString"></param>
+            /// <param name="fileName"></param>
+            /// <param name="pb"></param>
+            /// <param name="l1"></param>
+            /// <param name="l2"></param>
+            /// <param name="identityColumnsInTables"></param>
             public static void ImportFromExcel(DataSet ds, string conString, string fileName, ProgressBar pb,
-                 System.Windows.Forms.Label l1, System.Windows.Forms.Label l2 = null)
+                 System.Windows.Forms.Label l1, System.Windows.Forms.Label l2 = null, bool identityColumnsInTables = false)
             {
                 if (MessageBox.Show("OPREZ!\nUkoliko vratite ovu bazu podataka,a baza koja se trenutno koristite će biti" +
                     " obrisana!\nDa li ste sigurni da želite da nastavite?",
@@ -168,7 +178,7 @@ namespace iflib
                         commStr = $"TRUNCATE TABLE {tabName}";
                         sqlComm.CommandText = commStr;
                         sqlComm.ExecuteNonQuery();
-
+                        
                         //upisivanje u OleDB kada su nazivi Sheet-ova isti kao nazivi tabela u DataSet-u
                         commStr = $@"SELECT * FROM [{ds.Tables[sheetNum].TableName}$]";
                         oleComm.CommandText = commStr;
@@ -243,7 +253,30 @@ namespace iflib
                         catch (ConstraintException) { }
 
                         //pravljenje sql komande
-                        sb.Append($"SET IDENTITY_INSERT {tabName} ON;INSERT INTO {tabName} (");
+                        //G 16
+                        bool IdentityColumn = false;
+                        if (identityColumnsInTables == true)
+                        {
+                            foreach (DataColumn c in ds.Tables[sheetNum].Columns) //Ako kolona ima autoIncrement postavljena je kao Identity u DBO Dizajneru
+                            {
+                                if (c.AutoIncrement == true)
+                                {
+                                    IdentityColumn = true;
+                                    break;
+                                }
+
+                            } 
+                        }
+                        
+                        //G16
+                        if(IdentityColumn == true)
+                        {
+                            sb.Append($"SET IDENTITY_INSERT {tabName} ON;INSERT INTO {tabName} (");
+                        }
+                        else
+                        {
+                            sb.Append($"INSERT INTO {tabName} (");
+                        }
 
                         int br = 0;
                         foreach (DataColumn c in ds.Tables[sheetNum].Columns)
@@ -268,7 +301,15 @@ namespace iflib
                             }
                             else
                             {
-                                sb.AppendFormat("@{0}); SET IDENTITY_INSERT {1} OFF;", c.ColumnName, tabName);
+                                //G 16
+                                if(IdentityColumn == true)
+                                {
+                                    sb.AppendFormat("@{0}); SET IDENTITY_INSERT {1} OFF;", c.ColumnName, tabName);
+                                }
+                                else
+                                {
+                                    sb.AppendFormat("@{0});", c.ColumnName);
+                                }
                             }
                             br++;
                         }

@@ -235,9 +235,13 @@ namespace uclib.Opcije
                             case 2:
                                 using (dbSenaCompDataSet ds = new dbSenaCompDataSet())
                                 {
+                                    labBackup.Visible = false;
+                                    tlpBackup.Visible = true;
                                     dbSenaCompDataSetTableAdapters.ArtikliPFOTableAdapter apfo = new dbSenaCompDataSetTableAdapters.ArtikliPFOTableAdapter();
                                     OfficeIE.Excel.ImportFromExcel(ds, apfo.Connection.ConnectionString/*promeniti*/,
                                         ofd.FileName, pbBackup, labBackup);
+                                    tlpBackup.Visible = false;
+                                    labBackup.Visible = true;
                                 }
                                 break;
                         }                        

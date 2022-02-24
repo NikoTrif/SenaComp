@@ -160,12 +160,15 @@ namespace uclib.Opcije
                     InitialDirectory = tbLokacija.Text
                 })
                 {
-                    if (sfd.ShowDialog() == DialogResult.OK/* && lokacijaBaze != ""*/)
+                    if (sfd.ShowDialog() == DialogResult.OK && lokacijaBaze != "")
                     {
                         switch (sfd.FilterIndex)
                         {
                             case 1:
-                                File.Copy(lokacijaBaze, sfd.FileName);
+                                if (File.Exists(lokacijaBaze))
+                                {
+                                    File.Copy(lokacijaBaze, sfd.FileName); 
+                                }
                                 break;
                             case 2:
                                 using (dbSenaCompDataSet dsSenaComp = new dbSenaCompDataSet())

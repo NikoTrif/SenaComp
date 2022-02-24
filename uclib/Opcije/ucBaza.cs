@@ -242,6 +242,7 @@ namespace uclib.Opcije
                                         ofd.FileName, pbBackup, labBackup);
                                     tlpBackup.Visible = false;
                                     labBackup.Visible = true;
+                                    apfo.Dispose();
                                 }
                                 break;
                         }                        
@@ -254,14 +255,31 @@ namespace uclib.Opcije
             }
         }
 
-        private void dNovaBaza_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void dObrisi_Click(object sender, EventArgs e)
         {
-
+            try
+            {
+                if (MessageBox.Show("Jednom obrisana baza se ne može povratiti ako nije urađen backup!\nDa li ste sigurni da želite da obrišete bazu podataka?",
+                        "Brisanje Baze? ", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                {
+                    using (SqlConnection conn = new SqlConnection(Properties.Settings.Default.dbSenaCompConnectionString)) //promeni po potrebi
+                    using (SqlCommand comm = new SqlCommand("", conn))
+                    using (dbSenaCompDataSet ds = new dbSenaCompDataSet())
+                    {
+                        conn.Open();
+                        foreach (DataTable tb in ds.Tables)
+                        {
+                            comm.CommandText = $"TRUNCATE TABLE {tb.TableName}";
+                            comm.ExecuteNonQuery();
+                        }
+                        conn.Close();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                clFunkcijeRazno.NapisiLog(ex);
+            }
         }
 
         private void dApply_Click(object sender, EventArgs e)

@@ -42,7 +42,6 @@
             this.Backup = new System.Windows.Forms.Button();
             this.dVrati = new System.Windows.Forms.Button();
             this.dObrisi = new System.Windows.Forms.Button();
-            this.dNovaBaza = new System.Windows.Forms.Button();
             this.dBackupPathBrowse = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
@@ -140,7 +139,7 @@
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 86F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 67F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 70F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 72F));
             this.tableLayoutPanel2.Controls.Add(this.label2, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.tbLokacija, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.dBrowse, 2, 0);
@@ -159,7 +158,7 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(3, 8);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(73, 17);
+            this.label2.Size = new System.Drawing.Size(72, 17);
             this.label2.TabIndex = 0;
             this.label2.Text = "Lokacija:";
             // 
@@ -167,17 +166,17 @@
             // 
             this.tbLokacija.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.tbLokacija.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::uclib.Properties.Settings.Default, "BazaServerPath", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.tbLokacija.Location = new System.Drawing.Point(82, 5);
+            this.tbLokacija.Location = new System.Drawing.Point(81, 5);
             this.tbLokacija.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbLokacija.Name = "tbLokacija";
-            this.tbLokacija.Size = new System.Drawing.Size(480, 22);
+            this.tbLokacija.Size = new System.Drawing.Size(479, 22);
             this.tbLokacija.TabIndex = 1;
             this.tbLokacija.Text = global::uclib.Properties.Settings.Default.BazaServerPath;
             // 
             // dBrowse
             // 
             this.dBrowse.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dBrowse.Location = new System.Drawing.Point(568, 2);
+            this.dBrowse.Location = new System.Drawing.Point(566, 2);
             this.dBrowse.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dBrowse.Name = "dBrowse";
             this.dBrowse.Size = new System.Drawing.Size(61, 29);
@@ -189,10 +188,10 @@
             // dBazaHelp
             // 
             this.dBazaHelp.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dBazaHelp.Location = new System.Drawing.Point(635, 2);
+            this.dBazaHelp.Location = new System.Drawing.Point(633, 2);
             this.dBazaHelp.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dBazaHelp.Name = "dBazaHelp";
-            this.dBazaHelp.Size = new System.Drawing.Size(65, 29);
+            this.dBazaHelp.Size = new System.Drawing.Size(67, 29);
             this.dBazaHelp.TabIndex = 2;
             this.dBazaHelp.Text = "?";
             this.dBazaHelp.UseVisualStyleBackColor = true;
@@ -204,19 +203,17 @@
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.61069F));
             this.tableLayoutPanel3.Controls.Add(this.Backup, 0, 0);
             this.tableLayoutPanel3.Controls.Add(this.dVrati, 0, 1);
-            this.tableLayoutPanel3.Controls.Add(this.dObrisi, 0, 4);
-            this.tableLayoutPanel3.Controls.Add(this.dNovaBaza, 0, 3);
+            this.tableLayoutPanel3.Controls.Add(this.dObrisi, 0, 3);
             this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 274);
             this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
-            this.tableLayoutPanel3.RowCount = 5;
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel3.RowCount = 4;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(703, 166);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(703, 132);
             this.tableLayoutPanel3.TabIndex = 6;
             // 
             // Backup
@@ -246,34 +243,22 @@
             // dObrisi
             // 
             this.dObrisi.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dObrisi.Location = new System.Drawing.Point(3, 134);
+            this.dObrisi.Location = new System.Drawing.Point(3, 101);
             this.dObrisi.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dObrisi.Name = "dObrisi";
-            this.dObrisi.Size = new System.Drawing.Size(697, 30);
+            this.dObrisi.Size = new System.Drawing.Size(697, 29);
             this.dObrisi.TabIndex = 8;
             this.dObrisi.Text = "Obriši";
             this.dObrisi.UseVisualStyleBackColor = true;
             this.dObrisi.Click += new System.EventHandler(this.dObrisi_Click);
             // 
-            // dNovaBaza
-            // 
-            this.dNovaBaza.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dNovaBaza.Location = new System.Drawing.Point(3, 101);
-            this.dNovaBaza.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dNovaBaza.Name = "dNovaBaza";
-            this.dNovaBaza.Size = new System.Drawing.Size(697, 29);
-            this.dNovaBaza.TabIndex = 8;
-            this.dNovaBaza.Text = "Nova Baza";
-            this.dNovaBaza.UseVisualStyleBackColor = true;
-            this.dNovaBaza.Click += new System.EventHandler(this.dNovaBaza_Click);
-            // 
             // dBackupPathBrowse
             // 
             this.dBackupPathBrowse.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dBackupPathBrowse.Location = new System.Drawing.Point(632, 134);
+            this.dBackupPathBrowse.Location = new System.Drawing.Point(628, 134);
             this.dBackupPathBrowse.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dBackupPathBrowse.Name = "dBackupPathBrowse";
-            this.dBackupPathBrowse.Size = new System.Drawing.Size(68, 30);
+            this.dBackupPathBrowse.Size = new System.Drawing.Size(72, 30);
             this.dBackupPathBrowse.TabIndex = 3;
             this.dBackupPathBrowse.Text = "...";
             this.dBackupPathBrowse.UseVisualStyleBackColor = true;
@@ -285,7 +270,7 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(84, 140);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(139, 17);
+            this.label3.Size = new System.Drawing.Size(138, 17);
             this.label3.TabIndex = 0;
             this.label3.Text = "Putanja backup-a:";
             // 
@@ -296,7 +281,7 @@
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 23.07692F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10.30769F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 53.69231F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 72F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 76F));
             this.tableLayoutPanel4.Controls.Add(this.cbAutoAzuriranje, 0, 0);
             this.tableLayoutPanel4.Controls.Add(this.label4, 1, 1);
             this.tableLayoutPanel4.Controls.Add(this.tbMinuti, 2, 1);
@@ -330,7 +315,7 @@
             this.cbAutoAzuriranje.Location = new System.Drawing.Point(3, 6);
             this.cbAutoAzuriranje.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbAutoAzuriranje.Name = "cbAutoAzuriranje";
-            this.cbAutoAzuriranje.Size = new System.Drawing.Size(285, 21);
+            this.cbAutoAzuriranje.Size = new System.Drawing.Size(283, 21);
             this.cbAutoAzuriranje.TabIndex = 0;
             this.cbAutoAzuriranje.Text = "Automatsko ažuriranje baze podataka";
             this.cbAutoAzuriranje.UseVisualStyleBackColor = true;
@@ -342,17 +327,17 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(84, 41);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(139, 17);
+            this.label4.Size = new System.Drawing.Size(138, 17);
             this.label4.TabIndex = 1;
             this.label4.Text = "Ažuriraj bazu svakih";
             // 
             // tbMinuti
             // 
             this.tbMinuti.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbMinuti.Location = new System.Drawing.Point(229, 38);
+            this.tbMinuti.Location = new System.Drawing.Point(228, 38);
             this.tbMinuti.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbMinuti.Name = "tbMinuti";
-            this.tbMinuti.Size = new System.Drawing.Size(59, 22);
+            this.tbMinuti.Size = new System.Drawing.Size(58, 22);
             this.tbMinuti.TabIndex = 2;
             this.tbMinuti.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbMinuti_KeyPress);
             // 
@@ -360,9 +345,9 @@
             // 
             this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(294, 41);
+            this.label5.Location = new System.Drawing.Point(292, 41);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(332, 17);
+            this.label5.Size = new System.Drawing.Size(330, 17);
             this.label5.TabIndex = 3;
             this.label5.Text = "minuta.";
             // 
@@ -376,7 +361,7 @@
             this.cbAutoBackup.Location = new System.Drawing.Point(3, 72);
             this.cbAutoBackup.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbAutoBackup.Name = "cbAutoBackup";
-            this.cbAutoBackup.Size = new System.Drawing.Size(285, 21);
+            this.cbAutoBackup.Size = new System.Drawing.Size(283, 21);
             this.cbAutoBackup.TabIndex = 0;
             this.cbAutoBackup.Text = "Automatski Backup baze podataka";
             this.cbAutoBackup.UseVisualStyleBackColor = true;
@@ -387,10 +372,10 @@
             this.tbBackupPath.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel4.SetColumnSpan(this.tbBackupPath, 2);
             this.tbBackupPath.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::uclib.Properties.Settings.Default, "BazaAutpBackupPath", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.tbBackupPath.Location = new System.Drawing.Point(229, 138);
+            this.tbBackupPath.Location = new System.Drawing.Point(228, 138);
             this.tbBackupPath.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbBackupPath.Name = "tbBackupPath";
-            this.tbBackupPath.Size = new System.Drawing.Size(397, 22);
+            this.tbBackupPath.Size = new System.Drawing.Size(394, 22);
             this.tbBackupPath.TabIndex = 1;
             this.tbBackupPath.Text = global::uclib.Properties.Settings.Default.BazaAutpBackupPath;
             // 
@@ -400,17 +385,17 @@
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(84, 107);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(139, 17);
+            this.label6.Size = new System.Drawing.Size(138, 17);
             this.label6.TabIndex = 0;
             this.label6.Text = "Sačuvaj svakih";
             // 
             // tbDani
             // 
             this.tbDani.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbDani.Location = new System.Drawing.Point(229, 104);
+            this.tbDani.Location = new System.Drawing.Point(228, 104);
             this.tbDani.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbDani.Name = "tbDani";
-            this.tbDani.Size = new System.Drawing.Size(59, 22);
+            this.tbDani.Size = new System.Drawing.Size(58, 22);
             this.tbDani.TabIndex = 2;
             this.tbDani.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbMinuti_KeyPress);
             // 
@@ -418,9 +403,9 @@
             // 
             this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(294, 107);
+            this.label7.Location = new System.Drawing.Point(292, 107);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(332, 17);
+            this.label7.Size = new System.Drawing.Size(330, 17);
             this.label7.TabIndex = 3;
             this.label7.Text = "dana.";
             // 
@@ -514,7 +499,6 @@
         private System.Windows.Forms.TextBox tbMinuti;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button dObrisi;
-        private System.Windows.Forms.Button dNovaBaza;
         private System.Windows.Forms.ProgressBar pbBackup;
         private System.Windows.Forms.TableLayoutPanel tlpBackup;
         private System.Windows.Forms.Label labBackup;

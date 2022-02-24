@@ -348,3 +348,5 @@ kada se trazi u kodu - npr. "RG1", "TD3.1.2", "G2"
 		 - TD 2.3.e - -OfficeIE.Excel.ExportToExcel - Ako je kolona datum, u excelu se format ispravlja u NumberFormat dd.MM.yyyy hh:mm
 
 23.02.22 - G 16 - - - -OfficeIE.Excel.ImportFromExcel - postavljen parametar identityColumnInTables = false. Kada je vrednost true, kod utvrdjuje koja tabela ima autoIncrement i postavlja SET IDENTITY_INSERT na ON i OFF
+
+24.02.22 - TD 2.3.e - -ucBaza - Zavrsen kod za brisanje baze - upotrebljena SQL komanda "TRUNCATE TABLE"

@@ -227,8 +227,8 @@ namespace uclib.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(LocalDB)\\MSSQLLocalDB;UserInstance=True;AttachDbFilename=\"|DataDirec" +
-            "tory|\\dbSenaComp.mdf\";Password=Master1!")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=\"|DataDirectory|\\dbSenaComp.m" +
+            "df\";Password=Master1!")]
         public string dbSenaCompConnectionString {
             get {
                 return ((string)(this["dbSenaCompConnectionString"]));

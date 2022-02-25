@@ -88,7 +88,7 @@ namespace uclib.Opcije
 
         private void tbMinuti_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if(!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
             {
                 e.Handled = true;
             }
@@ -167,7 +167,7 @@ namespace uclib.Opcije
                             case 1:
                                 if (File.Exists(lokacijaBaze))
                                 {
-                                    File.Copy(lokacijaBaze, sfd.FileName); 
+                                    File.Copy(lokacijaBaze, sfd.FileName);
                                 }
                                 break;
                             case 2:
@@ -222,13 +222,13 @@ namespace uclib.Opcije
                     lokacijaBaze = tbLokacija.Text;
                 }
 
-                using(OpenFileDialog ofd = new OpenFileDialog
+                using (OpenFileDialog ofd = new OpenFileDialog
                 {
                     Filter = "Microsoft Data Base | *.mdf | Excel | *.xls",
                     InitialDirectory = tbLokacija.Text
                 })
                 {
-                    if(ofd.ShowDialog() == DialogResult.OK)
+                    if (ofd.ShowDialog() == DialogResult.OK)
                     {
                         switch (ofd.FilterIndex)
                         {
@@ -248,7 +248,7 @@ namespace uclib.Opcije
                                     apfo.Dispose();
                                 }
                                 break;
-                        }                        
+                        }
                     }
                 }
             }
@@ -296,11 +296,73 @@ namespace uclib.Opcije
                 int.TryParse(tbDani.Text, out vreme);
                 Properties.Settings.Default.BazaAutoBackupVreme = vreme;
 
+                if (rbServer.Checked)
+                {
+                    Properties.Settings.Default["dbSenaCompConnectionString"] = $@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename={tbLokacija.Text};Password=Master1!";
+                }
+
                 Properties.Settings.Default.Save();
             }
             catch (Exception ex)
             {
                 clFunkcijeRazno.NapisiLog(ex);
+            }
+        }
+
+        private void rbServer_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rbServer.Checked)
+            {
+                string localDB = $@"{Environment.GetFolderPath(Environment.SpecialFolder.CommonApplicationData)}\Sena\SenaComp\dbSenaComp.mdf";
+                string zeroDB = "dbSenaComp.mdf";
+
+                switch (MessageBox.Show("Da li se baza podataka čuva na ovom računaru?", "", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question))
+                {
+                    case DialogResult.Yes:
+                        using(var fbd = new FolderBrowserDialog())
+                        {
+                            if (fbd.ShowDialog() == DialogResult.OK)
+                            {
+                                if (File.Exists($@"{fbd.SelectedPath}\dbSenaComp.mdf"))
+                                {
+                                    tbLokacija.Text = $@"{fbd.SelectedPath}\dbSenaComp.mdf";
+                                }
+                                else
+                                {
+                                    if (File.Exists(localDB))
+                                    {
+                                        File.Copy(localDB, fbd.SelectedPath);
+                                    }
+                                    else
+                                    {
+                                        File.Copy(zeroDB, fbd.SelectedPath);
+                                    }
+                                }
+                            }
+                            else
+                            {
+                                rbLokalna.Checked = true;
+                            }
+                        }
+                        break;
+                    case DialogResult.No:
+                        break;
+                    case DialogResult.Cancel:
+                        break;
+                }
+                //var Pitanje = MessageBox.Show("Da li se baza podataka čuva na ovom računaru?", "", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
+                //if (Pitanje == DialogResult.Yes)
+                //{
+
+                //}
+                //else if(Pitanje == DialogResult.No)
+                //{
+
+                //}
+                //else
+                //{
+
+                //}
             }
         }
     }

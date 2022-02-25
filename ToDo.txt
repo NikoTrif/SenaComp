@@ -39,7 +39,7 @@ kada se trazi u kodu - npr. "RG1", "TD3.1.2", "G2"
 				|R|b) dodavanje u listu uredjaja, proizvodjaca i opreme - liste uredjaja i proizvodjaca sortiraj po abecednom redu
 				|R|c) podaci firme - naziv, delatnost, adresa, PIB, tekuci racun
 				|R|d) klauzula
-				|R|e) baza - treba da sadrzi backup i restore sa podrskom za .mdf, .xls, .accdb i pozeljno .csv
+				|Z|e) baza - treba da sadrzi backup i restore sa podrskom za .mdf, .xls, .accdb i pozeljno .csv
 				f) dodati slicice(ikonice)
 				g) srediti font u treeView-u
 				h) rtbKlauzula treba da bude ogranicena na 584 karaktera
@@ -349,4 +349,6 @@ kada se trazi u kodu - npr. "RG1", "TD3.1.2", "G2"
 
 23.02.22 - G 16 - - - -OfficeIE.Excel.ImportFromExcel - postavljen parametar identityColumnInTables = false. Kada je vrednost true, kod utvrdjuje koja tabela ima autoIncrement i postavlja SET IDENTITY_INSERT na ON i OFF
 
-24.02.22 - TD 2.3.e - -ucBaza - Zavrsen kod za brisanje baze - upotrebljena SQL komanda "TRUNCATE TABLE" - Resen ucBaza
+24.02.22 - TD 2.3.e - -ucBaza - Zavrsen kod za brisanje baze - upotrebljena SQL komanda "TRUNCATE TABLE"
+
+25.02.22 - TD 2.3.e - -ucBaza - Resavanje baze na serveru

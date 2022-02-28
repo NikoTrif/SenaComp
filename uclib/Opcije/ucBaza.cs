@@ -15,38 +15,99 @@ namespace uclib.Opcije
 {
     public partial class ucBaza : UserControl
     {
+        string localDB = $@"{Environment.GetFolderPath(Environment.SpecialFolder.CommonApplicationData)}\Sena\SenaComp\dbSenaComp.mdf";
+        string zeroDB = "dbSenaComp.mdf";
+
         public ucBaza()
         {
             InitializeComponent();
+
+            label2.DataBindings.Add("Enabled", rbServer, "Checked", true, DataSourceUpdateMode.OnPropertyChanged); //Lokacija baze:
+            tbLokacija.DataBindings.Add("ReadOnly", rbLokalna, "Checked", true, DataSourceUpdateMode.OnPropertyChanged);
+            dBrowse.DataBindings.Add("Enabled", rbServer, "Checked", true, DataSourceUpdateMode.OnPropertyChanged);
+            cbAutoAzuriranje.DataBindings.Add("Enabled", rbServer, "Checked", true, DataSourceUpdateMode.OnPropertyChanged);
+
+            label6.DataBindings.Add("Enabled", cbAutoBackup, "Checked", true, DataSourceUpdateMode.OnPropertyChanged); //Sačuvaj svakih
+            tbDani.DataBindings.Add("Enabled", cbAutoBackup, "Checked", true, DataSourceUpdateMode.OnPropertyChanged);
+            label7.DataBindings.Add("Enabled", cbAutoBackup, "Checked", true, DataSourceUpdateMode.OnPropertyChanged); //dana.
+            label3.DataBindings.Add("Enabled", cbAutoBackup, "Checked", true, DataSourceUpdateMode.OnPropertyChanged); //Putanja Backup-a:
+            tbBackupPath.DataBindings.Add("Enabled", cbAutoBackup, "Checked", true, DataSourceUpdateMode.OnPropertyChanged);
+            dBackupPathBrowse.DataBindings.Add("Enabled", cbAutoBackup,"Checked", true, DataSourceUpdateMode.OnPropertyChanged);
+
+            label4.DataBindings.Add("Enabled", cbAutoAzuriranje, "Checked", true, DataSourceUpdateMode.OnPropertyChanged); //Putanja Backup-a:
+            tbMinuti.DataBindings.Add("Enabled", cbAutoAzuriranje, "Checked", true, DataSourceUpdateMode.OnPropertyChanged);
+            label5.DataBindings.Add("Enabled", cbAutoAzuriranje, "Checked", true, DataSourceUpdateMode.OnPropertyChanged); //minuta.            
         }
 
         private void ucBaza_Load(object sender, EventArgs e)
         {
-            try
-            {
-                rbLokalna_CheckedChanged(null, EventArgs.Empty);
-                cbAutoAzuriranje_CheckedChanged(null, EventArgs.Empty);
-                cbAutoBackup_CheckedChanged(null, EventArgs.Empty);
-            }
-            catch (Exception ex)
-            {
-                clFunkcijeRazno.NapisiLog(ex);
-            }
+
         }
 
         private void rbLokalna_CheckedChanged(object sender, EventArgs e)
         {
             try
             {
-                label2.Enabled = !rbLokalna.Checked; //Lokacija:
-                tbLokacija.ReadOnly = rbLokalna.Checked;
-                dBrowse.Enabled = !rbLokalna.Checked;
-                cbAutoAzuriranje.Enabled = !rbLokalna.Checked;
-
                 if (rbLokalna.Checked)
                 {
-                    tbLokacija.Text = ""; //ovde upisati default lokaciju lokalne baze
+                    tbLokacija.Text = localDB;
                     cbAutoAzuriranje.Checked = false;
+                }
+                else /*(rbServer.Checked)*/
+                {
+                    switch (MessageBox.Show("Da li se baza podataka čuva na ovom računaru?", "", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question))
+                    {
+                        case DialogResult.Yes:
+                            using (var fbd = new FolderBrowserDialog())
+                            {
+                                if (fbd.ShowDialog() == DialogResult.OK)
+                                {
+                                    if (File.Exists($@"{fbd.SelectedPath}\dbSenaComp.mdf"))
+                                    {
+                                        tbLokacija.Text = $@"{fbd.SelectedPath}\dbSenaComp.mdf";
+                                    }
+                                    else
+                                    {
+                                        if (File.Exists(localDB))
+                                        {
+                                            File.Copy(localDB, fbd.SelectedPath);
+                                            tbLokacija.Text = $@"{fbd.SelectedPath}\dbSenaComp.mdf";
+                                        }
+                                        else
+                                        {
+                                            File.Copy(zeroDB, fbd.SelectedPath);
+                                            tbLokacija.Text = $@"{fbd.SelectedPath}\dbSenaComp.mdf";
+                                        }
+                                    }
+                                }
+                            }
+                            break;
+                        case DialogResult.No:
+                            using(var fbd = new FolderBrowserDialog())
+                            {
+                                if(fbd.ShowDialog() == DialogResult.OK)
+                                {
+                                    if (File.Exists($@"{fbd.SelectedPath}\dbSenaComp.mdf"))
+                                    {
+                                        tbLokacija.Text = $@"{fbd.SelectedPath}\dbSenaComp.mdf";
+                                    }
+                                    else
+                                    {
+                                        MessageBox.Show("Na ovoj lokaciji ne postoji baza podataka!", "Baza nije pronađena!",
+                                            MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                        rbLokalna.Checked = true;
+                                    }
+                                }
+                                else
+                                {
+                                    rbLokalna.Checked = true;
+                                }
+                            }
+                            break;
+                        case DialogResult.Cancel:
+                            rbLokalna.Checked = true;
+                            break;
+                    }
                 }
             }
             catch (Exception ex)
@@ -59,9 +120,7 @@ namespace uclib.Opcije
         {
             try
             {
-                label4.Enabled = cbAutoAzuriranje.Checked; //Ažuriraj Bazu svakih
-                tbMinuti.Enabled = cbAutoAzuriranje.Checked;
-                label5.Enabled = cbAutoAzuriranje.Checked; //minuta.
+                //cbAutoAzuriranjeBind();
             }
             catch (Exception ex)
             {
@@ -73,19 +132,14 @@ namespace uclib.Opcije
         {
             try
             {
-                label6.Enabled = cbAutoBackup.Checked; //Sačuvaj svakih
-                tbDani.ReadOnly = !cbAutoBackup.Checked;
-                label7.Enabled = cbAutoBackup.Checked; //dana.
-                label3.Enabled = cbAutoBackup.Checked; //Putanja Backup-a:
-                tbBackupPath.ReadOnly = !cbAutoBackup.Checked;
-                dBackupPathBrowse.Enabled = cbAutoBackup.Checked;
+                //cbAutoBackupBind();
             }
             catch (Exception ex)
             {
                 clFunkcijeRazno.NapisiLog(ex);
             }
         }
-
+        
         private void tbMinuti_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
@@ -215,7 +269,7 @@ namespace uclib.Opcije
                 if (rbLokalna.Checked)
                 {
                     //promeni po potrebi
-                    lokacijaBaze = $@"{Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData)}\Sena\SenaComp\dbSenaComp.mdf";
+                    lokacijaBaze = localDB;
                 }
                 else
                 {
@@ -306,63 +360,6 @@ namespace uclib.Opcije
             catch (Exception ex)
             {
                 clFunkcijeRazno.NapisiLog(ex);
-            }
-        }
-
-        private void rbServer_CheckedChanged(object sender, EventArgs e)
-        {
-            if (rbServer.Checked)
-            {
-                string localDB = $@"{Environment.GetFolderPath(Environment.SpecialFolder.CommonApplicationData)}\Sena\SenaComp\dbSenaComp.mdf";
-                string zeroDB = "dbSenaComp.mdf";
-
-                switch (MessageBox.Show("Da li se baza podataka čuva na ovom računaru?", "", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question))
-                {
-                    case DialogResult.Yes:
-                        using(var fbd = new FolderBrowserDialog())
-                        {
-                            if (fbd.ShowDialog() == DialogResult.OK)
-                            {
-                                if (File.Exists($@"{fbd.SelectedPath}\dbSenaComp.mdf"))
-                                {
-                                    tbLokacija.Text = $@"{fbd.SelectedPath}\dbSenaComp.mdf";
-                                }
-                                else
-                                {
-                                    if (File.Exists(localDB))
-                                    {
-                                        File.Copy(localDB, fbd.SelectedPath);
-                                    }
-                                    else
-                                    {
-                                        File.Copy(zeroDB, fbd.SelectedPath);
-                                    }
-                                }
-                            }
-                            else
-                            {
-                                rbLokalna.Checked = true;
-                            }
-                        }
-                        break;
-                    case DialogResult.No:
-                        break;
-                    case DialogResult.Cancel:
-                        break;
-                }
-                //var Pitanje = MessageBox.Show("Da li se baza podataka čuva na ovom računaru?", "", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
-                //if (Pitanje == DialogResult.Yes)
-                //{
-
-                //}
-                //else if(Pitanje == DialogResult.No)
-                //{
-
-                //}
-                //else
-                //{
-
-                //}
             }
         }
     }

@@ -352,3 +352,6 @@ kada se trazi u kodu - npr. "RG1", "TD3.1.2", "G2"
 24.02.22 - TD 2.3.e - -ucBaza - Zavrsen kod za brisanje baze - upotrebljena SQL komanda "TRUNCATE TABLE"
 
 25.02.22 - TD 2.3.e - -ucBaza - Resavanje baze na serveru
+
+28.02.22 - TD 2.3.e - -ucBaza.rbLokalna_checkedChange - kod za selektovanje baze na serveru - po nacrtanom algoritmu
+					- -ucBaza - kod za medjusobni binding komponenti

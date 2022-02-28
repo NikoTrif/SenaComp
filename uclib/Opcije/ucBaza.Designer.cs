@@ -132,7 +132,6 @@
             this.rbServer.TabStop = true;
             this.rbServer.Text = "Server";
             this.rbServer.UseVisualStyleBackColor = true;
-            this.rbServer.CheckedChanged += new System.EventHandler(this.rbServer_CheckedChanged);
             // 
             // tableLayoutPanel2
             // 

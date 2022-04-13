@@ -34,7 +34,9 @@ namespace uclib.Nalozi
                 proizvodjacComboBox.AutoCompleteCustomSource.AddRange(Properties.Settings.Default.Proizvodjaci.Cast<string>().ToArray());
             }
 
-            Properties.Settings.Default["dbSenaCompConnectionString"] = "bbb";
+            //Properties.Settings.Default["dbSenaCompConnectionString"] = "bbb";
+            //Console.WriteLine(Properties.Settings.Default.dbSenaCompConnectionString);
+            Console.WriteLine(AppDomain.CurrentDomain.SetupInformation.ConfigurationFile);
         }
 
         private void ucPrivatni_Load(object sender, EventArgs e)

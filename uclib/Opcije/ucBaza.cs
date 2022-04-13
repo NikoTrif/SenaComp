@@ -341,6 +341,7 @@ namespace uclib.Opcije
 
         private void dApply_Click(object sender, EventArgs e)
         {
+            //G 17
             try
             {
                 int vreme = 0;
@@ -354,8 +355,14 @@ namespace uclib.Opcije
                 {
                     Properties.Settings.Default["dbSenaCompConnectionString"] = $@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename={tbLokacija.Text};Password=Master1!";
                 }
+                else
+                {
+                    Properties.Settings.Default["dbSenaCompConnectionString"] = $@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename={localDB};Password=Master1!";
+                }
 
                 Properties.Settings.Default.Save();
+                Console.WriteLine(Properties.Settings.Default.dbSenaCompConnectionString);
+                Console.WriteLine(AppDomain.CurrentDomain.SetupInformation.ConfigurationFile);
             }
             catch (Exception ex)
             {

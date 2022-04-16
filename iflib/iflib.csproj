@@ -48,6 +48,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="cGlobalVariables.cs" />
     <Compile Include="clFunkcijeRazno.cs" />
     <Compile Include="clPodesavanja.cs" />
     <Compile Include="clTransfer.cs" />

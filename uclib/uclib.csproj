@@ -53,6 +53,7 @@
     <Reference Include="Microsoft.ReportViewer.Common, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
     <Reference Include="Microsoft.ReportViewer.WinForms, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web.Services" />
@@ -105,6 +106,7 @@
     <Compile Include="Nalozi\ucPrivatni.Designer.cs">
       <DependentUpon>ucPrivatni.cs</DependentUpon>
     </Compile>
+    <Compile Include="Opcije\conStringManager.cs" />
     <Compile Include="Opcije\Osnovno\ucOprema.cs">
       <SubType>UserControl</SubType>
     </Compile>

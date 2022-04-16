@@ -15,8 +15,8 @@ namespace uclib.Opcije
 {
     public partial class ucBaza : UserControl
     {
-        string localDB = $@"{Environment.GetFolderPath(Environment.SpecialFolder.CommonApplicationData)}\Sena\SenaComp\dbSenaComp.mdf";
-        string zeroDB = "dbSenaComp.mdf";
+        bool ucLoaded = false;
+        string copySource = "";
 
         public ucBaza()
         {
@@ -41,73 +41,79 @@ namespace uclib.Opcije
 
         private void ucBaza_Load(object sender, EventArgs e)
         {
-
+            ucLoaded = true;
         }
 
         private void rbLokalna_CheckedChanged(object sender, EventArgs e)
         {
             try
             {
-                if (rbLokalna.Checked)
+                if (ucLoaded == true)
                 {
-                    tbLokacija.Text = localDB;
-                    cbAutoAzuriranje.Checked = false;
-                }
-                else /*(rbServer.Checked)*/
-                {
-                    switch (MessageBox.Show("Da li se baza podataka čuva na ovom računaru?", "", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question))
+                    if (rbLokalna.Checked)
                     {
-                        case DialogResult.Yes:
-                            using (var fbd = new FolderBrowserDialog())
-                            {
-                                if (fbd.ShowDialog() == DialogResult.OK)
+                        tbLokacija.Text = cGlobalVariables.localDB;
+                        cbAutoAzuriranje.Checked = false;
+                    }
+                    else /*(rbServer.Checked)*/
+                    {
+                        switch (MessageBox.Show("Da li se baza podataka čuva na ovom računaru?", "", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question))
+                        {
+                            case DialogResult.Yes:
+                                using (var fbd = new FolderBrowserDialog())
                                 {
-                                    if (File.Exists($@"{fbd.SelectedPath}\dbSenaComp.mdf"))
+                                    if (fbd.ShowDialog() == DialogResult.OK)
                                     {
-                                        tbLokacija.Text = $@"{fbd.SelectedPath}\dbSenaComp.mdf";
-                                    }
-                                    else
-                                    {
-                                        if (File.Exists(localDB))
+                                        if (File.Exists($@"{fbd.SelectedPath}\dbSenaComp.mdf"))
                                         {
-                                            File.Copy(localDB, fbd.SelectedPath);
                                             tbLokacija.Text = $@"{fbd.SelectedPath}\dbSenaComp.mdf";
                                         }
                                         else
                                         {
-                                            File.Copy(zeroDB, fbd.SelectedPath);
-                                            tbLokacija.Text = $@"{fbd.SelectedPath}\dbSenaComp.mdf";
+                                            if (File.Exists(cGlobalVariables.localDB))
+                                            {
+                                                //File.Copy(cGlobalVariables.localDB, $@"{fbd.SelectedPath}\dbSenaComp.mdf");
+                                                copySource = cGlobalVariables.localDB;
+                                                tbLokacija.Text = $@"{fbd.SelectedPath}\dbSenaComp.mdf";
+                                            }
+                                            else
+                                            {
+                                                //File.Copy(cGlobalVariables.zeroDB, $@"{fbd.SelectedPath}\dbSenaComp.mdf");
+                                                copySource = cGlobalVariables.zeroDB;
+                                                tbLokacija.Text = $@"{fbd.SelectedPath}\dbSenaComp.mdf";
+                                            }
+                                            rbServer.Checked = true;
                                         }
                                     }
                                 }
-                            }
-                            break;
-                        case DialogResult.No:
-                            using(var fbd = new FolderBrowserDialog())
-                            {
-                                if(fbd.ShowDialog() == DialogResult.OK)
+                                break;
+                            case DialogResult.No:
+                                using (var fbd = new FolderBrowserDialog())
                                 {
-                                    if (File.Exists($@"{fbd.SelectedPath}\dbSenaComp.mdf"))
+                                    if (fbd.ShowDialog() == DialogResult.OK)
                                     {
-                                        tbLokacija.Text = $@"{fbd.SelectedPath}\dbSenaComp.mdf";
+                                        if (File.Exists($@"{fbd.SelectedPath}\dbSenaComp.mdf"))
+                                        {
+                                            tbLokacija.Text = $@"{fbd.SelectedPath}\dbSenaComp.mdf";
+                                        }
+                                        else
+                                        {
+                                            MessageBox.Show("Na ovoj lokaciji ne postoji baza podataka!", "Baza nije pronađena!",
+                                                MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                            rbLokalna.Checked = true;
+                                        }
                                     }
                                     else
                                     {
-                                        MessageBox.Show("Na ovoj lokaciji ne postoji baza podataka!", "Baza nije pronađena!",
-                                            MessageBoxButtons.OK, MessageBoxIcon.Error);
                                         rbLokalna.Checked = true;
                                     }
                                 }
-                                else
-                                {
-                                    rbLokalna.Checked = true;
-                                }
-                            }
-                            break;
-                        case DialogResult.Cancel:
-                            rbLokalna.Checked = true;
-                            break;
-                    }
+                                break;
+                            case DialogResult.Cancel:
+                                rbLokalna.Checked = true;
+                                break;
+                        }
+                    } 
                 }
             }
             catch (Exception ex)
@@ -201,7 +207,7 @@ namespace uclib.Opcije
                 if (rbLokalna.Checked)
                 {
                     //promeni po potrebi
-                    lokacijaBaze = $@"{Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData)}\Sena\SenaComp\dbSenaComp.mdf";
+                    lokacijaBaze = cGlobalVariables.localDB;
                 }
                 else
                 {
@@ -269,7 +275,7 @@ namespace uclib.Opcije
                 if (rbLokalna.Checked)
                 {
                     //promeni po potrebi
-                    lokacijaBaze = localDB;
+                    lokacijaBaze = cGlobalVariables.localDB;
                 }
                 else
                 {
@@ -341,6 +347,8 @@ namespace uclib.Opcije
 
         private void dApply_Click(object sender, EventArgs e)
         {
+            string connString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename={lokacija};Password=Master1!";
+            
             //G 17
             try
             {
@@ -351,18 +359,44 @@ namespace uclib.Opcije
                 int.TryParse(tbDani.Text, out vreme);
                 Properties.Settings.Default.BazaAutoBackupVreme = vreme;
 
-                if (rbServer.Checked)
+                //if (rbServer.Checked)
+                //{
+                //    //Properties.Settings.Default["dbSenaCompConnectionString"] = $@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename={tbLokacija.Text};Password=Master1!";
+                //}
+                //else
+                //{
+                //    //Properties.Settings.Default["dbSenaCompConnectionString"] = $@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename={localDB};Password=Master1!";
+                //}
+
+                if (rbLokalna.Checked)
                 {
-                    Properties.Settings.Default["dbSenaCompConnectionString"] = $@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename={tbLokacija.Text};Password=Master1!";
+                    if (!File.Exists(cGlobalVariables.localDB))
+                    {
+                        File.Copy(cGlobalVariables.zeroDB, cGlobalVariables.localDB);
+                    }
+                    connString = connString.Replace("{lokacija}", cGlobalVariables.localDB);
                 }
                 else
                 {
-                    Properties.Settings.Default["dbSenaCompConnectionString"] = $@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename={localDB};Password=Master1!";
+                    if(copySource != "")
+                    {
+                        File.Copy(copySource, tbLokacija.Text);
+                    }
+                    connString = connString.Replace("{lokacija}", tbLokacija.Text);
+                }
+
+                //pokusaj cuvanja config fajla
+                Console.WriteLine($"ConnectionString: {connString}");
+                conStringManager helper = new conStringManager(connString);
+                if (helper.isConnected)
+                {
+                    Console.WriteLine("***Connection established!***");
+                    AppSetting setting = new AppSetting();
+                    Console.WriteLine(setting.GetConnectionString("SenaComp.Properties.Settings.dbSenaCompConnectionString"));
+                    setting.SaveConnectionString("SenaComp.Properties.Settings.dbSenaCompConnectionString", connString);
                 }
 
                 Properties.Settings.Default.Save();
-                Console.WriteLine(Properties.Settings.Default.dbSenaCompConnectionString);
-                Console.WriteLine(AppDomain.CurrentDomain.SetupInformation.ConfigurationFile);
             }
             catch (Exception ex)
             {

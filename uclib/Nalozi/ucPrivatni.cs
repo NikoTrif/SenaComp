@@ -47,6 +47,23 @@ namespace uclib.Nalozi
                 ///naloziPTableAdapter.Connection.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=" + Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\Visual Studio 2015\Projects\SenaComp\SenaComp\bin\debug\dbSenaComp.mdf;Password=Master1!";
                 //naloziPTableAdapter.Connection.ConnectionString = $@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename={Application.StartupPath}\dbSenaComp.mdf;Password=Master1!";
                 //MessageBox.Show(Application.StartupPath);
+
+                //odkomentarisi da program radi kako treba, ako cuvanje .config fajla nije uspelo
+                //if (!Properties.Settings.Default.BazaServer)
+                //{
+                //    naloziPTableAdapter.Connection.ConnectionString = Properties.Settings.Default.dbSenaCompConnectionString.Replace(
+                //        @"|DataDirectory|\dbSenaComp.mdf", cGlobalVariables.localDB);
+                //}
+                //else
+                //{
+                //    naloziPTableAdapter.Connection.ConnectionString = Properties.Settings.Default.dbSenaCompConnectionString.Replace(
+                //        @"|DataDirectory|\dbSenaComp.mdf", Properties.Settings.Default.BazaServerPath);
+                //}
+                //Console.WriteLine(naloziPTableAdapter.Connection.ConnectionString);
+
+                Console.WriteLine(naloziPTableAdapter.Connection.ConnectionString);
+                Console.WriteLine(naloziPTableAdapter.Connection.State);
+
                 naloziPTableAdapter.Fill(dbSenaCompDataSet.NaloziP);
                 flpDodajKontrole(); // ovo radi i treba ovako
                 cbFilter.SelectedIndex = 0;

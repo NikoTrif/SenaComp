@@ -61,7 +61,7 @@ namespace uclib.Nalozi
                 //}
                 //Console.WriteLine(naloziPTableAdapter.Connection.ConnectionString);
 
-                Console.WriteLine(naloziPTableAdapter.Connection.ConnectionString);
+                MessageBox.Show($"{naloziPTableAdapter.Connection.ConnectionString} \n\n{naloziPTableAdapter.Connection.State}");
                 Console.WriteLine(naloziPTableAdapter.Connection.State);
 
                 naloziPTableAdapter.Fill(dbSenaCompDataSet.NaloziP);

@@ -48,14 +48,14 @@ namespace uclib.Nalozi
                 //naloziPTableAdapter.Connection.ConnectionString = $@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename={Application.StartupPath}\dbSenaComp.mdf;Password=Master1!";
                 //MessageBox.Show(Application.StartupPath);
 
-                if (Properties.Settings.Default.BazaServer)
-                {
-                    naloziPTableAdapter.Connection.ConnectionString = $@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename={Properties.Settings.Default.BazaServerPath};Password=Master1!";
-                }
-                else
-                {
-                    naloziPTableAdapter.Connection.ConnectionString = $@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename={cGlobalVariables.localDB};Password=Master1!";
-                }
+                //if (Properties.Settings.Default.BazaServer)
+                //{
+                //    naloziPTableAdapter.Connection.ConnectionString = $@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename={Properties.Settings.Default.BazaServerPath};Password=Master1!";
+                //}
+                //else
+                //{
+                //    naloziPTableAdapter.Connection.ConnectionString = $@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename={cGlobalVariables.localDB};Password=Master1!";
+                //}
                 naloziPTableAdapter.Fill(dbSenaCompDataSet.NaloziP);
                 flpDodajKontrole(); // ovo radi i treba ovako
                 cbFilter.SelectedIndex = 0;
@@ -379,7 +379,7 @@ namespace uclib.Nalozi
             //TD 2.1.b
             try
             {
-                naloziPDataGridView.CurrentRow.Cells[14].Value = tableLayoutPanel1.Controls.OfType<RadioButton>().FirstOrDefault(r => r.Checked).Text;
+                naloziPDataGridView.CurrentRow.Cells[14].Value = tableLayoutPanel1.Controls.OfType<RadioButton>().FirstOrDefault(r => r.Checked).Text; //status
 
                 //G 2
                 naloziPDataGridView.CurrentRow.Cells[1].Value = datumDateTimePicker.Value;
@@ -389,12 +389,12 @@ namespace uclib.Nalozi
                 clFunkcijeRazno.NapisiLog(ex);
             }
 
-            //G1
-            //naloziPTableAdapter.Update(dbSenaCompDataSet.NaloziP.Rows[naloziPDataGridView.CurrentRow.Index]); //update samo jednog Row-a
             try
             {
                 Validate();
                 naloziPBindingSource.EndEdit();
+                //G1
+                //naloziPTableAdapter.Update(dbSenaCompDataSet.NaloziP.Rows[naloziPDataGridView.CurrentRow.Index]); //update samo jednog Row-a
                 naloziPTableAdapter.Update(dbSenaCompDataSet.NaloziP);
             }
             catch (Exception ex)

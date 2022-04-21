@@ -43,6 +43,7 @@ namespace uclib.Nalozi
         {
             try
             {
+                flpDodajKontrole(); // ovo radi i treba ovako
                 //G 8
                 ///naloziPTableAdapter.Connection.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=" + Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\Visual Studio 2015\Projects\SenaComp\SenaComp\bin\debug\dbSenaComp.mdf;Password=Master1!";
                 //naloziPTableAdapter.Connection.ConnectionString = $@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename={Application.StartupPath}\dbSenaComp.mdf;Password=Master1!";
@@ -57,7 +58,6 @@ namespace uclib.Nalozi
                     naloziPTableAdapter.Connection.ConnectionString = $@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename={cGlobalVariables.localDB};Password=Master1!";
                 }
                 naloziPTableAdapter.Fill(dbSenaCompDataSet.NaloziP);
-                flpDodajKontrole(); // ovo radi i treba ovako
                 cbFilter.SelectedIndex = 0;
                 if (naloziPDataGridView.RowCount != 0)
                 {
@@ -441,6 +441,11 @@ namespace uclib.Nalozi
                 e.Handled = true;
                 MessageBox.Show("Izveštaj ne može imati više od 5 redova.", "Greška!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void dRefresh_Click(object sender, EventArgs e)
+        {
+
         }
 
         public void flpDodajKontrole()

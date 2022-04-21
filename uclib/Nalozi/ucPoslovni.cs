@@ -407,5 +407,10 @@ namespace uclib.Nalozi
         {
             cmsKorisnik.Show(MousePosition);
         }
+
+        private void dRefresh_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

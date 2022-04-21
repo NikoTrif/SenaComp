@@ -17,6 +17,7 @@ namespace uclib.Nalozi
     {
         bool noviRed = false; //TD 2.1.c
         bool editTbOstalo = false; //TD 2.1.c
+        Timer tRefresh;
         clFunkcijeRazno fnr = new clFunkcijeRazno();
 
         public ucPrivatni()
@@ -34,6 +35,13 @@ namespace uclib.Nalozi
                 proizvodjacComboBox.AutoCompleteCustomSource.AddRange(Properties.Settings.Default.Proizvodjaci.Cast<string>().ToArray());
             }
 
+            if (Properties.Settings.Default.BazaAutoUpdate == true && Properties.Settings.Default.BazaAutoUpdateVreme > 0)
+            {
+                tRefresh = new Timer();
+                tRefresh.Tick += TRefresh_Tick;
+                tRefresh.Interval = Properties.Settings.Default.BazaAutoUpdateVreme * 60000; //60.000 ms = 1min
+            }
+
             //Properties.Settings.Default["dbSenaCompConnectionString"] = "bbb";
             //Console.WriteLine(Properties.Settings.Default.dbSenaCompConnectionString);
             Console.WriteLine(AppDomain.CurrentDomain.SetupInformation.ConfigurationFile);
@@ -43,12 +51,21 @@ namespace uclib.Nalozi
         {
             try
             {
+                flpDodajKontrole(); // ovo radi i treba ovako
                 //G 8
                 ///naloziPTableAdapter.Connection.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=" + Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\Visual Studio 2015\Projects\SenaComp\SenaComp\bin\debug\dbSenaComp.mdf;Password=Master1!";
                 //naloziPTableAdapter.Connection.ConnectionString = $@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename={Application.StartupPath}\dbSenaComp.mdf;Password=Master1!";
                 //MessageBox.Show(Application.StartupPath);
+
+                if (Properties.Settings.Default.BazaServer)
+                {
+                    naloziPTableAdapter.Connection.ConnectionString = $@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename={Properties.Settings.Default.BazaServerPath};Password=Master1!";
+                }
+                else
+                {
+                    naloziPTableAdapter.Connection.ConnectionString = $@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename={cGlobalVariables.localDB};Password=Master1!";
+                }
                 naloziPTableAdapter.Fill(dbSenaCompDataSet.NaloziP);
-                flpDodajKontrole(); // ovo radi i treba ovako
                 cbFilter.SelectedIndex = 0;
                 if (naloziPDataGridView.RowCount != 0)
                 {
@@ -365,12 +382,62 @@ namespace uclib.Nalozi
             brojNalogaTextBox.ReadOnly = !izmeniBrojNalogaToolStripMenuItem.Checked;
         }
 
+        private void TRefresh_Tick(object sender, EventArgs e)
+        {
+            try
+            {
+                RefreshDB();
+            }
+            catch (Exception ex)
+            {
+                clFunkcijeRazno.NapisiLog(ex);
+            }
+        }
+
+        private void ucPrivatni_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            try
+            {
+                tRefresh_Restart();
+            }
+            catch (Exception ex)
+            {
+                clFunkcijeRazno.NapisiLog(ex);
+            }
+        }
+
+        private void ucPrivatni_MouseMove(object sender, MouseEventArgs e)
+        {
+            try
+            {
+                tRefresh_Restart();
+
+            }
+            catch (Exception ex)
+            {
+                clFunkcijeRazno.NapisiLog(ex);
+            }
+        }
+
+        private void dRefresh_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                tRefresh_Restart();
+                RefreshDB();
+            }
+            catch (Exception ex)
+            {
+                clFunkcijeRazno.NapisiLog(ex);
+            }
+        }
+
         private void Cuvanje()
         {
             //TD 2.1.b
             try
             {
-                naloziPDataGridView.CurrentRow.Cells[14].Value = tableLayoutPanel1.Controls.OfType<RadioButton>().FirstOrDefault(r => r.Checked).Text;
+                naloziPDataGridView.CurrentRow.Cells[14].Value = tableLayoutPanel1.Controls.OfType<RadioButton>().FirstOrDefault(r => r.Checked).Text; //status
 
                 //G 2
                 naloziPDataGridView.CurrentRow.Cells[1].Value = datumDateTimePicker.Value;
@@ -380,12 +447,18 @@ namespace uclib.Nalozi
                 clFunkcijeRazno.NapisiLog(ex);
             }
 
-
-            Validate();
-            naloziPBindingSource.EndEdit();
-
-            //G1
-            naloziPTableAdapter.Update(dbSenaCompDataSet.NaloziP.Rows[naloziPDataGridView.CurrentRow.Index]);
+            try
+            {
+                Validate();
+                naloziPBindingSource.EndEdit();
+                //G1
+                //naloziPTableAdapter.Update(dbSenaCompDataSet.NaloziP.Rows[naloziPDataGridView.CurrentRow.Index]); //update samo jednog Row-a
+                naloziPTableAdapter.Update(dbSenaCompDataSet.NaloziP);
+            }
+            catch (Exception ex)
+            {
+                clFunkcijeRazno.NapisiLog(ex);
+            }
             //tableAdapterManager.UpdateAll(dbSenaCompDataSet);
         }
 
@@ -485,6 +558,24 @@ namespace uclib.Nalozi
             {
                 brojNalogaTextBox.ReadOnly = true;
                 izmeniBrojNalogaToolStripMenuItem.Checked = false;
+            }
+        }
+        private void RefreshDB()
+        {
+            naloziPTableAdapter.Fill(dbSenaCompDataSet.NaloziP);
+            if (naloziPDataGridView.RowCount != 0)
+            {
+                naloziPDataGridView.CurrentCell = naloziPDataGridView.Rows[naloziPDataGridView.RowCount - 1].Cells[0]; //TD 2.1.e 
+            }
+        }
+
+
+        private void tRefresh_Restart()
+        {
+            if (tRefresh != null)
+            {
+                tRefresh.Stop();
+                tRefresh.Start();
             }
         }
     }

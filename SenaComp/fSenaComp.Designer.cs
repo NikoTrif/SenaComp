@@ -52,7 +52,7 @@
             // dMenu
             // 
             this.dMenu.Location = new System.Drawing.Point(11, 11);
-            this.dMenu.Margin = new System.Windows.Forms.Padding(2);
+            this.dMenu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dMenu.Name = "dMenu";
             this.dMenu.Size = new System.Drawing.Size(46, 46);
             this.dMenu.TabIndex = 0;
@@ -66,7 +66,7 @@
             this.pMain.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pMain.Location = new System.Drawing.Point(0, 0);
-            this.pMain.Margin = new System.Windows.Forms.Padding(2);
+            this.pMain.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pMain.Name = "pMain";
             this.pMain.Size = new System.Drawing.Size(1055, 646);
             this.pMain.TabIndex = 1;
@@ -74,7 +74,6 @@
             // pbLogo
             // 
             this.pbLogo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pbLogo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pbLogo.ImageLocation = "";
             this.pbLogo.Location = new System.Drawing.Point(857, 126);
             this.pbLogo.Name = "pbLogo";
@@ -99,7 +98,7 @@
             this.pMenu.Controls.Add(this.label1);
             this.pMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.pMenu.Location = new System.Drawing.Point(0, 0);
-            this.pMenu.Margin = new System.Windows.Forms.Padding(2);
+            this.pMenu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pMenu.Name = "pMenu";
             this.pMenu.Size = new System.Drawing.Size(0, 646);
             this.pMenu.TabIndex = 2;
@@ -111,7 +110,7 @@
             this.dPodesavanja.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.dPodesavanja.ForeColor = System.Drawing.Color.White;
             this.dPodesavanja.Location = new System.Drawing.Point(-56, 590);
-            this.dPodesavanja.Margin = new System.Windows.Forms.Padding(2);
+            this.dPodesavanja.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dPodesavanja.Name = "dPodesavanja";
             this.dPodesavanja.Size = new System.Drawing.Size(43, 46);
             this.dPodesavanja.TabIndex = 0;
@@ -148,6 +147,7 @@
             this.dOtp.TabIndex = 1;
             this.dOtp.Text = "Otpremnice";
             this.dOtp.UseVisualStyleBackColor = true;
+            this.dOtp.Visible = false;
             this.dOtp.Click += new System.EventHandler(this.dOtp_Click);
             // 
             // dFirme
@@ -178,6 +178,7 @@
             this.dFakt.TabIndex = 1;
             this.dFakt.Text = "Fakture";
             this.dFakt.UseVisualStyleBackColor = true;
+            this.dFakt.Visible = false;
             this.dFakt.Click += new System.EventHandler(this.dFakt_Click);
             // 
             // dArtikli
@@ -208,6 +209,7 @@
             this.dProfakt.TabIndex = 1;
             this.dProfakt.Text = "Profakture";
             this.dProfakt.UseVisualStyleBackColor = true;
+            this.dProfakt.Visible = false;
             this.dProfakt.Click += new System.EventHandler(this.dProfakt_Click);
             // 
             // dPrivatni
@@ -248,6 +250,7 @@
             this.label2.Size = new System.Drawing.Size(75, 24);
             this.label2.TabIndex = 0;
             this.label2.Text = "Računi";
+            this.label2.Visible = false;
             // 
             // label1
             // 

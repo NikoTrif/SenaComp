@@ -58,7 +58,6 @@ C:\Users\Lenovo\Documents\Visual Studio 2015\Projects\SenaComp\SenaComp\obj\Rele
 C:\Users\Lenovo\Documents\Visual Studio 2015\Projects\SenaComp\SenaComp\obj\Release\SenaComp.pdb
 C:\Users\Nikola\Documents\Visual Studio 2015\Projects\SenaComp\SenaComp\bin\Release\dbSenaComp.mdf
 C:\Users\Nikola\Documents\Visual Studio 2015\Projects\SenaComp\SenaComp\bin\Release\dbSenaComp_log.ldf
-C:\Users\Nikola\Documents\Visual Studio 2015\Projects\SenaComp\SenaComp\bin\Release\Reportovi\repNalogP - Copy.rdlc
 C:\Users\Nikola\Documents\Visual Studio 2015\Projects\SenaComp\SenaComp\bin\Release\Reportovi\repNalogP.rdlc
 C:\Users\Nikola\Documents\Visual Studio 2015\Projects\SenaComp\SenaComp\bin\Release\SenaComp.exe.config
 C:\Users\Nikola\Documents\Visual Studio 2015\Projects\SenaComp\SenaComp\bin\Release\SenaComp.exe

@@ -40,7 +40,7 @@ kada se trazi u kodu - npr. "RG1", "TD3.1.2", "G2"
 				|R|b) dodavanje u listu uredjaja, proizvodjaca i opreme - liste uredjaja i proizvodjaca sortiraj po abecednom redu
 				|R|c) podaci firme - naziv, delatnost, adresa, PIB, tekuci racun
 				|R|d) klauzula
-				|Z|e) baza - treba da sadrzi backup i restore sa podrskom za .mdf, .xls, .accdb i pozeljno .csv
+				|Z|e) baza - treba da sadrzi backup i restore sa podrskom za .mdf, .xls, .accdb i pozeljno .csv, server folder kada je u lokalu treba sharovati
 				f) dodati slicice(ikonice)
 				g) srediti font u treeView-u
 				h) rtbKlauzula treba da bude ogranicena na 584 karaktera
@@ -95,6 +95,8 @@ kada se trazi u kodu - npr. "RG1", "TD3.1.2", "G2"
 15.  - uclib.ucProfaktura - kod direktne izmene iz dgvProfArtikli postoji greska upisuju se bzvz vrednosti
 |R|16.  - iflib.OfficeIE.Excel.ImportFromExcel - unos u bazu sqlComm.ExecuteNonQuery() - sqlexception table does not have identity property
 17.  - uclib.ucBaza - Properties.Settings.Default.dbSenaCompConnectionString nece da se sacuva
+|R|18.  - uclib.ucPrivatni - baza nece da se sacuva a u ucPoslovni se cuva. Brljao sam nesto sa Update u TableAdapteru
+|R|19.  - Stampanje naloga - na papiru nalog je mnogo manji nego u Report Designeru
 ---------------------------------------------------------------------------------------
 ***Release Greske***
 ---------------------------------------------------------------------------------------
@@ -357,3 +359,10 @@ kada se trazi u kodu - npr. "RG1", "TD3.1.2", "G2"
 
 28.02.22 - TD 2.3.e - -ucBaza.rbLokalna_checkedChange - kod za selektovanje baze na serveru - po nacrtanom algoritmu
 					- -ucBaza - kod za medjusobni binding komponenti
+
+16.04.22 - TD 2.3.e - -ucBaza - pokusavanje cuvanja config fajla
+
+21.04.22 - G 18 - - - -Greska resena tako sto je cela tabela NaloziP napravljena ispocetka
+		 - G 19 - - - -Problem je skaliranje Windows-a 10 a ne sam program. Kada se u Display Settings-u podesi scale and layout na 100% sve radi kako treba
+		 - - - - - - - ucPrivatni - dodato dugme za refresh baze
+		 - - - - - - - ucPrivatni - dodat timer tRefresh za automatsko refreshovanje baze

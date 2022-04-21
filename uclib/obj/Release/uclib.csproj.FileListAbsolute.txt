@@ -52,7 +52,6 @@ C:\Users\Lenovo\Documents\Visual Studio 2015\Projects\SenaComp\uclib\obj\Release
 C:\Users\Lenovo\Documents\Visual Studio 2015\Projects\SenaComp\uclib\obj\Release\uclib.pdb
 C:\Users\Nikola\Documents\Visual Studio 2015\Projects\SenaComp\uclib\bin\Release\dbSenaComp.mdf
 C:\Users\Nikola\Documents\Visual Studio 2015\Projects\SenaComp\uclib\bin\Release\dbSenaComp_log.ldf
-C:\Users\Nikola\Documents\Visual Studio 2015\Projects\SenaComp\uclib\bin\Release\Reportovi\repNalogP - Copy.rdlc
 C:\Users\Nikola\Documents\Visual Studio 2015\Projects\SenaComp\uclib\bin\Release\Reportovi\repNalogP.rdlc
 C:\Users\Nikola\Documents\Visual Studio 2015\Projects\SenaComp\uclib\bin\Release\uclib.dll.config
 C:\Users\Nikola\Documents\Visual Studio 2015\Projects\SenaComp\uclib\bin\Release\uclib.dll
@@ -117,3 +116,7 @@ C:\Users\MasterPro\Documents\Visual Studio 2015\Projects\SenaComp\uclib\obj\Rele
 C:\Users\MasterPro\Documents\Visual Studio 2015\Projects\SenaComp\uclib\obj\Release\RdlCompile.compiled
 C:\Users\MasterPro\Documents\Visual Studio 2015\Projects\SenaComp\uclib\obj\Release\uclib.dll
 C:\Users\MasterPro\Documents\Visual Studio 2015\Projects\SenaComp\uclib\obj\Release\uclib.pdb
+C:\Users\Nikola\Documents\Visual Studio 2015\Projects\SenaComp\uclib\obj\Release\uclib.Baze.ucArtikli.resources
+C:\Users\Nikola\Documents\Visual Studio 2015\Projects\SenaComp\uclib\obj\Release\uclib.Opcije.ucBaza.resources
+C:\Users\Nikola\Documents\Visual Studio 2015\Projects\SenaComp\uclib\obj\Release\uclib.Racuni.ucFakture.resources
+C:\Users\Nikola\Documents\Visual Studio 2015\Projects\SenaComp\uclib\obj\Release\uclib.Racuni.ucProfakture.resources

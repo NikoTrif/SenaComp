@@ -53,6 +53,7 @@
     <Reference Include="Microsoft.ReportViewer.Common, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
     <Reference Include="Microsoft.ReportViewer.WinForms, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web.Services" />
@@ -70,6 +71,12 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="..\SenaComp\Properties\Settings.Designer.cs">
+      <Link>Properties\Settings.Designer.cs</Link>
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
     <Compile Include="Baze\ucArtikli.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -105,6 +112,7 @@
     <Compile Include="Nalozi\ucPrivatni.Designer.cs">
       <DependentUpon>ucPrivatni.cs</DependentUpon>
     </Compile>
+    <Compile Include="Opcije\conStringManager.cs" />
     <Compile Include="Opcije\Osnovno\ucOprema.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -155,11 +163,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="Properties\Settings.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Settings.settings</DependentUpon>
-      <DesignTimeSharedInput>True</DesignTimeSharedInput>
-    </Compile>
     <Compile Include="Racuni\ucFakture.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -178,7 +181,6 @@
     <Compile Include="Racuni\ucProfakture.Designer.cs">
       <DependentUpon>ucProfakture.cs</DependentUpon>
     </Compile>
-    <Compile Include="Settings.cs" />
     <Compile Include="Properties\SettLogo.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
@@ -245,7 +247,14 @@
     <EmbeddedResource Include="ucPodesavanja.resx">
       <DependentUpon>ucPodesavanja.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="app.config" />
+    <None Include="..\SenaComp\App.config">
+      <Link>App.config</Link>
+    </None>
+    <None Include="..\SenaComp\Properties\Settings.settings">
+      <Link>Properties\Settings.settings</Link>
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
     <None Include="dbSenaCompDataSet.xsc">
       <DependentUpon>dbSenaCompDataSet.xsd</DependentUpon>
     </None>
@@ -261,11 +270,6 @@
     <None Include="Properties\DataSources\iflib.ReportClasses.clRadniNalogPos.datasource" />
     <None Include="Properties\DataSources\iflib.ReportClasses.clRadniNalogPriv.datasource" />
     <None Include="Properties\DataSources\iflib.ReportClasses.clRoba.datasource" />
-    <None Include="Properties\Settings.settings">
-      <Generator>SettingsSingleFileGenerator</Generator>
-      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
     <AppDesigner Include="Properties\" />
     <None Include="Properties\SettLogo.settings">
       <Generator>PublicSettingsSingleFileGenerator</Generator>

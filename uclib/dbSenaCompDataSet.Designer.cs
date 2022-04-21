@@ -34,11 +34,11 @@ namespace uclib {
         
         private NaloziFDataTable tableNaloziF;
         
-        private NaloziPDataTable tableNaloziP;
-        
         private OtpremniceDataTable tableOtpremnice;
         
         private ProfaktureDataTable tableProfakture;
+        
+        private NaloziPDataTable tableNaloziP;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
@@ -83,14 +83,14 @@ namespace uclib {
                 if ((ds.Tables["NaloziF"] != null)) {
                     base.Tables.Add(new NaloziFDataTable(ds.Tables["NaloziF"]));
                 }
-                if ((ds.Tables["NaloziP"] != null)) {
-                    base.Tables.Add(new NaloziPDataTable(ds.Tables["NaloziP"]));
-                }
                 if ((ds.Tables["Otpremnice"] != null)) {
                     base.Tables.Add(new OtpremniceDataTable(ds.Tables["Otpremnice"]));
                 }
                 if ((ds.Tables["Profakture"] != null)) {
                     base.Tables.Add(new ProfaktureDataTable(ds.Tables["Profakture"]));
+                }
+                if ((ds.Tables["NaloziP"] != null)) {
+                    base.Tables.Add(new NaloziPDataTable(ds.Tables["NaloziP"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -164,16 +164,6 @@ namespace uclib {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public NaloziPDataTable NaloziP {
-            get {
-                return this.tableNaloziP;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Browsable(false)]
-        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
         public OtpremniceDataTable Otpremnice {
             get {
                 return this.tableOtpremnice;
@@ -187,6 +177,16 @@ namespace uclib {
         public ProfaktureDataTable Profakture {
             get {
                 return this.tableProfakture;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public NaloziPDataTable NaloziP {
+            get {
+                return this.tableNaloziP;
             }
         }
         
@@ -272,14 +272,14 @@ namespace uclib {
                 if ((ds.Tables["NaloziF"] != null)) {
                     base.Tables.Add(new NaloziFDataTable(ds.Tables["NaloziF"]));
                 }
-                if ((ds.Tables["NaloziP"] != null)) {
-                    base.Tables.Add(new NaloziPDataTable(ds.Tables["NaloziP"]));
-                }
                 if ((ds.Tables["Otpremnice"] != null)) {
                     base.Tables.Add(new OtpremniceDataTable(ds.Tables["Otpremnice"]));
                 }
                 if ((ds.Tables["Profakture"] != null)) {
                     base.Tables.Add(new ProfaktureDataTable(ds.Tables["Profakture"]));
+                }
+                if ((ds.Tables["NaloziP"] != null)) {
+                    base.Tables.Add(new NaloziPDataTable(ds.Tables["NaloziP"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -344,12 +344,6 @@ namespace uclib {
                     this.tableNaloziF.InitVars();
                 }
             }
-            this.tableNaloziP = ((NaloziPDataTable)(base.Tables["NaloziP"]));
-            if ((initTable == true)) {
-                if ((this.tableNaloziP != null)) {
-                    this.tableNaloziP.InitVars();
-                }
-            }
             this.tableOtpremnice = ((OtpremniceDataTable)(base.Tables["Otpremnice"]));
             if ((initTable == true)) {
                 if ((this.tableOtpremnice != null)) {
@@ -360,6 +354,12 @@ namespace uclib {
             if ((initTable == true)) {
                 if ((this.tableProfakture != null)) {
                     this.tableProfakture.InitVars();
+                }
+            }
+            this.tableNaloziP = ((NaloziPDataTable)(base.Tables["NaloziP"]));
+            if ((initTable == true)) {
+                if ((this.tableNaloziP != null)) {
+                    this.tableNaloziP.InitVars();
                 }
             }
         }
@@ -382,12 +382,12 @@ namespace uclib {
             base.Tables.Add(this.tableFirme);
             this.tableNaloziF = new NaloziFDataTable();
             base.Tables.Add(this.tableNaloziF);
-            this.tableNaloziP = new NaloziPDataTable();
-            base.Tables.Add(this.tableNaloziP);
             this.tableOtpremnice = new OtpremniceDataTable();
             base.Tables.Add(this.tableOtpremnice);
             this.tableProfakture = new ProfaktureDataTable();
             base.Tables.Add(this.tableProfakture);
+            this.tableNaloziP = new NaloziPDataTable();
+            base.Tables.Add(this.tableNaloziP);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -422,12 +422,6 @@ namespace uclib {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private bool ShouldSerializeNaloziP() {
-            return false;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private bool ShouldSerializeOtpremnice() {
             return false;
         }
@@ -435,6 +429,12 @@ namespace uclib {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private bool ShouldSerializeProfakture() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private bool ShouldSerializeNaloziP() {
             return false;
         }
         
@@ -509,13 +509,13 @@ namespace uclib {
         public delegate void NaloziFRowChangeEventHandler(object sender, NaloziFRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public delegate void NaloziPRowChangeEventHandler(object sender, NaloziPRowChangeEvent e);
-        
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public delegate void OtpremniceRowChangeEventHandler(object sender, OtpremniceRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public delegate void ProfaktureRowChangeEventHandler(object sender, ProfaktureRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public delegate void NaloziPRowChangeEventHandler(object sender, NaloziPRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -2634,593 +2634,6 @@ namespace uclib {
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class NaloziPDataTable : global::System.Data.TypedTableBase<NaloziPRow> {
-            
-            private global::System.Data.DataColumn columnbrojNaloga;
-            
-            private global::System.Data.DataColumn columnDatum;
-            
-            private global::System.Data.DataColumn columnimePrezime;
-            
-            private global::System.Data.DataColumn columnKontakt;
-            
-            private global::System.Data.DataColumn columneMail;
-            
-            private global::System.Data.DataColumn columnUredjaj;
-            
-            private global::System.Data.DataColumn columnProizvodjac;
-            
-            private global::System.Data.DataColumn columnModel;
-            
-            private global::System.Data.DataColumn columnserijskiBroj;
-            
-            private global::System.Data.DataColumn columnOprema;
-            
-            private global::System.Data.DataColumn columnopisKvara;
-            
-            private global::System.Data.DataColumn columnIzvestaj;
-            
-            private global::System.Data.DataColumn columncenaDelova;
-            
-            private global::System.Data.DataColumn columncenaServis;
-            
-            private global::System.Data.DataColumn columnukupnaCena;
-            
-            private global::System.Data.DataColumn columnStatus;
-            
-            private global::System.Data.DataColumn columnnaCekanju;
-            
-            private global::System.Data.DataColumn columnZavrseno;
-            
-            private global::System.Data.DataColumn columnkorisnikOdustao;
-            
-            private global::System.Data.DataColumn columnservisOdustao;
-            
-            private global::System.Data.DataColumn columnkorisnikOdbioPlacanje;
-            
-            private global::System.Data.DataColumn columnNapomena;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public NaloziPDataTable() {
-                this.TableName = "NaloziP";
-                this.BeginInit();
-                this.InitClass();
-                this.EndInit();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal NaloziPDataTable(global::System.Data.DataTable table) {
-                this.TableName = table.TableName;
-                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
-                    this.CaseSensitive = table.CaseSensitive;
-                }
-                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
-                    this.Locale = table.Locale;
-                }
-                if ((table.Namespace != table.DataSet.Namespace)) {
-                    this.Namespace = table.Namespace;
-                }
-                this.Prefix = table.Prefix;
-                this.MinimumCapacity = table.MinimumCapacity;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected NaloziPDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
-                    base(info, context) {
-                this.InitVars();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn brojNalogaColumn {
-                get {
-                    return this.columnbrojNaloga;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn DatumColumn {
-                get {
-                    return this.columnDatum;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn imePrezimeColumn {
-                get {
-                    return this.columnimePrezime;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn KontaktColumn {
-                get {
-                    return this.columnKontakt;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn eMailColumn {
-                get {
-                    return this.columneMail;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn UredjajColumn {
-                get {
-                    return this.columnUredjaj;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn ProizvodjacColumn {
-                get {
-                    return this.columnProizvodjac;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn ModelColumn {
-                get {
-                    return this.columnModel;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn serijskiBrojColumn {
-                get {
-                    return this.columnserijskiBroj;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn OpremaColumn {
-                get {
-                    return this.columnOprema;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn opisKvaraColumn {
-                get {
-                    return this.columnopisKvara;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn IzvestajColumn {
-                get {
-                    return this.columnIzvestaj;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn cenaDelovaColumn {
-                get {
-                    return this.columncenaDelova;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn cenaServisColumn {
-                get {
-                    return this.columncenaServis;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn ukupnaCenaColumn {
-                get {
-                    return this.columnukupnaCena;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn StatusColumn {
-                get {
-                    return this.columnStatus;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn naCekanjuColumn {
-                get {
-                    return this.columnnaCekanju;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn ZavrsenoColumn {
-                get {
-                    return this.columnZavrseno;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn korisnikOdustaoColumn {
-                get {
-                    return this.columnkorisnikOdustao;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn servisOdustaoColumn {
-                get {
-                    return this.columnservisOdustao;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn korisnikOdbioPlacanjeColumn {
-                get {
-                    return this.columnkorisnikOdbioPlacanje;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn NapomenaColumn {
-                get {
-                    return this.columnNapomena;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            [global::System.ComponentModel.Browsable(false)]
-            public int Count {
-                get {
-                    return this.Rows.Count;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public NaloziPRow this[int index] {
-                get {
-                    return ((NaloziPRow)(this.Rows[index]));
-                }
-            }
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event NaloziPRowChangeEventHandler NaloziPRowChanging;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event NaloziPRowChangeEventHandler NaloziPRowChanged;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event NaloziPRowChangeEventHandler NaloziPRowDeleting;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event NaloziPRowChangeEventHandler NaloziPRowDeleted;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void AddNaloziPRow(NaloziPRow row) {
-                this.Rows.Add(row);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public NaloziPRow AddNaloziPRow(
-                        System.DateTime Datum, 
-                        string imePrezime, 
-                        string Kontakt, 
-                        string eMail, 
-                        string Uredjaj, 
-                        string Proizvodjac, 
-                        string Model, 
-                        string serijskiBroj, 
-                        string Oprema, 
-                        string opisKvara, 
-                        string Izvestaj, 
-                        double cenaDelova, 
-                        double cenaServis, 
-                        double ukupnaCena, 
-                        string Status, 
-                        bool naCekanju, 
-                        bool Zavrseno, 
-                        bool korisnikOdustao, 
-                        bool servisOdustao, 
-                        bool korisnikOdbioPlacanje, 
-                        string Napomena) {
-                NaloziPRow rowNaloziPRow = ((NaloziPRow)(this.NewRow()));
-                object[] columnValuesArray = new object[] {
-                        null,
-                        Datum,
-                        imePrezime,
-                        Kontakt,
-                        eMail,
-                        Uredjaj,
-                        Proizvodjac,
-                        Model,
-                        serijskiBroj,
-                        Oprema,
-                        opisKvara,
-                        Izvestaj,
-                        cenaDelova,
-                        cenaServis,
-                        ukupnaCena,
-                        Status,
-                        naCekanju,
-                        Zavrseno,
-                        korisnikOdustao,
-                        servisOdustao,
-                        korisnikOdbioPlacanje,
-                        Napomena};
-                rowNaloziPRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowNaloziPRow);
-                return rowNaloziPRow;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public NaloziPRow FindBybrojNaloga(int brojNaloga) {
-                return ((NaloziPRow)(this.Rows.Find(new object[] {
-                            brojNaloga})));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public override global::System.Data.DataTable Clone() {
-                NaloziPDataTable cln = ((NaloziPDataTable)(base.Clone()));
-                cln.InitVars();
-                return cln;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override global::System.Data.DataTable CreateInstance() {
-                return new NaloziPDataTable();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal void InitVars() {
-                this.columnbrojNaloga = base.Columns["brojNaloga"];
-                this.columnDatum = base.Columns["Datum"];
-                this.columnimePrezime = base.Columns["imePrezime"];
-                this.columnKontakt = base.Columns["Kontakt"];
-                this.columneMail = base.Columns["eMail"];
-                this.columnUredjaj = base.Columns["Uredjaj"];
-                this.columnProizvodjac = base.Columns["Proizvodjac"];
-                this.columnModel = base.Columns["Model"];
-                this.columnserijskiBroj = base.Columns["serijskiBroj"];
-                this.columnOprema = base.Columns["Oprema"];
-                this.columnopisKvara = base.Columns["opisKvara"];
-                this.columnIzvestaj = base.Columns["Izvestaj"];
-                this.columncenaDelova = base.Columns["cenaDelova"];
-                this.columncenaServis = base.Columns["cenaServis"];
-                this.columnukupnaCena = base.Columns["ukupnaCena"];
-                this.columnStatus = base.Columns["Status"];
-                this.columnnaCekanju = base.Columns["naCekanju"];
-                this.columnZavrseno = base.Columns["Zavrseno"];
-                this.columnkorisnikOdustao = base.Columns["korisnikOdustao"];
-                this.columnservisOdustao = base.Columns["servisOdustao"];
-                this.columnkorisnikOdbioPlacanje = base.Columns["korisnikOdbioPlacanje"];
-                this.columnNapomena = base.Columns["Napomena"];
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            private void InitClass() {
-                this.columnbrojNaloga = new global::System.Data.DataColumn("brojNaloga", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnbrojNaloga);
-                this.columnDatum = new global::System.Data.DataColumn("Datum", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnDatum);
-                this.columnimePrezime = new global::System.Data.DataColumn("imePrezime", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnimePrezime);
-                this.columnKontakt = new global::System.Data.DataColumn("Kontakt", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnKontakt);
-                this.columneMail = new global::System.Data.DataColumn("eMail", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columneMail);
-                this.columnUredjaj = new global::System.Data.DataColumn("Uredjaj", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnUredjaj);
-                this.columnProizvodjac = new global::System.Data.DataColumn("Proizvodjac", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnProizvodjac);
-                this.columnModel = new global::System.Data.DataColumn("Model", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnModel);
-                this.columnserijskiBroj = new global::System.Data.DataColumn("serijskiBroj", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnserijskiBroj);
-                this.columnOprema = new global::System.Data.DataColumn("Oprema", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnOprema);
-                this.columnopisKvara = new global::System.Data.DataColumn("opisKvara", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnopisKvara);
-                this.columnIzvestaj = new global::System.Data.DataColumn("Izvestaj", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnIzvestaj);
-                this.columncenaDelova = new global::System.Data.DataColumn("cenaDelova", typeof(double), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columncenaDelova);
-                this.columncenaServis = new global::System.Data.DataColumn("cenaServis", typeof(double), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columncenaServis);
-                this.columnukupnaCena = new global::System.Data.DataColumn("ukupnaCena", typeof(double), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnukupnaCena);
-                this.columnStatus = new global::System.Data.DataColumn("Status", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnStatus);
-                this.columnnaCekanju = new global::System.Data.DataColumn("naCekanju", typeof(bool), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnnaCekanju);
-                this.columnZavrseno = new global::System.Data.DataColumn("Zavrseno", typeof(bool), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnZavrseno);
-                this.columnkorisnikOdustao = new global::System.Data.DataColumn("korisnikOdustao", typeof(bool), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnkorisnikOdustao);
-                this.columnservisOdustao = new global::System.Data.DataColumn("servisOdustao", typeof(bool), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnservisOdustao);
-                this.columnkorisnikOdbioPlacanje = new global::System.Data.DataColumn("korisnikOdbioPlacanje", typeof(bool), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnkorisnikOdbioPlacanje);
-                this.columnNapomena = new global::System.Data.DataColumn("Napomena", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnNapomena);
-                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columnbrojNaloga}, true));
-                this.columnbrojNaloga.AutoIncrement = true;
-                this.columnbrojNaloga.AutoIncrementSeed = 1;
-                this.columnbrojNaloga.AllowDBNull = false;
-                this.columnbrojNaloga.Unique = true;
-                this.columnimePrezime.MaxLength = 50;
-                this.columnKontakt.MaxLength = 50;
-                this.columneMail.MaxLength = 50;
-                this.columnUredjaj.MaxLength = 50;
-                this.columnProizvodjac.MaxLength = 50;
-                this.columnModel.MaxLength = 50;
-                this.columnserijskiBroj.MaxLength = 50;
-                this.columnOprema.MaxLength = 500;
-                this.columnopisKvara.MaxLength = 500;
-                this.columnIzvestaj.MaxLength = 500;
-                this.columnStatus.MaxLength = 50;
-                this.columnNapomena.MaxLength = 500;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public NaloziPRow NewNaloziPRow() {
-                return ((NaloziPRow)(this.NewRow()));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new NaloziPRow(builder);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override global::System.Type GetRowType() {
-                return typeof(NaloziPRow);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowChanged(e);
-                if ((this.NaloziPRowChanged != null)) {
-                    this.NaloziPRowChanged(this, new NaloziPRowChangeEvent(((NaloziPRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowChanging(e);
-                if ((this.NaloziPRowChanging != null)) {
-                    this.NaloziPRowChanging(this, new NaloziPRowChangeEvent(((NaloziPRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowDeleted(e);
-                if ((this.NaloziPRowDeleted != null)) {
-                    this.NaloziPRowDeleted(this, new NaloziPRowChangeEvent(((NaloziPRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowDeleting(e);
-                if ((this.NaloziPRowDeleting != null)) {
-                    this.NaloziPRowDeleting(this, new NaloziPRowChangeEvent(((NaloziPRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void RemoveNaloziPRow(NaloziPRow row) {
-                this.Rows.Remove(row);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
-                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                dbSenaCompDataSet ds = new dbSenaCompDataSet();
-                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
-                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
-                any1.MinOccurs = new decimal(0);
-                any1.MaxOccurs = decimal.MaxValue;
-                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
-                sequence.Items.Add(any1);
-                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
-                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
-                any2.MinOccurs = new decimal(1);
-                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
-                sequence.Items.Add(any2);
-                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
-                attribute1.Name = "namespace";
-                attribute1.FixedValue = ds.Namespace;
-                type.Attributes.Add(attribute1);
-                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
-                attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "NaloziPDataTable";
-                type.Attributes.Add(attribute2);
-                type.Particle = sequence;
-                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
-                if (xs.Contains(dsSchema.TargetNamespace)) {
-                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
-                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
-                    try {
-                        global::System.Xml.Schema.XmlSchema schema = null;
-                        dsSchema.Write(s1);
-                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
-                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
-                            s2.SetLength(0);
-                            schema.Write(s2);
-                            if ((s1.Length == s2.Length)) {
-                                s1.Position = 0;
-                                s2.Position = 0;
-                                for (; ((s1.Position != s1.Length) 
-                                            && (s1.ReadByte() == s2.ReadByte())); ) {
-                                    ;
-                                }
-                                if ((s1.Position == s1.Length)) {
-                                    return type;
-                                }
-                            }
-                        }
-                    }
-                    finally {
-                        if ((s1 != null)) {
-                            s1.Close();
-                        }
-                        if ((s2 != null)) {
-                            s2.Close();
-                        }
-                    }
-                }
-                xs.Add(dsSchema);
-                return type;
-            }
-        }
-        
-        /// <summary>
-        ///Represents the strongly named DataTable class.
-        ///</summary>
-        [global::System.Serializable()]
-        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
         public partial class OtpremniceDataTable : global::System.Data.TypedTableBase<OtpremniceRow> {
             
             private global::System.Data.DataColumn columnredniBroj;
@@ -4138,6 +3551,593 @@ namespace uclib {
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
                 attribute2.FixedValue = "ProfaktureDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class NaloziPDataTable : global::System.Data.TypedTableBase<NaloziPRow> {
+            
+            private global::System.Data.DataColumn columnbrojNaloga;
+            
+            private global::System.Data.DataColumn columnDatum;
+            
+            private global::System.Data.DataColumn columnimePrezime;
+            
+            private global::System.Data.DataColumn columnKontakt;
+            
+            private global::System.Data.DataColumn columneMail;
+            
+            private global::System.Data.DataColumn columnUredjaj;
+            
+            private global::System.Data.DataColumn columnProizvodjac;
+            
+            private global::System.Data.DataColumn columnModel;
+            
+            private global::System.Data.DataColumn columnserijskiBroj;
+            
+            private global::System.Data.DataColumn columnOprema;
+            
+            private global::System.Data.DataColumn columnopisKvara;
+            
+            private global::System.Data.DataColumn columnIzvestaj;
+            
+            private global::System.Data.DataColumn columncenaDelova;
+            
+            private global::System.Data.DataColumn columncenaServis;
+            
+            private global::System.Data.DataColumn columnukupnaCena;
+            
+            private global::System.Data.DataColumn columnStatus;
+            
+            private global::System.Data.DataColumn columnnaCekanju;
+            
+            private global::System.Data.DataColumn columnZavrseno;
+            
+            private global::System.Data.DataColumn columnkorisnikOdustao;
+            
+            private global::System.Data.DataColumn columnservisOdustao;
+            
+            private global::System.Data.DataColumn columnkorisnikOdbioPlacanje;
+            
+            private global::System.Data.DataColumn columnNapomena;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public NaloziPDataTable() {
+                this.TableName = "NaloziP";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal NaloziPDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected NaloziPDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn brojNalogaColumn {
+                get {
+                    return this.columnbrojNaloga;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn DatumColumn {
+                get {
+                    return this.columnDatum;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn imePrezimeColumn {
+                get {
+                    return this.columnimePrezime;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn KontaktColumn {
+                get {
+                    return this.columnKontakt;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn eMailColumn {
+                get {
+                    return this.columneMail;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn UredjajColumn {
+                get {
+                    return this.columnUredjaj;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn ProizvodjacColumn {
+                get {
+                    return this.columnProizvodjac;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn ModelColumn {
+                get {
+                    return this.columnModel;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn serijskiBrojColumn {
+                get {
+                    return this.columnserijskiBroj;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn OpremaColumn {
+                get {
+                    return this.columnOprema;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn opisKvaraColumn {
+                get {
+                    return this.columnopisKvara;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn IzvestajColumn {
+                get {
+                    return this.columnIzvestaj;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn cenaDelovaColumn {
+                get {
+                    return this.columncenaDelova;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn cenaServisColumn {
+                get {
+                    return this.columncenaServis;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn ukupnaCenaColumn {
+                get {
+                    return this.columnukupnaCena;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn StatusColumn {
+                get {
+                    return this.columnStatus;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn naCekanjuColumn {
+                get {
+                    return this.columnnaCekanju;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn ZavrsenoColumn {
+                get {
+                    return this.columnZavrseno;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn korisnikOdustaoColumn {
+                get {
+                    return this.columnkorisnikOdustao;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn servisOdustaoColumn {
+                get {
+                    return this.columnservisOdustao;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn korisnikOdbioPlacanjeColumn {
+                get {
+                    return this.columnkorisnikOdbioPlacanje;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn NapomenaColumn {
+                get {
+                    return this.columnNapomena;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public NaloziPRow this[int index] {
+                get {
+                    return ((NaloziPRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event NaloziPRowChangeEventHandler NaloziPRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event NaloziPRowChangeEventHandler NaloziPRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event NaloziPRowChangeEventHandler NaloziPRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event NaloziPRowChangeEventHandler NaloziPRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void AddNaloziPRow(NaloziPRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public NaloziPRow AddNaloziPRow(
+                        System.DateTime Datum, 
+                        string imePrezime, 
+                        string Kontakt, 
+                        string eMail, 
+                        string Uredjaj, 
+                        string Proizvodjac, 
+                        string Model, 
+                        string serijskiBroj, 
+                        string Oprema, 
+                        string opisKvara, 
+                        string Izvestaj, 
+                        double cenaDelova, 
+                        double cenaServis, 
+                        double ukupnaCena, 
+                        string Status, 
+                        bool naCekanju, 
+                        bool Zavrseno, 
+                        bool korisnikOdustao, 
+                        bool servisOdustao, 
+                        bool korisnikOdbioPlacanje, 
+                        string Napomena) {
+                NaloziPRow rowNaloziPRow = ((NaloziPRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        null,
+                        Datum,
+                        imePrezime,
+                        Kontakt,
+                        eMail,
+                        Uredjaj,
+                        Proizvodjac,
+                        Model,
+                        serijskiBroj,
+                        Oprema,
+                        opisKvara,
+                        Izvestaj,
+                        cenaDelova,
+                        cenaServis,
+                        ukupnaCena,
+                        Status,
+                        naCekanju,
+                        Zavrseno,
+                        korisnikOdustao,
+                        servisOdustao,
+                        korisnikOdbioPlacanje,
+                        Napomena};
+                rowNaloziPRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowNaloziPRow);
+                return rowNaloziPRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public NaloziPRow FindBybrojNaloga(int brojNaloga) {
+                return ((NaloziPRow)(this.Rows.Find(new object[] {
+                            brojNaloga})));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                NaloziPDataTable cln = ((NaloziPDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new NaloziPDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal void InitVars() {
+                this.columnbrojNaloga = base.Columns["brojNaloga"];
+                this.columnDatum = base.Columns["Datum"];
+                this.columnimePrezime = base.Columns["imePrezime"];
+                this.columnKontakt = base.Columns["Kontakt"];
+                this.columneMail = base.Columns["eMail"];
+                this.columnUredjaj = base.Columns["Uredjaj"];
+                this.columnProizvodjac = base.Columns["Proizvodjac"];
+                this.columnModel = base.Columns["Model"];
+                this.columnserijskiBroj = base.Columns["serijskiBroj"];
+                this.columnOprema = base.Columns["Oprema"];
+                this.columnopisKvara = base.Columns["opisKvara"];
+                this.columnIzvestaj = base.Columns["Izvestaj"];
+                this.columncenaDelova = base.Columns["cenaDelova"];
+                this.columncenaServis = base.Columns["cenaServis"];
+                this.columnukupnaCena = base.Columns["ukupnaCena"];
+                this.columnStatus = base.Columns["Status"];
+                this.columnnaCekanju = base.Columns["naCekanju"];
+                this.columnZavrseno = base.Columns["Zavrseno"];
+                this.columnkorisnikOdustao = base.Columns["korisnikOdustao"];
+                this.columnservisOdustao = base.Columns["servisOdustao"];
+                this.columnkorisnikOdbioPlacanje = base.Columns["korisnikOdbioPlacanje"];
+                this.columnNapomena = base.Columns["Napomena"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            private void InitClass() {
+                this.columnbrojNaloga = new global::System.Data.DataColumn("brojNaloga", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnbrojNaloga);
+                this.columnDatum = new global::System.Data.DataColumn("Datum", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDatum);
+                this.columnimePrezime = new global::System.Data.DataColumn("imePrezime", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnimePrezime);
+                this.columnKontakt = new global::System.Data.DataColumn("Kontakt", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnKontakt);
+                this.columneMail = new global::System.Data.DataColumn("eMail", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columneMail);
+                this.columnUredjaj = new global::System.Data.DataColumn("Uredjaj", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnUredjaj);
+                this.columnProizvodjac = new global::System.Data.DataColumn("Proizvodjac", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnProizvodjac);
+                this.columnModel = new global::System.Data.DataColumn("Model", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnModel);
+                this.columnserijskiBroj = new global::System.Data.DataColumn("serijskiBroj", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnserijskiBroj);
+                this.columnOprema = new global::System.Data.DataColumn("Oprema", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnOprema);
+                this.columnopisKvara = new global::System.Data.DataColumn("opisKvara", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnopisKvara);
+                this.columnIzvestaj = new global::System.Data.DataColumn("Izvestaj", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnIzvestaj);
+                this.columncenaDelova = new global::System.Data.DataColumn("cenaDelova", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncenaDelova);
+                this.columncenaServis = new global::System.Data.DataColumn("cenaServis", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncenaServis);
+                this.columnukupnaCena = new global::System.Data.DataColumn("ukupnaCena", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnukupnaCena);
+                this.columnStatus = new global::System.Data.DataColumn("Status", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnStatus);
+                this.columnnaCekanju = new global::System.Data.DataColumn("naCekanju", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnnaCekanju);
+                this.columnZavrseno = new global::System.Data.DataColumn("Zavrseno", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnZavrseno);
+                this.columnkorisnikOdustao = new global::System.Data.DataColumn("korisnikOdustao", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnkorisnikOdustao);
+                this.columnservisOdustao = new global::System.Data.DataColumn("servisOdustao", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnservisOdustao);
+                this.columnkorisnikOdbioPlacanje = new global::System.Data.DataColumn("korisnikOdbioPlacanje", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnkorisnikOdbioPlacanje);
+                this.columnNapomena = new global::System.Data.DataColumn("Napomena", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNapomena);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnbrojNaloga}, true));
+                this.columnbrojNaloga.AutoIncrement = true;
+                this.columnbrojNaloga.AutoIncrementSeed = 1;
+                this.columnbrojNaloga.AllowDBNull = false;
+                this.columnbrojNaloga.Unique = true;
+                this.columnimePrezime.MaxLength = 50;
+                this.columnKontakt.MaxLength = 50;
+                this.columneMail.MaxLength = 50;
+                this.columnUredjaj.MaxLength = 50;
+                this.columnProizvodjac.MaxLength = 50;
+                this.columnModel.MaxLength = 50;
+                this.columnserijskiBroj.MaxLength = 50;
+                this.columnOprema.MaxLength = 500;
+                this.columnopisKvara.MaxLength = 500;
+                this.columnIzvestaj.MaxLength = 500;
+                this.columnStatus.MaxLength = 50;
+                this.columnNapomena.MaxLength = 500;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public NaloziPRow NewNaloziPRow() {
+                return ((NaloziPRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new NaloziPRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(NaloziPRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.NaloziPRowChanged != null)) {
+                    this.NaloziPRowChanged(this, new NaloziPRowChangeEvent(((NaloziPRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.NaloziPRowChanging != null)) {
+                    this.NaloziPRowChanging(this, new NaloziPRowChangeEvent(((NaloziPRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.NaloziPRowDeleted != null)) {
+                    this.NaloziPRowDeleted(this, new NaloziPRowChangeEvent(((NaloziPRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.NaloziPRowDeleting != null)) {
+                    this.NaloziPRowDeleting(this, new NaloziPRowChangeEvent(((NaloziPRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void RemoveNaloziPRow(NaloziPRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                dbSenaCompDataSet ds = new dbSenaCompDataSet();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "NaloziPDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -5834,620 +5834,6 @@ namespace uclib {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class NaloziPRow : global::System.Data.DataRow {
-            
-            private NaloziPDataTable tableNaloziP;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal NaloziPRow(global::System.Data.DataRowBuilder rb) : 
-                    base(rb) {
-                this.tableNaloziP = ((NaloziPDataTable)(this.Table));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int brojNaloga {
-                get {
-                    return ((int)(this[this.tableNaloziP.brojNalogaColumn]));
-                }
-                set {
-                    this[this.tableNaloziP.brojNalogaColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public System.DateTime Datum {
-                get {
-                    try {
-                        return ((global::System.DateTime)(this[this.tableNaloziP.DatumColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Datum\' in table \'NaloziP\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableNaloziP.DatumColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string imePrezime {
-                get {
-                    try {
-                        return ((string)(this[this.tableNaloziP.imePrezimeColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'imePrezime\' in table \'NaloziP\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableNaloziP.imePrezimeColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Kontakt {
-                get {
-                    try {
-                        return ((string)(this[this.tableNaloziP.KontaktColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Kontakt\' in table \'NaloziP\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableNaloziP.KontaktColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string eMail {
-                get {
-                    try {
-                        return ((string)(this[this.tableNaloziP.eMailColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'eMail\' in table \'NaloziP\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableNaloziP.eMailColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Uredjaj {
-                get {
-                    try {
-                        return ((string)(this[this.tableNaloziP.UredjajColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Uredjaj\' in table \'NaloziP\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableNaloziP.UredjajColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Proizvodjac {
-                get {
-                    try {
-                        return ((string)(this[this.tableNaloziP.ProizvodjacColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Proizvodjac\' in table \'NaloziP\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableNaloziP.ProizvodjacColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Model {
-                get {
-                    try {
-                        return ((string)(this[this.tableNaloziP.ModelColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Model\' in table \'NaloziP\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableNaloziP.ModelColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string serijskiBroj {
-                get {
-                    try {
-                        return ((string)(this[this.tableNaloziP.serijskiBrojColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'serijskiBroj\' in table \'NaloziP\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableNaloziP.serijskiBrojColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Oprema {
-                get {
-                    try {
-                        return ((string)(this[this.tableNaloziP.OpremaColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Oprema\' in table \'NaloziP\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableNaloziP.OpremaColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string opisKvara {
-                get {
-                    try {
-                        return ((string)(this[this.tableNaloziP.opisKvaraColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'opisKvara\' in table \'NaloziP\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableNaloziP.opisKvaraColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Izvestaj {
-                get {
-                    try {
-                        return ((string)(this[this.tableNaloziP.IzvestajColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Izvestaj\' in table \'NaloziP\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableNaloziP.IzvestajColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public double cenaDelova {
-                get {
-                    try {
-                        return ((double)(this[this.tableNaloziP.cenaDelovaColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'cenaDelova\' in table \'NaloziP\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableNaloziP.cenaDelovaColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public double cenaServis {
-                get {
-                    try {
-                        return ((double)(this[this.tableNaloziP.cenaServisColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'cenaServis\' in table \'NaloziP\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableNaloziP.cenaServisColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public double ukupnaCena {
-                get {
-                    try {
-                        return ((double)(this[this.tableNaloziP.ukupnaCenaColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'ukupnaCena\' in table \'NaloziP\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableNaloziP.ukupnaCenaColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Status {
-                get {
-                    try {
-                        return ((string)(this[this.tableNaloziP.StatusColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Status\' in table \'NaloziP\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableNaloziP.StatusColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool naCekanju {
-                get {
-                    try {
-                        return ((bool)(this[this.tableNaloziP.naCekanjuColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'naCekanju\' in table \'NaloziP\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableNaloziP.naCekanjuColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool Zavrseno {
-                get {
-                    try {
-                        return ((bool)(this[this.tableNaloziP.ZavrsenoColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Zavrseno\' in table \'NaloziP\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableNaloziP.ZavrsenoColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool korisnikOdustao {
-                get {
-                    try {
-                        return ((bool)(this[this.tableNaloziP.korisnikOdustaoColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'korisnikOdustao\' in table \'NaloziP\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableNaloziP.korisnikOdustaoColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool servisOdustao {
-                get {
-                    try {
-                        return ((bool)(this[this.tableNaloziP.servisOdustaoColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'servisOdustao\' in table \'NaloziP\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableNaloziP.servisOdustaoColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool korisnikOdbioPlacanje {
-                get {
-                    try {
-                        return ((bool)(this[this.tableNaloziP.korisnikOdbioPlacanjeColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'korisnikOdbioPlacanje\' in table \'NaloziP\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableNaloziP.korisnikOdbioPlacanjeColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Napomena {
-                get {
-                    try {
-                        return ((string)(this[this.tableNaloziP.NapomenaColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Napomena\' in table \'NaloziP\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableNaloziP.NapomenaColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsDatumNull() {
-                return this.IsNull(this.tableNaloziP.DatumColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetDatumNull() {
-                this[this.tableNaloziP.DatumColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsimePrezimeNull() {
-                return this.IsNull(this.tableNaloziP.imePrezimeColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetimePrezimeNull() {
-                this[this.tableNaloziP.imePrezimeColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsKontaktNull() {
-                return this.IsNull(this.tableNaloziP.KontaktColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetKontaktNull() {
-                this[this.tableNaloziP.KontaktColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IseMailNull() {
-                return this.IsNull(this.tableNaloziP.eMailColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SeteMailNull() {
-                this[this.tableNaloziP.eMailColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsUredjajNull() {
-                return this.IsNull(this.tableNaloziP.UredjajColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetUredjajNull() {
-                this[this.tableNaloziP.UredjajColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsProizvodjacNull() {
-                return this.IsNull(this.tableNaloziP.ProizvodjacColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetProizvodjacNull() {
-                this[this.tableNaloziP.ProizvodjacColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsModelNull() {
-                return this.IsNull(this.tableNaloziP.ModelColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetModelNull() {
-                this[this.tableNaloziP.ModelColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsserijskiBrojNull() {
-                return this.IsNull(this.tableNaloziP.serijskiBrojColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetserijskiBrojNull() {
-                this[this.tableNaloziP.serijskiBrojColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsOpremaNull() {
-                return this.IsNull(this.tableNaloziP.OpremaColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetOpremaNull() {
-                this[this.tableNaloziP.OpremaColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsopisKvaraNull() {
-                return this.IsNull(this.tableNaloziP.opisKvaraColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetopisKvaraNull() {
-                this[this.tableNaloziP.opisKvaraColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsIzvestajNull() {
-                return this.IsNull(this.tableNaloziP.IzvestajColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetIzvestajNull() {
-                this[this.tableNaloziP.IzvestajColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IscenaDelovaNull() {
-                return this.IsNull(this.tableNaloziP.cenaDelovaColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetcenaDelovaNull() {
-                this[this.tableNaloziP.cenaDelovaColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IscenaServisNull() {
-                return this.IsNull(this.tableNaloziP.cenaServisColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetcenaServisNull() {
-                this[this.tableNaloziP.cenaServisColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsukupnaCenaNull() {
-                return this.IsNull(this.tableNaloziP.ukupnaCenaColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetukupnaCenaNull() {
-                this[this.tableNaloziP.ukupnaCenaColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsStatusNull() {
-                return this.IsNull(this.tableNaloziP.StatusColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetStatusNull() {
-                this[this.tableNaloziP.StatusColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsnaCekanjuNull() {
-                return this.IsNull(this.tableNaloziP.naCekanjuColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetnaCekanjuNull() {
-                this[this.tableNaloziP.naCekanjuColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsZavrsenoNull() {
-                return this.IsNull(this.tableNaloziP.ZavrsenoColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetZavrsenoNull() {
-                this[this.tableNaloziP.ZavrsenoColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IskorisnikOdustaoNull() {
-                return this.IsNull(this.tableNaloziP.korisnikOdustaoColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetkorisnikOdustaoNull() {
-                this[this.tableNaloziP.korisnikOdustaoColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsservisOdustaoNull() {
-                return this.IsNull(this.tableNaloziP.servisOdustaoColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetservisOdustaoNull() {
-                this[this.tableNaloziP.servisOdustaoColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IskorisnikOdbioPlacanjeNull() {
-                return this.IsNull(this.tableNaloziP.korisnikOdbioPlacanjeColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetkorisnikOdbioPlacanjeNull() {
-                this[this.tableNaloziP.korisnikOdbioPlacanjeColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsNapomenaNull() {
-                return this.IsNull(this.tableNaloziP.NapomenaColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetNapomenaNull() {
-                this[this.tableNaloziP.NapomenaColumn] = global::System.Convert.DBNull;
-            }
-        }
-        
-        /// <summary>
-        ///Represents strongly named DataRow class.
-        ///</summary>
         public partial class OtpremniceRow : global::System.Data.DataRow {
             
             private OtpremniceDataTable tableOtpremnice;
@@ -7310,6 +6696,620 @@ namespace uclib {
         }
         
         /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class NaloziPRow : global::System.Data.DataRow {
+            
+            private NaloziPDataTable tableNaloziP;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal NaloziPRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableNaloziP = ((NaloziPDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int brojNaloga {
+                get {
+                    return ((int)(this[this.tableNaloziP.brojNalogaColumn]));
+                }
+                set {
+                    this[this.tableNaloziP.brojNalogaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public System.DateTime Datum {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableNaloziP.DatumColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Datum\' in table \'NaloziP\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableNaloziP.DatumColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string imePrezime {
+                get {
+                    try {
+                        return ((string)(this[this.tableNaloziP.imePrezimeColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'imePrezime\' in table \'NaloziP\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableNaloziP.imePrezimeColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Kontakt {
+                get {
+                    try {
+                        return ((string)(this[this.tableNaloziP.KontaktColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Kontakt\' in table \'NaloziP\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableNaloziP.KontaktColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string eMail {
+                get {
+                    try {
+                        return ((string)(this[this.tableNaloziP.eMailColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'eMail\' in table \'NaloziP\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableNaloziP.eMailColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Uredjaj {
+                get {
+                    try {
+                        return ((string)(this[this.tableNaloziP.UredjajColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Uredjaj\' in table \'NaloziP\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableNaloziP.UredjajColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Proizvodjac {
+                get {
+                    try {
+                        return ((string)(this[this.tableNaloziP.ProizvodjacColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Proizvodjac\' in table \'NaloziP\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableNaloziP.ProizvodjacColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Model {
+                get {
+                    try {
+                        return ((string)(this[this.tableNaloziP.ModelColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Model\' in table \'NaloziP\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableNaloziP.ModelColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string serijskiBroj {
+                get {
+                    try {
+                        return ((string)(this[this.tableNaloziP.serijskiBrojColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'serijskiBroj\' in table \'NaloziP\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableNaloziP.serijskiBrojColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Oprema {
+                get {
+                    try {
+                        return ((string)(this[this.tableNaloziP.OpremaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Oprema\' in table \'NaloziP\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableNaloziP.OpremaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string opisKvara {
+                get {
+                    try {
+                        return ((string)(this[this.tableNaloziP.opisKvaraColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'opisKvara\' in table \'NaloziP\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableNaloziP.opisKvaraColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Izvestaj {
+                get {
+                    try {
+                        return ((string)(this[this.tableNaloziP.IzvestajColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Izvestaj\' in table \'NaloziP\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableNaloziP.IzvestajColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public double cenaDelova {
+                get {
+                    try {
+                        return ((double)(this[this.tableNaloziP.cenaDelovaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'cenaDelova\' in table \'NaloziP\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableNaloziP.cenaDelovaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public double cenaServis {
+                get {
+                    try {
+                        return ((double)(this[this.tableNaloziP.cenaServisColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'cenaServis\' in table \'NaloziP\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableNaloziP.cenaServisColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public double ukupnaCena {
+                get {
+                    try {
+                        return ((double)(this[this.tableNaloziP.ukupnaCenaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ukupnaCena\' in table \'NaloziP\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableNaloziP.ukupnaCenaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Status {
+                get {
+                    try {
+                        return ((string)(this[this.tableNaloziP.StatusColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Status\' in table \'NaloziP\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableNaloziP.StatusColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool naCekanju {
+                get {
+                    try {
+                        return ((bool)(this[this.tableNaloziP.naCekanjuColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'naCekanju\' in table \'NaloziP\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableNaloziP.naCekanjuColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Zavrseno {
+                get {
+                    try {
+                        return ((bool)(this[this.tableNaloziP.ZavrsenoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Zavrseno\' in table \'NaloziP\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableNaloziP.ZavrsenoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool korisnikOdustao {
+                get {
+                    try {
+                        return ((bool)(this[this.tableNaloziP.korisnikOdustaoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'korisnikOdustao\' in table \'NaloziP\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableNaloziP.korisnikOdustaoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool servisOdustao {
+                get {
+                    try {
+                        return ((bool)(this[this.tableNaloziP.servisOdustaoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'servisOdustao\' in table \'NaloziP\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableNaloziP.servisOdustaoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool korisnikOdbioPlacanje {
+                get {
+                    try {
+                        return ((bool)(this[this.tableNaloziP.korisnikOdbioPlacanjeColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'korisnikOdbioPlacanje\' in table \'NaloziP\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableNaloziP.korisnikOdbioPlacanjeColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Napomena {
+                get {
+                    try {
+                        return ((string)(this[this.tableNaloziP.NapomenaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Napomena\' in table \'NaloziP\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableNaloziP.NapomenaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsDatumNull() {
+                return this.IsNull(this.tableNaloziP.DatumColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetDatumNull() {
+                this[this.tableNaloziP.DatumColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsimePrezimeNull() {
+                return this.IsNull(this.tableNaloziP.imePrezimeColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetimePrezimeNull() {
+                this[this.tableNaloziP.imePrezimeColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsKontaktNull() {
+                return this.IsNull(this.tableNaloziP.KontaktColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetKontaktNull() {
+                this[this.tableNaloziP.KontaktColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IseMailNull() {
+                return this.IsNull(this.tableNaloziP.eMailColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SeteMailNull() {
+                this[this.tableNaloziP.eMailColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsUredjajNull() {
+                return this.IsNull(this.tableNaloziP.UredjajColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetUredjajNull() {
+                this[this.tableNaloziP.UredjajColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsProizvodjacNull() {
+                return this.IsNull(this.tableNaloziP.ProizvodjacColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetProizvodjacNull() {
+                this[this.tableNaloziP.ProizvodjacColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsModelNull() {
+                return this.IsNull(this.tableNaloziP.ModelColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetModelNull() {
+                this[this.tableNaloziP.ModelColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsserijskiBrojNull() {
+                return this.IsNull(this.tableNaloziP.serijskiBrojColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetserijskiBrojNull() {
+                this[this.tableNaloziP.serijskiBrojColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsOpremaNull() {
+                return this.IsNull(this.tableNaloziP.OpremaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetOpremaNull() {
+                this[this.tableNaloziP.OpremaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsopisKvaraNull() {
+                return this.IsNull(this.tableNaloziP.opisKvaraColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetopisKvaraNull() {
+                this[this.tableNaloziP.opisKvaraColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsIzvestajNull() {
+                return this.IsNull(this.tableNaloziP.IzvestajColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetIzvestajNull() {
+                this[this.tableNaloziP.IzvestajColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IscenaDelovaNull() {
+                return this.IsNull(this.tableNaloziP.cenaDelovaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetcenaDelovaNull() {
+                this[this.tableNaloziP.cenaDelovaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IscenaServisNull() {
+                return this.IsNull(this.tableNaloziP.cenaServisColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetcenaServisNull() {
+                this[this.tableNaloziP.cenaServisColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsukupnaCenaNull() {
+                return this.IsNull(this.tableNaloziP.ukupnaCenaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetukupnaCenaNull() {
+                this[this.tableNaloziP.ukupnaCenaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsStatusNull() {
+                return this.IsNull(this.tableNaloziP.StatusColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetStatusNull() {
+                this[this.tableNaloziP.StatusColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsnaCekanjuNull() {
+                return this.IsNull(this.tableNaloziP.naCekanjuColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetnaCekanjuNull() {
+                this[this.tableNaloziP.naCekanjuColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsZavrsenoNull() {
+                return this.IsNull(this.tableNaloziP.ZavrsenoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetZavrsenoNull() {
+                this[this.tableNaloziP.ZavrsenoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IskorisnikOdustaoNull() {
+                return this.IsNull(this.tableNaloziP.korisnikOdustaoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetkorisnikOdustaoNull() {
+                this[this.tableNaloziP.korisnikOdustaoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsservisOdustaoNull() {
+                return this.IsNull(this.tableNaloziP.servisOdustaoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetservisOdustaoNull() {
+                this[this.tableNaloziP.servisOdustaoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IskorisnikOdbioPlacanjeNull() {
+                return this.IsNull(this.tableNaloziP.korisnikOdbioPlacanjeColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetkorisnikOdbioPlacanjeNull() {
+                this[this.tableNaloziP.korisnikOdbioPlacanjeColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsNapomenaNull() {
+                return this.IsNull(this.tableNaloziP.NapomenaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetNapomenaNull() {
+                this[this.tableNaloziP.NapomenaColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -7483,40 +7483,6 @@ namespace uclib {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public class NaloziPRowChangeEvent : global::System.EventArgs {
-            
-            private NaloziPRow eventRow;
-            
-            private global::System.Data.DataRowAction eventAction;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public NaloziPRowChangeEvent(NaloziPRow row, global::System.Data.DataRowAction action) {
-                this.eventRow = row;
-                this.eventAction = action;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public NaloziPRow Row {
-                get {
-                    return this.eventRow;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataRowAction Action {
-                get {
-                    return this.eventAction;
-                }
-            }
-        }
-        
-        /// <summary>
-        ///Row event argument class
-        ///</summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public class OtpremniceRowChangeEvent : global::System.EventArgs {
             
             private OtpremniceRow eventRow;
@@ -7567,6 +7533,40 @@ namespace uclib {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public ProfaktureRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public class NaloziPRowChangeEvent : global::System.EventArgs {
+            
+            private NaloziPRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public NaloziPRowChangeEvent(NaloziPRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public NaloziPRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -11760,1430 +11760,6 @@ WHERE  (IDFirme = @IDFirme) OR
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class NaloziPTableAdapter : global::System.ComponentModel.Component {
-        
-        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
-        
-        private global::System.Data.SqlClient.SqlConnection _connection;
-        
-        private global::System.Data.SqlClient.SqlTransaction _transaction;
-        
-        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
-        
-        private bool _clearBeforeFill;
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public NaloziPTableAdapter() {
-            this.ClearBeforeFill = true;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
-            get {
-                if ((this._adapter == null)) {
-                    this.InitAdapter();
-                }
-                return this._adapter;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        internal global::System.Data.SqlClient.SqlConnection Connection {
-            get {
-                if ((this._connection == null)) {
-                    this.InitConnection();
-                }
-                return this._connection;
-            }
-            set {
-                this._connection = value;
-                if ((this.Adapter.InsertCommand != null)) {
-                    this.Adapter.InsertCommand.Connection = value;
-                }
-                if ((this.Adapter.DeleteCommand != null)) {
-                    this.Adapter.DeleteCommand.Connection = value;
-                }
-                if ((this.Adapter.UpdateCommand != null)) {
-                    this.Adapter.UpdateCommand.Connection = value;
-                }
-                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
-                    if ((this.CommandCollection[i] != null)) {
-                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
-                    }
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        internal global::System.Data.SqlClient.SqlTransaction Transaction {
-            get {
-                return this._transaction;
-            }
-            set {
-                this._transaction = value;
-                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
-                    this.CommandCollection[i].Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.DeleteCommand != null))) {
-                    this.Adapter.DeleteCommand.Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.InsertCommand != null))) {
-                    this.Adapter.InsertCommand.Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.UpdateCommand != null))) {
-                    this.Adapter.UpdateCommand.Transaction = this._transaction;
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
-            get {
-                if ((this._commandCollection == null)) {
-                    this.InitCommandCollection();
-                }
-                return this._commandCollection;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public bool ClearBeforeFill {
-            get {
-                return this._clearBeforeFill;
-            }
-            set {
-                this._clearBeforeFill = value;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private void InitAdapter() {
-            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
-            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
-            tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "NaloziP";
-            tableMapping.ColumnMappings.Add("brojNaloga", "brojNaloga");
-            tableMapping.ColumnMappings.Add("Datum", "Datum");
-            tableMapping.ColumnMappings.Add("imePrezime", "imePrezime");
-            tableMapping.ColumnMappings.Add("Kontakt", "Kontakt");
-            tableMapping.ColumnMappings.Add("eMail", "eMail");
-            tableMapping.ColumnMappings.Add("Uredjaj", "Uredjaj");
-            tableMapping.ColumnMappings.Add("Proizvodjac", "Proizvodjac");
-            tableMapping.ColumnMappings.Add("Model", "Model");
-            tableMapping.ColumnMappings.Add("serijskiBroj", "serijskiBroj");
-            tableMapping.ColumnMappings.Add("Oprema", "Oprema");
-            tableMapping.ColumnMappings.Add("opisKvara", "opisKvara");
-            tableMapping.ColumnMappings.Add("Izvestaj", "Izvestaj");
-            tableMapping.ColumnMappings.Add("cenaDelova", "cenaDelova");
-            tableMapping.ColumnMappings.Add("cenaServis", "cenaServis");
-            tableMapping.ColumnMappings.Add("ukupnaCena", "ukupnaCena");
-            tableMapping.ColumnMappings.Add("Status", "Status");
-            tableMapping.ColumnMappings.Add("naCekanju", "naCekanju");
-            tableMapping.ColumnMappings.Add("Zavrseno", "Zavrseno");
-            tableMapping.ColumnMappings.Add("korisnikOdustao", "korisnikOdustao");
-            tableMapping.ColumnMappings.Add("servisOdustao", "servisOdustao");
-            tableMapping.ColumnMappings.Add("korisnikOdbioPlacanje", "korisnikOdbioPlacanje");
-            tableMapping.ColumnMappings.Add("Napomena", "Napomena");
-            this._adapter.TableMappings.Add(tableMapping);
-            this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
-            this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[NaloziP] WHERE (([brojNaloga] = @Original_brojNaloga) AND ((@I" +
-                "sNull_Datum = 1 AND [Datum] IS NULL) OR ([Datum] = @Original_Datum)) AND ((@IsNu" +
-                "ll_imePrezime = 1 AND [imePrezime] IS NULL) OR ([imePrezime] = @Original_imePrez" +
-                "ime)) AND ((@IsNull_Kontakt = 1 AND [Kontakt] IS NULL) OR ([Kontakt] = @Original" +
-                "_Kontakt)) AND ((@IsNull_eMail = 1 AND [eMail] IS NULL) OR ([eMail] = @Original_" +
-                "eMail)) AND ((@IsNull_Uredjaj = 1 AND [Uredjaj] IS NULL) OR ([Uredjaj] = @Origin" +
-                "al_Uredjaj)) AND ((@IsNull_Proizvodjac = 1 AND [Proizvodjac] IS NULL) OR ([Proiz" +
-                "vodjac] = @Original_Proizvodjac)) AND ((@IsNull_Model = 1 AND [Model] IS NULL) O" +
-                "R ([Model] = @Original_Model)) AND ((@IsNull_serijskiBroj = 1 AND [serijskiBroj]" +
-                " IS NULL) OR ([serijskiBroj] = @Original_serijskiBroj)) AND ((@IsNull_Oprema = 1" +
-                " AND [Oprema] IS NULL) OR ([Oprema] = @Original_Oprema)) AND ((@IsNull_opisKvara" +
-                " = 1 AND [opisKvara] IS NULL) OR ([opisKvara] = @Original_opisKvara)) AND ((@IsN" +
-                "ull_Izvestaj = 1 AND [Izvestaj] IS NULL) OR ([Izvestaj] = @Original_Izvestaj)) A" +
-                "ND ((@IsNull_cenaDelova = 1 AND [cenaDelova] IS NULL) OR ([cenaDelova] = @Origin" +
-                "al_cenaDelova)) AND ((@IsNull_cenaServis = 1 AND [cenaServis] IS NULL) OR ([cena" +
-                "Servis] = @Original_cenaServis)) AND ((@IsNull_ukupnaCena = 1 AND [ukupnaCena] I" +
-                "S NULL) OR ([ukupnaCena] = @Original_ukupnaCena)) AND ((@IsNull_Status = 1 AND [" +
-                "Status] IS NULL) OR ([Status] = @Original_Status)) AND ((@IsNull_naCekanju = 1 A" +
-                "ND [naCekanju] IS NULL) OR ([naCekanju] = @Original_naCekanju)) AND ((@IsNull_Za" +
-                "vrseno = 1 AND [Zavrseno] IS NULL) OR ([Zavrseno] = @Original_Zavrseno)) AND ((@" +
-                "IsNull_korisnikOdustao = 1 AND [korisnikOdustao] IS NULL) OR ([korisnikOdustao] " +
-                "= @Original_korisnikOdustao)) AND ((@IsNull_servisOdustao = 1 AND [servisOdustao" +
-                "] IS NULL) OR ([servisOdustao] = @Original_servisOdustao)) AND ((@IsNull_korisni" +
-                "kOdbioPlacanje = 1 AND [korisnikOdbioPlacanje] IS NULL) OR ([korisnikOdbioPlacan" +
-                "je] = @Original_korisnikOdbioPlacanje)) AND ((@IsNull_Napomena = 1 AND [Napomena" +
-                "] IS NULL) OR ([Napomena] = @Original_Napomena)))";
-            this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_brojNaloga", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "brojNaloga", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Datum", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Datum", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Datum", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Datum", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_imePrezime", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "imePrezime", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_imePrezime", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "imePrezime", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Kontakt", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Kontakt", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Kontakt", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Kontakt", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_eMail", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "eMail", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_eMail", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "eMail", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Uredjaj", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Uredjaj", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Uredjaj", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Uredjaj", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Proizvodjac", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Proizvodjac", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Proizvodjac", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Proizvodjac", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Model", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Model", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Model", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Model", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_serijskiBroj", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "serijskiBroj", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_serijskiBroj", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "serijskiBroj", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Oprema", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Oprema", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Oprema", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Oprema", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_opisKvara", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "opisKvara", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_opisKvara", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "opisKvara", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Izvestaj", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Izvestaj", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Izvestaj", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Izvestaj", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_cenaDelova", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "cenaDelova", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_cenaDelova", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "cenaDelova", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_cenaServis", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "cenaServis", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_cenaServis", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "cenaServis", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_ukupnaCena", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ukupnaCena", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ukupnaCena", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ukupnaCena", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Status", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Status", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Status", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Status", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_naCekanju", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "naCekanju", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_naCekanju", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "naCekanju", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Zavrseno", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Zavrseno", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Zavrseno", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Zavrseno", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_korisnikOdustao", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "korisnikOdustao", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_korisnikOdustao", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "korisnikOdustao", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_servisOdustao", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "servisOdustao", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_servisOdustao", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "servisOdustao", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_korisnikOdbioPlacanje", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "korisnikOdbioPlacanje", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_korisnikOdbioPlacanje", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "korisnikOdbioPlacanje", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Napomena", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Napomena", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Napomena", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Napomena", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
-            this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO NaloziP
-                  (Datum, imePrezime, Kontakt, eMail, Uredjaj, Proizvodjac, Model, serijskiBroj, Oprema, opisKvara, Izvestaj, cenaDelova, cenaServis, ukupnaCena, Status, naCekanju, Zavrseno, korisnikOdustao, servisOdustao, korisnikOdbioPlacanje, 
-                  Napomena, brojNaloga)
-VALUES (@Datum,@imePrezime,@Kontakt,@eMail,@Uredjaj,@Proizvodjac,@Model,@serijskiBroj,@Oprema,@opisKvara,@Izvestaj,@cenaDelova,@cenaServis,@ukupnaCena,@Status,@naCekanju,@Zavrseno,@korisnikOdustao,@servisOdustao,@korisnikOdbioPlacanje,@Napomena,);    
-SELECT brojNaloga, Datum, imePrezime, Kontakt, eMail, Uredjaj, Proizvodjac, Model, serijskiBroj, Oprema, opisKvara, Izvestaj, cenaDelova, cenaServis, ukupnaCena, Status, naCekanju, Zavrseno, korisnikOdustao, servisOdustao, korisnikOdbioPlacanje, Napomena FROM NaloziP WHERE (brojNaloga = @brojNaloga)";
-            this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Datum", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 0, 0, "Datum", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@imePrezime", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "imePrezime", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Kontakt", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "Kontakt", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@eMail", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "eMail", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Uredjaj", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "Uredjaj", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Proizvodjac", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "Proizvodjac", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Model", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "Model", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@serijskiBroj", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "serijskiBroj", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Oprema", global::System.Data.SqlDbType.NVarChar, 500, global::System.Data.ParameterDirection.Input, 0, 0, "Oprema", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@opisKvara", global::System.Data.SqlDbType.NVarChar, 500, global::System.Data.ParameterDirection.Input, 0, 0, "opisKvara", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Izvestaj", global::System.Data.SqlDbType.NVarChar, 500, global::System.Data.ParameterDirection.Input, 0, 0, "Izvestaj", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@cenaDelova", global::System.Data.SqlDbType.Float, 8, global::System.Data.ParameterDirection.Input, 0, 0, "cenaDelova", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@cenaServis", global::System.Data.SqlDbType.Float, 8, global::System.Data.ParameterDirection.Input, 0, 0, "cenaServis", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ukupnaCena", global::System.Data.SqlDbType.Float, 8, global::System.Data.ParameterDirection.Input, 0, 0, "ukupnaCena", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Status", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "Status", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@naCekanju", global::System.Data.SqlDbType.Bit, 1, global::System.Data.ParameterDirection.Input, 0, 0, "naCekanju", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Zavrseno", global::System.Data.SqlDbType.Bit, 1, global::System.Data.ParameterDirection.Input, 0, 0, "Zavrseno", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@korisnikOdustao", global::System.Data.SqlDbType.Bit, 1, global::System.Data.ParameterDirection.Input, 0, 0, "korisnikOdustao", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@servisOdustao", global::System.Data.SqlDbType.Bit, 1, global::System.Data.ParameterDirection.Input, 0, 0, "servisOdustao", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@korisnikOdbioPlacanje", global::System.Data.SqlDbType.Bit, 1, global::System.Data.ParameterDirection.Input, 0, 0, "korisnikOdbioPlacanje", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Napomena", global::System.Data.SqlDbType.NVarChar, 500, global::System.Data.ParameterDirection.Input, 0, 0, "Napomena", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@brojNaloga", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "brojNaloga", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
-            this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = "UPDATE NaloziP\r\nSET          brojNaloga = @brojNaloga, Datum = @Datum, imePrezime" +
-                " = @imePrezime, Kontakt = @Kontakt, eMail = @eMail, Uredjaj = @Uredjaj, Proizvod" +
-                "jac = @Proizvodjac, Model = @Model, serijskiBroj = @serijskiBroj, Oprema = @Opre" +
-                "ma, \r\n                  opisKvara = @opisKvara, Izvestaj = @Izvestaj, cenaDelova" +
-                " = @cenaDelova, cenaServis = @cenaServis, ukupnaCena = @ukupnaCena, Status = @St" +
-                "atus, naCekanju = @naCekanju, Zavrseno = @Zavrseno, \r\n                  korisnik" +
-                "Odustao = @korisnikOdustao, servisOdustao = @servisOdustao, korisnikOdbioPlacanj" +
-                "e = @korisnikOdbioPlacanje, Napomena = @Napomena\r\nWHERE  (brojNaloga = @Original" +
-                "_brojNaloga) AND (@IsNull_Datum = 1 AND Datum IS NULL OR\r\n                  Datu" +
-                "m = @Original_Datum) AND (@IsNull_imePrezime = 1 AND imePrezime IS NULL OR\r\n    " +
-                "              imePrezime = @Original_imePrezime) AND (@IsNull_Kontakt = 1 AND Ko" +
-                "ntakt IS NULL OR\r\n                  Kontakt = @Original_Kontakt) AND (@IsNull_eM" +
-                "ail = 1 AND eMail IS NULL OR\r\n                  eMail = @Original_eMail) AND (@I" +
-                "sNull_Uredjaj = 1 AND Uredjaj IS NULL OR\r\n                  Uredjaj = @Original_" +
-                "Uredjaj) AND (@IsNull_Proizvodjac = 1 AND Proizvodjac IS NULL OR\r\n              " +
-                "    Proizvodjac = @Original_Proizvodjac) AND (@IsNull_Model = 1 AND Model IS NUL" +
-                "L OR\r\n                  Model = @Original_Model) AND (@IsNull_serijskiBroj = 1 A" +
-                "ND serijskiBroj IS NULL OR\r\n                  serijskiBroj = @Original_serijskiB" +
-                "roj) AND (@IsNull_Oprema = 1 AND Oprema IS NULL OR\r\n                  Oprema = @" +
-                "Original_Oprema) AND (@IsNull_opisKvara = 1 AND opisKvara IS NULL OR\r\n          " +
-                "        opisKvara = @Original_opisKvara) AND (@IsNull_Izvestaj = 1 AND Izvestaj " +
-                "IS NULL OR\r\n                  Izvestaj = @Original_Izvestaj) AND (@IsNull_cenaDe" +
-                "lova = 1 AND cenaDelova IS NULL OR\r\n                  cenaDelova = @Original_cen" +
-                "aDelova) AND (@IsNull_cenaServis = 1 AND cenaServis IS NULL OR\r\n                " +
-                "  cenaServis = @Original_cenaServis) AND (@IsNull_ukupnaCena = 1 AND ukupnaCena " +
-                "IS NULL OR\r\n                  ukupnaCena = @Original_ukupnaCena) AND (@IsNull_St" +
-                "atus = 1 AND Status IS NULL OR\r\n                  Status = @Original_Status) AND" +
-                " (@IsNull_naCekanju = 1 AND naCekanju IS NULL OR\r\n                  naCekanju = " +
-                "@Original_naCekanju) AND (@IsNull_Zavrseno = 1 AND Zavrseno IS NULL OR\r\n        " +
-                "          Zavrseno = @Original_Zavrseno) AND (@IsNull_korisnikOdustao = 1 AND ko" +
-                "risnikOdustao IS NULL OR\r\n                  korisnikOdustao = @Original_korisnik" +
-                "Odustao) AND (@IsNull_servisOdustao = 1 AND servisOdustao IS NULL OR\r\n          " +
-                "        servisOdustao = @Original_servisOdustao) AND (@IsNull_korisnikOdbioPlaca" +
-                "nje = 1 AND korisnikOdbioPlacanje IS NULL OR\r\n                  korisnikOdbioPla" +
-                "canje = @Original_korisnikOdbioPlacanje) AND (@IsNull_Napomena = 1 AND Napomena " +
-                "IS NULL OR\r\n                  Napomena = @Original_Napomena)";
-            this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@brojNaloga", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "brojNaloga", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Datum", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 0, 0, "Datum", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@imePrezime", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "imePrezime", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Kontakt", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "Kontakt", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@eMail", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "eMail", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Uredjaj", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "Uredjaj", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Proizvodjac", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "Proizvodjac", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Model", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "Model", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@serijskiBroj", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "serijskiBroj", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Oprema", global::System.Data.SqlDbType.NVarChar, 500, global::System.Data.ParameterDirection.Input, 0, 0, "Oprema", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@opisKvara", global::System.Data.SqlDbType.NVarChar, 500, global::System.Data.ParameterDirection.Input, 0, 0, "opisKvara", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Izvestaj", global::System.Data.SqlDbType.NVarChar, 500, global::System.Data.ParameterDirection.Input, 0, 0, "Izvestaj", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@cenaDelova", global::System.Data.SqlDbType.Float, 8, global::System.Data.ParameterDirection.Input, 0, 0, "cenaDelova", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@cenaServis", global::System.Data.SqlDbType.Float, 8, global::System.Data.ParameterDirection.Input, 0, 0, "cenaServis", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ukupnaCena", global::System.Data.SqlDbType.Float, 8, global::System.Data.ParameterDirection.Input, 0, 0, "ukupnaCena", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Status", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "Status", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@naCekanju", global::System.Data.SqlDbType.Bit, 1, global::System.Data.ParameterDirection.Input, 0, 0, "naCekanju", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Zavrseno", global::System.Data.SqlDbType.Bit, 1, global::System.Data.ParameterDirection.Input, 0, 0, "Zavrseno", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@korisnikOdustao", global::System.Data.SqlDbType.Bit, 1, global::System.Data.ParameterDirection.Input, 0, 0, "korisnikOdustao", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@servisOdustao", global::System.Data.SqlDbType.Bit, 1, global::System.Data.ParameterDirection.Input, 0, 0, "servisOdustao", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@korisnikOdbioPlacanje", global::System.Data.SqlDbType.Bit, 1, global::System.Data.ParameterDirection.Input, 0, 0, "korisnikOdbioPlacanje", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Napomena", global::System.Data.SqlDbType.NVarChar, 500, global::System.Data.ParameterDirection.Input, 0, 0, "Napomena", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_brojNaloga", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "brojNaloga", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Datum", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Datum", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Datum", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 0, 0, "Datum", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_imePrezime", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "imePrezime", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_imePrezime", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "imePrezime", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Kontakt", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Kontakt", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Kontakt", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "Kontakt", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_eMail", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "eMail", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_eMail", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "eMail", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Uredjaj", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Uredjaj", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Uredjaj", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "Uredjaj", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Proizvodjac", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Proizvodjac", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Proizvodjac", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "Proizvodjac", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Model", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Model", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Model", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "Model", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_serijskiBroj", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "serijskiBroj", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_serijskiBroj", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "serijskiBroj", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Oprema", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Oprema", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Oprema", global::System.Data.SqlDbType.NVarChar, 500, global::System.Data.ParameterDirection.Input, 0, 0, "Oprema", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_opisKvara", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "opisKvara", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_opisKvara", global::System.Data.SqlDbType.NVarChar, 500, global::System.Data.ParameterDirection.Input, 0, 0, "opisKvara", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Izvestaj", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Izvestaj", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Izvestaj", global::System.Data.SqlDbType.NVarChar, 500, global::System.Data.ParameterDirection.Input, 0, 0, "Izvestaj", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_cenaDelova", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "cenaDelova", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_cenaDelova", global::System.Data.SqlDbType.Float, 8, global::System.Data.ParameterDirection.Input, 0, 0, "cenaDelova", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_cenaServis", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "cenaServis", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_cenaServis", global::System.Data.SqlDbType.Float, 8, global::System.Data.ParameterDirection.Input, 0, 0, "cenaServis", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_ukupnaCena", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ukupnaCena", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ukupnaCena", global::System.Data.SqlDbType.Float, 8, global::System.Data.ParameterDirection.Input, 0, 0, "ukupnaCena", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Status", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Status", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Status", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "Status", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_naCekanju", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "naCekanju", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_naCekanju", global::System.Data.SqlDbType.Bit, 1, global::System.Data.ParameterDirection.Input, 0, 0, "naCekanju", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Zavrseno", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Zavrseno", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Zavrseno", global::System.Data.SqlDbType.Bit, 1, global::System.Data.ParameterDirection.Input, 0, 0, "Zavrseno", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_korisnikOdustao", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "korisnikOdustao", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_korisnikOdustao", global::System.Data.SqlDbType.Bit, 1, global::System.Data.ParameterDirection.Input, 0, 0, "korisnikOdustao", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_servisOdustao", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "servisOdustao", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_servisOdustao", global::System.Data.SqlDbType.Bit, 1, global::System.Data.ParameterDirection.Input, 0, 0, "servisOdustao", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_korisnikOdbioPlacanje", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "korisnikOdbioPlacanje", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_korisnikOdbioPlacanje", global::System.Data.SqlDbType.Bit, 1, global::System.Data.ParameterDirection.Input, 0, 0, "korisnikOdbioPlacanje", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Napomena", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Napomena", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Napomena", global::System.Data.SqlDbType.NVarChar, 500, global::System.Data.ParameterDirection.Input, 0, 0, "Napomena", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private void InitConnection() {
-            this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\dbSenaComp.md" +
-                "f;Integrated Security=True";
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[7];
-            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
-            this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = @"SELECT brojNaloga, Datum, imePrezime, Kontakt, eMail, Uredjaj, Proizvodjac, Model, serijskiBroj, Oprema, opisKvara, Izvestaj, cenaDelova, cenaServis, ukupnaCena, Status, naCekanju, Zavrseno, korisnikOdustao, servisOdustao, korisnikOdbioPlacanje, Napomena FROM dbo.NaloziP";
-            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
-            this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = @"SELECT brojNaloga, Datum, imePrezime, Kontakt, eMail, Uredjaj, Proizvodjac, Model, serijskiBroj, Oprema, opisKvara, Izvestaj, cenaDelova, cenaServis, ukupnaCena, Status, naCekanju, Zavrseno, korisnikOdustao, servisOdustao, 
-                  korisnikOdbioPlacanje, Napomena
-FROM     NaloziP
-WHERE  (brojNaloga = @brojNaloga)";
-            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@brojNaloga", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "brojNaloga", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
-            this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = @"SELECT brojNaloga, Datum, imePrezime, Kontakt, eMail, Uredjaj, Proizvodjac, Model, serijskiBroj, Oprema, opisKvara, Izvestaj, cenaDelova, cenaServis, ukupnaCena, Status, naCekanju, Zavrseno, korisnikOdustao, servisOdustao, 
-                  korisnikOdbioPlacanje, Napomena
-FROM     NaloziP
-WHERE  (imePrezime LIKE N'%' + @imePrezime + N'%') OR
-                  (Kontakt LIKE N'%' + @Kontakt + N'%') OR
-                  (eMail LIKE N'%' + @eMail + N'%')";
-            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@imePrezime", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "imePrezime", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Kontakt", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "Kontakt", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@eMail", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "eMail", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
-            this._commandCollection[3].Connection = this.Connection;
-            this._commandCollection[3].CommandText = @"SELECT brojNaloga, Datum, imePrezime, Kontakt, eMail, Uredjaj, Proizvodjac, Model, serijskiBroj, Oprema, opisKvara, Izvestaj, cenaDelova, cenaServis, ukupnaCena, Status, naCekanju, Zavrseno, korisnikOdustao, servisOdustao, 
-                  korisnikOdbioPlacanje, Napomena
-FROM     NaloziP
-WHERE  (opisKvara LIKE N'%' + @opisKvara + N'%') OR
-                  (Izvestaj LIKE N'%' + @Izvestaj + N'%')";
-            this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@opisKvara", global::System.Data.SqlDbType.NVarChar, 500, global::System.Data.ParameterDirection.Input, 0, 0, "opisKvara", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Izvestaj", global::System.Data.SqlDbType.NVarChar, 500, global::System.Data.ParameterDirection.Input, 0, 0, "Izvestaj", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[4] = new global::System.Data.SqlClient.SqlCommand();
-            this._commandCollection[4].Connection = this.Connection;
-            this._commandCollection[4].CommandText = @"SELECT brojNaloga, Datum, imePrezime, Kontakt, eMail, Uredjaj, Proizvodjac, Model, serijskiBroj, Oprema, opisKvara, Izvestaj, cenaDelova, cenaServis, ukupnaCena, Status, naCekanju, Zavrseno, korisnikOdustao, servisOdustao, 
-                  korisnikOdbioPlacanje, Napomena
-FROM     NaloziP
-WHERE  (Status = @Status)";
-            this._commandCollection[4].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Status", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "Status", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[5] = new global::System.Data.SqlClient.SqlCommand();
-            this._commandCollection[5].Connection = this.Connection;
-            this._commandCollection[5].CommandText = @"SELECT brojNaloga, Datum, imePrezime, Kontakt, eMail, Uredjaj, Proizvodjac, Model, serijskiBroj, Oprema, opisKvara, Izvestaj, cenaDelova, cenaServis, ukupnaCena, Status, naCekanju, Zavrseno, korisnikOdustao, servisOdustao, 
-                  korisnikOdbioPlacanje, Napomena
-FROM     NaloziP
-WHERE  (Uredjaj LIKE N'%' + @Uredjaj + N'%') OR
-                  (Proizvodjac LIKE N'%' + @Proizvodjac + N'%') OR
-                  (Model LIKE N'%' + @Model + N'%') OR
-                  (serijskiBroj LIKE N'%' + @serijskiBroj + N'%')";
-            this._commandCollection[5].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Uredjaj", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "Uredjaj", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Proizvodjac", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "Proizvodjac", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Model", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "Model", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@serijskiBroj", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "serijskiBroj", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[6] = new global::System.Data.SqlClient.SqlCommand();
-            this._commandCollection[6].Connection = this.Connection;
-            this._commandCollection[6].CommandText = @"SELECT brojNaloga, Datum, imePrezime, Kontakt, eMail, Uredjaj, Proizvodjac, Model, serijskiBroj, Oprema, opisKvara, Izvestaj, cenaDelova, cenaServis, ukupnaCena, Status, naCekanju, Zavrseno, korisnikOdustao, servisOdustao, korisnikOdbioPlacanje, Napomena
-
-FROM dbo.NaloziP
-
-WHERE  (imePrezime = @imePrezime)";
-            this._commandCollection[6].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@imePrezime", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "imePrezime", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(dbSenaCompDataSet.NaloziPDataTable dataTable) {
-            this.Adapter.SelectCommand = this.CommandCollection[0];
-            if ((this.ClearBeforeFill == true)) {
-                dataTable.Clear();
-            }
-            int returnValue = this.Adapter.Fill(dataTable);
-            return returnValue;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual dbSenaCompDataSet.NaloziPDataTable GetData() {
-            this.Adapter.SelectCommand = this.CommandCollection[0];
-            dbSenaCompDataSet.NaloziPDataTable dataTable = new dbSenaCompDataSet.NaloziPDataTable();
-            this.Adapter.Fill(dataTable);
-            return dataTable;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
-        public virtual int qFilterBrojNaloga(dbSenaCompDataSet.NaloziPDataTable dataTable, int brojNaloga) {
-            this.Adapter.SelectCommand = this.CommandCollection[1];
-            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(brojNaloga));
-            if ((this.ClearBeforeFill == true)) {
-                dataTable.Clear();
-            }
-            int returnValue = this.Adapter.Fill(dataTable);
-            return returnValue;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
-        public virtual int qFilterKorisnik(dbSenaCompDataSet.NaloziPDataTable dataTable, string imePrezime, string Kontakt, string eMail) {
-            this.Adapter.SelectCommand = this.CommandCollection[2];
-            if ((imePrezime == null)) {
-                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(imePrezime));
-            }
-            if ((Kontakt == null)) {
-                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[1].Value = ((string)(Kontakt));
-            }
-            if ((eMail == null)) {
-                this.Adapter.SelectCommand.Parameters[2].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[2].Value = ((string)(eMail));
-            }
-            if ((this.ClearBeforeFill == true)) {
-                dataTable.Clear();
-            }
-            int returnValue = this.Adapter.Fill(dataTable);
-            return returnValue;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
-        public virtual int qFilterKvar(dbSenaCompDataSet.NaloziPDataTable dataTable, string opisKvara, string Izvestaj) {
-            this.Adapter.SelectCommand = this.CommandCollection[3];
-            if ((opisKvara == null)) {
-                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(opisKvara));
-            }
-            if ((Izvestaj == null)) {
-                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[1].Value = ((string)(Izvestaj));
-            }
-            if ((this.ClearBeforeFill == true)) {
-                dataTable.Clear();
-            }
-            int returnValue = this.Adapter.Fill(dataTable);
-            return returnValue;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
-        public virtual int qFilterStatus(dbSenaCompDataSet.NaloziPDataTable dataTable, string Status) {
-            this.Adapter.SelectCommand = this.CommandCollection[4];
-            if ((Status == null)) {
-                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(Status));
-            }
-            if ((this.ClearBeforeFill == true)) {
-                dataTable.Clear();
-            }
-            int returnValue = this.Adapter.Fill(dataTable);
-            return returnValue;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
-        public virtual int qFilterUredjaj(dbSenaCompDataSet.NaloziPDataTable dataTable, string Uredjaj, string Proizvodjac, string Model, string serijskiBroj) {
-            this.Adapter.SelectCommand = this.CommandCollection[5];
-            if ((Uredjaj == null)) {
-                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(Uredjaj));
-            }
-            if ((Proizvodjac == null)) {
-                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[1].Value = ((string)(Proizvodjac));
-            }
-            if ((Model == null)) {
-                this.Adapter.SelectCommand.Parameters[2].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[2].Value = ((string)(Model));
-            }
-            if ((serijskiBroj == null)) {
-                this.Adapter.SelectCommand.Parameters[3].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[3].Value = ((string)(serijskiBroj));
-            }
-            if ((this.ClearBeforeFill == true)) {
-                dataTable.Clear();
-            }
-            int returnValue = this.Adapter.Fill(dataTable);
-            return returnValue;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
-        public virtual int qImeNapomena(dbSenaCompDataSet.NaloziPDataTable dataTable, string imePrezime) {
-            this.Adapter.SelectCommand = this.CommandCollection[6];
-            if ((imePrezime == null)) {
-                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(imePrezime));
-            }
-            if ((this.ClearBeforeFill == true)) {
-                dataTable.Clear();
-            }
-            int returnValue = this.Adapter.Fill(dataTable);
-            return returnValue;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(dbSenaCompDataSet.NaloziPDataTable dataTable) {
-            return this.Adapter.Update(dataTable);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(dbSenaCompDataSet dataSet) {
-            return this.Adapter.Update(dataSet, "NaloziP");
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(global::System.Data.DataRow dataRow) {
-            return this.Adapter.Update(new global::System.Data.DataRow[] {
-                        dataRow});
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(global::System.Data.DataRow[] dataRows) {
-            return this.Adapter.Update(dataRows);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(
-                    int Original_brojNaloga, 
-                    global::System.Nullable<global::System.DateTime> Original_Datum, 
-                    string Original_imePrezime, 
-                    string Original_Kontakt, 
-                    string Original_eMail, 
-                    string Original_Uredjaj, 
-                    string Original_Proizvodjac, 
-                    string Original_Model, 
-                    string Original_serijskiBroj, 
-                    string Original_Oprema, 
-                    string Original_opisKvara, 
-                    string Original_Izvestaj, 
-                    global::System.Nullable<double> Original_cenaDelova, 
-                    global::System.Nullable<double> Original_cenaServis, 
-                    global::System.Nullable<double> Original_ukupnaCena, 
-                    string Original_Status, 
-                    global::System.Nullable<bool> Original_naCekanju, 
-                    global::System.Nullable<bool> Original_Zavrseno, 
-                    global::System.Nullable<bool> Original_korisnikOdustao, 
-                    global::System.Nullable<bool> Original_servisOdustao, 
-                    global::System.Nullable<bool> Original_korisnikOdbioPlacanje, 
-                    string Original_Napomena) {
-            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_brojNaloga));
-            if ((Original_Datum.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[2].Value = ((System.DateTime)(Original_Datum.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[2].Value = global::System.DBNull.Value;
-            }
-            if ((Original_imePrezime == null)) {
-                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[4].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[4].Value = ((string)(Original_imePrezime));
-            }
-            if ((Original_Kontakt == null)) {
-                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[6].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[6].Value = ((string)(Original_Kontakt));
-            }
-            if ((Original_eMail == null)) {
-                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[8].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[8].Value = ((string)(Original_eMail));
-            }
-            if ((Original_Uredjaj == null)) {
-                this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[10].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[10].Value = ((string)(Original_Uredjaj));
-            }
-            if ((Original_Proizvodjac == null)) {
-                this.Adapter.DeleteCommand.Parameters[11].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[12].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[11].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[12].Value = ((string)(Original_Proizvodjac));
-            }
-            if ((Original_Model == null)) {
-                this.Adapter.DeleteCommand.Parameters[13].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[14].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[13].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[14].Value = ((string)(Original_Model));
-            }
-            if ((Original_serijskiBroj == null)) {
-                this.Adapter.DeleteCommand.Parameters[15].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[16].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[15].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[16].Value = ((string)(Original_serijskiBroj));
-            }
-            if ((Original_Oprema == null)) {
-                this.Adapter.DeleteCommand.Parameters[17].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[18].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[17].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[18].Value = ((string)(Original_Oprema));
-            }
-            if ((Original_opisKvara == null)) {
-                this.Adapter.DeleteCommand.Parameters[19].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[20].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[19].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[20].Value = ((string)(Original_opisKvara));
-            }
-            if ((Original_Izvestaj == null)) {
-                this.Adapter.DeleteCommand.Parameters[21].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[22].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[21].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[22].Value = ((string)(Original_Izvestaj));
-            }
-            if ((Original_cenaDelova.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[23].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[24].Value = ((double)(Original_cenaDelova.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[23].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[24].Value = global::System.DBNull.Value;
-            }
-            if ((Original_cenaServis.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[25].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[26].Value = ((double)(Original_cenaServis.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[25].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[26].Value = global::System.DBNull.Value;
-            }
-            if ((Original_ukupnaCena.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[27].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[28].Value = ((double)(Original_ukupnaCena.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[27].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[28].Value = global::System.DBNull.Value;
-            }
-            if ((Original_Status == null)) {
-                this.Adapter.DeleteCommand.Parameters[29].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[30].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[29].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[30].Value = ((string)(Original_Status));
-            }
-            if ((Original_naCekanju.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[31].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[32].Value = ((bool)(Original_naCekanju.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[31].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[32].Value = global::System.DBNull.Value;
-            }
-            if ((Original_Zavrseno.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[33].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[34].Value = ((bool)(Original_Zavrseno.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[33].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[34].Value = global::System.DBNull.Value;
-            }
-            if ((Original_korisnikOdustao.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[35].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[36].Value = ((bool)(Original_korisnikOdustao.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[35].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[36].Value = global::System.DBNull.Value;
-            }
-            if ((Original_servisOdustao.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[37].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[38].Value = ((bool)(Original_servisOdustao.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[37].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[38].Value = global::System.DBNull.Value;
-            }
-            if ((Original_korisnikOdbioPlacanje.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[39].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[40].Value = ((bool)(Original_korisnikOdbioPlacanje.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[39].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[40].Value = global::System.DBNull.Value;
-            }
-            if ((Original_Napomena == null)) {
-                this.Adapter.DeleteCommand.Parameters[41].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[42].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[41].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[42].Value = ((string)(Original_Napomena));
-            }
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
-            if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.DeleteCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.DeleteCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.DeleteCommand.Connection.Close();
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(
-                    global::System.Nullable<global::System.DateTime> Datum, 
-                    string imePrezime, 
-                    string Kontakt, 
-                    string eMail, 
-                    string Uredjaj, 
-                    string Proizvodjac, 
-                    string Model, 
-                    string serijskiBroj, 
-                    string Oprema, 
-                    string opisKvara, 
-                    string Izvestaj, 
-                    global::System.Nullable<double> cenaDelova, 
-                    global::System.Nullable<double> cenaServis, 
-                    global::System.Nullable<double> ukupnaCena, 
-                    string Status, 
-                    global::System.Nullable<bool> naCekanju, 
-                    global::System.Nullable<bool> Zavrseno, 
-                    global::System.Nullable<bool> korisnikOdustao, 
-                    global::System.Nullable<bool> servisOdustao, 
-                    global::System.Nullable<bool> korisnikOdbioPlacanje, 
-                    string Napomena, 
-                    int brojNaloga) {
-            if ((Datum.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[0].Value = ((System.DateTime)(Datum.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
-            }
-            if ((imePrezime == null)) {
-                this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(imePrezime));
-            }
-            if ((Kontakt == null)) {
-                this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(Kontakt));
-            }
-            if ((eMail == null)) {
-                this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(eMail));
-            }
-            if ((Uredjaj == null)) {
-                this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(Uredjaj));
-            }
-            if ((Proizvodjac == null)) {
-                this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[5].Value = ((string)(Proizvodjac));
-            }
-            if ((Model == null)) {
-                this.Adapter.InsertCommand.Parameters[6].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[6].Value = ((string)(Model));
-            }
-            if ((serijskiBroj == null)) {
-                this.Adapter.InsertCommand.Parameters[7].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[7].Value = ((string)(serijskiBroj));
-            }
-            if ((Oprema == null)) {
-                this.Adapter.InsertCommand.Parameters[8].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[8].Value = ((string)(Oprema));
-            }
-            if ((opisKvara == null)) {
-                this.Adapter.InsertCommand.Parameters[9].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[9].Value = ((string)(opisKvara));
-            }
-            if ((Izvestaj == null)) {
-                this.Adapter.InsertCommand.Parameters[10].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[10].Value = ((string)(Izvestaj));
-            }
-            if ((cenaDelova.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[11].Value = ((double)(cenaDelova.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[11].Value = global::System.DBNull.Value;
-            }
-            if ((cenaServis.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[12].Value = ((double)(cenaServis.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[12].Value = global::System.DBNull.Value;
-            }
-            if ((ukupnaCena.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[13].Value = ((double)(ukupnaCena.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[13].Value = global::System.DBNull.Value;
-            }
-            if ((Status == null)) {
-                this.Adapter.InsertCommand.Parameters[14].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[14].Value = ((string)(Status));
-            }
-            if ((naCekanju.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[15].Value = ((bool)(naCekanju.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[15].Value = global::System.DBNull.Value;
-            }
-            if ((Zavrseno.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[16].Value = ((bool)(Zavrseno.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[16].Value = global::System.DBNull.Value;
-            }
-            if ((korisnikOdustao.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[17].Value = ((bool)(korisnikOdustao.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[17].Value = global::System.DBNull.Value;
-            }
-            if ((servisOdustao.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[18].Value = ((bool)(servisOdustao.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[18].Value = global::System.DBNull.Value;
-            }
-            if ((korisnikOdbioPlacanje.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[19].Value = ((bool)(korisnikOdbioPlacanje.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[19].Value = global::System.DBNull.Value;
-            }
-            if ((Napomena == null)) {
-                this.Adapter.InsertCommand.Parameters[20].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[20].Value = ((string)(Napomena));
-            }
-            this.Adapter.InsertCommand.Parameters[21].Value = ((int)(brojNaloga));
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
-            if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.InsertCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.InsertCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.InsertCommand.Connection.Close();
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(
-                    int brojNaloga, 
-                    global::System.Nullable<global::System.DateTime> Datum, 
-                    string imePrezime, 
-                    string Kontakt, 
-                    string eMail, 
-                    string Uredjaj, 
-                    string Proizvodjac, 
-                    string Model, 
-                    string serijskiBroj, 
-                    string Oprema, 
-                    string opisKvara, 
-                    string Izvestaj, 
-                    global::System.Nullable<double> cenaDelova, 
-                    global::System.Nullable<double> cenaServis, 
-                    global::System.Nullable<double> ukupnaCena, 
-                    string Status, 
-                    global::System.Nullable<bool> naCekanju, 
-                    global::System.Nullable<bool> Zavrseno, 
-                    global::System.Nullable<bool> korisnikOdustao, 
-                    global::System.Nullable<bool> servisOdustao, 
-                    global::System.Nullable<bool> korisnikOdbioPlacanje, 
-                    string Napomena, 
-                    int Original_brojNaloga, 
-                    global::System.Nullable<global::System.DateTime> Original_Datum, 
-                    string Original_imePrezime, 
-                    string Original_Kontakt, 
-                    string Original_eMail, 
-                    string Original_Uredjaj, 
-                    string Original_Proizvodjac, 
-                    string Original_Model, 
-                    string Original_serijskiBroj, 
-                    string Original_Oprema, 
-                    string Original_opisKvara, 
-                    string Original_Izvestaj, 
-                    global::System.Nullable<double> Original_cenaDelova, 
-                    global::System.Nullable<double> Original_cenaServis, 
-                    global::System.Nullable<double> Original_ukupnaCena, 
-                    string Original_Status, 
-                    global::System.Nullable<bool> Original_naCekanju, 
-                    global::System.Nullable<bool> Original_Zavrseno, 
-                    global::System.Nullable<bool> Original_korisnikOdustao, 
-                    global::System.Nullable<bool> Original_servisOdustao, 
-                    global::System.Nullable<bool> Original_korisnikOdbioPlacanje, 
-                    string Original_Napomena) {
-            this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(brojNaloga));
-            if ((Datum.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[1].Value = ((System.DateTime)(Datum.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
-            }
-            if ((imePrezime == null)) {
-                this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(imePrezime));
-            }
-            if ((Kontakt == null)) {
-                this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(Kontakt));
-            }
-            if ((eMail == null)) {
-                this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(eMail));
-            }
-            if ((Uredjaj == null)) {
-                this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(Uredjaj));
-            }
-            if ((Proizvodjac == null)) {
-                this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(Proizvodjac));
-            }
-            if ((Model == null)) {
-                this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(Model));
-            }
-            if ((serijskiBroj == null)) {
-                this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(serijskiBroj));
-            }
-            if ((Oprema == null)) {
-                this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(Oprema));
-            }
-            if ((opisKvara == null)) {
-                this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(opisKvara));
-            }
-            if ((Izvestaj == null)) {
-                this.Adapter.UpdateCommand.Parameters[11].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((string)(Izvestaj));
-            }
-            if ((cenaDelova.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((double)(cenaDelova.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[12].Value = global::System.DBNull.Value;
-            }
-            if ((cenaServis.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((double)(cenaServis.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[13].Value = global::System.DBNull.Value;
-            }
-            if ((ukupnaCena.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((double)(ukupnaCena.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[14].Value = global::System.DBNull.Value;
-            }
-            if ((Status == null)) {
-                this.Adapter.UpdateCommand.Parameters[15].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((string)(Status));
-            }
-            if ((naCekanju.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[16].Value = ((bool)(naCekanju.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[16].Value = global::System.DBNull.Value;
-            }
-            if ((Zavrseno.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[17].Value = ((bool)(Zavrseno.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[17].Value = global::System.DBNull.Value;
-            }
-            if ((korisnikOdustao.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[18].Value = ((bool)(korisnikOdustao.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[18].Value = global::System.DBNull.Value;
-            }
-            if ((servisOdustao.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[19].Value = ((bool)(servisOdustao.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[19].Value = global::System.DBNull.Value;
-            }
-            if ((korisnikOdbioPlacanje.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[20].Value = ((bool)(korisnikOdbioPlacanje.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[20].Value = global::System.DBNull.Value;
-            }
-            if ((Napomena == null)) {
-                this.Adapter.UpdateCommand.Parameters[21].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[21].Value = ((string)(Napomena));
-            }
-            this.Adapter.UpdateCommand.Parameters[22].Value = ((int)(Original_brojNaloga));
-            if ((Original_Datum.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[23].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[24].Value = ((System.DateTime)(Original_Datum.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[23].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[24].Value = global::System.DBNull.Value;
-            }
-            if ((Original_imePrezime == null)) {
-                this.Adapter.UpdateCommand.Parameters[25].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[26].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[25].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[26].Value = ((string)(Original_imePrezime));
-            }
-            if ((Original_Kontakt == null)) {
-                this.Adapter.UpdateCommand.Parameters[27].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[28].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[27].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[28].Value = ((string)(Original_Kontakt));
-            }
-            if ((Original_eMail == null)) {
-                this.Adapter.UpdateCommand.Parameters[29].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[30].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[29].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[30].Value = ((string)(Original_eMail));
-            }
-            if ((Original_Uredjaj == null)) {
-                this.Adapter.UpdateCommand.Parameters[31].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[32].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[31].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[32].Value = ((string)(Original_Uredjaj));
-            }
-            if ((Original_Proizvodjac == null)) {
-                this.Adapter.UpdateCommand.Parameters[33].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[34].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[33].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[34].Value = ((string)(Original_Proizvodjac));
-            }
-            if ((Original_Model == null)) {
-                this.Adapter.UpdateCommand.Parameters[35].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[36].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[35].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[36].Value = ((string)(Original_Model));
-            }
-            if ((Original_serijskiBroj == null)) {
-                this.Adapter.UpdateCommand.Parameters[37].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[38].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[37].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[38].Value = ((string)(Original_serijskiBroj));
-            }
-            if ((Original_Oprema == null)) {
-                this.Adapter.UpdateCommand.Parameters[39].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[40].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[39].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[40].Value = ((string)(Original_Oprema));
-            }
-            if ((Original_opisKvara == null)) {
-                this.Adapter.UpdateCommand.Parameters[41].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[42].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[41].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[42].Value = ((string)(Original_opisKvara));
-            }
-            if ((Original_Izvestaj == null)) {
-                this.Adapter.UpdateCommand.Parameters[43].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[44].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[43].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[44].Value = ((string)(Original_Izvestaj));
-            }
-            if ((Original_cenaDelova.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[45].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[46].Value = ((double)(Original_cenaDelova.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[45].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[46].Value = global::System.DBNull.Value;
-            }
-            if ((Original_cenaServis.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[47].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[48].Value = ((double)(Original_cenaServis.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[47].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[48].Value = global::System.DBNull.Value;
-            }
-            if ((Original_ukupnaCena.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[49].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[50].Value = ((double)(Original_ukupnaCena.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[49].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[50].Value = global::System.DBNull.Value;
-            }
-            if ((Original_Status == null)) {
-                this.Adapter.UpdateCommand.Parameters[51].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[52].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[51].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[52].Value = ((string)(Original_Status));
-            }
-            if ((Original_naCekanju.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[53].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[54].Value = ((bool)(Original_naCekanju.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[53].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[54].Value = global::System.DBNull.Value;
-            }
-            if ((Original_Zavrseno.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[55].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[56].Value = ((bool)(Original_Zavrseno.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[55].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[56].Value = global::System.DBNull.Value;
-            }
-            if ((Original_korisnikOdustao.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[57].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[58].Value = ((bool)(Original_korisnikOdustao.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[57].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[58].Value = global::System.DBNull.Value;
-            }
-            if ((Original_servisOdustao.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[59].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[60].Value = ((bool)(Original_servisOdustao.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[59].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[60].Value = global::System.DBNull.Value;
-            }
-            if ((Original_korisnikOdbioPlacanje.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[61].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[62].Value = ((bool)(Original_korisnikOdbioPlacanje.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[61].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[62].Value = global::System.DBNull.Value;
-            }
-            if ((Original_Napomena == null)) {
-                this.Adapter.UpdateCommand.Parameters[63].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[64].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[63].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[64].Value = ((string)(Original_Napomena));
-            }
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
-            if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.UpdateCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.UpdateCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.UpdateCommand.Connection.Close();
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(
-                    global::System.Nullable<global::System.DateTime> Datum, 
-                    string imePrezime, 
-                    string Kontakt, 
-                    string eMail, 
-                    string Uredjaj, 
-                    string Proizvodjac, 
-                    string Model, 
-                    string serijskiBroj, 
-                    string Oprema, 
-                    string opisKvara, 
-                    string Izvestaj, 
-                    global::System.Nullable<double> cenaDelova, 
-                    global::System.Nullable<double> cenaServis, 
-                    global::System.Nullable<double> ukupnaCena, 
-                    string Status, 
-                    global::System.Nullable<bool> naCekanju, 
-                    global::System.Nullable<bool> Zavrseno, 
-                    global::System.Nullable<bool> korisnikOdustao, 
-                    global::System.Nullable<bool> servisOdustao, 
-                    global::System.Nullable<bool> korisnikOdbioPlacanje, 
-                    string Napomena, 
-                    int Original_brojNaloga, 
-                    global::System.Nullable<global::System.DateTime> Original_Datum, 
-                    string Original_imePrezime, 
-                    string Original_Kontakt, 
-                    string Original_eMail, 
-                    string Original_Uredjaj, 
-                    string Original_Proizvodjac, 
-                    string Original_Model, 
-                    string Original_serijskiBroj, 
-                    string Original_Oprema, 
-                    string Original_opisKvara, 
-                    string Original_Izvestaj, 
-                    global::System.Nullable<double> Original_cenaDelova, 
-                    global::System.Nullable<double> Original_cenaServis, 
-                    global::System.Nullable<double> Original_ukupnaCena, 
-                    string Original_Status, 
-                    global::System.Nullable<bool> Original_naCekanju, 
-                    global::System.Nullable<bool> Original_Zavrseno, 
-                    global::System.Nullable<bool> Original_korisnikOdustao, 
-                    global::System.Nullable<bool> Original_servisOdustao, 
-                    global::System.Nullable<bool> Original_korisnikOdbioPlacanje, 
-                    string Original_Napomena) {
-            return this.Update(Original_brojNaloga, Datum, imePrezime, Kontakt, eMail, Uredjaj, Proizvodjac, Model, serijskiBroj, Oprema, opisKvara, Izvestaj, cenaDelova, cenaServis, ukupnaCena, Status, naCekanju, Zavrseno, korisnikOdustao, servisOdustao, korisnikOdbioPlacanje, Napomena, Original_brojNaloga, Original_Datum, Original_imePrezime, Original_Kontakt, Original_eMail, Original_Uredjaj, Original_Proizvodjac, Original_Model, Original_serijskiBroj, Original_Oprema, Original_opisKvara, Original_Izvestaj, Original_cenaDelova, Original_cenaServis, Original_ukupnaCena, Original_Status, Original_naCekanju, Original_Zavrseno, Original_korisnikOdustao, Original_servisOdustao, Original_korisnikOdbioPlacanje, Original_Napomena);
-        }
-    }
-    
-    /// <summary>
-    ///Represents the connection and commands used to retrieve and save data.
-    ///</summary>
-    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
-    [global::System.ComponentModel.ToolboxItem(true)]
-    [global::System.ComponentModel.DataObjectAttribute(true)]
-    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
-        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
-    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
     public partial class OtpremniceTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.SqlClient.SqlDataAdapter _adapter;
@@ -15042,6 +13618,1428 @@ WHERE  (Klijent LIKE N'%' + @Klijent + N'%') OR
     }
     
     /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class NaloziPTableAdapter : global::System.ComponentModel.Component {
+        
+        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
+        
+        private global::System.Data.SqlClient.SqlConnection _connection;
+        
+        private global::System.Data.SqlClient.SqlTransaction _transaction;
+        
+        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public NaloziPTableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::System.Data.SqlClient.SqlConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::System.Data.SqlClient.SqlTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "NaloziP";
+            tableMapping.ColumnMappings.Add("brojNaloga", "brojNaloga");
+            tableMapping.ColumnMappings.Add("Datum", "Datum");
+            tableMapping.ColumnMappings.Add("imePrezime", "imePrezime");
+            tableMapping.ColumnMappings.Add("Kontakt", "Kontakt");
+            tableMapping.ColumnMappings.Add("eMail", "eMail");
+            tableMapping.ColumnMappings.Add("Uredjaj", "Uredjaj");
+            tableMapping.ColumnMappings.Add("Proizvodjac", "Proizvodjac");
+            tableMapping.ColumnMappings.Add("Model", "Model");
+            tableMapping.ColumnMappings.Add("serijskiBroj", "serijskiBroj");
+            tableMapping.ColumnMappings.Add("Oprema", "Oprema");
+            tableMapping.ColumnMappings.Add("opisKvara", "opisKvara");
+            tableMapping.ColumnMappings.Add("Izvestaj", "Izvestaj");
+            tableMapping.ColumnMappings.Add("cenaDelova", "cenaDelova");
+            tableMapping.ColumnMappings.Add("cenaServis", "cenaServis");
+            tableMapping.ColumnMappings.Add("ukupnaCena", "ukupnaCena");
+            tableMapping.ColumnMappings.Add("Status", "Status");
+            tableMapping.ColumnMappings.Add("naCekanju", "naCekanju");
+            tableMapping.ColumnMappings.Add("Zavrseno", "Zavrseno");
+            tableMapping.ColumnMappings.Add("korisnikOdustao", "korisnikOdustao");
+            tableMapping.ColumnMappings.Add("servisOdustao", "servisOdustao");
+            tableMapping.ColumnMappings.Add("korisnikOdbioPlacanje", "korisnikOdbioPlacanje");
+            tableMapping.ColumnMappings.Add("Napomena", "Napomena");
+            this._adapter.TableMappings.Add(tableMapping);
+            this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.DeleteCommand.Connection = this.Connection;
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[NaloziP] WHERE (([brojNaloga] = @Original_brojNaloga) AND ((@I" +
+                "sNull_Datum = 1 AND [Datum] IS NULL) OR ([Datum] = @Original_Datum)) AND ((@IsNu" +
+                "ll_imePrezime = 1 AND [imePrezime] IS NULL) OR ([imePrezime] = @Original_imePrez" +
+                "ime)) AND ((@IsNull_Kontakt = 1 AND [Kontakt] IS NULL) OR ([Kontakt] = @Original" +
+                "_Kontakt)) AND ((@IsNull_eMail = 1 AND [eMail] IS NULL) OR ([eMail] = @Original_" +
+                "eMail)) AND ((@IsNull_Uredjaj = 1 AND [Uredjaj] IS NULL) OR ([Uredjaj] = @Origin" +
+                "al_Uredjaj)) AND ((@IsNull_Proizvodjac = 1 AND [Proizvodjac] IS NULL) OR ([Proiz" +
+                "vodjac] = @Original_Proizvodjac)) AND ((@IsNull_Model = 1 AND [Model] IS NULL) O" +
+                "R ([Model] = @Original_Model)) AND ((@IsNull_serijskiBroj = 1 AND [serijskiBroj]" +
+                " IS NULL) OR ([serijskiBroj] = @Original_serijskiBroj)) AND ((@IsNull_Oprema = 1" +
+                " AND [Oprema] IS NULL) OR ([Oprema] = @Original_Oprema)) AND ((@IsNull_opisKvara" +
+                " = 1 AND [opisKvara] IS NULL) OR ([opisKvara] = @Original_opisKvara)) AND ((@IsN" +
+                "ull_Izvestaj = 1 AND [Izvestaj] IS NULL) OR ([Izvestaj] = @Original_Izvestaj)) A" +
+                "ND ((@IsNull_cenaDelova = 1 AND [cenaDelova] IS NULL) OR ([cenaDelova] = @Origin" +
+                "al_cenaDelova)) AND ((@IsNull_cenaServis = 1 AND [cenaServis] IS NULL) OR ([cena" +
+                "Servis] = @Original_cenaServis)) AND ((@IsNull_ukupnaCena = 1 AND [ukupnaCena] I" +
+                "S NULL) OR ([ukupnaCena] = @Original_ukupnaCena)) AND ((@IsNull_Status = 1 AND [" +
+                "Status] IS NULL) OR ([Status] = @Original_Status)) AND ((@IsNull_naCekanju = 1 A" +
+                "ND [naCekanju] IS NULL) OR ([naCekanju] = @Original_naCekanju)) AND ((@IsNull_Za" +
+                "vrseno = 1 AND [Zavrseno] IS NULL) OR ([Zavrseno] = @Original_Zavrseno)) AND ((@" +
+                "IsNull_korisnikOdustao = 1 AND [korisnikOdustao] IS NULL) OR ([korisnikOdustao] " +
+                "= @Original_korisnikOdustao)) AND ((@IsNull_servisOdustao = 1 AND [servisOdustao" +
+                "] IS NULL) OR ([servisOdustao] = @Original_servisOdustao)) AND ((@IsNull_korisni" +
+                "kOdbioPlacanje = 1 AND [korisnikOdbioPlacanje] IS NULL) OR ([korisnikOdbioPlacan" +
+                "je] = @Original_korisnikOdbioPlacanje)) AND ((@IsNull_Napomena = 1 AND [Napomena" +
+                "] IS NULL) OR ([Napomena] = @Original_Napomena)))";
+            this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_brojNaloga", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "brojNaloga", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Datum", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Datum", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Datum", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Datum", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_imePrezime", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "imePrezime", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_imePrezime", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "imePrezime", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Kontakt", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Kontakt", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Kontakt", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Kontakt", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_eMail", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "eMail", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_eMail", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "eMail", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Uredjaj", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Uredjaj", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Uredjaj", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Uredjaj", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Proizvodjac", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Proizvodjac", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Proizvodjac", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Proizvodjac", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Model", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Model", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Model", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Model", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_serijskiBroj", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "serijskiBroj", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_serijskiBroj", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "serijskiBroj", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Oprema", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Oprema", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Oprema", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Oprema", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_opisKvara", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "opisKvara", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_opisKvara", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "opisKvara", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Izvestaj", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Izvestaj", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Izvestaj", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Izvestaj", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_cenaDelova", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "cenaDelova", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_cenaDelova", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "cenaDelova", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_cenaServis", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "cenaServis", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_cenaServis", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "cenaServis", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_ukupnaCena", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ukupnaCena", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ukupnaCena", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ukupnaCena", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Status", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Status", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Status", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Status", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_naCekanju", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "naCekanju", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_naCekanju", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "naCekanju", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Zavrseno", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Zavrseno", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Zavrseno", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Zavrseno", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_korisnikOdustao", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "korisnikOdustao", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_korisnikOdustao", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "korisnikOdustao", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_servisOdustao", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "servisOdustao", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_servisOdustao", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "servisOdustao", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_korisnikOdbioPlacanje", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "korisnikOdbioPlacanje", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_korisnikOdbioPlacanje", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "korisnikOdbioPlacanje", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Napomena", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Napomena", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Napomena", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Napomena", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.InsertCommand.Connection = this.Connection;
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[NaloziP] ([brojNaloga], [Datum], [imePrezime], [Kontakt], [eMail], [Uredjaj], [Proizvodjac], [Model], [serijskiBroj], [Oprema], [opisKvara], [Izvestaj], [cenaDelova], [cenaServis], [ukupnaCena], [Status], [naCekanju], [Zavrseno], [korisnikOdustao], [servisOdustao], [korisnikOdbioPlacanje], [Napomena]) VALUES (@brojNaloga, @Datum, @imePrezime, @Kontakt, @eMail, @Uredjaj, @Proizvodjac, @Model, @serijskiBroj, @Oprema, @opisKvara, @Izvestaj, @cenaDelova, @cenaServis, @ukupnaCena, @Status, @naCekanju, @Zavrseno, @korisnikOdustao, @servisOdustao, @korisnikOdbioPlacanje, @Napomena);
+SELECT brojNaloga, Datum, imePrezime, Kontakt, eMail, Uredjaj, Proizvodjac, Model, serijskiBroj, Oprema, opisKvara, Izvestaj, cenaDelova, cenaServis, ukupnaCena, Status, naCekanju, Zavrseno, korisnikOdustao, servisOdustao, korisnikOdbioPlacanje, Napomena FROM NaloziP WHERE (brojNaloga = @brojNaloga)";
+            this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@brojNaloga", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "brojNaloga", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Datum", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Datum", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@imePrezime", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "imePrezime", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Kontakt", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Kontakt", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@eMail", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "eMail", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Uredjaj", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Uredjaj", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Proizvodjac", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Proizvodjac", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Model", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Model", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@serijskiBroj", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "serijskiBroj", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Oprema", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Oprema", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@opisKvara", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "opisKvara", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Izvestaj", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Izvestaj", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@cenaDelova", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "cenaDelova", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@cenaServis", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "cenaServis", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ukupnaCena", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ukupnaCena", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Status", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Status", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@naCekanju", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "naCekanju", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Zavrseno", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Zavrseno", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@korisnikOdustao", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "korisnikOdustao", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@servisOdustao", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "servisOdustao", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@korisnikOdbioPlacanje", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "korisnikOdbioPlacanje", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Napomena", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Napomena", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.UpdateCommand.Connection = this.Connection;
+            this._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[NaloziP] SET [brojNaloga] = @brojNaloga, [Datum] = @Datum, [imePrez" +
+                "ime] = @imePrezime, [Kontakt] = @Kontakt, [eMail] = @eMail, [Uredjaj] = @Uredjaj" +
+                ", [Proizvodjac] = @Proizvodjac, [Model] = @Model, [serijskiBroj] = @serijskiBroj" +
+                ", [Oprema] = @Oprema, [opisKvara] = @opisKvara, [Izvestaj] = @Izvestaj, [cenaDel" +
+                "ova] = @cenaDelova, [cenaServis] = @cenaServis, [ukupnaCena] = @ukupnaCena, [Sta" +
+                "tus] = @Status, [naCekanju] = @naCekanju, [Zavrseno] = @Zavrseno, [korisnikOdust" +
+                "ao] = @korisnikOdustao, [servisOdustao] = @servisOdustao, [korisnikOdbioPlacanje" +
+                "] = @korisnikOdbioPlacanje, [Napomena] = @Napomena WHERE (([brojNaloga] = @Origi" +
+                "nal_brojNaloga) AND ((@IsNull_Datum = 1 AND [Datum] IS NULL) OR ([Datum] = @Orig" +
+                "inal_Datum)) AND ((@IsNull_imePrezime = 1 AND [imePrezime] IS NULL) OR ([imePrez" +
+                "ime] = @Original_imePrezime)) AND ((@IsNull_Kontakt = 1 AND [Kontakt] IS NULL) O" +
+                "R ([Kontakt] = @Original_Kontakt)) AND ((@IsNull_eMail = 1 AND [eMail] IS NULL) " +
+                "OR ([eMail] = @Original_eMail)) AND ((@IsNull_Uredjaj = 1 AND [Uredjaj] IS NULL)" +
+                " OR ([Uredjaj] = @Original_Uredjaj)) AND ((@IsNull_Proizvodjac = 1 AND [Proizvod" +
+                "jac] IS NULL) OR ([Proizvodjac] = @Original_Proizvodjac)) AND ((@IsNull_Model = " +
+                "1 AND [Model] IS NULL) OR ([Model] = @Original_Model)) AND ((@IsNull_serijskiBro" +
+                "j = 1 AND [serijskiBroj] IS NULL) OR ([serijskiBroj] = @Original_serijskiBroj)) " +
+                "AND ((@IsNull_Oprema = 1 AND [Oprema] IS NULL) OR ([Oprema] = @Original_Oprema))" +
+                " AND ((@IsNull_opisKvara = 1 AND [opisKvara] IS NULL) OR ([opisKvara] = @Origina" +
+                "l_opisKvara)) AND ((@IsNull_Izvestaj = 1 AND [Izvestaj] IS NULL) OR ([Izvestaj] " +
+                "= @Original_Izvestaj)) AND ((@IsNull_cenaDelova = 1 AND [cenaDelova] IS NULL) OR" +
+                " ([cenaDelova] = @Original_cenaDelova)) AND ((@IsNull_cenaServis = 1 AND [cenaSe" +
+                "rvis] IS NULL) OR ([cenaServis] = @Original_cenaServis)) AND ((@IsNull_ukupnaCen" +
+                "a = 1 AND [ukupnaCena] IS NULL) OR ([ukupnaCena] = @Original_ukupnaCena)) AND ((" +
+                "@IsNull_Status = 1 AND [Status] IS NULL) OR ([Status] = @Original_Status)) AND (" +
+                "(@IsNull_naCekanju = 1 AND [naCekanju] IS NULL) OR ([naCekanju] = @Original_naCe" +
+                "kanju)) AND ((@IsNull_Zavrseno = 1 AND [Zavrseno] IS NULL) OR ([Zavrseno] = @Ori" +
+                "ginal_Zavrseno)) AND ((@IsNull_korisnikOdustao = 1 AND [korisnikOdustao] IS NULL" +
+                ") OR ([korisnikOdustao] = @Original_korisnikOdustao)) AND ((@IsNull_servisOdusta" +
+                "o = 1 AND [servisOdustao] IS NULL) OR ([servisOdustao] = @Original_servisOdustao" +
+                ")) AND ((@IsNull_korisnikOdbioPlacanje = 1 AND [korisnikOdbioPlacanje] IS NULL) " +
+                "OR ([korisnikOdbioPlacanje] = @Original_korisnikOdbioPlacanje)) AND ((@IsNull_Na" +
+                "pomena = 1 AND [Napomena] IS NULL) OR ([Napomena] = @Original_Napomena)));\r\nSELE" +
+                "CT brojNaloga, Datum, imePrezime, Kontakt, eMail, Uredjaj, Proizvodjac, Model, s" +
+                "erijskiBroj, Oprema, opisKvara, Izvestaj, cenaDelova, cenaServis, ukupnaCena, St" +
+                "atus, naCekanju, Zavrseno, korisnikOdustao, servisOdustao, korisnikOdbioPlacanje" +
+                ", Napomena FROM NaloziP WHERE (brojNaloga = @brojNaloga)";
+            this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@brojNaloga", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "brojNaloga", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Datum", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Datum", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@imePrezime", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "imePrezime", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Kontakt", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Kontakt", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@eMail", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "eMail", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Uredjaj", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Uredjaj", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Proizvodjac", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Proizvodjac", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Model", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Model", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@serijskiBroj", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "serijskiBroj", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Oprema", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Oprema", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@opisKvara", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "opisKvara", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Izvestaj", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Izvestaj", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@cenaDelova", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "cenaDelova", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@cenaServis", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "cenaServis", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ukupnaCena", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ukupnaCena", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Status", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Status", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@naCekanju", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "naCekanju", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Zavrseno", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Zavrseno", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@korisnikOdustao", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "korisnikOdustao", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@servisOdustao", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "servisOdustao", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@korisnikOdbioPlacanje", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "korisnikOdbioPlacanje", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Napomena", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Napomena", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_brojNaloga", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "brojNaloga", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Datum", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Datum", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Datum", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Datum", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_imePrezime", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "imePrezime", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_imePrezime", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "imePrezime", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Kontakt", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Kontakt", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Kontakt", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Kontakt", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_eMail", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "eMail", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_eMail", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "eMail", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Uredjaj", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Uredjaj", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Uredjaj", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Uredjaj", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Proizvodjac", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Proizvodjac", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Proizvodjac", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Proizvodjac", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Model", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Model", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Model", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Model", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_serijskiBroj", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "serijskiBroj", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_serijskiBroj", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "serijskiBroj", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Oprema", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Oprema", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Oprema", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Oprema", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_opisKvara", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "opisKvara", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_opisKvara", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "opisKvara", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Izvestaj", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Izvestaj", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Izvestaj", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Izvestaj", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_cenaDelova", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "cenaDelova", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_cenaDelova", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "cenaDelova", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_cenaServis", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "cenaServis", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_cenaServis", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "cenaServis", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_ukupnaCena", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ukupnaCena", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ukupnaCena", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ukupnaCena", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Status", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Status", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Status", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Status", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_naCekanju", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "naCekanju", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_naCekanju", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "naCekanju", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Zavrseno", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Zavrseno", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Zavrseno", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Zavrseno", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_korisnikOdustao", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "korisnikOdustao", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_korisnikOdustao", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "korisnikOdustao", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_servisOdustao", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "servisOdustao", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_servisOdustao", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "servisOdustao", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_korisnikOdbioPlacanje", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "korisnikOdbioPlacanje", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_korisnikOdbioPlacanje", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "korisnikOdbioPlacanje", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Napomena", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Napomena", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Napomena", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Napomena", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::System.Data.SqlClient.SqlConnection();
+            this._connection.ConnectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\dbSenaComp.md" +
+                "f;Integrated Security=True";
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[7];
+            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = @"SELECT brojNaloga, Datum, imePrezime, Kontakt, eMail, Uredjaj, Proizvodjac, Model, serijskiBroj, Oprema, opisKvara, Izvestaj, cenaDelova, cenaServis, ukupnaCena, Status, naCekanju, Zavrseno, korisnikOdustao, servisOdustao, korisnikOdbioPlacanje, Napomena FROM dbo.NaloziP";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = @"SELECT brojNaloga, Datum, imePrezime, Kontakt, eMail, Uredjaj, Proizvodjac, Model, serijskiBroj, Oprema, opisKvara, Izvestaj, cenaDelova, cenaServis, ukupnaCena, Status, naCekanju, Zavrseno, korisnikOdustao, servisOdustao, 
+                  korisnikOdbioPlacanje, Napomena
+FROM     NaloziP
+WHERE  (brojNaloga = @brojNaloga)";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@brojNaloga", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "brojNaloga", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[2].Connection = this.Connection;
+            this._commandCollection[2].CommandText = @"SELECT brojNaloga, Datum, imePrezime, Kontakt, eMail, Uredjaj, Proizvodjac, Model, serijskiBroj, Oprema, opisKvara, Izvestaj, cenaDelova, cenaServis, ukupnaCena, Status, naCekanju, Zavrseno, korisnikOdustao, servisOdustao, 
+                  korisnikOdbioPlacanje, Napomena
+FROM     NaloziP
+WHERE  (imePrezime LIKE N'%' + @imePrezime + N'%') OR
+                  (Kontakt LIKE N'%' + @Kontakt + N'%') OR
+                  (eMail LIKE N'%' + @eMail + N'%')";
+            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@imePrezime", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "imePrezime", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Kontakt", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "Kontakt", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@eMail", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "eMail", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[3].Connection = this.Connection;
+            this._commandCollection[3].CommandText = @"SELECT brojNaloga, Datum, imePrezime, Kontakt, eMail, Uredjaj, Proizvodjac, Model, serijskiBroj, Oprema, opisKvara, Izvestaj, cenaDelova, cenaServis, ukupnaCena, Status, naCekanju, Zavrseno, korisnikOdustao, servisOdustao, 
+                  korisnikOdbioPlacanje, Napomena
+FROM     NaloziP
+WHERE  (opisKvara LIKE N'%' + @opisKvara + N'%') OR
+                  (Izvestaj LIKE N'%' + @Izvestaj + N'%')";
+            this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@opisKvara", global::System.Data.SqlDbType.NVarChar, 500, global::System.Data.ParameterDirection.Input, 0, 0, "opisKvara", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Izvestaj", global::System.Data.SqlDbType.NVarChar, 500, global::System.Data.ParameterDirection.Input, 0, 0, "Izvestaj", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[4] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[4].Connection = this.Connection;
+            this._commandCollection[4].CommandText = @"SELECT brojNaloga, Datum, imePrezime, Kontakt, eMail, Uredjaj, Proizvodjac, Model, serijskiBroj, Oprema, opisKvara, Izvestaj, cenaDelova, cenaServis, ukupnaCena, Status, naCekanju, Zavrseno, korisnikOdustao, servisOdustao, 
+                  korisnikOdbioPlacanje, Napomena
+FROM     NaloziP
+WHERE  (Status = @Status)";
+            this._commandCollection[4].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Status", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "Status", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[5] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[5].Connection = this.Connection;
+            this._commandCollection[5].CommandText = @"SELECT brojNaloga, Datum, imePrezime, Kontakt, eMail, Uredjaj, Proizvodjac, Model, serijskiBroj, Oprema, opisKvara, Izvestaj, cenaDelova, cenaServis, ukupnaCena, Status, naCekanju, Zavrseno, korisnikOdustao, servisOdustao, 
+                  korisnikOdbioPlacanje, Napomena
+FROM     NaloziP
+WHERE  (Uredjaj LIKE N'%' + @Uredjaj + N'%') OR
+                  (Proizvodjac LIKE N'%' + @Proizvodjac + N'%') OR
+                  (Model LIKE N'%' + @Model + N'%') OR
+                  (serijskiBroj LIKE N'%' + @serijskiBroj + N'%')";
+            this._commandCollection[5].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Uredjaj", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "Uredjaj", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Proizvodjac", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "Proizvodjac", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Model", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "Model", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@serijskiBroj", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "serijskiBroj", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[6] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[6].Connection = this.Connection;
+            this._commandCollection[6].CommandText = @"SELECT brojNaloga, Datum, imePrezime, Kontakt, eMail, Uredjaj, Proizvodjac, Model, serijskiBroj, Oprema, opisKvara, Izvestaj, cenaDelova, cenaServis, ukupnaCena, Status, naCekanju, Zavrseno, korisnikOdustao, servisOdustao, korisnikOdbioPlacanje, Napomena
+
+FROM dbo.NaloziP
+
+WHERE  (imePrezime = @imePrezime)";
+            this._commandCollection[6].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@imePrezime", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "imePrezime", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(dbSenaCompDataSet.NaloziPDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual dbSenaCompDataSet.NaloziPDataTable GetData() {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            dbSenaCompDataSet.NaloziPDataTable dataTable = new dbSenaCompDataSet.NaloziPDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int qFilterBrojNaloga(dbSenaCompDataSet.NaloziPDataTable dataTable, int brojNaloga) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(brojNaloga));
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int qFilterKorisnik(dbSenaCompDataSet.NaloziPDataTable dataTable, string imePrezime, string Kontakt, string eMail) {
+            this.Adapter.SelectCommand = this.CommandCollection[2];
+            if ((imePrezime == null)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(imePrezime));
+            }
+            if ((Kontakt == null)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((string)(Kontakt));
+            }
+            if ((eMail == null)) {
+                this.Adapter.SelectCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[2].Value = ((string)(eMail));
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int qFilterKvar(dbSenaCompDataSet.NaloziPDataTable dataTable, string opisKvara, string Izvestaj) {
+            this.Adapter.SelectCommand = this.CommandCollection[3];
+            if ((opisKvara == null)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(opisKvara));
+            }
+            if ((Izvestaj == null)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((string)(Izvestaj));
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int qFilterStatus(dbSenaCompDataSet.NaloziPDataTable dataTable, string Status) {
+            this.Adapter.SelectCommand = this.CommandCollection[4];
+            if ((Status == null)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(Status));
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int qFilterUredjaj(dbSenaCompDataSet.NaloziPDataTable dataTable, string Uredjaj, string Proizvodjac, string Model, string serijskiBroj) {
+            this.Adapter.SelectCommand = this.CommandCollection[5];
+            if ((Uredjaj == null)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(Uredjaj));
+            }
+            if ((Proizvodjac == null)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((string)(Proizvodjac));
+            }
+            if ((Model == null)) {
+                this.Adapter.SelectCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[2].Value = ((string)(Model));
+            }
+            if ((serijskiBroj == null)) {
+                this.Adapter.SelectCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[3].Value = ((string)(serijskiBroj));
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int qImeNapomena(dbSenaCompDataSet.NaloziPDataTable dataTable, string imePrezime) {
+            this.Adapter.SelectCommand = this.CommandCollection[6];
+            if ((imePrezime == null)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(imePrezime));
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(dbSenaCompDataSet.NaloziPDataTable dataTable) {
+            return this.Adapter.Update(dataTable);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(dbSenaCompDataSet dataSet) {
+            return this.Adapter.Update(dataSet, "NaloziP");
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(global::System.Data.DataRow dataRow) {
+            return this.Adapter.Update(new global::System.Data.DataRow[] {
+                        dataRow});
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(global::System.Data.DataRow[] dataRows) {
+            return this.Adapter.Update(dataRows);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
+        public virtual int Delete(
+                    int Original_brojNaloga, 
+                    global::System.Nullable<global::System.DateTime> Original_Datum, 
+                    string Original_imePrezime, 
+                    string Original_Kontakt, 
+                    string Original_eMail, 
+                    string Original_Uredjaj, 
+                    string Original_Proizvodjac, 
+                    string Original_Model, 
+                    string Original_serijskiBroj, 
+                    string Original_Oprema, 
+                    string Original_opisKvara, 
+                    string Original_Izvestaj, 
+                    global::System.Nullable<double> Original_cenaDelova, 
+                    global::System.Nullable<double> Original_cenaServis, 
+                    global::System.Nullable<double> Original_ukupnaCena, 
+                    string Original_Status, 
+                    global::System.Nullable<bool> Original_naCekanju, 
+                    global::System.Nullable<bool> Original_Zavrseno, 
+                    global::System.Nullable<bool> Original_korisnikOdustao, 
+                    global::System.Nullable<bool> Original_servisOdustao, 
+                    global::System.Nullable<bool> Original_korisnikOdbioPlacanje, 
+                    string Original_Napomena) {
+            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_brojNaloga));
+            if ((Original_Datum.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[2].Value = ((System.DateTime)(Original_Datum.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            if ((Original_imePrezime == null)) {
+                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[4].Value = ((string)(Original_imePrezime));
+            }
+            if ((Original_Kontakt == null)) {
+                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[6].Value = ((string)(Original_Kontakt));
+            }
+            if ((Original_eMail == null)) {
+                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[8].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[8].Value = ((string)(Original_eMail));
+            }
+            if ((Original_Uredjaj == null)) {
+                this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[10].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[10].Value = ((string)(Original_Uredjaj));
+            }
+            if ((Original_Proizvodjac == null)) {
+                this.Adapter.DeleteCommand.Parameters[11].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[12].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[11].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[12].Value = ((string)(Original_Proizvodjac));
+            }
+            if ((Original_Model == null)) {
+                this.Adapter.DeleteCommand.Parameters[13].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[14].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[13].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[14].Value = ((string)(Original_Model));
+            }
+            if ((Original_serijskiBroj == null)) {
+                this.Adapter.DeleteCommand.Parameters[15].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[16].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[15].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[16].Value = ((string)(Original_serijskiBroj));
+            }
+            if ((Original_Oprema == null)) {
+                this.Adapter.DeleteCommand.Parameters[17].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[18].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[17].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[18].Value = ((string)(Original_Oprema));
+            }
+            if ((Original_opisKvara == null)) {
+                this.Adapter.DeleteCommand.Parameters[19].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[20].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[19].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[20].Value = ((string)(Original_opisKvara));
+            }
+            if ((Original_Izvestaj == null)) {
+                this.Adapter.DeleteCommand.Parameters[21].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[22].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[21].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[22].Value = ((string)(Original_Izvestaj));
+            }
+            if ((Original_cenaDelova.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[23].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[24].Value = ((double)(Original_cenaDelova.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[23].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[24].Value = global::System.DBNull.Value;
+            }
+            if ((Original_cenaServis.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[25].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[26].Value = ((double)(Original_cenaServis.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[25].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[26].Value = global::System.DBNull.Value;
+            }
+            if ((Original_ukupnaCena.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[27].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[28].Value = ((double)(Original_ukupnaCena.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[27].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[28].Value = global::System.DBNull.Value;
+            }
+            if ((Original_Status == null)) {
+                this.Adapter.DeleteCommand.Parameters[29].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[30].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[29].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[30].Value = ((string)(Original_Status));
+            }
+            if ((Original_naCekanju.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[31].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[32].Value = ((bool)(Original_naCekanju.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[31].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[32].Value = global::System.DBNull.Value;
+            }
+            if ((Original_Zavrseno.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[33].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[34].Value = ((bool)(Original_Zavrseno.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[33].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[34].Value = global::System.DBNull.Value;
+            }
+            if ((Original_korisnikOdustao.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[35].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[36].Value = ((bool)(Original_korisnikOdustao.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[35].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[36].Value = global::System.DBNull.Value;
+            }
+            if ((Original_servisOdustao.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[37].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[38].Value = ((bool)(Original_servisOdustao.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[37].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[38].Value = global::System.DBNull.Value;
+            }
+            if ((Original_korisnikOdbioPlacanje.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[39].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[40].Value = ((bool)(Original_korisnikOdbioPlacanje.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[39].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[40].Value = global::System.DBNull.Value;
+            }
+            if ((Original_Napomena == null)) {
+                this.Adapter.DeleteCommand.Parameters[41].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[42].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[41].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[42].Value = ((string)(Original_Napomena));
+            }
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
+            if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.DeleteCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.DeleteCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.DeleteCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
+        public virtual int Insert(
+                    int brojNaloga, 
+                    global::System.Nullable<global::System.DateTime> Datum, 
+                    string imePrezime, 
+                    string Kontakt, 
+                    string eMail, 
+                    string Uredjaj, 
+                    string Proizvodjac, 
+                    string Model, 
+                    string serijskiBroj, 
+                    string Oprema, 
+                    string opisKvara, 
+                    string Izvestaj, 
+                    global::System.Nullable<double> cenaDelova, 
+                    global::System.Nullable<double> cenaServis, 
+                    global::System.Nullable<double> ukupnaCena, 
+                    string Status, 
+                    global::System.Nullable<bool> naCekanju, 
+                    global::System.Nullable<bool> Zavrseno, 
+                    global::System.Nullable<bool> korisnikOdustao, 
+                    global::System.Nullable<bool> servisOdustao, 
+                    global::System.Nullable<bool> korisnikOdbioPlacanje, 
+                    string Napomena) {
+            this.Adapter.InsertCommand.Parameters[0].Value = ((int)(brojNaloga));
+            if ((Datum.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[1].Value = ((System.DateTime)(Datum.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((imePrezime == null)) {
+                this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(imePrezime));
+            }
+            if ((Kontakt == null)) {
+                this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(Kontakt));
+            }
+            if ((eMail == null)) {
+                this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(eMail));
+            }
+            if ((Uredjaj == null)) {
+                this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[5].Value = ((string)(Uredjaj));
+            }
+            if ((Proizvodjac == null)) {
+                this.Adapter.InsertCommand.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[6].Value = ((string)(Proizvodjac));
+            }
+            if ((Model == null)) {
+                this.Adapter.InsertCommand.Parameters[7].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[7].Value = ((string)(Model));
+            }
+            if ((serijskiBroj == null)) {
+                this.Adapter.InsertCommand.Parameters[8].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[8].Value = ((string)(serijskiBroj));
+            }
+            if ((Oprema == null)) {
+                this.Adapter.InsertCommand.Parameters[9].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[9].Value = ((string)(Oprema));
+            }
+            if ((opisKvara == null)) {
+                this.Adapter.InsertCommand.Parameters[10].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[10].Value = ((string)(opisKvara));
+            }
+            if ((Izvestaj == null)) {
+                this.Adapter.InsertCommand.Parameters[11].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[11].Value = ((string)(Izvestaj));
+            }
+            if ((cenaDelova.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[12].Value = ((double)(cenaDelova.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[12].Value = global::System.DBNull.Value;
+            }
+            if ((cenaServis.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[13].Value = ((double)(cenaServis.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[13].Value = global::System.DBNull.Value;
+            }
+            if ((ukupnaCena.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[14].Value = ((double)(ukupnaCena.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[14].Value = global::System.DBNull.Value;
+            }
+            if ((Status == null)) {
+                this.Adapter.InsertCommand.Parameters[15].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[15].Value = ((string)(Status));
+            }
+            if ((naCekanju.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[16].Value = ((bool)(naCekanju.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[16].Value = global::System.DBNull.Value;
+            }
+            if ((Zavrseno.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[17].Value = ((bool)(Zavrseno.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[17].Value = global::System.DBNull.Value;
+            }
+            if ((korisnikOdustao.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[18].Value = ((bool)(korisnikOdustao.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[18].Value = global::System.DBNull.Value;
+            }
+            if ((servisOdustao.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[19].Value = ((bool)(servisOdustao.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[19].Value = global::System.DBNull.Value;
+            }
+            if ((korisnikOdbioPlacanje.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[20].Value = ((bool)(korisnikOdbioPlacanje.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[20].Value = global::System.DBNull.Value;
+            }
+            if ((Napomena == null)) {
+                this.Adapter.InsertCommand.Parameters[21].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[21].Value = ((string)(Napomena));
+            }
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
+            if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.InsertCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.InsertCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.InsertCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
+        public virtual int Update(
+                    int brojNaloga, 
+                    global::System.Nullable<global::System.DateTime> Datum, 
+                    string imePrezime, 
+                    string Kontakt, 
+                    string eMail, 
+                    string Uredjaj, 
+                    string Proizvodjac, 
+                    string Model, 
+                    string serijskiBroj, 
+                    string Oprema, 
+                    string opisKvara, 
+                    string Izvestaj, 
+                    global::System.Nullable<double> cenaDelova, 
+                    global::System.Nullable<double> cenaServis, 
+                    global::System.Nullable<double> ukupnaCena, 
+                    string Status, 
+                    global::System.Nullable<bool> naCekanju, 
+                    global::System.Nullable<bool> Zavrseno, 
+                    global::System.Nullable<bool> korisnikOdustao, 
+                    global::System.Nullable<bool> servisOdustao, 
+                    global::System.Nullable<bool> korisnikOdbioPlacanje, 
+                    string Napomena, 
+                    int Original_brojNaloga, 
+                    global::System.Nullable<global::System.DateTime> Original_Datum, 
+                    string Original_imePrezime, 
+                    string Original_Kontakt, 
+                    string Original_eMail, 
+                    string Original_Uredjaj, 
+                    string Original_Proizvodjac, 
+                    string Original_Model, 
+                    string Original_serijskiBroj, 
+                    string Original_Oprema, 
+                    string Original_opisKvara, 
+                    string Original_Izvestaj, 
+                    global::System.Nullable<double> Original_cenaDelova, 
+                    global::System.Nullable<double> Original_cenaServis, 
+                    global::System.Nullable<double> Original_ukupnaCena, 
+                    string Original_Status, 
+                    global::System.Nullable<bool> Original_naCekanju, 
+                    global::System.Nullable<bool> Original_Zavrseno, 
+                    global::System.Nullable<bool> Original_korisnikOdustao, 
+                    global::System.Nullable<bool> Original_servisOdustao, 
+                    global::System.Nullable<bool> Original_korisnikOdbioPlacanje, 
+                    string Original_Napomena) {
+            this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(brojNaloga));
+            if ((Datum.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((System.DateTime)(Datum.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((imePrezime == null)) {
+                this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(imePrezime));
+            }
+            if ((Kontakt == null)) {
+                this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(Kontakt));
+            }
+            if ((eMail == null)) {
+                this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(eMail));
+            }
+            if ((Uredjaj == null)) {
+                this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(Uredjaj));
+            }
+            if ((Proizvodjac == null)) {
+                this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(Proizvodjac));
+            }
+            if ((Model == null)) {
+                this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(Model));
+            }
+            if ((serijskiBroj == null)) {
+                this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(serijskiBroj));
+            }
+            if ((Oprema == null)) {
+                this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(Oprema));
+            }
+            if ((opisKvara == null)) {
+                this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(opisKvara));
+            }
+            if ((Izvestaj == null)) {
+                this.Adapter.UpdateCommand.Parameters[11].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((string)(Izvestaj));
+            }
+            if ((cenaDelova.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((double)(cenaDelova.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[12].Value = global::System.DBNull.Value;
+            }
+            if ((cenaServis.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((double)(cenaServis.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[13].Value = global::System.DBNull.Value;
+            }
+            if ((ukupnaCena.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((double)(ukupnaCena.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[14].Value = global::System.DBNull.Value;
+            }
+            if ((Status == null)) {
+                this.Adapter.UpdateCommand.Parameters[15].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((string)(Status));
+            }
+            if ((naCekanju.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((bool)(naCekanju.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[16].Value = global::System.DBNull.Value;
+            }
+            if ((Zavrseno.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[17].Value = ((bool)(Zavrseno.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[17].Value = global::System.DBNull.Value;
+            }
+            if ((korisnikOdustao.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[18].Value = ((bool)(korisnikOdustao.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[18].Value = global::System.DBNull.Value;
+            }
+            if ((servisOdustao.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[19].Value = ((bool)(servisOdustao.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[19].Value = global::System.DBNull.Value;
+            }
+            if ((korisnikOdbioPlacanje.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[20].Value = ((bool)(korisnikOdbioPlacanje.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[20].Value = global::System.DBNull.Value;
+            }
+            if ((Napomena == null)) {
+                this.Adapter.UpdateCommand.Parameters[21].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[21].Value = ((string)(Napomena));
+            }
+            this.Adapter.UpdateCommand.Parameters[22].Value = ((int)(Original_brojNaloga));
+            if ((Original_Datum.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[23].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[24].Value = ((System.DateTime)(Original_Datum.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[23].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[24].Value = global::System.DBNull.Value;
+            }
+            if ((Original_imePrezime == null)) {
+                this.Adapter.UpdateCommand.Parameters[25].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[26].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[25].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[26].Value = ((string)(Original_imePrezime));
+            }
+            if ((Original_Kontakt == null)) {
+                this.Adapter.UpdateCommand.Parameters[27].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[28].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[27].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[28].Value = ((string)(Original_Kontakt));
+            }
+            if ((Original_eMail == null)) {
+                this.Adapter.UpdateCommand.Parameters[29].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[30].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[29].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[30].Value = ((string)(Original_eMail));
+            }
+            if ((Original_Uredjaj == null)) {
+                this.Adapter.UpdateCommand.Parameters[31].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[32].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[31].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[32].Value = ((string)(Original_Uredjaj));
+            }
+            if ((Original_Proizvodjac == null)) {
+                this.Adapter.UpdateCommand.Parameters[33].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[34].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[33].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[34].Value = ((string)(Original_Proizvodjac));
+            }
+            if ((Original_Model == null)) {
+                this.Adapter.UpdateCommand.Parameters[35].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[36].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[35].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[36].Value = ((string)(Original_Model));
+            }
+            if ((Original_serijskiBroj == null)) {
+                this.Adapter.UpdateCommand.Parameters[37].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[38].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[37].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[38].Value = ((string)(Original_serijskiBroj));
+            }
+            if ((Original_Oprema == null)) {
+                this.Adapter.UpdateCommand.Parameters[39].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[40].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[39].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[40].Value = ((string)(Original_Oprema));
+            }
+            if ((Original_opisKvara == null)) {
+                this.Adapter.UpdateCommand.Parameters[41].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[42].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[41].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[42].Value = ((string)(Original_opisKvara));
+            }
+            if ((Original_Izvestaj == null)) {
+                this.Adapter.UpdateCommand.Parameters[43].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[44].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[43].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[44].Value = ((string)(Original_Izvestaj));
+            }
+            if ((Original_cenaDelova.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[45].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[46].Value = ((double)(Original_cenaDelova.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[45].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[46].Value = global::System.DBNull.Value;
+            }
+            if ((Original_cenaServis.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[47].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[48].Value = ((double)(Original_cenaServis.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[47].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[48].Value = global::System.DBNull.Value;
+            }
+            if ((Original_ukupnaCena.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[49].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[50].Value = ((double)(Original_ukupnaCena.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[49].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[50].Value = global::System.DBNull.Value;
+            }
+            if ((Original_Status == null)) {
+                this.Adapter.UpdateCommand.Parameters[51].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[52].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[51].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[52].Value = ((string)(Original_Status));
+            }
+            if ((Original_naCekanju.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[53].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[54].Value = ((bool)(Original_naCekanju.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[53].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[54].Value = global::System.DBNull.Value;
+            }
+            if ((Original_Zavrseno.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[55].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[56].Value = ((bool)(Original_Zavrseno.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[55].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[56].Value = global::System.DBNull.Value;
+            }
+            if ((Original_korisnikOdustao.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[57].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[58].Value = ((bool)(Original_korisnikOdustao.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[57].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[58].Value = global::System.DBNull.Value;
+            }
+            if ((Original_servisOdustao.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[59].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[60].Value = ((bool)(Original_servisOdustao.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[59].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[60].Value = global::System.DBNull.Value;
+            }
+            if ((Original_korisnikOdbioPlacanje.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[61].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[62].Value = ((bool)(Original_korisnikOdbioPlacanje.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[61].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[62].Value = global::System.DBNull.Value;
+            }
+            if ((Original_Napomena == null)) {
+                this.Adapter.UpdateCommand.Parameters[63].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[64].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[63].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[64].Value = ((string)(Original_Napomena));
+            }
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
+            if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.UpdateCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.UpdateCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.UpdateCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
+        public virtual int Update(
+                    global::System.Nullable<global::System.DateTime> Datum, 
+                    string imePrezime, 
+                    string Kontakt, 
+                    string eMail, 
+                    string Uredjaj, 
+                    string Proizvodjac, 
+                    string Model, 
+                    string serijskiBroj, 
+                    string Oprema, 
+                    string opisKvara, 
+                    string Izvestaj, 
+                    global::System.Nullable<double> cenaDelova, 
+                    global::System.Nullable<double> cenaServis, 
+                    global::System.Nullable<double> ukupnaCena, 
+                    string Status, 
+                    global::System.Nullable<bool> naCekanju, 
+                    global::System.Nullable<bool> Zavrseno, 
+                    global::System.Nullable<bool> korisnikOdustao, 
+                    global::System.Nullable<bool> servisOdustao, 
+                    global::System.Nullable<bool> korisnikOdbioPlacanje, 
+                    string Napomena, 
+                    int Original_brojNaloga, 
+                    global::System.Nullable<global::System.DateTime> Original_Datum, 
+                    string Original_imePrezime, 
+                    string Original_Kontakt, 
+                    string Original_eMail, 
+                    string Original_Uredjaj, 
+                    string Original_Proizvodjac, 
+                    string Original_Model, 
+                    string Original_serijskiBroj, 
+                    string Original_Oprema, 
+                    string Original_opisKvara, 
+                    string Original_Izvestaj, 
+                    global::System.Nullable<double> Original_cenaDelova, 
+                    global::System.Nullable<double> Original_cenaServis, 
+                    global::System.Nullable<double> Original_ukupnaCena, 
+                    string Original_Status, 
+                    global::System.Nullable<bool> Original_naCekanju, 
+                    global::System.Nullable<bool> Original_Zavrseno, 
+                    global::System.Nullable<bool> Original_korisnikOdustao, 
+                    global::System.Nullable<bool> Original_servisOdustao, 
+                    global::System.Nullable<bool> Original_korisnikOdbioPlacanje, 
+                    string Original_Napomena) {
+            return this.Update(Original_brojNaloga, Datum, imePrezime, Kontakt, eMail, Uredjaj, Proizvodjac, Model, serijskiBroj, Oprema, opisKvara, Izvestaj, cenaDelova, cenaServis, ukupnaCena, Status, naCekanju, Zavrseno, korisnikOdustao, servisOdustao, korisnikOdbioPlacanje, Napomena, Original_brojNaloga, Original_Datum, Original_imePrezime, Original_Kontakt, Original_eMail, Original_Uredjaj, Original_Proizvodjac, Original_Model, Original_serijskiBroj, Original_Oprema, Original_opisKvara, Original_Izvestaj, Original_cenaDelova, Original_cenaServis, Original_ukupnaCena, Original_Status, Original_naCekanju, Original_Zavrseno, Original_korisnikOdustao, Original_servisOdustao, Original_korisnikOdbioPlacanje, Original_Napomena);
+        }
+    }
+    
+    /// <summary>
     ///TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
     ///</summary>
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -15063,11 +15061,11 @@ WHERE  (Klijent LIKE N'%' + @Klijent + N'%') OR
         
         private NaloziFTableAdapter _naloziFTableAdapter;
         
-        private NaloziPTableAdapter _naloziPTableAdapter;
-        
         private OtpremniceTableAdapter _otpremniceTableAdapter;
         
         private ProfaktureTableAdapter _profaktureTableAdapter;
+        
+        private NaloziPTableAdapter _naloziPTableAdapter;
         
         private bool _backupDataSetBeforeUpdate;
         
@@ -15159,20 +15157,6 @@ WHERE  (Klijent LIKE N'%' + @Klijent + N'%') OR
         [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
             "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
             "a", "System.Drawing.Design.UITypeEditor")]
-        public NaloziPTableAdapter NaloziPTableAdapter {
-            get {
-                return this._naloziPTableAdapter;
-            }
-            set {
-                this._naloziPTableAdapter = value;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
-            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
-            "a", "System.Drawing.Design.UITypeEditor")]
         public OtpremniceTableAdapter OtpremniceTableAdapter {
             get {
                 return this._otpremniceTableAdapter;
@@ -15193,6 +15177,20 @@ WHERE  (Klijent LIKE N'%' + @Klijent + N'%') OR
             }
             set {
                 this._profaktureTableAdapter = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
+            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
+            "a", "System.Drawing.Design.UITypeEditor")]
+        public NaloziPTableAdapter NaloziPTableAdapter {
+            get {
+                return this._naloziPTableAdapter;
+            }
+            set {
+                this._naloziPTableAdapter = value;
             }
         }
         
@@ -15235,10 +15233,6 @@ WHERE  (Klijent LIKE N'%' + @Klijent + N'%') OR
                             && (this._naloziFTableAdapter.Connection != null))) {
                     return this._naloziFTableAdapter.Connection;
                 }
-                if (((this._naloziPTableAdapter != null) 
-                            && (this._naloziPTableAdapter.Connection != null))) {
-                    return this._naloziPTableAdapter.Connection;
-                }
                 if (((this._otpremniceTableAdapter != null) 
                             && (this._otpremniceTableAdapter.Connection != null))) {
                     return this._otpremniceTableAdapter.Connection;
@@ -15246,6 +15240,10 @@ WHERE  (Klijent LIKE N'%' + @Klijent + N'%') OR
                 if (((this._profaktureTableAdapter != null) 
                             && (this._profaktureTableAdapter.Connection != null))) {
                     return this._profaktureTableAdapter.Connection;
+                }
+                if (((this._naloziPTableAdapter != null) 
+                            && (this._naloziPTableAdapter.Connection != null))) {
+                    return this._naloziPTableAdapter.Connection;
                 }
                 return null;
             }
@@ -15275,13 +15273,13 @@ WHERE  (Klijent LIKE N'%' + @Klijent + N'%') OR
                 if ((this._naloziFTableAdapter != null)) {
                     count = (count + 1);
                 }
-                if ((this._naloziPTableAdapter != null)) {
-                    count = (count + 1);
-                }
                 if ((this._otpremniceTableAdapter != null)) {
                     count = (count + 1);
                 }
                 if ((this._profaktureTableAdapter != null)) {
+                    count = (count + 1);
+                }
+                if ((this._naloziPTableAdapter != null)) {
                     count = (count + 1);
                 }
                 return count;
@@ -15340,15 +15338,6 @@ WHERE  (Klijent LIKE N'%' + @Klijent + N'%') OR
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._naloziPTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.NaloziP.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._naloziPTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
             if ((this._otpremniceTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.Otpremnice.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
@@ -15364,6 +15353,15 @@ WHERE  (Klijent LIKE N'%' + @Klijent + N'%') OR
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
                     result = (result + this._profaktureTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
+            if ((this._naloziPTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.NaloziP.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._naloziPTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -15417,14 +15415,6 @@ WHERE  (Klijent LIKE N'%' + @Klijent + N'%') OR
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._naloziPTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.NaloziP.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._naloziPTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
             if ((this._otpremniceTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.Otpremnice.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
@@ -15441,6 +15431,14 @@ WHERE  (Klijent LIKE N'%' + @Klijent + N'%') OR
                     allAddedRows.AddRange(addedRows);
                 }
             }
+            if ((this._naloziPTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.NaloziP.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._naloziPTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
             return result;
         }
         
@@ -15451,6 +15449,14 @@ WHERE  (Klijent LIKE N'%' + @Klijent + N'%') OR
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private int UpdateDeletedRows(dbSenaCompDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
+            if ((this._naloziPTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.NaloziP.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._naloziPTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
             if ((this._profaktureTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.Profakture.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
@@ -15464,14 +15470,6 @@ WHERE  (Klijent LIKE N'%' + @Klijent + N'%') OR
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
                     result = (result + this._otpremniceTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
-            if ((this._naloziPTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.NaloziP.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._naloziPTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -15579,11 +15577,6 @@ WHERE  (Klijent LIKE N'%' + @Klijent + N'%') OR
                 throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
                         "tring.");
             }
-            if (((this._naloziPTableAdapter != null) 
-                        && (this.MatchTableAdapterConnection(this._naloziPTableAdapter.Connection) == false))) {
-                throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
-                        "tring.");
-            }
             if (((this._otpremniceTableAdapter != null) 
                         && (this.MatchTableAdapterConnection(this._otpremniceTableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
@@ -15591,6 +15584,11 @@ WHERE  (Klijent LIKE N'%' + @Klijent + N'%') OR
             }
             if (((this._profaktureTableAdapter != null) 
                         && (this.MatchTableAdapterConnection(this._profaktureTableAdapter.Connection) == false))) {
+                throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
+                        "tring.");
+            }
+            if (((this._naloziPTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._naloziPTableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
                         "tring.");
             }
@@ -15671,15 +15669,6 @@ WHERE  (Klijent LIKE N'%' + @Klijent + N'%') OR
                         adaptersWithAcceptChangesDuringUpdate.Add(this._naloziFTableAdapter.Adapter);
                     }
                 }
-                if ((this._naloziPTableAdapter != null)) {
-                    revertConnections.Add(this._naloziPTableAdapter, this._naloziPTableAdapter.Connection);
-                    this._naloziPTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
-                    this._naloziPTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
-                    if (this._naloziPTableAdapter.Adapter.AcceptChangesDuringUpdate) {
-                        this._naloziPTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
-                        adaptersWithAcceptChangesDuringUpdate.Add(this._naloziPTableAdapter.Adapter);
-                    }
-                }
                 if ((this._otpremniceTableAdapter != null)) {
                     revertConnections.Add(this._otpremniceTableAdapter, this._otpremniceTableAdapter.Connection);
                     this._otpremniceTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
@@ -15696,6 +15685,15 @@ WHERE  (Klijent LIKE N'%' + @Klijent + N'%') OR
                     if (this._profaktureTableAdapter.Adapter.AcceptChangesDuringUpdate) {
                         this._profaktureTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
                         adaptersWithAcceptChangesDuringUpdate.Add(this._profaktureTableAdapter.Adapter);
+                    }
+                }
+                if ((this._naloziPTableAdapter != null)) {
+                    revertConnections.Add(this._naloziPTableAdapter, this._naloziPTableAdapter.Connection);
+                    this._naloziPTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
+                    this._naloziPTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
+                    if (this._naloziPTableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._naloziPTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._naloziPTableAdapter.Adapter);
                     }
                 }
                 // 
@@ -15776,10 +15774,6 @@ WHERE  (Klijent LIKE N'%' + @Klijent + N'%') OR
                     this._naloziFTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._naloziFTableAdapter]));
                     this._naloziFTableAdapter.Transaction = null;
                 }
-                if ((this._naloziPTableAdapter != null)) {
-                    this._naloziPTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._naloziPTableAdapter]));
-                    this._naloziPTableAdapter.Transaction = null;
-                }
                 if ((this._otpremniceTableAdapter != null)) {
                     this._otpremniceTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._otpremniceTableAdapter]));
                     this._otpremniceTableAdapter.Transaction = null;
@@ -15787,6 +15781,10 @@ WHERE  (Klijent LIKE N'%' + @Klijent + N'%') OR
                 if ((this._profaktureTableAdapter != null)) {
                     this._profaktureTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._profaktureTableAdapter]));
                     this._profaktureTableAdapter.Transaction = null;
+                }
+                if ((this._naloziPTableAdapter != null)) {
+                    this._naloziPTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._naloziPTableAdapter]));
+                    this._naloziPTableAdapter.Transaction = null;
                 }
                 if ((0 < adaptersWithAcceptChangesDuringUpdate.Count)) {
                     global::System.Data.Common.DataAdapter[] adapters = new System.Data.Common.DataAdapter[adaptersWithAcceptChangesDuringUpdate.Count];

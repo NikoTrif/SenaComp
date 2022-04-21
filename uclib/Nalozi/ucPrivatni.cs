@@ -48,14 +48,14 @@ namespace uclib.Nalozi
                 //naloziPTableAdapter.Connection.ConnectionString = $@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename={Application.StartupPath}\dbSenaComp.mdf;Password=Master1!";
                 //MessageBox.Show(Application.StartupPath);
 
-                //if (Properties.Settings.Default.BazaServer)
-                //{
-                //    naloziPTableAdapter.Connection.ConnectionString = $@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename={Properties.Settings.Default.BazaServerPath};Password=Master1!";
-                //}
-                //else
-                //{
-                //    naloziPTableAdapter.Connection.ConnectionString = $@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename={cGlobalVariables.localDB};Password=Master1!";
-                //}
+                if (Properties.Settings.Default.BazaServer)
+                {
+                    naloziPTableAdapter.Connection.ConnectionString = $@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename={Properties.Settings.Default.BazaServerPath};Password=Master1!";
+                }
+                else
+                {
+                    naloziPTableAdapter.Connection.ConnectionString = $@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename={cGlobalVariables.localDB};Password=Master1!";
+                }
                 naloziPTableAdapter.Fill(dbSenaCompDataSet.NaloziP);
                 flpDodajKontrole(); // ovo radi i treba ovako
                 cbFilter.SelectedIndex = 0;

@@ -41,6 +41,7 @@
             System.Windows.Forms.Label opisKvaraLabel;
             System.Windows.Forms.Label izvestajLabel;
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            this.clRadniNalogPrivBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.naloziPDataGridView = new System.Windows.Forms.DataGridView();
             this.cenaDelova = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cenaServis = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -110,7 +111,6 @@
             this.dataGridViewTextBoxColumn15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.naloziPTableAdapter = new uclib.dbSenaCompDataSetTableAdapters.NaloziPTableAdapter();
             this.tableAdapterManager = new uclib.dbSenaCompDataSetTableAdapters.TableAdapterManager();
-            this.clRadniNalogPrivBindingSource = new System.Windows.Forms.BindingSource(this.components);
             brojNalogaLabel = new System.Windows.Forms.Label();
             datumLabel = new System.Windows.Forms.Label();
             imePrezimeLabel = new System.Windows.Forms.Label();
@@ -122,6 +122,7 @@
             serijskiBrojLabel = new System.Windows.Forms.Label();
             opisKvaraLabel = new System.Windows.Forms.Label();
             izvestajLabel = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.clRadniNalogPrivBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.naloziPDataGridView)).BeginInit();
             this.cmsBaza.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -136,7 +137,6 @@
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.naloziPBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dbSenaCompDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.clRadniNalogPrivBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // brojNalogaLabel
@@ -259,6 +259,10 @@
             izvestajLabel.Size = new System.Drawing.Size(91, 17);
             izvestajLabel.TabIndex = 13;
             izvestajLabel.Text = "Izvestaj:";
+            // 
+            // clRadniNalogPrivBindingSource
+            // 
+            this.clRadniNalogPrivBindingSource.DataSource = typeof(iflib.ReportClasses.clRadniNalogPriv);
             // 
             // naloziPDataGridView
             // 
@@ -1075,10 +1079,6 @@
             this.tableAdapterManager.ProfaktureTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = uclib.dbSenaCompDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
-            // clRadniNalogPrivBindingSource
-            // 
-            this.clRadniNalogPrivBindingSource.DataSource = typeof(iflib.ReportClasses.clRadniNalogPriv);
-            // 
             // ucPrivatni
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1098,6 +1098,7 @@
             this.Name = "ucPrivatni";
             this.Size = new System.Drawing.Size(1407, 795);
             this.Load += new System.EventHandler(this.ucPrivatni_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.clRadniNalogPrivBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.naloziPDataGridView)).EndInit();
             this.cmsBaza.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
@@ -1116,7 +1117,6 @@
             this.groupBox4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.naloziPBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dbSenaCompDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.clRadniNalogPrivBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

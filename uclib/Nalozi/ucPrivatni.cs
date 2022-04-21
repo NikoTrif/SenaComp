@@ -17,6 +17,7 @@ namespace uclib.Nalozi
     {
         bool noviRed = false; //TD 2.1.c
         bool editTbOstalo = false; //TD 2.1.c
+        Timer tRefresh;
         clFunkcijeRazno fnr = new clFunkcijeRazno();
 
         public ucPrivatni()
@@ -32,6 +33,13 @@ namespace uclib.Nalozi
             {
                 proizvodjacComboBox.Items.AddRange(Properties.Settings.Default.Proizvodjaci.Cast<string>().ToArray());
                 proizvodjacComboBox.AutoCompleteCustomSource.AddRange(Properties.Settings.Default.Proizvodjaci.Cast<string>().ToArray());
+            }
+
+            if (Properties.Settings.Default.BazaAutoUpdate == true && Properties.Settings.Default.BazaAutoUpdateVreme > 0)
+            {
+                tRefresh = new Timer();
+                tRefresh.Tick += TRefresh_Tick;
+                tRefresh.Interval = Properties.Settings.Default.BazaAutoUpdateVreme * 60000; //60.000 ms = 1min
             }
 
             //Properties.Settings.Default["dbSenaCompConnectionString"] = "bbb";
@@ -374,6 +382,56 @@ namespace uclib.Nalozi
             brojNalogaTextBox.ReadOnly = !izmeniBrojNalogaToolStripMenuItem.Checked;
         }
 
+        private void TRefresh_Tick(object sender, EventArgs e)
+        {
+            try
+            {
+                RefreshDB();
+            }
+            catch (Exception ex)
+            {
+                clFunkcijeRazno.NapisiLog(ex);
+            }
+        }
+
+        private void ucPrivatni_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            try
+            {
+                tRefresh_Restart();
+            }
+            catch (Exception ex)
+            {
+                clFunkcijeRazno.NapisiLog(ex);
+            }
+        }
+
+        private void ucPrivatni_MouseMove(object sender, MouseEventArgs e)
+        {
+            try
+            {
+                tRefresh_Restart();
+
+            }
+            catch (Exception ex)
+            {
+                clFunkcijeRazno.NapisiLog(ex);
+            }
+        }
+
+        private void dRefresh_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                tRefresh_Restart();
+                RefreshDB();
+            }
+            catch (Exception ex)
+            {
+                clFunkcijeRazno.NapisiLog(ex);
+            }
+        }
+
         private void Cuvanje()
         {
             //TD 2.1.b
@@ -443,11 +501,6 @@ namespace uclib.Nalozi
             }
         }
 
-        private void dRefresh_Click(object sender, EventArgs e)
-        {
-
-        }
-
         public void flpDodajKontrole()
         {
             if (Properties.Settings.Default.Oprema.Count != 0)
@@ -505,6 +558,24 @@ namespace uclib.Nalozi
             {
                 brojNalogaTextBox.ReadOnly = true;
                 izmeniBrojNalogaToolStripMenuItem.Checked = false;
+            }
+        }
+        private void RefreshDB()
+        {
+            naloziPTableAdapter.Fill(dbSenaCompDataSet.NaloziP);
+            if (naloziPDataGridView.RowCount != 0)
+            {
+                naloziPDataGridView.CurrentCell = naloziPDataGridView.Rows[naloziPDataGridView.RowCount - 1].Cells[0]; //TD 2.1.e 
+            }
+        }
+
+
+        private void tRefresh_Restart()
+        {
+            if (tRefresh != null)
+            {
+                tRefresh.Stop();
+                tRefresh.Start();
             }
         }
     }

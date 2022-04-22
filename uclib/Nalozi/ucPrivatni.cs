@@ -456,8 +456,8 @@ namespace uclib.Nalozi
                 Validate();
                 naloziPBindingSource.EndEdit();
                 //G1
-                //naloziPTableAdapter.Update(dbSenaCompDataSet.NaloziP.Rows[naloziPDataGridView.CurrentRow.Index]); //update samo jednog Row-a
-                naloziPTableAdapter.Update(dbSenaCompDataSet.NaloziP);
+                naloziPTableAdapter.Update(dbSenaCompDataSet.NaloziP.Rows[naloziPDataGridView.CurrentRow.Index]); //update samo jednog Row-a
+                //naloziPTableAdapter.Update(dbSenaCompDataSet.NaloziP);
             }
             catch (Exception ex)
             {

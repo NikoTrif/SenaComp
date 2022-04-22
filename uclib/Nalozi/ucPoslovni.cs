@@ -68,11 +68,13 @@ namespace uclib.Nalozi
                 //naloziFTableAdapter.Connection.ConnectionString = $@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename={Application.StartupPath}\dbSenaComp.mdf;Password=Master1!";
                 if (Properties.Settings.Default.BazaServer)
                 {
-                    naloziFTableAdapter.Connection.ConnectionString = $@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename={Properties.Settings.Default.BazaServerPath};Password=Master1!"; 
+                    naloziFTableAdapter.Connection.ConnectionString = $@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename={Properties.Settings.Default.BazaServerPath};Password=Master1!";
+                    firmeTableAdapter.Connection.ConnectionString = $@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename={Properties.Settings.Default.BazaServerPath};Password=Master1!";
                 }
                 else
                 {
                     naloziFTableAdapter.Connection.ConnectionString = $@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename={cGlobalVariables.localDB};Password=Master1!";
+                    firmeTableAdapter.Connection.ConnectionString = $@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename={cGlobalVariables.localDB};Password=Master1!";
                 }
                 naloziFTableAdapter.Fill(dbSenaCompDataSet.NaloziF);
                 cbFilter.SelectedIndex = 0;
@@ -101,7 +103,7 @@ namespace uclib.Nalozi
             naloziFBindingSource.AddNew();
             naCekanjuRadioButton.Select();
             datumDateTimePicker.Value = DateTime.Now;
-            firmaTextBox.Select();
+            iDFirmeTextBox.Select();
             resetBrojNalogaTextBoxReadOnly();
         }
 
@@ -442,7 +444,47 @@ namespace uclib.Nalozi
 
         private void iDFirmeTextBox_KeyDown(object sender, KeyEventArgs e)
         {
-            
+            if(e.KeyCode == Keys.Enter)
+            {
+                if(iDFirmeTextBox.Text == "")
+                {
+                    dFOdabir_Click(null, EventArgs.Empty);
+                }
+                else
+                {
+                    int idf = 0;
+                    int.TryParse(iDFirmeTextBox.Text, out idf);
+
+                    if (idf > 0)
+                    {
+                        try
+                        {
+                            firmeTableAdapter.qPretID(dbSenaCompDataSet.Firme, idf);
+                            DataTable dt = dbSenaCompDataSet.Firme;
+
+                            if (dt.Rows.Count == 1)
+                            {
+                                DataRow r = dt.Rows[0];
+                                firmaTextBox.Text = r[1].ToString();
+                                kontaktTextBox.Text = r[5].ToString();
+                                eMailTextBox.Text = r[6].ToString();
+                                kontaktOsobaTextBox.Select();
+                            }
+                            else
+                            {
+                                MessageBox.Show($"Korisnik sa ID {iDFirmeTextBox.Text} nije pronađen.", "Greška!",
+                                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                iDFirmeTextBox.SelectAll();
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            clFunkcijeRazno.NapisiLog(ex);
+                            Console.WriteLine(ex.ToString());
+                        }
+                    }
+                }
+            }
         }
 
         private void ucPoslovni_KeyPress(object sender, KeyPressEventArgs e)

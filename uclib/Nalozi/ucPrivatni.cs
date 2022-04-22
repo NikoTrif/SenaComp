@@ -51,12 +51,16 @@ namespace uclib.Nalozi
         {
             try
             {
-                flpDodajKontrole(); // ovo radi i treba ovako
-                //G 8
-                ///naloziPTableAdapter.Connection.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=" + Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\Visual Studio 2015\Projects\SenaComp\SenaComp\bin\debug\dbSenaComp.mdf;Password=Master1!";
-                //naloziPTableAdapter.Connection.ConnectionString = $@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename={Application.StartupPath}\dbSenaComp.mdf;Password=Master1!";
-                //MessageBox.Show(Application.StartupPath);
+                try
+                {
+                    flpDodajKontrole(); // ovo radi i treba ovako 
+                }
+                catch (Exception ex)
+                {
+                    clFunkcijeRazno.NapisiLog(ex);
+                }
 
+                //G 8
                 if (Properties.Settings.Default.BazaServer)
                 {
                     naloziPTableAdapter.Connection.ConnectionString = $@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename={Properties.Settings.Default.BazaServerPath};Password=Master1!";
@@ -398,7 +402,7 @@ namespace uclib.Nalozi
         {
             try
             {
-                tRefresh_Restart();
+                clFunkcijeRazno.TimerRestart(tRefresh);
             }
             catch (Exception ex)
             {
@@ -410,7 +414,7 @@ namespace uclib.Nalozi
         {
             try
             {
-                tRefresh_Restart();
+                clFunkcijeRazno.TimerRestart(tRefresh);
 
             }
             catch (Exception ex)
@@ -423,7 +427,7 @@ namespace uclib.Nalozi
         {
             try
             {
-                tRefresh_Restart();
+                clFunkcijeRazno.TimerRestart(tRefresh);
                 RefreshDB();
             }
             catch (Exception ex)
@@ -566,16 +570,6 @@ namespace uclib.Nalozi
             if (naloziPDataGridView.RowCount != 0)
             {
                 naloziPDataGridView.CurrentCell = naloziPDataGridView.Rows[naloziPDataGridView.RowCount - 1].Cells[0]; //TD 2.1.e 
-            }
-        }
-
-
-        private void tRefresh_Restart()
-        {
-            if (tRefresh != null)
-            {
-                tRefresh.Stop();
-                tRefresh.Start();
             }
         }
     }

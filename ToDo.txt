@@ -366,3 +366,7 @@ kada se trazi u kodu - npr. "RG1", "TD3.1.2", "G2"
 		 - G 19 - - - -Problem je skaliranje Windows-a 10 a ne sam program. Kada se u Display Settings-u podesi scale and layout na 100% sve radi kako treba
 		 - - - - - - - ucPrivatni - dodato dugme za refresh baze
 		 - - - - - - - ucPrivatni - dodat timer tRefresh za automatsko refreshovanje baze
+
+22.04.22 - - - - - - - Provereni Dependencies za program. Potrebno je: Microsoft System CLR Types for SQL 2014, ReportViewer 2015 i SQL EXPRESS
+		 - - - - - - - clFunkcijeRazno - dodat static metod TimerRestart
+		 - - - - - - - ucPoslovni - dodato refresh dugme i timer sa funkcijama

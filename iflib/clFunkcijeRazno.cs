@@ -273,6 +273,15 @@ namespace iflib
             }
         }
 
+        public static void TimerRestart(Timer ticker)
+        {
+            if (ticker != null)
+            {
+                ticker.Stop();
+                ticker.Start();
+            }
+        }
+
         public class PisanjeReporta
         {
             public ReportParameter[] PostavkeReportParametara(string Logo = "", string NazivFirme = "", string Delatnost = "", string AdresaFirme = "",

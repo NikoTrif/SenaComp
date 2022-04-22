@@ -16,6 +16,7 @@ namespace uclib.Nalozi
         bool noviRed = false; //TD 2.1.c
         bool editTbOprema = false; //TD 2.1.c
         clFunkcijeRazno fnr = new clFunkcijeRazno();
+        Timer tRefresh;
 
         public ucPoslovni()
         {
@@ -33,6 +34,24 @@ namespace uclib.Nalozi
                     proizvodjacComboBox.Items.AddRange(Properties.Settings.Default.Proizvodjaci.Cast<string>().ToArray());
                     proizvodjacComboBox.AutoCompleteCustomSource.AddRange(Properties.Settings.Default.Proizvodjaci.Cast<string>().ToArray());
                 }
+                if (Properties.Settings.Default.BazaAutoUpdate == true && Properties.Settings.Default.BazaAutoUpdateVreme > 0)
+                {
+                    tRefresh = new Timer();
+                    tRefresh.Tick += TRefresh_Tick;
+                    tRefresh.Interval = Properties.Settings.Default.BazaAutoUpdateVreme * 60000; //60.000 ms = 1min
+                }
+            }
+            catch (Exception ex)
+            {
+                clFunkcijeRazno.NapisiLog(ex);
+            }
+        }
+
+        private void TRefresh_Tick(object sender, EventArgs e)
+        {
+            try
+            {
+                RefreshDB();
             }
             catch (Exception ex)
             {
@@ -62,7 +81,14 @@ namespace uclib.Nalozi
                     naloziFDataGridView.CurrentCell = naloziFDataGridView.Rows[naloziFDataGridView.RowCount - 1].Cells[0]; //TD 2.1.e
                 }
                 catch { }
-                flpDodajKontrole();
+                try
+                {
+                    flpDodajKontrole();
+                }
+                catch (Exception ex)
+                {
+                    clFunkcijeRazno.NapisiLog(ex);
+                }
             }
             catch (Exception ex)
             {
@@ -410,7 +436,32 @@ namespace uclib.Nalozi
 
         private void dRefresh_Click(object sender, EventArgs e)
         {
+            RefreshDB();
+            clFunkcijeRazno.TimerRestart(tRefresh);
+        }
 
+        private void iDFirmeTextBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            
+        }
+
+        private void ucPoslovni_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            clFunkcijeRazno.TimerRestart(tRefresh);
+        }
+
+        private void ucPoslovni_MouseMove(object sender, MouseEventArgs e)
+        {
+            clFunkcijeRazno.TimerRestart(tRefresh);
+        }
+
+        private void RefreshDB()
+        {
+            naloziFTableAdapter.Fill(dbSenaCompDataSet.NaloziF);
+            if (naloziFDataGridView.RowCount != 0)
+            {
+                naloziFDataGridView.CurrentCell = naloziFDataGridView.Rows[naloziFDataGridView.RowCount - 1].Cells[0]; //TD 2.1.e 
+            }
         }
     }
 }

@@ -476,6 +476,7 @@ namespace uclib.Nalozi
                                     MessageBoxButtons.OK, MessageBoxIcon.Error);
                                 iDFirmeTextBox.SelectAll();
                             }
+                            dt.Dispose();
                         }
                         catch (Exception ex)
                         {

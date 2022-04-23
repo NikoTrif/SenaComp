@@ -299,6 +299,11 @@
       <DependentUpon>dbSenaComp.mdf</DependentUpon>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <None Include="Resources\Search_black.png" />
+    <None Include="Resources\search_colored.png" />
+    <None Include="Resources\refresh2.png" />
+    <None Include="Resources\refresh1.png" />
+    <None Include="Resources\refresh.png" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\iflib\iflib.csproj">

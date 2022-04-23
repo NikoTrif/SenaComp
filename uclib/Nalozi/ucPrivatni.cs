@@ -64,10 +64,12 @@ namespace uclib.Nalozi
                 if (Properties.Settings.Default.BazaServer)
                 {
                     naloziPTableAdapter.Connection.ConnectionString = $@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename={Properties.Settings.Default.BazaServerPath};Password=Master1!";
+                    dRefresh.Visible = true;
                 }
                 else
                 {
                     naloziPTableAdapter.Connection.ConnectionString = $@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename={cGlobalVariables.localDB};Password=Master1!";
+                    dRefresh.Visible = false;
                 }
                 naloziPTableAdapter.Fill(dbSenaCompDataSet.NaloziP);
                 cbFilter.SelectedIndex = 0;

@@ -70,11 +70,13 @@ namespace uclib.Nalozi
                 {
                     naloziFTableAdapter.Connection.ConnectionString = $@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename={Properties.Settings.Default.BazaServerPath};Password=Master1!";
                     firmeTableAdapter.Connection.ConnectionString = $@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename={Properties.Settings.Default.BazaServerPath};Password=Master1!";
+                    dRefresh.Visible = true;
                 }
                 else
                 {
                     naloziFTableAdapter.Connection.ConnectionString = $@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename={cGlobalVariables.localDB};Password=Master1!";
                     firmeTableAdapter.Connection.ConnectionString = $@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename={cGlobalVariables.localDB};Password=Master1!";
+                    dRefresh.Visible = false;
                 }
                 naloziFTableAdapter.Fill(dbSenaCompDataSet.NaloziF);
                 cbFilter.SelectedIndex = 0;

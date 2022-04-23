@@ -29,9 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.dMenu = new System.Windows.Forms.Button();
             this.pMain = new System.Windows.Forms.Panel();
-            this.pbLogo = new System.Windows.Forms.PictureBox();
             this.pMenu = new System.Windows.Forms.Panel();
             this.dPodesavanja = new System.Windows.Forms.Button();
             this.dPoslovni = new System.Windows.Forms.Button();
@@ -45,42 +43,21 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.tMenu = new System.Windows.Forms.Timer(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
+            this.pbLogo = new System.Windows.Forms.PictureBox();
+            this.dMenu = new System.Windows.Forms.Button();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.pMenu.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
             this.SuspendLayout();
-            // 
-            // dMenu
-            // 
-            this.dMenu.Location = new System.Drawing.Point(11, 11);
-            this.dMenu.Margin = new System.Windows.Forms.Padding(2);
-            this.dMenu.Name = "dMenu";
-            this.dMenu.Size = new System.Drawing.Size(46, 46);
-            this.dMenu.TabIndex = 0;
-            this.dMenu.Text = "Menu";
-            this.dMenu.UseVisualStyleBackColor = true;
-            this.dMenu.Click += new System.EventHandler(this.dMenu_Click);
             // 
             // pMain
             // 
-            this.pMain.BackColor = System.Drawing.SystemColors.Control;
-            this.pMain.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pMain.Location = new System.Drawing.Point(0, 0);
             this.pMain.Margin = new System.Windows.Forms.Padding(2);
             this.pMain.Name = "pMain";
             this.pMain.Size = new System.Drawing.Size(1055, 646);
             this.pMain.TabIndex = 1;
-            // 
-            // pbLogo
-            // 
-            this.pbLogo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pbLogo.ImageLocation = "";
-            this.pbLogo.Location = new System.Drawing.Point(857, 126);
-            this.pbLogo.Name = "pbLogo";
-            this.pbLogo.Size = new System.Drawing.Size(175, 189);
-            this.pbLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbLogo.TabIndex = 9;
-            this.pbLogo.TabStop = false;
             // 
             // pMenu
             // 
@@ -106,15 +83,20 @@
             // dPodesavanja
             // 
             this.dPodesavanja.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.dPodesavanja.BackgroundImage = global::SenaComp.Properties.Resources.settings;
+            this.dPodesavanja.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.dPodesavanja.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.dPodesavanja.FlatAppearance.BorderSize = 0;
+            this.dPodesavanja.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.dPodesavanja.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
             this.dPodesavanja.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.dPodesavanja.ForeColor = System.Drawing.Color.White;
             this.dPodesavanja.Location = new System.Drawing.Point(-56, 590);
             this.dPodesavanja.Margin = new System.Windows.Forms.Padding(2);
             this.dPodesavanja.Name = "dPodesavanja";
-            this.dPodesavanja.Size = new System.Drawing.Size(43, 46);
+            this.dPodesavanja.Size = new System.Drawing.Size(46, 46);
             this.dPodesavanja.TabIndex = 0;
-            this.dPodesavanja.Text = "Podesavanja";
+            this.toolTip1.SetToolTip(this.dPodesavanja, "Podešavanja");
             this.dPodesavanja.UseVisualStyleBackColor = true;
             this.dPodesavanja.Click += new System.EventHandler(this.dPodesavanja_Click);
             // 
@@ -269,6 +251,34 @@
             this.tMenu.Interval = 20;
             this.tMenu.Tick += new System.EventHandler(this.tMenu_Tick);
             // 
+            // pbLogo
+            // 
+            this.pbLogo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pbLogo.ImageLocation = "";
+            this.pbLogo.Location = new System.Drawing.Point(857, 126);
+            this.pbLogo.Name = "pbLogo";
+            this.pbLogo.Size = new System.Drawing.Size(175, 189);
+            this.pbLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbLogo.TabIndex = 9;
+            this.pbLogo.TabStop = false;
+            // 
+            // dMenu
+            // 
+            this.dMenu.BackgroundImage = global::SenaComp.Properties.Resources.menu;
+            this.dMenu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.dMenu.FlatAppearance.BorderSize = 0;
+            this.dMenu.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.dMenu.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
+            this.dMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.dMenu.Location = new System.Drawing.Point(11, 11);
+            this.dMenu.Margin = new System.Windows.Forms.Padding(2);
+            this.dMenu.Name = "dMenu";
+            this.dMenu.Size = new System.Drawing.Size(46, 46);
+            this.dMenu.TabIndex = 0;
+            this.toolTip1.SetToolTip(this.dMenu, "Menu");
+            this.dMenu.UseVisualStyleBackColor = true;
+            this.dMenu.Click += new System.EventHandler(this.dMenu_Click);
+            // 
             // fSenaComp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -281,9 +291,9 @@
             this.Name = "fSenaComp";
             this.Text = "SenaComp";
             this.Load += new System.EventHandler(this.fSenaComp_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).EndInit();
             this.pMenu.ResumeLayout(false);
             this.pMenu.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -306,6 +316,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Timer tMenu;
         private System.Windows.Forms.PictureBox pbLogo;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }
 

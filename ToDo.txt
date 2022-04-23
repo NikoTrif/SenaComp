@@ -97,7 +97,7 @@ kada se trazi u kodu - npr. "RG1", "TD3.1.2", "G2"
 17.  - uclib.ucBaza - Properties.Settings.Default.dbSenaCompConnectionString nece da se sacuva
 |R|18.  - uclib.ucPrivatni - baza nece da se sacuva a u ucPoslovni se cuva. Brljao sam nesto sa Update u TableAdapteru
 |R|19.  - Stampanje naloga - na papiru nalog je mnogo manji nego u Report Designeru
-20.  - ucPoslovni - Moze da se napise vise od 5 redova. (Moze da se poveca i na 6 ako ne font ne povecava).
+|R|20.  - ucPoslovni - Moze da se napise vise od 5 redova. (Moze da se poveca i na 6 ako ne font ne povecava).
 ---------------------------------------------------------------------------------------
 ***Release Greske***
 ---------------------------------------------------------------------------------------
@@ -376,3 +376,7 @@ kada se trazi u kodu - npr. "RG1", "TD3.1.2", "G2"
 
 23.04.22 - - - - - - - ucPoslovni, ucPrivatni, ucOdabir, fSenaComp - ubacene slicice na dugmad
          - - - - - - - ucPodesavanja - kada se otvara selektuje se prvo treeView node Oprema
+		 - G 20 - - - -repNalogP, repNalogF - iskljucena opcija "Can Grow" na boxovima ixvestaj i klauzula
+		 - G 20 - - - -ucPrivatni.izvestajRitchTextBox_KeyPress - prepravljen, Error obavestava da se vise od 6 redova nece videti na stampanom izvestaju
+		 - G 20 - - - -clFunkcijeRazno - dodat static metod ObranicenjeBrojaRedovaRitchTextBoxa i pozvan iz ucPoslovni
+

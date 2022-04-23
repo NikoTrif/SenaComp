@@ -393,7 +393,6 @@
                 <TablixCell>
                   <CellContents>
                     <Textbox Name="Izvestaj">
-                      <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
@@ -759,7 +758,6 @@
         </Style>
       </Textbox>
       <Textbox Name="Textbox52">
-        <CanGrow>true</CanGrow>
         <KeepTogether>true</KeepTogether>
         <Paragraphs>
           <Paragraph>
@@ -1286,7 +1284,6 @@
                 <TablixCell>
                   <CellContents>
                     <Textbox Name="Izvestaj2">
-                      <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
@@ -1313,6 +1310,7 @@
                       </Style>
                     </Textbox>
                     <ColSpan>3</ColSpan>
+                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
                 <TablixCell />
@@ -1652,7 +1650,6 @@
         </Style>
       </Textbox>
       <Textbox Name="Textbox55">
-        <CanGrow>true</CanGrow>
         <KeepTogether>true</KeepTogether>
         <Paragraphs>
           <Paragraph>

@@ -81,6 +81,32 @@ namespace iflib
             return tbOprema;
         }
 
+        public static void OgranicenjeRedovaRitchTexBoxa(RichTextBox rtb, int brRedova, KeyPressEventArgs kpe)
+        {
+            //TD 3.1.b
+            if (rtb.Lines.Length <= brRedova)
+            {
+                try
+                {
+                    if (rtb.Lines[rtb.GetLineFromCharIndex(rtb.SelectionStart)].Length >= 64 &&
+                                kpe.KeyChar != '\b')
+                    {
+                        rtb.Text = rtb.Text + Environment.NewLine;
+                        rtb.SelectionStart = rtb.Text.Length;
+                    }
+                }
+                catch { }
+            }
+            else if (rtb.Lines.Length == brRedova + 1)
+            {
+                // G 10
+                //e.Handled = true;
+                MessageBox.Show($"Na štampanom izveštaju se ne može videti više od {brRedova} redova.\n" + 
+                    "Ukoliko želite da nastavite pisanje, preporučuje se da preskočite ovaj red.", "Greška!",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
         public static void NapisiLog(Exception ex)
         {
             //TD 4

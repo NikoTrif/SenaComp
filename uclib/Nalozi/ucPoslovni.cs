@@ -500,6 +500,11 @@ namespace uclib.Nalozi
             clFunkcijeRazno.TimerRestart(tRefresh);
         }
 
+        private void izvestajRichTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            clFunkcijeRazno.OgranicenjeRedovaRitchTexBoxa(izvestajRichTextBox, 6, e);
+        }
+
         private void RefreshDB()
         {
             naloziFTableAdapter.Fill(dbSenaCompDataSet.NaloziF);

@@ -485,26 +485,7 @@ namespace uclib.Nalozi
 
         private void izvestajRichTextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
-            //TD 3.1.b
-            if (izvestajRichTextBox.Lines.Length <= 5)
-            {
-                try
-                {
-                    if (izvestajRichTextBox.Lines[izvestajRichTextBox.GetLineFromCharIndex(izvestajRichTextBox.SelectionStart)].Length >= 64 &&
-                                e.KeyChar != '\b')
-                    {
-                        izvestajRichTextBox.Text = izvestajRichTextBox.Text + Environment.NewLine;
-                        izvestajRichTextBox.SelectionStart = izvestajRichTextBox.Text.Length;
-                    }
-                }
-                catch { }
-            }
-            else
-            {
-                // G 10
-                e.Handled = true;
-                MessageBox.Show("Izveštaj ne može imati više od 5 redova.", "Greška!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            clFunkcijeRazno.OgranicenjeRedovaRitchTexBoxa(izvestajRichTextBox, 6, e);
         }
 
         public void flpDodajKontrole()

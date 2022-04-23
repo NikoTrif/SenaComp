@@ -43,7 +43,8 @@
             System.Windows.Forms.Label kontaktLabel;
             System.Windows.Forms.Label eMailLabel;
             System.Windows.Forms.Label iDFirmeLabel;
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource3 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            this.clRadniNalogPosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.korisnikOdbioPlacanjeRadioButton = new System.Windows.Forms.RadioButton();
@@ -119,7 +120,6 @@
             this.tableAdapterManager = new uclib.dbSenaCompDataSetTableAdapters.TableAdapterManager();
             this.firmeTableAdapter = new uclib.dbSenaCompDataSetTableAdapters.FirmeTableAdapter();
             this.dRefresh = new System.Windows.Forms.Button();
-            this.clRadniNalogPosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.ToolTip1 = new System.Windows.Forms.ToolTip(this.components);
             brojNalogaLabel = new System.Windows.Forms.Label();
             datumLabel = new System.Windows.Forms.Label();
@@ -135,6 +135,7 @@
             kontaktLabel = new System.Windows.Forms.Label();
             eMailLabel = new System.Windows.Forms.Label();
             iDFirmeLabel = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.clRadniNalogPosBindingSource)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.naloziFBindingSource)).BeginInit();
@@ -149,7 +150,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.naloziFDataGridView)).BeginInit();
             this.gbServis.SuspendLayout();
             this.tableLayoutPanel5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.clRadniNalogPosBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // brojNalogaLabel
@@ -292,6 +292,10 @@
             iDFirmeLabel.Size = new System.Drawing.Size(77, 13);
             iDFirmeLabel.TabIndex = 9;
             iDFirmeLabel.Text = "ID Firme:";
+            // 
+            // clRadniNalogPosBindingSource
+            // 
+            this.clRadniNalogPosBindingSource.DataSource = typeof(iflib.ReportClasses.clRadniNalogPos);
             // 
             // groupBox1
             // 
@@ -550,6 +554,7 @@
             this.izvestajRichTextBox.Size = new System.Drawing.Size(477, 78);
             this.izvestajRichTextBox.TabIndex = 11;
             this.izvestajRichTextBox.Text = "";
+            this.izvestajRichTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.izvestajRichTextBox_KeyPress);
             // 
             // opisKvaraTextBox
             // 
@@ -602,7 +607,7 @@
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 35.74297F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.73494F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30.52209F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 52F));
             this.tableLayoutPanel4.Controls.Add(iDFirmeLabel, 0, 0);
             this.tableLayoutPanel4.Controls.Add(this.iDFirmeTextBox, 1, 0);
             this.tableLayoutPanel4.Controls.Add(this.eMailTextBox, 1, 4);
@@ -634,7 +639,7 @@
             this.iDFirmeTextBox.Location = new System.Drawing.Point(83, 3);
             this.iDFirmeTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.iDFirmeTextBox.Name = "iDFirmeTextBox";
-            this.iDFirmeTextBox.Size = new System.Drawing.Size(73, 20);
+            this.iDFirmeTextBox.Size = new System.Drawing.Size(72, 20);
             this.iDFirmeTextBox.TabIndex = 10;
             this.iDFirmeTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.iDFirmeTextBox_KeyDown);
             // 
@@ -684,7 +689,7 @@
             this.dFOdabir.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dFOdabir.Location = new System.Drawing.Point(161, 3);
+            this.dFOdabir.Location = new System.Drawing.Point(160, 3);
             this.dFOdabir.Name = "dFOdabir";
             this.dFOdabir.Size = new System.Drawing.Size(63, 21);
             this.dFOdabir.TabIndex = 7;
@@ -695,10 +700,10 @@
             // dProFakt
             // 
             this.dProFakt.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dProFakt.Location = new System.Drawing.Point(229, 2);
+            this.dProFakt.Location = new System.Drawing.Point(228, 2);
             this.dProFakt.Margin = new System.Windows.Forms.Padding(2);
             this.dProFakt.Name = "dProFakt";
-            this.dProFakt.Size = new System.Drawing.Size(48, 23);
+            this.dProFakt.Size = new System.Drawing.Size(49, 23);
             this.dProFakt.TabIndex = 11;
             this.dProFakt.UseVisualStyleBackColor = true;
             this.dProFakt.Visible = false;
@@ -1076,9 +1081,9 @@
             // repViewPos
             // 
             this.repViewPos.DocumentMapWidth = 73;
-            reportDataSource3.Name = "dsNalog";
-            reportDataSource3.Value = this.clRadniNalogPosBindingSource;
-            this.repViewPos.LocalReport.DataSources.Add(reportDataSource3);
+            reportDataSource1.Name = "dsNalog";
+            reportDataSource1.Value = this.clRadniNalogPosBindingSource;
+            this.repViewPos.LocalReport.DataSources.Add(reportDataSource1);
             this.repViewPos.LocalReport.EnableExternalImages = true;
             this.repViewPos.LocalReport.ReportEmbeddedResource = "uclib.Reportovi.repNalogF.rdlc";
             this.repViewPos.Location = new System.Drawing.Point(878, 15);
@@ -1126,10 +1131,6 @@
             this.dRefresh.Visible = false;
             this.dRefresh.Click += new System.EventHandler(this.dRefresh_Click);
             // 
-            // clRadniNalogPosBindingSource
-            // 
-            this.clRadniNalogPosBindingSource.DataSource = typeof(iflib.ReportClasses.clRadniNalogPos);
-            // 
             // ucPoslovni
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1151,6 +1152,7 @@
             this.Load += new System.EventHandler(this.ucPoslovni_Load);
             this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ucPoslovni_KeyPress);
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.ucPoslovni_MouseMove);
+            ((System.ComponentModel.ISupportInitialize)(this.clRadniNalogPosBindingSource)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
@@ -1169,7 +1171,6 @@
             this.gbServis.ResumeLayout(false);
             this.tableLayoutPanel5.ResumeLayout(false);
             this.tableLayoutPanel5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.clRadniNalogPosBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

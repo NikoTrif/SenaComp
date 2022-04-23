@@ -40,7 +40,8 @@
             System.Windows.Forms.Label serijskiBrojLabel;
             System.Windows.Forms.Label opisKvaraLabel;
             System.Windows.Forms.Label izvestajLabel;
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource3 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            this.clRadniNalogPrivBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.naloziPDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -111,7 +112,6 @@
             this.naloziPTableAdapter = new uclib.dbSenaCompDataSetTableAdapters.NaloziPTableAdapter();
             this.tableAdapterManager = new uclib.dbSenaCompDataSetTableAdapters.TableAdapterManager();
             this.dRefresh = new System.Windows.Forms.Button();
-            this.clRadniNalogPrivBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             brojNalogaLabel = new System.Windows.Forms.Label();
             datumLabel = new System.Windows.Forms.Label();
@@ -124,6 +124,7 @@
             serijskiBrojLabel = new System.Windows.Forms.Label();
             opisKvaraLabel = new System.Windows.Forms.Label();
             izvestajLabel = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.clRadniNalogPrivBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.naloziPDataGridView)).BeginInit();
             this.cmsBaza.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.naloziPBindingSource)).BeginInit();
@@ -138,7 +139,6 @@
             this.tableLayoutPanel5.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
             this.groupBox4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.clRadniNalogPrivBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // brojNalogaLabel
@@ -250,6 +250,10 @@
             izvestajLabel.Size = new System.Drawing.Size(68, 13);
             izvestajLabel.TabIndex = 13;
             izvestajLabel.Text = "Izvestaj:";
+            // 
+            // clRadniNalogPrivBindingSource
+            // 
+            this.clRadniNalogPrivBindingSource.DataSource = typeof(iflib.ReportClasses.clRadniNalogPriv);
             // 
             // naloziPDataGridView
             // 
@@ -622,9 +626,9 @@
             // reportViewer1
             // 
             this.reportViewer1.DocumentMapWidth = 80;
-            reportDataSource3.Name = "dsNalog";
-            reportDataSource3.Value = this.clRadniNalogPrivBindingSource;
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource3);
+            reportDataSource1.Name = "dsNalog";
+            reportDataSource1.Value = this.clRadniNalogPrivBindingSource;
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
             this.reportViewer1.LocalReport.EnableExternalImages = true;
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "uclib.Reportovi.repNalogP.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(857, 20);
@@ -1041,10 +1045,6 @@
             this.dRefresh.Visible = false;
             this.dRefresh.Click += new System.EventHandler(this.dRefresh_Click);
             // 
-            // clRadniNalogPrivBindingSource
-            // 
-            this.clRadniNalogPrivBindingSource.DataSource = typeof(iflib.ReportClasses.clRadniNalogPriv);
-            // 
             // ucPrivatni
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1066,6 +1066,7 @@
             this.Load += new System.EventHandler(this.ucPrivatni_Load);
             this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ucPrivatni_KeyPress);
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.ucPrivatni_MouseMove);
+            ((System.ComponentModel.ISupportInitialize)(this.clRadniNalogPrivBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.naloziPDataGridView)).EndInit();
             this.cmsBaza.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.naloziPBindingSource)).EndInit();
@@ -1084,7 +1085,6 @@
             this.tableLayoutPanel4.ResumeLayout(false);
             this.tableLayoutPanel4.PerformLayout();
             this.groupBox4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.clRadniNalogPrivBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

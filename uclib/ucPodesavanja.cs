@@ -18,6 +18,13 @@ namespace uclib
             InitializeComponent();
         }
 
+        private void ucPodesavanja_Load(object sender, EventArgs e)
+        {
+            treeView1.ExpandAll();
+            //promeni kada se napravi ucOsnovno
+            treeView1.SelectedNode = treeView1.Nodes[0].Nodes[0];
+        }
+
         private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
         {
             switch (e.Node.Text)
@@ -76,16 +83,26 @@ namespace uclib
                     bz.Dock = DockStyle.Fill;
                     bz.BringToFront();
                     break;
-                default:
-                    ucBaza bzz = new ucBaza();
-                    if (pOptMain.Controls.Count != 0)
-                    {
-                        pOptMain.Controls.Clear();
-                    }
-                    pOptMain.Controls.Add(bzz);
-                    bzz.Dock = DockStyle.Fill;
-                    bzz.BringToFront();
-                    break;
+                //default:
+                //    Opcije.Osnovno.ucOprema opr = new Opcije.Osnovno.ucOprema();
+                //    if (pOptMain.Controls.Count != 0)
+                //    {
+                //        pOptMain.Controls.Clear();
+                //    }
+                //    pOptMain.Controls.Add(opr);
+                //    opr.Dock = DockStyle.Fill;
+                //    opr.BringToFront();
+                //    break;
+
+                    //ucBaza bzz = new ucBaza();
+                    //if (pOptMain.Controls.Count != 0)
+                    //{
+                    //    pOptMain.Controls.Clear();
+                    //}
+                    //pOptMain.Controls.Add(bzz);
+                    //bzz.Dock = DockStyle.Fill;
+                    //bzz.BringToFront();
+                    //break;
             }
         }
     }

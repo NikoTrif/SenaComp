@@ -372,3 +372,6 @@ kada se trazi u kodu - npr. "RG1", "TD3.1.2", "G2"
 		 - - - - - - - ucPoslovni - dodato refresh dugme i timer sa funkcijama
 		 - - - - - - - ucPoslovni - u IDFirmeTextBox se na Enter dobija ili korisnik sa ID-jem ili form za odabir firme
 		 - - - - - - - ucFirme - promenjen ConnectionString
+
+23.04.22 - - - - - - - ucPoslovni, ucPrivatni, ucOdabir, fSenaComp - ubacene slicice na dugmad
+         - - - - - - - ucPodesavanja - kada se otvara selektuje se prvo treeView node Oprema

@@ -89,6 +89,7 @@
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "ucPodesavanja";
             this.Size = new System.Drawing.Size(705, 483);
+            this.Load += new System.EventHandler(this.ucPodesavanja_Load);
             this.ResumeLayout(false);
 
         }

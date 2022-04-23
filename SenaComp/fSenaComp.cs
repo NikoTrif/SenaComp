@@ -156,13 +156,14 @@ namespace SenaComp
                     pod.Dock = DockStyle.Fill;
                     pod.BringToFront();
                     //promeni kada se napravi ucOsnovna
-                    using (uclib.Opcije.Osnovno.ucOprema op = new uclib.Opcije.Osnovno.ucOprema())
-                    {
-                        pod.pOptMain.Controls.Add(op);
-                        op.Dock = DockStyle.Fill;
-                        op.BringToFront();
-                        fr.ShowDialog();
-                    }
+                    //using (uclib.Opcije.Osnovno.ucOprema op = new uclib.Opcije.Osnovno.ucOprema())
+                    //{
+                    //    pod.pOptMain.Controls.Add(op);
+                    //    op.Dock = DockStyle.Fill;
+                    //    op.BringToFront();
+                    //    fr.ShowDialog();
+                    //}
+                    fr.ShowDialog();
                 }
             }
         }

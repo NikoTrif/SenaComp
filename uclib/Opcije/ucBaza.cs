@@ -82,8 +82,8 @@ namespace uclib.Opcije
                                                 copySource = cGlobalVariables.zeroDB;
                                                 tbLokacija.Text = $@"{fbd.SelectedPath}\dbSenaComp.mdf";
                                             }
-                                            rbServer.Checked = true;
                                         }
+                                        rbServer.Checked = true;
                                     }
                                 }
                                 break;

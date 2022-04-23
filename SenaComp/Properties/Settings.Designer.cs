@@ -318,5 +318,17 @@ namespace uclib.Properties {
                 this["BazaAutoBackupVreme"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("dd.MM.yyyy")]
+        public string VremeDatumFormat {
+            get {
+                return ((string)(this["VremeDatumFormat"]));
+            }
+            set {
+                this["VremeDatumFormat"] = value;
+            }
+        }
     }
 }

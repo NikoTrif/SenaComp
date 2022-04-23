@@ -40,6 +40,8 @@ namespace uclib.Nalozi
                     tRefresh.Tick += TRefresh_Tick;
                     tRefresh.Interval = Properties.Settings.Default.BazaAutoUpdateVreme * 60000; //60.000 ms = 1min
                 }
+                //Console.WriteLine(Properties.Settings.Default.VremeDatumKolone);
+                naloziFDataGridView.Columns[1].DefaultCellStyle.Format = Properties.Settings.Default.VremeDatumFormat;
             }
             catch (Exception ex)
             {

@@ -34,17 +34,13 @@ namespace uclib.Nalozi
                 proizvodjacComboBox.Items.AddRange(Properties.Settings.Default.Proizvodjaci.Cast<string>().ToArray());
                 proizvodjacComboBox.AutoCompleteCustomSource.AddRange(Properties.Settings.Default.Proizvodjaci.Cast<string>().ToArray());
             }
-
             if (Properties.Settings.Default.BazaAutoUpdate == true && Properties.Settings.Default.BazaAutoUpdateVreme > 0)
             {
                 tRefresh = new Timer();
                 tRefresh.Tick += TRefresh_Tick;
                 tRefresh.Interval = Properties.Settings.Default.BazaAutoUpdateVreme * 60000; //60.000 ms = 1min
             }
-
-            //Properties.Settings.Default["dbSenaCompConnectionString"] = "bbb";
-            //Console.WriteLine(Properties.Settings.Default.dbSenaCompConnectionString);
-            Console.WriteLine(AppDomain.CurrentDomain.SetupInformation.ConfigurationFile);
+            naloziPDataGridView.Columns[1].DefaultCellStyle.Format = Properties.Settings.Default.VremeDatumFormat;
         }
 
         private void ucPrivatni_Load(object sender, EventArgs e)

@@ -81,5 +81,8 @@
     <Setting Name="BazaAutoBackupVreme" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">0</Value>
     </Setting>
+    <Setting Name="VremeDatumFormat" Type="System.String" Scope="User">
+      <Value Profile="(Default)">dd.MM.yyyy</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

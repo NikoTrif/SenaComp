@@ -14,7 +14,7 @@ namespace iflib
     {
         public string FormatKontakt(string kontakt)
         {
-            string[] tel = kontakt.Split(' ');
+            string[] tel = kontakt.Split(',', '|', ';');
             string telefon = "";
             string formTel = "";
             int i = 0;
@@ -32,6 +32,11 @@ namespace iflib
                     telefon = s.Insert(3, "/");
                     telefon = telefon.Insert(6, "-");
                     telefon = telefon.Insert(9, "-");
+                }
+                //G 21
+                else
+                {
+                    return kontakt;
                 }
                 tel[i] = telefon;
                 i++;

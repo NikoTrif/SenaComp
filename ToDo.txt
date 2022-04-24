@@ -98,6 +98,7 @@ kada se trazi u kodu - npr. "RG1", "TD3.1.2", "G2"
 |R|18.  - uclib.ucPrivatni - baza nece da se sacuva a u ucPoslovni se cuva. Brljao sam nesto sa Update u TableAdapteru
 |R|19.  - Stampanje naloga - na papiru nalog je mnogo manji nego u Report Designeru
 |R|20.  - ucPoslovni - Moze da se napise vise od 5 redova. (Moze da se poveca i na 6 ako ne font ne povecava).
+|R|21.  - ucPoslovni i ucPrivatni - tbKontakt se brise kada se upise nesto pogresno ili na Tab ako broj vec postoji
 ---------------------------------------------------------------------------------------
 ***Release Greske***
 ---------------------------------------------------------------------------------------
@@ -379,4 +380,4 @@ kada se trazi u kodu - npr. "RG1", "TD3.1.2", "G2"
 		 - G 20 - - - -repNalogP, repNalogF - iskljucena opcija "Can Grow" na boxovima ixvestaj i klauzula
 		 - G 20 - - - -ucPrivatni.izvestajRitchTextBox_KeyPress - prepravljen, Error obavestava da se vise od 6 redova nece videti na stampanom izvestaju
 		 - G 20 - - - -clFunkcijeRazno - dodat static metod ObranicenjeBrojaRedovaRitchTextBoxa i pozvan iz ucPoslovni
-
+24.04.22 - G 21 - - - -clFunkcijeRazno.FormatKontakt - dodat return ako stil kontakta ne ispunjava uslove

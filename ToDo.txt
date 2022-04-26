@@ -381,3 +381,5 @@ kada se trazi u kodu - npr. "RG1", "TD3.1.2", "G2"
 		 - G 20 - - - -ucPrivatni.izvestajRitchTextBox_KeyPress - prepravljen, Error obavestava da se vise od 6 redova nece videti na stampanom izvestaju
 		 - G 20 - - - -clFunkcijeRazno - dodat static metod ObranicenjeBrojaRedovaRitchTextBoxa i pozvan iz ucPoslovni
 24.04.22 - G 21 - - - -clFunkcijeRazno.FormatKontakt - dodat return ako stil kontakta ne ispunjava uslove
+
+25.04.22 - - - - - - - ucBaza - popravljene greske kod connectionStringa za vracanje i brisanje baze

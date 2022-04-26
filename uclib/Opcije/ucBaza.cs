@@ -296,16 +296,22 @@ namespace uclib.Opcije
                                 File.Copy(ofd.FileName, lokacijaBaze, true);
                                 break;
                             case 2:
+                                string connString = "";
+                                if (Properties.Settings.Default.BazaServer)
+                                {
+                                    connString = $@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename={Properties.Settings.Default.BazaServerPath};Password=Master1!";
+                                }
+                                else
+                                {
+                                    connString = $@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename={cGlobalVariables.localDB};Password=Master1!";
+                                }
                                 using (dbSenaCompDataSet ds = new dbSenaCompDataSet())
                                 {
-                                    labBackup.Visible = false;
-                                    tlpBackup.Visible = true;
-                                    dbSenaCompDataSetTableAdapters.ArtikliPFOTableAdapter apfo = new dbSenaCompDataSetTableAdapters.ArtikliPFOTableAdapter();
-                                    OfficeIE.Excel.ImportFromExcel(ds, apfo.Connection.ConnectionString/*promeniti*/,
-                                        ofd.FileName, pbBackup, labBackup);
-                                    tlpBackup.Visible = false;
-                                    labBackup.Visible = true;
-                                    apfo.Dispose();
+                                        labBackup.Visible = false;
+                                        tlpBackup.Visible = true;
+                                        OfficeIE.Excel.ImportFromExcel(ds, connString/*promeniti*/, ofd.FileName, pbBackup, labBackup);
+                                        tlpBackup.Visible = false;
+                                        labBackup.Visible = true;
                                 }
                                 break;
                         }
@@ -325,7 +331,16 @@ namespace uclib.Opcije
                 if (MessageBox.Show("Jednom obrisana baza se ne može povratiti ako nije urađen backup!\nDa li ste sigurni da želite da obrišete bazu podataka?",
                         "Brisanje Baze? ", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
                 {
-                    using (SqlConnection conn = new SqlConnection(Properties.Settings.Default.dbSenaCompConnectionString)) //promeni po potrebi
+                    string connString = "";
+                    if (Properties.Settings.Default.BazaServer)
+                    {
+                        connString = $@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename={Properties.Settings.Default.BazaServerPath};Password=Master1!";
+                    }
+                    else
+                    {
+                        connString = $@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename={cGlobalVariables.localDB};Password=Master1!";
+                    }
+                    using (SqlConnection conn = new SqlConnection(connString)) //promeni po potrebi
                     using (SqlCommand comm = new SqlCommand("", conn))
                     using (dbSenaCompDataSet ds = new dbSenaCompDataSet())
                     {

@@ -46,7 +46,7 @@
             // 
             this.rtbKlauzula.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::uclib.Properties.Settings.Default, "Klauzula", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.rtbKlauzula.Location = new System.Drawing.Point(3, 33);
-            this.rtbKlauzula.MaxLength = 511;
+            this.rtbKlauzula.MaxLength = 1150;
             this.rtbKlauzula.Name = "rtbKlauzula";
             this.rtbKlauzula.Size = new System.Drawing.Size(526, 109);
             this.rtbKlauzula.TabIndex = 1;

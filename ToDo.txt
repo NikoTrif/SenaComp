@@ -41,9 +41,9 @@ kada se trazi u kodu - npr. "RG1", "TD3.1.2", "G2"
 				|R|c) podaci firme - naziv, delatnost, adresa, PIB, tekuci racun
 				|R|d) klauzula
 				|Z|e) baza - treba da sadrzi backup i restore sa podrskom za .mdf, .xls, .accdb i pozeljno .csv, server folder kada je u lokalu treba sharovati
-				f) dodati slicice(ikonice)
+				|Z|f) dodati slicice(ikonice)
 				g) srediti font u treeView-u
-				h) rtbKlauzula treba da bude ogranicena na 584 karaktera
+				h) rtbKlauzula treba da ima ogranicenje karaktera, napraviti deo za uredjivanje texta (BOLD, ITALIC, UNDERLINE...)
 				i) podesavanje za postavljanje default valute
 	   4.   UC za aktivaciju i registraciju (moze u jednom)
 	   5.   |R|UC za napomene
@@ -385,3 +385,7 @@ kada se trazi u kodu - npr. "RG1", "TD3.1.2", "G2"
 25.04.22 - - - - - - - ucBaza - popravljene greske kod connectionStringa za vracanje i brisanje baze
 
 27.04.22 - - - - - - - ucKlauzula - izmenjen maksimalan broj karaktera broj karakterna na 1150
+
+01.05.22 - - - - - - - ucPrivatni, ucPoslovni - opremaTextBox maksimalan broj karaktera promenjen na 120, ako oprema u RDLC predje u drugi red, stampa se prazna stranica
+		 - - - - - - - repNalogP, repNalogF - prepravljeni textboxovi da budu u liniji sa ostalim elementima
+		 - - - - - - - ucPrivatni, ucPoslovni - ogranicen broj karaktera na ImePrezimeTextBox i KontaktOsobaTextBox

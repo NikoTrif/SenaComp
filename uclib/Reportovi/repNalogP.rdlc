@@ -354,7 +354,6 @@
                 <TablixCell>
                   <CellContents>
                     <Textbox Name="OpisKvara">
-                      <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
@@ -629,13 +628,12 @@
         </Style>
       </Tablix>
       <Textbox Name="Textbox29">
-        <CanGrow>true</CanGrow>
         <KeepTogether>true</KeepTogether>
         <Paragraphs>
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>Broj naloga: </Value>
+                <Value>Nalog: </Value>
                 <Style>
                   <FontSize>8pt</FontSize>
                 </Style>
@@ -655,7 +653,7 @@
         <Top>3.10155cm</Top>
         <Left>0.02645cm</Left>
         <Height>0.52944cm</Height>
-        <Width>3.10854cm</Width>
+        <Width>2.12961cm</Width>
         <ZIndex>3</ZIndex>
         <Style>
           <Border>
@@ -668,7 +666,6 @@
         </Style>
       </Textbox>
       <Textbox Name="Textbox30">
-        <CanGrow>true</CanGrow>
         <KeepTogether>true</KeepTogether>
         <Paragraphs>
           <Paragraph>
@@ -700,9 +697,9 @@
         </Paragraphs>
         <rd:DefaultName>Textbox29</rd:DefaultName>
         <Top>3.10155cm</Top>
-        <Left>3.13499cm</Left>
+        <Left>2.15606cm</Left>
         <Height>0.52944cm</Height>
-        <Width>8.18854cm</Width>
+        <Width>8.85445cm</Width>
         <ZIndex>4</ZIndex>
         <Style>
           <Border>
@@ -715,7 +712,6 @@
         </Style>
       </Textbox>
       <Textbox Name="Textbox31">
-        <CanGrow>true</CanGrow>
         <KeepTogether>true</KeepTogether>
         <Paragraphs>
           <Paragraph>
@@ -743,9 +739,9 @@
         </Paragraphs>
         <rd:DefaultName>Textbox29</rd:DefaultName>
         <Top>3.10155cm</Top>
-        <Left>11.32353cm</Left>
+        <Left>11.01051cm</Left>
         <Height>0.52944cm</Height>
-        <Width>6.41187cm</Width>
+        <Width>6.72489cm</Width>
         <ZIndex>5</ZIndex>
         <Style>
           <Border>
@@ -1245,7 +1241,6 @@
                 <TablixCell>
                   <CellContents>
                     <Textbox Name="OpisKvara2">
-                      <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
@@ -1310,7 +1305,6 @@
                       </Style>
                     </Textbox>
                     <ColSpan>3</ColSpan>
-                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
                 <TablixCell />
@@ -1521,13 +1515,12 @@
         </Style>
       </Tablix>
       <Textbox Name="Textbox32">
-        <CanGrow>true</CanGrow>
         <KeepTogether>true</KeepTogether>
         <Paragraphs>
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>Broj naloga: </Value>
+                <Value>Nalog: </Value>
                 <Style>
                   <FontSize>8pt</FontSize>
                 </Style>
@@ -1547,7 +1540,7 @@
         <Top>17.36311cm</Top>
         <Left>0.02648cm</Left>
         <Height>0.52944cm</Height>
-        <Width>3.10854cm</Width>
+        <Width>2.12958cm</Width>
         <ZIndex>13</ZIndex>
         <Style>
           <Border>
@@ -1560,7 +1553,6 @@
         </Style>
       </Textbox>
       <Textbox Name="Textbox33">
-        <CanGrow>true</CanGrow>
         <KeepTogether>true</KeepTogether>
         <Paragraphs>
           <Paragraph>
@@ -1592,9 +1584,9 @@
         </Paragraphs>
         <rd:DefaultName>Textbox29</rd:DefaultName>
         <Top>17.36311cm</Top>
-        <Left>3.13502cm</Left>
+        <Left>2.15606cm</Left>
         <Height>0.52944cm</Height>
-        <Width>8.18854cm</Width>
+        <Width>8.85445cm</Width>
         <ZIndex>14</ZIndex>
         <Style>
           <Border>
@@ -1607,7 +1599,6 @@
         </Style>
       </Textbox>
       <Textbox Name="Textbox42">
-        <CanGrow>true</CanGrow>
         <KeepTogether>true</KeepTogether>
         <Paragraphs>
           <Paragraph>
@@ -1635,9 +1626,9 @@
         </Paragraphs>
         <rd:DefaultName>Textbox29</rd:DefaultName>
         <Top>17.36311cm</Top>
-        <Left>11.32356cm</Left>
+        <Left>11.01051cm</Left>
         <Height>0.52944cm</Height>
-        <Width>6.41187cm</Width>
+        <Width>6.72492cm</Width>
         <ZIndex>15</ZIndex>
         <Style>
           <Border>

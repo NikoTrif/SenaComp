@@ -40,7 +40,7 @@
             System.Windows.Forms.Label serijskiBrojLabel;
             System.Windows.Forms.Label opisKvaraLabel;
             System.Windows.Forms.Label izvestajLabel;
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource3 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.clRadniNalogPrivBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.naloziPDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -626,9 +626,9 @@
             // reportViewer1
             // 
             this.reportViewer1.DocumentMapWidth = 80;
-            reportDataSource3.Name = "dsNalog";
-            reportDataSource3.Value = this.clRadniNalogPrivBindingSource;
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource3);
+            reportDataSource1.Name = "dsNalog";
+            reportDataSource1.Value = this.clRadniNalogPrivBindingSource;
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
             this.reportViewer1.LocalReport.EnableExternalImages = true;
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "uclib.Reportovi.repNalogP.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(857, 20);
@@ -1033,6 +1033,7 @@
             // 
             // dRefresh
             // 
+            this.dRefresh.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.dRefresh.BackgroundImage = global::uclib.Properties.Resources.refresh2;
             this.dRefresh.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.dRefresh.Location = new System.Drawing.Point(1023, 445);

@@ -43,7 +43,7 @@
             System.Windows.Forms.Label kontaktLabel;
             System.Windows.Forms.Label eMailLabel;
             System.Windows.Forms.Label iDFirmeLabel;
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource4 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.clRadniNalogPosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
@@ -608,7 +608,7 @@
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40.45454F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 29.09091F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30.52209F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 59F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 61F));
             this.tableLayoutPanel4.Controls.Add(iDFirmeLabel, 0, 0);
             this.tableLayoutPanel4.Controls.Add(this.iDFirmeTextBox, 1, 0);
             this.tableLayoutPanel4.Controls.Add(this.eMailTextBox, 1, 4);
@@ -693,7 +693,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dFOdabir.Location = new System.Drawing.Point(154, 3);
             this.dFOdabir.Name = "dFOdabir";
-            this.dFOdabir.Size = new System.Drawing.Size(61, 21);
+            this.dFOdabir.Size = new System.Drawing.Size(60, 21);
             this.dFOdabir.TabIndex = 7;
             this.dFOdabir.Text = "Odaberi";
             this.dFOdabir.UseVisualStyleBackColor = true;
@@ -702,10 +702,10 @@
             // dProFakt
             // 
             this.dProFakt.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dProFakt.Location = new System.Drawing.Point(220, 2);
+            this.dProFakt.Location = new System.Drawing.Point(219, 2);
             this.dProFakt.Margin = new System.Windows.Forms.Padding(2);
             this.dProFakt.Name = "dProFakt";
-            this.dProFakt.Size = new System.Drawing.Size(57, 23);
+            this.dProFakt.Size = new System.Drawing.Size(58, 23);
             this.dProFakt.TabIndex = 11;
             this.dProFakt.UseVisualStyleBackColor = true;
             this.dProFakt.Visible = false;
@@ -1083,9 +1083,9 @@
             // repViewPos
             // 
             this.repViewPos.DocumentMapWidth = 73;
-            reportDataSource4.Name = "dsNalog";
-            reportDataSource4.Value = this.clRadniNalogPosBindingSource;
-            this.repViewPos.LocalReport.DataSources.Add(reportDataSource4);
+            reportDataSource2.Name = "dsNalog";
+            reportDataSource2.Value = this.clRadniNalogPosBindingSource;
+            this.repViewPos.LocalReport.DataSources.Add(reportDataSource2);
             this.repViewPos.LocalReport.EnableExternalImages = true;
             this.repViewPos.LocalReport.ReportEmbeddedResource = "uclib.Reportovi.repNalogF.rdlc";
             this.repViewPos.Location = new System.Drawing.Point(878, 15);
@@ -1119,6 +1119,7 @@
             // 
             // dRefresh
             // 
+            this.dRefresh.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.dRefresh.BackgroundImage = global::uclib.Properties.Resources.refresh2;
             this.dRefresh.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.dRefresh.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));

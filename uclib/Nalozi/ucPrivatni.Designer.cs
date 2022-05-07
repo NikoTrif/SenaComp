@@ -167,7 +167,7 @@
             imePrezimeLabel.AutoSize = true;
             imePrezimeLabel.Location = new System.Drawing.Point(3, 7);
             imePrezimeLabel.Name = "imePrezimeLabel";
-            imePrezimeLabel.Size = new System.Drawing.Size(80, 13);
+            imePrezimeLabel.Size = new System.Drawing.Size(79, 13);
             imePrezimeLabel.TabIndex = 0;
             imePrezimeLabel.Text = "Ime i prezime:";
             // 
@@ -177,7 +177,7 @@
             kontaktLabel.AutoSize = true;
             kontaktLabel.Location = new System.Drawing.Point(3, 34);
             kontaktLabel.Name = "kontaktLabel";
-            kontaktLabel.Size = new System.Drawing.Size(80, 13);
+            kontaktLabel.Size = new System.Drawing.Size(79, 13);
             kontaktLabel.TabIndex = 2;
             kontaktLabel.Text = "Kontakt:";
             // 
@@ -187,7 +187,7 @@
             eMailLabel.AutoSize = true;
             eMailLabel.Location = new System.Drawing.Point(3, 61);
             eMailLabel.Name = "eMailLabel";
-            eMailLabel.Size = new System.Drawing.Size(80, 13);
+            eMailLabel.Size = new System.Drawing.Size(79, 13);
             eMailLabel.TabIndex = 4;
             eMailLabel.Text = "e-Mail:";
             // 
@@ -676,19 +676,19 @@
             // 
             this.eMailTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.eMailTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.naloziPBindingSource, "eMail", true));
-            this.eMailTextBox.Location = new System.Drawing.Point(89, 57);
+            this.eMailTextBox.Location = new System.Drawing.Point(88, 57);
             this.eMailTextBox.Name = "eMailTextBox";
-            this.eMailTextBox.Size = new System.Drawing.Size(187, 20);
+            this.eMailTextBox.Size = new System.Drawing.Size(188, 20);
             this.eMailTextBox.TabIndex = 3;
             // 
             // kontaktTextBox
             // 
             this.kontaktTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.kontaktTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.naloziPBindingSource, "Kontakt", true));
-            this.kontaktTextBox.Location = new System.Drawing.Point(89, 30);
+            this.kontaktTextBox.Location = new System.Drawing.Point(88, 30);
             this.kontaktTextBox.MaxLength = 21;
             this.kontaktTextBox.Name = "kontaktTextBox";
-            this.kontaktTextBox.Size = new System.Drawing.Size(187, 20);
+            this.kontaktTextBox.Size = new System.Drawing.Size(188, 20);
             this.kontaktTextBox.TabIndex = 2;
             this.kontaktTextBox.Leave += new System.EventHandler(this.kontaktTextBox_Leave);
             // 
@@ -696,10 +696,10 @@
             // 
             this.imePrezimeTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.imePrezimeTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.naloziPBindingSource, "imePrezime", true));
-            this.imePrezimeTextBox.Location = new System.Drawing.Point(89, 3);
+            this.imePrezimeTextBox.Location = new System.Drawing.Point(88, 3);
             this.imePrezimeTextBox.MaxLength = 37;
             this.imePrezimeTextBox.Name = "imePrezimeTextBox";
-            this.imePrezimeTextBox.Size = new System.Drawing.Size(187, 20);
+            this.imePrezimeTextBox.Size = new System.Drawing.Size(188, 20);
             this.imePrezimeTextBox.TabIndex = 1;
             // 
             // groupBox3

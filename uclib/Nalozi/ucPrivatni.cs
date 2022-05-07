@@ -83,7 +83,12 @@ namespace uclib.Nalozi
         private void dNovi_Click(object sender, EventArgs e)
         {
             naloziPBindingSource.AddNew();
-            naCekanjuRadioButton.Select();
+            //G 7
+            foreach(RadioButton rb in tableLayoutPanel1.Controls.OfType<RadioButton>())
+            {
+                rb.Checked = false;
+            }
+            naCekanjuRadioButton.Checked = true;
             datumDateTimePicker.Value = DateTime.Now;
             imePrezimeTextBox.Select();
             resetBrojNalogaTextBoxReadOnly();

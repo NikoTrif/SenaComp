@@ -134,13 +134,13 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>3.10854cm</Width>
+              <Width>2.12959cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>8.18854cm</Width>
+              <Width>8.85448cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>6.41187cm</Width>
+              <Width>6.7249cm</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
@@ -150,13 +150,12 @@
                 <TablixCell>
                   <CellContents>
                     <Textbox Name="BrojNaloga">
-                      <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Broj naloga: </Value>
+                              <Value>Nalog: </Value>
                               <Style>
                                 <FontSize>8pt</FontSize>
                               </Style>
@@ -208,7 +207,6 @@
                 <TablixCell>
                   <CellContents>
                     <Textbox Name="KontaktOsoba">
-                      <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
@@ -266,7 +264,6 @@
                 <TablixCell>
                   <CellContents>
                     <Textbox Name="KontaktTelefon">
-                      <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
@@ -329,13 +326,12 @@
                 <TablixCell>
                   <CellContents>
                     <Textbox Name="IDFirme">
-                      <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>ID Firme: </Value>
+                              <Value>ID: </Value>
                               <Style>
                                 <FontSize>8pt</FontSize>
                               </Style>
@@ -387,7 +383,6 @@
                 <TablixCell>
                   <CellContents>
                     <Textbox Name="NazivFirme">
-                      <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
@@ -445,7 +440,6 @@
                 <TablixCell>
                   <CellContents>
                     <Textbox Name="eMail">
-                      <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
@@ -522,7 +516,7 @@
         <Top>3.10155cm</Top>
         <Left>0.02645cm</Left>
         <Height>1.05888cm</Height>
-        <Width>17.70895cm</Width>
+        <Width>17.70897cm</Width>
         <ZIndex>3</ZIndex>
         <Style>
           <Border>
@@ -790,7 +784,6 @@
                 <TablixCell>
                   <CellContents>
                     <Textbox Name="OpisKvara">
-                      <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
@@ -1565,7 +1558,6 @@
                 <TablixCell>
                   <CellContents>
                     <Textbox Name="OpisKvara2">
-                      <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
@@ -1630,6 +1622,7 @@
                       </Style>
                     </Textbox>
                     <ColSpan>3</ColSpan>
+                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
                 <TablixCell />
@@ -1942,13 +1935,13 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>3.10854cm</Width>
+              <Width>2.12959cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>8.18854cm</Width>
+              <Width>8.85447cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>6.41187cm</Width>
+              <Width>6.72489cm</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
@@ -1958,13 +1951,12 @@
                 <TablixCell>
                   <CellContents>
                     <Textbox Name="BrojNaloga2">
-                      <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Broj naloga: </Value>
+                              <Value>Nalog: </Value>
                               <Style>
                                 <FontSize>8pt</FontSize>
                               </Style>
@@ -2016,7 +2008,6 @@
                 <TablixCell>
                   <CellContents>
                     <Textbox Name="KontaktOsoba2">
-                      <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
@@ -2074,7 +2065,6 @@
                 <TablixCell>
                   <CellContents>
                     <Textbox Name="KontaktTelefon2">
-                      <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
@@ -2137,13 +2127,12 @@
                 <TablixCell>
                   <CellContents>
                     <Textbox Name="IDFirme2">
-                      <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>ID Firme: </Value>
+                              <Value>ID: </Value>
                               <Style>
                                 <FontSize>8pt</FontSize>
                               </Style>
@@ -2195,7 +2184,6 @@
                 <TablixCell>
                   <CellContents>
                     <Textbox Name="NazivFirme2">
-                      <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
@@ -2253,7 +2241,6 @@
                 <TablixCell>
                   <CellContents>
                     <Textbox Name="eMail2">
-                      <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>

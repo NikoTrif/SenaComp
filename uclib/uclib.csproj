@@ -299,6 +299,8 @@
       <DependentUpon>dbSenaComp.mdf</DependentUpon>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <None Include="Resources\ArrowDown.png" />
+    <None Include="Resources\ArrowUp.png" />
     <None Include="Resources\Search_black.png" />
     <None Include="Resources\search_colored.png" />
     <None Include="Resources\refresh2.png" />

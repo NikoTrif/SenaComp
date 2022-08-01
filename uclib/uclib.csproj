@@ -241,6 +241,9 @@
     <EmbeddedResource Include="Racuni\ucProfakture.resx">
       <DependentUpon>ucProfakture.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportovi\repNalogP - Copy.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reportovi\repNalogP.rdlc">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>

@@ -167,7 +167,7 @@
             imePrezimeLabel.AutoSize = true;
             imePrezimeLabel.Location = new System.Drawing.Point(3, 7);
             imePrezimeLabel.Name = "imePrezimeLabel";
-            imePrezimeLabel.Size = new System.Drawing.Size(79, 13);
+            imePrezimeLabel.Size = new System.Drawing.Size(81, 13);
             imePrezimeLabel.TabIndex = 0;
             imePrezimeLabel.Text = "Ime i prezime:";
             // 
@@ -177,7 +177,7 @@
             kontaktLabel.AutoSize = true;
             kontaktLabel.Location = new System.Drawing.Point(3, 34);
             kontaktLabel.Name = "kontaktLabel";
-            kontaktLabel.Size = new System.Drawing.Size(79, 13);
+            kontaktLabel.Size = new System.Drawing.Size(81, 13);
             kontaktLabel.TabIndex = 2;
             kontaktLabel.Text = "Kontakt:";
             // 
@@ -187,7 +187,7 @@
             eMailLabel.AutoSize = true;
             eMailLabel.Location = new System.Drawing.Point(3, 61);
             eMailLabel.Name = "eMailLabel";
-            eMailLabel.Size = new System.Drawing.Size(79, 13);
+            eMailLabel.Size = new System.Drawing.Size(81, 13);
             eMailLabel.TabIndex = 4;
             eMailLabel.Text = "e-Mail:";
             // 
@@ -654,8 +654,8 @@
             // 
             this.tableLayoutPanel2.AutoScroll = true;
             this.tableLayoutPanel2.ColumnCount = 2;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30.82437F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 69.17563F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 31.1828F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 68.81721F));
             this.tableLayoutPanel2.Controls.Add(eMailLabel, 0, 2);
             this.tableLayoutPanel2.Controls.Add(this.eMailTextBox, 1, 2);
             this.tableLayoutPanel2.Controls.Add(kontaktLabel, 0, 1);
@@ -676,19 +676,19 @@
             // 
             this.eMailTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.eMailTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.naloziPBindingSource, "eMail", true));
-            this.eMailTextBox.Location = new System.Drawing.Point(88, 57);
+            this.eMailTextBox.Location = new System.Drawing.Point(90, 57);
             this.eMailTextBox.Name = "eMailTextBox";
-            this.eMailTextBox.Size = new System.Drawing.Size(188, 20);
+            this.eMailTextBox.Size = new System.Drawing.Size(186, 20);
             this.eMailTextBox.TabIndex = 3;
             // 
             // kontaktTextBox
             // 
             this.kontaktTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.kontaktTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.naloziPBindingSource, "Kontakt", true));
-            this.kontaktTextBox.Location = new System.Drawing.Point(88, 30);
+            this.kontaktTextBox.Location = new System.Drawing.Point(90, 30);
             this.kontaktTextBox.MaxLength = 21;
             this.kontaktTextBox.Name = "kontaktTextBox";
-            this.kontaktTextBox.Size = new System.Drawing.Size(188, 20);
+            this.kontaktTextBox.Size = new System.Drawing.Size(186, 20);
             this.kontaktTextBox.TabIndex = 2;
             this.kontaktTextBox.Leave += new System.EventHandler(this.kontaktTextBox_Leave);
             // 
@@ -696,10 +696,10 @@
             // 
             this.imePrezimeTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.imePrezimeTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.naloziPBindingSource, "imePrezime", true));
-            this.imePrezimeTextBox.Location = new System.Drawing.Point(88, 3);
+            this.imePrezimeTextBox.Location = new System.Drawing.Point(90, 3);
             this.imePrezimeTextBox.MaxLength = 37;
             this.imePrezimeTextBox.Name = "imePrezimeTextBox";
-            this.imePrezimeTextBox.Size = new System.Drawing.Size(188, 20);
+            this.imePrezimeTextBox.Size = new System.Drawing.Size(186, 20);
             this.imePrezimeTextBox.TabIndex = 1;
             // 
             // groupBox3
@@ -835,11 +835,11 @@
             this.tableLayoutPanel4.SetColumnSpan(this.izvestajRichTextBox, 6);
             this.izvestajRichTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.naloziPBindingSource, "Izvestaj", true));
             this.izvestajRichTextBox.Location = new System.Drawing.Point(77, 29);
-            this.izvestajRichTextBox.MaxLength = 330;
             this.izvestajRichTextBox.Name = "izvestajRichTextBox";
             this.izvestajRichTextBox.Size = new System.Drawing.Size(477, 78);
             this.izvestajRichTextBox.TabIndex = 10;
             this.izvestajRichTextBox.Text = "";
+            this.izvestajRichTextBox.WordWrap = false;
             this.izvestajRichTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.izvestajRichTextBox_KeyPress);
             // 
             // dSacuvaj

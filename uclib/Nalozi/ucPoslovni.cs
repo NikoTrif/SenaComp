@@ -509,7 +509,7 @@ namespace uclib.Nalozi
 
         private void izvestajRichTextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
-            clFunkcijeRazno.OgranicenjeRedovaRitchTexBoxa(izvestajRichTextBox, 6, e);
+            clFunkcijeRazno.OgranicenjeRedovaRitchTexBoxa(izvestajRichTextBox, 6, 100, e);
         }
 
         private void RefreshDB()

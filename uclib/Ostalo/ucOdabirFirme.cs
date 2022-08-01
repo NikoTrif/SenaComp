@@ -22,6 +22,12 @@ namespace uclib.Ostalo
 
         private void ucOdabirFirme_Load(object sender, EventArgs e)
         {
+            LoadDatabase();
+        }
+
+        private void LoadDatabase()
+        {
+            firmeTableAdapter.Connection.ConnectionString = $@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename={Properties.Settings.Default.BazaServerPath};Password=Master1!";
             firmeTableAdapter.Fill(dbSenaCompDataSet.Firme);
         }
 

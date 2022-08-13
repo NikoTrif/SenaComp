@@ -258,7 +258,7 @@
             firmaLabel.Location = new System.Drawing.Point(4, 41);
             firmaLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             firmaLabel.Name = "firmaLabel";
-            firmaLabel.Size = new System.Drawing.Size(107, 17);
+            firmaLabel.Size = new System.Drawing.Size(106, 17);
             firmaLabel.TabIndex = 0;
             firmaLabel.Text = "Naziv Firme:";
             // 
@@ -269,7 +269,7 @@
             kontaktOsobaLabel.Location = new System.Drawing.Point(4, 74);
             kontaktOsobaLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             kontaktOsobaLabel.Name = "kontaktOsobaLabel";
-            kontaktOsobaLabel.Size = new System.Drawing.Size(107, 17);
+            kontaktOsobaLabel.Size = new System.Drawing.Size(106, 17);
             kontaktOsobaLabel.TabIndex = 2;
             kontaktOsobaLabel.Text = "Kontakt osoba:";
             // 
@@ -280,7 +280,7 @@
             kontaktLabel.Location = new System.Drawing.Point(4, 107);
             kontaktLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             kontaktLabel.Name = "kontaktLabel";
-            kontaktLabel.Size = new System.Drawing.Size(107, 17);
+            kontaktLabel.Size = new System.Drawing.Size(106, 17);
             kontaktLabel.TabIndex = 4;
             kontaktLabel.Text = "Kontakt:";
             // 
@@ -291,7 +291,7 @@
             eMailLabel.Location = new System.Drawing.Point(4, 141);
             eMailLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             eMailLabel.Name = "eMailLabel";
-            eMailLabel.Size = new System.Drawing.Size(107, 17);
+            eMailLabel.Size = new System.Drawing.Size(106, 17);
             eMailLabel.TabIndex = 6;
             eMailLabel.Text = "e-Mail:";
             // 
@@ -301,7 +301,7 @@
             iDFirmeLabel.AutoSize = true;
             iDFirmeLabel.Location = new System.Drawing.Point(3, 8);
             iDFirmeLabel.Name = "iDFirmeLabel";
-            iDFirmeLabel.Size = new System.Drawing.Size(109, 17);
+            iDFirmeLabel.Size = new System.Drawing.Size(108, 17);
             iDFirmeLabel.TabIndex = 9;
             iDFirmeLabel.Text = "ID Firme:";
             // 
@@ -315,9 +315,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.Controls.Add(this.tableLayoutPanel2);
             this.groupBox1.Location = new System.Drawing.Point(4, 96);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox1.Size = new System.Drawing.Size(380, 192);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
@@ -339,7 +339,7 @@
             this.tableLayoutPanel2.Controls.Add(this.zavrsenoRadioButton, 0, 3);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(4, 19);
-            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(4);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 5;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
@@ -355,7 +355,7 @@
             this.korisnikOdbioPlacanjeRadioButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.korisnikOdbioPlacanjeRadioButton.DataBindings.Add(new System.Windows.Forms.Binding("Checked", this.naloziFBindingSource, "korisnikOdbioPlacanje", true));
             this.korisnikOdbioPlacanjeRadioButton.Location = new System.Drawing.Point(122, 138);
-            this.korisnikOdbioPlacanjeRadioButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.korisnikOdbioPlacanjeRadioButton.Margin = new System.Windows.Forms.Padding(4);
             this.korisnikOdbioPlacanjeRadioButton.Name = "korisnikOdbioPlacanjeRadioButton";
             this.korisnikOdbioPlacanjeRadioButton.Size = new System.Drawing.Size(246, 25);
             this.korisnikOdbioPlacanjeRadioButton.TabIndex = 9;
@@ -377,7 +377,7 @@
             this.servisOdustaoRadioButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.servisOdustaoRadioButton.DataBindings.Add(new System.Windows.Forms.Binding("Checked", this.naloziFBindingSource, "servisOdustao", true));
             this.servisOdustaoRadioButton.Location = new System.Drawing.Point(122, 103);
-            this.servisOdustaoRadioButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.servisOdustaoRadioButton.Margin = new System.Windows.Forms.Padding(4);
             this.servisOdustaoRadioButton.Name = "servisOdustaoRadioButton";
             this.servisOdustaoRadioButton.Size = new System.Drawing.Size(246, 25);
             this.servisOdustaoRadioButton.TabIndex = 9;
@@ -389,7 +389,7 @@
             this.korisnikOdustaoRadioButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.korisnikOdustaoRadioButton.DataBindings.Add(new System.Windows.Forms.Binding("Checked", this.naloziFBindingSource, "korisnikOdustao", true));
             this.korisnikOdustaoRadioButton.Location = new System.Drawing.Point(122, 70);
-            this.korisnikOdustaoRadioButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.korisnikOdustaoRadioButton.Margin = new System.Windows.Forms.Padding(4);
             this.korisnikOdustaoRadioButton.Name = "korisnikOdustaoRadioButton";
             this.korisnikOdustaoRadioButton.Size = new System.Drawing.Size(246, 25);
             this.korisnikOdustaoRadioButton.TabIndex = 9;
@@ -401,7 +401,7 @@
             this.datumDateTimePicker.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.datumDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.naloziFBindingSource, "Datum", true));
             this.datumDateTimePicker.Location = new System.Drawing.Point(122, 38);
-            this.datumDateTimePicker.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.datumDateTimePicker.Margin = new System.Windows.Forms.Padding(4);
             this.datumDateTimePicker.Name = "datumDateTimePicker";
             this.datumDateTimePicker.Size = new System.Drawing.Size(246, 22);
             this.datumDateTimePicker.TabIndex = 3;
@@ -413,7 +413,7 @@
             this.brojNalogaTextBox.ContextMenuStrip = this.cmsBrojNaloga;
             this.brojNalogaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.naloziFBindingSource, "brojNaloga", true));
             this.brojNalogaTextBox.Location = new System.Drawing.Point(122, 5);
-            this.brojNalogaTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.brojNalogaTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.brojNalogaTextBox.Name = "brojNalogaTextBox";
             this.brojNalogaTextBox.ReadOnly = true;
             this.brojNalogaTextBox.Size = new System.Drawing.Size(246, 22);
@@ -449,7 +449,7 @@
             this.naCekanjuRadioButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.naCekanjuRadioButton.DataBindings.Add(new System.Windows.Forms.Binding("Checked", this.naloziFBindingSource, "naCekanju", true));
             this.naCekanjuRadioButton.Location = new System.Drawing.Point(4, 70);
-            this.naCekanjuRadioButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.naCekanjuRadioButton.Margin = new System.Windows.Forms.Padding(4);
             this.naCekanjuRadioButton.Name = "naCekanjuRadioButton";
             this.naCekanjuRadioButton.Size = new System.Drawing.Size(110, 25);
             this.naCekanjuRadioButton.TabIndex = 5;
@@ -461,7 +461,7 @@
             this.zavrsenoRadioButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.zavrsenoRadioButton.DataBindings.Add(new System.Windows.Forms.Binding("Checked", this.naloziFBindingSource, "Zavrseno", true));
             this.zavrsenoRadioButton.Location = new System.Drawing.Point(4, 103);
-            this.zavrsenoRadioButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.zavrsenoRadioButton.Margin = new System.Windows.Forms.Padding(4);
             this.zavrsenoRadioButton.Name = "zavrsenoRadioButton";
             this.zavrsenoRadioButton.Size = new System.Drawing.Size(110, 25);
             this.zavrsenoRadioButton.TabIndex = 6;
@@ -473,9 +473,9 @@
             this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox2.Controls.Add(this.tableLayoutPanel3);
             this.groupBox2.Location = new System.Drawing.Point(392, 96);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox2.Size = new System.Drawing.Size(751, 192);
             this.groupBox2.TabIndex = 0;
             this.groupBox2.TabStop = false;
@@ -502,7 +502,7 @@
             this.tableLayoutPanel3.Controls.Add(this.flowLayoutPanel1, 1, 2);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel3.Location = new System.Drawing.Point(4, 19);
-            this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(4);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 4;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 31F));
@@ -518,7 +518,7 @@
             this.proizvodjacComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.naloziFBindingSource, "Proizvodjac", true));
             this.proizvodjacComboBox.FormattingEnabled = true;
             this.proizvodjacComboBox.Location = new System.Drawing.Point(401, 4);
-            this.proizvodjacComboBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.proizvodjacComboBox.Margin = new System.Windows.Forms.Padding(4);
             this.proizvodjacComboBox.Name = "proizvodjacComboBox";
             this.proizvodjacComboBox.Size = new System.Drawing.Size(220, 24);
             this.proizvodjacComboBox.TabIndex = 6;
@@ -529,7 +529,7 @@
             this.uredjajComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.naloziFBindingSource, "Uredjaj", true));
             this.uredjajComboBox.FormattingEnabled = true;
             this.uredjajComboBox.Location = new System.Drawing.Point(103, 4);
-            this.uredjajComboBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.uredjajComboBox.Margin = new System.Windows.Forms.Padding(4);
             this.uredjajComboBox.Name = "uredjajComboBox";
             this.uredjajComboBox.Size = new System.Drawing.Size(179, 24);
             this.uredjajComboBox.TabIndex = 5;
@@ -540,7 +540,7 @@
             this.tableLayoutPanel3.SetColumnSpan(this.opremaTextBox, 4);
             this.opremaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.naloziFBindingSource, "Oprema", true));
             this.opremaTextBox.Location = new System.Drawing.Point(103, 141);
-            this.opremaTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.opremaTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.opremaTextBox.Name = "opremaTextBox";
             this.opremaTextBox.Size = new System.Drawing.Size(637, 22);
             this.opremaTextBox.TabIndex = 9;
@@ -550,7 +550,7 @@
             this.serijskiBrojTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.serijskiBrojTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.naloziFBindingSource, "serijskiBroj", true));
             this.serijskiBrojTextBox.Location = new System.Drawing.Point(401, 35);
-            this.serijskiBrojTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.serijskiBrojTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.serijskiBrojTextBox.Name = "serijskiBrojTextBox";
             this.serijskiBrojTextBox.Size = new System.Drawing.Size(220, 22);
             this.serijskiBrojTextBox.TabIndex = 8;
@@ -560,7 +560,7 @@
             this.modelTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.modelTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.naloziFBindingSource, "Model", true));
             this.modelTextBox.Location = new System.Drawing.Point(103, 35);
-            this.modelTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.modelTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.modelTextBox.Name = "modelTextBox";
             this.modelTextBox.Size = new System.Drawing.Size(179, 22);
             this.modelTextBox.TabIndex = 7;
@@ -570,7 +570,7 @@
             this.tableLayoutPanel3.SetColumnSpan(this.flowLayoutPanel1, 4);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(103, 66);
-            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(4);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(637, 66);
             this.flowLayoutPanel1.TabIndex = 17;
@@ -581,7 +581,7 @@
             this.tableLayoutPanel5.SetColumnSpan(this.izvestajRichTextBox, 6);
             this.izvestajRichTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.naloziFBindingSource, "Izvestaj", true));
             this.izvestajRichTextBox.Location = new System.Drawing.Point(103, 36);
-            this.izvestajRichTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.izvestajRichTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.izvestajRichTextBox.Name = "izvestajRichTextBox";
             this.izvestajRichTextBox.Size = new System.Drawing.Size(637, 95);
             this.izvestajRichTextBox.TabIndex = 11;
@@ -595,7 +595,7 @@
             this.tableLayoutPanel5.SetColumnSpan(this.opisKvaraTextBox, 6);
             this.opisKvaraTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.naloziFBindingSource, "opisKvara", true));
             this.opisKvaraTextBox.Location = new System.Drawing.Point(103, 4);
-            this.opisKvaraTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.opisKvaraTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.opisKvaraTextBox.MaxLength = 120;
             this.opisKvaraTextBox.Name = "opisKvaraTextBox";
             this.opisKvaraTextBox.Size = new System.Drawing.Size(637, 22);
@@ -608,9 +608,9 @@
             this.groupBox3.ContextMenuStrip = this.cmsKorisnik;
             this.groupBox3.Controls.Add(this.tableLayoutPanel4);
             this.groupBox3.Location = new System.Drawing.Point(4, 295);
-            this.groupBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox3.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox3.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox3.Size = new System.Drawing.Size(380, 191);
             this.groupBox3.TabIndex = 0;
             this.groupBox3.TabStop = false;
@@ -644,7 +644,7 @@
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40.45454F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 29.09091F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30.52209F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 87F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 90F));
             this.tableLayoutPanel4.Controls.Add(iDFirmeLabel, 0, 0);
             this.tableLayoutPanel4.Controls.Add(this.iDFirmeTextBox, 1, 0);
             this.tableLayoutPanel4.Controls.Add(this.eMailTextBox, 1, 4);
@@ -659,7 +659,7 @@
             this.tableLayoutPanel4.Controls.Add(this.dProFakt, 3, 0);
             this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel4.Location = new System.Drawing.Point(4, 19);
-            this.tableLayoutPanel4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tableLayoutPanel4.Margin = new System.Windows.Forms.Padding(4);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 5;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
@@ -674,10 +674,10 @@
             // 
             this.iDFirmeTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.iDFirmeTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.naloziFBindingSource, "IDFirme", true));
-            this.iDFirmeTextBox.Location = new System.Drawing.Point(118, 5);
+            this.iDFirmeTextBox.Location = new System.Drawing.Point(117, 5);
             this.iDFirmeTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.iDFirmeTextBox.Name = "iDFirmeTextBox";
-            this.iDFirmeTextBox.Size = new System.Drawing.Size(76, 22);
+            this.iDFirmeTextBox.Size = new System.Drawing.Size(75, 22);
             this.iDFirmeTextBox.TabIndex = 10;
             this.iDFirmeTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.iDFirmeTextBox_KeyDown);
             // 
@@ -686,10 +686,10 @@
             this.eMailTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel4.SetColumnSpan(this.eMailTextBox, 3);
             this.eMailTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.naloziFBindingSource, "eMail", true));
-            this.eMailTextBox.Location = new System.Drawing.Point(119, 139);
-            this.eMailTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.eMailTextBox.Location = new System.Drawing.Point(118, 139);
+            this.eMailTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.eMailTextBox.Name = "eMailTextBox";
-            this.eMailTextBox.Size = new System.Drawing.Size(249, 22);
+            this.eMailTextBox.Size = new System.Drawing.Size(250, 22);
             this.eMailTextBox.TabIndex = 4;
             // 
             // kontaktTextBox
@@ -697,10 +697,10 @@
             this.kontaktTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel4.SetColumnSpan(this.kontaktTextBox, 3);
             this.kontaktTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.naloziFBindingSource, "Kontakt", true));
-            this.kontaktTextBox.Location = new System.Drawing.Point(119, 104);
-            this.kontaktTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.kontaktTextBox.Location = new System.Drawing.Point(118, 104);
+            this.kontaktTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.kontaktTextBox.Name = "kontaktTextBox";
-            this.kontaktTextBox.Size = new System.Drawing.Size(249, 22);
+            this.kontaktTextBox.Size = new System.Drawing.Size(250, 22);
             this.kontaktTextBox.TabIndex = 3;
             this.kontaktTextBox.Leave += new System.EventHandler(this.kontaktTextBox_Leave);
             // 
@@ -709,11 +709,11 @@
             this.kontaktOsobaTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel4.SetColumnSpan(this.kontaktOsobaTextBox, 3);
             this.kontaktOsobaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.naloziFBindingSource, "kontaktOsoba", true));
-            this.kontaktOsobaTextBox.Location = new System.Drawing.Point(119, 71);
-            this.kontaktOsobaTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.kontaktOsobaTextBox.Location = new System.Drawing.Point(118, 71);
+            this.kontaktOsobaTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.kontaktOsobaTextBox.MaxLength = 40;
             this.kontaktOsobaTextBox.Name = "kontaktOsobaTextBox";
-            this.kontaktOsobaTextBox.Size = new System.Drawing.Size(249, 22);
+            this.kontaktOsobaTextBox.Size = new System.Drawing.Size(250, 22);
             this.kontaktOsobaTextBox.TabIndex = 2;
             // 
             // firmaTextBox
@@ -721,10 +721,10 @@
             this.firmaTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel4.SetColumnSpan(this.firmaTextBox, 3);
             this.firmaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.naloziFBindingSource, "Firma", true));
-            this.firmaTextBox.Location = new System.Drawing.Point(119, 38);
-            this.firmaTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.firmaTextBox.Location = new System.Drawing.Point(118, 38);
+            this.firmaTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.firmaTextBox.Name = "firmaTextBox";
-            this.firmaTextBox.Size = new System.Drawing.Size(249, 22);
+            this.firmaTextBox.Size = new System.Drawing.Size(250, 22);
             this.firmaTextBox.TabIndex = 1;
             // 
             // dFOdabir
@@ -732,8 +732,8 @@
             this.dFOdabir.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dFOdabir.Location = new System.Drawing.Point(201, 4);
-            this.dFOdabir.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dFOdabir.Location = new System.Drawing.Point(199, 4);
+            this.dFOdabir.Margin = new System.Windows.Forms.Padding(4);
             this.dFOdabir.Name = "dFOdabir";
             this.dFOdabir.Size = new System.Drawing.Size(78, 25);
             this.dFOdabir.TabIndex = 7;
@@ -744,10 +744,10 @@
             // dProFakt
             // 
             this.dProFakt.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dProFakt.Location = new System.Drawing.Point(286, 2);
+            this.dProFakt.Location = new System.Drawing.Point(284, 2);
             this.dProFakt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dProFakt.Name = "dProFakt";
-            this.dProFakt.Size = new System.Drawing.Size(83, 29);
+            this.dProFakt.Size = new System.Drawing.Size(85, 29);
             this.dProFakt.TabIndex = 11;
             this.dProFakt.UseVisualStyleBackColor = true;
             this.dProFakt.Visible = false;
@@ -769,7 +769,7 @@
             this.tableLayoutPanel1.Controls.Add(this.dStampaj, 3, 0);
             this.tableLayoutPanel1.Controls.Add(this.dObrisi, 4, 0);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(131, 36);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -782,7 +782,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dNovi.Location = new System.Drawing.Point(4, 4);
-            this.dNovi.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dNovi.Margin = new System.Windows.Forms.Padding(4);
             this.dNovi.Name = "dNovi";
             this.dNovi.Size = new System.Drawing.Size(175, 36);
             this.dNovi.TabIndex = 15;
@@ -796,7 +796,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dOtkazi.Location = new System.Drawing.Point(187, 4);
-            this.dOtkazi.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dOtkazi.Margin = new System.Windows.Forms.Padding(4);
             this.dOtkazi.Name = "dOtkazi";
             this.dOtkazi.Size = new System.Drawing.Size(175, 36);
             this.dOtkazi.TabIndex = 14;
@@ -810,7 +810,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dSacuvaj.Location = new System.Drawing.Point(370, 4);
-            this.dSacuvaj.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dSacuvaj.Margin = new System.Windows.Forms.Padding(4);
             this.dSacuvaj.Name = "dSacuvaj";
             this.dSacuvaj.Size = new System.Drawing.Size(175, 36);
             this.dSacuvaj.TabIndex = 12;
@@ -824,7 +824,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dStampaj.Location = new System.Drawing.Point(553, 4);
-            this.dStampaj.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dStampaj.Margin = new System.Windows.Forms.Padding(4);
             this.dStampaj.Name = "dStampaj";
             this.dStampaj.Size = new System.Drawing.Size(175, 36);
             this.dStampaj.TabIndex = 13;
@@ -838,7 +838,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dObrisi.Location = new System.Drawing.Point(736, 4);
-            this.dObrisi.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dObrisi.Margin = new System.Windows.Forms.Padding(4);
             this.dObrisi.Name = "dObrisi";
             this.dObrisi.Size = new System.Drawing.Size(175, 36);
             this.dObrisi.TabIndex = 16;
@@ -861,7 +861,7 @@
             // 
             this.tbPretraga.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.tbPretraga.Location = new System.Drawing.Point(83, 554);
-            this.tbPretraga.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbPretraga.Margin = new System.Windows.Forms.Padding(4);
             this.tbPretraga.Name = "tbPretraga";
             this.tbPretraga.Size = new System.Drawing.Size(300, 22);
             this.tbPretraga.TabIndex = 3;
@@ -900,7 +900,7 @@
             this.naloziFDataGridView.DataSource = this.naloziFBindingSource;
             this.naloziFDataGridView.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.naloziFDataGridView.Location = new System.Drawing.Point(0, 591);
-            this.naloziFDataGridView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.naloziFDataGridView.Margin = new System.Windows.Forms.Padding(4);
             this.naloziFDataGridView.Name = "naloziFDataGridView";
             this.naloziFDataGridView.ReadOnly = true;
             this.naloziFDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -1072,9 +1072,9 @@
             this.gbServis.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.gbServis.Controls.Add(this.tableLayoutPanel5);
             this.gbServis.Location = new System.Drawing.Point(392, 295);
-            this.gbServis.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gbServis.Margin = new System.Windows.Forms.Padding(4);
             this.gbServis.Name = "gbServis";
-            this.gbServis.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gbServis.Padding = new System.Windows.Forms.Padding(4);
             this.gbServis.Size = new System.Drawing.Size(751, 191);
             this.gbServis.TabIndex = 17;
             this.gbServis.TabStop = false;
@@ -1096,7 +1096,7 @@
             this.tableLayoutPanel5.Controls.Add(this.opisKvaraTextBox, 1, 0);
             this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel5.Location = new System.Drawing.Point(4, 19);
-            this.tableLayoutPanel5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tableLayoutPanel5.Margin = new System.Windows.Forms.Padding(4);
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
             this.tableLayoutPanel5.RowCount = 3;
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 31F));
@@ -1203,7 +1203,7 @@
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ucPoslovni";
             this.Size = new System.Drawing.Size(1407, 795);
             this.Load += new System.EventHandler(this.ucPoslovni_Load);

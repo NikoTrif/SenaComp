@@ -20,15 +20,19 @@ namespace uclib.Ostalo
             InitializeComponent();
         }
 
-        private void ucOdabirFirme_Load(object sender, EventArgs e)
+        private async void ucOdabirFirme_Load(object sender, EventArgs e)
         {
-            LoadDatabase();
+            cbFilter.SelectedIndex = 0;
+            await LoadDatabase();
         }
 
-        private void LoadDatabase()
+        private async Task /*void*/ LoadDatabase()
         {
             firmeTableAdapter.Connection.ConnectionString = $@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename={Properties.Settings.Default.BazaServerPath};Password=Master1!";
+            await firmeTableAdapter.Connection.OpenAsync();
             firmeTableAdapter.Fill(dbSenaCompDataSet.Firme);
+            //await Task.Run(() => firmeTableAdapter.Fill(dbSenaCompDataSet.Firme));
+            //firmeDataGridView.Refresh();
         }
 
         private void dPretraga_Click(object sender, EventArgs e)

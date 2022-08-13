@@ -8,6 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using iflib;
 using Microsoft.Reporting.WinForms;
+using System.Threading.Tasks;
 
 namespace uclib.Nalozi
 {
@@ -61,7 +62,35 @@ namespace uclib.Nalozi
             }
         }
 
-        private void ucPoslovni_Load(object sender, EventArgs e)
+        private async void ucPoslovni_Load(object sender, EventArgs e)
+        {
+            try
+            {
+               
+                try
+                {
+                    flpDodajKontrole();
+                }
+                catch (Exception ex)
+                {
+                    clFunkcijeRazno.NapisiLog(ex);
+                }
+
+                await LoadDatabase();
+                cbFilter.SelectedIndex = 0;
+                try
+                {
+                    naloziFDataGridView.CurrentCell = naloziFDataGridView.Rows[naloziFDataGridView.RowCount - 1].Cells[0]; //TD 2.1.e
+                }
+                catch { }
+            }
+            catch (Exception ex)
+            {
+                clFunkcijeRazno.NapisiLog(ex);
+            }
+        }
+
+        private async Task LoadDatabase()
         {
             try
             {
@@ -80,21 +109,8 @@ namespace uclib.Nalozi
                     firmeTableAdapter.Connection.ConnectionString = $@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename={cGlobalVariables.localDB};Password=Master1!";
                     dRefresh.Visible = false;
                 }
+                await naloziFTableAdapter.Connection.OpenAsync();
                 naloziFTableAdapter.Fill(dbSenaCompDataSet.NaloziF);
-                cbFilter.SelectedIndex = 0;
-                try
-                {
-                    naloziFDataGridView.CurrentCell = naloziFDataGridView.Rows[naloziFDataGridView.RowCount - 1].Cells[0]; //TD 2.1.e
-                }
-                catch { }
-                try
-                {
-                    flpDodajKontrole();
-                }
-                catch (Exception ex)
-                {
-                    clFunkcijeRazno.NapisiLog(ex);
-                }
             }
             catch (Exception ex)
             {

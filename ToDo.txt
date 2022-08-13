@@ -394,3 +394,5 @@ kada se trazi u kodu - npr. "RG1", "TD3.1.2", "G2"
 			 - - - - - Opcije.Osnovno.ucOprema - dodate ikonice - strelica gore i dole
 
 01.08.22  - - - - - - -ucOdabirFirme - resena greska kod ucitavanja baze podataka - promenjen ConnectionString
+
+12.08.22 - - - - - - - ucOdabirFirme - resena greska kod ucitavanja baze podataka - konekcija se otvara u async a fill se radi u sync modu

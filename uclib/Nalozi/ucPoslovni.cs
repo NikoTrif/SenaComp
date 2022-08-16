@@ -8,6 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using iflib;
 using Microsoft.Reporting.WinForms;
+using System.Threading.Tasks;
 
 namespace uclib.Nalozi
 {
@@ -61,7 +62,35 @@ namespace uclib.Nalozi
             }
         }
 
-        private void ucPoslovni_Load(object sender, EventArgs e)
+        private async void ucPoslovni_Load(object sender, EventArgs e)
+        {
+            try
+            {
+               
+                try
+                {
+                    flpDodajKontrole();
+                }
+                catch (Exception ex)
+                {
+                    clFunkcijeRazno.NapisiLog(ex);
+                }
+
+                await LoadDatabase();
+                cbFilter.SelectedIndex = 0;
+                try
+                {
+                    naloziFDataGridView.CurrentCell = naloziFDataGridView.Rows[naloziFDataGridView.RowCount - 1].Cells[0]; //TD 2.1.e
+                }
+                catch { }
+            }
+            catch (Exception ex)
+            {
+                clFunkcijeRazno.NapisiLog(ex);
+            }
+        }
+
+        private async Task LoadDatabase()
         {
             try
             {
@@ -80,21 +109,8 @@ namespace uclib.Nalozi
                     firmeTableAdapter.Connection.ConnectionString = $@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename={cGlobalVariables.localDB};Password=Master1!";
                     dRefresh.Visible = false;
                 }
+                await naloziFTableAdapter.Connection.OpenAsync();
                 naloziFTableAdapter.Fill(dbSenaCompDataSet.NaloziF);
-                cbFilter.SelectedIndex = 0;
-                try
-                {
-                    naloziFDataGridView.CurrentCell = naloziFDataGridView.Rows[naloziFDataGridView.RowCount - 1].Cells[0]; //TD 2.1.e
-                }
-                catch { }
-                try
-                {
-                    flpDodajKontrole();
-                }
-                catch (Exception ex)
-                {
-                    clFunkcijeRazno.NapisiLog(ex);
-                }
             }
             catch (Exception ex)
             {
@@ -105,7 +121,12 @@ namespace uclib.Nalozi
         private void dNovi_Click(object sender, EventArgs e)
         {
             naloziFBindingSource.AddNew();
-            naCekanjuRadioButton.Select();
+            //G 7
+            foreach(RadioButton rb in tableLayoutPanel2.Controls.OfType<RadioButton>())
+            {
+                rb.Checked = false;
+            }
+            naCekanjuRadioButton.Checked = true;
             datumDateTimePicker.Value = DateTime.Now;
             iDFirmeTextBox.Select();
             resetBrojNalogaTextBoxReadOnly();
@@ -504,7 +525,7 @@ namespace uclib.Nalozi
 
         private void izvestajRichTextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
-            clFunkcijeRazno.OgranicenjeRedovaRitchTexBoxa(izvestajRichTextBox, 6, e);
+            clFunkcijeRazno.OgranicenjeRedovaRitchTexBoxa(izvestajRichTextBox, 6, 100, e);
         }
 
         private void RefreshDB()

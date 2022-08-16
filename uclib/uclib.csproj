@@ -241,6 +241,9 @@
     <EmbeddedResource Include="Racuni\ucProfakture.resx">
       <DependentUpon>ucProfakture.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportovi\repNalogP - Copy.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reportovi\repNalogP.rdlc">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
@@ -299,6 +302,8 @@
       <DependentUpon>dbSenaComp.mdf</DependentUpon>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <None Include="Resources\ArrowDown.png" />
+    <None Include="Resources\ArrowUp.png" />
     <None Include="Resources\Search_black.png" />
     <None Include="Resources\search_colored.png" />
     <None Include="Resources\refresh2.png" />

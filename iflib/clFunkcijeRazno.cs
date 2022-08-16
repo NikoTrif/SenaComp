@@ -86,14 +86,23 @@ namespace iflib
             return tbOprema;
         }
 
-        public static void OgranicenjeRedovaRitchTexBoxa(RichTextBox rtb, int brRedova, KeyPressEventArgs kpe)
+        /// <summary>
+        /// Pokazuje obaveštenje kada se pređe zadat broj redova u Rich Text Box-u koji će biti vidljivi u reportu i automatski
+        /// dodaje tekst u novi red kada se dostigne određen broj karaktera u redu. Potrebno da se postavi u KeyPress Event.
+        /// 
+        /// </summary>
+        /// <param name="rtb">Ritch Text Box koji se proverava</param>
+        /// <param name="brRedova">Maksimalan broj redova koji se prikazuje u Report-u </param>
+        /// <param name="brCharRed">Broj karaktera sa razmacima koji je vidljiv u Report-u</param>
+        /// <param name="kpe">Key Press Event Argument</param>
+        public static void OgranicenjeRedovaRitchTexBoxa(RichTextBox rtb, int brRedova, int brCharRed, KeyPressEventArgs kpe)
         {
             //TD 3.1.b
             if (rtb.Lines.Length <= brRedova)
             {
                 try
                 {
-                    if (rtb.Lines[rtb.GetLineFromCharIndex(rtb.SelectionStart)].Length >= 64 &&
+                    if (rtb.Lines[rtb.GetLineFromCharIndex(rtb.SelectionStart)].Length >= brCharRed &&
                                 kpe.KeyChar != '\b')
                     {
                         rtb.Text = rtb.Text + Environment.NewLine;

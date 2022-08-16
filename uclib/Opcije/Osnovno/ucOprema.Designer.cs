@@ -32,10 +32,10 @@
             this.label1 = new System.Windows.Forms.Label();
             this.tbOprema = new System.Windows.Forms.TextBox();
             this.dDodaj = new System.Windows.Forms.Button();
-            this.dGore = new System.Windows.Forms.Button();
-            this.dDole = new System.Windows.Forms.Button();
             this.dObrisi = new System.Windows.Forms.Button();
             this.dApply = new System.Windows.Forms.Button();
+            this.dDole = new System.Windows.Forms.Button();
+            this.dGore = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lbOprema
@@ -86,30 +86,6 @@
             this.dDodaj.UseVisualStyleBackColor = true;
             this.dDodaj.Click += new System.EventHandler(this.dDodaj_Click);
             // 
-            // dGore
-            // 
-            this.dGore.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.dGore.Location = new System.Drawing.Point(422, 208);
-            this.dGore.Margin = new System.Windows.Forms.Padding(2);
-            this.dGore.Name = "dGore";
-            this.dGore.Size = new System.Drawing.Size(28, 31);
-            this.dGore.TabIndex = 4;
-            this.dGore.Text = "U";
-            this.dGore.UseVisualStyleBackColor = true;
-            this.dGore.Click += new System.EventHandler(this.dGore_Click);
-            // 
-            // dDole
-            // 
-            this.dDole.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.dDole.Location = new System.Drawing.Point(422, 244);
-            this.dDole.Margin = new System.Windows.Forms.Padding(2);
-            this.dDole.Name = "dDole";
-            this.dDole.Size = new System.Drawing.Size(28, 31);
-            this.dDole.TabIndex = 4;
-            this.dDole.Text = "D";
-            this.dDole.UseVisualStyleBackColor = true;
-            this.dDole.Click += new System.EventHandler(this.dDole_Click);
-            // 
             // dObrisi
             // 
             this.dObrisi.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -134,6 +110,32 @@
             this.dApply.Text = "Primeni";
             this.dApply.UseVisualStyleBackColor = true;
             this.dApply.Click += new System.EventHandler(this.dApply_Click);
+            // 
+            // dDole
+            // 
+            this.dDole.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.dDole.BackgroundImage = global::uclib.Properties.Resources.ArrowDown;
+            this.dDole.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.dDole.Location = new System.Drawing.Point(422, 244);
+            this.dDole.Margin = new System.Windows.Forms.Padding(2);
+            this.dDole.Name = "dDole";
+            this.dDole.Size = new System.Drawing.Size(31, 31);
+            this.dDole.TabIndex = 4;
+            this.dDole.UseVisualStyleBackColor = true;
+            this.dDole.Click += new System.EventHandler(this.dDole_Click);
+            // 
+            // dGore
+            // 
+            this.dGore.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.dGore.BackgroundImage = global::uclib.Properties.Resources.ArrowUp;
+            this.dGore.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.dGore.Location = new System.Drawing.Point(422, 208);
+            this.dGore.Margin = new System.Windows.Forms.Padding(2);
+            this.dGore.Name = "dGore";
+            this.dGore.Size = new System.Drawing.Size(31, 31);
+            this.dGore.TabIndex = 4;
+            this.dGore.UseVisualStyleBackColor = true;
+            this.dGore.Click += new System.EventHandler(this.dGore_Click);
             // 
             // ucOprema
             // 

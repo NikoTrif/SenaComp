@@ -84,10 +84,10 @@ kada se trazi u kodu - npr. "RG1", "TD3.1.2", "G2"
 4.   - Kada se primeni podesavanje za listu checkboxova, ne pojavljuju se, pojave se tek kada se u meniju ponovo klikne na izabrani UC
 |R|5.   - Ne otvara se UC privatni u debug-u
 |R|6.   - Kada se otkaze ili obrise nalog, autoincrement se ne vraca na prethodni
-7.   - uclib.ucPrivatni - Ne pamti se status u kolonama na "Na Cekanju", "Zavrseno"... kada se radio button selektuje
+|R|7.   - uclib.ucPrivatni - Ne pamti se status u kolonama na "Na Cekanju", "Zavrseno"... kada se radio button selektuje
 |R|8.   - uclib.ucPrivatni - Kada se promeni mesto baze baza izbacuje gresku bez obzira na promenu connectionStringa u podesavanjima
 9.   - uclib.ucPrivatni - Dijalog za napomenu se zatvara i kada se klikne na dugme izmena
-10.  - uclib.ucPrivatni.izvestajRichTextBox_KeyPress - prebaci u novi red, novi red se ne brise osim na backspace, ne bi trebalo ni da se upisuje
+|X|10.  - uclib.ucPrivatni.izvestajRichTextBox_KeyPress - prebaci u novi red, novi red se ne brise osim na backspace, ne bi trebalo ni da se upisuje
 |R|11.  - uclib.ucPoslovni.dStampa_Click - problem u komandi reportView1.LocalReport.SetParameters - iz nekog razloga ne postavlja parametre
 |R|12.  - uclib.ucProfakture - kada se cuva nalog ne moze da konvertuje rednibroj u Byte[], a ne bi ni trebalo
 |R|13.  - uclib.ucProfakture - kada se klikne na celiju pokazuje error Cell out of range 
@@ -108,7 +108,7 @@ kada se trazi u kodu - npr. "RG1", "TD3.1.2", "G2"
 			System.NullReferenceException: Object reference not set to an instance of an object.
 			at uclib.Nalozi.ucPrivatni.flpDodajKontrole() in C:\Users\Lenovo\Documents\Visual Studio 2015\Projects\SenaComp\uclib\Nalozi\ucPrivatni.cs:line 427
 			at uclib.Nalozi.ucPrivatni.ucPrivatni_Load(Object sender, EventArgs e) in C:\Users\Lenovo\Documents\Visual Studio 2015\Projects\SenaComp\uclib\Nalozi\ucPrivatni.cs:line 45
-2.   - ostali su unosi u bazi koji su sluzili za testiranje - ukoniti ih
+|R|2.   - ostali su unosi u bazi koji su sluzili za testiranje - ukoniti ih
 
 ---------------------------------------------------------------------------------------
 ***Uradjeno***
@@ -389,3 +389,10 @@ kada se trazi u kodu - npr. "RG1", "TD3.1.2", "G2"
 01.05.22 - - - - - - - ucPrivatni, ucPoslovni - opremaTextBox maksimalan broj karaktera promenjen na 120, ako oprema u RDLC predje u drugi red, stampa se prazna stranica
 		 - - - - - - - repNalogP, repNalogF - prepravljeni textboxovi da budu u liniji sa ostalim elementima
 		 - - - - - - - ucPrivatni, ucPoslovni - ogranicen broj karaktera na ImePrezimeTextBox i KontaktOsobaTextBox
+
+07.05.22 G 7 - - - - - ucPrivatni, ucPoslovni - Greska resena tako sto na NoviNalog_Click() svi radio buttoni postave na checked = false, pa se tek onda naCekanjuRadioButton postavi na checked = true
+			 - - - - - Opcije.Osnovno.ucOprema - dodate ikonice - strelica gore i dole
+
+01.08.22  - - - - - - -ucOdabirFirme - resena greska kod ucitavanja baze podataka - promenjen ConnectionString
+
+12.08.22 - - - - - - - ucOdabirFirme - resena greska kod ucitavanja baze podataka - konekcija se otvara u async a fill se radi u sync modu

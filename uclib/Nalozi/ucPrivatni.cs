@@ -10,6 +10,7 @@ using iflib;
 using Microsoft.Reporting.WinForms;
 using System.IO;
 using System.Collections;
+using System.Threading.Tasks;
 
 namespace uclib.Nalozi
 {
@@ -43,10 +44,15 @@ namespace uclib.Nalozi
             naloziPDataGridView.Columns[1].DefaultCellStyle.Format = Properties.Settings.Default.VremeDatumFormat;
         }
 
-        private void ucPrivatni_Load(object sender, EventArgs e)
+        private async void ucPrivatni_Load(object sender, EventArgs e)
         {
             try
             {
+                var tm = System.Diagnostics.Stopwatch.StartNew();
+                await LoadDatabase();
+                tm.Stop();
+                Console.WriteLine(tm.ElapsedMilliseconds);
+
                 try
                 {
                     flpDodajKontrole(); // ovo radi i treba ovako 
@@ -55,7 +61,17 @@ namespace uclib.Nalozi
                 {
                     clFunkcijeRazno.NapisiLog(ex);
                 }
+            }
+            catch (Exception ex)
+            {
+                clFunkcijeRazno.NapisiLog(ex);
+            }
+        }
 
+        private async Task /*void*/ LoadDatabase()
+        {
+            try
+            {
                 //G 8
                 if (Properties.Settings.Default.BazaServer)
                 {
@@ -67,6 +83,9 @@ namespace uclib.Nalozi
                     naloziPTableAdapter.Connection.ConnectionString = $@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename={cGlobalVariables.localDB};Password=Master1!";
                     dRefresh.Visible = false;
                 }
+
+                await naloziPTableAdapter.Connection.OpenAsync();
+
                 naloziPTableAdapter.Fill(dbSenaCompDataSet.NaloziP);
                 cbFilter.SelectedIndex = 0;
                 if (naloziPDataGridView.RowCount != 0)
@@ -83,7 +102,12 @@ namespace uclib.Nalozi
         private void dNovi_Click(object sender, EventArgs e)
         {
             naloziPBindingSource.AddNew();
-            naCekanjuRadioButton.Select();
+            //G 7
+            foreach(RadioButton rb in tableLayoutPanel1.Controls.OfType<RadioButton>())
+            {
+                rb.Checked = false;
+            }
+            naCekanjuRadioButton.Checked = true;
             datumDateTimePicker.Value = DateTime.Now;
             imePrezimeTextBox.Select();
             resetBrojNalogaTextBoxReadOnly();
@@ -481,7 +505,7 @@ namespace uclib.Nalozi
 
         private void izvestajRichTextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
-            clFunkcijeRazno.OgranicenjeRedovaRitchTexBoxa(izvestajRichTextBox, 6, e);
+            clFunkcijeRazno.OgranicenjeRedovaRitchTexBoxa(izvestajRichTextBox, 6, 100, e);
         }
 
         public void flpDodajKontrole()

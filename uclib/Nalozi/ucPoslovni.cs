@@ -66,7 +66,14 @@ namespace uclib.Nalozi
         {
             try
             {
-               
+                await LoadDatabase();
+                
+                cbFilter.SelectedIndex = 0;
+                try
+                {
+                    naloziFDataGridView.CurrentCell = naloziFDataGridView.Rows[naloziFDataGridView.RowCount - 1].Cells[0]; //TD 2.1.e
+                }
+                catch { }
                 try
                 {
                     flpDodajKontrole();
@@ -75,14 +82,6 @@ namespace uclib.Nalozi
                 {
                     clFunkcijeRazno.NapisiLog(ex);
                 }
-
-                await LoadDatabase();
-                cbFilter.SelectedIndex = 0;
-                try
-                {
-                    naloziFDataGridView.CurrentCell = naloziFDataGridView.Rows[naloziFDataGridView.RowCount - 1].Cells[0]; //TD 2.1.e
-                }
-                catch { }
             }
             catch (Exception ex)
             {
@@ -92,41 +91,29 @@ namespace uclib.Nalozi
 
         private async Task LoadDatabase()
         {
-            try
+            //G 8
+            //naloziFTableAdapter.Connection.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=" + Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\Visual Studio 2015\Projects\SenaComp\SenaComp\bin\debug\dbSenaComp.mdf;Password=Master1!";
+            //naloziFTableAdapter.Connection.ConnectionString = $@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename={Application.StartupPath}\dbSenaComp.mdf;Password=Master1!";
+            if (Properties.Settings.Default.BazaServer)
             {
-                //G 8
-                //naloziFTableAdapter.Connection.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=" + Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\Visual Studio 2015\Projects\SenaComp\SenaComp\bin\debug\dbSenaComp.mdf;Password=Master1!";
-                //naloziFTableAdapter.Connection.ConnectionString = $@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename={Application.StartupPath}\dbSenaComp.mdf;Password=Master1!";
-                if (Properties.Settings.Default.BazaServer)
-                {
-                    naloziFTableAdapter.Connection.ConnectionString = $@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename={Properties.Settings.Default.BazaServerPath};Password=Master1!";
-                    firmeTableAdapter.Connection.ConnectionString = $@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename={Properties.Settings.Default.BazaServerPath};Password=Master1!";
-                    dRefresh.Visible = true;
-                }
-                else
-                {
-                    naloziFTableAdapter.Connection.ConnectionString = $@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename={cGlobalVariables.localDB};Password=Master1!";
-                    firmeTableAdapter.Connection.ConnectionString = $@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename={cGlobalVariables.localDB};Password=Master1!";
-                    dRefresh.Visible = false;
-                }
-                await naloziFTableAdapter.Connection.OpenAsync();
-                naloziFTableAdapter.Fill(dbSenaCompDataSet.NaloziF);
+                naloziFTableAdapter.Connection.ConnectionString = $@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename={Properties.Settings.Default.BazaServerPath};Password=Master1!";
+                firmeTableAdapter.Connection.ConnectionString = $@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename={Properties.Settings.Default.BazaServerPath};Password=Master1!";
+                dRefresh.Visible = true;
             }
-            catch (Exception ex)
+            else
             {
-                clFunkcijeRazno.NapisiLog(ex);
+                naloziFTableAdapter.Connection.ConnectionString = $@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename={cGlobalVariables.localDB};Password=Master1!";
+                firmeTableAdapter.Connection.ConnectionString = $@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename={cGlobalVariables.localDB};Password=Master1!";
+                dRefresh.Visible = false;
             }
+            await naloziFTableAdapter.Connection.OpenAsync();
+            naloziFTableAdapter.Fill(dbSenaCompDataSet.NaloziF);
         }
 
         private void dNovi_Click(object sender, EventArgs e)
         {
             naloziFBindingSource.AddNew();
-            //G 7
-            foreach(RadioButton rb in tableLayoutPanel2.Controls.OfType<RadioButton>())
-            {
-                rb.Checked = false;
-            }
-            naCekanjuRadioButton.Checked = true;
+            naCekanjuRadioButton.Select();
             datumDateTimePicker.Value = DateTime.Now;
             iDFirmeTextBox.Select();
             resetBrojNalogaTextBoxReadOnly();
@@ -525,7 +512,7 @@ namespace uclib.Nalozi
 
         private void izvestajRichTextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
-            clFunkcijeRazno.OgranicenjeRedovaRitchTexBoxa(izvestajRichTextBox, 6, 100, e);
+            clFunkcijeRazno.OgranicenjeRedovaRitchTexBoxa(izvestajRichTextBox, 6, e);
         }
 
         private void RefreshDB()
